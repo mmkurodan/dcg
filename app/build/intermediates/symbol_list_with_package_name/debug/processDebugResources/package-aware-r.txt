@@ -777,6 +777,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id report_drawn
+id resultCopyLogsButton
 id resultDetailsLabelView
 id resultDetailsView
 id resultErrorLabelView
@@ -943,6 +944,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_copy_logs
 string action_delete
 string action_export
 string action_import
@@ -961,6 +963,7 @@ string call_notification_screening_text
 string editor_subtitle
 string editor_title
 string language_label
+string result_copied_message
 string result_details_label
 string result_error_label
 string result_return_value_label

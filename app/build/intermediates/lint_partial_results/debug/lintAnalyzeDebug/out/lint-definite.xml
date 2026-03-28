@@ -404,66 +404,6 @@
     </incident>
 
     <incident
-        id="GradleDependency"
-        severity="warning"
-        message="A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.7.1">
-        <fix-replace
-            description="Change to 1.7.1"
-            family="Update versions"
-            oldString="1.7.0"
-            replacement="1.7.1"
-            priority="0"/>
-        <location
-            file="${:app*projectDir}/build.gradle"
-            line="58"
-            column="20"
-            startOffset="1378"
-            endLine="58"
-            endColumn="56"
-            endOffset="1414"/>
-    </incident>
-
-    <incident
-        id="GradleDependency"
-        severity="warning"
-        message="A newer version of androidx.activity:activity than 1.9.0 is available: 1.13.0">
-        <fix-replace
-            description="Change to 1.13.0"
-            family="Update versions"
-            oldString="1.9.0"
-            replacement="1.13.0"
-            priority="0"/>
-        <location
-            file="${:app*projectDir}/build.gradle"
-            line="59"
-            column="20"
-            startOffset="1434"
-            endLine="59"
-            endColumn="54"
-            endOffset="1468"/>
-    </incident>
-
-    <incident
-        id="GradleDependency"
-        severity="warning"
-        message="A newer version of com.android.tools:r8 than 8.5.35 is available: 9.1.31">
-        <fix-replace
-            description="Change to 9.1.31"
-            family="Update versions"
-            oldString="8.5.35"
-            replacement="9.1.31"
-            priority="0"/>
-        <location
-            file="${:app*projectDir}/build.gradle"
-            line="61"
-            column="20"
-            startOffset="1536"
-            endLine="61"
-            endColumn="49"
-            endOffset="1565"/>
-    </incident>
-
-    <incident
         id="Overdraw"
         severity="warning"
         message="Possible overdraw: Root element paints background `@color/surface` with a theme that also paints a background (inferred theme is `@style/Theme.Dcg`)">

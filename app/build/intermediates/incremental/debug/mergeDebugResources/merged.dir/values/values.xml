@@ -309,6 +309,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action_copy_logs">Copy logs</string>
     <string name="action_delete">Delete</string>
     <string name="action_export">Export</string>
     <string name="action_import">Import</string>
@@ -327,6 +328,7 @@
     <string name="editor_subtitle">Java is wired end-to-end today. Kotlin and JavaScript already have storage, UI, and executor extension points.</string>
     <string name="editor_title">Dynamic Code Runner</string>
     <string name="language_label">Language</string>
+    <string name="result_copied_message">%1$s copied to clipboard</string>
     <string name="result_details_label">Details</string>
     <string name="result_error_label">Error</string>
     <string name="result_return_value_label">Return value</string>

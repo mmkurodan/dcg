@@ -1,5 +1,20 @@
 <libraries>
   <library
+      name="__local_aars__:/root/dcg/app/libs/ecj.jar:unspecified@jar"
+      jars="/root/dcg/app/libs/ecj.jar"
+      resolved="__local_aars__:/root/dcg/app/libs/ecj.jar:unspecified"
+      provided="true"/>
+  <library
+      name="__local_aars__:/root/dcg/app/libs/org.eclipse.jdt.core.jar:unspecified@jar"
+      jars="/root/dcg/app/libs/org.eclipse.jdt.core.jar"
+      resolved="__local_aars__:/root/dcg/app/libs/org.eclipse.jdt.core.jar:unspecified"
+      provided="true"/>
+  <library
+      name="__local_aars__:/root/dcg/app/libs/sourceversion-stub.jar:unspecified@jar"
+      jars="/root/dcg/app/libs/sourceversion-stub.jar"
+      resolved="__local_aars__:/root/dcg/app/libs/sourceversion-stub.jar:unspecified"
+      provided="true"/>
+  <library
       name=":@@:app::debug"
       project=":app"/>
   <library
@@ -58,11 +73,6 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
-  <library
-      name="org.eclipse.jdt:ecj:3.45.0@jar"
-      jars="/root/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt/ecj/3.45.0/b8700f7acd0931d0f9b0b8822f47dcbb205272ce/ecj-3.45.0.jar"
-      resolved="org.eclipse.jdt:ecj:3.45.0"
-      provided="true"/>
   <library
       name="com.android.tools:r8:8.5.35@jar"
       jars="/root/.gradle/caches/modules-2/files-2.1/com.android.tools/r8/8.5.35/6b41e4ac5e238c953246d07c006585aecc16c546/r8-8.5.35.jar"

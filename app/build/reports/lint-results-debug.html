@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 15 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 12 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Mar 28 08:26:37 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Mar 28 12:15:46 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,7 +187,6 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#NestedScrolling"><i class="material-icons warning-icon">warning</i>Nested scrolling widgets (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
       <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (1)</a>
       <a class="mdl-navigation__link" href="#MissingApplicationIcon"><i class="material-icons warning-icon">warning</i>Missing application icon (1)</a>
       <a class="mdl-navigation__link" href="#ButtonStyle"><i class="material-icons warning-icon">warning</i>Button should be borderless (6)</a>
@@ -210,9 +209,6 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#NestedScrolling">NestedScrolling</a>: Nested scrolling widgets</td></tr>
-<tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
@@ -290,69 +286,6 @@ A scrolling widget such as a <code>ScrollView</code> should not contain any nest
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationNestedScrollingLink" onclick="reveal('explanationNestedScrolling');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="NestedScrollingCardLink" onclick="hideid('NestedScrollingCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="GradleDependency"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Obsolete Gradle Dependency</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:58</span>: <span class="message">A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.7.1</span><br /><pre class="errorlines">
-<span class="lineno"> 55 </span>}
-<span class="lineno"> 56 </span>
-<span class="lineno"> 57 </span>dependencies {
-<span class="caretline"><span class="lineno"> 58 </span>    implementation <span class="warning"><span class="string">'androidx.appcompat:appcompat:1.7.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 59 </span>    implementation <span class="string">'androidx.activity:activity:1.9.0'</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'org.eclipse.jdt:ecj:3.45.0'</span>
-<span class="lineno"> 61 </span>    implementation <span class="string">'com.android.tools:r8:8.5.35'</span></pre>
-
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:59</span>: <span class="message">A newer version of androidx.activity:activity than 1.9.0 is available: 1.13.0</span><br /><pre class="errorlines">
-<span class="lineno"> 56 </span>
-<span class="lineno"> 57 </span>dependencies {
-<span class="lineno"> 58 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.7.0'</span>
-<span class="caretline"><span class="lineno"> 59 </span>    implementation <span class="warning"><span class="string">'androidx.activity:activity:1.9.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'org.eclipse.jdt:ecj:3.45.0'</span>
-<span class="lineno"> 61 </span>    implementation <span class="string">'com.android.tools:r8:8.5.35'</span>
-</pre>
-
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:61</span>: <span class="message">A newer version of com.android.tools:r8 than 8.5.35 is available: 9.1.31</span><br /><pre class="errorlines">
-<span class="lineno"> 58 </span>    implementation <span class="string">'androidx.appcompat:appcompat:1.7.0'</span>
-<span class="lineno"> 59 </span>    implementation <span class="string">'androidx.activity:activity:1.9.0'</span>
-<span class="lineno"> 60 </span>    implementation <span class="string">'org.eclipse.jdt:ecj:3.45.0'</span>
-<span class="caretline"><span class="lineno"> 61 </span>    implementation <span class="warning"><span class="string">'com.android.tools:r8:8.5.35'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 62 </span>
-<span class="lineno"> 63 </span>    coreLibraryDesugaring <span class="string">'com.android.tools:desugar_jdk_libs:2.1.5'</span>
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
-This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "GradleDependency" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">GradleDependency</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 4/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGradleDependencyLink" onclick="reveal('explanationGradleDependency');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
 Dismiss</button>            </div>
             </div>
           </section>

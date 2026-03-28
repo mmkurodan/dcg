@@ -23,7 +23,6 @@ import com.micklab.dcg.executor.java.JavaSourceParser;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
-import com.micklab.dcg.storage.DownloadsImportExportManager;
 import com.micklab.dcg.storage.FileManager;
 import com.micklab.dcg.ui.ResultView;
 import com.micklab.dcg.ui.SnippetListAdapter;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     private ResultView resultView;
 
     private FileManager fileManager;
-    private DownloadsImportExportManager importExportManager;
     private LanguageExecutorRegistry executorRegistry;
     private SnippetListAdapter snippetAdapter;
     private final List<SourceSnippet> snippets = new ArrayList<>();
@@ -68,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         bindViews();
         fileManager = new FileManager(this);
-        importExportManager = new DownloadsImportExportManager(this);
         executorRegistry = new LanguageExecutorRegistry();
         snippetAdapter = new SnippetListAdapter(this);
 
@@ -154,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         });
         deleteButton.setOnClickListener(view -> deleteCurrentSnippet());
         runButton.setOnClickListener(view -> runCurrentSnippet());
-        importButton.setOnClickListener(view -> importLauncher.launch(importExportManager.createImportIntent()));
+        importButton.setOnClickListener(view -> importLauncher.launch(fileManager.createImportIntent()));
         exportButton.setOnClickListener(view -> exportCurrentSnippet());
     }
 
@@ -325,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
         if (saved == null) {
             return;
         }
-        if (importExportManager.requiresLegacyWritePermission() && !hasLegacyStoragePermission()) {
+        if (fileManager.requiresLegacyWritePermission() && !hasLegacyStoragePermission()) {
             pendingExportSnippet = saved;
             legacyStoragePermissionLauncher.launch(new String[]{
                     Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -340,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
         setBusy(true, "Exporting...", "Writing the source file into the Downloads/dcg folder.");
         backgroundExecutor.execute(() -> {
             try {
-                Uri uri = importExportManager.exportSnippet(snippet);
+                Uri uri = fileManager.exportSnippet(snippet);
                 runOnUiThread(() -> {
                     setBusy(false, null, null);
                     resultView.render(ExecutionResult.info(
@@ -364,7 +361,7 @@ public class MainActivity extends AppCompatActivity {
         setBusy(true, "Importing...", "Reading the selected file and saving it into internal storage.");
         backgroundExecutor.execute(() -> {
             try {
-                SourceSnippet imported = importExportManager.importFromUri(uri);
+                SourceSnippet imported = fileManager.importFromUri(uri);
                 SourceSnippet saved = fileManager.save(imported);
                 runOnUiThread(() -> {
                     setBusy(false, null, null);

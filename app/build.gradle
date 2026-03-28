@@ -14,8 +14,13 @@ def bundledCompilerJars = [
         "org.eclipse.jdt.compiler.tool.jar",
         "org.eclipse.jdt.compiler.apt.jar"
 ]
+def allBundledLibs = fileTree(dir: "${projectDir}/libs", include: ['*.jar'])
 def sourceVersionStubSourcesDir = layout.projectDirectory.dir("stubs")
 def sourceVersionStubClassesDir = layout.buildDirectory.dir("generated/sourceversion-stub/classes")
+
+configurations {
+    compilerBundle
+}
 
 android {
     namespace "com.micklab.dcg"
@@ -53,6 +58,7 @@ android {
                     'META-INF/NOTICE.txt',
                     'META-INF/INDEX.LIST',
                     'META-INF/*.kotlin_module',
+                    'META-INF/eclipse.inf',
                     'META-INF/AL2.0',
                     'META-INF/LGPL2.1'
             ]
@@ -101,10 +107,12 @@ tasks.named("preBuild").configure {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.activity:activity:1.9.0'
-    // ecj.jar already bundles the batch compiler plus the tool/apt bytecode.
-    // The split JDT jars still live in app/libs to make the expected Android-side layout explicit.
+    compilerBundle allBundledLibs
+    // ecj.jar already carries the tool/apt bytecode, so only the non-overlapping jars
+    // join the app classpath to avoid duplicate classes during packaging.
     implementation files(
             "${projectDir}/libs/ecj.jar",
+            "${projectDir}/libs/org.eclipse.jdt.core.jar",
             "${projectDir}/libs/sourceversion-stub.jar"
     )
     implementation 'com.android.tools:r8:8.5.35'

@@ -1,6 +1,8 @@
 package com.micklab.dcg.storage;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 
 import com.micklab.dcg.model.SourceSnippet;
@@ -27,9 +29,11 @@ import java.util.UUID;
 public class FileManager {
     private static final String TAG = "FileManager";
     private final File snippetsDirectory;
+    private final DownloadsImportExportManager importExportManager;
 
     public FileManager(Context context) {
         snippetsDirectory = new File(context.getFilesDir(), "snippets");
+        importExportManager = new DownloadsImportExportManager(context);
         if (!snippetsDirectory.exists()) {
             //noinspection ResultOfMethodCallIgnored
             snippetsDirectory.mkdirs();
@@ -117,6 +121,22 @@ public class FileManager {
         }
         File file = fileForId(id);
         return file.isFile() && file.delete();
+    }
+
+    public Intent createImportIntent() {
+        return importExportManager.createImportIntent();
+    }
+
+    public boolean requiresLegacyWritePermission() {
+        return importExportManager.requiresLegacyWritePermission();
+    }
+
+    public Uri exportSnippet(SourceSnippet snippet) throws IOException {
+        return importExportManager.exportSnippet(snippet);
+    }
+
+    public SourceSnippet importFromUri(Uri uri) throws IOException {
+        return importExportManager.importFromUri(uri);
     }
 
     private SourceSnippet readSnippet(File file) throws IOException, JSONException {

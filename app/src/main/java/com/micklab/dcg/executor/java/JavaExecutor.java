@@ -121,7 +121,8 @@ public class JavaExecutor implements LanguageExecutor {
             parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
             sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
 
-            CompilationOutcome compilation = compileSource(sourceFile, classesDir, resolveCompilerClasspath());
+            String compilerClasspath = resolveCompilerClasspath();
+            CompilationOutcome compilation = compileSource(sourceFile, classesDir, compilerClasspath);
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
                         "Java compilation failed",
@@ -135,7 +136,7 @@ public class JavaExecutor implements LanguageExecutor {
                         elapsedSince(startTime));
             }
 
-            File dexBundle = dexClasses(classesDir, dexDir);
+            File dexBundle = dexClasses(classesDir, dexDir, resolveLibraryFiles(compilerClasspath));
             InvocationOutcome outcome = loadAndRun(context, dexBundle, parsedSource.getQualifiedClassName(), optimizedDir);
             return ExecutionResult.success(
                     "Java execution succeeded",
@@ -216,7 +217,7 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    private File dexClasses(File classesDir, File dexDir) throws Exception {
+    private File dexClasses(File classesDir, File dexDir, List<Path> libraryFiles) throws Exception {
         List<Path> programFiles = collectClassFiles(classesDir);
         if (programFiles.isEmpty()) {
             throw new IOException("ECJ did not emit any .class files.");
@@ -227,6 +228,9 @@ public class JavaExecutor implements LanguageExecutor {
                 .setOutput(dexDir.toPath(), OutputMode.DexIndexed);
         for (Path programFile : programFiles) {
             builder.addProgramFiles(programFile);
+        }
+        for (Path libraryFile : libraryFiles) {
+            builder.addLibraryFiles(libraryFile);
         }
         D8.run(builder.build());
 
@@ -391,6 +395,22 @@ public class JavaExecutor implements LanguageExecutor {
                 entries.add(candidate.getAbsolutePath());
             }
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.O)
+    private List<Path> resolveLibraryFiles(String classpath) {
+        List<Path> libraryFiles = new ArrayList<>();
+        if (TextUtils.isEmpty(classpath)) {
+            return libraryFiles;
+        }
+        String[] segments = classpath.split(File.pathSeparator);
+        for (String segment : segments) {
+            File candidate = new File(segment);
+            if (candidate.isFile()) {
+                libraryFiles.add(candidate.toPath());
+            }
+        }
+        return libraryFiles;
     }
 
     private void ensureDirectory(File directory) throws IOException {
