@@ -2,10 +2,12 @@ package com.micklab.dcg.executor.java;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -37,5 +39,37 @@ public class JavaExecutorTest {
         assertTrue(layout.contains("org.eclipse.jdt.compiler.tool-1.2.0.jar"));
         assertTrue(layout.contains("org.eclipse.jdt.compiler.apt-1.2.100.jar"));
         assertTrue(layout.contains("sourceversion-stub.jar"));
+    }
+
+    @Test
+    public void compilerArgumentsUseRuntimeBootClasspathProperty() {
+        String originalBootClasspath = System.getProperty("java.boot.class.path");
+        String expectedClasspath = "/tmp/compiler-libs.jar";
+        String expectedBootClasspath = "/system/framework/core-oj.jar"
+                + File.pathSeparator
+                + "/system/framework/core-libart.jar";
+
+        try {
+            System.setProperty("java.boot.class.path", expectedBootClasspath);
+
+            List<String> arguments = Arrays.asList(JavaExecutor.buildCompilerArguments(
+                    new File("/tmp/HelloJava.java"),
+                    new File("/tmp/classes"),
+                    expectedClasspath));
+
+            int classpathIndex = arguments.indexOf("-classpath");
+            int bootClasspathIndex = arguments.indexOf("-bootclasspath");
+
+            assertTrue(classpathIndex >= 0);
+            assertTrue(bootClasspathIndex >= 0);
+            assertEquals(expectedClasspath, arguments.get(classpathIndex + 1));
+            assertEquals(expectedBootClasspath, arguments.get(bootClasspathIndex + 1));
+        } finally {
+            if (originalBootClasspath == null) {
+                System.clearProperty("java.boot.class.path");
+            } else {
+                System.setProperty("java.boot.class.path", originalBootClasspath);
+            }
+        }
     }
 }

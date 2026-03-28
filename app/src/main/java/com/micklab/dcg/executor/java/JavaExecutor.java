@@ -196,6 +196,19 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     private CompilationOutcome compileSource(File sourceFile, File classesDir, String classpath) {
+        StringWriter stdout = new StringWriter();
+        StringWriter stderr = new StringWriter();
+        boolean success = BatchCompiler.compile(
+                buildCompilerArguments(sourceFile, classesDir, classpath),
+                new PrintWriter(stdout),
+                new PrintWriter(stderr),
+                null);
+        return new CompilationOutcome(success, stdout.toString(), stderr.toString());
+    }
+
+    static String[] buildCompilerArguments(File sourceFile, File classesDir, String classpath) {
+        String bootClasspath = System.getProperty("java.boot.class.path");
+
         List<String> arguments = new ArrayList<>();
         Collections.addAll(arguments,
                 "-1.8",
@@ -204,18 +217,13 @@ public class JavaExecutor implements LanguageExecutor {
                 "-g",
                 "-d", classesDir.getAbsolutePath());
         if (!TextUtils.isEmpty(classpath)) {
-            arguments.addAll(Arrays.asList("-classpath", classpath, "-bootclasspath", classpath));
+            arguments.addAll(Arrays.asList("-classpath", classpath));
+        }
+        if (!TextUtils.isEmpty(bootClasspath)) {
+            arguments.addAll(Arrays.asList("-bootclasspath", bootClasspath));
         }
         arguments.add(sourceFile.getAbsolutePath());
-
-        StringWriter stdout = new StringWriter();
-        StringWriter stderr = new StringWriter();
-        boolean success = BatchCompiler.compile(
-                arguments.toArray(new String[0]),
-                new PrintWriter(stdout),
-                new PrintWriter(stderr),
-                null);
-        return new CompilationOutcome(success, stdout.toString(), stderr.toString());
+        return arguments.toArray(new String[0]);
     }
 
     @TargetApi(Build.VERSION_CODES.O)
