@@ -52,16 +52,16 @@ public class JavaExecutor implements LanguageExecutor {
             "/system/framework/framework.jar",
             "/system/framework/ext.jar"
     };
-    private static final String[] REQUIRED_RUNTIME_CLASSES = new String[]{
+    // Android does not ship javax.tools, so only verify the ECJ batch path we actually use.
+    private static final String[] REQUIRED_BATCH_RUNTIME_CLASSES = new String[]{
             "com.android.tools.r8.D8",
             "org.eclipse.jdt.core.compiler.batch.BatchCompiler",
-            "org.eclipse.jdt.internal.compiler.tool.EclipseCompiler",
-            "org.eclipse.jdt.internal.compiler.apt.dispatch.BatchAnnotationProcessorManager",
             "javax.lang.model.SourceVersion"
     };
-    private static final String BUNDLED_COMPILER_LAYOUT = "Expected app/libs/ecj.jar, app/libs/org.eclipse.jdt.core.jar, "
-            + "app/libs/org.eclipse.jdt.compiler.tool.jar, app/libs/org.eclipse.jdt.compiler.apt.jar, "
-            + "and a generated app/libs/sourceversion-stub.jar.";
+    private static final String BUNDLED_COMPILER_LAYOUT = "Expected the packaged ECJ batch runtime "
+            + "(app/libs/ecj.jar, app/libs/org.eclipse.jdt.core.jar, and app/libs/sourceversion-stub.jar) "
+            + "plus the bundled D8 runtime. The desktop javax.tools adapter classes are optional because "
+            + "this executor compiles via BatchCompiler with -proc:none.";
 
     @Override
     public SupportedLanguage getLanguage() {
@@ -92,7 +92,7 @@ public class JavaExecutor implements LanguageExecutor {
                     "Storage, editing, import, and export still work below API 26.");
         }
 
-        CompilerRuntimeStatus compilerRuntimeStatus = verifyCompilerRuntime();
+        CompilerRuntimeStatus compilerRuntimeStatus = verifyBatchCompilerRuntime();
         if (!compilerRuntimeStatus.ready) {
             return ExecutionResult.runtimeError(
                     "Compiler runtime incomplete",
@@ -177,10 +177,10 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
-    private CompilerRuntimeStatus verifyCompilerRuntime() {
+    private CompilerRuntimeStatus verifyBatchCompilerRuntime() {
         List<String> missingClasses = new ArrayList<>();
         ClassLoader classLoader = getClass().getClassLoader();
-        for (String className : REQUIRED_RUNTIME_CLASSES) {
+        for (String className : REQUIRED_BATCH_RUNTIME_CLASSES) {
             try {
                 Class.forName(className, false, classLoader);
             } catch (ClassNotFoundException | NoClassDefFoundError exception) {
