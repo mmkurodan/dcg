@@ -7,6 +7,16 @@ configurations.configureEach {
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
 }
 
+def compilerLibsDir = layout.projectDirectory.dir("libs")
+def bundledCompilerJars = [
+        "ecj.jar",
+        "org.eclipse.jdt.core.jar",
+        "org.eclipse.jdt.compiler.tool.jar",
+        "org.eclipse.jdt.compiler.apt.jar"
+]
+def sourceVersionStubSourcesDir = layout.projectDirectory.dir("stubs")
+def sourceVersionStubClassesDir = layout.buildDirectory.dir("generated/sourceversion-stub/classes")
+
 android {
     namespace "com.micklab.dcg"
     compileSdk 35
@@ -54,10 +64,49 @@ android {
     }
 }
 
+tasks.register("compileSourceVersionStub", JavaCompile) {
+    source = fileTree(sourceVersionStubSourcesDir) {
+        include "**/*.java"
+    }
+    classpath = files()
+    destinationDirectory = sourceVersionStubClassesDir
+    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+    options.release = 8
+}
+
+tasks.register("buildSourceVersionStubJar", Jar) {
+    dependsOn("compileSourceVersionStub")
+    archiveFileName = "sourceversion-stub.jar"
+    destinationDirectory = compilerLibsDir
+    from(sourceVersionStubClassesDir)
+}
+
+tasks.register("verifyBundledCompilerJars") {
+    inputs.files(bundledCompilerJars.collect { compilerLibsDir.file(it).asFile })
+    doLast {
+        bundledCompilerJars.each { fileName ->
+            File candidate = compilerLibsDir.file(fileName).asFile
+            if (!candidate.isFile()) {
+                throw new GradleException("Missing required compiler bundle: app/libs/" + fileName)
+            }
+        }
+    }
+}
+
+tasks.named("preBuild").configure {
+    dependsOn("buildSourceVersionStubJar", "verifyBundledCompilerJars")
+}
+
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.activity:activity:1.9.0'
-    implementation 'org.eclipse.jdt:ecj:3.45.0'
+    // ecj.jar already bundles the batch compiler plus the tool/apt bytecode.
+    // The split JDT jars still live in app/libs to make the expected Android-side layout explicit.
+    implementation files(
+            "${projectDir}/libs/ecj.jar",
+            "${projectDir}/libs/sourceversion-stub.jar"
+    )
     implementation 'com.android.tools:r8:8.5.35'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'

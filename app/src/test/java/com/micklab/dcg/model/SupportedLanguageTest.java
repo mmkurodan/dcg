@@ -12,8 +12,13 @@ public class SupportedLanguageTest {
     }
 
     @Test
-    public void pythonFileExtensionMapsToPython() {
-        assertEquals(SupportedLanguage.PYTHON, SupportedLanguage.fromFileName("script.py"));
+    public void kotlinFileExtensionMapsToKotlin() {
+        assertEquals(SupportedLanguage.KOTLIN, SupportedLanguage.fromFileName("script.kts"));
+    }
+
+    @Test
+    public void javaScriptFileExtensionMapsToJavaScript() {
+        assertEquals(SupportedLanguage.JAVASCRIPT, SupportedLanguage.fromFileName("script.js"));
     }
 
     @Test

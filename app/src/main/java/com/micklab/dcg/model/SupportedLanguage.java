@@ -4,9 +4,8 @@ import java.util.Locale;
 
 public enum SupportedLanguage {
     JAVA("java", "Java", ".java", "text/x-java-source"),
-    PYTHON("python", "Python", ".py", "text/x-python"),
-    NODE("node", "Node.js", ".js", "application/javascript"),
-    CPP_WASM("cpp-wasm", "C++ (WASM)", ".cpp", "text/x-c++src");
+    KOTLIN("kotlin", "Kotlin", ".kt", "text/x-kotlin"),
+    JAVASCRIPT("javascript", "JavaScript", ".js", "application/javascript");
 
     private final String id;
     private final String displayName;
@@ -57,18 +56,15 @@ public enum SupportedLanguage {
                         + "        return \"Hello from dynamic Java!\";\n"
                         + "    }\n"
                         + "}\n";
-            case PYTHON:
-                return "# Python executor placeholder\n"
-                        + "print(\"Python runtime is not wired yet.\")\n";
-            case NODE:
-                return "// Node.js executor placeholder\n"
-                        + "console.log(\"Node.js runtime is not wired yet.\");\n";
-            case CPP_WASM:
-            default:
-                return "// C++ (WASM) executor placeholder\n"
-                        + "int main() {\n"
-                        + "    return 0;\n"
+            case KOTLIN:
+                return "// Kotlin executor placeholder\n"
+                        + "fun run(): String {\n"
+                        + "    return \"Kotlin runtime is not wired yet.\"\n"
                         + "}\n";
+            case JAVASCRIPT:
+            default:
+                return "// JavaScript executor placeholder\n"
+                        + "console.log(\"JavaScript runtime is not wired yet.\");\n";
         }
     }
 
@@ -88,14 +84,11 @@ public enum SupportedLanguage {
             return JAVA;
         }
         String lower = fileName.toLowerCase(Locale.US);
-        if (lower.endsWith(".py")) {
-            return PYTHON;
+        if (lower.endsWith(".kt") || lower.endsWith(".kts")) {
+            return KOTLIN;
         }
         if (lower.endsWith(".js") || lower.endsWith(".mjs") || lower.endsWith(".cjs")) {
-            return NODE;
-        }
-        if (lower.endsWith(".cpp") || lower.endsWith(".cc") || lower.endsWith(".cxx") || lower.endsWith(".wasm")) {
-            return CPP_WASM;
+            return JAVASCRIPT;
         }
         return JAVA;
     }

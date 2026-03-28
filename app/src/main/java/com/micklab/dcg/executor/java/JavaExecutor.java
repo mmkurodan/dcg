@@ -52,6 +52,16 @@ public class JavaExecutor implements LanguageExecutor {
             "/system/framework/framework.jar",
             "/system/framework/ext.jar"
     };
+    private static final String[] REQUIRED_RUNTIME_CLASSES = new String[]{
+            "com.android.tools.r8.D8",
+            "org.eclipse.jdt.core.compiler.batch.BatchCompiler",
+            "org.eclipse.jdt.internal.compiler.tool.EclipseCompiler",
+            "org.eclipse.jdt.internal.compiler.apt.dispatch.BatchAnnotationProcessorManager",
+            "javax.lang.model.SourceVersion"
+    };
+    private static final String BUNDLED_COMPILER_LAYOUT = "Expected app/libs/ecj.jar, app/libs/org.eclipse.jdt.core.jar, "
+            + "app/libs/org.eclipse.jdt.compiler.tool.jar, app/libs/org.eclipse.jdt.compiler.apt.jar, "
+            + "and a generated app/libs/sourceversion-stub.jar.";
 
     @Override
     public SupportedLanguage getLanguage() {
@@ -67,7 +77,13 @@ public class JavaExecutor implements LanguageExecutor {
     public ExecutionResult execute(Context context, SourceSnippet snippet) {
         long startTime = SystemClock.elapsedRealtime();
         if (snippet == null) {
-            return ExecutionResult.runtimeError("Java execution failed", "No snippet was supplied.", "", -1L);
+            return ExecutionResult.runtimeError(
+                    "Java execution failed",
+                    "No snippet was supplied.",
+                    "",
+                    "Provide a Java snippet before running the executor.",
+                    "",
+                    -1L);
         }
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             return ExecutionResult.unsupported(
@@ -76,12 +92,25 @@ public class JavaExecutor implements LanguageExecutor {
                     "Storage, editing, import, and export still work below API 26.");
         }
 
+        CompilerRuntimeStatus compilerRuntimeStatus = verifyCompilerRuntime();
+        if (!compilerRuntimeStatus.ready) {
+            return ExecutionResult.runtimeError(
+                    "Compiler runtime incomplete",
+                    "The bundled Java compiler could not be initialized on this device.",
+                    "",
+                    compilerRuntimeStatus.errorMessage,
+                    BUNDLED_COMPILER_LAYOUT,
+                    elapsedSince(startTime));
+        }
+
         File snippetRoot = new File(new File(context.getCodeCacheDir(), WORKSPACE_DIRECTORY), safeSnippetKey(snippet));
         File runRoot = new File(snippetRoot, String.valueOf(System.currentTimeMillis()));
         File sourceRoot = new File(runRoot, "src");
         File classesDir = new File(runRoot, "classes");
         File dexDir = new File(runRoot, "dex");
         File optimizedDir = new File(runRoot, "opt");
+        JavaSourceParser.ParsedJavaSource parsedSource = null;
+        File sourceFile = null;
 
         try {
             ensureDirectory(sourceRoot);
@@ -89,27 +118,41 @@ public class JavaExecutor implements LanguageExecutor {
             ensureDirectory(dexDir);
             ensureDirectory(optimizedDir);
 
-            JavaSourceParser.ParsedJavaSource parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
-            File sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
+            parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
+            sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
 
             CompilationOutcome compilation = compileSource(sourceFile, classesDir, resolveCompilerClasspath());
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
                         "Java compilation failed",
-                        "ECJ reported one or more problems in " + parsedSource.getDisplayFileName() + ".",
-                        DiagnosticFormatter.formatCompilerOutput(compilation.combinedOutput(), runRoot.getAbsolutePath(), sourceFile.getAbsolutePath(), parsedSource.getDisplayFileName()),
+                        parsedSource.getDisplayFileName() + " did not compile.",
+                        DiagnosticFormatter.formatCompilerOutput(
+                                compilation.combinedOutput(),
+                                runRoot.getAbsolutePath(),
+                                sourceFile.getAbsolutePath(),
+                                parsedSource.getDisplayFileName()),
+                        "Compiler: ECJ",
                         elapsedSince(startTime));
             }
 
             File dexBundle = dexClasses(classesDir, dexDir);
-            String output = loadAndRun(context, dexBundle, parsedSource.getQualifiedClassName(), optimizedDir);
-            String summary = TextUtils.isEmpty(output)
-                    ? "Execution finished without console output."
-                    : output.trim();
+            InvocationOutcome outcome = loadAndRun(context, dexBundle, parsedSource.getQualifiedClassName(), optimizedDir);
             return ExecutionResult.success(
                     "Java execution succeeded",
-                    parsedSource.getQualifiedClassName(),
-                    summary,
+                    parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".",
+                    outcome.stdout,
+                    outcome.returnValue,
+                    outcome.stderr,
+                    "Dex bundle: " + dexBundle.getName(),
+                    elapsedSince(startTime));
+        } catch (CapturedInvocationException exception) {
+            Throwable rootCause = unwrap(exception.getCause());
+            return ExecutionResult.runtimeError(
+                    "Java execution failed",
+                    exception.entrypoint + " threw an exception.",
+                    exception.stdout,
+                    combineError(exception.stderr, DiagnosticFormatter.formatThrowable(rootCause)),
+                    buildRuntimeDetails(parsedSource, sourceFile),
                     elapsedSince(startTime));
         } catch (Throwable throwable) {
             Throwable rootCause = unwrap(throwable);
@@ -118,16 +161,35 @@ public class JavaExecutor implements LanguageExecutor {
                         "Java source is incomplete",
                         rootCause.getMessage(),
                         "Define a class, interface, or enum, then expose public static String run() or public static void main(String[] args).",
+                        "Compiler: ECJ",
                         elapsedSince(startTime));
             }
             return ExecutionResult.runtimeError(
                     "Java execution failed",
                     "Compilation finished, but the generated code could not be loaded or executed.",
+                    "",
                     DiagnosticFormatter.formatThrowable(rootCause),
+                    buildRuntimeDetails(parsedSource, sourceFile),
                     elapsedSince(startTime));
         } finally {
             pruneOldRuns(snippetRoot, 3);
         }
+    }
+
+    private CompilerRuntimeStatus verifyCompilerRuntime() {
+        List<String> missingClasses = new ArrayList<>();
+        ClassLoader classLoader = getClass().getClassLoader();
+        for (String className : REQUIRED_RUNTIME_CLASSES) {
+            try {
+                Class.forName(className, false, classLoader);
+            } catch (ClassNotFoundException | NoClassDefFoundError exception) {
+                missingClasses.add(className);
+            }
+        }
+        if (missingClasses.isEmpty()) {
+            return CompilerRuntimeStatus.ready();
+        }
+        return CompilerRuntimeStatus.missing("Missing runtime classes: " + TextUtils.join(", ", missingClasses));
     }
 
     private CompilationOutcome compileSource(File sourceFile, File classesDir, String classpath) {
@@ -177,23 +239,24 @@ public class JavaExecutor implements LanguageExecutor {
         return bundle;
     }
 
-    private String loadAndRun(Context context, File dexBundle, String qualifiedClassName, File optimizedDir) throws Exception {
+    private InvocationOutcome loadAndRun(Context context, File dexBundle, String qualifiedClassName, File optimizedDir) throws Exception {
         DexClassLoader classLoader = new DexClassLoader(
                 dexBundle.getAbsolutePath(),
                 optimizedDir.getAbsolutePath(),
                 null,
                 context.getClassLoader());
         Class<?> dynamicClass = classLoader.loadClass(qualifiedClassName);
+
         Method runMethod = findRunMethod(dynamicClass);
         if (runMethod != null) {
-            Object result = runMethod.invoke(null);
-            return result == null ? "" : String.valueOf(result);
+            return invokeCapturingOutput(runMethod, new Object[0], "public static run()");
         }
 
         Method mainMethod = findMainMethod(dynamicClass);
         if (mainMethod != null) {
-            return invokeMainCapturingOutput(mainMethod);
+            return invokeCapturingOutput(mainMethod, new Object[]{new String[0]}, "public static void main(String[])");
         }
+
         throw new IllegalStateException(DiagnosticFormatter.formatEntrypointGuidance(qualifiedClassName));
     }
 
@@ -222,26 +285,40 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
-    private String invokeMainCapturingOutput(Method mainMethod) throws Exception {
+    private InvocationOutcome invokeCapturingOutput(Method method, Object[] arguments, String entrypoint) throws Exception {
         PrintStream originalOut = System.out;
         PrintStream originalErr = System.err;
-        ByteArrayOutputStream capture = new ByteArrayOutputStream();
-        try (PrintStream interceptor = new PrintStream(capture, true, StandardCharsets.UTF_8.name())) {
-            System.setOut(interceptor);
-            System.setErr(interceptor);
-            mainMethod.invoke(null, (Object) new String[0]);
-        } catch (InvocationTargetException exception) {
-            Throwable target = exception.getTargetException();
-            if (target instanceof Exception) {
-                throw (Exception) target;
+        ByteArrayOutputStream stdoutCapture = new ByteArrayOutputStream();
+        ByteArrayOutputStream stderrCapture = new ByteArrayOutputStream();
+        Throwable failure = null;
+        Object returnValue = null;
+
+        try (PrintStream stdoutInterceptor = new PrintStream(stdoutCapture, true, StandardCharsets.UTF_8.name());
+             PrintStream stderrInterceptor = new PrintStream(stderrCapture, true, StandardCharsets.UTF_8.name())) {
+            System.setOut(stdoutInterceptor);
+            System.setErr(stderrInterceptor);
+            try {
+                returnValue = method.invoke(null, arguments);
+            } catch (InvocationTargetException exception) {
+                failure = unwrap(exception.getTargetException());
+            } catch (Throwable throwable) {
+                failure = unwrap(throwable);
             }
-            throw exception;
         } finally {
             System.setOut(originalOut);
             System.setErr(originalErr);
         }
-        String output = capture.toString(StandardCharsets.UTF_8.name()).trim();
-        return output.isEmpty() ? "Execution completed via main(String[])." : output;
+
+        String stdout = normalizeCapture(stdoutCapture);
+        String stderr = normalizeCapture(stderrCapture);
+        if (failure != null) {
+            throw new CapturedInvocationException(entrypoint, stdout, stderr, failure);
+        }
+        return new InvocationOutcome(
+                entrypoint,
+                stdout,
+                stderr,
+                method.getReturnType() == Void.TYPE || returnValue == null ? "" : String.valueOf(returnValue));
     }
 
     @TargetApi(Build.VERSION_CODES.O)
@@ -365,6 +442,33 @@ public class JavaExecutor implements LanguageExecutor {
         return current;
     }
 
+    private String normalizeCapture(ByteArrayOutputStream capture) throws IOException {
+        String output = capture.toString(StandardCharsets.UTF_8.name()).replace("\r\n", "\n").trim();
+        return output;
+    }
+
+    private String combineError(String stderr, String throwableText) {
+        if (TextUtils.isEmpty(stderr)) {
+            return throwableText;
+        }
+        if (TextUtils.isEmpty(throwableText)) {
+            return stderr;
+        }
+        return stderr + "\n\n" + throwableText;
+    }
+
+    private String buildRuntimeDetails(JavaSourceParser.ParsedJavaSource parsedSource, File sourceFile) {
+        List<String> details = new ArrayList<>();
+        if (parsedSource != null) {
+            details.add("Class: " + parsedSource.getQualifiedClassName());
+        }
+        if (sourceFile != null) {
+            details.add("Source: " + sourceFile.getName());
+        }
+        details.add(BUNDLED_COMPILER_LAYOUT);
+        return TextUtils.join("\n", details);
+    }
+
     private long elapsedSince(long startTime) {
         return SystemClock.elapsedRealtime() - startTime;
     }
@@ -375,6 +479,51 @@ public class JavaExecutor implements LanguageExecutor {
             base = snippet.getTitle();
         }
         return SupportedLanguage.sanitizeBaseName(base);
+    }
+
+    private static final class CompilerRuntimeStatus {
+        private final boolean ready;
+        private final String errorMessage;
+
+        private CompilerRuntimeStatus(boolean ready, String errorMessage) {
+            this.ready = ready;
+            this.errorMessage = errorMessage == null ? "" : errorMessage;
+        }
+
+        private static CompilerRuntimeStatus ready() {
+            return new CompilerRuntimeStatus(true, "");
+        }
+
+        private static CompilerRuntimeStatus missing(String errorMessage) {
+            return new CompilerRuntimeStatus(false, errorMessage);
+        }
+    }
+
+    private static final class InvocationOutcome {
+        private final String entrypoint;
+        private final String stdout;
+        private final String stderr;
+        private final String returnValue;
+
+        private InvocationOutcome(String entrypoint, String stdout, String stderr, String returnValue) {
+            this.entrypoint = entrypoint;
+            this.stdout = stdout == null ? "" : stdout;
+            this.stderr = stderr == null ? "" : stderr;
+            this.returnValue = returnValue == null ? "" : returnValue;
+        }
+    }
+
+    private static final class CapturedInvocationException extends Exception {
+        private final String entrypoint;
+        private final String stdout;
+        private final String stderr;
+
+        private CapturedInvocationException(String entrypoint, String stdout, String stderr, Throwable cause) {
+            super(cause);
+            this.entrypoint = entrypoint;
+            this.stdout = stdout == null ? "" : stdout;
+            this.stderr = stderr == null ? "" : stderr;
+        }
     }
 
     private static final class CompilationOutcome {

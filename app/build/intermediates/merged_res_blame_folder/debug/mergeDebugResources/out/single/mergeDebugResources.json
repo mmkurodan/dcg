@@ -1,26 +1,30 @@
 [
     {
-        "merged": "com.micklab.dcg.app-debug-23:/layout_activity_main.xml.flat",
-        "source": "com.micklab.dcg.app-main-25:/layout/activity_main.xml"
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/layout_activity_main.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/layout/activity_main.xml"
     },
     {
-        "merged": "com.micklab.dcg.app-debug-23:/layout_item_snippet.xml.flat",
-        "source": "com.micklab.dcg.app-main-25:/layout/item_snippet.xml"
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/layout_view_result.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/layout/view_result.xml"
     },
     {
-        "merged": "com.micklab.dcg.app-debug-23:/drawable_panel_selected_background.xml.flat",
-        "source": "com.micklab.dcg.app-main-25:/drawable/panel_selected_background.xml"
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/drawable_panel_selected_background.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/drawable/panel_selected_background.xml"
     },
     {
-        "merged": "com.micklab.dcg.app-debug-23:/drawable_panel_background.xml.flat",
-        "source": "com.micklab.dcg.app-main-25:/drawable/panel_background.xml"
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/layout_item_snippet.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/layout/item_snippet.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/drawable_result_background.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/drawable/result_background.xml"
     },
     {
         "merged": "com.micklab.dcg.app-debug-23:/layout_view_result.xml.flat",
         "source": "com.micklab.dcg.app-main-25:/layout/view_result.xml"
     },
     {
-        "merged": "com.micklab.dcg.app-debug-23:/drawable_result_background.xml.flat",
-        "source": "com.micklab.dcg.app-main-25:/drawable/result_background.xml"
+        "merged": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-debug-23:/drawable_panel_background.xml.flat",
+        "source": "/root/.gradle/daemon/8.12/com.micklab.dcg.app-main-25:/drawable/panel_background.xml"
     }
 ]

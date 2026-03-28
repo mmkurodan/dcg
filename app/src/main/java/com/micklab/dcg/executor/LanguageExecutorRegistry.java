@@ -1,9 +1,8 @@
 package com.micklab.dcg.executor;
 
+import com.micklab.dcg.executor.javascript.JavaScriptExecutor;
 import com.micklab.dcg.executor.java.JavaExecutor;
-import com.micklab.dcg.executor.node.NodeExecutor;
-import com.micklab.dcg.executor.python.PythonExecutor;
-import com.micklab.dcg.executor.wasm.WasmExecutor;
+import com.micklab.dcg.executor.kotlin.KotlinExecutor;
 import com.micklab.dcg.model.SupportedLanguage;
 
 import java.util.EnumMap;
@@ -14,9 +13,8 @@ public class LanguageExecutorRegistry {
 
     public LanguageExecutorRegistry() {
         register(new JavaExecutor());
-        register(new PythonExecutor());
-        register(new NodeExecutor());
-        register(new WasmExecutor());
+        register(new KotlinExecutor());
+        register(new JavaScriptExecutor());
     }
 
     public LanguageExecutor getExecutor(SupportedLanguage language) {

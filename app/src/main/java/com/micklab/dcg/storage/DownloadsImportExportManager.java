@@ -45,9 +45,9 @@ public class DownloadsImportExportManager {
         intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{
                 "text/plain",
                 "text/x-java-source",
-                "text/x-python",
+                "text/x-kotlin",
                 "application/javascript",
-                "text/x-c++src"
+                "application/x-javascript"
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, MediaStore.Downloads.EXTERNAL_CONTENT_URI);

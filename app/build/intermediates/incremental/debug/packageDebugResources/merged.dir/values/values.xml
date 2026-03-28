@@ -20,9 +20,13 @@
     <string name="action_run">Run</string>
     <string name="action_save">Save</string>
     <string name="app_name">Dynamic Code Runner</string>
-    <string name="editor_subtitle">Java is wired end-to-end today. Python, Node.js, and C++ (WASM) already have UI and executor extension points.</string>
+    <string name="editor_subtitle">Java is wired end-to-end today. Kotlin and JavaScript already have storage, UI, and executor extension points.</string>
     <string name="editor_title">Dynamic Code Runner</string>
     <string name="language_label">Language</string>
+    <string name="result_details_label">Details</string>
+    <string name="result_error_label">Error</string>
+    <string name="result_return_value_label">Return value</string>
+    <string name="result_stdout_label">stdout</string>
     <string name="saved_snippets_label">Saved snippets</string>
     <string name="source_code_label">Source code</string>
     <string name="title_hint">HelloJava</string>
