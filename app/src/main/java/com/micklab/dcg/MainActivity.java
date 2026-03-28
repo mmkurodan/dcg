@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         refreshSnippets(null);
         resultView.render(ExecutionResult.info(
                 "Project scaffold ready",
-                "Java can compile and execute on-device through ECJ, D8, and DexClassLoader.",
+                "Java now compiles on-device through an Android-compatible ECJ 4.6 bundle, D8, and DexClassLoader.",
                 "Use the language selector to prepare future Kotlin and JavaScript snippets today."));
     }
 

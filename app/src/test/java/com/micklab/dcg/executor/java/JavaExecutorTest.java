@@ -24,4 +24,18 @@ public class JavaExecutorTest {
         assertFalse(requiredClasses.contains("org.eclipse.jdt.internal.compiler.tool.EclipseCompiler"));
         assertFalse(requiredClasses.contains("org.eclipse.jdt.internal.compiler.apt.dispatch.BatchAnnotationProcessorManager"));
     }
+
+    @Test
+    public void bundledCompilerLayoutMentionsAndroidCompatibleBundle() throws Exception {
+        Field field = JavaExecutor.class.getDeclaredField("BUNDLED_COMPILER_LAYOUT");
+        field.setAccessible(true);
+
+        String layout = (String) field.get(null);
+
+        assertTrue(layout.contains("ecj-4.6.jar"));
+        assertTrue(layout.contains("org.eclipse.jdt.core-3.12.0.jar"));
+        assertTrue(layout.contains("org.eclipse.jdt.compiler.tool-1.2.0.jar"));
+        assertTrue(layout.contains("org.eclipse.jdt.compiler.apt-1.2.100.jar"));
+        assertTrue(layout.contains("sourceversion-stub.jar"));
+    }
 }

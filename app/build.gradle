@@ -8,15 +8,39 @@ configurations.configureEach {
 }
 
 def compilerLibsDir = layout.projectDirectory.dir("libs")
+// JDT 4.6-era artifacts are bundled explicitly so the app never falls back to newer
+// desktop-oriented JDT jars that reference java.lang.Runtime$Version on Android.
 def bundledCompilerJars = [
-        "ecj.jar",
-        "org.eclipse.jdt.core.jar",
-        "org.eclipse.jdt.compiler.tool.jar",
-        "org.eclipse.jdt.compiler.apt.jar"
+        "ecj-4.6.jar",
+        "org.eclipse.jdt.core-3.12.0.jar",
+        "org.eclipse.jdt.compiler.tool-1.2.0.jar",
+        "org.eclipse.jdt.compiler.apt-1.2.100.jar"
+]
+def packagedCompilerRuntimeJars = [
+        "ecj-4.6.jar",
+        "sourceversion-stub.jar"
 ]
 def allBundledLibs = fileTree(dir: "${projectDir}/libs", include: ['*.jar'])
 def sourceVersionStubSourcesDir = layout.projectDirectory.dir("stubs")
 def sourceVersionStubClassesDir = layout.buildDirectory.dir("generated/sourceversion-stub/classes")
+def forbiddenJdtSymbol = "java/lang/Runtime\$Version"
+
+def jarContainsText = { File jarFile, String marker ->
+    boolean found = false
+    new java.util.jar.JarFile(jarFile).withCloseable { jar ->
+        def entries = jar.entries()
+        while (entries.hasMoreElements() && !found) {
+            def entry = entries.nextElement()
+            if (entry.isDirectory()) {
+                continue
+            }
+            jar.getInputStream(entry).withCloseable { input ->
+                found = new String(input.bytes, java.nio.charset.StandardCharsets.ISO_8859_1).contains(marker)
+            }
+        }
+    }
+    return found
+}
 
 configurations {
     compilerBundle
@@ -96,6 +120,10 @@ tasks.register("verifyBundledCompilerJars") {
             if (!candidate.isFile()) {
                 throw new GradleException("Missing required compiler bundle: app/libs/" + fileName)
             }
+            if (jarContainsText(candidate, forbiddenJdtSymbol)) {
+                throw new GradleException("Bundled compiler jar app/libs/" + fileName
+                        + " still references java.lang.Runtime\$Version. Replace it with the Android-compatible ECJ 4.6-era bundle.")
+            }
         }
     }
 }
@@ -108,13 +136,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.activity:activity:1.9.0'
     compilerBundle allBundledLibs
-    // ecj.jar already carries the tool/apt bytecode, so only the non-overlapping jars
-    // join the app classpath to avoid duplicate classes during packaging.
-    implementation files(
-            "${projectDir}/libs/ecj.jar",
-            "${projectDir}/libs/org.eclipse.jdt.core.jar",
-            "${projectDir}/libs/sourceversion-stub.jar"
-    )
+    // The full 4.6-era compiler bundle lives in app/libs for inspection and packaging checks.
+    // ECJ 4.6 already contains the overlapping batch compiler classes, so only ECJ itself plus
+    // the SourceVersion stub join the APK classpath; the core/tool/apt jars stay on disk as the
+    // documented scaffold bundle without triggering duplicate classes during packaging.
+    implementation files(packagedCompilerRuntimeJars.collect { "${projectDir}/libs/${it}" })
     implementation 'com.android.tools:r8:8.5.35'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'

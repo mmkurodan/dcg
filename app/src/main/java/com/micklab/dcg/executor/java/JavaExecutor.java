@@ -58,10 +58,12 @@ public class JavaExecutor implements LanguageExecutor {
             "org.eclipse.jdt.core.compiler.batch.BatchCompiler",
             "javax.lang.model.SourceVersion"
     };
-    private static final String BUNDLED_COMPILER_LAYOUT = "Expected the packaged ECJ batch runtime "
-            + "(app/libs/ecj.jar, app/libs/org.eclipse.jdt.core.jar, and app/libs/sourceversion-stub.jar) "
-            + "plus the bundled D8 runtime. The desktop javax.tools adapter classes are optional because "
-            + "this executor compiles via BatchCompiler with -proc:none.";
+    private static final String BUNDLED_COMPILER_LAYOUT = "Expected the Android-compatible ECJ bundle "
+            + "(app/libs/ecj-4.6.jar, app/libs/org.eclipse.jdt.core-3.12.0.jar, "
+            + "app/libs/org.eclipse.jdt.compiler.tool-1.2.0.jar, "
+            + "app/libs/org.eclipse.jdt.compiler.apt-1.2.100.jar, and app/libs/sourceversion-stub.jar) "
+            + "plus the bundled D8 runtime. The executor compiles through BatchCompiler with -proc:none, "
+            + "so tool/apt stay bundled for compatibility while ECJ batch + the SourceVersion stub do the work.";
 
     @Override
     public SupportedLanguage getLanguage() {

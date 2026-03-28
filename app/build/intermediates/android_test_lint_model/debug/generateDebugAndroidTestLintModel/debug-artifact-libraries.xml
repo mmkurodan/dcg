@@ -1,13 +1,8 @@
 <libraries>
   <library
-      name="__local_aars__:/root/dcg/app/libs/ecj.jar:unspecified@jar"
-      jars="/root/dcg/app/libs/ecj.jar"
-      resolved="__local_aars__:/root/dcg/app/libs/ecj.jar:unspecified"
-      provided="true"/>
-  <library
-      name="__local_aars__:/root/dcg/app/libs/org.eclipse.jdt.core.jar:unspecified@jar"
-      jars="/root/dcg/app/libs/org.eclipse.jdt.core.jar"
-      resolved="__local_aars__:/root/dcg/app/libs/org.eclipse.jdt.core.jar:unspecified"
+      name="__local_aars__:/root/dcg/app/libs/ecj-4.6.jar:unspecified@jar"
+      jars="/root/dcg/app/libs/ecj-4.6.jar"
+      resolved="__local_aars__:/root/dcg/app/libs/ecj-4.6.jar:unspecified"
       provided="true"/>
   <library
       name="__local_aars__:/root/dcg/app/libs/sourceversion-stub.jar:unspecified@jar"
