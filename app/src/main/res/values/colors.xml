@@ -1,0 +1,15 @@
+<resources>
+    <color name="primary">#1B5E20</color>
+    <color name="primaryDark">#104216</color>
+    <color name="accent">#1565C0</color>
+    <color name="surface">#FFF8F3</color>
+    <color name="panel">#FFFFFFFF</color>
+    <color name="panelSelected">#E3F2FD</color>
+    <color name="stroke">#D6D6D6</color>
+    <color name="textPrimary">#202124</color>
+    <color name="textSecondary">#5F6368</color>
+    <color name="success">#2E7D32</color>
+    <color name="error">#C62828</color>
+    <color name="warning">#EF6C00</color>
+    <color name="info">#1565C0</color>
+</resources>

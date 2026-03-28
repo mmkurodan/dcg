@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#1565C0</color>
+    <color name="error">#C62828</color>
+    <color name="info">#1565C0</color>
+    <color name="panel">#FFFFFFFF</color>
+    <color name="panelSelected">#E3F2FD</color>
+    <color name="primary">#1B5E20</color>
+    <color name="primaryDark">#104216</color>
+    <color name="stroke">#D6D6D6</color>
+    <color name="success">#2E7D32</color>
+    <color name="surface">#FFF8F3</color>
+    <color name="textPrimary">#202124</color>
+    <color name="textSecondary">#5F6368</color>
+    <color name="warning">#EF6C00</color>
+    <string name="action_delete">Delete</string>
+    <string name="action_export">Export</string>
+    <string name="action_import">Import</string>
+    <string name="action_new">New</string>
+    <string name="action_run">Run</string>
+    <string name="action_save">Save</string>
+    <string name="app_name">Dynamic Code Runner</string>
+    <string name="editor_subtitle">Java is wired end-to-end today. Python, Node.js, and C++ (WASM) already have UI and executor extension points.</string>
+    <string name="editor_title">Dynamic Code Runner</string>
+    <string name="language_label">Language</string>
+    <string name="saved_snippets_label">Saved snippets</string>
+    <string name="source_code_label">Source code</string>
+    <string name="title_hint">HelloJava</string>
+    <string name="title_label">Snippet title</string>
+    <style name="Theme.Dcg" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/surface</item>
+    </style>
+</resources>

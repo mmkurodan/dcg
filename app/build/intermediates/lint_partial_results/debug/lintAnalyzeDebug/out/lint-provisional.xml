@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.5.1" type="conditional_incidents">
+
+    <incident
+        id="ScopedStorage"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="4"
+            column="23"
+            startOffset="114"
+            endLine="4"
+            endColumn="63"
+            endOffset="154"/>
+        <map>
+            <entry
+                name="maxSdkVersion"
+                int="28"/>
+            <entry
+                name="read"
+                boolean="true"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ScopedStorage"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="7"
+            column="23"
+            startOffset="237"
+            endLine="7"
+            endColumn="64"
+            endOffset="278"/>
+        <map>
+            <entry
+                name="maxSdkVersion"
+                int="28"/>
+            <entry
+                name="read"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+                startOffset="6589"
+                endOffset="6622"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+            line="156"
+            column="5"
+            startOffset="6589"
+            endLine="156"
+            endColumn="38"
+            endOffset="6622"/>
+        <map>
+            <condition minGE="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+                startOffset="10337"
+                endOffset="10370"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+            line="247"
+            column="5"
+            startOffset="10337"
+            endLine="247"
+            endColumn="38"
+            endOffset="10370"/>
+        <map>
+            <condition minGE="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+                startOffset="10578"
+                endOffset="10611"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+            line="254"
+            column="5"
+            startOffset="10578"
+            endLine="254"
+            endColumn="38"
+            endOffset="10611"/>
+        <map>
+            <condition minGE="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+                startOffset="11092"
+                endOffset="11125"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
+            line="269"
+            column="5"
+            startOffset="11092"
+            endLine="269"
+            endColumn="38"
+            endOffset="11125"/>
+        <map>
+            <condition minGE="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 29">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/storage/DownloadsImportExportManager.java"
+                startOffset="2927"
+                endOffset="2960"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/storage/DownloadsImportExportManager.java"
+            line="82"
+            column="5"
+            startOffset="2927"
+            endLine="82"
+            endColumn="38"
+            endOffset="2960"/>
+        <map>
+            <condition minGE="fffffffff0000000"/>
+        </map>
+    </incident>
+
+</incidents>
