@@ -123,8 +123,8 @@ public class JavaExecutor implements LanguageExecutor {
             parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
             sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
 
-            String compilerClasspath = resolveCompilerClasspath();
-            CompilationOutcome compilation = compileSource(sourceFile, classesDir, compilerClasspath);
+            String bootClasspath = resolveBootClasspath();
+            CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath);
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
                         "Java compilation failed",
@@ -138,7 +138,7 @@ public class JavaExecutor implements LanguageExecutor {
                         elapsedSince(startTime));
             }
 
-            File dexBundle = dexClasses(classesDir, dexDir, resolveLibraryFiles(compilerClasspath));
+            File dexBundle = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath));
             InvocationOutcome outcome = loadAndRun(context, dexBundle, parsedSource.getQualifiedClassName(), optimizedDir);
             return ExecutionResult.success(
                     "Java execution succeeded",
@@ -195,20 +195,18 @@ public class JavaExecutor implements LanguageExecutor {
         return CompilerRuntimeStatus.missing("Missing runtime classes: " + TextUtils.join(", ", missingClasses));
     }
 
-    private CompilationOutcome compileSource(File sourceFile, File classesDir, String classpath) {
+    private CompilationOutcome compileSource(File sourceFile, File classesDir, String bootClasspath) {
         StringWriter stdout = new StringWriter();
         StringWriter stderr = new StringWriter();
         boolean success = BatchCompiler.compile(
-                buildCompilerArguments(sourceFile, classesDir, classpath),
+                buildCompilerArguments(sourceFile, classesDir, bootClasspath),
                 new PrintWriter(stdout),
                 new PrintWriter(stderr),
                 null);
         return new CompilationOutcome(success, stdout.toString(), stderr.toString());
     }
 
-    static String[] buildCompilerArguments(File sourceFile, File classesDir, String classpath) {
-        String bootClasspath = System.getProperty("java.boot.class.path");
-
+    static String[] buildCompilerArguments(File sourceFile, File classesDir, String bootClasspath) {
         List<String> arguments = new ArrayList<>();
         Collections.addAll(arguments,
                 "-1.8",
@@ -216,9 +214,6 @@ public class JavaExecutor implements LanguageExecutor {
                 "-proc:none",
                 "-g",
                 "-d", classesDir.getAbsolutePath());
-        if (!TextUtils.isEmpty(classpath)) {
-            arguments.addAll(Arrays.asList("-classpath", classpath));
-        }
         if (!TextUtils.isEmpty(bootClasspath)) {
             arguments.addAll(Arrays.asList("-bootclasspath", bootClasspath));
         }
@@ -378,7 +373,7 @@ public class JavaExecutor implements LanguageExecutor {
         return sourceFile;
     }
 
-    private String resolveCompilerClasspath() throws IOException {
+    private String resolveBootClasspath() throws IOException {
         LinkedHashSet<String> entries = new LinkedHashSet<>();
         addExistingPathEntries(entries, System.getenv("BOOTCLASSPATH"));
         addExistingPathEntries(entries, System.getenv("SYSTEMSERVERCLASSPATH"));
@@ -408,12 +403,12 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    private List<Path> resolveLibraryFiles(String classpath) {
+    private List<Path> resolveLibraryFiles(String bootClasspath) {
         List<Path> libraryFiles = new ArrayList<>();
-        if (TextUtils.isEmpty(classpath)) {
+        if (TextUtils.isEmpty(bootClasspath)) {
             return libraryFiles;
         }
-        String[] segments = classpath.split(File.pathSeparator);
+        String[] segments = bootClasspath.split(File.pathSeparator);
         for (String segment : segments) {
             File candidate = new File(segment);
             if (candidate.isFile()) {

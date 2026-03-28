@@ -42,34 +42,21 @@ public class JavaExecutorTest {
     }
 
     @Test
-    public void compilerArgumentsUseRuntimeBootClasspathProperty() {
-        String originalBootClasspath = System.getProperty("java.boot.class.path");
-        String expectedClasspath = "/tmp/compiler-libs.jar";
+    public void compilerArgumentsUseResolvedBootClasspath() {
         String expectedBootClasspath = "/system/framework/core-oj.jar"
                 + File.pathSeparator
                 + "/system/framework/core-libart.jar";
 
-        try {
-            System.setProperty("java.boot.class.path", expectedBootClasspath);
+        List<String> arguments = Arrays.asList(JavaExecutor.buildCompilerArguments(
+                new File("/tmp/HelloJava.java"),
+                new File("/tmp/classes"),
+                expectedBootClasspath));
 
-            List<String> arguments = Arrays.asList(JavaExecutor.buildCompilerArguments(
-                    new File("/tmp/HelloJava.java"),
-                    new File("/tmp/classes"),
-                    expectedClasspath));
+        int classpathIndex = arguments.indexOf("-classpath");
+        int bootClasspathIndex = arguments.indexOf("-bootclasspath");
 
-            int classpathIndex = arguments.indexOf("-classpath");
-            int bootClasspathIndex = arguments.indexOf("-bootclasspath");
-
-            assertTrue(classpathIndex >= 0);
-            assertTrue(bootClasspathIndex >= 0);
-            assertEquals(expectedClasspath, arguments.get(classpathIndex + 1));
-            assertEquals(expectedBootClasspath, arguments.get(bootClasspathIndex + 1));
-        } finally {
-            if (originalBootClasspath == null) {
-                System.clearProperty("java.boot.class.path");
-            } else {
-                System.setProperty("java.boot.class.path", originalBootClasspath);
-            }
-        }
+        assertEquals(-1, classpathIndex);
+        assertTrue(bootClasspathIndex >= 0);
+        assertEquals(expectedBootClasspath, arguments.get(bootClasspathIndex + 1));
     }
 }
