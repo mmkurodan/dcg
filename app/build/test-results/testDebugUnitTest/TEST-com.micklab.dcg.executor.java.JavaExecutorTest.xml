@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-03-29T13:39:01" hostname="localhost" time="0.031">
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-03-29T14:16:44" hostname="localhost" time="0.008">
   <properties/>
-  <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.024"/>
-  <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.002"/>
+  <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.006"/>
+  <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
   <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

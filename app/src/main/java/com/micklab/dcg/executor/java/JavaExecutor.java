@@ -32,6 +32,7 @@ import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,7 +47,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-import dalvik.system.DexClassLoader;
+import dalvik.system.InMemoryDexClassLoader;
 
 public class JavaExecutor implements LanguageExecutor {
     private static final String TAG = "JavaExecutor";
@@ -114,7 +115,7 @@ public class JavaExecutor implements LanguageExecutor {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             return ExecutionResult.unsupported(
                     "Java executor requires Android 8.0+",
-                    "ECJ can compile on earlier devices, but the D8 path-based dex pipeline needs API 26 or higher.",
+                    "ECJ can compile on earlier devices, but D8 + in-memory dex loading needs API 26 or higher.",
                     "Storage, editing, import, and export still work below API 26.");
         }
 
@@ -134,7 +135,6 @@ public class JavaExecutor implements LanguageExecutor {
         File sourceRoot = new File(runRoot, "src");
         File classesDir = new File(runRoot, "classes");
         File dexDir = new File(runRoot, "dex");
-        File optimizedDir = new File(runRoot, "opt");
         JavaSourceParser.ParsedJavaSource parsedSource = null;
         File sourceFile = null;
         String bootClasspathDiagnostics = "";
@@ -143,7 +143,6 @@ public class JavaExecutor implements LanguageExecutor {
             ensureDirectory(sourceRoot);
             ensureDirectory(classesDir);
             ensureDirectory(dexDir);
-            ensureDirectory(optimizedDir);
 
             parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
             sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
@@ -166,8 +165,8 @@ public class JavaExecutor implements LanguageExecutor {
                         elapsedSince(startTime));
             }
 
-            File dexBundle = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath));
-            InvocationOutcome outcome = loadAndRun(context, dexBundle, parsedSource.getQualifiedClassName(), optimizedDir);
+            File dexFile = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath));
+            InvocationOutcome outcome = loadAndRun(context, dexFile, parsedSource.getQualifiedClassName());
             return ExecutionResult.success(
                     "Java execution succeeded",
                     parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".",
@@ -175,7 +174,7 @@ public class JavaExecutor implements LanguageExecutor {
                     outcome.returnValue,
                     outcome.stderr,
                     joinDetails(
-                            "Dex bundle: " + dexBundle.getName(),
+                            "Dex output: " + dexFile.getName(),
                             formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } catch (CapturedInvocationException exception) {
@@ -282,36 +281,15 @@ public class JavaExecutor implements LanguageExecutor {
         if (!dexFile.isFile()) {
             throw new IOException("D8 finished without producing classes.dex.");
         }
-        File bundle = new File(dexDir, "classes.jar");
-        packageDex(bundle, dexFile);
-        return bundle;
+        return dexFile;
     }
 
-    private InvocationOutcome loadAndRun(Context context, File dexBundle, String qualifiedClassName, File optimizedDir) throws Exception {
-        File dexFile = dexBundle;
-        File standaloneDex = new File(dexBundle.getParentFile(), "classes.dex");
-        if (standaloneDex.isFile()) {
-            dexFile = standaloneDex;
-        }
-
-        // Android 14+ rejects writable dex/jar inputs for DexClassLoader.
-        if (!dexFile.setWritable(false, false) && dexFile.canWrite()) {
-            throw new IOException("Failed to mark dex input as read-only: " + dexFile.getAbsolutePath());
-        }
-        if (!dexFile.setReadable(true, true) || !dexFile.canRead()) {
-            throw new IOException("Failed to make dex input readable: " + dexFile.getAbsolutePath());
-        }
-        if (!dexFile.setExecutable(false, false) && dexFile.canExecute()) {
-            throw new IOException("Failed to clear executable bit on dex input: " + dexFile.getAbsolutePath());
-        }
-
-        // Alternative (API 26+): read classes.dex into a ByteBuffer and use
-        // dalvik.system.InMemoryDexClassLoader to avoid file-based class loading entirely.
-        DexClassLoader classLoader = new DexClassLoader(
-                dexFile.getAbsolutePath(),
-                optimizedDir.getAbsolutePath(),
-                null,
-                context.getClassLoader());
+    @TargetApi(Build.VERSION_CODES.O)
+    private InvocationOutcome loadAndRun(Context context, File dexFile, String qualifiedClassName) throws Exception {
+        byte[] dexBytes = Files.readAllBytes(dexFile.toPath());
+        ByteBuffer dexBuffer = ByteBuffer.wrap(dexBytes);
+        ClassLoader parent = context.getClassLoader();
+        InMemoryDexClassLoader classLoader = new InMemoryDexClassLoader(dexBuffer, parent);
         Class<?> dynamicClass = classLoader.loadClass(qualifiedClassName);
 
         Method runMethod = findRunMethod(dynamicClass);
@@ -407,15 +385,6 @@ public class JavaExecutor implements LanguageExecutor {
             } else if (child.getName().endsWith(".class")) {
                 classFiles.add(child.toPath());
             }
-        }
-    }
-
-    @TargetApi(Build.VERSION_CODES.O)
-    private void packageDex(File bundle, File dexFile) throws IOException {
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream(bundle))) {
-            zipOutputStream.putNextEntry(new ZipEntry("classes.dex"));
-            Files.copy(dexFile.toPath(), zipOutputStream);
-            zipOutputStream.closeEntry();
         }
     }
 
