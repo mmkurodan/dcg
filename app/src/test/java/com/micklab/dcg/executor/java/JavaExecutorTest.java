@@ -59,4 +59,41 @@ public class JavaExecutorTest {
         assertTrue(bootClasspathIndex >= 0);
         assertEquals(expectedBootClasspath, arguments.get(bootClasspathIndex + 1));
     }
+
+    @Test
+    public void preferredApexBootJarsIncludeAndroid10To14Entries() throws Exception {
+        Field field = JavaExecutor.class.getDeclaredField("PREFERRED_APEX_BOOT_JARS");
+        field.setAccessible(true);
+
+        String[] preferred = (String[]) field.get(null);
+        List<String> preferredEntries = Arrays.asList(preferred);
+
+        assertEquals("/apex/com.android.art/javalib/core-oj.jar", preferredEntries.get(0));
+        assertEquals("/apex/com.android.art/javalib/core-libart.jar", preferredEntries.get(1));
+        assertEquals("/apex/com.android.art/javalib/okhttp.jar", preferredEntries.get(2));
+        assertEquals("/apex/com.android.art/javalib/conscrypt.jar", preferredEntries.get(3));
+        assertEquals("/apex/com.android.art/javalib/bouncycastle.jar", preferredEntries.get(4));
+    }
+
+    @Test
+    public void fallbackBootJarsKeepApexEntriesAtHighestPriority() throws Exception {
+        Field field = JavaExecutor.class.getDeclaredField("FALLBACK_BOOT_JARS");
+        field.setAccessible(true);
+
+        String[] fallback = (String[]) field.get(null);
+        List<String> fallbackEntries = Arrays.asList(fallback);
+
+        int apexCoreOjIndex = fallbackEntries.indexOf("/apex/com.android.art/javalib/core-oj.jar");
+        int apexCoreLibartIndex = fallbackEntries.indexOf("/apex/com.android.art/javalib/core-libart.jar");
+        int runtimeCoreOjIndex = fallbackEntries.indexOf("/apex/com.android.runtime/javalib/core-oj.jar");
+        int systemCoreOjIndex = fallbackEntries.indexOf("/system/framework/core-oj.jar");
+
+        assertTrue(apexCoreOjIndex >= 0);
+        assertTrue(apexCoreLibartIndex >= 0);
+        assertTrue(runtimeCoreOjIndex >= 0);
+        assertTrue(systemCoreOjIndex >= 0);
+        assertTrue(apexCoreOjIndex < runtimeCoreOjIndex);
+        assertTrue(apexCoreLibartIndex < runtimeCoreOjIndex);
+        assertTrue(apexCoreOjIndex < systemCoreOjIndex);
+    }
 }

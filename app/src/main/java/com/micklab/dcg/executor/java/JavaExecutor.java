@@ -44,18 +44,25 @@ import dalvik.system.DexClassLoader;
 
 public class JavaExecutor implements LanguageExecutor {
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
+    private static final String APEX_ART_JAVALIB_DIRECTORY = "/apex/com.android.art/javalib";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
+    private static final String OKHTTP_JAR = "okhttp.jar";
+    private static final String CONSCRYPT_JAR = "conscrypt.jar";
+    private static final String BOUNCYCASTLE_JAR = "bouncycastle.jar";
     private static final String[] PREFERRED_APEX_BOOT_JARS = new String[]{
-            "/apex/com.android.art/javalib/" + CORE_OJ_JAR,
-            "/apex/com.android.art/javalib/" + CORE_LIBART_JAR,
-            "/apex/com.android.art/javalib/okhttp.jar",
-            "/apex/com.android.art/javalib/conscrypt.jar",
-            "/apex/com.android.art/javalib/bouncycastle.jar"
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_OJ_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_LIBART_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + OKHTTP_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CONSCRYPT_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + BOUNCYCASTLE_JAR
     };
     private static final String[] FALLBACK_BOOT_JARS = new String[]{
-            "/apex/com.android.art/javalib/core-oj.jar",
-            "/apex/com.android.art/javalib/core-libart.jar",
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_OJ_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_LIBART_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + OKHTTP_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + CONSCRYPT_JAR,
+            APEX_ART_JAVALIB_DIRECTORY + "/" + BOUNCYCASTLE_JAR,
             "/apex/com.android.runtime/javalib/core-oj.jar",
             "/apex/com.android.runtime/javalib/core-libart.jar",
             "/system/framework/core-oj.jar",
@@ -65,7 +72,7 @@ public class JavaExecutor implements LanguageExecutor {
             "/system/framework/ext.jar"
     };
     private static final String[] CORE_BOOT_JAR_SEARCH_DIRECTORIES = new String[]{
-            "/apex/com.android.art/javalib",
+            APEX_ART_JAVALIB_DIRECTORY,
             "/apex/com.android.runtime/javalib",
             "/system/framework",
             "/system_ext/framework"
@@ -407,10 +414,14 @@ public class JavaExecutor implements LanguageExecutor {
         addExistingPathEntries(entries, System.getenv("SYSTEMSERVERCLASSPATH"));
         addExistingPathEntries(entries, System.getProperty("java.boot.class.path"));
         addExistingPathEntries(entries, System.getProperty("sun.boot.class.path"));
+        // Android 10+ typically serves the core runtime jars from ART APEX.
         addReadableCandidates(entries, PREFERRED_APEX_BOOT_JARS);
         addReadableCandidates(entries, FALLBACK_BOOT_JARS);
         if (!containsCoreBootJar(entries)) {
             discoverCoreBootJars(entries);
+        }
+        if (entries.isEmpty()) {
+            throw new IOException("Unable to resolve any readable bootclasspath entries for ECJ.");
         }
         if (!containsCoreBootJar(entries)) {
             throw new IOException("Unable to locate Android core boot jars (core-oj.jar/core-libart.jar) for ECJ.");
