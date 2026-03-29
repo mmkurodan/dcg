@@ -248,10 +248,8 @@ public class JavaExecutor implements LanguageExecutor {
 
     private CompilationOutcome compileSource(File sourceFile, File classesDir, String resolvedBootClasspath) {
         String systemBootClasspath = System.getProperty("java.boot.class.path");
-        String bootClasspath = systemBootClasspath;
-        if (TextUtils.isEmpty(bootClasspath)) {
-            bootClasspath = resolvedBootClasspath;
-        }
+        // Android の java.boot.class.path は使用せず、常にローカルコピーを使う。
+        String bootClasspath = resolvedBootClasspath;
         String[] args = buildCompilerArguments(sourceFile, classesDir, bootClasspath);
         String bootClasspathDiagnostics = buildBootClasspathDiagnostics(
                 resolvedBootClasspath,
