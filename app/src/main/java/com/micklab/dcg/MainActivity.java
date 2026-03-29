@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat;
 
 import com.micklab.dcg.executor.LanguageExecutor;
 import com.micklab.dcg.executor.LanguageExecutorRegistry;
+import com.micklab.dcg.executor.java.JavaExecutor;
 import com.micklab.dcg.executor.java.JavaSourceParser;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.SourceSnippet;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         fileManager = new FileManager(this);
         executorRegistry = new LanguageExecutorRegistry();
         snippetAdapter = new SnippetListAdapter(this);
+        backgroundExecutor.execute(() -> JavaExecutor.stageBootJarsOnStartup(getApplicationContext()));
 
         setupLanguageSpinner();
         setupSnippetList();
