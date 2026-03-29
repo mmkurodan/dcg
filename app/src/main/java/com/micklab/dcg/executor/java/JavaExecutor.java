@@ -143,8 +143,10 @@ public class JavaExecutor implements LanguageExecutor {
         Context targetContext = appContext == null ? context : appContext;
         try {
             new JavaExecutor().resolveBootClasspath(targetContext);
-        } catch (IOException exception) {
+        } catch (IOException | RuntimeException exception) {
             Log.w(TAG, "Startup staging of core runtime jars failed.", exception);
+        } catch (LinkageError error) {
+            Log.w(TAG, "Startup staging of core runtime jars hit a linkage failure.", error);
         }
     }
 
@@ -488,7 +490,13 @@ public class JavaExecutor implements LanguageExecutor {
 
         if (!tryFetchBootJarsOnline(runtimeDirectory)) {
             if (!tryStageBootJarsFromAssets(context, runtimeDirectory)) {
-                stageBootJarsFromApex(runtimeDirectory);
+                try {
+                    stageBootJarsFromApex(runtimeDirectory);
+                } catch (RuntimeException exception) {
+                    throw new IOException("APEX boot jar staging failed unexpectedly.", exception);
+                } catch (LinkageError error) {
+                    throw new IOException("APEX boot jar staging failed due to runtime linkage.", error);
+                }
             }
         }
 
@@ -628,9 +636,13 @@ public class JavaExecutor implements LanguageExecutor {
         if (TextUtils.isEmpty(candidatePath)) {
             return;
         }
-        File candidate = new File(candidatePath);
-        if (candidate.isFile() && candidate.canRead() && isCoreBootJarName(candidate.getName())) {
-            entries.add(candidate.getAbsolutePath());
+        try {
+            File candidate = new File(candidatePath);
+            if (candidate.isFile() && candidate.canRead() && isCoreBootJarName(candidate.getName())) {
+                entries.add(candidate.getAbsolutePath());
+            }
+        } catch (SecurityException exception) {
+            Log.w(TAG, "Access denied while probing boot jar candidate: " + candidatePath, exception);
         }
     }
 
@@ -638,17 +650,27 @@ public class JavaExecutor implements LanguageExecutor {
         if (directory == null || depth > CORE_BOOT_JAR_SEARCH_DEPTH || !directory.isDirectory()) {
             return;
         }
-        File[] children = directory.listFiles();
+        File[] children;
+        try {
+            children = directory.listFiles();
+        } catch (SecurityException exception) {
+            Log.w(TAG, "Access denied while traversing boot jar search root: " + directory.getAbsolutePath(), exception);
+            return;
+        }
         if (children == null) {
             return;
         }
         for (File child : children) {
-            if (child.isDirectory()) {
-                searchCoreBootJars(entries, child, depth + 1);
-                continue;
-            }
-            if (child.isFile() && child.canRead() && isCoreBootJarName(child.getName())) {
-                entries.add(child.getAbsolutePath());
+            try {
+                if (child.isDirectory()) {
+                    searchCoreBootJars(entries, child, depth + 1);
+                    continue;
+                }
+                if (child.isFile() && child.canRead() && isCoreBootJarName(child.getName())) {
+                    entries.add(child.getAbsolutePath());
+                }
+            } catch (SecurityException exception) {
+                Log.w(TAG, "Access denied while scanning boot jar candidate: " + child.getAbsolutePath(), exception);
             }
         }
     }
@@ -770,7 +792,13 @@ public class JavaExecutor implements LanguageExecutor {
         if (stagingFile.renameTo(destinationFile)) {
             return;
         }
-        Files.copy(stagingFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        try {
+            Files.copy(stagingFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (RuntimeException exception) {
+            throw new IOException("Failed to copy staged file into destination.", exception);
+        } catch (LinkageError error) {
+            throw new IOException("Failed to copy staged file due to runtime linkage.", error);
+        }
         if (!stagingFile.delete()) {
             Log.w(TAG, "Could not delete staging file: " + stagingFile.getAbsolutePath());
         }

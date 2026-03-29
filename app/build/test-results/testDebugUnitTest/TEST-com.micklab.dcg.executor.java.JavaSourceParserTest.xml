@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaSourceParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-29T12:06:58" hostname="localhost" time="0.004">
+<testsuite name="com.micklab.dcg.executor.java.JavaSourceParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-29T12:23:32" hostname="localhost" time="0.004">
   <properties/>
-  <testcase name="parseRejectsMissingTypeDeclaration" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.003"/>
-  <testcase name="parseBuildsQualifiedClassName" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="parseRejectsMissingTypeDeclaration" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
+  <testcase name="parseBuildsQualifiedClassName" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
