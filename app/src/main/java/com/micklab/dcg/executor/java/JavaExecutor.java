@@ -44,6 +44,15 @@ import dalvik.system.DexClassLoader;
 
 public class JavaExecutor implements LanguageExecutor {
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
+    private static final String CORE_OJ_JAR = "core-oj.jar";
+    private static final String CORE_LIBART_JAR = "core-libart.jar";
+    private static final String[] PREFERRED_APEX_BOOT_JARS = new String[]{
+            "/apex/com.android.art/javalib/" + CORE_OJ_JAR,
+            "/apex/com.android.art/javalib/" + CORE_LIBART_JAR,
+            "/apex/com.android.art/javalib/okhttp.jar",
+            "/apex/com.android.art/javalib/conscrypt.jar",
+            "/apex/com.android.art/javalib/bouncycastle.jar"
+    };
     private static final String[] FALLBACK_BOOT_JARS = new String[]{
             "/apex/com.android.art/javalib/core-oj.jar",
             "/apex/com.android.art/javalib/core-libart.jar",
@@ -55,6 +64,18 @@ public class JavaExecutor implements LanguageExecutor {
             "/system/framework/framework.jar",
             "/system/framework/ext.jar"
     };
+    private static final String[] CORE_BOOT_JAR_SEARCH_DIRECTORIES = new String[]{
+            "/apex/com.android.art/javalib",
+            "/apex/com.android.runtime/javalib",
+            "/system/framework",
+            "/system_ext/framework"
+    };
+    private static final String[] CORE_BOOT_JAR_SEARCH_ROOTS = new String[]{
+            "/apex",
+            "/system",
+            "/system_ext"
+    };
+    private static final int CORE_BOOT_JAR_SEARCH_DEPTH = 5;
     // Android does not ship javax.tools, so only verify the ECJ batch path we actually use.
     private static final String[] REQUIRED_BATCH_RUNTIME_CLASSES = new String[]{
             "com.android.tools.r8.D8",
@@ -386,16 +407,82 @@ public class JavaExecutor implements LanguageExecutor {
         addExistingPathEntries(entries, System.getenv("SYSTEMSERVERCLASSPATH"));
         addExistingPathEntries(entries, System.getProperty("java.boot.class.path"));
         addExistingPathEntries(entries, System.getProperty("sun.boot.class.path"));
-        for (String jar : FALLBACK_BOOT_JARS) {
-            File candidate = new File(jar);
-            if (candidate.isFile() && candidate.canRead()) {
-                entries.add(candidate.getAbsolutePath());
-            }
+        addReadableCandidates(entries, PREFERRED_APEX_BOOT_JARS);
+        addReadableCandidates(entries, FALLBACK_BOOT_JARS);
+        if (!containsCoreBootJar(entries)) {
+            discoverCoreBootJars(entries);
         }
-        if (entries.isEmpty()) {
-            throw new IOException("No readable Android bootclasspath entries were found for ECJ.");
+        if (!containsCoreBootJar(entries)) {
+            throw new IOException("Unable to locate Android core boot jars (core-oj.jar/core-libart.jar) for ECJ.");
         }
         return TextUtils.join(File.pathSeparator, entries);
+    }
+
+    private void addReadableCandidates(LinkedHashSet<String> entries, String[] candidates) {
+        for (String candidatePath : candidates) {
+            addReadablePath(entries, candidatePath);
+        }
+    }
+
+    private void addReadablePath(LinkedHashSet<String> entries, String candidatePath) {
+        if (TextUtils.isEmpty(candidatePath)) {
+            return;
+        }
+        File candidate = new File(candidatePath);
+        if (candidate.isFile() && candidate.canRead()) {
+            entries.add(candidate.getAbsolutePath());
+        }
+    }
+
+    private boolean containsCoreBootJar(LinkedHashSet<String> entries) {
+        for (String entry : entries) {
+            if (isCoreBootJarName(new File(entry).getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void discoverCoreBootJars(LinkedHashSet<String> entries) {
+        for (String directoryPath : CORE_BOOT_JAR_SEARCH_DIRECTORIES) {
+            addReadablePath(entries, directoryPath + "/" + CORE_OJ_JAR);
+            addReadablePath(entries, directoryPath + "/" + CORE_LIBART_JAR);
+            if (containsCoreBootJar(entries)) {
+                return;
+            }
+        }
+        for (String searchRoot : CORE_BOOT_JAR_SEARCH_ROOTS) {
+            searchCoreBootJars(entries, new File(searchRoot), 0);
+            if (containsCoreBootJar(entries)) {
+                return;
+            }
+        }
+    }
+
+    private void searchCoreBootJars(LinkedHashSet<String> entries, File directory, int depth) {
+        if (directory == null || depth > CORE_BOOT_JAR_SEARCH_DEPTH || !directory.isDirectory()) {
+            return;
+        }
+        File[] children = directory.listFiles();
+        if (children == null) {
+            return;
+        }
+        for (File child : children) {
+            if (containsCoreBootJar(entries)) {
+                return;
+            }
+            if (child.isDirectory()) {
+                searchCoreBootJars(entries, child, depth + 1);
+                continue;
+            }
+            if (child.isFile() && child.canRead() && isCoreBootJarName(child.getName())) {
+                entries.add(child.getAbsolutePath());
+            }
+        }
+    }
+
+    private boolean isCoreBootJarName(String fileName) {
+        return CORE_OJ_JAR.equals(fileName) || CORE_LIBART_JAR.equals(fileName);
     }
 
     private void addExistingPathEntries(LinkedHashSet<String> entries, String pathList) {
