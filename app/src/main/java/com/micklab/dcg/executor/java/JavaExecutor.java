@@ -288,8 +288,27 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     private InvocationOutcome loadAndRun(Context context, File dexBundle, String qualifiedClassName, File optimizedDir) throws Exception {
+        File dexFile = dexBundle;
+        File standaloneDex = new File(dexBundle.getParentFile(), "classes.dex");
+        if (standaloneDex.isFile()) {
+            dexFile = standaloneDex;
+        }
+
+        // Android 14+ rejects writable dex/jar inputs for DexClassLoader.
+        if (!dexFile.setWritable(false, false) && dexFile.canWrite()) {
+            throw new IOException("Failed to mark dex input as read-only: " + dexFile.getAbsolutePath());
+        }
+        if (!dexFile.setReadable(true, true) || !dexFile.canRead()) {
+            throw new IOException("Failed to make dex input readable: " + dexFile.getAbsolutePath());
+        }
+        if (!dexFile.setExecutable(false, false) && dexFile.canExecute()) {
+            throw new IOException("Failed to clear executable bit on dex input: " + dexFile.getAbsolutePath());
+        }
+
+        // Alternative (API 26+): read classes.dex into a ByteBuffer and use
+        // dalvik.system.InMemoryDexClassLoader to avoid file-based class loading entirely.
         DexClassLoader classLoader = new DexClassLoader(
-                dexBundle.getAbsolutePath(),
+                dexFile.getAbsolutePath(),
                 optimizedDir.getAbsolutePath(),
                 null,
                 context.getClassLoader());
