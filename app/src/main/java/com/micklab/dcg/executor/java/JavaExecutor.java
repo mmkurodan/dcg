@@ -31,6 +31,7 @@ import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +45,8 @@ import dalvik.system.DexClassLoader;
 
 public class JavaExecutor implements LanguageExecutor {
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
+    private static final String LOCAL_BOOT_JAR_DIRECTORY = "java-rt";
+    private static final String JAVA_BOOT_CLASS_PATH_PROPERTY = "java.boot.class.path";
     private static final String APEX_ART_JAVALIB_DIRECTORY = "/apex/com.android.art/javalib";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
@@ -155,8 +158,15 @@ public class JavaExecutor implements LanguageExecutor {
             parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
             sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
 
-            String bootClasspath = resolveBootClasspath();
-            CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath);
+            String bootClasspath = resolveBootClasspath(context);
+            String previousSystemBootClasspath = System.getProperty(JAVA_BOOT_CLASS_PATH_PROPERTY);
+            setSystemBootClasspath(bootClasspath);
+            CompilationOutcome compilation;
+            try {
+                compilation = compileSource(sourceFile, classesDir, bootClasspath);
+            } finally {
+                restoreSystemBootClasspath(previousSystemBootClasspath);
+            }
             bootClasspathDiagnostics = compilation.bootClasspathDiagnostics;
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
@@ -426,25 +436,31 @@ public class JavaExecutor implements LanguageExecutor {
         return sourceFile;
     }
 
-    private String resolveBootClasspath() throws IOException {
+    private String resolveBootClasspath(Context context) throws IOException {
         LinkedHashSet<String> entries = new LinkedHashSet<>();
         addExistingPathEntries(entries, System.getenv("BOOTCLASSPATH"));
         addExistingPathEntries(entries, System.getenv("SYSTEMSERVERCLASSPATH"));
-        addExistingPathEntries(entries, System.getProperty("java.boot.class.path"));
+        addExistingPathEntries(entries, System.getProperty(JAVA_BOOT_CLASS_PATH_PROPERTY));
         addExistingPathEntries(entries, System.getProperty("sun.boot.class.path"));
         // Android 10+ typically serves the core runtime jars from ART APEX.
         addReadableCandidates(entries, PREFERRED_APEX_BOOT_JARS);
         addReadableCandidates(entries, FALLBACK_BOOT_JARS);
-        if (!containsCoreBootJar(entries)) {
+        if (!containsCoreBootJars(entries)) {
             discoverCoreBootJars(entries);
         }
-        if (entries.isEmpty()) {
-            throw new IOException("Unable to resolve any readable bootclasspath entries for ECJ.");
-        }
-        if (!containsCoreBootJar(entries)) {
+        File coreOjJar = findCoreBootJar(entries, CORE_OJ_JAR);
+        File coreLibartJar = findCoreBootJar(entries, CORE_LIBART_JAR);
+        if (coreOjJar == null || coreLibartJar == null) {
             throw new IOException("Unable to locate Android core boot jars (core-oj.jar/core-libart.jar) for ECJ.");
         }
-        return TextUtils.join(File.pathSeparator, entries);
+        File runtimeDirectory = new File(context.getCodeCacheDir(), LOCAL_BOOT_JAR_DIRECTORY);
+        ensureDirectory(runtimeDirectory);
+        File localCoreOjJar = copyBootJarToCodeCache(coreOjJar, runtimeDirectory);
+        File localCoreLibartJar = copyBootJarToCodeCache(coreLibartJar, runtimeDirectory);
+        if (!localCoreOjJar.isFile() || !localCoreLibartJar.isFile()) {
+            throw new IOException("Failed to stage local Android core runtime jars for ECJ.");
+        }
+        return localCoreOjJar.getAbsolutePath() + File.pathSeparator + localCoreLibartJar.getAbsolutePath();
     }
 
     private void addReadableCandidates(LinkedHashSet<String> entries, String[] candidates) {
@@ -463,26 +479,31 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
-    private boolean containsCoreBootJar(LinkedHashSet<String> entries) {
+    private boolean containsCoreBootJars(LinkedHashSet<String> entries) {
+        boolean hasCoreOjJar = false;
+        boolean hasCoreLibartJar = false;
         for (String entry : entries) {
-            if (isCoreBootJarName(new File(entry).getName())) {
-                return true;
+            String fileName = new File(entry).getName();
+            if (CORE_OJ_JAR.equals(fileName)) {
+                hasCoreOjJar = true;
+            } else if (CORE_LIBART_JAR.equals(fileName)) {
+                hasCoreLibartJar = true;
             }
         }
-        return false;
+        return hasCoreOjJar && hasCoreLibartJar;
     }
 
     private void discoverCoreBootJars(LinkedHashSet<String> entries) {
         for (String directoryPath : CORE_BOOT_JAR_SEARCH_DIRECTORIES) {
             addReadablePath(entries, directoryPath + "/" + CORE_OJ_JAR);
             addReadablePath(entries, directoryPath + "/" + CORE_LIBART_JAR);
-            if (containsCoreBootJar(entries)) {
+            if (containsCoreBootJars(entries)) {
                 return;
             }
         }
         for (String searchRoot : CORE_BOOT_JAR_SEARCH_ROOTS) {
             searchCoreBootJars(entries, new File(searchRoot), 0);
-            if (containsCoreBootJar(entries)) {
+            if (containsCoreBootJars(entries)) {
                 return;
             }
         }
@@ -497,7 +518,7 @@ public class JavaExecutor implements LanguageExecutor {
             return;
         }
         for (File child : children) {
-            if (containsCoreBootJar(entries)) {
+            if (containsCoreBootJars(entries)) {
                 return;
             }
             if (child.isDirectory()) {
@@ -510,8 +531,55 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
+    private File findCoreBootJar(LinkedHashSet<String> entries, String jarName) {
+        for (String entry : entries) {
+            File candidate = new File(entry);
+            if (jarName.equals(candidate.getName()) && candidate.isFile() && candidate.canRead()) {
+                return candidate;
+            }
+        }
+        return null;
+    }
+
+    @TargetApi(Build.VERSION_CODES.O)
+    private File copyBootJarToCodeCache(File sourceJar, File runtimeDirectory) throws IOException {
+        if (sourceJar == null || !sourceJar.isFile() || !sourceJar.canRead()) {
+            throw new IOException("Unreadable boot jar: " + (sourceJar == null ? "null" : sourceJar.getAbsolutePath()));
+        }
+        File destinationJar = new File(runtimeDirectory, sourceJar.getName());
+        boolean needsCopy = !destinationJar.isFile()
+                || destinationJar.length() != sourceJar.length()
+                || destinationJar.lastModified() != sourceJar.lastModified();
+        if (needsCopy) {
+            Files.copy(sourceJar.toPath(), destinationJar.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            if (sourceJar.lastModified() > 0L) {
+                destinationJar.setLastModified(sourceJar.lastModified());
+            }
+        }
+        if (!destinationJar.isFile() || !destinationJar.canRead()) {
+            throw new IOException("Failed to copy boot jar into local cache: " + destinationJar.getAbsolutePath());
+        }
+        return destinationJar;
+    }
+
     private boolean isCoreBootJarName(String fileName) {
         return CORE_OJ_JAR.equals(fileName) || CORE_LIBART_JAR.equals(fileName);
+    }
+
+    private void setSystemBootClasspath(String bootClasspath) {
+        if (TextUtils.isEmpty(bootClasspath)) {
+            System.clearProperty(JAVA_BOOT_CLASS_PATH_PROPERTY);
+            return;
+        }
+        System.setProperty(JAVA_BOOT_CLASS_PATH_PROPERTY, bootClasspath);
+    }
+
+    private void restoreSystemBootClasspath(String previousSystemBootClasspath) {
+        if (previousSystemBootClasspath == null) {
+            System.clearProperty(JAVA_BOOT_CLASS_PATH_PROPERTY);
+            return;
+        }
+        System.setProperty(JAVA_BOOT_CLASS_PATH_PROPERTY, previousSystemBootClasspath);
     }
 
     private void addExistingPathEntries(LinkedHashSet<String> entries, String pathList) {
