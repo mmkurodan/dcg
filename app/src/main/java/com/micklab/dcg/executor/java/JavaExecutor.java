@@ -261,7 +261,8 @@ public class JavaExecutor implements LanguageExecutor {
     static String[] buildCompilerArguments(File sourceFile, File classesDir, String bootClasspath) {
         List<String> arguments = new ArrayList<>();
         Collections.addAll(arguments,
-                "-1.8",
+                "-source", "1.8",
+                "-target", "1.8",
                 "-encoding", "UTF-8",
                 "-proc:none",
                 "-g",
