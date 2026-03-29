@@ -119,6 +119,7 @@ public class ResultView extends LinearLayout {
         StringBuilder builder = new StringBuilder();
         appendCopySection(builder, getResources().getString(R.string.result_stdout_label), result.getStdout());
         appendCopySection(builder, getResources().getString(R.string.result_error_label), result.getError());
+        appendCopySection(builder, getResources().getString(R.string.result_details_label), buildDetails(result));
         return builder.toString();
     }
 

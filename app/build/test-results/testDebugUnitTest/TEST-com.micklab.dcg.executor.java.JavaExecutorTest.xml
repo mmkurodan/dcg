@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-03-29T08:47:32" hostname="localhost" time="0.008">
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-03-29T09:53:21" hostname="localhost" time="0.019">
   <properties/>
-  <testcase name="fallbackBootJarsKeepApexEntriesAtHighestPriority" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.005"/>
+  <testcase name="fallbackBootJarsKeepApexEntriesAtHighestPriority" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.013"/>
   <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
-  <testcase name="preferredApexBootJarsIncludeAndroid10To14Entries" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="preferredApexBootJarsIncludeAndroid10To14Entries" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
