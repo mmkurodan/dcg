@@ -47,8 +47,11 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String[] FALLBACK_BOOT_JARS = new String[]{
             "/apex/com.android.art/javalib/core-oj.jar",
             "/apex/com.android.art/javalib/core-libart.jar",
+            "/apex/com.android.runtime/javalib/core-oj.jar",
+            "/apex/com.android.runtime/javalib/core-libart.jar",
             "/system/framework/core-oj.jar",
             "/system/framework/core-libart.jar",
+            "/system/framework/core.jar",
             "/system/framework/framework.jar",
             "/system/framework/ext.jar"
     };
@@ -377,9 +380,11 @@ public class JavaExecutor implements LanguageExecutor {
         LinkedHashSet<String> entries = new LinkedHashSet<>();
         addExistingPathEntries(entries, System.getenv("BOOTCLASSPATH"));
         addExistingPathEntries(entries, System.getenv("SYSTEMSERVERCLASSPATH"));
+        addExistingPathEntries(entries, System.getProperty("java.boot.class.path"));
+        addExistingPathEntries(entries, System.getProperty("sun.boot.class.path"));
         for (String jar : FALLBACK_BOOT_JARS) {
             File candidate = new File(jar);
-            if (candidate.isFile()) {
+            if (candidate.isFile() && candidate.canRead()) {
                 entries.add(candidate.getAbsolutePath());
             }
         }
@@ -396,7 +401,7 @@ public class JavaExecutor implements LanguageExecutor {
         String[] segments = pathList.split(File.pathSeparator);
         for (String segment : segments) {
             File candidate = new File(segment);
-            if (candidate.isFile()) {
+            if (candidate.isFile() && candidate.canRead()) {
                 entries.add(candidate.getAbsolutePath());
             }
         }
