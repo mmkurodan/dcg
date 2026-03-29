@@ -144,6 +144,7 @@ public class JavaExecutor implements LanguageExecutor {
         File optimizedDir = new File(runRoot, "opt");
         JavaSourceParser.ParsedJavaSource parsedSource = null;
         File sourceFile = null;
+        String bootClasspathDiagnostics = "";
 
         try {
             ensureDirectory(sourceRoot);
@@ -156,6 +157,7 @@ public class JavaExecutor implements LanguageExecutor {
 
             String bootClasspath = resolveBootClasspath();
             CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath);
+            bootClasspathDiagnostics = compilation.bootClasspathDiagnostics;
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
                         "Java compilation failed",
@@ -165,7 +167,9 @@ public class JavaExecutor implements LanguageExecutor {
                                 runRoot.getAbsolutePath(),
                                 sourceFile.getAbsolutePath(),
                                 parsedSource.getDisplayFileName()),
-                        "Compiler: ECJ",
+                        joinDetails(
+                                "Compiler: ECJ",
+                                formatBootClasspathDetails(bootClasspathDiagnostics)),
                         elapsedSince(startTime));
             }
 
@@ -177,7 +181,9 @@ public class JavaExecutor implements LanguageExecutor {
                     outcome.stdout,
                     outcome.returnValue,
                     outcome.stderr,
-                    "Dex bundle: " + dexBundle.getName(),
+                    joinDetails(
+                            "Dex bundle: " + dexBundle.getName(),
+                            formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } catch (CapturedInvocationException exception) {
             Throwable rootCause = unwrap(exception.getCause());
@@ -186,7 +192,9 @@ public class JavaExecutor implements LanguageExecutor {
                     exception.entrypoint + " threw an exception.",
                     exception.stdout,
                     combineError(exception.stderr, DiagnosticFormatter.formatThrowable(rootCause)),
-                    buildRuntimeDetails(parsedSource, sourceFile),
+                    joinDetails(
+                            buildRuntimeDetails(parsedSource, sourceFile),
+                            formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } catch (Throwable throwable) {
             Throwable rootCause = unwrap(throwable);
@@ -203,7 +211,9 @@ public class JavaExecutor implements LanguageExecutor {
                     "Compilation finished, but the generated code could not be loaded or executed.",
                     "",
                     DiagnosticFormatter.formatThrowable(rootCause),
-                    buildRuntimeDetails(parsedSource, sourceFile),
+                    joinDetails(
+                            buildRuntimeDetails(parsedSource, sourceFile),
+                            formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } finally {
             pruneOldRuns(snippetRoot, 3);
@@ -227,18 +237,25 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     private CompilationOutcome compileSource(File sourceFile, File classesDir, String resolvedBootClasspath) {
-        String bootClasspath = System.getProperty("java.boot.class.path");
+        String systemBootClasspath = System.getProperty("java.boot.class.path");
+        String bootClasspath = systemBootClasspath;
         if (TextUtils.isEmpty(bootClasspath)) {
             bootClasspath = resolvedBootClasspath;
         }
+        String[] args = buildCompilerArguments(sourceFile, classesDir, bootClasspath);
+        String bootClasspathDiagnostics = buildBootClasspathDiagnostics(
+                resolvedBootClasspath,
+                systemBootClasspath,
+                bootClasspath,
+                args);
         StringWriter stdout = new StringWriter();
         StringWriter stderr = new StringWriter();
         boolean success = BatchCompiler.compile(
-                buildCompilerArguments(sourceFile, classesDir, bootClasspath),
+                args,
                 new PrintWriter(stdout),
                 new PrintWriter(stderr),
                 null);
-        return new CompilationOutcome(success, stdout.toString(), stderr.toString());
+        return new CompilationOutcome(success, stdout.toString(), stderr.toString(), bootClasspathDiagnostics);
     }
 
     static String[] buildCompilerArguments(File sourceFile, File classesDir, String bootClasspath) {
@@ -589,6 +606,36 @@ public class JavaExecutor implements LanguageExecutor {
         return stderr + "\n\n" + throwableText;
     }
 
+    private String buildBootClasspathDiagnostics(
+            String resolvedBootClasspath,
+            String systemBootClasspath,
+            String bootClasspath,
+            String[] args) {
+        List<String> diagnostics = new ArrayList<>();
+        diagnostics.add("Resolved bootClasspath = " + resolvedBootClasspath);
+        diagnostics.add("System bootclasspath = " + systemBootClasspath);
+        diagnostics.add("Final bootClasspath used = " + bootClasspath);
+        diagnostics.add("ECJ args = " + Arrays.toString(args));
+        return TextUtils.join("\n", diagnostics);
+    }
+
+    private String formatBootClasspathDetails(String bootClasspathDiagnostics) {
+        if (TextUtils.isEmpty(bootClasspathDiagnostics)) {
+            return "";
+        }
+        return "ECJ bootclasspath diagnostics:\n" + bootClasspathDiagnostics;
+    }
+
+    private String joinDetails(String... sections) {
+        List<String> nonEmptySections = new ArrayList<>();
+        for (String section : sections) {
+            if (!TextUtils.isEmpty(section)) {
+                nonEmptySections.add(section);
+            }
+        }
+        return TextUtils.join("\n\n", nonEmptySections);
+    }
+
     private String buildRuntimeDetails(JavaSourceParser.ParsedJavaSource parsedSource, File sourceFile) {
         List<String> details = new ArrayList<>();
         if (parsedSource != null) {
@@ -662,11 +709,13 @@ public class JavaExecutor implements LanguageExecutor {
         private final boolean success;
         private final String stdout;
         private final String stderr;
+        private final String bootClasspathDiagnostics;
 
-        private CompilationOutcome(boolean success, String stdout, String stderr) {
+        private CompilationOutcome(boolean success, String stdout, String stderr, String bootClasspathDiagnostics) {
             this.success = success;
             this.stdout = stdout == null ? "" : stdout;
             this.stderr = stderr == null ? "" : stderr;
+            this.bootClasspathDiagnostics = bootClasspathDiagnostics == null ? "" : bootClasspathDiagnostics;
         }
 
         private String combinedOutput() {
