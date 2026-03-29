@@ -198,7 +198,11 @@ public class JavaExecutor implements LanguageExecutor {
         return CompilerRuntimeStatus.missing("Missing runtime classes: " + TextUtils.join(", ", missingClasses));
     }
 
-    private CompilationOutcome compileSource(File sourceFile, File classesDir, String bootClasspath) {
+    private CompilationOutcome compileSource(File sourceFile, File classesDir, String resolvedBootClasspath) {
+        String bootClasspath = System.getProperty("java.boot.class.path");
+        if (TextUtils.isEmpty(bootClasspath)) {
+            bootClasspath = resolvedBootClasspath;
+        }
         StringWriter stdout = new StringWriter();
         StringWriter stderr = new StringWriter();
         boolean success = BatchCompiler.compile(
