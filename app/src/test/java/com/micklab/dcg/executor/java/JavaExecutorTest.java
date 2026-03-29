@@ -39,6 +39,8 @@ public class JavaExecutorTest {
         assertTrue(layout.contains("org.eclipse.jdt.compiler.tool-1.2.0.jar"));
         assertTrue(layout.contains("org.eclipse.jdt.compiler.apt-1.2.100.jar"));
         assertTrue(layout.contains("sourceversion-stub.jar"));
+        assertTrue(layout.contains("app/src/main/assets/java-rt/"));
+        assertTrue(layout.contains("fetch-java-rt-fallback.sh"));
     }
 
     @Test
@@ -61,16 +63,25 @@ public class JavaExecutorTest {
     }
 
     @Test
-    public void onlineBootJarArchivesPrioritizeRecentAndroidCompatibleBuilds() throws Exception {
-        Field field = JavaExecutor.class.getDeclaredField("ONLINE_BOOT_JAR_ARCHIVES");
-        field.setAccessible(true);
+    public void compilerArgumentsIncludeRequiredEcjOptionsOrder() {
+        List<String> arguments = Arrays.asList(JavaExecutor.buildCompilerArguments(
+                new File("/tmp/HelloJava.java"),
+                new File("/tmp/classes"),
+                "/tmp/core-oj.jar" + File.pathSeparator + "/tmp/core-libart.jar"));
 
-        String[][] archives = (String[][]) field.get(null);
+        int sourceIndex = arguments.indexOf("-source");
+        int targetIndex = arguments.indexOf("-target");
+        int procIndex = arguments.indexOf("-proc:none");
+        int encodingIndex = arguments.indexOf("-encoding");
+        int debugIndex = arguments.indexOf("-g");
 
-        assertTrue(archives.length >= 2);
-        assertEquals("14.0.0_r2", archives[0][0]);
-        assertTrue(archives[0][1].contains("/libcore/14.0.0_r2/libcore-14.0.0_r2.jar"));
-        assertTrue(archives[0][2].contains("/libart/14.0.0_r2/libart-14.0.0_r2.jar"));
-        assertTrue(archives[1][0].startsWith("13."));
+        assertTrue(sourceIndex >= 0);
+        assertEquals("1.8", arguments.get(sourceIndex + 1));
+        assertTrue(targetIndex > sourceIndex);
+        assertEquals("1.8", arguments.get(targetIndex + 1));
+        assertTrue(procIndex > targetIndex);
+        assertTrue(encodingIndex > procIndex);
+        assertEquals("UTF-8", arguments.get(encodingIndex + 1));
+        assertTrue(debugIndex > encodingIndex);
     }
 }

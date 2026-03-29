@@ -32,8 +32,6 @@ import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,7 +41,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Enumeration;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -56,59 +53,9 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
     private static final String LOCAL_BOOT_JAR_DIRECTORY = "java-rt";
     private static final String BOOT_JAR_ASSET_DIRECTORY = "java-rt";
-    private static final String APEX_ART_JAVALIB_DIRECTORY = "/apex/com.android.art/javalib";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
-    private static final String OKHTTP_JAR = "okhttp.jar";
-    private static final String CONSCRYPT_JAR = "conscrypt.jar";
-    private static final String BOUNCYCASTLE_JAR = "bouncycastle.jar";
-    private static final String[] PREFERRED_APEX_BOOT_JARS = new String[]{
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_OJ_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_LIBART_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + OKHTTP_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CONSCRYPT_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + BOUNCYCASTLE_JAR
-    };
-    private static final String[] FALLBACK_BOOT_JARS = new String[]{
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_OJ_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CORE_LIBART_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + OKHTTP_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + CONSCRYPT_JAR,
-            APEX_ART_JAVALIB_DIRECTORY + "/" + BOUNCYCASTLE_JAR,
-            "/apex/com.android.runtime/javalib/core-oj.jar",
-            "/apex/com.android.runtime/javalib/core-libart.jar",
-            "/system/framework/core-oj.jar",
-            "/system/framework/core-libart.jar",
-            "/system/framework/core.jar",
-            "/system/framework/framework.jar",
-            "/system/framework/ext.jar"
-    };
-    private static final String[] CORE_BOOT_JAR_SEARCH_DIRECTORIES = new String[]{
-            APEX_ART_JAVALIB_DIRECTORY,
-            "/apex/com.android.runtime/javalib",
-            "/system/framework",
-            "/system_ext/framework"
-    };
-    private static final String[] CORE_BOOT_JAR_SEARCH_ROOTS = new String[]{
-            "/apex",
-            "/system",
-            "/system_ext"
-    };
-    private static final int CORE_BOOT_JAR_SEARCH_DEPTH = 5;
-    private static final int DOWNLOAD_TIMEOUT_MILLIS = 2500;
     private static final int COPY_BUFFER_SIZE = 8192;
-    static final String[][] ONLINE_BOOT_JAR_ARCHIVES = new String[][]{
-            {
-                    "14.0.0_r2",
-                    "https://repo1.maven.org/maven2/com/rover12421/android/hide/libcore/14.0.0_r2/libcore-14.0.0_r2.jar",
-                    "https://repo1.maven.org/maven2/com/rover12421/android/hide/libart/14.0.0_r2/libart-14.0.0_r2.jar"
-            },
-            {
-                    "13.0.0_r2",
-                    "https://repo1.maven.org/maven2/com/rover12421/android/hide/libcore/13.0.0_r2/libcore-13.0.0_r2.jar",
-                    "https://repo1.maven.org/maven2/com/rover12421/android/hide/libart/13.0.0_r2/libart-13.0.0_r2.jar"
-            }
-    };
     // Android does not ship javax.tools, so only verify the ECJ batch path we actually use.
     private static final String[] REQUIRED_BATCH_RUNTIME_CLASSES = new String[]{
             "com.android.tools.r8.D8",
@@ -119,8 +66,8 @@ public class JavaExecutor implements LanguageExecutor {
             + "(app/libs/ecj-4.6.jar, app/libs/org.eclipse.jdt.core-3.12.0.jar, "
             + "app/libs/org.eclipse.jdt.compiler.tool-1.2.0.jar, "
             + "app/libs/org.eclipse.jdt.compiler.apt-1.2.100.jar, and app/libs/sourceversion-stub.jar) "
-            + "plus staged core-oj.jar/core-libart.jar from online archive, app/src/main/assets/java-rt/, "
-            + "or APEX safe-copy fallback, "
+            + "plus staged core-oj.jar/core-libart.jar from app/src/main/assets/java-rt/ "
+            + "(refreshable via fetch-java-rt-fallback.sh), "
             + "and the bundled D8 runtime. The executor compiles through BatchCompiler with -proc:none, "
             + "so tool/apt stay bundled for compatibility while ECJ batch + the SourceVersion stub do the work.";
     private String bootJarSource = "unresolved";
@@ -142,7 +89,9 @@ public class JavaExecutor implements LanguageExecutor {
         Context appContext = context.getApplicationContext();
         Context targetContext = appContext == null ? context : appContext;
         try {
-            new JavaExecutor().resolveBootClasspath(targetContext);
+            JavaExecutor executor = new JavaExecutor();
+            executor.refreshBootJarsFromAssets(targetContext);
+            executor.resolveBootClasspath(targetContext);
         } catch (IOException | RuntimeException exception) {
             Log.w(TAG, "Startup staging of core runtime jars failed.", exception);
         } catch (LinkageError error) {
@@ -300,8 +249,8 @@ public class JavaExecutor implements LanguageExecutor {
         Collections.addAll(arguments,
                 "-source", "1.8",
                 "-target", "1.8",
-                "-encoding", "UTF-8",
                 "-proc:none",
+                "-encoding", "UTF-8",
                 "-g",
                 "-d", classesDir.getAbsolutePath());
         if (!TextUtils.isEmpty(bootClasspath)) {
@@ -463,18 +412,6 @@ public class JavaExecutor implements LanguageExecutor {
         return sourceFile;
     }
 
-    private static final class BootJarArchive {
-        private final String release;
-        private final String coreOjUrl;
-        private final String coreLibartUrl;
-
-        private BootJarArchive(String release, String coreOjUrl, String coreLibartUrl) {
-            this.release = release;
-            this.coreOjUrl = coreOjUrl;
-            this.coreLibartUrl = coreLibartUrl;
-        }
-    }
-
     private String resolveBootClasspath(Context context) throws IOException {
         File runtimeDirectory = new File(context.getCodeCacheDir(), LOCAL_BOOT_JAR_DIRECTORY);
         ensureDirectory(runtimeDirectory);
@@ -488,16 +425,8 @@ public class JavaExecutor implements LanguageExecutor {
             return localCoreOjJar.getAbsolutePath() + File.pathSeparator + localCoreLibartJar.getAbsolutePath();
         }
 
-        if (!tryFetchBootJarsOnline(runtimeDirectory)) {
-            if (!tryStageBootJarsFromAssets(context, runtimeDirectory)) {
-                try {
-                    stageBootJarsFromApex(runtimeDirectory);
-                } catch (RuntimeException exception) {
-                    throw new IOException("APEX boot jar staging failed unexpectedly.", exception);
-                } catch (LinkageError error) {
-                    throw new IOException("APEX boot jar staging failed due to runtime linkage.", error);
-                }
-            }
+        if (!tryStageBootJarsFromAssets(context, runtimeDirectory)) {
+            throw new IOException("Bundled core runtime jars are unavailable in assets/" + BOOT_JAR_ASSET_DIRECTORY + ".");
         }
 
         localCoreOjJar = new File(runtimeDirectory, CORE_OJ_JAR);
@@ -521,63 +450,12 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
-    private boolean tryFetchBootJarsOnline(File runtimeDirectory) {
-        for (String[] archive : ONLINE_BOOT_JAR_ARCHIVES) {
-            if (archive.length < 3) {
-                continue;
-            }
-            BootJarArchive candidate = new BootJarArchive(archive[0], archive[1], archive[2]);
-            File downloadedCoreOj = new File(runtimeDirectory, CORE_OJ_JAR + ".download");
-            File downloadedCoreLibart = new File(runtimeDirectory, CORE_LIBART_JAR + ".download");
-            try {
-                // Try MCP-compatible online artifact URLs first, then fall back automatically.
-                downloadFile(candidate.coreOjUrl, downloadedCoreOj);
-                downloadFile(candidate.coreLibartUrl, downloadedCoreLibart);
-                validateBootJar(downloadedCoreOj, CORE_OJ_JAR);
-                validateBootJar(downloadedCoreLibart, CORE_LIBART_JAR);
-                promoteStagedFile(downloadedCoreOj, new File(runtimeDirectory, CORE_OJ_JAR));
-                promoteStagedFile(downloadedCoreLibart, new File(runtimeDirectory, CORE_LIBART_JAR));
-                bootJarSource = "online-" + candidate.release;
-                return true;
-            } catch (IOException exception) {
-                Log.w(TAG, "Online fetch of boot jars failed for " + candidate.release + ".", exception);
-                deleteQuietly(downloadedCoreOj);
-                deleteQuietly(downloadedCoreLibart);
-            }
-        }
-        return false;
-    }
-
-    private void downloadFile(String urlText, File destination) throws IOException {
-        File parent = destination.getParentFile();
-        if (parent != null) {
-            ensureDirectory(parent);
-        }
-        HttpURLConnection connection = (HttpURLConnection) new URL(urlText).openConnection();
-        connection.setConnectTimeout(DOWNLOAD_TIMEOUT_MILLIS);
-        connection.setReadTimeout(DOWNLOAD_TIMEOUT_MILLIS);
-        connection.setInstanceFollowRedirects(true);
-        connection.setRequestProperty("User-Agent", "dcg-javaexecutor/1.0");
-        try {
-            int responseCode = connection.getResponseCode();
-            if (responseCode < HttpURLConnection.HTTP_OK || responseCode >= HttpURLConnection.HTTP_MULT_CHOICE) {
-                throw new IOException("HTTP " + responseCode + " while downloading " + urlText);
-            }
-            try (InputStream inputStream = connection.getInputStream();
-                 OutputStream outputStream = new FileOutputStream(destination)) {
-                copyStream(inputStream, outputStream);
-            }
-        } finally {
-            connection.disconnect();
-        }
-    }
-
     private boolean tryStageBootJarsFromAssets(Context context, File runtimeDirectory) {
         AssetManager assetManager = context.getAssets();
         try {
             copyBootJarFromAssets(assetManager, CORE_OJ_JAR, new File(runtimeDirectory, CORE_OJ_JAR));
             copyBootJarFromAssets(assetManager, CORE_LIBART_JAR, new File(runtimeDirectory, CORE_LIBART_JAR));
-            bootJarSource = "assets";
+            bootJarSource = "assets-zip-roundtrip";
             return true;
         } catch (IOException exception) {
             Log.w(TAG, "Bundled asset boot jars are unavailable.", exception);
@@ -585,163 +463,34 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
+    private void refreshBootJarsFromAssets(Context context) throws IOException {
+        File runtimeDirectory = new File(context.getCodeCacheDir(), LOCAL_BOOT_JAR_DIRECTORY);
+        ensureDirectory(runtimeDirectory);
+        if (!tryStageBootJarsFromAssets(context, runtimeDirectory)) {
+            throw new IOException("Failed to refresh boot jars from bundled assets.");
+        }
+    }
+
     private void copyBootJarFromAssets(AssetManager assetManager, String jarName, File destinationJar) throws IOException {
+        File parent = destinationJar.getParentFile();
+        if (parent != null) {
+            ensureDirectory(parent);
+        }
         String assetPath = BOOT_JAR_ASSET_DIRECTORY + "/" + jarName;
-        File stagingJar = new File(destinationJar.getParentFile(), jarName + ".asset");
+        File rawAssetJar = new File(parent, jarName + ".asset");
+        File roundTripJar = new File(parent, jarName + ".zipstage");
+        deleteQuietly(rawAssetJar);
+        deleteQuietly(roundTripJar);
+
         try (InputStream inputStream = assetManager.open(assetPath);
-             OutputStream outputStream = new FileOutputStream(stagingJar)) {
+             OutputStream outputStream = new FileOutputStream(rawAssetJar)) {
             copyStream(inputStream, outputStream);
         }
-        validateBootJar(stagingJar, jarName);
-        promoteStagedFile(stagingJar, destinationJar);
-    }
-
-    private void stageBootJarsFromApex(File runtimeDirectory) throws IOException {
-        File coreOjSource = findCoreBootJarOnDevice(CORE_OJ_JAR);
-        File coreLibartSource = findCoreBootJarOnDevice(CORE_LIBART_JAR);
-        if (coreOjSource == null || coreLibartSource == null) {
-            throw new IOException("Unable to locate Android core boot jars (core-oj.jar/core-libart.jar) for ECJ.");
-        }
-        copyBootJarToCodeCache(coreOjSource, runtimeDirectory);
-        copyBootJarToCodeCache(coreLibartSource, runtimeDirectory);
-        bootJarSource = "apex-safe-copy";
-    }
-
-    private File findCoreBootJarOnDevice(String jarName) {
-        LinkedHashSet<String> entries = new LinkedHashSet<>();
-        addReadableCandidates(entries, PREFERRED_APEX_BOOT_JARS);
-        addReadableCandidates(entries, FALLBACK_BOOT_JARS);
-        for (String directoryPath : CORE_BOOT_JAR_SEARCH_DIRECTORIES) {
-            addReadablePath(entries, directoryPath + "/" + jarName);
-        }
-        for (String searchRoot : CORE_BOOT_JAR_SEARCH_ROOTS) {
-            searchCoreBootJars(entries, new File(searchRoot), 0);
-        }
-        for (String path : entries) {
-            File candidate = new File(path);
-            if (jarName.equals(candidate.getName()) && candidate.isFile() && candidate.canRead()) {
-                return candidate;
-            }
-        }
-        return null;
-    }
-
-    private void addReadableCandidates(LinkedHashSet<String> entries, String[] candidates) {
-        for (String candidatePath : candidates) {
-            addReadablePath(entries, candidatePath);
-        }
-    }
-
-    private void addReadablePath(LinkedHashSet<String> entries, String candidatePath) {
-        if (TextUtils.isEmpty(candidatePath)) {
-            return;
-        }
-        try {
-            File candidate = new File(candidatePath);
-            if (candidate.isFile() && candidate.canRead() && isCoreBootJarName(candidate.getName())) {
-                entries.add(candidate.getAbsolutePath());
-            }
-        } catch (SecurityException exception) {
-            Log.w(TAG, "Access denied while probing boot jar candidate: " + candidatePath, exception);
-        }
-    }
-
-    private void searchCoreBootJars(LinkedHashSet<String> entries, File directory, int depth) {
-        if (directory == null || depth > CORE_BOOT_JAR_SEARCH_DEPTH || !directory.isDirectory()) {
-            return;
-        }
-        File[] children;
-        try {
-            children = directory.listFiles();
-        } catch (SecurityException exception) {
-            Log.w(TAG, "Access denied while traversing boot jar search root: " + directory.getAbsolutePath(), exception);
-            return;
-        }
-        if (children == null) {
-            return;
-        }
-        for (File child : children) {
-            try {
-                if (child.isDirectory()) {
-                    searchCoreBootJars(entries, child, depth + 1);
-                    continue;
-                }
-                if (child.isFile() && child.canRead() && isCoreBootJarName(child.getName())) {
-                    entries.add(child.getAbsolutePath());
-                }
-            } catch (SecurityException exception) {
-                Log.w(TAG, "Access denied while scanning boot jar candidate: " + child.getAbsolutePath(), exception);
-            }
-        }
-    }
-
-    @TargetApi(Build.VERSION_CODES.O)
-    private File copyBootJarToCodeCache(File sourceJar, File runtimeDirectory) throws IOException {
-        if (sourceJar == null || !sourceJar.isFile() || !sourceJar.canRead()) {
-            throw new IOException("Unreadable boot jar: " + (sourceJar == null ? "null" : sourceJar.getAbsolutePath()));
-        }
-        File destinationJar = new File(runtimeDirectory, sourceJar.getName());
-        boolean needsCopy = !destinationJar.isFile()
-                || destinationJar.length() != sourceJar.length()
-                || destinationJar.lastModified() != sourceJar.lastModified();
-        if (!needsCopy) {
-            validateBootJar(destinationJar, sourceJar.getName());
-            return destinationJar;
-        }
-
-        File stagingJar = new File(runtimeDirectory, sourceJar.getName() + ".stage");
-        deleteQuietly(stagingJar);
-        IOException copyFailure = null;
-        try {
-            copyBootJarViaShell(sourceJar, stagingJar);
-        } catch (IOException exception) {
-            copyFailure = exception;
-            Log.w(TAG, "Shell copy failed for " + sourceJar.getAbsolutePath() + ".", exception);
-        }
-
-        if (!stagingJar.isFile() || stagingJar.length() == 0L) {
-            deleteQuietly(stagingJar);
-            try {
-                copyBootJarViaZipRoundTrip(sourceJar, stagingJar);
-            } catch (IOException exception) {
-                copyFailure = exception;
-                Log.w(TAG, "Zip round-trip copy failed for " + sourceJar.getAbsolutePath() + ".", exception);
-            }
-        }
-
-        if (!stagingJar.isFile() || !stagingJar.canRead()) {
-            throw new IOException("Failed to stage boot jar into local cache: " + destinationJar.getAbsolutePath(), copyFailure);
-        }
-        validateBootJar(stagingJar, sourceJar.getName());
-        promoteStagedFile(stagingJar, destinationJar);
-        if (sourceJar.lastModified() > 0L) {
-            destinationJar.setLastModified(sourceJar.lastModified());
-        }
-        if (!destinationJar.isFile() || !destinationJar.canRead()) {
-            throw new IOException("Failed to copy boot jar into local cache: " + destinationJar.getAbsolutePath());
-        }
-        return destinationJar;
-    }
-
-    private boolean isCoreBootJarName(String fileName) {
-        return CORE_OJ_JAR.equals(fileName) || CORE_LIBART_JAR.equals(fileName);
-    }
-
-    private void copyBootJarViaShell(File sourceJar, File destinationJar) throws IOException {
-        Process process = Runtime.getRuntime().exec(new String[]{
-                "cp",
-                sourceJar.getAbsolutePath(),
-                destinationJar.getAbsolutePath()
-        });
-        try {
-            int exitCode = process.waitFor();
-            if (exitCode != 0) {
-                throw new IOException("cp returned exit code " + exitCode + " for " + sourceJar.getAbsolutePath());
-            }
-        } catch (InterruptedException exception) {
-            Thread.currentThread().interrupt();
-            throw new IOException("Interrupted while copying boot jar with shell cp.", exception);
-        }
+        validateBootJar(rawAssetJar, jarName);
+        copyBootJarViaZipRoundTrip(rawAssetJar, roundTripJar);
+        validateBootJar(roundTripJar, jarName);
+        promoteStagedFile(roundTripJar, destinationJar);
+        deleteQuietly(rawAssetJar);
     }
 
     private void copyBootJarViaZipRoundTrip(File sourceJar, File destinationJar) throws IOException {
