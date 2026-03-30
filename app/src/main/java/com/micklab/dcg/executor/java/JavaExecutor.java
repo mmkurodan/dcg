@@ -54,6 +54,9 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
     private static final String LOCAL_BOOT_JAR_DIRECTORY = "java-rt";
     private static final String BOOT_JAR_ASSET_DIRECTORY = "java-rt";
+    private static final String LOCAL_WRAPPER_JAR_DIRECTORY = "java-wrapper";
+    private static final String WRAPPER_JAR_ASSET_DIRECTORY = "java-wrapper";
+    private static final String WRAPPER_CLASSPATH_JAR = "android-wrapper-classpath.jar";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
@@ -69,9 +72,11 @@ public class JavaExecutor implements LanguageExecutor {
             + "app/libs/org.eclipse.jdt.compiler.apt-1.2.100.jar, and app/libs/sourceversion-stub.jar) "
             + "plus staged core-oj.jar/core-libart.jar from app/src/main/assets/java-rt/ "
             + "(refreshable via fetch-java-rt-fallback.sh), "
+            + "plus generated wrapper classpath asset app/src/main/assets/java-wrapper/android-wrapper-classpath.jar, "
             + "and the bundled D8 runtime. The executor compiles through BatchCompiler with -proc:none, "
             + "so tool/apt stay bundled for compatibility while ECJ batch + the SourceVersion stub do the work.";
     private String bootJarSource = "unresolved";
+    private String wrapperJarSource = "unresolved";
 
     @Override
     public SupportedLanguage getLanguage() {
@@ -93,6 +98,8 @@ public class JavaExecutor implements LanguageExecutor {
             JavaExecutor executor = new JavaExecutor();
             executor.refreshBootJarsFromAssets(targetContext);
             executor.resolveBootClasspath(targetContext);
+            executor.refreshWrapperClasspathFromAssets(targetContext);
+            executor.resolveWrapperClasspath(targetContext);
         } catch (IOException | RuntimeException exception) {
             Log.w(TAG, "Startup staging of core runtime jars failed.", exception);
         } catch (LinkageError error) {
@@ -135,6 +142,7 @@ public class JavaExecutor implements LanguageExecutor {
         File sourceRoot = new File(runRoot, "src");
         File classesDir = new File(runRoot, "classes");
         File dexDir = new File(runRoot, "dex");
+        JavaSourceParser.PreparedJavaSource preparedSource = null;
         JavaSourceParser.ParsedJavaSource parsedSource = null;
         File sourceFile = null;
         String bootClasspathDiagnostics = "";
@@ -144,11 +152,13 @@ public class JavaExecutor implements LanguageExecutor {
             ensureDirectory(classesDir);
             ensureDirectory(dexDir);
 
-            parsedSource = JavaSourceParser.parse(snippet.getContent(), snippet.getTitle());
-            sourceFile = writeSourceFile(sourceRoot, parsedSource, snippet.getContent());
+            preparedSource = JavaSourceParser.prepareForCompilation(snippet.getContent(), snippet.getTitle());
+            parsedSource = preparedSource.getParsedSource();
+            sourceFile = writeSourceFile(sourceRoot, parsedSource, preparedSource.getRewrittenSource());
 
             String bootClasspath = resolveBootClasspath(context);
-            CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath);
+            String wrapperClasspath = resolveWrapperClasspath(context);
+            CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath, wrapperClasspath);
             bootClasspathDiagnostics = compilation.bootClasspathDiagnostics;
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
@@ -161,11 +171,12 @@ public class JavaExecutor implements LanguageExecutor {
                                 parsedSource.getDisplayFileName()),
                         joinDetails(
                                 "Compiler: ECJ",
+                                formatRewriteDetails(preparedSource),
                                 formatBootClasspathDetails(bootClasspathDiagnostics)),
                         elapsedSince(startTime));
             }
 
-            File dexFile = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath));
+            File dexFile = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath, wrapperClasspath));
             InvocationOutcome outcome = loadAndRun(context, dexFile, parsedSource.getQualifiedClassName());
             return ExecutionResult.success(
                     "Java execution succeeded",
@@ -175,6 +186,7 @@ public class JavaExecutor implements LanguageExecutor {
                     outcome.stderr,
                     joinDetails(
                             "Dex output: " + dexFile.getName(),
+                            formatRewriteDetails(preparedSource),
                             formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } catch (CapturedInvocationException exception) {
@@ -185,7 +197,7 @@ public class JavaExecutor implements LanguageExecutor {
                     exception.stdout,
                     combineError(exception.stderr, DiagnosticFormatter.formatThrowable(rootCause)),
                     joinDetails(
-                            buildRuntimeDetails(parsedSource, sourceFile),
+                            buildRuntimeDetails(parsedSource, sourceFile, preparedSource),
                             formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } catch (Throwable throwable) {
@@ -204,7 +216,7 @@ public class JavaExecutor implements LanguageExecutor {
                     "",
                     DiagnosticFormatter.formatThrowable(rootCause),
                     joinDetails(
-                            buildRuntimeDetails(parsedSource, sourceFile),
+                            buildRuntimeDetails(parsedSource, sourceFile, preparedSource),
                             formatBootClasspathDetails(bootClasspathDiagnostics)),
                     elapsedSince(startTime));
         } finally {
@@ -228,10 +240,15 @@ public class JavaExecutor implements LanguageExecutor {
         return CompilerRuntimeStatus.missing("Missing runtime classes: " + TextUtils.join(", ", missingClasses));
     }
 
-    private CompilationOutcome compileSource(File sourceFile, File classesDir, String resolvedBootClasspath) {
-        String[] args = buildCompilerArguments(sourceFile, classesDir, resolvedBootClasspath);
+    private CompilationOutcome compileSource(
+            File sourceFile,
+            File classesDir,
+            String resolvedBootClasspath,
+            String resolvedClasspath) {
+        String[] args = buildCompilerArguments(sourceFile, classesDir, resolvedBootClasspath, resolvedClasspath);
         String bootClasspathDiagnostics = buildBootClasspathDiagnostics(
                 resolvedBootClasspath,
+                resolvedClasspath,
                 args);
         StringWriter stdout = new StringWriter();
         StringWriter stderr = new StringWriter();
@@ -244,6 +261,14 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     static String[] buildCompilerArguments(File sourceFile, File classesDir, String bootClasspath) {
+        return buildCompilerArguments(sourceFile, classesDir, bootClasspath, null);
+    }
+
+    static String[] buildCompilerArguments(
+            File sourceFile,
+            File classesDir,
+            String bootClasspath,
+            String classpath) {
         List<String> arguments = new ArrayList<>();
         Collections.addAll(arguments,
                 "-source", "1.8",
@@ -252,7 +277,10 @@ public class JavaExecutor implements LanguageExecutor {
                 "-encoding", "UTF-8",
                 "-g",
                 "-d", classesDir.getAbsolutePath());
-        if (!TextUtils.isEmpty(bootClasspath)) {
+        if (!isNullOrEmpty(classpath)) {
+            arguments.addAll(Arrays.asList("-classpath", classpath));
+        }
+        if (!isNullOrEmpty(bootClasspath)) {
             arguments.addAll(Arrays.asList("-bootclasspath", bootClasspath));
         }
         arguments.add(sourceFile.getAbsolutePath());
@@ -459,6 +487,101 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
+    private String resolveWrapperClasspath(Context context) throws IOException {
+        File runtimeDirectory = new File(context.getCodeCacheDir(), LOCAL_WRAPPER_JAR_DIRECTORY);
+        ensureDirectory(runtimeDirectory);
+        File localWrapperJar = new File(runtimeDirectory, WRAPPER_CLASSPATH_JAR);
+        if (isValidWrapperJar(localWrapperJar)) {
+            if ("unresolved".equals(wrapperJarSource)) {
+                wrapperJarSource = "local-cache";
+            }
+            return localWrapperJar.getAbsolutePath();
+        }
+
+        if (!tryStageWrapperJarFromAssets(context, runtimeDirectory)) {
+            throw new IOException("Generated wrapper classpath asset is unavailable in assets/" + WRAPPER_JAR_ASSET_DIRECTORY + ".");
+        }
+        localWrapperJar = new File(runtimeDirectory, WRAPPER_CLASSPATH_JAR);
+        if (!isValidWrapperJar(localWrapperJar)) {
+            throw new IOException("Failed to stage generated wrapper classpath jar from assets.");
+        }
+        return localWrapperJar.getAbsolutePath();
+    }
+
+    private void refreshWrapperClasspathFromAssets(Context context) throws IOException {
+        File runtimeDirectory = new File(context.getCodeCacheDir(), LOCAL_WRAPPER_JAR_DIRECTORY);
+        ensureDirectory(runtimeDirectory);
+        if (!tryStageWrapperJarFromAssets(context, runtimeDirectory)) {
+            throw new IOException("Failed to refresh wrapper classpath from bundled assets.");
+        }
+    }
+
+    private boolean isValidWrapperJar(File wrapperJar) {
+        try {
+            validateWrapperJar(wrapperJar);
+            return true;
+        } catch (IOException exception) {
+            if (wrapperJar != null && wrapperJar.exists()) {
+                Log.w(TAG, "Existing wrapper classpath jar is unusable and will be replaced.", exception);
+            }
+            return false;
+        }
+    }
+
+    private boolean tryStageWrapperJarFromAssets(Context context, File runtimeDirectory) {
+        AssetManager assetManager = context.getAssets();
+        try {
+            copyWrapperJarFromAssets(assetManager, WRAPPER_CLASSPATH_JAR, new File(runtimeDirectory, WRAPPER_CLASSPATH_JAR));
+            wrapperJarSource = "assets";
+            return true;
+        } catch (IOException exception) {
+            Log.w(TAG, "Bundled wrapper classpath jar is unavailable.", exception);
+            return false;
+        }
+    }
+
+    private void copyWrapperJarFromAssets(AssetManager assetManager, String jarName, File destinationJar) throws IOException {
+        File parent = destinationJar.getParentFile();
+        if (parent != null) {
+            ensureDirectory(parent);
+        }
+        String assetPath = WRAPPER_JAR_ASSET_DIRECTORY + "/" + jarName;
+        File stagedJar = new File(parent, jarName + ".asset");
+        deleteQuietly(stagedJar);
+
+        try (InputStream inputStream = assetManager.open(assetPath);
+             OutputStream outputStream = new FileOutputStream(stagedJar)) {
+            copyStream(inputStream, outputStream);
+        }
+        validateWrapperJar(stagedJar);
+        promoteStagedFile(stagedJar, destinationJar);
+    }
+
+    private void validateWrapperJar(File wrapperJar) throws IOException {
+        if (wrapperJar == null || !wrapperJar.isFile() || !wrapperJar.canRead() || wrapperJar.length() <= 0L) {
+            throw new IOException("Unreadable wrapper classpath jar: " + (wrapperJar == null ? "null" : wrapperJar.getAbsolutePath()));
+        }
+        boolean foundWrapperClass = false;
+        try (ZipFile zipFile = new ZipFile(wrapperJar)) {
+            Enumeration<? extends ZipEntry> entries = zipFile.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = entries.nextElement();
+                String name = entry.getName();
+                if (entry.isDirectory()) {
+                    continue;
+                }
+                if (name.startsWith("com/micklab/dcg/wrapper/android/")
+                        && name.endsWith(".class")) {
+                    foundWrapperClass = true;
+                    break;
+                }
+            }
+        }
+        if (!foundWrapperClass) {
+            throw new IOException("Wrapper classpath jar does not contain generated wrapper classes.");
+        }
+    }
+
     private void copyBootJarFromAssets(AssetManager assetManager, String jarName, File destinationJar) throws IOException {
         File parent = destinationJar.getParentFile();
         if (parent != null) {
@@ -559,16 +682,21 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    private List<Path> resolveLibraryFiles(String bootClasspath) {
+    private List<Path> resolveLibraryFiles(String... classpaths) {
         List<Path> libraryFiles = new ArrayList<>();
-        if (TextUtils.isEmpty(bootClasspath)) {
+        if (classpaths == null || classpaths.length == 0) {
             return libraryFiles;
         }
-        String[] segments = bootClasspath.split(File.pathSeparator);
-        for (String segment : segments) {
-            File candidate = new File(segment);
-            if (candidate.isFile()) {
-                libraryFiles.add(candidate.toPath());
+        for (String classpath : classpaths) {
+            if (TextUtils.isEmpty(classpath)) {
+                continue;
+            }
+            String[] segments = classpath.split(File.pathSeparator);
+            for (String segment : segments) {
+                File candidate = new File(segment);
+                if (candidate.isFile()) {
+                    libraryFiles.add(candidate.toPath());
+                }
             }
         }
         return libraryFiles;
@@ -640,16 +768,19 @@ public class JavaExecutor implements LanguageExecutor {
 
     private String buildBootClasspathDiagnostics(
             String resolvedBootClasspath,
+            String resolvedClasspath,
             String[] args) {
         List<String> diagnostics = new ArrayList<>();
         diagnostics.add("Resolved bootClasspath = " + resolvedBootClasspath);
+        diagnostics.add("Resolved classpath = " + resolvedClasspath);
         diagnostics.add("Boot jar source = " + bootJarSource);
+        diagnostics.add("Wrapper jar source = " + wrapperJarSource);
         diagnostics.add("ECJ args = " + Arrays.toString(args));
         return TextUtils.join("\n", diagnostics);
     }
 
     private String formatBootClasspathDetails(String bootClasspathDiagnostics) {
-        if (TextUtils.isEmpty(bootClasspathDiagnostics)) {
+        if (isNullOrEmpty(bootClasspathDiagnostics)) {
             return "";
         }
         return "ECJ bootclasspath diagnostics:\n" + bootClasspathDiagnostics;
@@ -665,7 +796,10 @@ public class JavaExecutor implements LanguageExecutor {
         return TextUtils.join("\n\n", nonEmptySections);
     }
 
-    private String buildRuntimeDetails(JavaSourceParser.ParsedJavaSource parsedSource, File sourceFile) {
+    private String buildRuntimeDetails(
+            JavaSourceParser.ParsedJavaSource parsedSource,
+            File sourceFile,
+            JavaSourceParser.PreparedJavaSource preparedSource) {
         List<String> details = new ArrayList<>();
         if (parsedSource != null) {
             details.add("Class: " + parsedSource.getQualifiedClassName());
@@ -673,8 +807,18 @@ public class JavaExecutor implements LanguageExecutor {
         if (sourceFile != null) {
             details.add("Source: " + sourceFile.getName());
         }
+        if (preparedSource != null && preparedSource.hadAndroidReferences()) {
+            details.add("Android wrapper rewrites: " + preparedSource.getRewriteCount());
+        }
         details.add(BUNDLED_COMPILER_LAYOUT);
         return TextUtils.join("\n", details);
+    }
+
+    private String formatRewriteDetails(JavaSourceParser.PreparedJavaSource preparedSource) {
+        if (preparedSource == null || !preparedSource.hadAndroidReferences()) {
+            return "";
+        }
+        return "Android wrapper rewrites: " + preparedSource.getRewriteCount();
     }
 
     private long elapsedSince(long startTime) {
@@ -687,6 +831,10 @@ public class JavaExecutor implements LanguageExecutor {
             base = snippet.getTitle();
         }
         return SupportedLanguage.sanitizeBaseName(base);
+    }
+
+    private static boolean isNullOrEmpty(String value) {
+        return value == null || value.length() == 0;
     }
 
     private static final class CompilerRuntimeStatus {

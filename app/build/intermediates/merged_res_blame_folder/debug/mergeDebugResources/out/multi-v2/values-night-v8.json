@@ -4,7 +4,7 @@
             "outputFile": "com.micklab.dcg.app-mergeDebugResources-21:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/8.12/transforms/18092e065a106dc3d5fc9f33fce4d643/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/root/.gradle/caches/8.12/transforms/4f6aa52a9e549acbbd4e004dd75c1290/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

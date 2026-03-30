@@ -40,6 +40,7 @@ public class JavaExecutorTest {
         assertTrue(layout.contains("org.eclipse.jdt.compiler.apt-1.2.100.jar"));
         assertTrue(layout.contains("sourceversion-stub.jar"));
         assertTrue(layout.contains("app/src/main/assets/java-rt/"));
+        assertTrue(layout.contains("app/src/main/assets/java-wrapper/android-wrapper-classpath.jar"));
         assertTrue(layout.contains("fetch-java-rt-fallback.sh"));
     }
 
@@ -60,6 +61,25 @@ public class JavaExecutorTest {
         assertEquals(-1, classpathIndex);
         assertTrue(bootClasspathIndex >= 0);
         assertEquals(expectedBootClasspath, arguments.get(bootClasspathIndex + 1));
+    }
+
+    @Test
+    public void compilerArgumentsIncludeWrapperClasspathWhenProvided() {
+        String bootClasspath = "/tmp/core-oj.jar" + File.pathSeparator + "/tmp/core-libart.jar";
+        String wrapperClasspath = "/tmp/android-wrapper-classpath.jar";
+        List<String> arguments = Arrays.asList(JavaExecutor.buildCompilerArguments(
+                new File("/tmp/HelloJava.java"),
+                new File("/tmp/classes"),
+                bootClasspath,
+                wrapperClasspath));
+
+        int classpathIndex = arguments.indexOf("-classpath");
+        int bootClasspathIndex = arguments.indexOf("-bootclasspath");
+
+        assertTrue(classpathIndex >= 0);
+        assertEquals(wrapperClasspath, arguments.get(classpathIndex + 1));
+        assertTrue(bootClasspathIndex > classpathIndex);
+        assertEquals(bootClasspath, arguments.get(bootClasspathIndex + 1));
     }
 
     @Test

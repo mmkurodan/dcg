@@ -1,3 +1,5 @@
+import com.micklab.dcg.build.wrapper.WrapperGenerationTask
+
 plugins {
     id 'com.android.application'
 }
@@ -23,6 +25,12 @@ def packagedCompilerRuntimeJars = [
 def allBundledLibs = fileTree(dir: "${projectDir}/libs", include: ['*.jar'])
 def sourceVersionStubSourcesDir = layout.projectDirectory.dir("stubs")
 def sourceVersionStubClassesDir = layout.buildDirectory.dir("generated/sourceversion-stub/classes")
+def generatedWrapperSourceDir = layout.projectDirectory.dir("src/main/java/com/micklab/dcg/wrapper/android")
+def generatedWrapperAssetsRootDir = layout.buildDirectory.dir("generated/wrapper-assets")
+def generatedWrapperAssetSubDir = layout.buildDirectory.dir("generated/wrapper-assets/java-wrapper")
+def generatedWrapperClasspathClassesDir = layout.buildDirectory.dir("generated/wrapper-classpath/classes")
+def generatedWrapperClasspathJarDir = layout.buildDirectory.dir("generated/wrapper-classpath/jar")
+def generatedWrapperClasspathJarName = "android-wrapper-classpath.jar"
 def forbiddenJdtSymbol = "java/lang/Runtime\$Version"
 
 def jarContainsText = { File jarFile, String marker ->
@@ -92,11 +100,19 @@ android {
     sourceSets {
         main {
             assets.srcDirs += ['src/main/assets']
+            assets.srcDirs += [generatedWrapperAssetsRootDir.get().asFile]
+            java {
+                exclude 'com/micklab/dcg/wrapper/android/**'
+            }
         }
     }
 
     testOptions {
         unitTests.returnDefaultValues = true
+    }
+
+    lint {
+        lintConfig = file("lint.xml")
     }
 }
 
@@ -134,8 +150,55 @@ tasks.register("verifyBundledCompilerJars") {
     }
 }
 
+def androidJarProvider = providers.provider {
+    File sdkDirectory = android.sdkDirectory
+    if (sdkDirectory == null || !sdkDirectory.isDirectory()) {
+        throw new GradleException("Android SDK directory is unavailable while resolving android.jar.")
+    }
+    File androidJar = new File(sdkDirectory, "platforms/android-${android.compileSdk}/android.jar")
+    if (!androidJar.isFile()) {
+        throw new GradleException("android.jar not found at: ${androidJar.absolutePath}")
+    }
+    androidJar
+}
+
+tasks.register("generateAndroidApiWrappers", WrapperGenerationTask) {
+    androidJar.set(layout.file(androidJarProvider))
+    outputDirectory.set(generatedWrapperSourceDir)
+    wrapperRootPackage.set("com.micklab.dcg.wrapper.android")
+    securityPolicyPrefix.set("blocked:")
+}
+
+tasks.register("compileAndroidWrapperClasspath", JavaCompile) {
+    dependsOn("generateAndroidApiWrappers")
+    source = fileTree(generatedWrapperSourceDir) {
+        include "**/*.java"
+    }
+    classpath = files(layout.file(androidJarProvider))
+    destinationDirectory = generatedWrapperClasspathClassesDir
+    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+    options.release = 8
+}
+
+tasks.register("buildAndroidWrapperClasspathJar", Jar) {
+    dependsOn("compileAndroidWrapperClasspath")
+    archiveFileName = generatedWrapperClasspathJarName
+    destinationDirectory = generatedWrapperClasspathJarDir
+    from(generatedWrapperClasspathClassesDir)
+}
+
+tasks.register("stageAndroidWrapperClasspathAsset", Copy) {
+    dependsOn("buildAndroidWrapperClasspathJar")
+    from(generatedWrapperClasspathJarDir.map { it.file(generatedWrapperClasspathJarName) })
+    into(generatedWrapperAssetSubDir)
+}
+
 tasks.named("preBuild").configure {
-    dependsOn("buildSourceVersionStubJar", "verifyBundledCompilerJars")
+    dependsOn(
+            "buildSourceVersionStubJar",
+            "verifyBundledCompilerJars",
+            "stageAndroidWrapperClasspathAsset")
 }
 
 dependencies {

@@ -1,0 +1,65 @@
+// AUTO-GENERATED. DO NOT EDIT.
+package com.micklab.dcg.wrapper.android.graphics;
+
+public final class Insets {
+    private final android.graphics.Insets real;
+
+    public Insets(android.graphics.Insets real) {
+        this.real = real;
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets wrap(android.graphics.Insets real) {
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Insets(real);
+    }
+
+    public android.graphics.Insets unwrap() {
+        return real;
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets add(com.micklab.dcg.wrapper.android.graphics.Insets arg0, com.micklab.dcg.wrapper.android.graphics.Insets arg1) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.add(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+    }
+
+    public int describeContents() {
+        return real.describeContents();
+    }
+
+    public boolean equals(java.lang.Object arg0) {
+        return real.equals(arg0);
+    }
+
+    public int hashCode() {
+        return real.hashCode();
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets max(com.micklab.dcg.wrapper.android.graphics.Insets arg0, com.micklab.dcg.wrapper.android.graphics.Insets arg1) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.max(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets min(com.micklab.dcg.wrapper.android.graphics.Insets arg0, com.micklab.dcg.wrapper.android.graphics.Insets arg1) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.min(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets of(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.of(arg0 == null ? null : arg0.unwrap()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets of(int arg0, int arg1, int arg2, int arg3) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.of(arg0, arg1, arg2, arg3));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Insets subtract(com.micklab.dcg.wrapper.android.graphics.Insets arg0, com.micklab.dcg.wrapper.android.graphics.Insets arg1) {
+        return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.subtract(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+    }
+
+    public java.lang.String toString() {
+        return real.toString();
+    }
+
+    public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
+        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+    }
+
+    public static final com.micklab.dcg.wrapper.android.graphics.Insets NONE = com.micklab.dcg.wrapper.android.graphics.Insets.wrap(android.graphics.Insets.NONE);
+
+}
