@@ -40,6 +40,8 @@ public class JavaExecutorTest {
         assertTrue(layout.contains("org.eclipse.jdt.compiler.apt-1.2.100.jar"));
         assertTrue(layout.contains("sourceversion-stub.jar"));
         assertTrue(layout.contains("app/src/main/assets/java-rt/"));
+        assertTrue(layout.contains("/system/framework"));
+        assertTrue(layout.contains("framework.jar"));
         assertTrue(layout.contains("app/src/main/assets/java-wrapper/android-wrapper-classpath.jar"));
         assertTrue(layout.contains("fetch-java-rt-fallback.sh"));
     }
@@ -103,5 +105,17 @@ public class JavaExecutorTest {
         assertTrue(encodingIndex > procIndex);
         assertEquals("UTF-8", arguments.get(encodingIndex + 1));
         assertTrue(debugIndex > encodingIndex);
+    }
+
+    @Test
+    public void joinClasspathsConcatenatesNonEmptySegmentsInOrder() {
+        String merged = JavaExecutor.joinClasspaths(
+                "/tmp/a.jar",
+                "",
+                null,
+                "/tmp/b.jar" + File.pathSeparator + "/tmp/c.jar");
+        assertEquals(
+                "/tmp/a.jar" + File.pathSeparator + "/tmp/b.jar" + File.pathSeparator + "/tmp/c.jar",
+                merged);
     }
 }

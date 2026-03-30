@@ -56,6 +56,10 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String BOOT_JAR_ASSET_DIRECTORY = "java-rt";
     private static final String LOCAL_WRAPPER_JAR_DIRECTORY = "java-wrapper";
     private static final String WRAPPER_JAR_ASSET_DIRECTORY = "java-wrapper";
+    private static final String SYSTEM_FRAMEWORK_DIRECTORY = "/system/framework";
+    private static final String PRIMARY_FRAMEWORK_JAR = "framework.jar";
+    private static final String FRAMEWORK_JAR_SUFFIX = ".jar";
+    private static final String REQUIRED_FRAMEWORK_CLASS = "android/graphics/Canvas.class";
     private static final String WRAPPER_CLASSPATH_JAR = "android-wrapper-classpath.jar";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
@@ -72,11 +76,13 @@ public class JavaExecutor implements LanguageExecutor {
             + "app/libs/org.eclipse.jdt.compiler.apt-1.2.100.jar, and app/libs/sourceversion-stub.jar) "
             + "plus staged core-oj.jar/core-libart.jar from app/src/main/assets/java-rt/ "
             + "(refreshable via fetch-java-rt-fallback.sh), "
+            + "plus readable framework jars from /system/framework (including framework.jar), "
             + "plus generated wrapper classpath asset app/src/main/assets/java-wrapper/android-wrapper-classpath.jar, "
             + "and the bundled D8 runtime. The executor compiles through BatchCompiler with -proc:none, "
             + "so tool/apt stay bundled for compatibility while ECJ batch + the SourceVersion stub do the work.";
     private String bootJarSource = "unresolved";
     private String wrapperJarSource = "unresolved";
+    private String frameworkClasspathSource = "unresolved";
 
     @Override
     public SupportedLanguage getLanguage() {
@@ -158,7 +164,14 @@ public class JavaExecutor implements LanguageExecutor {
 
             String bootClasspath = resolveBootClasspath(context);
             String wrapperClasspath = resolveWrapperClasspath(context);
-            CompilationOutcome compilation = compileSource(sourceFile, classesDir, bootClasspath, wrapperClasspath);
+            String frameworkClasspath = resolveFrameworkClasspath();
+            String compileClasspath = joinClasspaths(wrapperClasspath, frameworkClasspath);
+            CompilationOutcome compilation = compileSource(
+                    sourceFile,
+                    classesDir,
+                    bootClasspath,
+                    compileClasspath,
+                    frameworkClasspath);
             bootClasspathDiagnostics = compilation.bootClasspathDiagnostics;
             if (!compilation.success) {
                 return ExecutionResult.compilationError(
@@ -176,7 +189,10 @@ public class JavaExecutor implements LanguageExecutor {
                         elapsedSince(startTime));
             }
 
-            File dexFile = dexClasses(classesDir, dexDir, resolveLibraryFiles(bootClasspath, wrapperClasspath));
+            File dexFile = dexClasses(
+                    classesDir,
+                    dexDir,
+                    resolveLibraryFiles(bootClasspath, wrapperClasspath, frameworkClasspath));
             InvocationOutcome outcome = loadAndRun(context, dexFile, parsedSource.getQualifiedClassName());
             return ExecutionResult.success(
                     "Java execution succeeded",
@@ -244,11 +260,13 @@ public class JavaExecutor implements LanguageExecutor {
             File sourceFile,
             File classesDir,
             String resolvedBootClasspath,
-            String resolvedClasspath) {
+            String resolvedClasspath,
+            String resolvedFrameworkClasspath) {
         String[] args = buildCompilerArguments(sourceFile, classesDir, resolvedBootClasspath, resolvedClasspath);
         String bootClasspathDiagnostics = buildBootClasspathDiagnostics(
                 resolvedBootClasspath,
                 resolvedClasspath,
+                resolvedFrameworkClasspath,
                 args);
         StringWriter stdout = new StringWriter();
         StringWriter stderr = new StringWriter();
@@ -516,6 +534,52 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
+    private String resolveFrameworkClasspath() throws IOException {
+        File frameworkDirectory = new File(SYSTEM_FRAMEWORK_DIRECTORY);
+        File[] candidates = frameworkDirectory.listFiles();
+        if (candidates == null || candidates.length == 0) {
+            throw new IOException("No readable system framework jars were found in " + SYSTEM_FRAMEWORK_DIRECTORY + ".");
+        }
+        List<File> frameworkJars = new ArrayList<>();
+        for (File candidate : candidates) {
+            if (candidate == null || !candidate.isFile() || !candidate.canRead()) {
+                continue;
+            }
+            if (!candidate.getName().endsWith(FRAMEWORK_JAR_SUFFIX)) {
+                continue;
+            }
+            frameworkJars.add(candidate);
+        }
+        if (frameworkJars.isEmpty()) {
+            throw new IOException("No readable .jar files were found in " + SYSTEM_FRAMEWORK_DIRECTORY + ".");
+        }
+        Collections.sort(frameworkJars, new Comparator<File>() {
+            @Override
+            public int compare(File left, File right) {
+                boolean leftPrimary = PRIMARY_FRAMEWORK_JAR.equals(left.getName());
+                boolean rightPrimary = PRIMARY_FRAMEWORK_JAR.equals(right.getName());
+                if (leftPrimary && !rightPrimary) {
+                    return -1;
+                }
+                if (!leftPrimary && rightPrimary) {
+                    return 1;
+                }
+                return left.getName().compareTo(right.getName());
+            }
+        });
+        File primaryFrameworkJar = frameworkJars.get(0);
+        if (!PRIMARY_FRAMEWORK_JAR.equals(primaryFrameworkJar.getName())) {
+            throw new IOException("framework.jar is unavailable in " + SYSTEM_FRAMEWORK_DIRECTORY + ".");
+        }
+        validateFrameworkJar(primaryFrameworkJar);
+        frameworkClasspathSource = "system-framework";
+        List<String> classpathEntries = new ArrayList<>();
+        for (File frameworkJar : frameworkJars) {
+            classpathEntries.add(frameworkJar.getAbsolutePath());
+        }
+        return TextUtils.join(File.pathSeparator, classpathEntries);
+    }
+
     private boolean isValidWrapperJar(File wrapperJar) {
         try {
             validateWrapperJar(wrapperJar);
@@ -579,6 +643,17 @@ public class JavaExecutor implements LanguageExecutor {
         }
         if (!foundWrapperClass) {
             throw new IOException("Wrapper classpath jar does not contain generated wrapper classes.");
+        }
+    }
+
+    private void validateFrameworkJar(File frameworkJar) throws IOException {
+        if (frameworkJar == null || !frameworkJar.isFile() || !frameworkJar.canRead() || frameworkJar.length() <= 0L) {
+            throw new IOException("Unreadable framework jar: " + (frameworkJar == null ? "null" : frameworkJar.getAbsolutePath()));
+        }
+        try (ZipFile zipFile = new ZipFile(frameworkJar)) {
+            if (zipFile.getEntry(REQUIRED_FRAMEWORK_CLASS) == null) {
+                throw new IOException("framework.jar is missing " + REQUIRED_FRAMEWORK_CLASS + ".");
+            }
         }
     }
 
@@ -769,12 +844,15 @@ public class JavaExecutor implements LanguageExecutor {
     private String buildBootClasspathDiagnostics(
             String resolvedBootClasspath,
             String resolvedClasspath,
+            String resolvedFrameworkClasspath,
             String[] args) {
         List<String> diagnostics = new ArrayList<>();
         diagnostics.add("Resolved bootClasspath = " + resolvedBootClasspath);
         diagnostics.add("Resolved classpath = " + resolvedClasspath);
+        diagnostics.add("Resolved frameworkClasspath = " + resolvedFrameworkClasspath);
         diagnostics.add("Boot jar source = " + bootJarSource);
         diagnostics.add("Wrapper jar source = " + wrapperJarSource);
+        diagnostics.add("Framework classpath source = " + frameworkClasspathSource);
         diagnostics.add("ECJ args = " + Arrays.toString(args));
         return TextUtils.join("\n", diagnostics);
     }
@@ -831,6 +909,25 @@ public class JavaExecutor implements LanguageExecutor {
             base = snippet.getTitle();
         }
         return SupportedLanguage.sanitizeBaseName(base);
+    }
+
+    static String joinClasspaths(String... classpaths) {
+        if (classpaths == null || classpaths.length == 0) {
+            return "";
+        }
+        List<String> segments = new ArrayList<>();
+        for (String classpath : classpaths) {
+            if (isNullOrEmpty(classpath)) {
+                continue;
+            }
+            String[] parts = classpath.split(File.pathSeparator);
+            for (String part : parts) {
+                if (!isNullOrEmpty(part)) {
+                    segments.add(part);
+                }
+            }
+        }
+        return String.join(File.pathSeparator, segments);
     }
 
     private static boolean isNullOrEmpty(String value) {
