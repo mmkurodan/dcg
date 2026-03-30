@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware.biometrics;
 
 public final class PromptContentItem {
-    private final android.hardware.biometrics.PromptContentItem real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PromptContentItem(android.hardware.biometrics.PromptContentItem real) {
+    private final java.lang.Object real;
+
+    private PromptContentItem(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.biometrics.PromptContentItem wrap(android.hardware.biometrics.PromptContentItem real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.PromptContentItem(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.PromptContentItem(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.biometrics.PromptContentItem getReal() {
+        return (android.hardware.biometrics.PromptContentItem) real;
     }
 
     public android.hardware.biometrics.PromptContentItem unwrap() {
-        return real;
+        return getReal();
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class RecoverySystem {
-    private final android.os.RecoverySystem real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RecoverySystem(android.os.RecoverySystem real) {
+    private final java.lang.Object real;
+
+    private RecoverySystem(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.RecoverySystem wrap(android.os.RecoverySystem real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RecoverySystem(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RecoverySystem(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.RecoverySystem getReal() {
+        return (android.os.RecoverySystem) real;
     }
 
     public android.os.RecoverySystem unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void installPackage(com.micklab.dcg.wrapper.android.content.Context arg0, java.io.File arg1) throws java.io.IOException {
@@ -33,18 +40,25 @@ public final class RecoverySystem {
     }
 
     public static final class ProgressListener {
-        private final android.os.RecoverySystem.ProgressListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProgressListener(android.os.RecoverySystem.ProgressListener real) {
+        private final java.lang.Object real;
+
+        private ProgressListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.RecoverySystem.ProgressListener wrap(android.os.RecoverySystem.ProgressListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.RecoverySystem.ProgressListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.RecoverySystem.ProgressListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.RecoverySystem.ProgressListener getReal() {
+            return (android.os.RecoverySystem.ProgressListener) real;
         }
 
         public android.os.RecoverySystem.ProgressListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onProgress(int arg0) {

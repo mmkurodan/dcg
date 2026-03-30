@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.cdma;
 
 public final class CdmaCellLocation {
-    private final android.telephony.cdma.CdmaCellLocation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CdmaCellLocation(android.telephony.cdma.CdmaCellLocation real) {
+    private final java.lang.Object real;
+
+    private CdmaCellLocation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.cdma.CdmaCellLocation wrap(android.telephony.cdma.CdmaCellLocation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.cdma.CdmaCellLocation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.cdma.CdmaCellLocation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.cdma.CdmaCellLocation getReal() {
+        return (android.telephony.cdma.CdmaCellLocation) real;
     }
 
     public android.telephony.cdma.CdmaCellLocation unwrap() {
-        return real;
+        return getReal();
     }
 
     public CdmaCellLocation() {

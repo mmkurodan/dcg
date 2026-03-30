@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class DiscoverySession {
-    private final android.net.wifi.aware.DiscoverySession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DiscoverySession(android.net.wifi.aware.DiscoverySession real) {
+    private final java.lang.Object real;
+
+    private DiscoverySession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySession wrap(android.net.wifi.aware.DiscoverySession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.DiscoverySession getReal() {
+        return (android.net.wifi.aware.DiscoverySession) real;
     }
 
     public android.net.wifi.aware.DiscoverySession unwrap() {
-        return real;
+        return getReal();
     }
 
     public void acceptPairingRequest(int arg0, com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle arg1, java.lang.String arg2, int arg3, java.lang.String arg4) {

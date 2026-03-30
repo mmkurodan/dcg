@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteQueryBuilder {
-    private final android.database.sqlite.SQLiteQueryBuilder real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteQueryBuilder(android.database.sqlite.SQLiteQueryBuilder real) {
+    private final java.lang.Object real;
+
+    private SQLiteQueryBuilder(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteQueryBuilder wrap(android.database.sqlite.SQLiteQueryBuilder real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteQueryBuilder(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteQueryBuilder(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteQueryBuilder getReal() {
+        return (android.database.sqlite.SQLiteQueryBuilder) real;
     }
 
     public android.database.sqlite.SQLiteQueryBuilder unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteQueryBuilder() {

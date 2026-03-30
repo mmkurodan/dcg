@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm.verify.domain;
 
 public final class DomainVerificationManager {
-    private final android.content.pm.verify.domain.DomainVerificationManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DomainVerificationManager(android.content.pm.verify.domain.DomainVerificationManager real) {
+    private final java.lang.Object real;
+
+    private DomainVerificationManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationManager wrap(android.content.pm.verify.domain.DomainVerificationManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.verify.domain.DomainVerificationManager getReal() {
+        return (android.content.pm.verify.domain.DomainVerificationManager) real;
     }
 
     public android.content.pm.verify.domain.DomainVerificationManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationUserState getDomainVerificationUserState(java.lang.String arg0) throws android.content.pm.PackageManager.NameNotFoundException {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpPrefix {
-    private final android.net.IpPrefix real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpPrefix(android.net.IpPrefix real) {
+    private final java.lang.Object real;
+
+    private IpPrefix(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpPrefix wrap(android.net.IpPrefix real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpPrefix(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpPrefix(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpPrefix getReal() {
+        return (android.net.IpPrefix) real;
     }
 
     public android.net.IpPrefix unwrap() {
-        return real;
+        return getReal();
     }
 
     public IpPrefix(java.net.InetAddress arg0, int arg1) {

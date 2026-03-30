@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class ExerciseSegmentType {
-    private final android.health.connect.datatypes.ExerciseSegmentType real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExerciseSegmentType(android.health.connect.datatypes.ExerciseSegmentType real) {
+    private final java.lang.Object real;
+
+    private ExerciseSegmentType(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSegmentType wrap(android.health.connect.datatypes.ExerciseSegmentType real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSegmentType(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSegmentType(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.ExerciseSegmentType getReal() {
+        return (android.health.connect.datatypes.ExerciseSegmentType) real;
     }
 
     public android.health.connect.datatypes.ExerciseSegmentType unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int EXERCISE_SEGMENT_TYPE_ARM_CURL = android.health.connect.datatypes.ExerciseSegmentType.EXERCISE_SEGMENT_TYPE_ARM_CURL;

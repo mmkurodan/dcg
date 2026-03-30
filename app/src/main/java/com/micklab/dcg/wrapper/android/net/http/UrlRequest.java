@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class UrlRequest {
-    private final android.net.http.UrlRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UrlRequest(android.net.http.UrlRequest real) {
+    private final java.lang.Object real;
+
+    private UrlRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.UrlRequest wrap(android.net.http.UrlRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.UrlRequest getReal() {
+        return (android.net.http.UrlRequest) real;
     }
 
     public android.net.http.UrlRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {
@@ -78,18 +85,25 @@ public final class UrlRequest {
 
 
     public static final class Builder {
-        private final android.net.http.UrlRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.UrlRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.UrlRequest.Builder wrap(android.net.http.UrlRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.UrlRequest.Builder getReal() {
+            return (android.net.http.UrlRequest.Builder) real;
         }
 
         public android.net.http.UrlRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.net.http.UrlRequest.Builder addHeader(java.lang.String arg0, java.lang.String arg1) {
@@ -134,18 +148,25 @@ public final class UrlRequest {
 
     }
     public static final class Callback {
-        private final android.net.http.UrlRequest.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.net.http.UrlRequest.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.UrlRequest.Callback wrap(android.net.http.UrlRequest.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.UrlRequest.Callback getReal() {
+            return (android.net.http.UrlRequest.Callback) real;
         }
 
         public android.net.http.UrlRequest.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCanceled(com.micklab.dcg.wrapper.android.net.http.UrlRequest arg0, com.micklab.dcg.wrapper.android.net.http.UrlResponseInfo arg1) {
@@ -174,35 +195,49 @@ public final class UrlRequest {
 
     }
     public static final class Status {
-        private final android.net.http.UrlRequest.Status real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Status(android.net.http.UrlRequest.Status real) {
+        private final java.lang.Object real;
+
+        private Status(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.UrlRequest.Status wrap(android.net.http.UrlRequest.Status real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Status(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.Status(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.UrlRequest.Status getReal() {
+            return (android.net.http.UrlRequest.Status) real;
         }
 
         public android.net.http.UrlRequest.Status unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class StatusListener {
-        private final android.net.http.UrlRequest.StatusListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StatusListener(android.net.http.UrlRequest.StatusListener real) {
+        private final java.lang.Object real;
+
+        private StatusListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.UrlRequest.StatusListener wrap(android.net.http.UrlRequest.StatusListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.StatusListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlRequest.StatusListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.UrlRequest.StatusListener getReal() {
+            return (android.net.http.UrlRequest.StatusListener) real;
         }
 
         public android.net.http.UrlRequest.StatusListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onStatus(int arg0) {

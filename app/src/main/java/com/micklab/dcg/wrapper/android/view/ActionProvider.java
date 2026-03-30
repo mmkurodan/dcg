@@ -2,73 +2,87 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ActionProvider {
-    private final android.view.ActionProvider real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ActionProvider(android.view.ActionProvider real) {
+    private final java.lang.Object real;
+
+    private ActionProvider(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ActionProvider wrap(android.view.ActionProvider real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionProvider(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionProvider(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ActionProvider getReal() {
+        return (android.view.ActionProvider) real;
     }
 
     public android.view.ActionProvider unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean hasSubMenu() {
-        return real.hasSubMenu();
+        return ((android.view.ActionProvider) real).hasSubMenu();
     }
 
     public boolean isVisible() {
-        return real.isVisible();
+        return ((android.view.ActionProvider) real).isVisible();
     }
 
     public com.micklab.dcg.wrapper.android.view.View onCreateActionView() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.onCreateActionView());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.ActionProvider) real).onCreateActionView());
     }
 
     public com.micklab.dcg.wrapper.android.view.View onCreateActionView(com.micklab.dcg.wrapper.android.view.MenuItem arg0) {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.onCreateActionView(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.ActionProvider) real).onCreateActionView(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean onPerformDefaultAction() {
-        return real.onPerformDefaultAction();
+        return ((android.view.ActionProvider) real).onPerformDefaultAction();
     }
 
     public void onPrepareSubMenu(com.micklab.dcg.wrapper.android.view.SubMenu arg0) {
-        real.onPrepareSubMenu(arg0 == null ? null : arg0.unwrap());
+        ((android.view.ActionProvider) real).onPrepareSubMenu(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean overridesItemVisibility() {
-        return real.overridesItemVisibility();
+        return ((android.view.ActionProvider) real).overridesItemVisibility();
     }
 
     public void refreshVisibility() {
-        real.refreshVisibility();
+        ((android.view.ActionProvider) real).refreshVisibility();
     }
 
     public void setVisibilityListener(com.micklab.dcg.wrapper.android.view.ActionProvider.VisibilityListener arg0) {
-        real.setVisibilityListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.ActionProvider) real).setVisibilityListener(arg0 == null ? null : arg0.getReal());
     }
 
     public static final class VisibilityListener {
-        private final android.view.ActionProvider.VisibilityListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VisibilityListener(android.view.ActionProvider.VisibilityListener real) {
+        private final java.lang.Object real;
+
+        private VisibilityListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ActionProvider.VisibilityListener wrap(android.view.ActionProvider.VisibilityListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionProvider.VisibilityListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionProvider.VisibilityListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ActionProvider.VisibilityListener getReal() {
+            return (android.view.ActionProvider.VisibilityListener) real;
         }
 
         public android.view.ActionProvider.VisibilityListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onActionProviderVisibilityChanged(boolean arg0) {
-            real.onActionProviderVisibilityChanged(arg0);
+            ((android.view.ActionProvider.VisibilityListener) real).onActionProviderVisibilityChanged(arg0);
         }
 
     }

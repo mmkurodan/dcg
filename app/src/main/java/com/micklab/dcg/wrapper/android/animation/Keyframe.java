@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.animation;
 
 public final class Keyframe {
-    private final android.animation.Keyframe real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Keyframe(android.animation.Keyframe real) {
+    private final java.lang.Object real;
+
+    private Keyframe(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.animation.Keyframe wrap(android.animation.Keyframe real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Keyframe(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Keyframe(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.animation.Keyframe getReal() {
+        return (android.animation.Keyframe) real;
     }
 
     public android.animation.Keyframe unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.animation.Keyframe clone() {
-        return com.micklab.dcg.wrapper.android.animation.Keyframe.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.animation.Keyframe.wrap(((android.animation.Keyframe) real).clone());
     }
 
     public float getFraction() {
-        return real.getFraction();
+        return ((android.animation.Keyframe) real).getFraction();
     }
 
     public com.micklab.dcg.wrapper.android.animation.TimeInterpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(((android.animation.Keyframe) real).getInterpolator());
     }
 
     public java.lang.Object getValue() {
-        return real.getValue();
+        return ((android.animation.Keyframe) real).getValue();
     }
 
     public boolean hasValue() {
-        return real.hasValue();
+        return ((android.animation.Keyframe) real).hasValue();
     }
 
     public static com.micklab.dcg.wrapper.android.animation.Keyframe ofFloat(float arg0) {
@@ -61,15 +68,15 @@ public final class Keyframe {
     }
 
     public void setFraction(float arg0) {
-        real.setFraction(arg0);
+        ((android.animation.Keyframe) real).setFraction(arg0);
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.animation.TimeInterpolator arg0) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Keyframe) real).setInterpolator(arg0 == null ? null : arg0.getReal());
     }
 
     public void setValue(java.lang.Object arg0) {
-        real.setValue(arg0);
+        ((android.animation.Keyframe) real).setValue(arg0);
     }
 
 }

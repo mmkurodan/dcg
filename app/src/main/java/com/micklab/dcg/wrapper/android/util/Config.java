@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Config {
-    private final android.util.Config real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Config(android.util.Config real) {
+    private final java.lang.Object real;
+
+    private Config(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Config wrap(android.util.Config real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Config(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Config(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Config getReal() {
+        return (android.util.Config) real;
     }
 
     public android.util.Config unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final boolean DEBUG = android.util.Config.DEBUG;

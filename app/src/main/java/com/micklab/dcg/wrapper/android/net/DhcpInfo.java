@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class DhcpInfo {
-    private final android.net.DhcpInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DhcpInfo(android.net.DhcpInfo real) {
+    private final java.lang.Object real;
+
+    private DhcpInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.DhcpInfo wrap(android.net.DhcpInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.DhcpInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.DhcpInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.DhcpInfo getReal() {
+        return (android.net.DhcpInfo) real;
     }
 
     public android.net.DhcpInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public DhcpInfo() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class SocketKeepalive {
-    private final android.net.SocketKeepalive real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SocketKeepalive(android.net.SocketKeepalive real) {
+    private final java.lang.Object real;
+
+    private SocketKeepalive(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.SocketKeepalive wrap(android.net.SocketKeepalive real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SocketKeepalive(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SocketKeepalive(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.SocketKeepalive getReal() {
+        return (android.net.SocketKeepalive) real;
     }
 
     public android.net.SocketKeepalive unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
@@ -30,18 +37,25 @@ public final class SocketKeepalive {
 
 
     public static final class Callback {
-        private final android.net.SocketKeepalive.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.net.SocketKeepalive.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.SocketKeepalive.Callback wrap(android.net.SocketKeepalive.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.SocketKeepalive.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.SocketKeepalive.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.SocketKeepalive.Callback getReal() {
+            return (android.net.SocketKeepalive.Callback) real;
         }
 
         public android.net.SocketKeepalive.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public Callback() {

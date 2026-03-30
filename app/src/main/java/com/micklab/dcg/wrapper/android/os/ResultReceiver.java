@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ResultReceiver {
-    private final android.os.ResultReceiver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ResultReceiver(android.os.ResultReceiver real) {
+    private final java.lang.Object real;
+
+    private ResultReceiver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ResultReceiver wrap(android.os.ResultReceiver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ResultReceiver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ResultReceiver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ResultReceiver getReal() {
+        return (android.os.ResultReceiver) real;
     }
 
     public android.os.ResultReceiver unwrap() {
-        return real;
+        return getReal();
     }
 
     public ResultReceiver(com.micklab.dcg.wrapper.android.os.Handler arg0) {

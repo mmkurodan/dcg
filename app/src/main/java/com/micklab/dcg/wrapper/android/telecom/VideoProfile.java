@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class VideoProfile {
-    private final android.telecom.VideoProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VideoProfile(android.telecom.VideoProfile real) {
+    private final java.lang.Object real;
+
+    private VideoProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.VideoProfile wrap(android.telecom.VideoProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.VideoProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.VideoProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.VideoProfile getReal() {
+        return (android.telecom.VideoProfile) real;
     }
 
     public android.telecom.VideoProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public VideoProfile(int arg0) {
@@ -25,15 +32,15 @@ public final class VideoProfile {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.VideoProfile) real).describeContents();
     }
 
     public int getQuality() {
-        return real.getQuality();
+        return ((android.telecom.VideoProfile) real).getQuality();
     }
 
     public int getVideoState() {
-        return real.getVideoState();
+        return ((android.telecom.VideoProfile) real).getVideoState();
     }
 
     public static boolean isAudioOnly(int arg0) {
@@ -61,7 +68,7 @@ public final class VideoProfile {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.telecom.VideoProfile) real).toString();
     }
 
     public static java.lang.String videoStateToString(int arg0) {
@@ -69,7 +76,7 @@ public final class VideoProfile {
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.VideoProfile) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int QUALITY_DEFAULT = android.telecom.VideoProfile.QUALITY_DEFAULT;
@@ -83,18 +90,25 @@ public final class VideoProfile {
     public static final int STATE_TX_ENABLED = android.telecom.VideoProfile.STATE_TX_ENABLED;
 
     public static final class CameraCapabilities {
-        private final android.telecom.VideoProfile.CameraCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CameraCapabilities(android.telecom.VideoProfile.CameraCapabilities real) {
+        private final java.lang.Object real;
+
+        private CameraCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.VideoProfile.CameraCapabilities wrap(android.telecom.VideoProfile.CameraCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.VideoProfile.CameraCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.VideoProfile.CameraCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.VideoProfile.CameraCapabilities getReal() {
+            return (android.telecom.VideoProfile.CameraCapabilities) real;
         }
 
         public android.telecom.VideoProfile.CameraCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public CameraCapabilities(int arg0, int arg1) {
@@ -106,27 +120,27 @@ public final class VideoProfile {
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.telecom.VideoProfile.CameraCapabilities) real).describeContents();
         }
 
         public int getHeight() {
-            return real.getHeight();
+            return ((android.telecom.VideoProfile.CameraCapabilities) real).getHeight();
         }
 
         public float getMaxZoom() {
-            return real.getMaxZoom();
+            return ((android.telecom.VideoProfile.CameraCapabilities) real).getMaxZoom();
         }
 
         public int getWidth() {
-            return real.getWidth();
+            return ((android.telecom.VideoProfile.CameraCapabilities) real).getWidth();
         }
 
         public boolean isZoomSupported() {
-            return real.isZoomSupported();
+            return ((android.telecom.VideoProfile.CameraCapabilities) real).isZoomSupported();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.VideoProfile.CameraCapabilities) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

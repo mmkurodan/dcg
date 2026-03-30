@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider;
 
 public final class SdkSandboxActivityHandler {
-    private final android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SdkSandboxActivityHandler(android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler real) {
+    private final java.lang.Object real;
+
+    private SdkSandboxActivityHandler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler wrap(android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler getReal() {
+        return (android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler) real;
     }
 
     public android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onActivityCreated(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-        real.onActivityCreated(arg0 == null ? null : arg0.unwrap());
+        ((android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler) real).onActivityCreated(arg0 == null ? null : arg0.getReal());
     }
 
 }

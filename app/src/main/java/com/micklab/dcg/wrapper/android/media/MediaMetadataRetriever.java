@@ -2,106 +2,113 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaMetadataRetriever {
-    private final android.media.MediaMetadataRetriever real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaMetadataRetriever(android.media.MediaMetadataRetriever real) {
+    private final java.lang.Object real;
+
+    private MediaMetadataRetriever(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever wrap(android.media.MediaMetadataRetriever real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaMetadataRetriever getReal() {
+        return (android.media.MediaMetadataRetriever) real;
     }
 
     public android.media.MediaMetadataRetriever unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaMetadataRetriever() {
-        this(new android.media.MediaMetadataRetriever());
+        this(new android.media.MediaMetadataRetriever(), (__DcgwBridgeToken) null);
     }
 
     public void close() throws java.io.IOException {
-        real.close();
+        ((android.media.MediaMetadataRetriever) real).close();
     }
 
     public java.lang.String extractMetadata(int arg0) {
-        return real.extractMetadata(arg0);
+        return ((android.media.MediaMetadataRetriever) real).extractMetadata(arg0);
     }
 
     public byte[] getEmbeddedPicture() {
-        return real.getEmbeddedPicture();
+        return ((android.media.MediaMetadataRetriever) real).getEmbeddedPicture();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtIndex(int arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtIndex(arg0));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtIndex(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtIndex(int arg0, com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtIndex(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtIndex(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtTime() {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtTime());
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtTime());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtTime(long arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtTime(arg0));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtTime(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtTime(long arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtTime(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtTime(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFrameAtTime(long arg0, int arg1, com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFrameAtTime(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getFrameAtTime(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getImageAtIndex(int arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getImageAtIndex(arg0));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getImageAtIndex(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getImageAtIndex(int arg0, com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getImageAtIndex(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getImageAtIndex(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getPrimaryImage() {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getPrimaryImage());
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getPrimaryImage());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getPrimaryImage(com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getPrimaryImage(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getPrimaryImage(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getScaledFrameAtTime(long arg0, int arg1, int arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getScaledFrameAtTime(arg0, arg1, arg2, arg3));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getScaledFrameAtTime(arg0, arg1, arg2, arg3));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getScaledFrameAtTime(long arg0, int arg1, int arg2, int arg3, com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams arg4) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getScaledFrameAtTime(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaMetadataRetriever) real).getScaledFrameAtTime(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
     }
 
     public void release() throws java.io.IOException {
-        real.release();
-    }
-
-    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.lang.IllegalArgumentException {
-        real.setDataSource(arg0 == null ? null : arg0.unwrap());
+        ((android.media.MediaMetadataRetriever) real).release();
     }
 
     public void setDataSource(java.lang.String arg0) throws java.lang.IllegalArgumentException {
-        real.setDataSource(arg0);
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0);
+    }
+
+    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.lang.IllegalArgumentException {
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDataSource(java.io.FileDescriptor arg0) throws java.lang.IllegalArgumentException {
-        real.setDataSource(arg0);
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0);
     }
 
     public void setDataSource(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) throws java.lang.IllegalArgumentException, java.lang.SecurityException {
-        real.setDataSource(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setDataSource(java.io.FileDescriptor arg0, long arg1, long arg2) throws java.lang.IllegalArgumentException {
-        real.setDataSource(arg0, arg1, arg2);
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0, arg1, arg2);
     }
 
     public static final int METADATA_KEY_ALBUM = android.media.MediaMetadataRetriever.METADATA_KEY_ALBUM;
@@ -150,34 +157,41 @@ public final class MediaMetadataRetriever {
     public static final int OPTION_PREVIOUS_SYNC = android.media.MediaMetadataRetriever.OPTION_PREVIOUS_SYNC;
 
     public static final class BitmapParams {
-        private final android.media.MediaMetadataRetriever.BitmapParams real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BitmapParams(android.media.MediaMetadataRetriever.BitmapParams real) {
+        private final java.lang.Object real;
+
+        private BitmapParams(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams wrap(android.media.MediaMetadataRetriever.BitmapParams real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaMetadataRetriever.BitmapParams(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaMetadataRetriever.BitmapParams getReal() {
+            return (android.media.MediaMetadataRetriever.BitmapParams) real;
         }
 
         public android.media.MediaMetadataRetriever.BitmapParams unwrap() {
-            return real;
+            return getReal();
         }
 
         public BitmapParams() {
-            this(new android.media.MediaMetadataRetriever.BitmapParams());
+            this(new android.media.MediaMetadataRetriever.BitmapParams(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Bitmap.Config getActualConfig() {
-            return com.micklab.dcg.wrapper.android.graphics.Bitmap.Config.wrap(real.getActualConfig());
+            return com.micklab.dcg.wrapper.android.graphics.Bitmap.Config.wrap(((android.media.MediaMetadataRetriever.BitmapParams) real).getActualConfig());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Bitmap.Config getPreferredConfig() {
-            return com.micklab.dcg.wrapper.android.graphics.Bitmap.Config.wrap(real.getPreferredConfig());
+            return com.micklab.dcg.wrapper.android.graphics.Bitmap.Config.wrap(((android.media.MediaMetadataRetriever.BitmapParams) real).getPreferredConfig());
         }
 
         public void setPreferredConfig(com.micklab.dcg.wrapper.android.graphics.Bitmap.Config arg0) {
-            real.setPreferredConfig(arg0 == null ? null : arg0.unwrap());
+            ((android.media.MediaMetadataRetriever.BitmapParams) real).setPreferredConfig(arg0 == null ? null : arg0.getReal());
         }
 
     }

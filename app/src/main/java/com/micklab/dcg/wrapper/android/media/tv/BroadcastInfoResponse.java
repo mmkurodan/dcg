@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.media.tv;
 
 public final class BroadcastInfoResponse {
-    private final android.media.tv.BroadcastInfoResponse real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BroadcastInfoResponse(android.media.tv.BroadcastInfoResponse real) {
+    private final java.lang.Object real;
+
+    private BroadcastInfoResponse(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.BroadcastInfoResponse wrap(android.media.tv.BroadcastInfoResponse real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.BroadcastInfoResponse(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.BroadcastInfoResponse(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.tv.BroadcastInfoResponse getReal() {
+        return (android.media.tv.BroadcastInfoResponse) real;
     }
 
     public android.media.tv.BroadcastInfoResponse unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.tv.BroadcastInfoResponse) real).describeContents();
     }
 
     public int getRequestId() {
-        return real.getRequestId();
+        return ((android.media.tv.BroadcastInfoResponse) real).getRequestId();
     }
 
     public int getResponseResult() {
-        return real.getResponseResult();
+        return ((android.media.tv.BroadcastInfoResponse) real).getResponseResult();
     }
 
     public int getSequence() {
-        return real.getSequence();
+        return ((android.media.tv.BroadcastInfoResponse) real).getSequence();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.media.tv.BroadcastInfoResponse) real).getType();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.tv.BroadcastInfoResponse) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int RESPONSE_RESULT_CANCEL = android.media.tv.BroadcastInfoResponse.RESPONSE_RESULT_CANCEL;

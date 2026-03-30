@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class ServiceDiscoveryInfo {
-    private final android.net.wifi.aware.ServiceDiscoveryInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceDiscoveryInfo(android.net.wifi.aware.ServiceDiscoveryInfo real) {
+    private final java.lang.Object real;
+
+    private ServiceDiscoveryInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.ServiceDiscoveryInfo wrap(android.net.wifi.aware.ServiceDiscoveryInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.ServiceDiscoveryInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.ServiceDiscoveryInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.ServiceDiscoveryInfo getReal() {
+        return (android.net.wifi.aware.ServiceDiscoveryInfo) real;
     }
 
     public android.net.wifi.aware.ServiceDiscoveryInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getPairedAlias() {

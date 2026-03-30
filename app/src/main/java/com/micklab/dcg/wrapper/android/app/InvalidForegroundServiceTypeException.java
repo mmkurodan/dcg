@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class InvalidForegroundServiceTypeException {
-    private final android.app.InvalidForegroundServiceTypeException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InvalidForegroundServiceTypeException(android.app.InvalidForegroundServiceTypeException real) {
+    private final java.lang.Object real;
+
+    private InvalidForegroundServiceTypeException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.InvalidForegroundServiceTypeException wrap(android.app.InvalidForegroundServiceTypeException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.InvalidForegroundServiceTypeException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.InvalidForegroundServiceTypeException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.InvalidForegroundServiceTypeException getReal() {
+        return (android.app.InvalidForegroundServiceTypeException) real;
     }
 
     public android.app.InvalidForegroundServiceTypeException unwrap() {
-        return real;
+        return getReal();
     }
 
     public InvalidForegroundServiceTypeException(java.lang.String arg0) {
-        this(new android.app.InvalidForegroundServiceTypeException(arg0));
+        this(new android.app.InvalidForegroundServiceTypeException(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.InvalidForegroundServiceTypeException) real).describeContents();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.InvalidForegroundServiceTypeException) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

@@ -2,52 +2,66 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class UserDictionary {
-    private final android.provider.UserDictionary real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UserDictionary(android.provider.UserDictionary real) {
+    private final java.lang.Object real;
+
+    private UserDictionary(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.UserDictionary wrap(android.provider.UserDictionary real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.UserDictionary(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.UserDictionary(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.UserDictionary getReal() {
+        return (android.provider.UserDictionary) real;
     }
 
     public android.provider.UserDictionary unwrap() {
-        return real;
+        return getReal();
     }
 
     public UserDictionary() {
-        this(new android.provider.UserDictionary());
+        this(new android.provider.UserDictionary(), (__DcgwBridgeToken) null);
     }
 
     public static final java.lang.String AUTHORITY = android.provider.UserDictionary.AUTHORITY;
     public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.UserDictionary.CONTENT_URI);
 
     public static final class Words {
-        private final android.provider.UserDictionary.Words real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Words(android.provider.UserDictionary.Words real) {
+        private final java.lang.Object real;
+
+        private Words(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.UserDictionary.Words wrap(android.provider.UserDictionary.Words real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.UserDictionary.Words(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.UserDictionary.Words(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.UserDictionary.Words getReal() {
+            return (android.provider.UserDictionary.Words) real;
         }
 
         public android.provider.UserDictionary.Words unwrap() {
-            return real;
+            return getReal();
         }
 
         public Words() {
-            this(new android.provider.UserDictionary.Words());
+            this(new android.provider.UserDictionary.Words(), (__DcgwBridgeToken) null);
         }
 
         public static void addWord(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1, int arg2, int arg3) {
-            android.provider.UserDictionary.Words.addWord(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            android.provider.UserDictionary.Words.addWord(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public static void addWord(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1, int arg2, java.lang.String arg3, java.util.Locale arg4) {
-            android.provider.UserDictionary.Words.addWord(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+            android.provider.UserDictionary.Words.addWord(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
         }
 
         public static final java.lang.String APP_ID = android.provider.UserDictionary.Words.APP_ID;

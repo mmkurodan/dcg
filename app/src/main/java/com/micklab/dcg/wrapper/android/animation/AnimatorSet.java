@@ -2,122 +2,129 @@
 package com.micklab.dcg.wrapper.android.animation;
 
 public final class AnimatorSet {
-    private final android.animation.AnimatorSet real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AnimatorSet(android.animation.AnimatorSet real) {
+    private final java.lang.Object real;
+
+    private AnimatorSet(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.animation.AnimatorSet wrap(android.animation.AnimatorSet real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.AnimatorSet(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.AnimatorSet(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.animation.AnimatorSet getReal() {
+        return (android.animation.AnimatorSet) real;
     }
 
     public android.animation.AnimatorSet unwrap() {
-        return real;
+        return getReal();
     }
 
     public AnimatorSet() {
-        this(new android.animation.AnimatorSet());
+        this(new android.animation.AnimatorSet(), (__DcgwBridgeToken) null);
     }
 
     public void cancel() {
-        real.cancel();
+        ((android.animation.AnimatorSet) real).cancel();
     }
 
     public com.micklab.dcg.wrapper.android.animation.AnimatorSet clone() {
-        return com.micklab.dcg.wrapper.android.animation.AnimatorSet.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.animation.AnimatorSet.wrap(((android.animation.AnimatorSet) real).clone());
     }
 
     public void end() {
-        real.end();
+        ((android.animation.AnimatorSet) real).end();
     }
 
     public long getCurrentPlayTime() {
-        return real.getCurrentPlayTime();
+        return ((android.animation.AnimatorSet) real).getCurrentPlayTime();
     }
 
     public long getDuration() {
-        return real.getDuration();
+        return ((android.animation.AnimatorSet) real).getDuration();
     }
 
     public com.micklab.dcg.wrapper.android.animation.TimeInterpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(((android.animation.AnimatorSet) real).getInterpolator());
     }
 
     public long getStartDelay() {
-        return real.getStartDelay();
+        return ((android.animation.AnimatorSet) real).getStartDelay();
     }
 
     public long getTotalDuration() {
-        return real.getTotalDuration();
+        return ((android.animation.AnimatorSet) real).getTotalDuration();
     }
 
     public boolean isRunning() {
-        return real.isRunning();
+        return ((android.animation.AnimatorSet) real).isRunning();
     }
 
     public boolean isStarted() {
-        return real.isStarted();
+        return ((android.animation.AnimatorSet) real).isStarted();
     }
 
     public void pause() {
-        real.pause();
+        ((android.animation.AnimatorSet) real).pause();
     }
 
     public android.animation.AnimatorSet.Builder play(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-        return real.play(arg0 == null ? null : arg0.unwrap());
+        return ((android.animation.AnimatorSet) real).play(arg0 == null ? null : arg0.getReal());
     }
 
     public void playSequentially(android.animation.Animator... arg0) {
-        real.playSequentially(arg0);
+        ((android.animation.AnimatorSet) real).playSequentially(arg0);
     }
 
     public void playTogether(android.animation.Animator... arg0) {
-        real.playTogether(arg0);
+        ((android.animation.AnimatorSet) real).playTogether(arg0);
     }
 
     public void resume() {
-        real.resume();
+        ((android.animation.AnimatorSet) real).resume();
     }
 
     public void reverse() {
-        real.reverse();
+        ((android.animation.AnimatorSet) real).reverse();
     }
 
     public void setCurrentPlayTime(long arg0) {
-        real.setCurrentPlayTime(arg0);
+        ((android.animation.AnimatorSet) real).setCurrentPlayTime(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.animation.AnimatorSet setDuration(long arg0) {
-        return com.micklab.dcg.wrapper.android.animation.AnimatorSet.wrap(real.setDuration(arg0));
+        return com.micklab.dcg.wrapper.android.animation.AnimatorSet.wrap(((android.animation.AnimatorSet) real).setDuration(arg0));
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.animation.TimeInterpolator arg0) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.AnimatorSet) real).setInterpolator(arg0 == null ? null : arg0.getReal());
     }
 
     public void setStartDelay(long arg0) {
-        real.setStartDelay(arg0);
+        ((android.animation.AnimatorSet) real).setStartDelay(arg0);
     }
 
     public void setTarget(java.lang.Object arg0) {
-        real.setTarget(arg0);
+        ((android.animation.AnimatorSet) real).setTarget(arg0);
     }
 
     public void setupEndValues() {
-        real.setupEndValues();
+        ((android.animation.AnimatorSet) real).setupEndValues();
     }
 
     public void setupStartValues() {
-        real.setupStartValues();
+        ((android.animation.AnimatorSet) real).setupStartValues();
     }
 
     public void start() {
-        real.start();
+        ((android.animation.AnimatorSet) real).start();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.animation.AnimatorSet) real).toString();
     }
 
 }

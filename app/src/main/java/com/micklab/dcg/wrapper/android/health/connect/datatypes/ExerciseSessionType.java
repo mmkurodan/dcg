@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class ExerciseSessionType {
-    private final android.health.connect.datatypes.ExerciseSessionType real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExerciseSessionType(android.health.connect.datatypes.ExerciseSessionType real) {
+    private final java.lang.Object real;
+
+    private ExerciseSessionType(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSessionType wrap(android.health.connect.datatypes.ExerciseSessionType real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSessionType(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseSessionType(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.ExerciseSessionType getReal() {
+        return (android.health.connect.datatypes.ExerciseSessionType) real;
     }
 
     public android.health.connect.datatypes.ExerciseSessionType unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int EXERCISE_SESSION_TYPE_BADMINTON = android.health.connect.datatypes.ExerciseSessionType.EXERCISE_SESSION_TYPE_BADMINTON;

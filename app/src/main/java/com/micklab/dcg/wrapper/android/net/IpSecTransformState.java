@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpSecTransformState {
-    private final android.net.IpSecTransformState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpSecTransformState(android.net.IpSecTransformState real) {
+    private final java.lang.Object real;
+
+    private IpSecTransformState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpSecTransformState wrap(android.net.IpSecTransformState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransformState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransformState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpSecTransformState getReal() {
+        return (android.net.IpSecTransformState) real;
     }
 
     public android.net.IpSecTransformState unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -50,18 +57,25 @@ public final class IpSecTransformState {
 
 
     public static final class Builder {
-        private final android.net.IpSecTransformState.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.IpSecTransformState.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecTransformState.Builder wrap(android.net.IpSecTransformState.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransformState.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransformState.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecTransformState.Builder getReal() {
+            return (android.net.IpSecTransformState.Builder) real;
         }
 
         public android.net.IpSecTransformState.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

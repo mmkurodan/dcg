@@ -2,77 +2,91 @@
 package com.micklab.dcg.wrapper.android.accessibilityservice;
 
 public final class BrailleDisplayController {
-    private final android.accessibilityservice.BrailleDisplayController real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BrailleDisplayController(android.accessibilityservice.BrailleDisplayController real) {
+    private final java.lang.Object real;
+
+    private BrailleDisplayController(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController wrap(android.accessibilityservice.BrailleDisplayController real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accessibilityservice.BrailleDisplayController getReal() {
+        return (android.accessibilityservice.BrailleDisplayController) real;
     }
 
     public android.accessibilityservice.BrailleDisplayController unwrap() {
-        return real;
+        return getReal();
     }
 
     public void connect(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
-        real.connect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void connect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
-        real.connect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void connect(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg2) {
-        real.connect(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void connect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg2) {
-        real.connect(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void disconnect() {
-        real.disconnect();
+        ((android.accessibilityservice.BrailleDisplayController) real).disconnect();
     }
 
     public boolean isConnected() {
-        return real.isConnected();
+        return ((android.accessibilityservice.BrailleDisplayController) real).isConnected();
     }
 
     public void write(byte[] arg0) throws java.io.IOException {
-        real.write(arg0);
+        ((android.accessibilityservice.BrailleDisplayController) real).write(arg0);
     }
 
     public static final class BrailleDisplayCallback {
-        private final android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BrailleDisplayCallback(android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback real) {
+        private final java.lang.Object real;
+
+        private BrailleDisplayCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback wrap(android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback getReal() {
+            return (android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback) real;
         }
 
         public android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onConnected(byte[] arg0) {
-            real.onConnected(arg0);
+            ((android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback) real).onConnected(arg0);
         }
 
         public void onConnectionFailed(int arg0) {
-            real.onConnectionFailed(arg0);
+            ((android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback) real).onConnectionFailed(arg0);
         }
 
         public void onDisconnected() {
-            real.onDisconnected();
+            ((android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback) real).onDisconnected();
         }
 
         public void onInput(byte[] arg0) {
-            real.onInput(arg0);
+            ((android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback) real).onInput(arg0);
         }
 
         public static final int FLAG_ERROR_BRAILLE_DISPLAY_NOT_FOUND = android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback.FLAG_ERROR_BRAILLE_DISPLAY_NOT_FOUND;

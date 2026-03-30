@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class MatrixCursor {
-    private final android.database.MatrixCursor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MatrixCursor(android.database.MatrixCursor real) {
+    private final java.lang.Object real;
+
+    private MatrixCursor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.MatrixCursor wrap(android.database.MatrixCursor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.MatrixCursor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.MatrixCursor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.MatrixCursor getReal() {
+        return (android.database.MatrixCursor) real;
     }
 
     public android.database.MatrixCursor unwrap() {
-        return real;
+        return getReal();
     }
 
     public MatrixCursor(java.lang.String[] arg0) {

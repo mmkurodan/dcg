@@ -2,113 +2,127 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DateIntervalInfo {
-    private final android.icu.text.DateIntervalInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DateIntervalInfo(android.icu.text.DateIntervalInfo real) {
+    private final java.lang.Object real;
+
+    private DateIntervalInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo wrap(android.icu.text.DateIntervalInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DateIntervalInfo getReal() {
+        return (android.icu.text.DateIntervalInfo) real;
     }
 
     public android.icu.text.DateIntervalInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public DateIntervalInfo(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.DateIntervalInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.text.DateIntervalInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateIntervalInfo(java.util.Locale arg0) {
-        this(new android.icu.text.DateIntervalInfo(arg0));
+        this(new android.icu.text.DateIntervalInfo(arg0), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.DateIntervalInfo) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.wrap(((android.icu.text.DateIntervalInfo) real).cloneAsThawed());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.DateIntervalInfo) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo freeze() {
-        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.wrap(((android.icu.text.DateIntervalInfo) real).freeze());
     }
 
     public boolean getDefaultOrder() {
-        return real.getDefaultOrder();
+        return ((android.icu.text.DateIntervalInfo) real).getDefaultOrder();
     }
 
     public java.lang.String getFallbackIntervalPattern() {
-        return real.getFallbackIntervalPattern();
+        return ((android.icu.text.DateIntervalInfo) real).getFallbackIntervalPattern();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo getIntervalPattern(java.lang.String arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo.wrap(real.getIntervalPattern(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo.wrap(((android.icu.text.DateIntervalInfo) real).getIntervalPattern(arg0, arg1));
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.DateIntervalInfo) real).hashCode();
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.text.DateIntervalInfo) real).isFrozen();
     }
 
     public void setFallbackIntervalPattern(java.lang.String arg0) {
-        real.setFallbackIntervalPattern(arg0);
+        ((android.icu.text.DateIntervalInfo) real).setFallbackIntervalPattern(arg0);
     }
 
     public void setIntervalPattern(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        real.setIntervalPattern(arg0, arg1, arg2);
+        ((android.icu.text.DateIntervalInfo) real).setIntervalPattern(arg0, arg1, arg2);
     }
 
     public static final class PatternInfo {
-        private final android.icu.text.DateIntervalInfo.PatternInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PatternInfo(android.icu.text.DateIntervalInfo.PatternInfo real) {
+        private final java.lang.Object real;
+
+        private PatternInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo wrap(android.icu.text.DateIntervalInfo.PatternInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo.PatternInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DateIntervalInfo.PatternInfo getReal() {
+            return (android.icu.text.DateIntervalInfo.PatternInfo) real;
         }
 
         public android.icu.text.DateIntervalInfo.PatternInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public PatternInfo(java.lang.String arg0, java.lang.String arg1, boolean arg2) {
-            this(new android.icu.text.DateIntervalInfo.PatternInfo(arg0, arg1, arg2));
+            this(new android.icu.text.DateIntervalInfo.PatternInfo(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).equals(arg0);
         }
 
         public boolean firstDateInPtnIsLaterDate() {
-            return real.firstDateInPtnIsLaterDate();
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).firstDateInPtnIsLaterDate();
         }
 
         public java.lang.String getFirstPart() {
-            return real.getFirstPart();
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).getFirstPart();
         }
 
         public java.lang.String getSecondPart() {
-            return real.getSecondPart();
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).getSecondPart();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.icu.text.DateIntervalInfo.PatternInfo) real).toString();
         }
 
     }

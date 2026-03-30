@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothLeAudioCodecConfig {
-    private final android.bluetooth.BluetoothLeAudioCodecConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothLeAudioCodecConfig(android.bluetooth.BluetoothLeAudioCodecConfig real) {
+    private final java.lang.Object real;
+
+    private BluetoothLeAudioCodecConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig wrap(android.bluetooth.BluetoothLeAudioCodecConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothLeAudioCodecConfig getReal() {
+        return (android.bluetooth.BluetoothLeAudioCodecConfig) real;
     }
 
     public android.bluetooth.BluetoothLeAudioCodecConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).equals(arg0);
     }
 
     public int getBitsPerSample() {
-        return real.getBitsPerSample();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getBitsPerSample();
     }
 
     public int getChannelCount() {
-        return real.getChannelCount();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getChannelCount();
     }
 
     public java.lang.String getCodecName() {
-        return real.getCodecName();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getCodecName();
     }
 
     public int getCodecPriority() {
-        return real.getCodecPriority();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getCodecPriority();
     }
 
     public int getCodecType() {
-        return real.getCodecType();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getCodecType();
     }
 
     public int getFrameDuration() {
-        return real.getFrameDuration();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getFrameDuration();
     }
 
     public int getMaxOctetsPerFrame() {
-        return real.getMaxOctetsPerFrame();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getMaxOctetsPerFrame();
     }
 
     public int getMinOctetsPerFrame() {
-        return real.getMinOctetsPerFrame();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getMinOctetsPerFrame();
     }
 
     public int getOctetsPerFrame() {
-        return real.getOctetsPerFrame();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getOctetsPerFrame();
     }
 
     public int getSampleRate() {
-        return real.getSampleRate();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).getSampleRate();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.BluetoothLeAudioCodecConfig) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothLeAudioCodecConfig) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int BITS_PER_SAMPLE_16 = android.bluetooth.BluetoothLeAudioCodecConfig.BITS_PER_SAMPLE_16;
@@ -107,66 +114,73 @@ public final class BluetoothLeAudioCodecConfig {
     public static final int SOURCE_CODEC_TYPE_LC3 = android.bluetooth.BluetoothLeAudioCodecConfig.SOURCE_CODEC_TYPE_LC3;
 
     public static final class Builder {
-        private final android.bluetooth.BluetoothLeAudioCodecConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.bluetooth.BluetoothLeAudioCodecConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder wrap(android.bluetooth.BluetoothLeAudioCodecConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothLeAudioCodecConfig.Builder getReal() {
+            return (android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real;
         }
 
         public android.bluetooth.BluetoothLeAudioCodecConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.bluetooth.BluetoothLeAudioCodecConfig.Builder());
+            this(new android.bluetooth.BluetoothLeAudioCodecConfig.Builder(), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig arg0) {
-            this(new android.bluetooth.BluetoothLeAudioCodecConfig.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.bluetooth.BluetoothLeAudioCodecConfig.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig build() {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setBitsPerSample(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setBitsPerSample(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setBitsPerSample(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setChannelCount(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setChannelCount(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setChannelCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setCodecPriority(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setCodecPriority(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setCodecPriority(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setCodecType(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setCodecType(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setCodecType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setFrameDuration(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setFrameDuration(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setFrameDuration(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setMaxOctetsPerFrame(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setMaxOctetsPerFrame(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setMaxOctetsPerFrame(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setMinOctetsPerFrame(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setMinOctetsPerFrame(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setMinOctetsPerFrame(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setOctetsPerFrame(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setOctetsPerFrame(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setOctetsPerFrame(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder setSampleRate(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(real.setSampleRate(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudioCodecConfig.Builder.wrap(((android.bluetooth.BluetoothLeAudioCodecConfig.Builder) real).setSampleRate(arg0));
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class MbmsGroupCallSessionCallback {
-    private final android.telephony.mbms.MbmsGroupCallSessionCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MbmsGroupCallSessionCallback(android.telephony.mbms.MbmsGroupCallSessionCallback real) {
+    private final java.lang.Object real;
+
+    private MbmsGroupCallSessionCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsGroupCallSessionCallback wrap(android.telephony.mbms.MbmsGroupCallSessionCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsGroupCallSessionCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsGroupCallSessionCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.MbmsGroupCallSessionCallback getReal() {
+        return (android.telephony.mbms.MbmsGroupCallSessionCallback) real;
     }
 
     public android.telephony.mbms.MbmsGroupCallSessionCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onError(int arg0, java.lang.String arg1) {

@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ContentInfo {
-    private final android.view.ContentInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ContentInfo(android.view.ContentInfo real) {
+    private final java.lang.Object real;
+
+    private ContentInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ContentInfo wrap(android.view.ContentInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContentInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContentInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ContentInfo getReal() {
+        return (android.view.ContentInfo) real;
     }
 
     public android.view.ContentInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.ContentInfo) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.content.ClipData getClip() {
-        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(real.getClip());
+        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(((android.view.ContentInfo) real).getClip());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.view.ContentInfo) real).getExtras());
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.view.ContentInfo) real).getFlags();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getLinkUri() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getLinkUri());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.view.ContentInfo) real).getLinkUri());
     }
 
     public int getSource() {
-        return real.getSource();
+        return ((android.view.ContentInfo) real).getSource();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.ContentInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.ContentInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int FLAG_CONVERT_TO_PLAIN_TEXT = android.view.ContentInfo.FLAG_CONVERT_TO_PLAIN_TEXT;
@@ -57,50 +64,57 @@ public final class ContentInfo {
     public static final int SOURCE_PROCESS_TEXT = android.view.ContentInfo.SOURCE_PROCESS_TEXT;
 
     public static final class Builder {
-        private final android.view.ContentInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.view.ContentInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ContentInfo.Builder wrap(android.view.ContentInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContentInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContentInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ContentInfo.Builder getReal() {
+            return (android.view.ContentInfo.Builder) real;
         }
 
         public android.view.ContentInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.view.ContentInfo arg0) {
-            this(new android.view.ContentInfo.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.view.ContentInfo.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.ClipData arg0, int arg1) {
-            this(new android.view.ContentInfo.Builder(arg0 == null ? null : arg0.unwrap(), arg1));
+            this(new android.view.ContentInfo.Builder(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo build() {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.wrap(((android.view.ContentInfo.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo.Builder setClip(com.micklab.dcg.wrapper.android.content.ClipData arg0) {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(real.setClip(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(((android.view.ContentInfo.Builder) real).setClip(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo.Builder setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(real.setExtras(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(((android.view.ContentInfo.Builder) real).setExtras(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo.Builder setFlags(int arg0) {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(real.setFlags(arg0));
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(((android.view.ContentInfo.Builder) real).setFlags(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo.Builder setLinkUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(real.setLinkUri(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(((android.view.ContentInfo.Builder) real).setLinkUri(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.view.ContentInfo.Builder setSource(int arg0) {
-            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(real.setSource(arg0));
+            return com.micklab.dcg.wrapper.android.view.ContentInfo.Builder.wrap(((android.view.ContentInfo.Builder) real).setSource(arg0));
         }
 
     }

@@ -2,41 +2,55 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class OnDevicePersonalizationManager {
-    private final android.adservices.ondevicepersonalization.OnDevicePersonalizationManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OnDevicePersonalizationManager(android.adservices.ondevicepersonalization.OnDevicePersonalizationManager real) {
+    private final java.lang.Object real;
+
+    private OnDevicePersonalizationManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager wrap(android.adservices.ondevicepersonalization.OnDevicePersonalizationManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.OnDevicePersonalizationManager getReal() {
+        return (android.adservices.ondevicepersonalization.OnDevicePersonalizationManager) real;
     }
 
     public android.adservices.ondevicepersonalization.OnDevicePersonalizationManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class ExecuteResult {
-        private final android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExecuteResult(android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult real) {
+        private final java.lang.Object real;
+
+        private ExecuteResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult wrap(android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult getReal() {
+            return (android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult) real;
         }
 
         public android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public byte[] getOutputData() {
-            return real.getOutputData();
+            return ((android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult) real).getOutputData();
         }
 
         public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.SurfacePackageToken getSurfacePackageToken() {
-            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.SurfacePackageToken.wrap(real.getSurfacePackageToken());
+            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.SurfacePackageToken.wrap(((android.adservices.ondevicepersonalization.OnDevicePersonalizationManager.ExecuteResult) real).getSurfacePackageToken());
         }
 
     }

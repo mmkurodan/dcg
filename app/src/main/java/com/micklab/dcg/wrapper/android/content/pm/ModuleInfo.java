@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ModuleInfo {
-    private final android.content.pm.ModuleInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ModuleInfo(android.content.pm.ModuleInfo real) {
+    private final java.lang.Object real;
+
+    private ModuleInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ModuleInfo wrap(android.content.pm.ModuleInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ModuleInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ModuleInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ModuleInfo getReal() {
+        return (android.content.pm.ModuleInfo) real;
     }
 
     public android.content.pm.ModuleInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

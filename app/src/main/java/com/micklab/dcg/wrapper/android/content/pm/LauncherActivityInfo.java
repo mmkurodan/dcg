@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class LauncherActivityInfo {
-    private final android.content.pm.LauncherActivityInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LauncherActivityInfo(android.content.pm.LauncherActivityInfo real) {
+    private final java.lang.Object real;
+
+    private LauncherActivityInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.LauncherActivityInfo wrap(android.content.pm.LauncherActivityInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherActivityInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherActivityInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.LauncherActivityInfo getReal() {
+        return (android.content.pm.LauncherActivityInfo) real;
     }
 
     public android.content.pm.LauncherActivityInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ActivityInfo getActivityInfo() {

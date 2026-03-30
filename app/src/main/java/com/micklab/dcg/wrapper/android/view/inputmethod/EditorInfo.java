@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.view.inputmethod;
 
 public final class EditorInfo {
-    private final android.view.inputmethod.EditorInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EditorInfo(android.view.inputmethod.EditorInfo real) {
+    private final java.lang.Object real;
+
+    private EditorInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo wrap(android.view.inputmethod.EditorInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.inputmethod.EditorInfo getReal() {
+        return (android.view.inputmethod.EditorInfo) real;
     }
 
     public android.view.inputmethod.EditorInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public EditorInfo() {
-        this(new android.view.inputmethod.EditorInfo());
+        this(new android.view.inputmethod.EditorInfo(), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.inputmethod.EditorInfo) real).describeContents();
     }
 
     public void dump(com.micklab.dcg.wrapper.android.util.Printer arg0, java.lang.String arg1) {
-        real.dump(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.inputmethod.EditorInfo) real).dump(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public java.lang.CharSequence getInitialSelectedText(int arg0) {
-        return real.getInitialSelectedText(arg0);
+        return ((android.view.inputmethod.EditorInfo) real).getInitialSelectedText(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.view.inputmethod.SurroundingText getInitialSurroundingText(int arg0, int arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.view.inputmethod.SurroundingText.wrap(real.getInitialSurroundingText(arg0, arg1, arg2));
+        return com.micklab.dcg.wrapper.android.view.inputmethod.SurroundingText.wrap(((android.view.inputmethod.EditorInfo) real).getInitialSurroundingText(arg0, arg1, arg2));
     }
 
     public java.lang.CharSequence getInitialTextAfterCursor(int arg0, int arg1) {
-        return real.getInitialTextAfterCursor(arg0, arg1);
+        return ((android.view.inputmethod.EditorInfo) real).getInitialTextAfterCursor(arg0, arg1);
     }
 
     public java.lang.CharSequence getInitialTextBeforeCursor(int arg0, int arg1) {
-        return real.getInitialTextBeforeCursor(arg0, arg1);
+        return ((android.view.inputmethod.EditorInfo) real).getInitialTextBeforeCursor(arg0, arg1);
     }
 
     public int getInitialToolType() {
-        return real.getInitialToolType();
+        return ((android.view.inputmethod.EditorInfo) real).getInitialToolType();
     }
 
     public boolean isStylusHandwritingEnabled() {
-        return real.isStylusHandwritingEnabled();
+        return ((android.view.inputmethod.EditorInfo) real).isStylusHandwritingEnabled();
     }
 
     public void makeCompatible(int arg0) {
-        real.makeCompatible(arg0);
+        ((android.view.inputmethod.EditorInfo) real).makeCompatible(arg0);
     }
 
     public void setInitialSurroundingSubText(java.lang.CharSequence arg0, int arg1) {
-        real.setInitialSurroundingSubText(arg0, arg1);
+        ((android.view.inputmethod.EditorInfo) real).setInitialSurroundingSubText(arg0, arg1);
     }
 
     public void setInitialSurroundingText(java.lang.CharSequence arg0) {
-        real.setInitialSurroundingText(arg0);
+        ((android.view.inputmethod.EditorInfo) real).setInitialSurroundingText(arg0);
     }
 
     public void setInitialToolType(int arg0) {
-        real.setInitialToolType(arg0);
+        ((android.view.inputmethod.EditorInfo) real).setInitialToolType(arg0);
     }
 
     public void setStylusHandwritingEnabled(boolean arg0) {
-        real.setStylusHandwritingEnabled(arg0);
+        ((android.view.inputmethod.EditorInfo) real).setStylusHandwritingEnabled(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.inputmethod.EditorInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int IME_ACTION_DONE = android.view.inputmethod.EditorInfo.IME_ACTION_DONE;

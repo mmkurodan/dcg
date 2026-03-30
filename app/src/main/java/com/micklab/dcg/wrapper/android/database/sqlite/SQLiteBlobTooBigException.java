@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteBlobTooBigException {
-    private final android.database.sqlite.SQLiteBlobTooBigException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteBlobTooBigException(android.database.sqlite.SQLiteBlobTooBigException real) {
+    private final java.lang.Object real;
+
+    private SQLiteBlobTooBigException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteBlobTooBigException wrap(android.database.sqlite.SQLiteBlobTooBigException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteBlobTooBigException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteBlobTooBigException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteBlobTooBigException getReal() {
+        return (android.database.sqlite.SQLiteBlobTooBigException) real;
     }
 
     public android.database.sqlite.SQLiteBlobTooBigException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteBlobTooBigException() {

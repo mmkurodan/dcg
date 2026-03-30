@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class HebrewCalendar {
-    private final android.icu.util.HebrewCalendar real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HebrewCalendar(android.icu.util.HebrewCalendar real) {
+    private final java.lang.Object real;
+
+    private HebrewCalendar(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.HebrewCalendar wrap(android.icu.util.HebrewCalendar real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.HebrewCalendar(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.HebrewCalendar(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.HebrewCalendar getReal() {
+        return (android.icu.util.HebrewCalendar) real;
     }
 
     public android.icu.util.HebrewCalendar unwrap() {
-        return real;
+        return getReal();
     }
 
     public HebrewCalendar() {
-        this(new android.icu.util.HebrewCalendar());
+        this(new android.icu.util.HebrewCalendar(), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(java.util.Date arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0));
+        this(new android.icu.util.HebrewCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0));
+        this(new android.icu.util.HebrewCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(int arg0, int arg1, int arg2) {
-        this(new android.icu.util.HebrewCalendar(arg0, arg1, arg2));
+        this(new android.icu.util.HebrewCalendar(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        this(new android.icu.util.HebrewCalendar(arg0, arg1, arg2, arg3, arg4, arg5));
+        this(new android.icu.util.HebrewCalendar(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
     public void add(int arg0, int arg1) {
-        real.add(arg0, arg1);
+        ((android.icu.util.HebrewCalendar) real).add(arg0, arg1);
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.icu.util.HebrewCalendar) real).getType();
     }
 
     public void roll(int arg0, int arg1) {
-        real.roll(arg0, arg1);
+        ((android.icu.util.HebrewCalendar) real).roll(arg0, arg1);
     }
 
     public static final int ADAR = android.icu.util.HebrewCalendar.ADAR;

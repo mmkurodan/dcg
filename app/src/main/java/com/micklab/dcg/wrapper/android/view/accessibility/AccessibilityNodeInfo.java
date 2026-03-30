@@ -2,666 +2,673 @@
 package com.micklab.dcg.wrapper.android.view.accessibility;
 
 public final class AccessibilityNodeInfo {
-    private final android.view.accessibility.AccessibilityNodeInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo real) {
+    private final java.lang.Object real;
+
+    private AccessibilityNodeInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo wrap(android.view.accessibility.AccessibilityNodeInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.accessibility.AccessibilityNodeInfo getReal() {
+        return (android.view.accessibility.AccessibilityNodeInfo) real;
     }
 
     public android.view.accessibility.AccessibilityNodeInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccessibilityNodeInfo() {
-        this(new android.view.accessibility.AccessibilityNodeInfo());
+        this(new android.view.accessibility.AccessibilityNodeInfo(), (__DcgwBridgeToken) null);
     }
 
     public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
-        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.View arg0) {
-        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.unwrap(), arg1));
-    }
-
-    public void addAction(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction arg0) {
-        real.addAction(arg0 == null ? null : arg0.unwrap());
+        this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public void addAction(int arg0) {
-        real.addAction(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addAction(arg0);
+    }
+
+    public void addAction(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addAction(arg0 == null ? null : arg0.getReal());
     }
 
     public void addChild(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.addChild(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addChild(arg0 == null ? null : arg0.getReal());
     }
 
     public void addChild(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.addChild(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addChild(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean canOpenPopup() {
-        return real.canOpenPopup();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).canOpenPopup();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo findFocus(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.findFocus(arg0));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).findFocus(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo focusSearch(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.focusSearch(arg0));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).focusSearch(arg0));
     }
 
     public int getActions() {
-        return real.getActions();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getActions();
     }
 
     public void getBoundsInParent(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.getBoundsInParent(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).getBoundsInParent(arg0 == null ? null : arg0.getReal());
     }
 
     public void getBoundsInScreen(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.getBoundsInScreen(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).getBoundsInScreen(arg0 == null ? null : arg0.getReal());
     }
 
     public void getBoundsInWindow(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.getBoundsInWindow(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).getBoundsInWindow(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getChild(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getChild(arg0));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getChild(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getChild(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getChild(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getChild(arg0, arg1));
     }
 
     public int getChildCount() {
-        return real.getChildCount();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getChildCount();
     }
 
     public java.lang.CharSequence getClassName() {
-        return real.getClassName();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getClassName();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo getCollectionInfo() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.wrap(real.getCollectionInfo());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getCollectionInfo());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo getCollectionItemInfo() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.wrap(real.getCollectionItemInfo());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getCollectionItemInfo());
     }
 
     public java.lang.CharSequence getContainerTitle() {
-        return real.getContainerTitle();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getContainerTitle();
     }
 
     public java.lang.CharSequence getContentDescription() {
-        return real.getContentDescription();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getContentDescription();
     }
 
     public int getDrawingOrder() {
-        return real.getDrawingOrder();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getDrawingOrder();
     }
 
     public java.lang.CharSequence getError() {
-        return real.getError();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getError();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo getExtraRenderingInfo() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo.wrap(real.getExtraRenderingInfo());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getExtraRenderingInfo());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getExtras());
     }
 
     public java.lang.CharSequence getHintText() {
-        return real.getHintText();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getHintText();
     }
 
     public int getInputType() {
-        return real.getInputType();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getInputType();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getLabelFor() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getLabelFor());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getLabelFor());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getLabeledBy() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getLabeledBy());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getLabeledBy());
     }
 
     public int getLiveRegion() {
-        return real.getLiveRegion();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getLiveRegion();
     }
 
     public int getMaxTextLength() {
-        return real.getMaxTextLength();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getMaxTextLength();
     }
 
     public java.time.Duration getMinDurationBetweenContentChanges() {
-        return real.getMinDurationBetweenContentChanges();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getMinDurationBetweenContentChanges();
     }
 
     public int getMovementGranularities() {
-        return real.getMovementGranularities();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getMovementGranularities();
     }
 
     public java.lang.CharSequence getPackageName() {
-        return real.getPackageName();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getPackageName();
     }
 
     public java.lang.CharSequence getPaneTitle() {
-        return real.getPaneTitle();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getPaneTitle();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getParent() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getParent());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getParent());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getParent(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getParent(arg0));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getParent(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo getRangeInfo() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo.wrap(real.getRangeInfo());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getRangeInfo());
     }
 
     public java.lang.CharSequence getStateDescription() {
-        return real.getStateDescription();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getStateDescription();
     }
 
     public java.lang.CharSequence getText() {
-        return real.getText();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getText();
     }
 
     public int getTextSelectionEnd() {
-        return real.getTextSelectionEnd();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getTextSelectionEnd();
     }
 
     public int getTextSelectionStart() {
-        return real.getTextSelectionStart();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getTextSelectionStart();
     }
 
     public java.lang.CharSequence getTooltipText() {
-        return real.getTooltipText();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getTooltipText();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo getTouchDelegateInfo() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo.wrap(real.getTouchDelegateInfo());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getTouchDelegateInfo());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getTraversalAfter() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getTraversalAfter());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getTraversalAfter());
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getTraversalBefore() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getTraversalBefore());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getTraversalBefore());
     }
 
     public java.lang.String getUniqueId() {
-        return real.getUniqueId();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getUniqueId();
     }
 
     public java.lang.String getViewIdResourceName() {
-        return real.getViewIdResourceName();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getViewIdResourceName();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityWindowInfo getWindow() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityWindowInfo.wrap(real.getWindow());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityWindowInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo) real).getWindow());
     }
 
     public int getWindowId() {
-        return real.getWindowId();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getWindowId();
     }
 
     public boolean hasRequestInitialAccessibilityFocus() {
-        return real.hasRequestInitialAccessibilityFocus();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).hasRequestInitialAccessibilityFocus();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).hashCode();
     }
 
     public boolean isAccessibilityDataSensitive() {
-        return real.isAccessibilityDataSensitive();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isAccessibilityDataSensitive();
     }
 
     public boolean isAccessibilityFocused() {
-        return real.isAccessibilityFocused();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isAccessibilityFocused();
     }
 
     public boolean isCheckable() {
-        return real.isCheckable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isCheckable();
     }
 
     public boolean isChecked() {
-        return real.isChecked();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isChecked();
     }
 
     public boolean isClickable() {
-        return real.isClickable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isClickable();
     }
 
     public boolean isContentInvalid() {
-        return real.isContentInvalid();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isContentInvalid();
     }
 
     public boolean isContextClickable() {
-        return real.isContextClickable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isContextClickable();
     }
 
     public boolean isDismissable() {
-        return real.isDismissable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isDismissable();
     }
 
     public boolean isEditable() {
-        return real.isEditable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isEditable();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isEnabled();
     }
 
     public boolean isFocusable() {
-        return real.isFocusable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isFocusable();
     }
 
     public boolean isFocused() {
-        return real.isFocused();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isFocused();
     }
 
     public boolean isGranularScrollingSupported() {
-        return real.isGranularScrollingSupported();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isGranularScrollingSupported();
     }
 
     public boolean isHeading() {
-        return real.isHeading();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isHeading();
     }
 
     public boolean isImportantForAccessibility() {
-        return real.isImportantForAccessibility();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isImportantForAccessibility();
     }
 
     public boolean isLongClickable() {
-        return real.isLongClickable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isLongClickable();
     }
 
     public boolean isMultiLine() {
-        return real.isMultiLine();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isMultiLine();
     }
 
     public boolean isPassword() {
-        return real.isPassword();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isPassword();
     }
 
     public boolean isScreenReaderFocusable() {
-        return real.isScreenReaderFocusable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isScreenReaderFocusable();
     }
 
     public boolean isScrollable() {
-        return real.isScrollable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isScrollable();
     }
 
     public boolean isSelected() {
-        return real.isSelected();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isSelected();
     }
 
     public boolean isShowingHintText() {
-        return real.isShowingHintText();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isShowingHintText();
     }
 
     public boolean isTextEntryKey() {
-        return real.isTextEntryKey();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isTextEntryKey();
     }
 
     public boolean isTextSelectable() {
-        return real.isTextSelectable();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isTextSelectable();
     }
 
     public boolean isVisibleToUser() {
-        return real.isVisibleToUser();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isVisibleToUser();
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain() {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain());
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.unwrap()));
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.unwrap()));
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public boolean performAction(int arg0) {
-        return real.performAction(arg0);
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).performAction(arg0);
     }
 
     public boolean performAction(int arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        return real.performAction(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).performAction(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void recycle() {
-        real.recycle();
+        ((android.view.accessibility.AccessibilityNodeInfo) real).recycle();
     }
 
     public boolean refresh() {
-        return real.refresh();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).refresh();
     }
 
     public boolean refreshWithExtraData(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        return real.refreshWithExtraData(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).refreshWithExtraData(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean removeAction(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction arg0) {
-        return real.removeAction(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).removeAction(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeAction(int arg0) {
-        real.removeAction(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).removeAction(arg0);
     }
 
     public boolean removeChild(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.removeChild(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).removeChild(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean removeChild(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        return real.removeChild(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).removeChild(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAccessibilityDataSensitive(boolean arg0) {
-        real.setAccessibilityDataSensitive(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setAccessibilityDataSensitive(arg0);
     }
 
     public void setAccessibilityFocused(boolean arg0) {
-        real.setAccessibilityFocused(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setAccessibilityFocused(arg0);
     }
 
     public void setBoundsInParent(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.setBoundsInParent(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setBoundsInParent(arg0 == null ? null : arg0.getReal());
     }
 
     public void setBoundsInScreen(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.setBoundsInScreen(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setBoundsInScreen(arg0 == null ? null : arg0.getReal());
     }
 
     public void setBoundsInWindow(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.setBoundsInWindow(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setBoundsInWindow(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCanOpenPopup(boolean arg0) {
-        real.setCanOpenPopup(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setCanOpenPopup(arg0);
     }
 
     public void setCheckable(boolean arg0) {
-        real.setCheckable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setCheckable(arg0);
     }
 
     public void setChecked(boolean arg0) {
-        real.setChecked(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setChecked(arg0);
     }
 
     public void setClassName(java.lang.CharSequence arg0) {
-        real.setClassName(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setClassName(arg0);
     }
 
     public void setClickable(boolean arg0) {
-        real.setClickable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setClickable(arg0);
     }
 
     public void setCollectionInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo arg0) {
-        real.setCollectionInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setCollectionInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCollectionItemInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo arg0) {
-        real.setCollectionItemInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setCollectionItemInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setContainerTitle(java.lang.CharSequence arg0) {
-        real.setContainerTitle(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setContainerTitle(arg0);
     }
 
     public void setContentDescription(java.lang.CharSequence arg0) {
-        real.setContentDescription(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setContentDescription(arg0);
     }
 
     public void setContentInvalid(boolean arg0) {
-        real.setContentInvalid(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setContentInvalid(arg0);
     }
 
     public void setContextClickable(boolean arg0) {
-        real.setContextClickable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setContextClickable(arg0);
     }
 
     public void setDismissable(boolean arg0) {
-        real.setDismissable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setDismissable(arg0);
     }
 
     public void setDrawingOrder(int arg0) {
-        real.setDrawingOrder(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setDrawingOrder(arg0);
     }
 
     public void setEditable(boolean arg0) {
-        real.setEditable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setEditable(arg0);
     }
 
     public void setEnabled(boolean arg0) {
-        real.setEnabled(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setEnabled(arg0);
     }
 
     public void setError(java.lang.CharSequence arg0) {
-        real.setError(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setError(arg0);
     }
 
     public void setFocusable(boolean arg0) {
-        real.setFocusable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setFocusable(arg0);
     }
 
     public void setFocused(boolean arg0) {
-        real.setFocused(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setFocused(arg0);
     }
 
     public void setGranularScrollingSupported(boolean arg0) {
-        real.setGranularScrollingSupported(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setGranularScrollingSupported(arg0);
     }
 
     public void setHeading(boolean arg0) {
-        real.setHeading(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setHeading(arg0);
     }
 
     public void setHintText(java.lang.CharSequence arg0) {
-        real.setHintText(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setHintText(arg0);
     }
 
     public void setImportantForAccessibility(boolean arg0) {
-        real.setImportantForAccessibility(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setImportantForAccessibility(arg0);
     }
 
     public void setInputType(int arg0) {
-        real.setInputType(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setInputType(arg0);
     }
 
     public void setLabelFor(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setLabelFor(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLabelFor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLabelFor(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setLabelFor(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLabelFor(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setLabeledBy(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLabeledBy(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setLabeledBy(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLabeledBy(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLiveRegion(int arg0) {
-        real.setLiveRegion(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLiveRegion(arg0);
     }
 
     public void setLongClickable(boolean arg0) {
-        real.setLongClickable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setLongClickable(arg0);
     }
 
     public void setMaxTextLength(int arg0) {
-        real.setMaxTextLength(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setMaxTextLength(arg0);
     }
 
     public void setMinDurationBetweenContentChanges(java.time.Duration arg0) {
-        real.setMinDurationBetweenContentChanges(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setMinDurationBetweenContentChanges(arg0);
     }
 
     public void setMovementGranularities(int arg0) {
-        real.setMovementGranularities(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setMovementGranularities(arg0);
     }
 
     public void setMultiLine(boolean arg0) {
-        real.setMultiLine(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setMultiLine(arg0);
     }
 
     public void setPackageName(java.lang.CharSequence arg0) {
-        real.setPackageName(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setPackageName(arg0);
     }
 
     public void setPaneTitle(java.lang.CharSequence arg0) {
-        real.setPaneTitle(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setPaneTitle(arg0);
     }
 
     public void setParent(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setParent(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setParent(arg0 == null ? null : arg0.getReal());
     }
 
     public void setParent(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setParent(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setParent(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPassword(boolean arg0) {
-        real.setPassword(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setPassword(arg0);
     }
 
     public void setQueryFromAppProcessEnabled(com.micklab.dcg.wrapper.android.view.View arg0, boolean arg1) {
-        real.setQueryFromAppProcessEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setQueryFromAppProcessEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setRangeInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo arg0) {
-        real.setRangeInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setRangeInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRequestInitialAccessibilityFocus(boolean arg0) {
-        real.setRequestInitialAccessibilityFocus(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setRequestInitialAccessibilityFocus(arg0);
     }
 
     public void setScreenReaderFocusable(boolean arg0) {
-        real.setScreenReaderFocusable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setScreenReaderFocusable(arg0);
     }
 
     public void setScrollable(boolean arg0) {
-        real.setScrollable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setScrollable(arg0);
     }
 
     public void setSelected(boolean arg0) {
-        real.setSelected(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setSelected(arg0);
     }
 
     public void setShowingHintText(boolean arg0) {
-        real.setShowingHintText(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setShowingHintText(arg0);
     }
 
     public void setSource(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setSource(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setSource(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSource(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setSource(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setSource(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setStateDescription(java.lang.CharSequence arg0) {
-        real.setStateDescription(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setStateDescription(arg0);
     }
 
     public void setText(java.lang.CharSequence arg0) {
-        real.setText(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setText(arg0);
     }
 
     public void setTextEntryKey(boolean arg0) {
-        real.setTextEntryKey(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTextEntryKey(arg0);
     }
 
     public void setTextSelectable(boolean arg0) {
-        real.setTextSelectable(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTextSelectable(arg0);
     }
 
     public void setTextSelection(int arg0, int arg1) {
-        real.setTextSelection(arg0, arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTextSelection(arg0, arg1);
     }
 
     public void setTooltipText(java.lang.CharSequence arg0) {
-        real.setTooltipText(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTooltipText(arg0);
     }
 
     public void setTouchDelegateInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo arg0) {
-        real.setTouchDelegateInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTouchDelegateInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTraversalAfter(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setTraversalAfter(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTraversalAfter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTraversalAfter(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setTraversalAfter(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTraversalAfter(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setTraversalBefore(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setTraversalBefore(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTraversalBefore(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTraversalBefore(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        real.setTraversalBefore(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setTraversalBefore(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setUniqueId(java.lang.String arg0) {
-        real.setUniqueId(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setUniqueId(arg0);
     }
 
     public void setViewIdResourceName(java.lang.String arg0) {
-        real.setViewIdResourceName(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setViewIdResourceName(arg0);
     }
 
     public void setVisibleToUser(boolean arg0) {
-        real.setVisibleToUser(arg0);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setVisibleToUser(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityNodeInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACTION_ACCESSIBILITY_FOCUS = android.view.accessibility.AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS;
@@ -721,50 +728,57 @@ public final class AccessibilityNodeInfo {
     public static final int MOVEMENT_GRANULARITY_WORD = android.view.accessibility.AccessibilityNodeInfo.MOVEMENT_GRANULARITY_WORD;
 
     public static final class AccessibilityAction {
-        private final android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AccessibilityAction(android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction real) {
+        private final java.lang.Object real;
+
+        private AccessibilityAction(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction wrap(android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction unwrap() {
-            return real;
+            return getReal();
         }
 
         public AccessibilityAction(int arg0, java.lang.CharSequence arg1) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(arg0, arg1));
+            this(new android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).equals(arg0);
         }
 
         public int getId() {
-            return real.getId();
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).getId();
         }
 
         public java.lang.CharSequence getLabel() {
-            return real.getLabel();
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).getLabel();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction ACTION_ACCESSIBILITY_FOCUS = com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction.wrap(android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction.ACTION_ACCESSIBILITY_FOCUS);
@@ -814,50 +828,57 @@ public final class AccessibilityNodeInfo {
 
     }
     public static final class CollectionInfo {
-        private final android.view.accessibility.AccessibilityNodeInfo.CollectionInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CollectionInfo(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo real) {
+        private final java.lang.Object real;
+
+        private CollectionInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo wrap(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.CollectionInfo getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.CollectionInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public CollectionInfo(int arg0, int arg1, boolean arg2) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(arg0, arg1, arg2));
+            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public CollectionInfo(int arg0, int arg1, boolean arg2, int arg3) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(arg0, arg1, arg2, arg3));
+            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public int getColumnCount() {
-            return real.getColumnCount();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).getColumnCount();
         }
 
         public int getImportantForAccessibilityItemCount() {
-            return real.getImportantForAccessibilityItemCount();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).getImportantForAccessibilityItemCount();
         }
 
         public int getItemCount() {
-            return real.getItemCount();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).getItemCount();
         }
 
         public int getRowCount() {
-            return real.getRowCount();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).getRowCount();
         }
 
         public int getSelectionMode() {
-            return real.getSelectionMode();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).getSelectionMode();
         }
 
         public boolean isHierarchical() {
-            return real.isHierarchical();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) real).isHierarchical();
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo obtain(int arg0, int arg1, boolean arg2) {
@@ -874,107 +895,121 @@ public final class AccessibilityNodeInfo {
         public static final int UNDEFINED = android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.UNDEFINED;
 
         public static final class Builder {
-            private final android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder wrap(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder getReal() {
+                return (android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real;
             }
 
             public android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
-                this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder());
+                this(new android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder(), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo build() {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setColumnCount(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setColumnCount(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setColumnCount(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setHierarchical(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setHierarchical(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setHierarchical(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setImportantForAccessibilityItemCount(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setImportantForAccessibilityItemCount(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setImportantForAccessibilityItemCount(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setItemCount(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setItemCount(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setItemCount(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setRowCount(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setRowCount(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setRowCount(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder setSelectionMode(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(real.setSelectionMode(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.Builder) real).setSelectionMode(arg0));
             }
 
         }
     }
     public static final class CollectionItemInfo {
-        private final android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CollectionItemInfo(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo real) {
+        private final java.lang.Object real;
+
+        private CollectionItemInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo wrap(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public CollectionItemInfo(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(arg0, arg1, arg2, arg3, arg4));
+            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
         }
 
         public CollectionItemInfo(int arg0, int arg1, int arg2, int arg3, boolean arg4, boolean arg5) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(arg0, arg1, arg2, arg3, arg4, arg5));
+            this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
         }
 
         public int getColumnIndex() {
-            return real.getColumnIndex();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getColumnIndex();
         }
 
         public int getColumnSpan() {
-            return real.getColumnSpan();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getColumnSpan();
         }
 
         public java.lang.String getColumnTitle() {
-            return real.getColumnTitle();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getColumnTitle();
         }
 
         public int getRowIndex() {
-            return real.getRowIndex();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getRowIndex();
         }
 
         public int getRowSpan() {
-            return real.getRowSpan();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getRowSpan();
         }
 
         public java.lang.String getRowTitle() {
-            return real.getRowTitle();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).getRowTitle();
         }
 
         public boolean isHeading() {
-            return real.isHeading();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).isHeading();
         }
 
         public boolean isSelected() {
-            return real.isSelected();
+            return ((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) real).isSelected();
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo obtain(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
@@ -986,123 +1021,144 @@ public final class AccessibilityNodeInfo {
         }
 
         public static final class Builder {
-            private final android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder wrap(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder getReal() {
+                return (android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real;
             }
 
             public android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
-                this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder());
+                this(new android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder(), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo build() {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setColumnIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setColumnIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setColumnIndex(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setColumnSpan(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setColumnSpan(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setColumnSpan(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setColumnTitle(java.lang.String arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setColumnTitle(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setColumnTitle(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setHeading(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setHeading(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setHeading(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setRowIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setRowIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setRowIndex(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setRowSpan(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setRowSpan(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setRowSpan(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setRowTitle(java.lang.String arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setRowTitle(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setRowTitle(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder setSelected(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(real.setSelected(arg0));
+                return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder.wrap(((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.Builder) real).setSelected(arg0));
             }
 
         }
     }
     public static final class ExtraRenderingInfo {
-        private final android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExtraRenderingInfo(android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo real) {
+        private final java.lang.Object real;
+
+        private ExtraRenderingInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo wrap(android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.util.Size getLayoutSize() {
-            return com.micklab.dcg.wrapper.android.util.Size.wrap(real.getLayoutSize());
+            return com.micklab.dcg.wrapper.android.util.Size.wrap(((android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo) real).getLayoutSize());
         }
 
         public float getTextSizeInPx() {
-            return real.getTextSizeInPx();
+            return ((android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo) real).getTextSizeInPx();
         }
 
         public int getTextSizeUnit() {
-            return real.getTextSizeUnit();
+            return ((android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo) real).getTextSizeUnit();
         }
 
     }
     public static final class RangeInfo {
-        private final android.view.accessibility.AccessibilityNodeInfo.RangeInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RangeInfo(android.view.accessibility.AccessibilityNodeInfo.RangeInfo real) {
+        private final java.lang.Object real;
+
+        private RangeInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo wrap(android.view.accessibility.AccessibilityNodeInfo.RangeInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.RangeInfo getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.RangeInfo) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.RangeInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public RangeInfo(int arg0, float arg1, float arg2, float arg3) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.RangeInfo(arg0, arg1, arg2, arg3));
+            this(new android.view.accessibility.AccessibilityNodeInfo.RangeInfo(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public float getCurrent() {
-            return real.getCurrent();
+            return ((android.view.accessibility.AccessibilityNodeInfo.RangeInfo) real).getCurrent();
         }
 
         public float getMax() {
-            return real.getMax();
+            return ((android.view.accessibility.AccessibilityNodeInfo.RangeInfo) real).getMax();
         }
 
         public float getMin() {
-            return real.getMin();
+            return ((android.view.accessibility.AccessibilityNodeInfo.RangeInfo) real).getMin();
         }
 
         public int getType() {
-            return real.getType();
+            return ((android.view.accessibility.AccessibilityNodeInfo.RangeInfo) real).getType();
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo obtain(int arg0, float arg1, float arg2, float arg3) {
@@ -1115,42 +1171,49 @@ public final class AccessibilityNodeInfo {
 
     }
     public static final class TouchDelegateInfo {
-        private final android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TouchDelegateInfo(android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo real) {
+        private final java.lang.Object real;
+
+        private TouchDelegateInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo wrap(android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo getReal() {
+            return (android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real;
         }
 
         public android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public TouchDelegateInfo(java.util.Map arg0) {
-            this(new android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo(arg0));
+            this(new android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo(arg0), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real).describeContents();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Region getRegionAt(int arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.Region.wrap(real.getRegionAt(arg0));
+            return com.micklab.dcg.wrapper.android.graphics.Region.wrap(((android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real).getRegionAt(arg0));
         }
 
         public int getRegionCount() {
-            return real.getRegionCount();
+            return ((android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real).getRegionCount();
         }
 
         public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getTargetForRegion(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
-            return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(real.getTargetForRegion(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(((android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real).getTargetForRegion(arg0 == null ? null : arg0.getReal()));
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.accessibility.AccessibilityNodeInfo.TouchDelegateInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

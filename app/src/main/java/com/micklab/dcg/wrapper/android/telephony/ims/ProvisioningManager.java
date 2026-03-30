@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ProvisioningManager {
-    private final android.telephony.ims.ProvisioningManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProvisioningManager(android.telephony.ims.ProvisioningManager real) {
+    private final java.lang.Object real;
+
+    private ProvisioningManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager wrap(android.telephony.ims.ProvisioningManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ProvisioningManager getReal() {
+        return (android.telephony.ims.ProvisioningManager) real;
     }
 
     public android.telephony.ims.ProvisioningManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean getProvisioningStatusForCapability(int arg0, int arg1) {
@@ -49,18 +56,25 @@ public final class ProvisioningManager {
     }
 
     public static final class FeatureProvisioningCallback {
-        private final android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FeatureProvisioningCallback(android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback real) {
+        private final java.lang.Object real;
+
+        private FeatureProvisioningCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback wrap(android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback getReal() {
+            return (android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback) real;
         }
 
         public android.telephony.ims.ProvisioningManager.FeatureProvisioningCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFeatureProvisioningChanged(int arg0, int arg1, boolean arg2) {

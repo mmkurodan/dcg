@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class DownloadRequest {
-    private final android.telephony.mbms.DownloadRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DownloadRequest(android.telephony.mbms.DownloadRequest real) {
+    private final java.lang.Object real;
+
+    private DownloadRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest wrap(android.telephony.mbms.DownloadRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.DownloadRequest getReal() {
+        return (android.telephony.mbms.DownloadRequest) real;
     }
 
     public android.telephony.mbms.DownloadRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -62,18 +69,25 @@ public final class DownloadRequest {
 
 
     public static final class Builder {
-        private final android.telephony.mbms.DownloadRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.mbms.DownloadRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest.Builder wrap(android.telephony.mbms.DownloadRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.DownloadRequest.Builder getReal() {
+            return (android.telephony.mbms.DownloadRequest.Builder) real;
         }
 
         public android.telephony.mbms.DownloadRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {

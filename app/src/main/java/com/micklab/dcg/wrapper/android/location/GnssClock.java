@@ -2,134 +2,141 @@
 package com.micklab.dcg.wrapper.android.location;
 
 public final class GnssClock {
-    private final android.location.GnssClock real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GnssClock(android.location.GnssClock real) {
+    private final java.lang.Object real;
+
+    private GnssClock(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.location.GnssClock wrap(android.location.GnssClock real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssClock(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssClock(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.location.GnssClock getReal() {
+        return (android.location.GnssClock) real;
     }
 
     public android.location.GnssClock unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.location.GnssClock) real).describeContents();
     }
 
     public double getBiasNanos() {
-        return real.getBiasNanos();
+        return ((android.location.GnssClock) real).getBiasNanos();
     }
 
     public double getBiasUncertaintyNanos() {
-        return real.getBiasUncertaintyNanos();
+        return ((android.location.GnssClock) real).getBiasUncertaintyNanos();
     }
 
     public double getDriftNanosPerSecond() {
-        return real.getDriftNanosPerSecond();
+        return ((android.location.GnssClock) real).getDriftNanosPerSecond();
     }
 
     public double getDriftUncertaintyNanosPerSecond() {
-        return real.getDriftUncertaintyNanosPerSecond();
+        return ((android.location.GnssClock) real).getDriftUncertaintyNanosPerSecond();
     }
 
     public long getElapsedRealtimeNanos() {
-        return real.getElapsedRealtimeNanos();
+        return ((android.location.GnssClock) real).getElapsedRealtimeNanos();
     }
 
     public double getElapsedRealtimeUncertaintyNanos() {
-        return real.getElapsedRealtimeUncertaintyNanos();
+        return ((android.location.GnssClock) real).getElapsedRealtimeUncertaintyNanos();
     }
 
     public long getFullBiasNanos() {
-        return real.getFullBiasNanos();
+        return ((android.location.GnssClock) real).getFullBiasNanos();
     }
 
     public int getHardwareClockDiscontinuityCount() {
-        return real.getHardwareClockDiscontinuityCount();
+        return ((android.location.GnssClock) real).getHardwareClockDiscontinuityCount();
     }
 
     public int getLeapSecond() {
-        return real.getLeapSecond();
+        return ((android.location.GnssClock) real).getLeapSecond();
     }
 
     public double getReferenceCarrierFrequencyHzForIsb() {
-        return real.getReferenceCarrierFrequencyHzForIsb();
+        return ((android.location.GnssClock) real).getReferenceCarrierFrequencyHzForIsb();
     }
 
     public java.lang.String getReferenceCodeTypeForIsb() {
-        return real.getReferenceCodeTypeForIsb();
+        return ((android.location.GnssClock) real).getReferenceCodeTypeForIsb();
     }
 
     public int getReferenceConstellationTypeForIsb() {
-        return real.getReferenceConstellationTypeForIsb();
+        return ((android.location.GnssClock) real).getReferenceConstellationTypeForIsb();
     }
 
     public long getTimeNanos() {
-        return real.getTimeNanos();
+        return ((android.location.GnssClock) real).getTimeNanos();
     }
 
     public double getTimeUncertaintyNanos() {
-        return real.getTimeUncertaintyNanos();
+        return ((android.location.GnssClock) real).getTimeUncertaintyNanos();
     }
 
     public boolean hasBiasNanos() {
-        return real.hasBiasNanos();
+        return ((android.location.GnssClock) real).hasBiasNanos();
     }
 
     public boolean hasBiasUncertaintyNanos() {
-        return real.hasBiasUncertaintyNanos();
+        return ((android.location.GnssClock) real).hasBiasUncertaintyNanos();
     }
 
     public boolean hasDriftNanosPerSecond() {
-        return real.hasDriftNanosPerSecond();
+        return ((android.location.GnssClock) real).hasDriftNanosPerSecond();
     }
 
     public boolean hasDriftUncertaintyNanosPerSecond() {
-        return real.hasDriftUncertaintyNanosPerSecond();
+        return ((android.location.GnssClock) real).hasDriftUncertaintyNanosPerSecond();
     }
 
     public boolean hasElapsedRealtimeNanos() {
-        return real.hasElapsedRealtimeNanos();
+        return ((android.location.GnssClock) real).hasElapsedRealtimeNanos();
     }
 
     public boolean hasElapsedRealtimeUncertaintyNanos() {
-        return real.hasElapsedRealtimeUncertaintyNanos();
+        return ((android.location.GnssClock) real).hasElapsedRealtimeUncertaintyNanos();
     }
 
     public boolean hasFullBiasNanos() {
-        return real.hasFullBiasNanos();
+        return ((android.location.GnssClock) real).hasFullBiasNanos();
     }
 
     public boolean hasLeapSecond() {
-        return real.hasLeapSecond();
+        return ((android.location.GnssClock) real).hasLeapSecond();
     }
 
     public boolean hasReferenceCarrierFrequencyHzForIsb() {
-        return real.hasReferenceCarrierFrequencyHzForIsb();
+        return ((android.location.GnssClock) real).hasReferenceCarrierFrequencyHzForIsb();
     }
 
     public boolean hasReferenceCodeTypeForIsb() {
-        return real.hasReferenceCodeTypeForIsb();
+        return ((android.location.GnssClock) real).hasReferenceCodeTypeForIsb();
     }
 
     public boolean hasReferenceConstellationTypeForIsb() {
-        return real.hasReferenceConstellationTypeForIsb();
+        return ((android.location.GnssClock) real).hasReferenceConstellationTypeForIsb();
     }
 
     public boolean hasTimeUncertaintyNanos() {
-        return real.hasTimeUncertaintyNanos();
+        return ((android.location.GnssClock) real).hasTimeUncertaintyNanos();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.location.GnssClock) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.location.GnssClock) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

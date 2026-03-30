@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ArchivedActivityInfo {
-    private final android.content.pm.ArchivedActivityInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ArchivedActivityInfo(android.content.pm.ArchivedActivityInfo real) {
+    private final java.lang.Object real;
+
+    private ArchivedActivityInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ArchivedActivityInfo wrap(android.content.pm.ArchivedActivityInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ArchivedActivityInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ArchivedActivityInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ArchivedActivityInfo getReal() {
+        return (android.content.pm.ArchivedActivityInfo) real;
     }
 
     public android.content.pm.ArchivedActivityInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ArchivedActivityInfo(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1) {

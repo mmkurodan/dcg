@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class DisplayShape {
-    private final android.view.DisplayShape real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisplayShape(android.view.DisplayShape real) {
+    private final java.lang.Object real;
+
+    private DisplayShape(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.DisplayShape wrap(android.view.DisplayShape real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.DisplayShape(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.DisplayShape(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.DisplayShape getReal() {
+        return (android.view.DisplayShape) real;
     }
 
     public android.view.DisplayShape unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.DisplayShape) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.DisplayShape) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Path getPath() {
-        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(real.getPath());
+        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(((android.view.DisplayShape) real).getPath());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.DisplayShape) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.DisplayShape) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.DisplayShape) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

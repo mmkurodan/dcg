@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Process {
-    private final android.os.Process real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Process(android.os.Process real) {
+    private final java.lang.Object real;
+
+    private Process(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Process wrap(android.os.Process real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Process(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Process(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Process getReal() {
+        return (android.os.Process) real;
     }
 
     public android.os.Process unwrap() {
-        return real;
+        return getReal();
     }
 
     public Process() {

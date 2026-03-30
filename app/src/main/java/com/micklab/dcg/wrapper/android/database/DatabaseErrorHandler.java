@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class DatabaseErrorHandler {
-    private final android.database.DatabaseErrorHandler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DatabaseErrorHandler(android.database.DatabaseErrorHandler real) {
+    private final java.lang.Object real;
+
+    private DatabaseErrorHandler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.DatabaseErrorHandler wrap(android.database.DatabaseErrorHandler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseErrorHandler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseErrorHandler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.DatabaseErrorHandler getReal() {
+        return (android.database.DatabaseErrorHandler) real;
     }
 
     public android.database.DatabaseErrorHandler unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onCorruption(com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase arg0) {

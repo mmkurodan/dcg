@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothStatusCodes {
-    private final android.bluetooth.BluetoothStatusCodes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothStatusCodes(android.bluetooth.BluetoothStatusCodes real) {
+    private final java.lang.Object real;
+
+    private BluetoothStatusCodes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothStatusCodes wrap(android.bluetooth.BluetoothStatusCodes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothStatusCodes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothStatusCodes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothStatusCodes getReal() {
+        return (android.bluetooth.BluetoothStatusCodes) real;
     }
 
     public android.bluetooth.BluetoothStatusCodes unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int ERROR_BLUETOOTH_NOT_ALLOWED = android.bluetooth.BluetoothStatusCodes.ERROR_BLUETOOTH_NOT_ALLOWED;

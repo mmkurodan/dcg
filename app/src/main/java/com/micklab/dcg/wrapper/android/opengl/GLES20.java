@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES20 {
-    private final android.opengl.GLES20 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES20(android.opengl.GLES20 real) {
+    private final java.lang.Object real;
+
+    private GLES20(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES20 wrap(android.opengl.GLES20 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES20(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES20(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES20 getReal() {
+        return (android.opengl.GLES20) real;
     }
 
     public android.opengl.GLES20 unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLES20() {
-        this(new android.opengl.GLES20());
+        this(new android.opengl.GLES20(), (__DcgwBridgeToken) null);
     }
 
     public static void glActiveTexture(int arg0) {

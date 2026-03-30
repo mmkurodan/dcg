@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothHidDevice {
-    private final android.bluetooth.BluetoothHidDevice real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothHidDevice(android.bluetooth.BluetoothHidDevice real) {
+    private final java.lang.Object real;
+
+    private BluetoothHidDevice(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice wrap(android.bluetooth.BluetoothHidDevice real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothHidDevice getReal() {
+        return (android.bluetooth.BluetoothHidDevice) real;
     }
 
     public android.bluetooth.BluetoothHidDevice unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean connect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.connect(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHidDevice) real).connect(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean disconnect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.disconnect(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHidDevice) real).disconnect(arg0 == null ? null : arg0.getReal());
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHidDevice) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean registerApp(com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDeviceAppSdpSettings arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDeviceAppQosSettings arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDeviceAppQosSettings arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice.Callback arg4) {
-        return real.registerApp(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4 == null ? null : arg4.unwrap());
+        return ((android.bluetooth.BluetoothHidDevice) real).registerApp(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public boolean replyReport(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1, byte arg2, byte[] arg3) {
-        return real.replyReport(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.bluetooth.BluetoothHidDevice) real).replyReport(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public boolean reportError(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1) {
-        return real.reportError(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.bluetooth.BluetoothHidDevice) real).reportError(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean sendReport(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, int arg1, byte[] arg2) {
-        return real.sendReport(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.bluetooth.BluetoothHidDevice) real).sendReport(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean unregisterApp() {
-        return real.unregisterApp();
+        return ((android.bluetooth.BluetoothHidDevice) real).unregisterApp();
     }
 
     public static final java.lang.String ACTION_CONNECTION_STATE_CHANGED = android.bluetooth.BluetoothHidDevice.ACTION_CONNECTION_STATE_CHANGED;
@@ -73,46 +80,53 @@ public final class BluetoothHidDevice {
     public static final byte SUBCLASS2_UNCATEGORIZED = android.bluetooth.BluetoothHidDevice.SUBCLASS2_UNCATEGORIZED;
 
     public static final class Callback {
-        private final android.bluetooth.BluetoothHidDevice.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.bluetooth.BluetoothHidDevice.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice.Callback wrap(android.bluetooth.BluetoothHidDevice.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHidDevice.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothHidDevice.Callback getReal() {
+            return (android.bluetooth.BluetoothHidDevice.Callback) real;
         }
 
         public android.bluetooth.BluetoothHidDevice.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAppStatusChanged(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, boolean arg1) {
-            real.onAppStatusChanged(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onAppStatusChanged(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onConnectionStateChanged(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, int arg1) {
-            real.onConnectionStateChanged(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onConnectionStateChanged(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onGetReport(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1, byte arg2, int arg3) {
-            real.onGetReport(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onGetReport(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public void onInterruptData(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1, byte[] arg2) {
-            real.onInterruptData(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onInterruptData(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public void onSetProtocol(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1) {
-            real.onSetProtocol(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onSetProtocol(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onSetReport(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, byte arg1, byte arg2, byte[] arg3) {
-            real.onSetReport(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onSetReport(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public void onVirtualCableUnplug(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-            real.onVirtualCableUnplug(arg0 == null ? null : arg0.unwrap());
+            ((android.bluetooth.BluetoothHidDevice.Callback) real).onVirtualCableUnplug(arg0 == null ? null : arg0.getReal());
         }
 
     }

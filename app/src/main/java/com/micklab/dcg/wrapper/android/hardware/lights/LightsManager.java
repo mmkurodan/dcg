@@ -2,49 +2,63 @@
 package com.micklab.dcg.wrapper.android.hardware.lights;
 
 public final class LightsManager {
-    private final android.hardware.lights.LightsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LightsManager(android.hardware.lights.LightsManager real) {
+    private final java.lang.Object real;
+
+    private LightsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.lights.LightsManager wrap(android.hardware.lights.LightsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.lights.LightsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.lights.LightsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.lights.LightsManager getReal() {
+        return (android.hardware.lights.LightsManager) real;
     }
 
     public android.hardware.lights.LightsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.lights.LightState getLightState(com.micklab.dcg.wrapper.android.hardware.lights.Light arg0) {
-        return com.micklab.dcg.wrapper.android.hardware.lights.LightState.wrap(real.getLightState(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.hardware.lights.LightState.wrap(((android.hardware.lights.LightsManager) real).getLightState(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession openSession() {
-        return com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession.wrap(real.openSession());
+        return com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession.wrap(((android.hardware.lights.LightsManager) real).openSession());
     }
 
     public static final class LightsSession {
-        private final android.hardware.lights.LightsManager.LightsSession real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LightsSession(android.hardware.lights.LightsManager.LightsSession real) {
+        private final java.lang.Object real;
+
+        private LightsSession(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession wrap(android.hardware.lights.LightsManager.LightsSession real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.LightsSession(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.lights.LightsManager.LightsSession getReal() {
+            return (android.hardware.lights.LightsManager.LightsSession) real;
         }
 
         public android.hardware.lights.LightsManager.LightsSession unwrap() {
-            return real;
+            return getReal();
         }
 
         public void close() {
-            real.close();
+            ((android.hardware.lights.LightsManager.LightsSession) real).close();
         }
 
         public void requestLights(com.micklab.dcg.wrapper.android.hardware.lights.LightsRequest arg0) {
-            real.requestLights(arg0 == null ? null : arg0.unwrap());
+            ((android.hardware.lights.LightsManager.LightsSession) real).requestLights(arg0 == null ? null : arg0.getReal());
         }
 
     }

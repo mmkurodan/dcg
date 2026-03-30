@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class SoftApConfiguration {
-    private final android.net.wifi.SoftApConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SoftApConfiguration(android.net.wifi.SoftApConfiguration real) {
+    private final java.lang.Object real;
+
+    private SoftApConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration wrap(android.net.wifi.SoftApConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.SoftApConfiguration getReal() {
+        return (android.net.wifi.SoftApConfiguration) real;
     }
 
     public android.net.wifi.SoftApConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

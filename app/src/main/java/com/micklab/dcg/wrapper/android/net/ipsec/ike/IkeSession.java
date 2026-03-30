@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeSession {
-    private final android.net.ipsec.ike.IkeSession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeSession(android.net.ipsec.ike.IkeSession real) {
+    private final java.lang.Object real;
+
+    private IkeSession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSession wrap(android.net.ipsec.ike.IkeSession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeSession getReal() {
+        return (android.net.ipsec.ike.IkeSession) real;
     }
 
     public android.net.ipsec.ike.IkeSession unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeSession(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams arg1, com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSessionParams arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionCallback arg4, com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSessionCallback arg5) {

@@ -2,69 +2,83 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class HardwareBufferRenderer {
-    private final android.graphics.HardwareBufferRenderer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HardwareBufferRenderer(android.graphics.HardwareBufferRenderer real) {
+    private final java.lang.Object real;
+
+    private HardwareBufferRenderer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer wrap(android.graphics.HardwareBufferRenderer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.HardwareBufferRenderer getReal() {
+        return (android.graphics.HardwareBufferRenderer) real;
     }
 
     public android.graphics.HardwareBufferRenderer unwrap() {
-        return real;
+        return getReal();
     }
 
     public HardwareBufferRenderer(com.micklab.dcg.wrapper.android.hardware.HardwareBuffer arg0) {
-        this(new android.graphics.HardwareBufferRenderer(arg0 == null ? null : arg0.unwrap()));
+        this(new android.graphics.HardwareBufferRenderer(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void close() {
-        real.close();
+        ((android.graphics.HardwareBufferRenderer) real).close();
     }
 
     public boolean isClosed() {
-        return real.isClosed();
+        return ((android.graphics.HardwareBufferRenderer) real).isClosed();
     }
 
     public android.graphics.HardwareBufferRenderer.RenderRequest obtainRenderRequest() {
-        return real.obtainRenderRequest();
+        return ((android.graphics.HardwareBufferRenderer) real).obtainRenderRequest();
     }
 
     public void setContentRoot(com.micklab.dcg.wrapper.android.graphics.RenderNode arg0) {
-        real.setContentRoot(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.HardwareBufferRenderer) real).setContentRoot(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLightSourceAlpha(float arg0, float arg1) {
-        real.setLightSourceAlpha(arg0, arg1);
+        ((android.graphics.HardwareBufferRenderer) real).setLightSourceAlpha(arg0, arg1);
     }
 
     public void setLightSourceGeometry(float arg0, float arg1, float arg2, float arg3) {
-        real.setLightSourceGeometry(arg0, arg1, arg2, arg3);
+        ((android.graphics.HardwareBufferRenderer) real).setLightSourceGeometry(arg0, arg1, arg2, arg3);
     }
 
     public static final class RenderResult {
-        private final android.graphics.HardwareBufferRenderer.RenderResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RenderResult(android.graphics.HardwareBufferRenderer.RenderResult real) {
+        private final java.lang.Object real;
+
+        private RenderResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderResult wrap(android.graphics.HardwareBufferRenderer.RenderResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.HardwareBufferRenderer.RenderResult getReal() {
+            return (android.graphics.HardwareBufferRenderer.RenderResult) real;
         }
 
         public android.graphics.HardwareBufferRenderer.RenderResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.hardware.SyncFence getFence() {
-            return com.micklab.dcg.wrapper.android.hardware.SyncFence.wrap(real.getFence());
+            return com.micklab.dcg.wrapper.android.hardware.SyncFence.wrap(((android.graphics.HardwareBufferRenderer.RenderResult) real).getFence());
         }
 
         public int getStatus() {
-            return real.getStatus();
+            return ((android.graphics.HardwareBufferRenderer.RenderResult) real).getStatus();
         }
 
         public static final int ERROR_UNKNOWN = android.graphics.HardwareBufferRenderer.RenderResult.ERROR_UNKNOWN;

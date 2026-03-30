@@ -2,86 +2,93 @@
 package com.micklab.dcg.wrapper.android.nfc;
 
 public final class NfcAdapter {
-    private final android.nfc.NfcAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NfcAdapter(android.nfc.NfcAdapter real) {
+    private final java.lang.Object real;
+
+    private NfcAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter wrap(android.nfc.NfcAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.NfcAdapter getReal() {
+        return (android.nfc.NfcAdapter) real;
     }
 
     public android.nfc.NfcAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public void disableForegroundDispatch(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-        real.disableForegroundDispatch(arg0 == null ? null : arg0.unwrap());
+        ((android.nfc.NfcAdapter) real).disableForegroundDispatch(arg0 == null ? null : arg0.getReal());
     }
 
     public void disableReaderMode(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-        real.disableReaderMode(arg0 == null ? null : arg0.unwrap());
+        ((android.nfc.NfcAdapter) real).disableReaderMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void enableForegroundDispatch(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1, android.content.IntentFilter[] arg2, java.lang.String[][] arg3) {
-        real.enableForegroundDispatch(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        ((android.nfc.NfcAdapter) real).enableForegroundDispatch(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public void enableReaderMode(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.nfc.NfcAdapter.ReaderCallback arg1, int arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3) {
-        real.enableReaderMode(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.nfc.NfcAdapter) real).enableReaderMode(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter getDefaultAdapter(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.nfc.NfcAdapter.wrap(android.nfc.NfcAdapter.getDefaultAdapter(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.nfc.NfcAdapter.wrap(android.nfc.NfcAdapter.getDefaultAdapter(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.nfc.NfcAntennaInfo getNfcAntennaInfo() {
-        return com.micklab.dcg.wrapper.android.nfc.NfcAntennaInfo.wrap(real.getNfcAntennaInfo());
+        return com.micklab.dcg.wrapper.android.nfc.NfcAntennaInfo.wrap(((android.nfc.NfcAdapter) real).getNfcAntennaInfo());
     }
 
     public boolean ignore(com.micklab.dcg.wrapper.android.nfc.Tag arg0, int arg1, com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnTagRemovedListener arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
-        return real.ignore(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        return ((android.nfc.NfcAdapter) real).ignore(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.nfc.NfcAdapter) real).isEnabled();
     }
 
     public boolean isObserveModeEnabled() {
-        return real.isObserveModeEnabled();
+        return ((android.nfc.NfcAdapter) real).isObserveModeEnabled();
     }
 
     public boolean isObserveModeSupported() {
-        return real.isObserveModeSupported();
+        return ((android.nfc.NfcAdapter) real).isObserveModeSupported();
     }
 
     public boolean isReaderOptionEnabled() {
-        return real.isReaderOptionEnabled();
+        return ((android.nfc.NfcAdapter) real).isReaderOptionEnabled();
     }
 
     public boolean isReaderOptionSupported() {
-        return real.isReaderOptionSupported();
+        return ((android.nfc.NfcAdapter) real).isReaderOptionSupported();
     }
 
     public boolean isSecureNfcEnabled() {
-        return real.isSecureNfcEnabled();
+        return ((android.nfc.NfcAdapter) real).isSecureNfcEnabled();
     }
 
     public boolean isSecureNfcSupported() {
-        return real.isSecureNfcSupported();
+        return ((android.nfc.NfcAdapter) real).isSecureNfcSupported();
     }
 
     public void resetDiscoveryTechnology(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-        real.resetDiscoveryTechnology(arg0 == null ? null : arg0.unwrap());
+        ((android.nfc.NfcAdapter) real).resetDiscoveryTechnology(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDiscoveryTechnology(com.micklab.dcg.wrapper.android.app.Activity arg0, int arg1, int arg2) {
-        real.setDiscoveryTechnology(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.nfc.NfcAdapter) real).setDiscoveryTechnology(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean setObserveModeEnabled(boolean arg0) {
-        return real.setObserveModeEnabled(arg0);
+        return ((android.nfc.NfcAdapter) real).setObserveModeEnabled(arg0);
     }
 
     public static final java.lang.String ACTION_ADAPTER_STATE_CHANGED = android.nfc.NfcAdapter.ACTION_ADAPTER_STATE_CHANGED;
@@ -122,102 +129,137 @@ public final class NfcAdapter {
     public static final int STATE_TURNING_ON = android.nfc.NfcAdapter.STATE_TURNING_ON;
 
     public static final class CreateBeamUrisCallback {
-        private final android.nfc.NfcAdapter.CreateBeamUrisCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CreateBeamUrisCallback(android.nfc.NfcAdapter.CreateBeamUrisCallback real) {
+        private final java.lang.Object real;
+
+        private CreateBeamUrisCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateBeamUrisCallback wrap(android.nfc.NfcAdapter.CreateBeamUrisCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateBeamUrisCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateBeamUrisCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.nfc.NfcAdapter.CreateBeamUrisCallback getReal() {
+            return (android.nfc.NfcAdapter.CreateBeamUrisCallback) real;
         }
 
         public android.nfc.NfcAdapter.CreateBeamUrisCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public android.net.Uri[] createBeamUris(com.micklab.dcg.wrapper.android.nfc.NfcEvent arg0) {
-            return real.createBeamUris(arg0 == null ? null : arg0.unwrap());
+            return ((android.nfc.NfcAdapter.CreateBeamUrisCallback) real).createBeamUris(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class CreateNdefMessageCallback {
-        private final android.nfc.NfcAdapter.CreateNdefMessageCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CreateNdefMessageCallback(android.nfc.NfcAdapter.CreateNdefMessageCallback real) {
+        private final java.lang.Object real;
+
+        private CreateNdefMessageCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateNdefMessageCallback wrap(android.nfc.NfcAdapter.CreateNdefMessageCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateNdefMessageCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.CreateNdefMessageCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.nfc.NfcAdapter.CreateNdefMessageCallback getReal() {
+            return (android.nfc.NfcAdapter.CreateNdefMessageCallback) real;
         }
 
         public android.nfc.NfcAdapter.CreateNdefMessageCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.nfc.NdefMessage createNdefMessage(com.micklab.dcg.wrapper.android.nfc.NfcEvent arg0) {
-            return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(real.createNdefMessage(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(((android.nfc.NfcAdapter.CreateNdefMessageCallback) real).createNdefMessage(arg0 == null ? null : arg0.getReal()));
         }
 
     }
     public static final class OnNdefPushCompleteCallback {
-        private final android.nfc.NfcAdapter.OnNdefPushCompleteCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnNdefPushCompleteCallback(android.nfc.NfcAdapter.OnNdefPushCompleteCallback real) {
+        private final java.lang.Object real;
+
+        private OnNdefPushCompleteCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnNdefPushCompleteCallback wrap(android.nfc.NfcAdapter.OnNdefPushCompleteCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnNdefPushCompleteCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnNdefPushCompleteCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.nfc.NfcAdapter.OnNdefPushCompleteCallback getReal() {
+            return (android.nfc.NfcAdapter.OnNdefPushCompleteCallback) real;
         }
 
         public android.nfc.NfcAdapter.OnNdefPushCompleteCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onNdefPushComplete(com.micklab.dcg.wrapper.android.nfc.NfcEvent arg0) {
-            real.onNdefPushComplete(arg0 == null ? null : arg0.unwrap());
+            ((android.nfc.NfcAdapter.OnNdefPushCompleteCallback) real).onNdefPushComplete(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class OnTagRemovedListener {
-        private final android.nfc.NfcAdapter.OnTagRemovedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnTagRemovedListener(android.nfc.NfcAdapter.OnTagRemovedListener real) {
+        private final java.lang.Object real;
+
+        private OnTagRemovedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnTagRemovedListener wrap(android.nfc.NfcAdapter.OnTagRemovedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnTagRemovedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.OnTagRemovedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.nfc.NfcAdapter.OnTagRemovedListener getReal() {
+            return (android.nfc.NfcAdapter.OnTagRemovedListener) real;
         }
 
         public android.nfc.NfcAdapter.OnTagRemovedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onTagRemoved() {
-            real.onTagRemoved();
+            ((android.nfc.NfcAdapter.OnTagRemovedListener) real).onTagRemoved();
         }
 
     }
     public static final class ReaderCallback {
-        private final android.nfc.NfcAdapter.ReaderCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ReaderCallback(android.nfc.NfcAdapter.ReaderCallback real) {
+        private final java.lang.Object real;
+
+        private ReaderCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.nfc.NfcAdapter.ReaderCallback wrap(android.nfc.NfcAdapter.ReaderCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.ReaderCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NfcAdapter.ReaderCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.nfc.NfcAdapter.ReaderCallback getReal() {
+            return (android.nfc.NfcAdapter.ReaderCallback) real;
         }
 
         public android.nfc.NfcAdapter.ReaderCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onTagDiscovered(com.micklab.dcg.wrapper.android.nfc.Tag arg0) {
-            real.onTagDiscovered(arg0 == null ? null : arg0.unwrap());
+            ((android.nfc.NfcAdapter.ReaderCallback) real).onTagDiscovered(arg0 == null ? null : arg0.getReal());
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media.effect;
 
 public final class EffectContext {
-    private final android.media.effect.EffectContext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EffectContext(android.media.effect.EffectContext real) {
+    private final java.lang.Object real;
+
+    private EffectContext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.effect.EffectContext wrap(android.media.effect.EffectContext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.effect.EffectContext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.effect.EffectContext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.effect.EffectContext getReal() {
+        return (android.media.effect.EffectContext) real;
     }
 
     public android.media.effect.EffectContext unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.media.effect.EffectContext createWithCurrentGlContext() {
@@ -21,11 +28,11 @@ public final class EffectContext {
     }
 
     public com.micklab.dcg.wrapper.android.media.effect.EffectFactory getFactory() {
-        return com.micklab.dcg.wrapper.android.media.effect.EffectFactory.wrap(real.getFactory());
+        return com.micklab.dcg.wrapper.android.media.effect.EffectFactory.wrap(((android.media.effect.EffectContext) real).getFactory());
     }
 
     public void release() {
-        real.release();
+        ((android.media.effect.EffectContext) real).release();
     }
 
 }

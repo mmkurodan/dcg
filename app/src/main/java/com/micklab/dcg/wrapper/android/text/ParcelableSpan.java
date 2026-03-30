@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class ParcelableSpan {
-    private final android.text.ParcelableSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParcelableSpan(android.text.ParcelableSpan real) {
+    private final java.lang.Object real;
+
+    private ParcelableSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.ParcelableSpan wrap(android.text.ParcelableSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.ParcelableSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.ParcelableSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.ParcelableSpan getReal() {
+        return (android.text.ParcelableSpan) real;
     }
 
     public android.text.ParcelableSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getSpanTypeId() {
-        return real.getSpanTypeId();
+        return ((android.text.ParcelableSpan) real).getSpanTypeId();
     }
 
 }

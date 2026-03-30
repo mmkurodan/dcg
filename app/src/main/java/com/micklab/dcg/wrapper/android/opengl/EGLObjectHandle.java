@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class EGLObjectHandle {
-    private final android.opengl.EGLObjectHandle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EGLObjectHandle(android.opengl.EGLObjectHandle real) {
+    private final java.lang.Object real;
+
+    private EGLObjectHandle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLObjectHandle wrap(android.opengl.EGLObjectHandle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGLObjectHandle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGLObjectHandle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.EGLObjectHandle getReal() {
+        return (android.opengl.EGLObjectHandle) real;
     }
 
     public android.opengl.EGLObjectHandle unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getHandle() {
-        return real.getHandle();
+        return ((android.opengl.EGLObjectHandle) real).getHandle();
     }
 
     public long getNativeHandle() {
-        return real.getNativeHandle();
+        return ((android.opengl.EGLObjectHandle) real).getNativeHandle();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.opengl.EGLObjectHandle) real).hashCode();
     }
 
 }

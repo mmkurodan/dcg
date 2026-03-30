@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpSecTransform {
-    private final android.net.IpSecTransform real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpSecTransform(android.net.IpSecTransform real) {
+    private final java.lang.Object real;
+
+    private IpSecTransform(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpSecTransform wrap(android.net.IpSecTransform real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransform(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransform(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpSecTransform getReal() {
+        return (android.net.IpSecTransform) real;
     }
 
     public android.net.IpSecTransform unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
@@ -29,18 +36,25 @@ public final class IpSecTransform {
     }
 
     public static final class Builder {
-        private final android.net.IpSecTransform.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.IpSecTransform.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecTransform.Builder wrap(android.net.IpSecTransform.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransform.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecTransform.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecTransform.Builder getReal() {
+            return (android.net.IpSecTransform.Builder) real;
         }
 
         public android.net.IpSecTransform.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0) {

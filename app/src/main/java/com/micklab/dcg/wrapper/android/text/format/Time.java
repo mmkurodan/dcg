@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.text.format;
 
 public final class Time {
-    private final android.text.format.Time real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Time(android.text.format.Time real) {
+    private final java.lang.Object real;
+
+    private Time(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.format.Time wrap(android.text.format.Time real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.Time(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.Time(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.format.Time getReal() {
+        return (android.text.format.Time) real;
     }
 
     public android.text.format.Time unwrap() {
-        return real;
+        return getReal();
     }
 
     public Time() {
-        this(new android.text.format.Time());
+        this(new android.text.format.Time(), (__DcgwBridgeToken) null);
     }
 
     public Time(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        this(new android.text.format.Time(arg0 == null ? null : arg0.unwrap()));
+        this(new android.text.format.Time(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public Time(java.lang.String arg0) {
-        this(new android.text.format.Time(arg0));
+        this(new android.text.format.Time(arg0), (__DcgwBridgeToken) null);
     }
 
     public boolean after(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        return real.after(arg0 == null ? null : arg0.unwrap());
+        return ((android.text.format.Time) real).after(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean before(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        return real.before(arg0 == null ? null : arg0.unwrap());
+        return ((android.text.format.Time) real).before(arg0 == null ? null : arg0.getReal());
     }
 
     public void clear(java.lang.String arg0) {
-        real.clear(arg0);
+        ((android.text.format.Time) real).clear(arg0);
     }
 
     public static int compare(com.micklab.dcg.wrapper.android.text.format.Time arg0, com.micklab.dcg.wrapper.android.text.format.Time arg1) {
-        return android.text.format.Time.compare(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.text.format.Time.compare(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String format(java.lang.String arg0) {
-        return real.format(arg0);
+        return ((android.text.format.Time) real).format(arg0);
     }
 
     public java.lang.String format2445() {
-        return real.format2445();
+        return ((android.text.format.Time) real).format2445();
     }
 
     public java.lang.String format3339(boolean arg0) {
-        return real.format3339(arg0);
+        return ((android.text.format.Time) real).format3339(arg0);
     }
 
     public int getActualMaximum(int arg0) {
-        return real.getActualMaximum(arg0);
+        return ((android.text.format.Time) real).getActualMaximum(arg0);
     }
 
     public static java.lang.String getCurrentTimezone() {
@@ -73,7 +80,7 @@ public final class Time {
     }
 
     public int getWeekNumber() {
-        return real.getWeekNumber();
+        return ((android.text.format.Time) real).getWeekNumber();
     }
 
     public static int getWeeksSinceEpochFromJulianDay(int arg0, int arg1) {
@@ -81,55 +88,55 @@ public final class Time {
     }
 
     public static boolean isEpoch(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        return android.text.format.Time.isEpoch(arg0 == null ? null : arg0.unwrap());
+        return android.text.format.Time.isEpoch(arg0 == null ? null : arg0.getReal());
     }
 
     public long normalize(boolean arg0) {
-        return real.normalize(arg0);
+        return ((android.text.format.Time) real).normalize(arg0);
     }
 
     public boolean parse(java.lang.String arg0) {
-        return real.parse(arg0);
+        return ((android.text.format.Time) real).parse(arg0);
     }
 
     public boolean parse3339(java.lang.String arg0) {
-        return real.parse3339(arg0);
+        return ((android.text.format.Time) real).parse3339(arg0);
     }
 
     public void set(long arg0) {
-        real.set(arg0);
+        ((android.text.format.Time) real).set(arg0);
     }
 
     public void set(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        real.set(arg0 == null ? null : arg0.unwrap());
+        ((android.text.format.Time) real).set(arg0 == null ? null : arg0.getReal());
     }
 
     public void set(int arg0, int arg1, int arg2) {
-        real.set(arg0, arg1, arg2);
+        ((android.text.format.Time) real).set(arg0, arg1, arg2);
     }
 
     public void set(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        real.set(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.text.format.Time) real).set(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public long setJulianDay(int arg0) {
-        return real.setJulianDay(arg0);
+        return ((android.text.format.Time) real).setJulianDay(arg0);
     }
 
     public void setToNow() {
-        real.setToNow();
+        ((android.text.format.Time) real).setToNow();
     }
 
     public void switchTimezone(java.lang.String arg0) {
-        real.switchTimezone(arg0);
+        ((android.text.format.Time) real).switchTimezone(arg0);
     }
 
     public long toMillis(boolean arg0) {
-        return real.toMillis(arg0);
+        return ((android.text.format.Time) real).toMillis(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.text.format.Time) real).toString();
     }
 
     public static final int EPOCH_JULIAN_DAY = android.text.format.Time.EPOCH_JULIAN_DAY;

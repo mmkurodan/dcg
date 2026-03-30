@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.strictmode;
 
 public final class Violation {
-    private final android.os.strictmode.Violation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Violation(android.os.strictmode.Violation real) {
+    private final java.lang.Object real;
+
+    private Violation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.strictmode.Violation wrap(android.os.strictmode.Violation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.Violation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.Violation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.strictmode.Violation getReal() {
+        return (android.os.strictmode.Violation) real;
     }
 
     public android.os.strictmode.Violation unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Throwable fillInStackTrace() {

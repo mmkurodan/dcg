@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.gsm;
 
 public final class SmsMessage {
-    private final android.telephony.gsm.SmsMessage real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SmsMessage(android.telephony.gsm.SmsMessage real) {
+    private final java.lang.Object real;
+
+    private SmsMessage(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage wrap(android.telephony.gsm.SmsMessage real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.gsm.SmsMessage getReal() {
+        return (android.telephony.gsm.SmsMessage) real;
     }
 
     public android.telephony.gsm.SmsMessage unwrap() {
-        return real;
+        return getReal();
     }
 
     public SmsMessage() {
@@ -142,18 +149,25 @@ public final class SmsMessage {
 
 
     public static final class MessageClass {
-        private final android.telephony.gsm.SmsMessage.MessageClass real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MessageClass(android.telephony.gsm.SmsMessage.MessageClass real) {
+        private final java.lang.Object real;
+
+        private MessageClass(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.MessageClass wrap(android.telephony.gsm.SmsMessage.MessageClass real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.MessageClass(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.MessageClass(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.gsm.SmsMessage.MessageClass getReal() {
+            return (android.telephony.gsm.SmsMessage.MessageClass) real;
         }
 
         public android.telephony.gsm.SmsMessage.MessageClass unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.MessageClass valueOf(java.lang.String arg0) {
@@ -167,18 +181,25 @@ public final class SmsMessage {
 
     }
     public static final class SubmitPdu {
-        private final android.telephony.gsm.SmsMessage.SubmitPdu real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SubmitPdu(android.telephony.gsm.SmsMessage.SubmitPdu real) {
+        private final java.lang.Object real;
+
+        private SubmitPdu(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.SubmitPdu wrap(android.telephony.gsm.SmsMessage.SubmitPdu real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.SubmitPdu(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage.SubmitPdu(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.gsm.SmsMessage.SubmitPdu getReal() {
+            return (android.telephony.gsm.SmsMessage.SubmitPdu) real;
         }
 
         public android.telephony.gsm.SmsMessage.SubmitPdu unwrap() {
-            return real;
+            return getReal();
         }
 
         public SubmitPdu() {

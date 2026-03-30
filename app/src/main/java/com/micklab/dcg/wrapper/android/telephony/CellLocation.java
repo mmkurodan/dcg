@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class CellLocation {
-    private final android.telephony.CellLocation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CellLocation(android.telephony.CellLocation real) {
+    private final java.lang.Object real;
+
+    private CellLocation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellLocation wrap(android.telephony.CellLocation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellLocation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellLocation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.CellLocation getReal() {
+        return (android.telephony.CellLocation) real;
     }
 
     public android.telephony.CellLocation unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellLocation getEmpty() {

@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.mtp;
 
 public final class MtpStorageInfo {
-    private final android.mtp.MtpStorageInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MtpStorageInfo(android.mtp.MtpStorageInfo real) {
+    private final java.lang.Object real;
+
+    private MtpStorageInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.mtp.MtpStorageInfo wrap(android.mtp.MtpStorageInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpStorageInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpStorageInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.mtp.MtpStorageInfo getReal() {
+        return (android.mtp.MtpStorageInfo) real;
     }
 
     public android.mtp.MtpStorageInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getDescription() {
-        return real.getDescription();
+        return ((android.mtp.MtpStorageInfo) real).getDescription();
     }
 
     public long getFreeSpace() {
-        return real.getFreeSpace();
+        return ((android.mtp.MtpStorageInfo) real).getFreeSpace();
     }
 
     public long getMaxCapacity() {
-        return real.getMaxCapacity();
+        return ((android.mtp.MtpStorageInfo) real).getMaxCapacity();
     }
 
     public int getStorageId() {
-        return real.getStorageId();
+        return ((android.mtp.MtpStorageInfo) real).getStorageId();
     }
 
     public java.lang.String getVolumeIdentifier() {
-        return real.getVolumeIdentifier();
+        return ((android.mtp.MtpStorageInfo) real).getVolumeIdentifier();
     }
 
 }

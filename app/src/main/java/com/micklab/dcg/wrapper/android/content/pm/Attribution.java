@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class Attribution {
-    private final android.content.pm.Attribution real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Attribution(android.content.pm.Attribution real) {
+    private final java.lang.Object real;
+
+    private Attribution(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.Attribution wrap(android.content.pm.Attribution real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Attribution(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Attribution(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.Attribution getReal() {
+        return (android.content.pm.Attribution) real;
     }
 
     public android.content.pm.Attribution unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class Account {
-    private final android.accounts.Account real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Account(android.accounts.Account real) {
+    private final java.lang.Object real;
+
+    private Account(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.Account wrap(android.accounts.Account real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.Account(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.Account(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.Account getReal() {
+        return (android.accounts.Account) real;
     }
 
     public android.accounts.Account unwrap() {
-        return real;
+        return getReal();
     }
 
     public Account(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.accounts.Account(arg0 == null ? null : arg0.unwrap()));
+        this(new android.accounts.Account(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public Account(java.lang.String arg0, java.lang.String arg1) {
-        this(new android.accounts.Account(arg0, arg1));
+        this(new android.accounts.Account(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.accounts.Account) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.accounts.Account) real).equals(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.accounts.Account) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.accounts.Account) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.accounts.Account) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

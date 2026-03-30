@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class SupplicantState {
-    private final android.net.wifi.SupplicantState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SupplicantState(android.net.wifi.SupplicantState real) {
+    private final java.lang.Object real;
+
+    private SupplicantState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.SupplicantState wrap(android.net.wifi.SupplicantState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.SupplicantState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.SupplicantState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.SupplicantState getReal() {
+        return (android.net.wifi.SupplicantState) real;
     }
 
     public android.net.wifi.SupplicantState unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

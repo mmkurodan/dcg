@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class DevicePolicyIdentifiers {
-    private final android.app.admin.DevicePolicyIdentifiers real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DevicePolicyIdentifiers(android.app.admin.DevicePolicyIdentifiers real) {
+    private final java.lang.Object real;
+
+    private DevicePolicyIdentifiers(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.DevicePolicyIdentifiers wrap(android.app.admin.DevicePolicyIdentifiers real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyIdentifiers(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyIdentifiers(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.DevicePolicyIdentifiers getReal() {
+        return (android.app.admin.DevicePolicyIdentifiers) real;
     }
 
     public android.app.admin.DevicePolicyIdentifiers unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String getIdentifierForUserRestriction(java.lang.String arg0) {

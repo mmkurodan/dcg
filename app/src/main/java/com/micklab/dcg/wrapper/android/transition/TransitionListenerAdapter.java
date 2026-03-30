@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.transition;
 
 public final class TransitionListenerAdapter {
-    private final android.transition.TransitionListenerAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TransitionListenerAdapter(android.transition.TransitionListenerAdapter real) {
+    private final java.lang.Object real;
+
+    private TransitionListenerAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.transition.TransitionListenerAdapter wrap(android.transition.TransitionListenerAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.transition.TransitionListenerAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.transition.TransitionListenerAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.transition.TransitionListenerAdapter getReal() {
+        return (android.transition.TransitionListenerAdapter) real;
     }
 
     public android.transition.TransitionListenerAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onTransitionCancel(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.onTransitionCancel(arg0 == null ? null : arg0.unwrap());
+        ((android.transition.TransitionListenerAdapter) real).onTransitionCancel(arg0 == null ? null : arg0.getReal());
     }
 
     public void onTransitionEnd(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.onTransitionEnd(arg0 == null ? null : arg0.unwrap());
+        ((android.transition.TransitionListenerAdapter) real).onTransitionEnd(arg0 == null ? null : arg0.getReal());
     }
 
     public void onTransitionPause(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.onTransitionPause(arg0 == null ? null : arg0.unwrap());
+        ((android.transition.TransitionListenerAdapter) real).onTransitionPause(arg0 == null ? null : arg0.getReal());
     }
 
     public void onTransitionResume(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.onTransitionResume(arg0 == null ? null : arg0.unwrap());
+        ((android.transition.TransitionListenerAdapter) real).onTransitionResume(arg0 == null ? null : arg0.getReal());
     }
 
     public void onTransitionStart(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.onTransitionStart(arg0 == null ? null : arg0.unwrap());
+        ((android.transition.TransitionListenerAdapter) real).onTransitionStart(arg0 == null ? null : arg0.getReal());
     }
 
 }

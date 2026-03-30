@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class CurrencyPrecision {
-    private final android.icu.number.CurrencyPrecision real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CurrencyPrecision(android.icu.number.CurrencyPrecision real) {
+    private final java.lang.Object real;
+
+    private CurrencyPrecision(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision wrap(android.icu.number.CurrencyPrecision real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.CurrencyPrecision getReal() {
+        return (android.icu.number.CurrencyPrecision) real;
     }
 
     public android.icu.number.CurrencyPrecision unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.Precision withCurrency(com.micklab.dcg.wrapper.android.icu.util.Currency arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.Precision.wrap(real.withCurrency(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.Precision.wrap(((android.icu.number.CurrencyPrecision) real).withCurrency(arg0 == null ? null : arg0.getReal()));
     }
 
 }

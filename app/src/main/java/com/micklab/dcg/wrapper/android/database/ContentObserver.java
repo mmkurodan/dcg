@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class ContentObserver {
-    private final android.database.ContentObserver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ContentObserver(android.database.ContentObserver real) {
+    private final java.lang.Object real;
+
+    private ContentObserver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.ContentObserver wrap(android.database.ContentObserver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.ContentObserver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.ContentObserver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.ContentObserver getReal() {
+        return (android.database.ContentObserver) real;
     }
 
     public android.database.ContentObserver unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean deliverSelfNotifications() {

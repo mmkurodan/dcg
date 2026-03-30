@@ -2,48 +2,62 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class CallLog {
-    private final android.provider.CallLog real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CallLog(android.provider.CallLog real) {
+    private final java.lang.Object real;
+
+    private CallLog(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.CallLog wrap(android.provider.CallLog real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.CallLog getReal() {
+        return (android.provider.CallLog) real;
     }
 
     public android.provider.CallLog unwrap() {
-        return real;
+        return getReal();
     }
 
     public CallLog() {
-        this(new android.provider.CallLog());
+        this(new android.provider.CallLog(), (__DcgwBridgeToken) null);
     }
 
     public static final java.lang.String AUTHORITY = android.provider.CallLog.AUTHORITY;
     public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CallLog.CONTENT_URI);
 
     public static final class Calls {
-        private final android.provider.CallLog.Calls real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Calls(android.provider.CallLog.Calls real) {
+        private final java.lang.Object real;
+
+        private Calls(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CallLog.Calls wrap(android.provider.CallLog.Calls real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog.Calls(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog.Calls(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CallLog.Calls getReal() {
+            return (android.provider.CallLog.Calls) real;
         }
 
         public android.provider.CallLog.Calls unwrap() {
-            return real;
+            return getReal();
         }
 
         public Calls() {
-            this(new android.provider.CallLog.Calls());
+            this(new android.provider.CallLog.Calls(), (__DcgwBridgeToken) null);
         }
 
         public static java.lang.String getLastOutgoingCall(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return android.provider.CallLog.Calls.getLastOutgoingCall(arg0 == null ? null : arg0.unwrap());
+            return android.provider.CallLog.Calls.getLastOutgoingCall(arg0 == null ? null : arg0.getReal());
         }
 
         public static final int ANSWERED_EXTERNALLY_TYPE = android.provider.CallLog.Calls.ANSWERED_EXTERNALLY_TYPE;
@@ -135,18 +149,25 @@ public final class CallLog {
 
     }
     public static final class Locations {
-        private final android.provider.CallLog.Locations real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Locations(android.provider.CallLog.Locations real) {
+        private final java.lang.Object real;
+
+        private Locations(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CallLog.Locations wrap(android.provider.CallLog.Locations real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog.Locations(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CallLog.Locations(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CallLog.Locations getReal() {
+            return (android.provider.CallLog.Locations) real;
         }
 
         public android.provider.CallLog.Locations unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String AUTHORITY = android.provider.CallLog.Locations.AUTHORITY;

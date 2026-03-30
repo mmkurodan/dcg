@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DisplayContext {
-    private final android.icu.text.DisplayContext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisplayContext(android.icu.text.DisplayContext real) {
+    private final java.lang.Object real;
+
+    private DisplayContext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DisplayContext wrap(android.icu.text.DisplayContext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayContext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayContext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DisplayContext getReal() {
+        return (android.icu.text.DisplayContext) real;
     }
 
     public android.icu.text.DisplayContext unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type type() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type.wrap(real.type());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type.wrap(((android.icu.text.DisplayContext) real).type());
     }
 
     public int value() {
-        return real.value();
+        return ((android.icu.text.DisplayContext) real).value();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DisplayContext valueOf(java.lang.String arg0) {
@@ -45,18 +52,25 @@ public final class DisplayContext {
     public static final com.micklab.dcg.wrapper.android.icu.text.DisplayContext SUBSTITUTE = com.micklab.dcg.wrapper.android.icu.text.DisplayContext.wrap(android.icu.text.DisplayContext.SUBSTITUTE);
 
     public static final class Type {
-        private final android.icu.text.DisplayContext.Type real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Type(android.icu.text.DisplayContext.Type real) {
+        private final java.lang.Object real;
+
+        private Type(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type wrap(android.icu.text.DisplayContext.Type real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayContext.Type getReal() {
+            return (android.icu.text.DisplayContext.Type) real;
         }
 
         public android.icu.text.DisplayContext.Type unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type valueOf(java.lang.String arg0) {

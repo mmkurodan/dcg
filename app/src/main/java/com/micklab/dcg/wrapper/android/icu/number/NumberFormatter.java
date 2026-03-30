@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class NumberFormatter {
-    private final android.icu.number.NumberFormatter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NumberFormatter(android.icu.number.NumberFormatter real) {
+    private final java.lang.Object real;
+
+    private NumberFormatter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter wrap(android.icu.number.NumberFormatter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.NumberFormatter getReal() {
+        return (android.icu.number.NumberFormatter) real;
     }
 
     public android.icu.number.NumberFormatter unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter with() {
@@ -21,7 +28,7 @@ public final class NumberFormatter {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.withLocale(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter withLocale(java.util.Locale arg0) {
@@ -29,18 +36,25 @@ public final class NumberFormatter {
     }
 
     public static final class DecimalSeparatorDisplay {
-        private final android.icu.number.NumberFormatter.DecimalSeparatorDisplay real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DecimalSeparatorDisplay(android.icu.number.NumberFormatter.DecimalSeparatorDisplay real) {
+        private final java.lang.Object real;
+
+        private DecimalSeparatorDisplay(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.DecimalSeparatorDisplay wrap(android.icu.number.NumberFormatter.DecimalSeparatorDisplay real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.DecimalSeparatorDisplay(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.DecimalSeparatorDisplay(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.DecimalSeparatorDisplay getReal() {
+            return (android.icu.number.NumberFormatter.DecimalSeparatorDisplay) real;
         }
 
         public android.icu.number.NumberFormatter.DecimalSeparatorDisplay unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.DecimalSeparatorDisplay valueOf(java.lang.String arg0) {
@@ -56,18 +70,25 @@ public final class NumberFormatter {
 
     }
     public static final class GroupingStrategy {
-        private final android.icu.number.NumberFormatter.GroupingStrategy real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupingStrategy(android.icu.number.NumberFormatter.GroupingStrategy real) {
+        private final java.lang.Object real;
+
+        private GroupingStrategy(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.GroupingStrategy wrap(android.icu.number.NumberFormatter.GroupingStrategy real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.GroupingStrategy(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.GroupingStrategy(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.GroupingStrategy getReal() {
+            return (android.icu.number.NumberFormatter.GroupingStrategy) real;
         }
 
         public android.icu.number.NumberFormatter.GroupingStrategy unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.GroupingStrategy valueOf(java.lang.String arg0) {
@@ -86,18 +107,25 @@ public final class NumberFormatter {
 
     }
     public static final class RoundingPriority {
-        private final android.icu.number.NumberFormatter.RoundingPriority real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RoundingPriority(android.icu.number.NumberFormatter.RoundingPriority real) {
+        private final java.lang.Object real;
+
+        private RoundingPriority(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.RoundingPriority wrap(android.icu.number.NumberFormatter.RoundingPriority real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.RoundingPriority(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.RoundingPriority(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.RoundingPriority getReal() {
+            return (android.icu.number.NumberFormatter.RoundingPriority) real;
         }
 
         public android.icu.number.NumberFormatter.RoundingPriority unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.RoundingPriority valueOf(java.lang.String arg0) {
@@ -113,18 +141,25 @@ public final class NumberFormatter {
 
     }
     public static final class SignDisplay {
-        private final android.icu.number.NumberFormatter.SignDisplay real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SignDisplay(android.icu.number.NumberFormatter.SignDisplay real) {
+        private final java.lang.Object real;
+
+        private SignDisplay(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.SignDisplay wrap(android.icu.number.NumberFormatter.SignDisplay real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.SignDisplay(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.SignDisplay(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.SignDisplay getReal() {
+            return (android.icu.number.NumberFormatter.SignDisplay) real;
         }
 
         public android.icu.number.NumberFormatter.SignDisplay unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.SignDisplay valueOf(java.lang.String arg0) {
@@ -147,18 +182,25 @@ public final class NumberFormatter {
 
     }
     public static final class TrailingZeroDisplay {
-        private final android.icu.number.NumberFormatter.TrailingZeroDisplay real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TrailingZeroDisplay(android.icu.number.NumberFormatter.TrailingZeroDisplay real) {
+        private final java.lang.Object real;
+
+        private TrailingZeroDisplay(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.TrailingZeroDisplay wrap(android.icu.number.NumberFormatter.TrailingZeroDisplay real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.TrailingZeroDisplay(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.TrailingZeroDisplay(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.TrailingZeroDisplay getReal() {
+            return (android.icu.number.NumberFormatter.TrailingZeroDisplay) real;
         }
 
         public android.icu.number.NumberFormatter.TrailingZeroDisplay unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.TrailingZeroDisplay valueOf(java.lang.String arg0) {
@@ -174,18 +216,25 @@ public final class NumberFormatter {
 
     }
     public static final class UnitWidth {
-        private final android.icu.number.NumberFormatter.UnitWidth real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnitWidth(android.icu.number.NumberFormatter.UnitWidth real) {
+        private final java.lang.Object real;
+
+        private UnitWidth(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.UnitWidth wrap(android.icu.number.NumberFormatter.UnitWidth real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.UnitWidth(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.UnitWidth(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberFormatter.UnitWidth getReal() {
+            return (android.icu.number.NumberFormatter.UnitWidth) real;
         }
 
         public android.icu.number.NumberFormatter.UnitWidth unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.UnitWidth valueOf(java.lang.String arg0) {

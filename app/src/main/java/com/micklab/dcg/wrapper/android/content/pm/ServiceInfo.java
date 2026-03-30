@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ServiceInfo {
-    private final android.content.pm.ServiceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceInfo(android.content.pm.ServiceInfo real) {
+    private final java.lang.Object real;
+
+    private ServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ServiceInfo wrap(android.content.pm.ServiceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ServiceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ServiceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ServiceInfo getReal() {
+        return (android.content.pm.ServiceInfo) real;
     }
 
     public android.content.pm.ServiceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ServiceInfo() {

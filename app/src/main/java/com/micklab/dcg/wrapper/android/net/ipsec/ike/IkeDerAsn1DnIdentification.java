@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeDerAsn1DnIdentification {
-    private final android.net.ipsec.ike.IkeDerAsn1DnIdentification real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeDerAsn1DnIdentification(android.net.ipsec.ike.IkeDerAsn1DnIdentification real) {
+    private final java.lang.Object real;
+
+    private IkeDerAsn1DnIdentification(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeDerAsn1DnIdentification wrap(android.net.ipsec.ike.IkeDerAsn1DnIdentification real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeDerAsn1DnIdentification(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeDerAsn1DnIdentification(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeDerAsn1DnIdentification getReal() {
+        return (android.net.ipsec.ike.IkeDerAsn1DnIdentification) real;
     }
 
     public android.net.ipsec.ike.IkeDerAsn1DnIdentification unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeDerAsn1DnIdentification(javax.security.auth.x500.X500Principal arg0) {

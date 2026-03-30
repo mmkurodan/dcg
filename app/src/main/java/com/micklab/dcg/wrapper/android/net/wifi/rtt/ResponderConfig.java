@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.rtt;
 
 public final class ResponderConfig {
-    private final android.net.wifi.rtt.ResponderConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ResponderConfig(android.net.wifi.rtt.ResponderConfig real) {
+    private final java.lang.Object real;
+
+    private ResponderConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig wrap(android.net.wifi.rtt.ResponderConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.rtt.ResponderConfig getReal() {
+        return (android.net.wifi.rtt.ResponderConfig) real;
     }
 
     public android.net.wifi.rtt.ResponderConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -78,18 +85,25 @@ public final class ResponderConfig {
 
 
     public static final class Builder {
-        private final android.net.wifi.rtt.ResponderConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.rtt.ResponderConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig.Builder wrap(android.net.wifi.rtt.ResponderConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.rtt.ResponderConfig.Builder getReal() {
+            return (android.net.wifi.rtt.ResponderConfig.Builder) real;
         }
 
         public android.net.wifi.rtt.ResponderConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsRcsManager {
-    private final android.telephony.ims.ImsRcsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsRcsManager(android.telephony.ims.ImsRcsManager real) {
+    private final java.lang.Object real;
+
+    private ImsRcsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsRcsManager wrap(android.telephony.ims.ImsRcsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsRcsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsRcsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsRcsManager getReal() {
+        return (android.telephony.ims.ImsRcsManager) real;
     }
 
     public android.telephony.ims.ImsRcsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.telephony.ims.RcsUceAdapter getUceAdapter() {

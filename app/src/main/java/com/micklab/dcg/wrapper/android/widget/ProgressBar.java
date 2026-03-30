@@ -2,294 +2,301 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class ProgressBar {
-    private final android.widget.ProgressBar real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProgressBar(android.widget.ProgressBar real) {
+    private final java.lang.Object real;
+
+    private ProgressBar(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.ProgressBar wrap(android.widget.ProgressBar real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ProgressBar(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ProgressBar(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.ProgressBar getReal() {
+        return (android.widget.ProgressBar) real;
     }
 
     public android.widget.ProgressBar unwrap() {
-        return real;
+        return getReal();
     }
 
     public ProgressBar(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ProgressBar(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ProgressBar(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public ProgressBar(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.widget.ProgressBar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void drawableHotspotChanged(float arg0, float arg1) {
-        real.drawableHotspotChanged(arg0, arg1);
+        ((android.widget.ProgressBar) real).drawableHotspotChanged(arg0, arg1);
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.ProgressBar) real).getAccessibilityClassName();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getCurrentDrawable() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getCurrentDrawable());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ProgressBar) real).getCurrentDrawable());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getIndeterminateDrawable() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getIndeterminateDrawable());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ProgressBar) real).getIndeterminateDrawable());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getIndeterminateTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getIndeterminateTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.ProgressBar) real).getIndeterminateTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getIndeterminateTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getIndeterminateTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.ProgressBar) real).getIndeterminateTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getIndeterminateTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getIndeterminateTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.ProgressBar) real).getIndeterminateTintMode());
     }
 
     public com.micklab.dcg.wrapper.android.view.animation.Interpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(((android.widget.ProgressBar) real).getInterpolator());
     }
 
     public int getMax() {
-        return real.getMax();
+        return ((android.widget.ProgressBar) real).getMax();
     }
 
     public int getMaxHeight() {
-        return real.getMaxHeight();
+        return ((android.widget.ProgressBar) real).getMaxHeight();
     }
 
     public int getMaxWidth() {
-        return real.getMaxWidth();
+        return ((android.widget.ProgressBar) real).getMaxWidth();
     }
 
     public int getMin() {
-        return real.getMin();
+        return ((android.widget.ProgressBar) real).getMin();
     }
 
     public int getMinHeight() {
-        return real.getMinHeight();
+        return ((android.widget.ProgressBar) real).getMinHeight();
     }
 
     public int getMinWidth() {
-        return real.getMinWidth();
+        return ((android.widget.ProgressBar) real).getMinWidth();
     }
 
     public int getProgress() {
-        return real.getProgress();
+        return ((android.widget.ProgressBar) real).getProgress();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getProgressBackgroundTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getProgressBackgroundTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.ProgressBar) real).getProgressBackgroundTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getProgressBackgroundTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getProgressBackgroundTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.ProgressBar) real).getProgressBackgroundTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getProgressBackgroundTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getProgressBackgroundTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.ProgressBar) real).getProgressBackgroundTintMode());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getProgressDrawable() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getProgressDrawable());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ProgressBar) real).getProgressDrawable());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getProgressTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getProgressTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.ProgressBar) real).getProgressTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getProgressTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getProgressTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.ProgressBar) real).getProgressTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getProgressTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getProgressTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.ProgressBar) real).getProgressTintMode());
     }
 
     public int getSecondaryProgress() {
-        return real.getSecondaryProgress();
+        return ((android.widget.ProgressBar) real).getSecondaryProgress();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getSecondaryProgressTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getSecondaryProgressTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.ProgressBar) real).getSecondaryProgressTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getSecondaryProgressTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getSecondaryProgressTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.ProgressBar) real).getSecondaryProgressTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getSecondaryProgressTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getSecondaryProgressTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.ProgressBar) real).getSecondaryProgressTintMode());
     }
 
     public void incrementProgressBy(int arg0) {
-        real.incrementProgressBy(arg0);
+        ((android.widget.ProgressBar) real).incrementProgressBy(arg0);
     }
 
     public void incrementSecondaryProgressBy(int arg0) {
-        real.incrementSecondaryProgressBy(arg0);
+        ((android.widget.ProgressBar) real).incrementSecondaryProgressBy(arg0);
     }
 
     public void invalidateDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.invalidateDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).invalidateDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isAnimating() {
-        return real.isAnimating();
+        return ((android.widget.ProgressBar) real).isAnimating();
     }
 
     public boolean isIndeterminate() {
-        return real.isIndeterminate();
+        return ((android.widget.ProgressBar) real).isIndeterminate();
     }
 
     public void jumpDrawablesToCurrentState() {
-        real.jumpDrawablesToCurrentState();
+        ((android.widget.ProgressBar) real).jumpDrawablesToCurrentState();
     }
 
     public void onRestoreInstanceState(com.micklab.dcg.wrapper.android.os.Parcelable arg0) {
-        real.onRestoreInstanceState(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).onRestoreInstanceState(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.os.Parcelable onSaveInstanceState() {
-        return com.micklab.dcg.wrapper.android.os.Parcelable.wrap(real.onSaveInstanceState());
+        return com.micklab.dcg.wrapper.android.os.Parcelable.wrap(((android.widget.ProgressBar) real).onSaveInstanceState());
     }
 
     public void onVisibilityAggregated(boolean arg0) {
-        real.onVisibilityAggregated(arg0);
+        ((android.widget.ProgressBar) real).onVisibilityAggregated(arg0);
     }
 
     public void postInvalidate() {
-        real.postInvalidate();
+        ((android.widget.ProgressBar) real).postInvalidate();
     }
 
     public void setIndeterminate(boolean arg0) {
-        real.setIndeterminate(arg0);
+        ((android.widget.ProgressBar) real).setIndeterminate(arg0);
     }
 
     public void setIndeterminateDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setIndeterminateDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setIndeterminateDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIndeterminateDrawableTiled(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setIndeterminateDrawableTiled(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setIndeterminateDrawableTiled(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIndeterminateTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setIndeterminateTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setIndeterminateTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIndeterminateTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setIndeterminateTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setIndeterminateTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIndeterminateTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setIndeterminateTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setIndeterminateTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.view.animation.Interpolator arg0) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setInterpolator(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.widget.ProgressBar) real).setInterpolator(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setMax(int arg0) {
-        real.setMax(arg0);
+        ((android.widget.ProgressBar) real).setMax(arg0);
     }
 
     public void setMaxHeight(int arg0) {
-        real.setMaxHeight(arg0);
+        ((android.widget.ProgressBar) real).setMaxHeight(arg0);
     }
 
     public void setMaxWidth(int arg0) {
-        real.setMaxWidth(arg0);
+        ((android.widget.ProgressBar) real).setMaxWidth(arg0);
     }
 
     public void setMin(int arg0) {
-        real.setMin(arg0);
+        ((android.widget.ProgressBar) real).setMin(arg0);
     }
 
     public void setMinHeight(int arg0) {
-        real.setMinHeight(arg0);
+        ((android.widget.ProgressBar) real).setMinHeight(arg0);
     }
 
     public void setMinWidth(int arg0) {
-        real.setMinWidth(arg0);
+        ((android.widget.ProgressBar) real).setMinWidth(arg0);
     }
 
     public void setProgress(int arg0) {
-        real.setProgress(arg0);
+        ((android.widget.ProgressBar) real).setProgress(arg0);
     }
 
     public void setProgress(int arg0, boolean arg1) {
-        real.setProgress(arg0, arg1);
+        ((android.widget.ProgressBar) real).setProgress(arg0, arg1);
     }
 
     public void setProgressBackgroundTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setProgressBackgroundTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressBackgroundTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressBackgroundTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setProgressBackgroundTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressBackgroundTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressBackgroundTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setProgressBackgroundTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressBackgroundTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setProgressDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressDrawableTiled(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setProgressDrawableTiled(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressDrawableTiled(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setProgressTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setProgressTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProgressTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setProgressTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setProgressTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSecondaryProgress(int arg0) {
-        real.setSecondaryProgress(arg0);
+        ((android.widget.ProgressBar) real).setSecondaryProgress(arg0);
     }
 
     public void setSecondaryProgressTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setSecondaryProgressTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setSecondaryProgressTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSecondaryProgressTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setSecondaryProgressTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setSecondaryProgressTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSecondaryProgressTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setSecondaryProgressTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ProgressBar) real).setSecondaryProgressTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setStateDescription(java.lang.CharSequence arg0) {
-        real.setStateDescription(arg0);
+        ((android.widget.ProgressBar) real).setStateDescription(arg0);
     }
 
 }

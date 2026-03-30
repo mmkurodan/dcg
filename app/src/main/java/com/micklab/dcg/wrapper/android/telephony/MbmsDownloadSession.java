@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class MbmsDownloadSession {
-    private final android.telephony.MbmsDownloadSession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MbmsDownloadSession(android.telephony.MbmsDownloadSession real) {
+    private final java.lang.Object real;
+
+    private MbmsDownloadSession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.MbmsDownloadSession wrap(android.telephony.MbmsDownloadSession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.MbmsDownloadSession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.MbmsDownloadSession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.MbmsDownloadSession getReal() {
+        return (android.telephony.MbmsDownloadSession) real;
     }
 
     public android.telephony.MbmsDownloadSession unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addProgressListener(com.micklab.dcg.wrapper.android.telephony.mbms.DownloadRequest arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.telephony.mbms.DownloadProgressListener arg2) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WpsInfo {
-    private final android.net.wifi.WpsInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WpsInfo(android.net.wifi.WpsInfo real) {
+    private final java.lang.Object real;
+
+    private WpsInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WpsInfo wrap(android.net.wifi.WpsInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WpsInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WpsInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WpsInfo getReal() {
+        return (android.net.wifi.WpsInfo) real;
     }
 
     public android.net.wifi.WpsInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public WpsInfo() {

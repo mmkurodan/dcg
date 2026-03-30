@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class AccountManagerCallback {
-    private final android.accounts.AccountManagerCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccountManagerCallback(android.accounts.AccountManagerCallback real) {
+    private final java.lang.Object real;
+
+    private AccountManagerCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.AccountManagerCallback wrap(android.accounts.AccountManagerCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManagerCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManagerCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.AccountManagerCallback getReal() {
+        return (android.accounts.AccountManagerCallback) real;
     }
 
     public android.accounts.AccountManagerCallback unwrap() {
-        return real;
+        return getReal();
     }
 
 }

@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class RelativeDateTimeFormatter {
-    private final android.icu.text.RelativeDateTimeFormatter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RelativeDateTimeFormatter(android.icu.text.RelativeDateTimeFormatter real) {
+    private final java.lang.Object real;
+
+    private RelativeDateTimeFormatter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter wrap(android.icu.text.RelativeDateTimeFormatter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.RelativeDateTimeFormatter getReal() {
+        return (android.icu.text.RelativeDateTimeFormatter) real;
     }
 
     public android.icu.text.RelativeDateTimeFormatter unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String combineDateAndTime(java.lang.String arg0, java.lang.String arg1) {
-        return real.combineDateAndTime(arg0, arg1);
+        return ((android.icu.text.RelativeDateTimeFormatter) real).combineDateAndTime(arg0, arg1);
     }
 
     public java.lang.String format(com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit arg1) {
-        return real.format(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.text.RelativeDateTimeFormatter) real).format(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String format(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit arg1) {
-        return real.format(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.text.RelativeDateTimeFormatter) real).format(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String format(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction arg1, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit arg2) {
-        return real.format(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.text.RelativeDateTimeFormatter) real).format(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.String formatNumeric(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit arg1) {
-        return real.formatNumeric(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.text.RelativeDateTimeFormatter) real).formatNumeric(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime formatNumericToValue(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(real.formatNumericToValue(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(((android.icu.text.RelativeDateTimeFormatter) real).formatNumericToValue(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime formatToValue(com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(real.formatToValue(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(((android.icu.text.RelativeDateTimeFormatter) real).formatToValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime formatToValue(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(real.formatToValue(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(((android.icu.text.RelativeDateTimeFormatter) real).formatToValue(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime formatToValue(double arg0, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction arg1, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(real.formatToValue(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime.wrap(((android.icu.text.RelativeDateTimeFormatter) real).formatToValue(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayContext getCapitalizationContext() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.wrap(real.getCapitalizationContext());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.wrap(((android.icu.text.RelativeDateTimeFormatter) real).getCapitalizationContext());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style getFormatStyle() {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style.wrap(real.getFormatStyle());
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style.wrap(((android.icu.text.RelativeDateTimeFormatter) real).getFormatStyle());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance() {
@@ -65,7 +72,7 @@ public final class RelativeDateTimeFormatter {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance(java.util.Locale arg0) {
@@ -73,34 +80,41 @@ public final class RelativeDateTimeFormatter {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg1, com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style arg2, com.micklab.dcg.wrapper.android.icu.text.DisplayContext arg3) {
-        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.wrap(android.icu.text.RelativeDateTimeFormatter.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.NumberFormat getNumberFormat() {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(real.getNumberFormat());
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(((android.icu.text.RelativeDateTimeFormatter) real).getNumberFormat());
     }
 
     public static final class AbsoluteUnit {
-        private final android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AbsoluteUnit(android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit real) {
+        private final java.lang.Object real;
+
+        private AbsoluteUnit(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit wrap(android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.AbsoluteUnit valueOf(java.lang.String arg0) {
@@ -129,18 +143,25 @@ public final class RelativeDateTimeFormatter {
 
     }
     public static final class Direction {
-        private final android.icu.text.RelativeDateTimeFormatter.Direction real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Direction(android.icu.text.RelativeDateTimeFormatter.Direction real) {
+        private final java.lang.Object real;
+
+        private Direction(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction wrap(android.icu.text.RelativeDateTimeFormatter.Direction real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.Direction getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.Direction) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.Direction unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Direction valueOf(java.lang.String arg0) {
@@ -160,58 +181,72 @@ public final class RelativeDateTimeFormatter {
 
     }
     public static final class FormattedRelativeDateTime {
-        private final android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FormattedRelativeDateTime(android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime real) {
+        private final java.lang.Object real;
+
+        private FormattedRelativeDateTime(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime wrap(android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime unwrap() {
-            return real;
+            return getReal();
         }
 
         public char charAt(int arg0) {
-            return real.charAt(arg0);
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).charAt(arg0);
         }
 
         public int length() {
-            return real.length();
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).length();
         }
 
         public boolean nextPosition(com.micklab.dcg.wrapper.android.icu.text.ConstrainedFieldPosition arg0) {
-            return real.nextPosition(arg0 == null ? null : arg0.unwrap());
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).nextPosition(arg0 == null ? null : arg0.getReal());
         }
 
         public java.lang.CharSequence subSequence(int arg0, int arg1) {
-            return real.subSequence(arg0, arg1);
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).subSequence(arg0, arg1);
         }
 
         public java.text.AttributedCharacterIterator toCharacterIterator() {
-            return real.toCharacterIterator();
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).toCharacterIterator();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.icu.text.RelativeDateTimeFormatter.FormattedRelativeDateTime) real).toString();
         }
 
     }
     public static final class RelativeDateTimeUnit {
-        private final android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RelativeDateTimeUnit(android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit real) {
+        private final java.lang.Object real;
+
+        private RelativeDateTimeUnit(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit wrap(android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeDateTimeUnit valueOf(java.lang.String arg0) {
@@ -240,18 +275,25 @@ public final class RelativeDateTimeFormatter {
 
     }
     public static final class RelativeUnit {
-        private final android.icu.text.RelativeDateTimeFormatter.RelativeUnit real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RelativeUnit(android.icu.text.RelativeDateTimeFormatter.RelativeUnit real) {
+        private final java.lang.Object real;
+
+        private RelativeUnit(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit wrap(android.icu.text.RelativeDateTimeFormatter.RelativeUnit real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.RelativeUnit getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.RelativeUnit) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.RelativeUnit unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.RelativeUnit valueOf(java.lang.String arg0) {
@@ -272,18 +314,25 @@ public final class RelativeDateTimeFormatter {
 
     }
     public static final class Style {
-        private final android.icu.text.RelativeDateTimeFormatter.Style real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Style(android.icu.text.RelativeDateTimeFormatter.Style real) {
+        private final java.lang.Object real;
+
+        private Style(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style wrap(android.icu.text.RelativeDateTimeFormatter.Style real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.RelativeDateTimeFormatter.Style getReal() {
+            return (android.icu.text.RelativeDateTimeFormatter.Style) real;
         }
 
         public android.icu.text.RelativeDateTimeFormatter.Style unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.RelativeDateTimeFormatter.Style valueOf(java.lang.String arg0) {

@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class VerifiedInputEvent {
-    private final android.view.VerifiedInputEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VerifiedInputEvent(android.view.VerifiedInputEvent real) {
+    private final java.lang.Object real;
+
+    private VerifiedInputEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.VerifiedInputEvent wrap(android.view.VerifiedInputEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.VerifiedInputEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.VerifiedInputEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.VerifiedInputEvent getReal() {
+        return (android.view.VerifiedInputEvent) real;
     }
 
     public android.view.VerifiedInputEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.VerifiedInputEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.VerifiedInputEvent) real).equals(arg0);
     }
 
     public int getDeviceId() {
-        return real.getDeviceId();
+        return ((android.view.VerifiedInputEvent) real).getDeviceId();
     }
 
     public int getDisplayId() {
-        return real.getDisplayId();
+        return ((android.view.VerifiedInputEvent) real).getDisplayId();
     }
 
     public long getEventTimeNanos() {
-        return real.getEventTimeNanos();
+        return ((android.view.VerifiedInputEvent) real).getEventTimeNanos();
     }
 
     public int getSource() {
-        return real.getSource();
+        return ((android.view.VerifiedInputEvent) real).getSource();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.VerifiedInputEvent) real).hashCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.VerifiedInputEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

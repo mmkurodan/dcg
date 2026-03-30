@@ -2,279 +2,349 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class ExerciseCompletionGoal {
-    private final android.health.connect.datatypes.ExerciseCompletionGoal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExerciseCompletionGoal(android.health.connect.datatypes.ExerciseCompletionGoal real) {
+    private final java.lang.Object real;
+
+    private ExerciseCompletionGoal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.ExerciseCompletionGoal getReal() {
+        return (android.health.connect.datatypes.ExerciseCompletionGoal) real;
     }
 
     public android.health.connect.datatypes.ExerciseCompletionGoal unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class ActiveCaloriesBurnedGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ActiveCaloriesBurnedGoal(android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal real) {
+        private final java.lang.Object real;
+
+        private ActiveCaloriesBurnedGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public ActiveCaloriesBurnedGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal(arg0 == null ? null : arg0.unwrap()));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy getActiveCalories() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy.wrap(real.getActiveCalories());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy.wrap(((android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal) real).getActiveCalories());
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.ActiveCaloriesBurnedGoal) real).hashCode();
         }
 
     }
     public static final class DistanceGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DistanceGoal(android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal real) {
+        private final java.lang.Object real;
+
+        private DistanceGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public DistanceGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal(arg0 == null ? null : arg0.unwrap()));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length getDistance() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length.wrap(real.getDistance());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length.wrap(((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal) real).getDistance());
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceGoal) real).hashCode();
         }
 
     }
     public static final class DistanceWithVariableRestGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DistanceWithVariableRestGoal(android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal real) {
+        private final java.lang.Object real;
+
+        private DistanceWithVariableRestGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public DistanceWithVariableRestGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length arg0, java.time.Duration arg1) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal(arg0 == null ? null : arg0.unwrap(), arg1));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length getDistance() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length.wrap(real.getDistance());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Length.wrap(((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal) real).getDistance());
         }
 
         public java.time.Duration getDuration() {
-            return real.getDuration();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal) real).getDuration();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DistanceWithVariableRestGoal) real).hashCode();
         }
 
     }
     public static final class DurationGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DurationGoal(android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal real) {
+        private final java.lang.Object real;
+
+        private DurationGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public DurationGoal(java.time.Duration arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal(arg0));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal(arg0), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal) real).equals(arg0);
         }
 
         public java.time.Duration getDuration() {
-            return real.getDuration();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal) real).getDuration();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.DurationGoal) real).hashCode();
         }
 
     }
     public static final class RepetitionsGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RepetitionsGoal(android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal real) {
+        private final java.lang.Object real;
+
+        private RepetitionsGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public RepetitionsGoal(int arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal(arg0));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal(arg0), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal) real).equals(arg0);
         }
 
         public int getRepetitions() {
-            return real.getRepetitions();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal) real).getRepetitions();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.RepetitionsGoal) real).hashCode();
         }
 
     }
     public static final class StepsGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StepsGoal(android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal real) {
+        private final java.lang.Object real;
+
+        private StepsGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public StepsGoal(int arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal(arg0));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal(arg0), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal) real).equals(arg0);
         }
 
         public int getSteps() {
-            return real.getSteps();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal) real).getSteps();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.StepsGoal) real).hashCode();
         }
 
     }
     public static final class TotalCaloriesBurnedGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TotalCaloriesBurnedGoal(android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal real) {
+        private final java.lang.Object real;
+
+        private TotalCaloriesBurnedGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public TotalCaloriesBurnedGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy arg0) {
-            this(new android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal(arg0 == null ? null : arg0.unwrap()));
+            this(new android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy getTotalCalories() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy.wrap(real.getTotalCalories());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Energy.wrap(((android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal) real).getTotalCalories());
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.health.connect.datatypes.ExerciseCompletionGoal.TotalCaloriesBurnedGoal) real).hashCode();
         }
 
     }
     public static final class UnknownGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnknownGoal(android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal real) {
+        private final java.lang.Object real;
+
+        private UnknownGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal INSTANCE = com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal.wrap(android.health.connect.datatypes.ExerciseCompletionGoal.UnknownGoal.INSTANCE);
 
     }
     public static final class UnspecifiedGoal {
-        private final android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnspecifiedGoal(android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal real) {
+        private final java.lang.Object real;
+
+        private UnspecifiedGoal(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal wrap(android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal getReal() {
+            return (android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal) real;
         }
 
         public android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal INSTANCE = com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal.wrap(android.health.connect.datatypes.ExerciseCompletionGoal.UnspecifiedGoal.INSTANCE);

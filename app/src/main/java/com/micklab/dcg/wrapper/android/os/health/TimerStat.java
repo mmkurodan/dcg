@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.health;
 
 public final class TimerStat {
-    private final android.os.health.TimerStat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TimerStat(android.os.health.TimerStat real) {
+    private final java.lang.Object real;
+
+    private TimerStat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.health.TimerStat wrap(android.os.health.TimerStat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.TimerStat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.TimerStat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.health.TimerStat getReal() {
+        return (android.os.health.TimerStat) real;
     }
 
     public android.os.health.TimerStat unwrap() {
-        return real;
+        return getReal();
     }
 
     public TimerStat() {

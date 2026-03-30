@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteRawStatement {
-    private final android.database.sqlite.SQLiteRawStatement real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteRawStatement(android.database.sqlite.SQLiteRawStatement real) {
+    private final java.lang.Object real;
+
+    private SQLiteRawStatement(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteRawStatement wrap(android.database.sqlite.SQLiteRawStatement real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteRawStatement(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteRawStatement(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteRawStatement getReal() {
+        return (android.database.sqlite.SQLiteRawStatement) real;
     }
 
     public android.database.sqlite.SQLiteRawStatement unwrap() {
-        return real;
+        return getReal();
     }
 
     public void bindBlob(int arg0, byte[] arg1) {

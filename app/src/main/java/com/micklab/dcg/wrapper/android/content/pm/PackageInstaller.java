@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PackageInstaller {
-    private final android.content.pm.PackageInstaller real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PackageInstaller(android.content.pm.PackageInstaller real) {
+    private final java.lang.Object real;
+
+    private PackageInstaller(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller wrap(android.content.pm.PackageInstaller real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PackageInstaller getReal() {
+        return (android.content.pm.PackageInstaller) real;
     }
 
     public android.content.pm.PackageInstaller unwrap() {
-        return real;
+        return getReal();
     }
 
     public void abandonSession(int arg0) {
@@ -102,18 +109,25 @@ public final class PackageInstaller {
 
 
     public static final class InstallConstraints {
-        private final android.content.pm.PackageInstaller.InstallConstraints real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InstallConstraints(android.content.pm.PackageInstaller.InstallConstraints real) {
+        private final java.lang.Object real;
+
+        private InstallConstraints(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints wrap(android.content.pm.PackageInstaller.InstallConstraints real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.InstallConstraints getReal() {
+            return (android.content.pm.PackageInstaller.InstallConstraints) real;
         }
 
         public android.content.pm.PackageInstaller.InstallConstraints unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
@@ -154,18 +168,25 @@ public final class PackageInstaller {
 
 
         public static final class Builder {
-            private final android.content.pm.PackageInstaller.InstallConstraints.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.content.pm.PackageInstaller.InstallConstraints.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints.Builder wrap(android.content.pm.PackageInstaller.InstallConstraints.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraints.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.content.pm.PackageInstaller.InstallConstraints.Builder getReal() {
+                return (android.content.pm.PackageInstaller.InstallConstraints.Builder) real;
             }
 
             public android.content.pm.PackageInstaller.InstallConstraints.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
@@ -199,18 +220,25 @@ public final class PackageInstaller {
         }
     }
     public static final class InstallConstraintsResult {
-        private final android.content.pm.PackageInstaller.InstallConstraintsResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InstallConstraintsResult(android.content.pm.PackageInstaller.InstallConstraintsResult real) {
+        private final java.lang.Object real;
+
+        private InstallConstraintsResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraintsResult wrap(android.content.pm.PackageInstaller.InstallConstraintsResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraintsResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.InstallConstraintsResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.InstallConstraintsResult getReal() {
+            return (android.content.pm.PackageInstaller.InstallConstraintsResult) real;
         }
 
         public android.content.pm.PackageInstaller.InstallConstraintsResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean areAllConstraintsSatisfied() {
@@ -228,18 +256,25 @@ public final class PackageInstaller {
 
     }
     public static final class PreapprovalDetails {
-        private final android.content.pm.PackageInstaller.PreapprovalDetails real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PreapprovalDetails(android.content.pm.PackageInstaller.PreapprovalDetails real) {
+        private final java.lang.Object real;
+
+        private PreapprovalDetails(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails wrap(android.content.pm.PackageInstaller.PreapprovalDetails real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.PreapprovalDetails getReal() {
+            return (android.content.pm.PackageInstaller.PreapprovalDetails) real;
         }
 
         public android.content.pm.PackageInstaller.PreapprovalDetails unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
@@ -272,18 +307,25 @@ public final class PackageInstaller {
 
 
         public static final class Builder {
-            private final android.content.pm.PackageInstaller.PreapprovalDetails.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.content.pm.PackageInstaller.PreapprovalDetails.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails.Builder wrap(android.content.pm.PackageInstaller.PreapprovalDetails.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.PreapprovalDetails.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.content.pm.PackageInstaller.PreapprovalDetails.Builder getReal() {
+                return (android.content.pm.PackageInstaller.PreapprovalDetails.Builder) real;
             }
 
             public android.content.pm.PackageInstaller.PreapprovalDetails.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
@@ -313,18 +355,25 @@ public final class PackageInstaller {
         }
     }
     public static final class Session {
-        private final android.content.pm.PackageInstaller.Session real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Session(android.content.pm.PackageInstaller.Session real) {
+        private final java.lang.Object real;
+
+        private Session(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.Session wrap(android.content.pm.PackageInstaller.Session real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.Session(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.Session(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.Session getReal() {
+            return (android.content.pm.PackageInstaller.Session) real;
         }
 
         public android.content.pm.PackageInstaller.Session unwrap() {
-            return real;
+            return getReal();
         }
 
         public void abandon() {
@@ -413,18 +462,25 @@ public final class PackageInstaller {
 
     }
     public static final class SessionCallback {
-        private final android.content.pm.PackageInstaller.SessionCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SessionCallback(android.content.pm.PackageInstaller.SessionCallback real) {
+        private final java.lang.Object real;
+
+        private SessionCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionCallback wrap(android.content.pm.PackageInstaller.SessionCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.SessionCallback getReal() {
+            return (android.content.pm.PackageInstaller.SessionCallback) real;
         }
 
         public android.content.pm.PackageInstaller.SessionCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onActiveChanged(int arg0, boolean arg1) {
@@ -449,18 +505,25 @@ public final class PackageInstaller {
 
     }
     public static final class SessionInfo {
-        private final android.content.pm.PackageInstaller.SessionInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SessionInfo(android.content.pm.PackageInstaller.SessionInfo real) {
+        private final java.lang.Object real;
+
+        private SessionInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionInfo wrap(android.content.pm.PackageInstaller.SessionInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.SessionInfo getReal() {
+            return (android.content.pm.PackageInstaller.SessionInfo) real;
         }
 
         public android.content.pm.PackageInstaller.SessionInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.content.Intent createDetailsIntent() {
@@ -634,18 +697,25 @@ public final class PackageInstaller {
 
     }
     public static final class SessionParams {
-        private final android.content.pm.PackageInstaller.SessionParams real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SessionParams(android.content.pm.PackageInstaller.SessionParams real) {
+        private final java.lang.Object real;
+
+        private SessionParams(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionParams wrap(android.content.pm.PackageInstaller.SessionParams real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionParams(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.SessionParams(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.SessionParams getReal() {
+            return (android.content.pm.PackageInstaller.SessionParams) real;
         }
 
         public android.content.pm.PackageInstaller.SessionParams unwrap() {
-            return real;
+            return getReal();
         }
 
         public SessionParams(int arg0) {
@@ -743,18 +813,25 @@ public final class PackageInstaller {
 
     }
     public static final class UnarchivalState {
-        private final android.content.pm.PackageInstaller.UnarchivalState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnarchivalState(android.content.pm.PackageInstaller.UnarchivalState real) {
+        private final java.lang.Object real;
+
+        private UnarchivalState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.UnarchivalState wrap(android.content.pm.PackageInstaller.UnarchivalState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.UnarchivalState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.UnarchivalState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageInstaller.UnarchivalState getReal() {
+            return (android.content.pm.PackageInstaller.UnarchivalState) real;
         }
 
         public android.content.pm.PackageInstaller.UnarchivalState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageInstaller.UnarchivalState createGenericErrorState(int arg0) {

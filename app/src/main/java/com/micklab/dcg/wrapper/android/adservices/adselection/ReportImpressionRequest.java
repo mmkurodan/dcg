@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.adservices.adselection;
 
 public final class ReportImpressionRequest {
-    private final android.adservices.adselection.ReportImpressionRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ReportImpressionRequest(android.adservices.adselection.ReportImpressionRequest real) {
+    private final java.lang.Object real;
+
+    private ReportImpressionRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adselection.ReportImpressionRequest wrap(android.adservices.adselection.ReportImpressionRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportImpressionRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportImpressionRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adselection.ReportImpressionRequest getReal() {
+        return (android.adservices.adselection.ReportImpressionRequest) real;
     }
 
     public android.adservices.adselection.ReportImpressionRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public ReportImpressionRequest(long arg0) {
-        this(new android.adservices.adselection.ReportImpressionRequest(arg0));
+        this(new android.adservices.adselection.ReportImpressionRequest(arg0), (__DcgwBridgeToken) null);
     }
 
     public ReportImpressionRequest(long arg0, com.micklab.dcg.wrapper.android.adservices.adselection.AdSelectionConfig arg1) {
-        this(new android.adservices.adselection.ReportImpressionRequest(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.adservices.adselection.ReportImpressionRequest(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.adservices.adselection.AdSelectionConfig getAdSelectionConfig() {
-        return com.micklab.dcg.wrapper.android.adservices.adselection.AdSelectionConfig.wrap(real.getAdSelectionConfig());
+        return com.micklab.dcg.wrapper.android.adservices.adselection.AdSelectionConfig.wrap(((android.adservices.adselection.ReportImpressionRequest) real).getAdSelectionConfig());
     }
 
     public long getAdSelectionId() {
-        return real.getAdSelectionId();
+        return ((android.adservices.adselection.ReportImpressionRequest) real).getAdSelectionId();
     }
 
 }

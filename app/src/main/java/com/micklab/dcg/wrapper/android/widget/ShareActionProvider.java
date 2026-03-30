@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class ShareActionProvider {
-    private final android.widget.ShareActionProvider real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ShareActionProvider(android.widget.ShareActionProvider real) {
+    private final java.lang.Object real;
+
+    private ShareActionProvider(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.ShareActionProvider wrap(android.widget.ShareActionProvider real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ShareActionProvider(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ShareActionProvider(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.ShareActionProvider getReal() {
+        return (android.widget.ShareActionProvider) real;
     }
 
     public android.widget.ShareActionProvider unwrap() {
-        return real;
+        return getReal();
     }
 
     public ShareActionProvider(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.ShareActionProvider(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.ShareActionProvider(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public boolean hasSubMenu() {
-        return real.hasSubMenu();
+        return ((android.widget.ShareActionProvider) real).hasSubMenu();
     }
 
     public com.micklab.dcg.wrapper.android.view.View onCreateActionView() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.onCreateActionView());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.widget.ShareActionProvider) real).onCreateActionView());
     }
 
     public void onPrepareSubMenu(com.micklab.dcg.wrapper.android.view.SubMenu arg0) {
-        real.onPrepareSubMenu(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ShareActionProvider) real).onPrepareSubMenu(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnShareTargetSelectedListener(com.micklab.dcg.wrapper.android.widget.ShareActionProvider.OnShareTargetSelectedListener arg0) {
-        real.setOnShareTargetSelectedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ShareActionProvider) real).setOnShareTargetSelectedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setShareHistoryFileName(java.lang.String arg0) {
@@ -41,27 +48,34 @@ public final class ShareActionProvider {
     }
 
     public void setShareIntent(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.setShareIntent(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ShareActionProvider) real).setShareIntent(arg0 == null ? null : arg0.getReal());
     }
 
 
     public static final class OnShareTargetSelectedListener {
-        private final android.widget.ShareActionProvider.OnShareTargetSelectedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnShareTargetSelectedListener(android.widget.ShareActionProvider.OnShareTargetSelectedListener real) {
+        private final java.lang.Object real;
+
+        private OnShareTargetSelectedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.ShareActionProvider.OnShareTargetSelectedListener wrap(android.widget.ShareActionProvider.OnShareTargetSelectedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ShareActionProvider.OnShareTargetSelectedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ShareActionProvider.OnShareTargetSelectedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.ShareActionProvider.OnShareTargetSelectedListener getReal() {
+            return (android.widget.ShareActionProvider.OnShareTargetSelectedListener) real;
         }
 
         public android.widget.ShareActionProvider.OnShareTargetSelectedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean onShareTargetSelected(com.micklab.dcg.wrapper.android.widget.ShareActionProvider arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
-            return real.onShareTargetSelected(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return ((android.widget.ShareActionProvider.OnShareTargetSelectedListener) real).onShareTargetSelected(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
     }

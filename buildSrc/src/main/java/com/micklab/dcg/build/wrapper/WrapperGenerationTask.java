@@ -10,7 +10,6 @@ import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.TaskAction;
 
 import java.io.File;
-
 public abstract class WrapperGenerationTask extends DefaultTask {
     @InputFile
     public abstract RegularFileProperty getAndroidJar();

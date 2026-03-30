@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class UsageStatsManager {
-    private final android.app.usage.UsageStatsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UsageStatsManager(android.app.usage.UsageStatsManager real) {
+    private final java.lang.Object real;
+
+    private UsageStatsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.UsageStatsManager wrap(android.app.usage.UsageStatsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageStatsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageStatsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.UsageStatsManager getReal() {
+        return (android.app.usage.UsageStatsManager) real;
     }
 
     public android.app.usage.UsageStatsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getAppStandbyBucket() {
-        return real.getAppStandbyBucket();
+        return ((android.app.usage.UsageStatsManager) real).getAppStandbyBucket();
     }
 
     public boolean isAppInactive(java.lang.String arg0) {
-        return real.isAppInactive(arg0);
+        return ((android.app.usage.UsageStatsManager) real).isAppInactive(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.app.usage.UsageEvents queryEvents(com.micklab.dcg.wrapper.android.app.usage.UsageEventsQuery arg0) {
-        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(real.queryEvents(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(((android.app.usage.UsageStatsManager) real).queryEvents(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.app.usage.UsageEvents queryEvents(long arg0, long arg1) {
-        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(real.queryEvents(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(((android.app.usage.UsageStatsManager) real).queryEvents(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.app.usage.UsageEvents queryEventsForSelf(long arg0, long arg1) {
-        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(real.queryEventsForSelf(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.app.usage.UsageEvents.wrap(((android.app.usage.UsageStatsManager) real).queryEventsForSelf(arg0, arg1));
     }
 
     public static final java.lang.String EXTRA_EVENT_ACTION = android.app.usage.UsageStatsManager.EXTRA_EVENT_ACTION;

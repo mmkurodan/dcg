@@ -2,102 +2,144 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class MbmsErrors {
-    private final android.telephony.mbms.MbmsErrors real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MbmsErrors(android.telephony.mbms.MbmsErrors real) {
+    private final java.lang.Object real;
+
+    private MbmsErrors(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors wrap(android.telephony.mbms.MbmsErrors real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.MbmsErrors getReal() {
+        return (android.telephony.mbms.MbmsErrors) real;
     }
 
     public android.telephony.mbms.MbmsErrors unwrap() {
-        return real;
+        return getReal();
     }
 
 
     public static final class DownloadErrors {
-        private final android.telephony.mbms.MbmsErrors.DownloadErrors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DownloadErrors(android.telephony.mbms.MbmsErrors.DownloadErrors real) {
+        private final java.lang.Object real;
+
+        private DownloadErrors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.DownloadErrors wrap(android.telephony.mbms.MbmsErrors.DownloadErrors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.DownloadErrors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.DownloadErrors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.MbmsErrors.DownloadErrors getReal() {
+            return (android.telephony.mbms.MbmsErrors.DownloadErrors) real;
         }
 
         public android.telephony.mbms.MbmsErrors.DownloadErrors unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class GeneralErrors {
-        private final android.telephony.mbms.MbmsErrors.GeneralErrors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GeneralErrors(android.telephony.mbms.MbmsErrors.GeneralErrors real) {
+        private final java.lang.Object real;
+
+        private GeneralErrors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GeneralErrors wrap(android.telephony.mbms.MbmsErrors.GeneralErrors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GeneralErrors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GeneralErrors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.MbmsErrors.GeneralErrors getReal() {
+            return (android.telephony.mbms.MbmsErrors.GeneralErrors) real;
         }
 
         public android.telephony.mbms.MbmsErrors.GeneralErrors unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class GroupCallErrors {
-        private final android.telephony.mbms.MbmsErrors.GroupCallErrors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupCallErrors(android.telephony.mbms.MbmsErrors.GroupCallErrors real) {
+        private final java.lang.Object real;
+
+        private GroupCallErrors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GroupCallErrors wrap(android.telephony.mbms.MbmsErrors.GroupCallErrors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GroupCallErrors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.GroupCallErrors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.MbmsErrors.GroupCallErrors getReal() {
+            return (android.telephony.mbms.MbmsErrors.GroupCallErrors) real;
         }
 
         public android.telephony.mbms.MbmsErrors.GroupCallErrors unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class InitializationErrors {
-        private final android.telephony.mbms.MbmsErrors.InitializationErrors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InitializationErrors(android.telephony.mbms.MbmsErrors.InitializationErrors real) {
+        private final java.lang.Object real;
+
+        private InitializationErrors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.InitializationErrors wrap(android.telephony.mbms.MbmsErrors.InitializationErrors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.InitializationErrors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.InitializationErrors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.MbmsErrors.InitializationErrors getReal() {
+            return (android.telephony.mbms.MbmsErrors.InitializationErrors) real;
         }
 
         public android.telephony.mbms.MbmsErrors.InitializationErrors unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class StreamingErrors {
-        private final android.telephony.mbms.MbmsErrors.StreamingErrors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StreamingErrors(android.telephony.mbms.MbmsErrors.StreamingErrors real) {
+        private final java.lang.Object real;
+
+        private StreamingErrors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.StreamingErrors wrap(android.telephony.mbms.MbmsErrors.StreamingErrors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.StreamingErrors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsErrors.StreamingErrors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.mbms.MbmsErrors.StreamingErrors getReal() {
+            return (android.telephony.mbms.MbmsErrors.StreamingErrors) real;
         }
 
         public android.telephony.mbms.MbmsErrors.StreamingErrors unwrap() {
-            return real;
+            return getReal();
         }
 
 

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class NetworkRequest {
-    private final android.net.NetworkRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkRequest(android.net.NetworkRequest real) {
+    private final java.lang.Object real;
+
+    private NetworkRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.NetworkRequest wrap(android.net.NetworkRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.NetworkRequest getReal() {
+        return (android.net.NetworkRequest) real;
     }
 
     public android.net.NetworkRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canBeSatisfiedBy(com.micklab.dcg.wrapper.android.net.NetworkCapabilities arg0) {
@@ -62,18 +69,25 @@ public final class NetworkRequest {
 
 
     public static final class Builder {
-        private final android.net.NetworkRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.NetworkRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.NetworkRequest.Builder wrap(android.net.NetworkRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.NetworkRequest.Builder getReal() {
+            return (android.net.NetworkRequest.Builder) real;
         }
 
         public android.net.NetworkRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

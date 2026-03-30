@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class UiccPortInfo {
-    private final android.telephony.UiccPortInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UiccPortInfo(android.telephony.UiccPortInfo real) {
+    private final java.lang.Object real;
+
+    private UiccPortInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.UiccPortInfo wrap(android.telephony.UiccPortInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.UiccPortInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.UiccPortInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.UiccPortInfo getReal() {
+        return (android.telephony.UiccPortInfo) real;
     }
 
     public android.telephony.UiccPortInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

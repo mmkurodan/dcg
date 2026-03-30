@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLU {
-    private final android.opengl.GLU real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLU(android.opengl.GLU real) {
+    private final java.lang.Object real;
+
+    private GLU(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLU wrap(android.opengl.GLU real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLU(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLU(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLU getReal() {
+        return (android.opengl.GLU) real;
     }
 
     public android.opengl.GLU unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLU() {
-        this(new android.opengl.GLU());
+        this(new android.opengl.GLU(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String gluErrorString(int arg0) {

@@ -2,57 +2,71 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class FederatedComputeInput {
-    private final android.adservices.ondevicepersonalization.FederatedComputeInput real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FederatedComputeInput(android.adservices.ondevicepersonalization.FederatedComputeInput real) {
+    private final java.lang.Object real;
+
+    private FederatedComputeInput(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput wrap(android.adservices.ondevicepersonalization.FederatedComputeInput real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.FederatedComputeInput getReal() {
+        return (android.adservices.ondevicepersonalization.FederatedComputeInput) real;
     }
 
     public android.adservices.ondevicepersonalization.FederatedComputeInput unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.ondevicepersonalization.FederatedComputeInput) real).equals(arg0);
     }
 
     public java.lang.String getPopulationName() {
-        return real.getPopulationName();
+        return ((android.adservices.ondevicepersonalization.FederatedComputeInput) real).getPopulationName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.ondevicepersonalization.FederatedComputeInput) real).hashCode();
     }
 
     public static final class Builder {
-        private final android.adservices.ondevicepersonalization.FederatedComputeInput.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.ondevicepersonalization.FederatedComputeInput.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder wrap(android.adservices.ondevicepersonalization.FederatedComputeInput.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.ondevicepersonalization.FederatedComputeInput.Builder getReal() {
+            return (android.adservices.ondevicepersonalization.FederatedComputeInput.Builder) real;
         }
 
         public android.adservices.ondevicepersonalization.FederatedComputeInput.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.adservices.ondevicepersonalization.FederatedComputeInput.Builder());
+            this(new android.adservices.ondevicepersonalization.FederatedComputeInput.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput build() {
-            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.wrap(((android.adservices.ondevicepersonalization.FederatedComputeInput.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder setPopulationName(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder.wrap(real.setPopulationName(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.FederatedComputeInput.Builder.wrap(((android.adservices.ondevicepersonalization.FederatedComputeInput.Builder) real).setPopulationName(arg0));
         }
 
     }

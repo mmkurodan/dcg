@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect;
 
 public final class InsertRecordsResponse {
-    private final android.health.connect.InsertRecordsResponse real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InsertRecordsResponse(android.health.connect.InsertRecordsResponse real) {
+    private final java.lang.Object real;
+
+    private InsertRecordsResponse(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.InsertRecordsResponse wrap(android.health.connect.InsertRecordsResponse real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.InsertRecordsResponse(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.InsertRecordsResponse(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.InsertRecordsResponse getReal() {
+        return (android.health.connect.InsertRecordsResponse) real;
     }
 
     public android.health.connect.InsertRecordsResponse unwrap() {
-        return real;
+        return getReal();
     }
 
 }

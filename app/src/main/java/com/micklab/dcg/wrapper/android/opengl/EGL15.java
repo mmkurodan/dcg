@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class EGL15 {
-    private final android.opengl.EGL15 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EGL15(android.opengl.EGL15 real) {
+    private final java.lang.Object real;
+
+    private EGL15(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGL15 wrap(android.opengl.EGL15 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGL15(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGL15(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.EGL15 getReal() {
+        return (android.opengl.EGL15) real;
     }
 
     public android.opengl.EGL15 unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int eglClientWaitSync(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSync arg1, int arg2, long arg3) {
-        return android.opengl.EGL15.eglClientWaitSync(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        return android.opengl.EGL15.eglClientWaitSync(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLImage eglCreateImage(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLContext arg1, int arg2, long arg3, long[] arg4, int arg5) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLImage.wrap(android.opengl.EGL15.eglCreateImage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4, arg5));
+        return com.micklab.dcg.wrapper.android.opengl.EGLImage.wrap(android.opengl.EGL15.eglCreateImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreatePlatformPixmapSurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, java.nio.Buffer arg2, long[] arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL15.eglCreatePlatformPixmapSurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL15.eglCreatePlatformPixmapSurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreatePlatformWindowSurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, java.nio.Buffer arg2, long[] arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL15.eglCreatePlatformWindowSurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL15.eglCreatePlatformWindowSurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSync eglCreateSync(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int arg1, long[] arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSync.wrap(android.opengl.EGL15.eglCreateSync(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSync.wrap(android.opengl.EGL15.eglCreateSync(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
     }
 
     public static boolean eglDestroyImage(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLImage arg1) {
-        return android.opengl.EGL15.eglDestroyImage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.opengl.EGL15.eglDestroyImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean eglDestroySync(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSync arg1) {
-        return android.opengl.EGL15.eglDestroySync(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.opengl.EGL15.eglDestroySync(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLDisplay eglGetPlatformDisplay(int arg0, long arg1, long[] arg2, int arg3) {
@@ -49,11 +56,11 @@ public final class EGL15 {
     }
 
     public static boolean eglGetSyncAttrib(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSync arg1, int arg2, long[] arg3, int arg4) {
-        return android.opengl.EGL15.eglGetSyncAttrib(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4);
+        return android.opengl.EGL15.eglGetSyncAttrib(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
     }
 
     public static boolean eglWaitSync(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSync arg1, int arg2) {
-        return android.opengl.EGL15.eglWaitSync(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.opengl.EGL15.eglWaitSync(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static final int EGL_CL_EVENT_HANDLE = android.opengl.EGL15.EGL_CL_EVENT_HANDLE;

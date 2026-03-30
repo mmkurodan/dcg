@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.speech;
 
 public final class RecognizerResultsIntent {
-    private final android.speech.RecognizerResultsIntent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RecognizerResultsIntent(android.speech.RecognizerResultsIntent real) {
+    private final java.lang.Object real;
+
+    private RecognizerResultsIntent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.speech.RecognizerResultsIntent wrap(android.speech.RecognizerResultsIntent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognizerResultsIntent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognizerResultsIntent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.speech.RecognizerResultsIntent getReal() {
+        return (android.speech.RecognizerResultsIntent) real;
     }
 
     public android.speech.RecognizerResultsIntent unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String ACTION_VOICE_SEARCH_RESULTS = android.speech.RecognizerResultsIntent.ACTION_VOICE_SEARCH_RESULTS;

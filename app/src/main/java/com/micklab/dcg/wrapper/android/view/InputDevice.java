@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class InputDevice {
-    private final android.view.InputDevice real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InputDevice(android.view.InputDevice real) {
+    private final java.lang.Object real;
+
+    private InputDevice(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.InputDevice wrap(android.view.InputDevice real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.InputDevice getReal() {
+        return (android.view.InputDevice) real;
     }
 
     public android.view.InputDevice unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.InputDevice) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.BatteryState getBatteryState() {
-        return com.micklab.dcg.wrapper.android.hardware.BatteryState.wrap(real.getBatteryState());
+        return com.micklab.dcg.wrapper.android.hardware.BatteryState.wrap(((android.view.InputDevice) real).getBatteryState());
     }
 
     public int getControllerNumber() {
-        return real.getControllerNumber();
+        return ((android.view.InputDevice) real).getControllerNumber();
     }
 
     public java.lang.String getDescriptor() {
-        return real.getDescriptor();
+        return ((android.view.InputDevice) real).getDescriptor();
     }
 
     public static com.micklab.dcg.wrapper.android.view.InputDevice getDevice(int arg0) {
@@ -41,91 +48,91 @@ public final class InputDevice {
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.view.InputDevice) real).getId();
     }
 
     public com.micklab.dcg.wrapper.android.view.KeyCharacterMap getKeyCharacterMap() {
-        return com.micklab.dcg.wrapper.android.view.KeyCharacterMap.wrap(real.getKeyCharacterMap());
+        return com.micklab.dcg.wrapper.android.view.KeyCharacterMap.wrap(((android.view.InputDevice) real).getKeyCharacterMap());
     }
 
     public int getKeyCodeForKeyLocation(int arg0) {
-        return real.getKeyCodeForKeyLocation(arg0);
+        return ((android.view.InputDevice) real).getKeyCodeForKeyLocation(arg0);
     }
 
     public int getKeyboardType() {
-        return real.getKeyboardType();
+        return ((android.view.InputDevice) real).getKeyboardType();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.lights.LightsManager getLightsManager() {
-        return com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.wrap(real.getLightsManager());
+        return com.micklab.dcg.wrapper.android.hardware.lights.LightsManager.wrap(((android.view.InputDevice) real).getLightsManager());
     }
 
     public com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange getMotionRange(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange.wrap(real.getMotionRange(arg0));
+        return com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange.wrap(((android.view.InputDevice) real).getMotionRange(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange getMotionRange(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange.wrap(real.getMotionRange(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange.wrap(((android.view.InputDevice) real).getMotionRange(arg0, arg1));
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.view.InputDevice) real).getName();
     }
 
     public int getProductId() {
-        return real.getProductId();
+        return ((android.view.InputDevice) real).getProductId();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.SensorManager getSensorManager() {
-        return com.micklab.dcg.wrapper.android.hardware.SensorManager.wrap(real.getSensorManager());
+        return com.micklab.dcg.wrapper.android.hardware.SensorManager.wrap(((android.view.InputDevice) real).getSensorManager());
     }
 
     public int getSources() {
-        return real.getSources();
+        return ((android.view.InputDevice) real).getSources();
     }
 
     public int getVendorId() {
-        return real.getVendorId();
+        return ((android.view.InputDevice) real).getVendorId();
     }
 
     public com.micklab.dcg.wrapper.android.os.Vibrator getVibrator() {
-        return com.micklab.dcg.wrapper.android.os.Vibrator.wrap(real.getVibrator());
+        return com.micklab.dcg.wrapper.android.os.Vibrator.wrap(((android.view.InputDevice) real).getVibrator());
     }
 
     public com.micklab.dcg.wrapper.android.os.VibratorManager getVibratorManager() {
-        return com.micklab.dcg.wrapper.android.os.VibratorManager.wrap(real.getVibratorManager());
+        return com.micklab.dcg.wrapper.android.os.VibratorManager.wrap(((android.view.InputDevice) real).getVibratorManager());
     }
 
     public boolean[] hasKeys(int... arg0) {
-        return real.hasKeys(arg0);
+        return ((android.view.InputDevice) real).hasKeys(arg0);
     }
 
     public boolean hasMicrophone() {
-        return real.hasMicrophone();
+        return ((android.view.InputDevice) real).hasMicrophone();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.view.InputDevice) real).isEnabled();
     }
 
     public boolean isExternal() {
-        return real.isExternal();
+        return ((android.view.InputDevice) real).isExternal();
     }
 
     public boolean isVirtual() {
-        return real.isVirtual();
+        return ((android.view.InputDevice) real).isVirtual();
     }
 
     public boolean supportsSource(int arg0) {
-        return real.supportsSource(arg0);
+        return ((android.view.InputDevice) real).supportsSource(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.InputDevice) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.InputDevice) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int KEYBOARD_TYPE_ALPHABETIC = android.view.InputDevice.KEYBOARD_TYPE_ALPHABETIC;
@@ -166,74 +173,88 @@ public final class InputDevice {
     public static final int SOURCE_UNKNOWN = android.view.InputDevice.SOURCE_UNKNOWN;
 
     public static final class MotionRange {
-        private final android.view.InputDevice.MotionRange real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MotionRange(android.view.InputDevice.MotionRange real) {
+        private final java.lang.Object real;
+
+        private MotionRange(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange wrap(android.view.InputDevice.MotionRange real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice.MotionRange(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.InputDevice.MotionRange getReal() {
+            return (android.view.InputDevice.MotionRange) real;
         }
 
         public android.view.InputDevice.MotionRange unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getAxis() {
-            return real.getAxis();
+            return ((android.view.InputDevice.MotionRange) real).getAxis();
         }
 
         public float getFlat() {
-            return real.getFlat();
+            return ((android.view.InputDevice.MotionRange) real).getFlat();
         }
 
         public float getFuzz() {
-            return real.getFuzz();
+            return ((android.view.InputDevice.MotionRange) real).getFuzz();
         }
 
         public float getMax() {
-            return real.getMax();
+            return ((android.view.InputDevice.MotionRange) real).getMax();
         }
 
         public float getMin() {
-            return real.getMin();
+            return ((android.view.InputDevice.MotionRange) real).getMin();
         }
 
         public float getRange() {
-            return real.getRange();
+            return ((android.view.InputDevice.MotionRange) real).getRange();
         }
 
         public float getResolution() {
-            return real.getResolution();
+            return ((android.view.InputDevice.MotionRange) real).getResolution();
         }
 
         public int getSource() {
-            return real.getSource();
+            return ((android.view.InputDevice.MotionRange) real).getSource();
         }
 
         public boolean isFromSource(int arg0) {
-            return real.isFromSource(arg0);
+            return ((android.view.InputDevice.MotionRange) real).isFromSource(arg0);
         }
 
     }
     public static final class ViewBehavior {
-        private final android.view.InputDevice.ViewBehavior real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ViewBehavior(android.view.InputDevice.ViewBehavior real) {
+        private final java.lang.Object real;
+
+        private ViewBehavior(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.InputDevice.ViewBehavior wrap(android.view.InputDevice.ViewBehavior real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice.ViewBehavior(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputDevice.ViewBehavior(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.InputDevice.ViewBehavior getReal() {
+            return (android.view.InputDevice.ViewBehavior) real;
         }
 
         public android.view.InputDevice.ViewBehavior unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean shouldSmoothScroll(int arg0, int arg1) {
-            return real.shouldSmoothScroll(arg0, arg1);
+            return ((android.view.InputDevice.ViewBehavior) real).shouldSmoothScroll(arg0, arg1);
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.service.controls.templates;
 
 public final class ControlTemplate {
-    private final android.service.controls.templates.ControlTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ControlTemplate(android.service.controls.templates.ControlTemplate real) {
+    private final java.lang.Object real;
+
+    private ControlTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate wrap(android.service.controls.templates.ControlTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.templates.ControlTemplate getReal() {
+        return (android.service.controls.templates.ControlTemplate) real;
     }
 
     public android.service.controls.templates.ControlTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate getErrorTemplate() {
@@ -25,11 +32,11 @@ public final class ControlTemplate {
     }
 
     public java.lang.String getTemplateId() {
-        return real.getTemplateId();
+        return ((android.service.controls.templates.ControlTemplate) real).getTemplateId();
     }
 
     public int getTemplateType() {
-        return real.getTemplateType();
+        return ((android.service.controls.templates.ControlTemplate) real).getTemplateType();
     }
 
     public static final int TYPE_ERROR = android.service.controls.templates.ControlTemplate.TYPE_ERROR;

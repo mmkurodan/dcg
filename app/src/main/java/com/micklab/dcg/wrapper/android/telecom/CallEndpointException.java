@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class CallEndpointException {
-    private final android.telecom.CallEndpointException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CallEndpointException(android.telecom.CallEndpointException real) {
+    private final java.lang.Object real;
+
+    private CallEndpointException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.CallEndpointException wrap(android.telecom.CallEndpointException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallEndpointException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallEndpointException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.CallEndpointException getReal() {
+        return (android.telecom.CallEndpointException) real;
     }
 
     public android.telecom.CallEndpointException unwrap() {
-        return real;
+        return getReal();
     }
 
     public CallEndpointException(java.lang.String arg0, int arg1) {
-        this(new android.telecom.CallEndpointException(arg0, arg1));
+        this(new android.telecom.CallEndpointException(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.CallEndpointException) real).describeContents();
     }
 
     public int getCode() {
-        return real.getCode();
+        return ((android.telecom.CallEndpointException) real).getCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.CallEndpointException) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ERROR_ANOTHER_REQUEST = android.telecom.CallEndpointException.ERROR_ANOTHER_REQUEST;

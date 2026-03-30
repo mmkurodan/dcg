@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioRecord {
-    private final android.media.AudioRecord real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioRecord(android.media.AudioRecord real) {
+    private final java.lang.Object real;
+
+    private AudioRecord(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioRecord wrap(android.media.AudioRecord real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioRecord getReal() {
+        return (android.media.AudioRecord) real;
     }
 
     public android.media.AudioRecord unwrap() {
-        return real;
+        return getReal();
     }
 
     public AudioRecord(int arg0, int arg1, int arg2, int arg3, int arg4) throws java.lang.IllegalArgumentException {
-        this(new android.media.AudioRecord(arg0, arg1, arg2, arg3, arg4));
+        this(new android.media.AudioRecord(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
     public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.addOnRoutingChangedListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioRecord) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.addOnRoutingChangedListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioRecord) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioRecordingConfiguration getActiveRecordingConfiguration() {
-        return com.micklab.dcg.wrapper.android.media.AudioRecordingConfiguration.wrap(real.getActiveRecordingConfiguration());
+        return com.micklab.dcg.wrapper.android.media.AudioRecordingConfiguration.wrap(((android.media.AudioRecord) real).getActiveRecordingConfiguration());
     }
 
     public int getAudioFormat() {
-        return real.getAudioFormat();
+        return ((android.media.AudioRecord) real).getAudioFormat();
     }
 
     public int getAudioSessionId() {
-        return real.getAudioSessionId();
+        return ((android.media.AudioRecord) real).getAudioSessionId();
     }
 
     public int getAudioSource() {
-        return real.getAudioSource();
+        return ((android.media.AudioRecord) real).getAudioSource();
     }
 
     public int getBufferSizeInFrames() {
-        return real.getBufferSizeInFrames();
+        return ((android.media.AudioRecord) real).getBufferSizeInFrames();
     }
 
     public int getChannelConfiguration() {
-        return real.getChannelConfiguration();
+        return ((android.media.AudioRecord) real).getChannelConfiguration();
     }
 
     public int getChannelCount() {
-        return real.getChannelCount();
+        return ((android.media.AudioRecord) real).getChannelCount();
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioFormat getFormat() {
-        return com.micklab.dcg.wrapper.android.media.AudioFormat.wrap(real.getFormat());
+        return com.micklab.dcg.wrapper.android.media.AudioFormat.wrap(((android.media.AudioRecord) real).getFormat());
     }
 
     public com.micklab.dcg.wrapper.android.media.metrics.LogSessionId getLogSessionId() {
-        return com.micklab.dcg.wrapper.android.media.metrics.LogSessionId.wrap(real.getLogSessionId());
+        return com.micklab.dcg.wrapper.android.media.metrics.LogSessionId.wrap(((android.media.AudioRecord) real).getLogSessionId());
     }
 
     public com.micklab.dcg.wrapper.android.os.PersistableBundle getMetrics() {
-        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getMetrics());
+        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.media.AudioRecord) real).getMetrics());
     }
 
     public static int getMinBufferSize(int arg0, int arg1, int arg2) {
@@ -73,131 +80,131 @@ public final class AudioRecord {
     }
 
     public int getNotificationMarkerPosition() {
-        return real.getNotificationMarkerPosition();
+        return ((android.media.AudioRecord) real).getNotificationMarkerPosition();
     }
 
     public int getPositionNotificationPeriod() {
-        return real.getPositionNotificationPeriod();
+        return ((android.media.AudioRecord) real).getPositionNotificationPeriod();
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioDeviceInfo getPreferredDevice() {
-        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(real.getPreferredDevice());
+        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(((android.media.AudioRecord) real).getPreferredDevice());
     }
 
     public int getRecordingState() {
-        return real.getRecordingState();
+        return ((android.media.AudioRecord) real).getRecordingState();
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioDeviceInfo getRoutedDevice() {
-        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(real.getRoutedDevice());
+        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(((android.media.AudioRecord) real).getRoutedDevice());
     }
 
     public int getSampleRate() {
-        return real.getSampleRate();
+        return ((android.media.AudioRecord) real).getSampleRate();
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.media.AudioRecord) real).getState();
     }
 
     public int getTimestamp(com.micklab.dcg.wrapper.android.media.AudioTimestamp arg0, int arg1) {
-        return real.getTimestamp(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.media.AudioRecord) real).getTimestamp(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean isPrivacySensitive() {
-        return real.isPrivacySensitive();
+        return ((android.media.AudioRecord) real).isPrivacySensitive();
     }
 
     public int read(java.nio.ByteBuffer arg0, int arg1) {
-        return real.read(arg0, arg1);
+        return ((android.media.AudioRecord) real).read(arg0, arg1);
     }
 
     public int read(short[] arg0, int arg1, int arg2) {
-        return real.read(arg0, arg1, arg2);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
     public int read(byte[] arg0, int arg1, int arg2) {
-        return real.read(arg0, arg1, arg2);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
     public int read(java.nio.ByteBuffer arg0, int arg1, int arg2) {
-        return real.read(arg0, arg1, arg2);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
     public int read(short[] arg0, int arg1, int arg2, int arg3) {
-        return real.read(arg0, arg1, arg2, arg3);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 
     public int read(byte[] arg0, int arg1, int arg2, int arg3) {
-        return real.read(arg0, arg1, arg2, arg3);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 
     public int read(float[] arg0, int arg1, int arg2, int arg3) {
-        return real.read(arg0, arg1, arg2, arg3);
+        return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 
     public void registerAudioRecordingCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback arg1) {
-        real.registerAudioRecordingCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioRecord) real).registerAudioRecordingCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void release() {
-        real.release();
+        ((android.media.AudioRecord) real).release();
     }
 
     public void removeOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0) {
-        real.removeOnRoutingChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).removeOnRoutingChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener arg0) {
-        real.removeOnRoutingChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).removeOnRoutingChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLogSessionId(com.micklab.dcg.wrapper.android.media.metrics.LogSessionId arg0) {
-        real.setLogSessionId(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).setLogSessionId(arg0 == null ? null : arg0.getReal());
     }
 
     public int setNotificationMarkerPosition(int arg0) {
-        return real.setNotificationMarkerPosition(arg0);
+        return ((android.media.AudioRecord) real).setNotificationMarkerPosition(arg0);
     }
 
     public int setPositionNotificationPeriod(int arg0) {
-        return real.setPositionNotificationPeriod(arg0);
+        return ((android.media.AudioRecord) real).setPositionNotificationPeriod(arg0);
     }
 
     public boolean setPreferredDevice(com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg0) {
-        return real.setPreferredDevice(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioRecord) real).setPreferredDevice(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean setPreferredMicrophoneDirection(int arg0) {
-        return real.setPreferredMicrophoneDirection(arg0);
+        return ((android.media.AudioRecord) real).setPreferredMicrophoneDirection(arg0);
     }
 
     public boolean setPreferredMicrophoneFieldDimension(float arg0) {
-        return real.setPreferredMicrophoneFieldDimension(arg0);
+        return ((android.media.AudioRecord) real).setPreferredMicrophoneFieldDimension(arg0);
     }
 
     public void setRecordPositionUpdateListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRecordPositionUpdateListener arg0) {
-        real.setRecordPositionUpdateListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).setRecordPositionUpdateListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRecordPositionUpdateListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRecordPositionUpdateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.setRecordPositionUpdateListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioRecord) real).setRecordPositionUpdateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void startRecording() throws java.lang.IllegalStateException {
-        real.startRecording();
+        ((android.media.AudioRecord) real).startRecording();
     }
 
     public void startRecording(com.micklab.dcg.wrapper.android.media.MediaSyncEvent arg0) throws java.lang.IllegalStateException {
-        real.startRecording(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).startRecording(arg0 == null ? null : arg0.getReal());
     }
 
     public void stop() throws java.lang.IllegalStateException {
-        real.stop();
+        ((android.media.AudioRecord) real).stop();
     }
 
     public void unregisterAudioRecordingCallback(com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback arg0) {
-        real.unregisterAudioRecordingCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioRecord) real).unregisterAudioRecordingCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int ERROR = android.media.AudioRecord.ERROR;
@@ -213,66 +220,80 @@ public final class AudioRecord {
     public static final int SUCCESS = android.media.AudioRecord.SUCCESS;
 
     public static final class Builder {
-        private final android.media.AudioRecord.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.AudioRecord.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioRecord.Builder wrap(android.media.AudioRecord.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioRecord.Builder getReal() {
+            return (android.media.AudioRecord.Builder) real;
         }
 
         public android.media.AudioRecord.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.AudioRecord.Builder());
+            this(new android.media.AudioRecord.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord build() throws java.lang.UnsupportedOperationException {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.wrap(((android.media.AudioRecord.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setAudioFormat(com.micklab.dcg.wrapper.android.media.AudioFormat arg0) throws java.lang.IllegalArgumentException {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setAudioFormat(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setAudioFormat(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setAudioPlaybackCaptureConfig(com.micklab.dcg.wrapper.android.media.AudioPlaybackCaptureConfiguration arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setAudioPlaybackCaptureConfig(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setAudioPlaybackCaptureConfig(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setAudioSource(int arg0) throws java.lang.IllegalArgumentException {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setAudioSource(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setAudioSource(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setBufferSizeInBytes(int arg0) throws java.lang.IllegalArgumentException {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setBufferSizeInBytes(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setBufferSizeInBytes(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setContext(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setContext(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setContext(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioRecord.Builder setPrivacySensitive(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(real.setPrivacySensitive(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioRecord.Builder.wrap(((android.media.AudioRecord.Builder) real).setPrivacySensitive(arg0));
         }
 
     }
     public static final class MetricsConstants {
-        private final android.media.AudioRecord.MetricsConstants real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MetricsConstants(android.media.AudioRecord.MetricsConstants real) {
+        private final java.lang.Object real;
+
+        private MetricsConstants(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioRecord.MetricsConstants wrap(android.media.AudioRecord.MetricsConstants real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.MetricsConstants(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.MetricsConstants(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioRecord.MetricsConstants getReal() {
+            return (android.media.AudioRecord.MetricsConstants) real;
         }
 
         public android.media.AudioRecord.MetricsConstants unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CHANNELS = android.media.AudioRecord.MetricsConstants.CHANNELS;
@@ -283,50 +304,64 @@ public final class AudioRecord {
 
     }
     public static final class OnRecordPositionUpdateListener {
-        private final android.media.AudioRecord.OnRecordPositionUpdateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnRecordPositionUpdateListener(android.media.AudioRecord.OnRecordPositionUpdateListener real) {
+        private final java.lang.Object real;
+
+        private OnRecordPositionUpdateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioRecord.OnRecordPositionUpdateListener wrap(android.media.AudioRecord.OnRecordPositionUpdateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.OnRecordPositionUpdateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.OnRecordPositionUpdateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioRecord.OnRecordPositionUpdateListener getReal() {
+            return (android.media.AudioRecord.OnRecordPositionUpdateListener) real;
         }
 
         public android.media.AudioRecord.OnRecordPositionUpdateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onMarkerReached(com.micklab.dcg.wrapper.android.media.AudioRecord arg0) {
-            real.onMarkerReached(arg0 == null ? null : arg0.unwrap());
+            ((android.media.AudioRecord.OnRecordPositionUpdateListener) real).onMarkerReached(arg0 == null ? null : arg0.getReal());
         }
 
         public void onPeriodicNotification(com.micklab.dcg.wrapper.android.media.AudioRecord arg0) {
-            real.onPeriodicNotification(arg0 == null ? null : arg0.unwrap());
+            ((android.media.AudioRecord.OnRecordPositionUpdateListener) real).onPeriodicNotification(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class OnRoutingChangedListener {
-        private final android.media.AudioRecord.OnRoutingChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnRoutingChangedListener(android.media.AudioRecord.OnRoutingChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnRoutingChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener wrap(android.media.AudioRecord.OnRoutingChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioRecord.OnRoutingChangedListener getReal() {
+            return (android.media.AudioRecord.OnRoutingChangedListener) real;
         }
 
         public android.media.AudioRecord.OnRoutingChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioRecord arg0) {
-            real.onRoutingChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.media.AudioRecord.OnRoutingChangedListener) real).onRoutingChanged(arg0 == null ? null : arg0.getReal());
         }
 
         public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioRouting arg0) {
-            real.onRoutingChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.media.AudioRecord.OnRoutingChangedListener) real).onRoutingChanged(arg0 == null ? null : arg0.getReal());
         }
 
     }

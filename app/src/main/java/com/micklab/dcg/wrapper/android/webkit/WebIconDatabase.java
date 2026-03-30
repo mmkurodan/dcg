@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class WebIconDatabase {
-    private final android.webkit.WebIconDatabase real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WebIconDatabase(android.webkit.WebIconDatabase real) {
+    private final java.lang.Object real;
+
+    private WebIconDatabase(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.WebIconDatabase wrap(android.webkit.WebIconDatabase real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebIconDatabase(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebIconDatabase(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.WebIconDatabase getReal() {
+        return (android.webkit.WebIconDatabase) real;
     }
 
     public android.webkit.WebIconDatabase unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.webkit.WebIconDatabase) real).close();
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.WebIconDatabase getInstance() {
@@ -25,42 +32,49 @@ public final class WebIconDatabase {
     }
 
     public void open(java.lang.String arg0) {
-        real.open(arg0);
+        ((android.webkit.WebIconDatabase) real).open(arg0);
     }
 
     public void releaseIconForPageUrl(java.lang.String arg0) {
-        real.releaseIconForPageUrl(arg0);
+        ((android.webkit.WebIconDatabase) real).releaseIconForPageUrl(arg0);
     }
 
     public void removeAllIcons() {
-        real.removeAllIcons();
+        ((android.webkit.WebIconDatabase) real).removeAllIcons();
     }
 
     public void requestIconForPageUrl(java.lang.String arg0, com.micklab.dcg.wrapper.android.webkit.WebIconDatabase.IconListener arg1) {
-        real.requestIconForPageUrl(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebIconDatabase) real).requestIconForPageUrl(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void retainIconForPageUrl(java.lang.String arg0) {
-        real.retainIconForPageUrl(arg0);
+        ((android.webkit.WebIconDatabase) real).retainIconForPageUrl(arg0);
     }
 
     public static final class IconListener {
-        private final android.webkit.WebIconDatabase.IconListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IconListener(android.webkit.WebIconDatabase.IconListener real) {
+        private final java.lang.Object real;
+
+        private IconListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebIconDatabase.IconListener wrap(android.webkit.WebIconDatabase.IconListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebIconDatabase.IconListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebIconDatabase.IconListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebIconDatabase.IconListener getReal() {
+            return (android.webkit.WebIconDatabase.IconListener) real;
         }
 
         public android.webkit.WebIconDatabase.IconListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onReceivedIcon(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
-            real.onReceivedIcon(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.webkit.WebIconDatabase.IconListener) real).onReceivedIcon(arg0, arg1 == null ? null : arg1.getReal());
         }
 
     }

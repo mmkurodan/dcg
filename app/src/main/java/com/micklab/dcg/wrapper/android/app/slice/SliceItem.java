@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.app.slice;
 
 public final class SliceItem {
-    private final android.app.slice.SliceItem real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SliceItem(android.app.slice.SliceItem real) {
+    private final java.lang.Object real;
+
+    private SliceItem(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.slice.SliceItem wrap(android.app.slice.SliceItem real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.SliceItem(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.SliceItem(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.slice.SliceItem getReal() {
+        return (android.app.slice.SliceItem) real;
     }
 
     public android.app.slice.SliceItem unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.slice.SliceItem) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.app.PendingIntent getAction() {
-        return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getAction());
+        return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.slice.SliceItem) real).getAction());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getBundle() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getBundle());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.slice.SliceItem) real).getBundle());
     }
 
     public java.lang.String getFormat() {
-        return real.getFormat();
+        return ((android.app.slice.SliceItem) real).getFormat();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.slice.SliceItem) real).getIcon());
     }
 
     public int getInt() {
-        return real.getInt();
+        return ((android.app.slice.SliceItem) real).getInt();
     }
 
     public long getLong() {
-        return real.getLong();
+        return ((android.app.slice.SliceItem) real).getLong();
     }
 
     public com.micklab.dcg.wrapper.android.app.RemoteInput getRemoteInput() {
-        return com.micklab.dcg.wrapper.android.app.RemoteInput.wrap(real.getRemoteInput());
+        return com.micklab.dcg.wrapper.android.app.RemoteInput.wrap(((android.app.slice.SliceItem) real).getRemoteInput());
     }
 
     public com.micklab.dcg.wrapper.android.app.slice.Slice getSlice() {
-        return com.micklab.dcg.wrapper.android.app.slice.Slice.wrap(real.getSlice());
+        return com.micklab.dcg.wrapper.android.app.slice.Slice.wrap(((android.app.slice.SliceItem) real).getSlice());
     }
 
     public java.lang.String getSubType() {
-        return real.getSubType();
+        return ((android.app.slice.SliceItem) real).getSubType();
     }
 
     public java.lang.CharSequence getText() {
-        return real.getText();
+        return ((android.app.slice.SliceItem) real).getText();
     }
 
     public boolean hasHint(java.lang.String arg0) {
-        return real.hasHint(arg0);
+        return ((android.app.slice.SliceItem) real).hasHint(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.slice.SliceItem) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String FORMAT_ACTION = android.app.slice.SliceItem.FORMAT_ACTION;

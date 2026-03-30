@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.gesture;
 
 public final class GestureLibraries {
-    private final android.gesture.GestureLibraries real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GestureLibraries(android.gesture.GestureLibraries real) {
+    private final java.lang.Object real;
+
+    private GestureLibraries(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GestureLibraries wrap(android.gesture.GestureLibraries real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GestureLibraries(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GestureLibraries(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.gesture.GestureLibraries getReal() {
+        return (android.gesture.GestureLibraries) real;
     }
 
     public android.gesture.GestureLibraries unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromFile(java.lang.String arg0) {
@@ -33,7 +40,7 @@ public final class GestureLibraries {
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromRawResource(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.gesture.GestureLibrary.wrap(android.gesture.GestureLibraries.fromRawResource(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.gesture.GestureLibrary.wrap(android.gesture.GestureLibraries.fromRawResource(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
 }

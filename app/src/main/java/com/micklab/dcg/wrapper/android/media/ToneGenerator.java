@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class ToneGenerator {
-    private final android.media.ToneGenerator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ToneGenerator(android.media.ToneGenerator real) {
+    private final java.lang.Object real;
+
+    private ToneGenerator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.ToneGenerator wrap(android.media.ToneGenerator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.ToneGenerator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.ToneGenerator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.ToneGenerator getReal() {
+        return (android.media.ToneGenerator) real;
     }
 
     public android.media.ToneGenerator unwrap() {
-        return real;
+        return getReal();
     }
 
     public ToneGenerator(int arg0, int arg1) {
-        this(new android.media.ToneGenerator(arg0, arg1));
+        this(new android.media.ToneGenerator(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int getAudioSessionId() {
-        return real.getAudioSessionId();
+        return ((android.media.ToneGenerator) real).getAudioSessionId();
     }
 
     public void release() {
-        real.release();
+        ((android.media.ToneGenerator) real).release();
     }
 
     public boolean startTone(int arg0) {
-        return real.startTone(arg0);
+        return ((android.media.ToneGenerator) real).startTone(arg0);
     }
 
     public boolean startTone(int arg0, int arg1) {
-        return real.startTone(arg0, arg1);
+        return ((android.media.ToneGenerator) real).startTone(arg0, arg1);
     }
 
     public void stopTone() {
-        real.stopTone();
+        ((android.media.ToneGenerator) real).stopTone();
     }
 
     public static final int MAX_VOLUME = android.media.ToneGenerator.MAX_VOLUME;

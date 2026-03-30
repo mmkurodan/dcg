@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class ComponentCallbacks {
-    private final android.content.ComponentCallbacks real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ComponentCallbacks(android.content.ComponentCallbacks real) {
+    private final java.lang.Object real;
+
+    private ComponentCallbacks(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.ComponentCallbacks wrap(android.content.ComponentCallbacks real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ComponentCallbacks(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ComponentCallbacks(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.ComponentCallbacks getReal() {
+        return (android.content.ComponentCallbacks) real;
     }
 
     public android.content.ComponentCallbacks unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onConfigurationChanged(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        real.onConfigurationChanged(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ComponentCallbacks) real).onConfigurationChanged(arg0 == null ? null : arg0.getReal());
     }
 
     public void onLowMemory() {
-        real.onLowMemory();
+        ((android.content.ComponentCallbacks) real).onLowMemory();
     }
 
 }

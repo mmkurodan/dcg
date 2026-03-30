@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class StaticIpConfiguration {
-    private final android.net.StaticIpConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StaticIpConfiguration(android.net.StaticIpConfiguration real) {
+    private final java.lang.Object real;
+
+    private StaticIpConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.StaticIpConfiguration wrap(android.net.StaticIpConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.StaticIpConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.StaticIpConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.StaticIpConfiguration getReal() {
+        return (android.net.StaticIpConfiguration) real;
     }
 
     public android.net.StaticIpConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -50,18 +57,25 @@ public final class StaticIpConfiguration {
 
 
     public static final class Builder {
-        private final android.net.StaticIpConfiguration.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.StaticIpConfiguration.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.StaticIpConfiguration.Builder wrap(android.net.StaticIpConfiguration.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.StaticIpConfiguration.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.StaticIpConfiguration.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.StaticIpConfiguration.Builder getReal() {
+            return (android.net.StaticIpConfiguration.Builder) real;
         }
 
         public android.net.StaticIpConfiguration.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

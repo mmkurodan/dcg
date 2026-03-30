@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class StreamingServiceCallback {
-    private final android.telephony.mbms.StreamingServiceCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StreamingServiceCallback(android.telephony.mbms.StreamingServiceCallback real) {
+    private final java.lang.Object real;
+
+    private StreamingServiceCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceCallback wrap(android.telephony.mbms.StreamingServiceCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.StreamingServiceCallback getReal() {
+        return (android.telephony.mbms.StreamingServiceCallback) real;
     }
 
     public android.telephony.mbms.StreamingServiceCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public StreamingServiceCallback() {

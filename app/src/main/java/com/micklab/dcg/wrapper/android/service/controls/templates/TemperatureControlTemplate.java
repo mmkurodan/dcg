@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.service.controls.templates;
 
 public final class TemperatureControlTemplate {
-    private final android.service.controls.templates.TemperatureControlTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TemperatureControlTemplate(android.service.controls.templates.TemperatureControlTemplate real) {
+    private final java.lang.Object real;
+
+    private TemperatureControlTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.templates.TemperatureControlTemplate wrap(android.service.controls.templates.TemperatureControlTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.TemperatureControlTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.TemperatureControlTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.templates.TemperatureControlTemplate getReal() {
+        return (android.service.controls.templates.TemperatureControlTemplate) real;
     }
 
     public android.service.controls.templates.TemperatureControlTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public TemperatureControlTemplate(java.lang.String arg0, com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate arg1, int arg2, int arg3, int arg4) {
-        this(new android.service.controls.templates.TemperatureControlTemplate(arg0, arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+        this(new android.service.controls.templates.TemperatureControlTemplate(arg0, arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
     public int getCurrentActiveMode() {
-        return real.getCurrentActiveMode();
+        return ((android.service.controls.templates.TemperatureControlTemplate) real).getCurrentActiveMode();
     }
 
     public int getCurrentMode() {
-        return real.getCurrentMode();
+        return ((android.service.controls.templates.TemperatureControlTemplate) real).getCurrentMode();
     }
 
     public int getModes() {
-        return real.getModes();
+        return ((android.service.controls.templates.TemperatureControlTemplate) real).getModes();
     }
 
     public com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate getTemplate() {
-        return com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate.wrap(real.getTemplate());
+        return com.micklab.dcg.wrapper.android.service.controls.templates.ControlTemplate.wrap(((android.service.controls.templates.TemperatureControlTemplate) real).getTemplate());
     }
 
     public int getTemplateType() {
-        return real.getTemplateType();
+        return ((android.service.controls.templates.TemperatureControlTemplate) real).getTemplateType();
     }
 
     public static final int FLAG_MODE_COOL = android.service.controls.templates.TemperatureControlTemplate.FLAG_MODE_COOL;

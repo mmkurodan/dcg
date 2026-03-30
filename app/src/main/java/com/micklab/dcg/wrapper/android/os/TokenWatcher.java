@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class TokenWatcher {
-    private final android.os.TokenWatcher real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TokenWatcher(android.os.TokenWatcher real) {
+    private final java.lang.Object real;
+
+    private TokenWatcher(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.TokenWatcher wrap(android.os.TokenWatcher real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TokenWatcher(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TokenWatcher(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.TokenWatcher getReal() {
+        return (android.os.TokenWatcher) real;
     }
 
     public android.os.TokenWatcher unwrap() {
-        return real;
+        return getReal();
     }
 
     public void acquire(com.micklab.dcg.wrapper.android.os.IBinder arg0, java.lang.String arg1) {

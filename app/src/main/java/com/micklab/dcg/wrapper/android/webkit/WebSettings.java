@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class WebSettings {
-    private final android.webkit.WebSettings real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WebSettings(android.webkit.WebSettings real) {
+    private final java.lang.Object real;
+
+    private WebSettings(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.WebSettings wrap(android.webkit.WebSettings real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.WebSettings getReal() {
+        return (android.webkit.WebSettings) real;
     }
 
     public android.webkit.WebSettings unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean enableSmoothTransition() {
-        return real.enableSmoothTransition();
+        return ((android.webkit.WebSettings) real).enableSmoothTransition();
     }
 
     public boolean getAllowContentAccess() {
-        return real.getAllowContentAccess();
+        return ((android.webkit.WebSettings) real).getAllowContentAccess();
     }
 
     public boolean getAllowFileAccess() {
@@ -45,167 +52,167 @@ public final class WebSettings {
     }
 
     public boolean getBuiltInZoomControls() {
-        return real.getBuiltInZoomControls();
+        return ((android.webkit.WebSettings) real).getBuiltInZoomControls();
     }
 
     public int getCacheMode() {
-        return real.getCacheMode();
+        return ((android.webkit.WebSettings) real).getCacheMode();
     }
 
     public java.lang.String getCursiveFontFamily() {
-        return real.getCursiveFontFamily();
+        return ((android.webkit.WebSettings) real).getCursiveFontFamily();
     }
 
     public boolean getDatabaseEnabled() {
-        return real.getDatabaseEnabled();
+        return ((android.webkit.WebSettings) real).getDatabaseEnabled();
     }
 
     public java.lang.String getDatabasePath() {
-        return real.getDatabasePath();
+        return ((android.webkit.WebSettings) real).getDatabasePath();
     }
 
     public int getDefaultFixedFontSize() {
-        return real.getDefaultFixedFontSize();
+        return ((android.webkit.WebSettings) real).getDefaultFixedFontSize();
     }
 
     public int getDefaultFontSize() {
-        return real.getDefaultFontSize();
+        return ((android.webkit.WebSettings) real).getDefaultFontSize();
     }
 
     public java.lang.String getDefaultTextEncodingName() {
-        return real.getDefaultTextEncodingName();
+        return ((android.webkit.WebSettings) real).getDefaultTextEncodingName();
     }
 
     public static java.lang.String getDefaultUserAgent(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.webkit.WebSettings.getDefaultUserAgent(arg0 == null ? null : arg0.unwrap());
+        return android.webkit.WebSettings.getDefaultUserAgent(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity getDefaultZoom() {
-        return com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity.wrap(real.getDefaultZoom());
+        return com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity.wrap(((android.webkit.WebSettings) real).getDefaultZoom());
     }
 
     public int getDisabledActionModeMenuItems() {
-        return real.getDisabledActionModeMenuItems();
+        return ((android.webkit.WebSettings) real).getDisabledActionModeMenuItems();
     }
 
     public boolean getDisplayZoomControls() {
-        return real.getDisplayZoomControls();
+        return ((android.webkit.WebSettings) real).getDisplayZoomControls();
     }
 
     public boolean getDomStorageEnabled() {
-        return real.getDomStorageEnabled();
+        return ((android.webkit.WebSettings) real).getDomStorageEnabled();
     }
 
     public java.lang.String getFantasyFontFamily() {
-        return real.getFantasyFontFamily();
+        return ((android.webkit.WebSettings) real).getFantasyFontFamily();
     }
 
     public java.lang.String getFixedFontFamily() {
-        return real.getFixedFontFamily();
+        return ((android.webkit.WebSettings) real).getFixedFontFamily();
     }
 
     public int getForceDark() {
-        return real.getForceDark();
+        return ((android.webkit.WebSettings) real).getForceDark();
     }
 
     public boolean getJavaScriptCanOpenWindowsAutomatically() {
-        return real.getJavaScriptCanOpenWindowsAutomatically();
+        return ((android.webkit.WebSettings) real).getJavaScriptCanOpenWindowsAutomatically();
     }
 
     public boolean getJavaScriptEnabled() {
-        return real.getJavaScriptEnabled();
+        return ((android.webkit.WebSettings) real).getJavaScriptEnabled();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm getLayoutAlgorithm() {
-        return com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm.wrap(real.getLayoutAlgorithm());
+        return com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm.wrap(((android.webkit.WebSettings) real).getLayoutAlgorithm());
     }
 
     public boolean getLightTouchEnabled() {
-        return real.getLightTouchEnabled();
+        return ((android.webkit.WebSettings) real).getLightTouchEnabled();
     }
 
     public boolean getLoadWithOverviewMode() {
-        return real.getLoadWithOverviewMode();
+        return ((android.webkit.WebSettings) real).getLoadWithOverviewMode();
     }
 
     public boolean getLoadsImagesAutomatically() {
-        return real.getLoadsImagesAutomatically();
+        return ((android.webkit.WebSettings) real).getLoadsImagesAutomatically();
     }
 
     public boolean getMediaPlaybackRequiresUserGesture() {
-        return real.getMediaPlaybackRequiresUserGesture();
+        return ((android.webkit.WebSettings) real).getMediaPlaybackRequiresUserGesture();
     }
 
     public int getMinimumFontSize() {
-        return real.getMinimumFontSize();
+        return ((android.webkit.WebSettings) real).getMinimumFontSize();
     }
 
     public int getMinimumLogicalFontSize() {
-        return real.getMinimumLogicalFontSize();
+        return ((android.webkit.WebSettings) real).getMinimumLogicalFontSize();
     }
 
     public int getMixedContentMode() {
-        return real.getMixedContentMode();
+        return ((android.webkit.WebSettings) real).getMixedContentMode();
     }
 
     public boolean getOffscreenPreRaster() {
-        return real.getOffscreenPreRaster();
+        return ((android.webkit.WebSettings) real).getOffscreenPreRaster();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState getPluginState() {
-        return com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState.wrap(real.getPluginState());
+        return com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState.wrap(((android.webkit.WebSettings) real).getPluginState());
     }
 
     public boolean getSafeBrowsingEnabled() {
-        return real.getSafeBrowsingEnabled();
+        return ((android.webkit.WebSettings) real).getSafeBrowsingEnabled();
     }
 
     public java.lang.String getSansSerifFontFamily() {
-        return real.getSansSerifFontFamily();
+        return ((android.webkit.WebSettings) real).getSansSerifFontFamily();
     }
 
     public boolean getSaveFormData() {
-        return real.getSaveFormData();
+        return ((android.webkit.WebSettings) real).getSaveFormData();
     }
 
     public boolean getSavePassword() {
-        return real.getSavePassword();
+        return ((android.webkit.WebSettings) real).getSavePassword();
     }
 
     public java.lang.String getSerifFontFamily() {
-        return real.getSerifFontFamily();
+        return ((android.webkit.WebSettings) real).getSerifFontFamily();
     }
 
     public java.lang.String getStandardFontFamily() {
-        return real.getStandardFontFamily();
+        return ((android.webkit.WebSettings) real).getStandardFontFamily();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize getTextSize() {
-        return com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize.wrap(real.getTextSize());
+        return com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize.wrap(((android.webkit.WebSettings) real).getTextSize());
     }
 
     public int getTextZoom() {
-        return real.getTextZoom();
+        return ((android.webkit.WebSettings) real).getTextZoom();
     }
 
     public boolean getUseWideViewPort() {
-        return real.getUseWideViewPort();
+        return ((android.webkit.WebSettings) real).getUseWideViewPort();
     }
 
     public java.lang.String getUserAgentString() {
-        return real.getUserAgentString();
+        return ((android.webkit.WebSettings) real).getUserAgentString();
     }
 
     public boolean isAlgorithmicDarkeningAllowed() {
-        return real.isAlgorithmicDarkeningAllowed();
+        return ((android.webkit.WebSettings) real).isAlgorithmicDarkeningAllowed();
     }
 
     public void setAlgorithmicDarkeningAllowed(boolean arg0) {
-        real.setAlgorithmicDarkeningAllowed(arg0);
+        ((android.webkit.WebSettings) real).setAlgorithmicDarkeningAllowed(arg0);
     }
 
     public void setAllowContentAccess(boolean arg0) {
-        real.setAllowContentAccess(arg0);
+        ((android.webkit.WebSettings) real).setAllowContentAccess(arg0);
     }
 
     public void setAllowFileAccess(boolean arg0) {
@@ -229,187 +236,187 @@ public final class WebSettings {
     }
 
     public void setBuiltInZoomControls(boolean arg0) {
-        real.setBuiltInZoomControls(arg0);
+        ((android.webkit.WebSettings) real).setBuiltInZoomControls(arg0);
     }
 
     public void setCacheMode(int arg0) {
-        real.setCacheMode(arg0);
+        ((android.webkit.WebSettings) real).setCacheMode(arg0);
     }
 
     public void setCursiveFontFamily(java.lang.String arg0) {
-        real.setCursiveFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setCursiveFontFamily(arg0);
     }
 
     public void setDatabaseEnabled(boolean arg0) {
-        real.setDatabaseEnabled(arg0);
+        ((android.webkit.WebSettings) real).setDatabaseEnabled(arg0);
     }
 
     public void setDatabasePath(java.lang.String arg0) {
-        real.setDatabasePath(arg0);
+        ((android.webkit.WebSettings) real).setDatabasePath(arg0);
     }
 
     public void setDefaultFixedFontSize(int arg0) {
-        real.setDefaultFixedFontSize(arg0);
+        ((android.webkit.WebSettings) real).setDefaultFixedFontSize(arg0);
     }
 
     public void setDefaultFontSize(int arg0) {
-        real.setDefaultFontSize(arg0);
+        ((android.webkit.WebSettings) real).setDefaultFontSize(arg0);
     }
 
     public void setDefaultTextEncodingName(java.lang.String arg0) {
-        real.setDefaultTextEncodingName(arg0);
+        ((android.webkit.WebSettings) real).setDefaultTextEncodingName(arg0);
     }
 
     public void setDefaultZoom(com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity arg0) {
-        real.setDefaultZoom(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebSettings) real).setDefaultZoom(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDisabledActionModeMenuItems(int arg0) {
-        real.setDisabledActionModeMenuItems(arg0);
+        ((android.webkit.WebSettings) real).setDisabledActionModeMenuItems(arg0);
     }
 
     public void setDisplayZoomControls(boolean arg0) {
-        real.setDisplayZoomControls(arg0);
+        ((android.webkit.WebSettings) real).setDisplayZoomControls(arg0);
     }
 
     public void setDomStorageEnabled(boolean arg0) {
-        real.setDomStorageEnabled(arg0);
+        ((android.webkit.WebSettings) real).setDomStorageEnabled(arg0);
     }
 
     public void setEnableSmoothTransition(boolean arg0) {
-        real.setEnableSmoothTransition(arg0);
+        ((android.webkit.WebSettings) real).setEnableSmoothTransition(arg0);
     }
 
     public void setFantasyFontFamily(java.lang.String arg0) {
-        real.setFantasyFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setFantasyFontFamily(arg0);
     }
 
     public void setFixedFontFamily(java.lang.String arg0) {
-        real.setFixedFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setFixedFontFamily(arg0);
     }
 
     public void setForceDark(int arg0) {
-        real.setForceDark(arg0);
+        ((android.webkit.WebSettings) real).setForceDark(arg0);
     }
 
     public void setGeolocationDatabasePath(java.lang.String arg0) {
-        real.setGeolocationDatabasePath(arg0);
+        ((android.webkit.WebSettings) real).setGeolocationDatabasePath(arg0);
     }
 
     public void setGeolocationEnabled(boolean arg0) {
-        real.setGeolocationEnabled(arg0);
+        ((android.webkit.WebSettings) real).setGeolocationEnabled(arg0);
     }
 
     public void setJavaScriptCanOpenWindowsAutomatically(boolean arg0) {
-        real.setJavaScriptCanOpenWindowsAutomatically(arg0);
+        ((android.webkit.WebSettings) real).setJavaScriptCanOpenWindowsAutomatically(arg0);
     }
 
     public void setJavaScriptEnabled(boolean arg0) {
-        real.setJavaScriptEnabled(arg0);
+        ((android.webkit.WebSettings) real).setJavaScriptEnabled(arg0);
     }
 
     public void setLayoutAlgorithm(com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm arg0) {
-        real.setLayoutAlgorithm(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebSettings) real).setLayoutAlgorithm(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLightTouchEnabled(boolean arg0) {
-        real.setLightTouchEnabled(arg0);
+        ((android.webkit.WebSettings) real).setLightTouchEnabled(arg0);
     }
 
     public void setLoadWithOverviewMode(boolean arg0) {
-        real.setLoadWithOverviewMode(arg0);
+        ((android.webkit.WebSettings) real).setLoadWithOverviewMode(arg0);
     }
 
     public void setLoadsImagesAutomatically(boolean arg0) {
-        real.setLoadsImagesAutomatically(arg0);
+        ((android.webkit.WebSettings) real).setLoadsImagesAutomatically(arg0);
     }
 
     public void setMediaPlaybackRequiresUserGesture(boolean arg0) {
-        real.setMediaPlaybackRequiresUserGesture(arg0);
+        ((android.webkit.WebSettings) real).setMediaPlaybackRequiresUserGesture(arg0);
     }
 
     public void setMinimumFontSize(int arg0) {
-        real.setMinimumFontSize(arg0);
+        ((android.webkit.WebSettings) real).setMinimumFontSize(arg0);
     }
 
     public void setMinimumLogicalFontSize(int arg0) {
-        real.setMinimumLogicalFontSize(arg0);
+        ((android.webkit.WebSettings) real).setMinimumLogicalFontSize(arg0);
     }
 
     public void setMixedContentMode(int arg0) {
-        real.setMixedContentMode(arg0);
+        ((android.webkit.WebSettings) real).setMixedContentMode(arg0);
     }
 
     public void setNeedInitialFocus(boolean arg0) {
-        real.setNeedInitialFocus(arg0);
+        ((android.webkit.WebSettings) real).setNeedInitialFocus(arg0);
     }
 
     public void setOffscreenPreRaster(boolean arg0) {
-        real.setOffscreenPreRaster(arg0);
+        ((android.webkit.WebSettings) real).setOffscreenPreRaster(arg0);
     }
 
     public void setPluginState(com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState arg0) {
-        real.setPluginState(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebSettings) real).setPluginState(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRenderPriority(com.micklab.dcg.wrapper.android.webkit.WebSettings.RenderPriority arg0) {
-        real.setRenderPriority(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebSettings) real).setRenderPriority(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSafeBrowsingEnabled(boolean arg0) {
-        real.setSafeBrowsingEnabled(arg0);
+        ((android.webkit.WebSettings) real).setSafeBrowsingEnabled(arg0);
     }
 
     public void setSansSerifFontFamily(java.lang.String arg0) {
-        real.setSansSerifFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setSansSerifFontFamily(arg0);
     }
 
     public void setSaveFormData(boolean arg0) {
-        real.setSaveFormData(arg0);
+        ((android.webkit.WebSettings) real).setSaveFormData(arg0);
     }
 
     public void setSavePassword(boolean arg0) {
-        real.setSavePassword(arg0);
+        ((android.webkit.WebSettings) real).setSavePassword(arg0);
     }
 
     public void setSerifFontFamily(java.lang.String arg0) {
-        real.setSerifFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setSerifFontFamily(arg0);
     }
 
     public void setStandardFontFamily(java.lang.String arg0) {
-        real.setStandardFontFamily(arg0);
+        ((android.webkit.WebSettings) real).setStandardFontFamily(arg0);
     }
 
     public void setSupportMultipleWindows(boolean arg0) {
-        real.setSupportMultipleWindows(arg0);
+        ((android.webkit.WebSettings) real).setSupportMultipleWindows(arg0);
     }
 
     public void setSupportZoom(boolean arg0) {
-        real.setSupportZoom(arg0);
+        ((android.webkit.WebSettings) real).setSupportZoom(arg0);
     }
 
     public void setTextSize(com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize arg0) {
-        real.setTextSize(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebSettings) real).setTextSize(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextZoom(int arg0) {
-        real.setTextZoom(arg0);
+        ((android.webkit.WebSettings) real).setTextZoom(arg0);
     }
 
     public void setUseWideViewPort(boolean arg0) {
-        real.setUseWideViewPort(arg0);
+        ((android.webkit.WebSettings) real).setUseWideViewPort(arg0);
     }
 
     public void setUserAgentString(java.lang.String arg0) {
-        real.setUserAgentString(arg0);
+        ((android.webkit.WebSettings) real).setUserAgentString(arg0);
     }
 
     public boolean supportMultipleWindows() {
-        return real.supportMultipleWindows();
+        return ((android.webkit.WebSettings) real).supportMultipleWindows();
     }
 
     public boolean supportZoom() {
-        return real.supportZoom();
+        return ((android.webkit.WebSettings) real).supportZoom();
     }
 
     public static final int FORCE_DARK_AUTO = android.webkit.WebSettings.FORCE_DARK_AUTO;
@@ -428,18 +435,25 @@ public final class WebSettings {
     public static final int MIXED_CONTENT_NEVER_ALLOW = android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW;
 
     public static final class LayoutAlgorithm {
-        private final android.webkit.WebSettings.LayoutAlgorithm real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LayoutAlgorithm(android.webkit.WebSettings.LayoutAlgorithm real) {
+        private final java.lang.Object real;
+
+        private LayoutAlgorithm(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm wrap(android.webkit.WebSettings.LayoutAlgorithm real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebSettings.LayoutAlgorithm getReal() {
+            return (android.webkit.WebSettings.LayoutAlgorithm) real;
         }
 
         public android.webkit.WebSettings.LayoutAlgorithm unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.LayoutAlgorithm valueOf(java.lang.String arg0) {
@@ -457,18 +471,25 @@ public final class WebSettings {
 
     }
     public static final class PluginState {
-        private final android.webkit.WebSettings.PluginState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PluginState(android.webkit.WebSettings.PluginState real) {
+        private final java.lang.Object real;
+
+        private PluginState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState wrap(android.webkit.WebSettings.PluginState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebSettings.PluginState getReal() {
+            return (android.webkit.WebSettings.PluginState) real;
         }
 
         public android.webkit.WebSettings.PluginState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.PluginState valueOf(java.lang.String arg0) {
@@ -485,18 +506,25 @@ public final class WebSettings {
 
     }
     public static final class RenderPriority {
-        private final android.webkit.WebSettings.RenderPriority real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RenderPriority(android.webkit.WebSettings.RenderPriority real) {
+        private final java.lang.Object real;
+
+        private RenderPriority(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.RenderPriority wrap(android.webkit.WebSettings.RenderPriority real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.RenderPriority(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.RenderPriority(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebSettings.RenderPriority getReal() {
+            return (android.webkit.WebSettings.RenderPriority) real;
         }
 
         public android.webkit.WebSettings.RenderPriority unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.RenderPriority valueOf(java.lang.String arg0) {
@@ -513,18 +541,25 @@ public final class WebSettings {
 
     }
     public static final class TextSize {
-        private final android.webkit.WebSettings.TextSize real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TextSize(android.webkit.WebSettings.TextSize real) {
+        private final java.lang.Object real;
+
+        private TextSize(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize wrap(android.webkit.WebSettings.TextSize real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebSettings.TextSize getReal() {
+            return (android.webkit.WebSettings.TextSize) real;
         }
 
         public android.webkit.WebSettings.TextSize unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.TextSize valueOf(java.lang.String arg0) {
@@ -543,18 +578,25 @@ public final class WebSettings {
 
     }
     public static final class ZoomDensity {
-        private final android.webkit.WebSettings.ZoomDensity real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ZoomDensity(android.webkit.WebSettings.ZoomDensity real) {
+        private final java.lang.Object real;
+
+        private ZoomDensity(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity wrap(android.webkit.WebSettings.ZoomDensity real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebSettings.ZoomDensity getReal() {
+            return (android.webkit.WebSettings.ZoomDensity) real;
         }
 
         public android.webkit.WebSettings.ZoomDensity unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebSettings.ZoomDensity valueOf(java.lang.String arg0) {

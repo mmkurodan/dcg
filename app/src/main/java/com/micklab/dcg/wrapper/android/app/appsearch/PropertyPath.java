@@ -2,61 +2,75 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class PropertyPath {
-    private final android.app.appsearch.PropertyPath real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PropertyPath(android.app.appsearch.PropertyPath real) {
+    private final java.lang.Object real;
+
+    private PropertyPath(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath wrap(android.app.appsearch.PropertyPath real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.PropertyPath getReal() {
+        return (android.app.appsearch.PropertyPath) real;
     }
 
     public android.app.appsearch.PropertyPath unwrap() {
-        return real;
+        return getReal();
     }
 
     public PropertyPath(java.util.List arg0) {
-        this(new android.app.appsearch.PropertyPath(arg0));
+        this(new android.app.appsearch.PropertyPath(arg0), (__DcgwBridgeToken) null);
     }
 
     public PropertyPath(java.lang.String arg0) {
-        this(new android.app.appsearch.PropertyPath(arg0));
+        this(new android.app.appsearch.PropertyPath(arg0), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.appsearch.PropertyPath) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment get(int arg0) {
-        return com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment.wrap(real.get(arg0));
+        return com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment.wrap(((android.app.appsearch.PropertyPath) real).get(arg0));
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.appsearch.PropertyPath) real).hashCode();
     }
 
     public int size() {
-        return real.size();
+        return ((android.app.appsearch.PropertyPath) real).size();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.appsearch.PropertyPath) real).toString();
     }
 
     public static final class PathSegment {
-        private final android.app.appsearch.PropertyPath.PathSegment real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PathSegment(android.app.appsearch.PropertyPath.PathSegment real) {
+        private final java.lang.Object real;
+
+        private PathSegment(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment wrap(android.app.appsearch.PropertyPath.PathSegment real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.PropertyPath.PathSegment getReal() {
+            return (android.app.appsearch.PropertyPath.PathSegment) real;
         }
 
         public android.app.appsearch.PropertyPath.PathSegment unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.PropertyPath.PathSegment create(java.lang.String arg0) {
@@ -68,23 +82,23 @@ public final class PropertyPath {
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.app.appsearch.PropertyPath.PathSegment) real).equals(arg0);
         }
 
         public int getPropertyIndex() {
-            return real.getPropertyIndex();
+            return ((android.app.appsearch.PropertyPath.PathSegment) real).getPropertyIndex();
         }
 
         public java.lang.String getPropertyName() {
-            return real.getPropertyName();
+            return ((android.app.appsearch.PropertyPath.PathSegment) real).getPropertyName();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.app.appsearch.PropertyPath.PathSegment) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.appsearch.PropertyPath.PathSegment) real).toString();
         }
 
         public static final int NON_REPEATED_CARDINALITY = android.app.appsearch.PropertyPath.PathSegment.NON_REPEATED_CARDINALITY;

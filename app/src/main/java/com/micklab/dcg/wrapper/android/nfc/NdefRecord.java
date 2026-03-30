@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.nfc;
 
 public final class NdefRecord {
-    private final android.nfc.NdefRecord real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NdefRecord(android.nfc.NdefRecord real) {
+    private final java.lang.Object real;
+
+    private NdefRecord(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NdefRecord wrap(android.nfc.NdefRecord real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NdefRecord(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.NdefRecord(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.NdefRecord getReal() {
+        return (android.nfc.NdefRecord) real;
     }
 
     public android.nfc.NdefRecord unwrap() {
-        return real;
+        return getReal();
     }
 
     public NdefRecord(byte[] arg0) throws android.nfc.FormatException {
-        this(new android.nfc.NdefRecord(arg0));
+        this(new android.nfc.NdefRecord(arg0), (__DcgwBridgeToken) null);
     }
 
     public NdefRecord(short arg0, byte[] arg1, byte[] arg2, byte[] arg3) {
-        this(new android.nfc.NdefRecord(arg0, arg1, arg2, arg3));
+        this(new android.nfc.NdefRecord(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NdefRecord createApplicationRecord(java.lang.String arg0) {
@@ -41,7 +48,7 @@ public final class NdefRecord {
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NdefRecord createUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.nfc.NdefRecord.wrap(android.nfc.NdefRecord.createUri(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.nfc.NdefRecord.wrap(android.nfc.NdefRecord.createUri(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.NdefRecord createUri(java.lang.String arg0) {
@@ -49,51 +56,51 @@ public final class NdefRecord {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.nfc.NdefRecord) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.nfc.NdefRecord) real).equals(arg0);
     }
 
     public byte[] getId() {
-        return real.getId();
+        return ((android.nfc.NdefRecord) real).getId();
     }
 
     public byte[] getPayload() {
-        return real.getPayload();
+        return ((android.nfc.NdefRecord) real).getPayload();
     }
 
     public short getTnf() {
-        return real.getTnf();
+        return ((android.nfc.NdefRecord) real).getTnf();
     }
 
     public byte[] getType() {
-        return real.getType();
+        return ((android.nfc.NdefRecord) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.nfc.NdefRecord) real).hashCode();
     }
 
     public byte[] toByteArray() {
-        return real.toByteArray();
+        return ((android.nfc.NdefRecord) real).toByteArray();
     }
 
     public java.lang.String toMimeType() {
-        return real.toMimeType();
+        return ((android.nfc.NdefRecord) real).toMimeType();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.nfc.NdefRecord) real).toString();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri toUri() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.toUri());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.nfc.NdefRecord) real).toUri());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.nfc.NdefRecord) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final byte[] RTD_ALTERNATIVE_CARRIER = android.nfc.NdefRecord.RTD_ALTERNATIVE_CARRIER;

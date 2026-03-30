@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class RouteSelectionDescriptor {
-    private final android.telephony.data.RouteSelectionDescriptor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RouteSelectionDescriptor(android.telephony.data.RouteSelectionDescriptor real) {
+    private final java.lang.Object real;
+
+    private RouteSelectionDescriptor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.RouteSelectionDescriptor wrap(android.telephony.data.RouteSelectionDescriptor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.RouteSelectionDescriptor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.RouteSelectionDescriptor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.RouteSelectionDescriptor getReal() {
+        return (android.telephony.data.RouteSelectionDescriptor) real;
     }
 
     public android.telephony.data.RouteSelectionDescriptor unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

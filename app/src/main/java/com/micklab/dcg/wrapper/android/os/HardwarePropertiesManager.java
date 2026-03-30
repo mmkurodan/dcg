@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class HardwarePropertiesManager {
-    private final android.os.HardwarePropertiesManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HardwarePropertiesManager(android.os.HardwarePropertiesManager real) {
+    private final java.lang.Object real;
+
+    private HardwarePropertiesManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.HardwarePropertiesManager wrap(android.os.HardwarePropertiesManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.HardwarePropertiesManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.HardwarePropertiesManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.HardwarePropertiesManager getReal() {
+        return (android.os.HardwarePropertiesManager) real;
     }
 
     public android.os.HardwarePropertiesManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public android.os.CpuUsageInfo[] getCpuUsages() {

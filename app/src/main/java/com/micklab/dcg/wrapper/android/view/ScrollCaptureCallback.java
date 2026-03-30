@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ScrollCaptureCallback {
-    private final android.view.ScrollCaptureCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScrollCaptureCallback(android.view.ScrollCaptureCallback real) {
+    private final java.lang.Object real;
+
+    private ScrollCaptureCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ScrollCaptureCallback wrap(android.view.ScrollCaptureCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ScrollCaptureCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ScrollCaptureCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ScrollCaptureCallback getReal() {
+        return (android.view.ScrollCaptureCallback) real;
     }
 
     public android.view.ScrollCaptureCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onScrollCaptureEnd(java.lang.Runnable arg0) {
-        real.onScrollCaptureEnd(arg0);
+        ((android.view.ScrollCaptureCallback) real).onScrollCaptureEnd(arg0);
     }
 
     public void onScrollCaptureStart(com.micklab.dcg.wrapper.android.view.ScrollCaptureSession arg0, com.micklab.dcg.wrapper.android.os.CancellationSignal arg1, java.lang.Runnable arg2) {
-        real.onScrollCaptureStart(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.view.ScrollCaptureCallback) real).onScrollCaptureStart(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.hotspot2;
 
 public final class PasspointConfiguration {
-    private final android.net.wifi.hotspot2.PasspointConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PasspointConfiguration(android.net.wifi.hotspot2.PasspointConfiguration real) {
+    private final java.lang.Object real;
+
+    private PasspointConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.PasspointConfiguration wrap(android.net.wifi.hotspot2.PasspointConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.PasspointConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.PasspointConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.hotspot2.PasspointConfiguration getReal() {
+        return (android.net.wifi.hotspot2.PasspointConfiguration) real;
     }
 
     public android.net.wifi.hotspot2.PasspointConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public PasspointConfiguration() {

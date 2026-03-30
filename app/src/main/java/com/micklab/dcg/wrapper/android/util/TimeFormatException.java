@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class TimeFormatException {
-    private final android.util.TimeFormatException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TimeFormatException(android.util.TimeFormatException real) {
+    private final java.lang.Object real;
+
+    private TimeFormatException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.TimeFormatException wrap(android.util.TimeFormatException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.TimeFormatException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.TimeFormatException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.TimeFormatException getReal() {
+        return (android.util.TimeFormatException) real;
     }
 
     public android.util.TimeFormatException unwrap() {
-        return real;
+        return getReal();
     }
 
 }

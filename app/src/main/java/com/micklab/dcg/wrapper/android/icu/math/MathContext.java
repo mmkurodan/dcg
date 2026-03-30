@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.icu.math;
 
 public final class MathContext {
-    private final android.icu.math.MathContext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MathContext(android.icu.math.MathContext real) {
+    private final java.lang.Object real;
+
+    private MathContext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.MathContext wrap(android.icu.math.MathContext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.math.MathContext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.math.MathContext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.math.MathContext getReal() {
+        return (android.icu.math.MathContext) real;
     }
 
     public android.icu.math.MathContext unwrap() {
-        return real;
+        return getReal();
     }
 
     public MathContext(int arg0) {
-        this(new android.icu.math.MathContext(arg0));
+        this(new android.icu.math.MathContext(arg0), (__DcgwBridgeToken) null);
     }
 
     public MathContext(int arg0, int arg1) {
-        this(new android.icu.math.MathContext(arg0, arg1));
+        this(new android.icu.math.MathContext(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public MathContext(int arg0, int arg1, boolean arg2) {
-        this(new android.icu.math.MathContext(arg0, arg1, arg2));
+        this(new android.icu.math.MathContext(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public MathContext(int arg0, int arg1, boolean arg2, int arg3) {
-        this(new android.icu.math.MathContext(arg0, arg1, arg2, arg3));
+        this(new android.icu.math.MathContext(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public int getDigits() {
-        return real.getDigits();
+        return ((android.icu.math.MathContext) real).getDigits();
     }
 
     public int getForm() {
-        return real.getForm();
+        return ((android.icu.math.MathContext) real).getForm();
     }
 
     public boolean getLostDigits() {
-        return real.getLostDigits();
+        return ((android.icu.math.MathContext) real).getLostDigits();
     }
 
     public int getRoundingMode() {
-        return real.getRoundingMode();
+        return ((android.icu.math.MathContext) real).getRoundingMode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.math.MathContext) real).toString();
     }
 
     public static final com.micklab.dcg.wrapper.android.icu.math.MathContext DEFAULT = com.micklab.dcg.wrapper.android.icu.math.MathContext.wrap(android.icu.math.MathContext.DEFAULT);

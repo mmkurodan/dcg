@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view.displayhash;
 
 public final class DisplayHashResultCallback {
-    private final android.view.displayhash.DisplayHashResultCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisplayHashResultCallback(android.view.displayhash.DisplayHashResultCallback real) {
+    private final java.lang.Object real;
+
+    private DisplayHashResultCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.displayhash.DisplayHashResultCallback wrap(android.view.displayhash.DisplayHashResultCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.displayhash.DisplayHashResultCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.displayhash.DisplayHashResultCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.displayhash.DisplayHashResultCallback getReal() {
+        return (android.view.displayhash.DisplayHashResultCallback) real;
     }
 
     public android.view.displayhash.DisplayHashResultCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onDisplayHashError(int arg0) {
-        real.onDisplayHashError(arg0);
+        ((android.view.displayhash.DisplayHashResultCallback) real).onDisplayHashError(arg0);
     }
 
     public void onDisplayHashResult(com.micklab.dcg.wrapper.android.view.displayhash.DisplayHash arg0) {
-        real.onDisplayHashResult(arg0 == null ? null : arg0.unwrap());
+        ((android.view.displayhash.DisplayHashResultCallback) real).onDisplayHashResult(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int DISPLAY_HASH_ERROR_INVALID_BOUNDS = android.view.displayhash.DisplayHashResultCallback.DISPLAY_HASH_ERROR_INVALID_BOUNDS;

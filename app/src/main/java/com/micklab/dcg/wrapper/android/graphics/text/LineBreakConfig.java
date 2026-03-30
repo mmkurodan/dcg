@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.graphics.text;
 
 public final class LineBreakConfig {
-    private final android.graphics.text.LineBreakConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LineBreakConfig(android.graphics.text.LineBreakConfig real) {
+    private final java.lang.Object real;
+
+    private LineBreakConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig wrap(android.graphics.text.LineBreakConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.text.LineBreakConfig getReal() {
+        return (android.graphics.text.LineBreakConfig) real;
     }
 
     public android.graphics.text.LineBreakConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.graphics.text.LineBreakConfig) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.graphics.text.LineBreakConfig) real).equals(arg0);
     }
 
     public int getHyphenation() {
-        return real.getHyphenation();
+        return ((android.graphics.text.LineBreakConfig) real).getHyphenation();
     }
 
     public int getLineBreakStyle() {
-        return real.getLineBreakStyle();
+        return ((android.graphics.text.LineBreakConfig) real).getLineBreakStyle();
     }
 
     public int getLineBreakWordStyle() {
-        return real.getLineBreakWordStyle();
+        return ((android.graphics.text.LineBreakConfig) real).getLineBreakWordStyle();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.graphics.text.LineBreakConfig) real).hashCode();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig merge(com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.wrap(real.merge(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.wrap(((android.graphics.text.LineBreakConfig) real).merge(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.graphics.text.LineBreakConfig) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.graphics.text.LineBreakConfig) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int HYPHENATION_DISABLED = android.graphics.text.LineBreakConfig.HYPHENATION_DISABLED;
@@ -68,42 +75,49 @@ public final class LineBreakConfig {
     public static final int LINE_BREAK_WORD_STYLE_UNSPECIFIED = android.graphics.text.LineBreakConfig.LINE_BREAK_WORD_STYLE_UNSPECIFIED;
 
     public static final class Builder {
-        private final android.graphics.text.LineBreakConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.graphics.text.LineBreakConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder wrap(android.graphics.text.LineBreakConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.text.LineBreakConfig.Builder getReal() {
+            return (android.graphics.text.LineBreakConfig.Builder) real;
         }
 
         public android.graphics.text.LineBreakConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.graphics.text.LineBreakConfig.Builder());
+            this(new android.graphics.text.LineBreakConfig.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig build() {
-            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.wrap(((android.graphics.text.LineBreakConfig.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder merge(com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(real.merge(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(((android.graphics.text.LineBreakConfig.Builder) real).merge(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder setHyphenation(int arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(real.setHyphenation(arg0));
+            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(((android.graphics.text.LineBreakConfig.Builder) real).setHyphenation(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder setLineBreakStyle(int arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(real.setLineBreakStyle(arg0));
+            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(((android.graphics.text.LineBreakConfig.Builder) real).setLineBreakStyle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder setLineBreakWordStyle(int arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(real.setLineBreakWordStyle(arg0));
+            return com.micklab.dcg.wrapper.android.graphics.text.LineBreakConfig.Builder.wrap(((android.graphics.text.LineBreakConfig.Builder) real).setLineBreakWordStyle(arg0));
         }
 
     }

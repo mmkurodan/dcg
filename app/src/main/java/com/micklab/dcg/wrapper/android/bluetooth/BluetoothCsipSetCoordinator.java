@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothCsipSetCoordinator {
-    private final android.bluetooth.BluetoothCsipSetCoordinator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothCsipSetCoordinator(android.bluetooth.BluetoothCsipSetCoordinator real) {
+    private final java.lang.Object real;
+
+    private BluetoothCsipSetCoordinator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothCsipSetCoordinator wrap(android.bluetooth.BluetoothCsipSetCoordinator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCsipSetCoordinator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCsipSetCoordinator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothCsipSetCoordinator getReal() {
+        return (android.bluetooth.BluetoothCsipSetCoordinator) real;
     }
 
     public android.bluetooth.BluetoothCsipSetCoordinator unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.bluetooth.BluetoothCsipSetCoordinator) real).close();
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothCsipSetCoordinator) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_CSIS_CONNECTION_STATE_CHANGED = android.bluetooth.BluetoothCsipSetCoordinator.ACTION_CSIS_CONNECTION_STATE_CHANGED;

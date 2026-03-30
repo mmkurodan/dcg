@@ -2,249 +2,263 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class Path {
-    private final android.graphics.Path real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Path(android.graphics.Path real) {
+    private final java.lang.Object real;
+
+    private Path(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Path wrap(android.graphics.Path real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.Path getReal() {
+        return (android.graphics.Path) real;
     }
 
     public android.graphics.Path unwrap() {
-        return real;
+        return getReal();
     }
 
     public Path() {
-        this(new android.graphics.Path());
+        this(new android.graphics.Path(), (__DcgwBridgeToken) null);
     }
 
     public Path(com.micklab.dcg.wrapper.android.graphics.Path arg0) {
-        this(new android.graphics.Path(arg0 == null ? null : arg0.unwrap()));
+        this(new android.graphics.Path(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void addArc(com.micklab.dcg.wrapper.android.graphics.RectF arg0, float arg1, float arg2) {
-        real.addArc(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.graphics.Path) real).addArc(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void addArc(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-        real.addArc(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.graphics.Path) real).addArc(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public void addCircle(float arg0, float arg1, float arg2, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg3) {
-        real.addCircle(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.graphics.Path) real).addCircle(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void addOval(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg1) {
-        real.addOval(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.graphics.Path) real).addOval(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addOval(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg4) {
-        real.addOval(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        ((android.graphics.Path) real).addOval(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public void addPath(com.micklab.dcg.wrapper.android.graphics.Path arg0) {
-        real.addPath(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.Path) real).addPath(arg0 == null ? null : arg0.getReal());
     }
 
     public void addPath(com.micklab.dcg.wrapper.android.graphics.Path arg0, com.micklab.dcg.wrapper.android.graphics.Matrix arg1) {
-        real.addPath(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.graphics.Path) real).addPath(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addPath(com.micklab.dcg.wrapper.android.graphics.Path arg0, float arg1, float arg2) {
-        real.addPath(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.graphics.Path) real).addPath(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void addRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg1) {
-        real.addRect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.graphics.Path) real).addRect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addRect(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg4) {
-        real.addRect(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        ((android.graphics.Path) real).addRect(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public void addRoundRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0, float[] arg1, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg2) {
-        real.addRoundRect(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.graphics.Path) real).addRoundRect(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void addRoundRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0, float arg1, float arg2, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg3) {
-        real.addRoundRect(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.graphics.Path) real).addRoundRect(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void addRoundRect(float arg0, float arg1, float arg2, float arg3, float[] arg4, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg5) {
-        real.addRoundRect(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.unwrap());
+        ((android.graphics.Path) real).addRoundRect(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
     public void addRoundRect(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, com.micklab.dcg.wrapper.android.graphics.Path.Direction arg6) {
-        real.addRoundRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6 == null ? null : arg6.unwrap());
+        ((android.graphics.Path) real).addRoundRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
     public float[] approximate(float arg0) {
-        return real.approximate(arg0);
+        return ((android.graphics.Path) real).approximate(arg0);
     }
 
     public void arcTo(com.micklab.dcg.wrapper.android.graphics.RectF arg0, float arg1, float arg2) {
-        real.arcTo(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.graphics.Path) real).arcTo(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void arcTo(com.micklab.dcg.wrapper.android.graphics.RectF arg0, float arg1, float arg2, boolean arg3) {
-        real.arcTo(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        ((android.graphics.Path) real).arcTo(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public void arcTo(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, boolean arg6) {
-        real.arcTo(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+        ((android.graphics.Path) real).arcTo(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
     public void close() {
-        real.close();
+        ((android.graphics.Path) real).close();
     }
 
     public void computeBounds(com.micklab.dcg.wrapper.android.graphics.RectF arg0, boolean arg1) {
-        real.computeBounds(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.graphics.Path) real).computeBounds(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void conicTo(float arg0, float arg1, float arg2, float arg3, float arg4) {
-        real.conicTo(arg0, arg1, arg2, arg3, arg4);
+        ((android.graphics.Path) real).conicTo(arg0, arg1, arg2, arg3, arg4);
     }
 
     public void cubicTo(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-        real.cubicTo(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.graphics.Path) real).cubicTo(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Path.FillType getFillType() {
-        return com.micklab.dcg.wrapper.android.graphics.Path.FillType.wrap(real.getFillType());
+        return com.micklab.dcg.wrapper.android.graphics.Path.FillType.wrap(((android.graphics.Path) real).getFillType());
     }
 
     public int getGenerationId() {
-        return real.getGenerationId();
+        return ((android.graphics.Path) real).getGenerationId();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PathIterator getPathIterator() {
-        return com.micklab.dcg.wrapper.android.graphics.PathIterator.wrap(real.getPathIterator());
+        return com.micklab.dcg.wrapper.android.graphics.PathIterator.wrap(((android.graphics.Path) real).getPathIterator());
     }
 
     public void incReserve(int arg0) {
-        real.incReserve(arg0);
+        ((android.graphics.Path) real).incReserve(arg0);
     }
 
     public boolean interpolate(com.micklab.dcg.wrapper.android.graphics.Path arg0, float arg1, com.micklab.dcg.wrapper.android.graphics.Path arg2) {
-        return real.interpolate(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.graphics.Path) real).interpolate(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean isConvex() {
-        return real.isConvex();
+        return ((android.graphics.Path) real).isConvex();
     }
 
     public boolean isEmpty() {
-        return real.isEmpty();
+        return ((android.graphics.Path) real).isEmpty();
     }
 
     public boolean isInterpolatable(com.micklab.dcg.wrapper.android.graphics.Path arg0) {
-        return real.isInterpolatable(arg0 == null ? null : arg0.unwrap());
+        return ((android.graphics.Path) real).isInterpolatable(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isInverseFillType() {
-        return real.isInverseFillType();
+        return ((android.graphics.Path) real).isInverseFillType();
     }
 
     public boolean isRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
-        return real.isRect(arg0 == null ? null : arg0.unwrap());
+        return ((android.graphics.Path) real).isRect(arg0 == null ? null : arg0.getReal());
     }
 
     public void lineTo(float arg0, float arg1) {
-        real.lineTo(arg0, arg1);
+        ((android.graphics.Path) real).lineTo(arg0, arg1);
     }
 
     public void moveTo(float arg0, float arg1) {
-        real.moveTo(arg0, arg1);
+        ((android.graphics.Path) real).moveTo(arg0, arg1);
     }
 
     public void offset(float arg0, float arg1) {
-        real.offset(arg0, arg1);
+        ((android.graphics.Path) real).offset(arg0, arg1);
     }
 
     public void offset(float arg0, float arg1, com.micklab.dcg.wrapper.android.graphics.Path arg2) {
-        real.offset(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.graphics.Path) real).offset(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean op(com.micklab.dcg.wrapper.android.graphics.Path arg0, com.micklab.dcg.wrapper.android.graphics.Path.Op arg1) {
-        return real.op(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.graphics.Path) real).op(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean op(com.micklab.dcg.wrapper.android.graphics.Path arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1, com.micklab.dcg.wrapper.android.graphics.Path.Op arg2) {
-        return real.op(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.graphics.Path) real).op(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void quadTo(float arg0, float arg1, float arg2, float arg3) {
-        real.quadTo(arg0, arg1, arg2, arg3);
+        ((android.graphics.Path) real).quadTo(arg0, arg1, arg2, arg3);
     }
 
     public void rConicTo(float arg0, float arg1, float arg2, float arg3, float arg4) {
-        real.rConicTo(arg0, arg1, arg2, arg3, arg4);
+        ((android.graphics.Path) real).rConicTo(arg0, arg1, arg2, arg3, arg4);
     }
 
     public void rCubicTo(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-        real.rCubicTo(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.graphics.Path) real).rCubicTo(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public void rLineTo(float arg0, float arg1) {
-        real.rLineTo(arg0, arg1);
+        ((android.graphics.Path) real).rLineTo(arg0, arg1);
     }
 
     public void rMoveTo(float arg0, float arg1) {
-        real.rMoveTo(arg0, arg1);
+        ((android.graphics.Path) real).rMoveTo(arg0, arg1);
     }
 
     public void rQuadTo(float arg0, float arg1, float arg2, float arg3) {
-        real.rQuadTo(arg0, arg1, arg2, arg3);
+        ((android.graphics.Path) real).rQuadTo(arg0, arg1, arg2, arg3);
     }
 
     public void reset() {
-        real.reset();
+        ((android.graphics.Path) real).reset();
     }
 
     public void rewind() {
-        real.rewind();
+        ((android.graphics.Path) real).rewind();
     }
 
     public void set(com.micklab.dcg.wrapper.android.graphics.Path arg0) {
-        real.set(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.Path) real).set(arg0 == null ? null : arg0.getReal());
     }
 
     public void setFillType(com.micklab.dcg.wrapper.android.graphics.Path.FillType arg0) {
-        real.setFillType(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.Path) real).setFillType(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLastPoint(float arg0, float arg1) {
-        real.setLastPoint(arg0, arg1);
+        ((android.graphics.Path) real).setLastPoint(arg0, arg1);
     }
 
     public void toggleInverseFillType() {
-        real.toggleInverseFillType();
+        ((android.graphics.Path) real).toggleInverseFillType();
     }
 
     public void transform(com.micklab.dcg.wrapper.android.graphics.Matrix arg0) {
-        real.transform(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.Path) real).transform(arg0 == null ? null : arg0.getReal());
     }
 
     public void transform(com.micklab.dcg.wrapper.android.graphics.Matrix arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
-        real.transform(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.graphics.Path) real).transform(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static final class Direction {
-        private final android.graphics.Path.Direction real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Direction(android.graphics.Path.Direction real) {
+        private final java.lang.Object real;
+
+        private Direction(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.Direction wrap(android.graphics.Path.Direction real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.Direction(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.Direction(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.Path.Direction getReal() {
+            return (android.graphics.Path.Direction) real;
         }
 
         public android.graphics.Path.Direction unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.Direction valueOf(java.lang.String arg0) {
@@ -260,18 +274,25 @@ public final class Path {
 
     }
     public static final class FillType {
-        private final android.graphics.Path.FillType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FillType(android.graphics.Path.FillType real) {
+        private final java.lang.Object real;
+
+        private FillType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.FillType wrap(android.graphics.Path.FillType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.FillType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.FillType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.Path.FillType getReal() {
+            return (android.graphics.Path.FillType) real;
         }
 
         public android.graphics.Path.FillType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.FillType valueOf(java.lang.String arg0) {
@@ -289,18 +310,25 @@ public final class Path {
 
     }
     public static final class Op {
-        private final android.graphics.Path.Op real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Op(android.graphics.Path.Op real) {
+        private final java.lang.Object real;
+
+        private Op(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.Op wrap(android.graphics.Path.Op real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.Op(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Path.Op(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.Path.Op getReal() {
+            return (android.graphics.Path.Op) real;
         }
 
         public android.graphics.Path.Op unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Path.Op valueOf(java.lang.String arg0) {

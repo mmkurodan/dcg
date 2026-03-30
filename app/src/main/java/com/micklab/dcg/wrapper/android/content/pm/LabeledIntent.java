@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class LabeledIntent {
-    private final android.content.pm.LabeledIntent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LabeledIntent(android.content.pm.LabeledIntent real) {
+    private final java.lang.Object real;
+
+    private LabeledIntent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.LabeledIntent wrap(android.content.pm.LabeledIntent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LabeledIntent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LabeledIntent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.LabeledIntent getReal() {
+        return (android.content.pm.LabeledIntent) real;
     }
 
     public android.content.pm.LabeledIntent unwrap() {
-        return real;
+        return getReal();
     }
 
     public LabeledIntent(java.lang.String arg0, java.lang.CharSequence arg1, int arg2) {

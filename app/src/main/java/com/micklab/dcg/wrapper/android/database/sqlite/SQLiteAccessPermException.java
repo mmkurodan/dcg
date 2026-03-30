@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteAccessPermException {
-    private final android.database.sqlite.SQLiteAccessPermException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteAccessPermException(android.database.sqlite.SQLiteAccessPermException real) {
+    private final java.lang.Object real;
+
+    private SQLiteAccessPermException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteAccessPermException wrap(android.database.sqlite.SQLiteAccessPermException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteAccessPermException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteAccessPermException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteAccessPermException getReal() {
+        return (android.database.sqlite.SQLiteAccessPermException) real;
     }
 
     public android.database.sqlite.SQLiteAccessPermException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteAccessPermException() {

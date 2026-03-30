@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class ConnectivityDiagnosticsManager {
-    private final android.net.ConnectivityDiagnosticsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConnectivityDiagnosticsManager(android.net.ConnectivityDiagnosticsManager real) {
+    private final java.lang.Object real;
+
+    private ConnectivityDiagnosticsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager wrap(android.net.ConnectivityDiagnosticsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ConnectivityDiagnosticsManager getReal() {
+        return (android.net.ConnectivityDiagnosticsManager) real;
     }
 
     public android.net.ConnectivityDiagnosticsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void registerConnectivityDiagnosticsCallback(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback arg2) {
@@ -25,18 +32,25 @@ public final class ConnectivityDiagnosticsManager {
     }
 
     public static final class ConnectivityDiagnosticsCallback {
-        private final android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConnectivityDiagnosticsCallback(android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback real) {
+        private final java.lang.Object real;
+
+        private ConnectivityDiagnosticsCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback wrap(android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback getReal() {
+            return (android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback) real;
         }
 
         public android.net.ConnectivityDiagnosticsManager.ConnectivityDiagnosticsCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onConnectivityReportAvailable(com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityReport arg0) {
@@ -53,18 +67,25 @@ public final class ConnectivityDiagnosticsManager {
 
     }
     public static final class ConnectivityReport {
-        private final android.net.ConnectivityDiagnosticsManager.ConnectivityReport real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConnectivityReport(android.net.ConnectivityDiagnosticsManager.ConnectivityReport real) {
+        private final java.lang.Object real;
+
+        private ConnectivityReport(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityReport wrap(android.net.ConnectivityDiagnosticsManager.ConnectivityReport real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityReport(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.ConnectivityReport(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ConnectivityDiagnosticsManager.ConnectivityReport getReal() {
+            return (android.net.ConnectivityDiagnosticsManager.ConnectivityReport) real;
         }
 
         public android.net.ConnectivityDiagnosticsManager.ConnectivityReport unwrap() {
-            return real;
+            return getReal();
         }
 
         public ConnectivityReport(com.micklab.dcg.wrapper.android.net.Network arg0, long arg1, com.micklab.dcg.wrapper.android.net.LinkProperties arg2, com.micklab.dcg.wrapper.android.net.NetworkCapabilities arg3, com.micklab.dcg.wrapper.android.os.PersistableBundle arg4) {
@@ -110,18 +131,25 @@ public final class ConnectivityDiagnosticsManager {
 
     }
     public static final class DataStallReport {
-        private final android.net.ConnectivityDiagnosticsManager.DataStallReport real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DataStallReport(android.net.ConnectivityDiagnosticsManager.DataStallReport real) {
+        private final java.lang.Object real;
+
+        private DataStallReport(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.DataStallReport wrap(android.net.ConnectivityDiagnosticsManager.DataStallReport real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.DataStallReport(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityDiagnosticsManager.DataStallReport(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ConnectivityDiagnosticsManager.DataStallReport getReal() {
+            return (android.net.ConnectivityDiagnosticsManager.DataStallReport) real;
         }
 
         public android.net.ConnectivityDiagnosticsManager.DataStallReport unwrap() {
-            return real;
+            return getReal();
         }
 
         public DataStallReport(com.micklab.dcg.wrapper.android.net.Network arg0, long arg1, int arg2, com.micklab.dcg.wrapper.android.net.LinkProperties arg3, com.micklab.dcg.wrapper.android.net.NetworkCapabilities arg4, com.micklab.dcg.wrapper.android.os.PersistableBundle arg5) {

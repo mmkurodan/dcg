@@ -2,106 +2,113 @@
 package com.micklab.dcg.wrapper.android.security.keystore;
 
 public final class KeyInfo {
-    private final android.security.keystore.KeyInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyInfo(android.security.keystore.KeyInfo real) {
+    private final java.lang.Object real;
+
+    private KeyInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.keystore.KeyInfo wrap(android.security.keystore.KeyInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.keystore.KeyInfo getReal() {
+        return (android.security.keystore.KeyInfo) real;
     }
 
     public android.security.keystore.KeyInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String[] getBlockModes() {
-        return real.getBlockModes();
+        return ((android.security.keystore.KeyInfo) real).getBlockModes();
     }
 
     public java.lang.String[] getDigests() {
-        return real.getDigests();
+        return ((android.security.keystore.KeyInfo) real).getDigests();
     }
 
     public java.lang.String[] getEncryptionPaddings() {
-        return real.getEncryptionPaddings();
+        return ((android.security.keystore.KeyInfo) real).getEncryptionPaddings();
     }
 
     public int getKeySize() {
-        return real.getKeySize();
+        return ((android.security.keystore.KeyInfo) real).getKeySize();
     }
 
     public java.util.Date getKeyValidityForConsumptionEnd() {
-        return real.getKeyValidityForConsumptionEnd();
+        return ((android.security.keystore.KeyInfo) real).getKeyValidityForConsumptionEnd();
     }
 
     public java.util.Date getKeyValidityForOriginationEnd() {
-        return real.getKeyValidityForOriginationEnd();
+        return ((android.security.keystore.KeyInfo) real).getKeyValidityForOriginationEnd();
     }
 
     public java.util.Date getKeyValidityStart() {
-        return real.getKeyValidityStart();
+        return ((android.security.keystore.KeyInfo) real).getKeyValidityStart();
     }
 
     public java.lang.String getKeystoreAlias() {
-        return real.getKeystoreAlias();
+        return ((android.security.keystore.KeyInfo) real).getKeystoreAlias();
     }
 
     public int getOrigin() {
-        return real.getOrigin();
+        return ((android.security.keystore.KeyInfo) real).getOrigin();
     }
 
     public int getPurposes() {
-        return real.getPurposes();
+        return ((android.security.keystore.KeyInfo) real).getPurposes();
     }
 
     public int getRemainingUsageCount() {
-        return real.getRemainingUsageCount();
+        return ((android.security.keystore.KeyInfo) real).getRemainingUsageCount();
     }
 
     public int getSecurityLevel() {
-        return real.getSecurityLevel();
+        return ((android.security.keystore.KeyInfo) real).getSecurityLevel();
     }
 
     public java.lang.String[] getSignaturePaddings() {
-        return real.getSignaturePaddings();
+        return ((android.security.keystore.KeyInfo) real).getSignaturePaddings();
     }
 
     public int getUserAuthenticationType() {
-        return real.getUserAuthenticationType();
+        return ((android.security.keystore.KeyInfo) real).getUserAuthenticationType();
     }
 
     public int getUserAuthenticationValidityDurationSeconds() {
-        return real.getUserAuthenticationValidityDurationSeconds();
+        return ((android.security.keystore.KeyInfo) real).getUserAuthenticationValidityDurationSeconds();
     }
 
     public boolean isInsideSecureHardware() {
-        return real.isInsideSecureHardware();
+        return ((android.security.keystore.KeyInfo) real).isInsideSecureHardware();
     }
 
     public boolean isInvalidatedByBiometricEnrollment() {
-        return real.isInvalidatedByBiometricEnrollment();
+        return ((android.security.keystore.KeyInfo) real).isInvalidatedByBiometricEnrollment();
     }
 
     public boolean isTrustedUserPresenceRequired() {
-        return real.isTrustedUserPresenceRequired();
+        return ((android.security.keystore.KeyInfo) real).isTrustedUserPresenceRequired();
     }
 
     public boolean isUserAuthenticationRequired() {
-        return real.isUserAuthenticationRequired();
+        return ((android.security.keystore.KeyInfo) real).isUserAuthenticationRequired();
     }
 
     public boolean isUserAuthenticationRequirementEnforcedBySecureHardware() {
-        return real.isUserAuthenticationRequirementEnforcedBySecureHardware();
+        return ((android.security.keystore.KeyInfo) real).isUserAuthenticationRequirementEnforcedBySecureHardware();
     }
 
     public boolean isUserAuthenticationValidWhileOnBody() {
-        return real.isUserAuthenticationValidWhileOnBody();
+        return ((android.security.keystore.KeyInfo) real).isUserAuthenticationValidWhileOnBody();
     }
 
     public boolean isUserConfirmationRequired() {
-        return real.isUserConfirmationRequired();
+        return ((android.security.keystore.KeyInfo) real).isUserConfirmationRequired();
     }
 
 }

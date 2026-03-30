@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class TestLooperManager {
-    private final android.os.TestLooperManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TestLooperManager(android.os.TestLooperManager real) {
+    private final java.lang.Object real;
+
+    private TestLooperManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.TestLooperManager wrap(android.os.TestLooperManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TestLooperManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TestLooperManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.TestLooperManager getReal() {
+        return (android.os.TestLooperManager) real;
     }
 
     public android.os.TestLooperManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void execute(com.micklab.dcg.wrapper.android.os.Message arg0) {

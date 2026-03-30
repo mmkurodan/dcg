@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ParcelFormatException {
-    private final android.os.ParcelFormatException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParcelFormatException(android.os.ParcelFormatException real) {
+    private final java.lang.Object real;
+
+    private ParcelFormatException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ParcelFormatException wrap(android.os.ParcelFormatException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFormatException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFormatException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ParcelFormatException getReal() {
+        return (android.os.ParcelFormatException) real;
     }
 
     public android.os.ParcelFormatException unwrap() {
-        return real;
+        return getReal();
     }
 
     public ParcelFormatException() {

@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes.units;
 
 public final class Mass {
-    private final android.health.connect.datatypes.units.Mass real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Mass(android.health.connect.datatypes.units.Mass real) {
+    private final java.lang.Object real;
+
+    private Mass(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Mass wrap(android.health.connect.datatypes.units.Mass real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Mass(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Mass(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.units.Mass getReal() {
+        return (android.health.connect.datatypes.units.Mass) real;
     }
 
     public android.health.connect.datatypes.units.Mass unwrap() {
-        return real;
+        return getReal();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Mass arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.health.connect.datatypes.units.Mass) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.health.connect.datatypes.units.Mass) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Mass fromGrams(double arg0) {
@@ -29,15 +36,15 @@ public final class Mass {
     }
 
     public double getInGrams() {
-        return real.getInGrams();
+        return ((android.health.connect.datatypes.units.Mass) real).getInGrams();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.health.connect.datatypes.units.Mass) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.health.connect.datatypes.units.Mass) real).toString();
     }
 
 }

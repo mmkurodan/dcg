@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaSyncEvent {
-    private final android.media.MediaSyncEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaSyncEvent(android.media.MediaSyncEvent real) {
+    private final java.lang.Object real;
+
+    private MediaSyncEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaSyncEvent wrap(android.media.MediaSyncEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaSyncEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaSyncEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaSyncEvent getReal() {
+        return (android.media.MediaSyncEvent) real;
     }
 
     public android.media.MediaSyncEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaSyncEvent createEvent(int arg0) throws java.lang.IllegalArgumentException {
@@ -21,35 +28,35 @@ public final class MediaSyncEvent {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.MediaSyncEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.MediaSyncEvent) real).equals(arg0);
     }
 
     public int getAudioSessionId() {
-        return real.getAudioSessionId();
+        return ((android.media.MediaSyncEvent) real).getAudioSessionId();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.media.MediaSyncEvent) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.MediaSyncEvent) real).hashCode();
     }
 
     public com.micklab.dcg.wrapper.android.media.MediaSyncEvent setAudioSessionId(int arg0) throws java.lang.IllegalArgumentException {
-        return com.micklab.dcg.wrapper.android.media.MediaSyncEvent.wrap(real.setAudioSessionId(arg0));
+        return com.micklab.dcg.wrapper.android.media.MediaSyncEvent.wrap(((android.media.MediaSyncEvent) real).setAudioSessionId(arg0));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.MediaSyncEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.MediaSyncEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int SYNC_EVENT_NONE = android.media.MediaSyncEvent.SYNC_EVENT_NONE;

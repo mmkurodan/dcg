@@ -2,94 +2,101 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class AlarmManager {
-    private final android.app.AlarmManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AlarmManager(android.app.AlarmManager real) {
+    private final java.lang.Object real;
+
+    private AlarmManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.AlarmManager wrap(android.app.AlarmManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.AlarmManager getReal() {
+        return (android.app.AlarmManager) real;
     }
 
     public android.app.AlarmManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canScheduleExactAlarms() {
-        return real.canScheduleExactAlarms();
+        return ((android.app.AlarmManager) real).canScheduleExactAlarms();
     }
 
     public void cancel(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-        real.cancel(arg0 == null ? null : arg0.unwrap());
+        ((android.app.AlarmManager) real).cancel(arg0 == null ? null : arg0.getReal());
     }
 
     public void cancel(com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg0) {
-        real.cancel(arg0 == null ? null : arg0.unwrap());
+        ((android.app.AlarmManager) real).cancel(arg0 == null ? null : arg0.getReal());
     }
 
     public void cancelAll() {
-        real.cancelAll();
+        ((android.app.AlarmManager) real).cancelAll();
     }
 
     public com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo getNextAlarmClock() {
-        return com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo.wrap(real.getNextAlarmClock());
+        return com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo.wrap(((android.app.AlarmManager) real).getNextAlarmClock());
     }
 
     public void set(int arg0, long arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-        real.set(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AlarmManager) real).set(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void set(int arg0, long arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
-        real.set(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        ((android.app.AlarmManager) real).set(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public void setAlarmClock(com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
-        real.setAlarmClock(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.AlarmManager) real).setAlarmClock(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setAndAllowWhileIdle(int arg0, long arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-        real.setAndAllowWhileIdle(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AlarmManager) real).setAndAllowWhileIdle(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void setExact(int arg0, long arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-        real.setExact(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AlarmManager) real).setExact(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void setExact(int arg0, long arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
-        real.setExact(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        ((android.app.AlarmManager) real).setExact(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public void setExactAndAllowWhileIdle(int arg0, long arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-        real.setExactAndAllowWhileIdle(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AlarmManager) real).setExactAndAllowWhileIdle(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void setInexactRepeating(int arg0, long arg1, long arg2, com.micklab.dcg.wrapper.android.app.PendingIntent arg3) {
-        real.setInexactRepeating(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.AlarmManager) real).setInexactRepeating(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void setRepeating(int arg0, long arg1, long arg2, com.micklab.dcg.wrapper.android.app.PendingIntent arg3) {
-        real.setRepeating(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.AlarmManager) real).setRepeating(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void setTime(long arg0) {
-        real.setTime(arg0);
+        ((android.app.AlarmManager) real).setTime(arg0);
     }
 
     public void setTimeZone(java.lang.String arg0) {
-        real.setTimeZone(arg0);
+        ((android.app.AlarmManager) real).setTimeZone(arg0);
     }
 
     public void setWindow(int arg0, long arg1, long arg2, com.micklab.dcg.wrapper.android.app.PendingIntent arg3) {
-        real.setWindow(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void setWindow(int arg0, long arg1, long arg2, java.lang.String arg3, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg4, com.micklab.dcg.wrapper.android.os.Handler arg5) {
-        real.setWindow(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap(), arg5 == null ? null : arg5.unwrap());
+        ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5 == null ? null : arg5.getReal());
     }
 
     public void setWindow(int arg0, long arg1, long arg2, java.lang.String arg3, java.util.concurrent.Executor arg4, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg5) {
-        real.setWindow(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.unwrap());
+        ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
     public static final java.lang.String ACTION_NEXT_ALARM_CLOCK_CHANGED = android.app.AlarmManager.ACTION_NEXT_ALARM_CLOCK_CHANGED;
@@ -105,59 +112,73 @@ public final class AlarmManager {
     public static final int RTC_WAKEUP = android.app.AlarmManager.RTC_WAKEUP;
 
     public static final class AlarmClockInfo {
-        private final android.app.AlarmManager.AlarmClockInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AlarmClockInfo(android.app.AlarmManager.AlarmClockInfo real) {
+        private final java.lang.Object real;
+
+        private AlarmClockInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo wrap(android.app.AlarmManager.AlarmClockInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager.AlarmClockInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.AlarmManager.AlarmClockInfo getReal() {
+            return (android.app.AlarmManager.AlarmClockInfo) real;
         }
 
         public android.app.AlarmManager.AlarmClockInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public AlarmClockInfo(long arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
-            this(new android.app.AlarmManager.AlarmClockInfo(arg0, arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.AlarmManager.AlarmClockInfo(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.AlarmManager.AlarmClockInfo) real).describeContents();
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getShowIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getShowIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.AlarmManager.AlarmClockInfo) real).getShowIntent());
         }
 
         public long getTriggerTime() {
-            return real.getTriggerTime();
+            return ((android.app.AlarmManager.AlarmClockInfo) real).getTriggerTime();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.AlarmManager.AlarmClockInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class OnAlarmListener {
-        private final android.app.AlarmManager.OnAlarmListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnAlarmListener(android.app.AlarmManager.OnAlarmListener real) {
+        private final java.lang.Object real;
+
+        private OnAlarmListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener wrap(android.app.AlarmManager.OnAlarmListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.AlarmManager.OnAlarmListener getReal() {
+            return (android.app.AlarmManager.OnAlarmListener) real;
         }
 
         public android.app.AlarmManager.OnAlarmListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAlarm() {
-            real.onAlarm();
+            ((android.app.AlarmManager.OnAlarmListener) real).onAlarm();
         }
 
     }

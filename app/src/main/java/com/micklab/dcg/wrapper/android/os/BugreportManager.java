@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class BugreportManager {
-    private final android.os.BugreportManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BugreportManager(android.os.BugreportManager real) {
+    private final java.lang.Object real;
+
+    private BugreportManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.BugreportManager wrap(android.os.BugreportManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BugreportManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BugreportManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.BugreportManager getReal() {
+        return (android.os.BugreportManager) real;
     }
 
     public android.os.BugreportManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancelBugreport() {
@@ -25,18 +32,25 @@ public final class BugreportManager {
     }
 
     public static final class BugreportCallback {
-        private final android.os.BugreportManager.BugreportCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BugreportCallback(android.os.BugreportManager.BugreportCallback real) {
+        private final java.lang.Object real;
+
+        private BugreportCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.BugreportManager.BugreportCallback wrap(android.os.BugreportManager.BugreportCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.BugreportManager.BugreportCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.BugreportManager.BugreportCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.BugreportManager.BugreportCallback getReal() {
+            return (android.os.BugreportManager.BugreportCallback) real;
         }
 
         public android.os.BugreportManager.BugreportCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onEarlyReportFinished() {

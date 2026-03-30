@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ArchivedPackageInfo {
-    private final android.content.pm.ArchivedPackageInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ArchivedPackageInfo(android.content.pm.ArchivedPackageInfo real) {
+    private final java.lang.Object real;
+
+    private ArchivedPackageInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ArchivedPackageInfo wrap(android.content.pm.ArchivedPackageInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ArchivedPackageInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ArchivedPackageInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ArchivedPackageInfo getReal() {
+        return (android.content.pm.ArchivedPackageInfo) real;
     }
 
     public android.content.pm.ArchivedPackageInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ArchivedPackageInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.SigningInfo arg1, java.util.List arg2) {

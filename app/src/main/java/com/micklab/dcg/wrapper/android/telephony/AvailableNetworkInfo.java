@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class AvailableNetworkInfo {
-    private final android.telephony.AvailableNetworkInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AvailableNetworkInfo(android.telephony.AvailableNetworkInfo real) {
+    private final java.lang.Object real;
+
+    private AvailableNetworkInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo wrap(android.telephony.AvailableNetworkInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.AvailableNetworkInfo getReal() {
+        return (android.telephony.AvailableNetworkInfo) real;
     }
 
     public android.telephony.AvailableNetworkInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public AvailableNetworkInfo(int arg0, int arg1, java.util.List arg2, java.util.List arg3) {
@@ -50,18 +57,25 @@ public final class AvailableNetworkInfo {
 
 
     public static final class Builder {
-        private final android.telephony.AvailableNetworkInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.AvailableNetworkInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo.Builder wrap(android.telephony.AvailableNetworkInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.AvailableNetworkInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.AvailableNetworkInfo.Builder getReal() {
+            return (android.telephony.AvailableNetworkInfo.Builder) real;
         }
 
         public android.telephony.AvailableNetworkInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {

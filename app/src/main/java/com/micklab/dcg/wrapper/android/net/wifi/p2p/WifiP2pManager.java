@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p;
 
 public final class WifiP2pManager {
-    private final android.net.wifi.p2p.WifiP2pManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pManager(android.net.wifi.p2p.WifiP2pManager real) {
+    private final java.lang.Object real;
+
+    private WifiP2pManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager wrap(android.net.wifi.p2p.WifiP2pManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.WifiP2pManager getReal() {
+        return (android.net.wifi.p2p.WifiP2pManager) real;
     }
 
     public android.net.wifi.p2p.WifiP2pManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addExternalApprover(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel arg0, com.micklab.dcg.wrapper.android.net.MacAddress arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener arg2) {
@@ -190,18 +197,25 @@ public final class WifiP2pManager {
 
 
     public static final class ActionListener {
-        private final android.net.wifi.p2p.WifiP2pManager.ActionListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ActionListener(android.net.wifi.p2p.WifiP2pManager.ActionListener real) {
+        private final java.lang.Object real;
+
+        private ActionListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener wrap(android.net.wifi.p2p.WifiP2pManager.ActionListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.ActionListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.ActionListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.ActionListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFailure(int arg0) {
@@ -214,18 +228,25 @@ public final class WifiP2pManager {
 
     }
     public static final class Channel {
-        private final android.net.wifi.p2p.WifiP2pManager.Channel real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Channel(android.net.wifi.p2p.WifiP2pManager.Channel real) {
+        private final java.lang.Object real;
+
+        private Channel(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel wrap(android.net.wifi.p2p.WifiP2pManager.Channel real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.Channel getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.Channel) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.Channel unwrap() {
-            return real;
+            return getReal();
         }
 
         public void close() {
@@ -234,18 +255,25 @@ public final class WifiP2pManager {
 
     }
     public static final class ChannelListener {
-        private final android.net.wifi.p2p.WifiP2pManager.ChannelListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ChannelListener(android.net.wifi.p2p.WifiP2pManager.ChannelListener real) {
+        private final java.lang.Object real;
+
+        private ChannelListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ChannelListener wrap(android.net.wifi.p2p.WifiP2pManager.ChannelListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ChannelListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ChannelListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.ChannelListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.ChannelListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.ChannelListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onChannelDisconnected() {
@@ -254,18 +282,25 @@ public final class WifiP2pManager {
 
     }
     public static final class ConnectionInfoListener {
-        private final android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConnectionInfoListener(android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener real) {
+        private final java.lang.Object real;
+
+        private ConnectionInfoListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener wrap(android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.ConnectionInfoListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onConnectionInfoAvailable(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pInfo arg0) {
@@ -274,18 +309,25 @@ public final class WifiP2pManager {
 
     }
     public static final class DeviceInfoListener {
-        private final android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DeviceInfoListener(android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener real) {
+        private final java.lang.Object real;
+
+        private DeviceInfoListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener wrap(android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.DeviceInfoListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDeviceInfoAvailable(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg0) {
@@ -294,18 +336,25 @@ public final class WifiP2pManager {
 
     }
     public static final class DiscoveryStateListener {
-        private final android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DiscoveryStateListener(android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener real) {
+        private final java.lang.Object real;
+
+        private DiscoveryStateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener wrap(android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.DiscoveryStateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDiscoveryStateAvailable(int arg0) {
@@ -314,18 +363,25 @@ public final class WifiP2pManager {
 
     }
     public static final class DnsSdServiceResponseListener {
-        private final android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DnsSdServiceResponseListener(android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener real) {
+        private final java.lang.Object real;
+
+        private DnsSdServiceResponseListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener wrap(android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDnsSdServiceAvailable(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg2) {
@@ -334,34 +390,48 @@ public final class WifiP2pManager {
 
     }
     public static final class DnsSdTxtRecordListener {
-        private final android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DnsSdTxtRecordListener(android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener real) {
+        private final java.lang.Object real;
+
+        private DnsSdTxtRecordListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener wrap(android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class ExternalApproverRequestListener {
-        private final android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExternalApproverRequestListener(android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener real) {
+        private final java.lang.Object real;
+
+        private ExternalApproverRequestListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener wrap(android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.ExternalApproverRequestListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAttached(com.micklab.dcg.wrapper.android.net.MacAddress arg0) {
@@ -383,18 +453,25 @@ public final class WifiP2pManager {
 
     }
     public static final class GroupInfoListener {
-        private final android.net.wifi.p2p.WifiP2pManager.GroupInfoListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupInfoListener(android.net.wifi.p2p.WifiP2pManager.GroupInfoListener real) {
+        private final java.lang.Object real;
+
+        private GroupInfoListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.GroupInfoListener wrap(android.net.wifi.p2p.WifiP2pManager.GroupInfoListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.GroupInfoListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.GroupInfoListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.GroupInfoListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.GroupInfoListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.GroupInfoListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onGroupInfoAvailable(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pGroup arg0) {
@@ -403,18 +480,25 @@ public final class WifiP2pManager {
 
     }
     public static final class NetworkInfoListener {
-        private final android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NetworkInfoListener(android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener real) {
+        private final java.lang.Object real;
+
+        private NetworkInfoListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener wrap(android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.NetworkInfoListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onNetworkInfoAvailable(com.micklab.dcg.wrapper.android.net.NetworkInfo arg0) {
@@ -423,18 +507,25 @@ public final class WifiP2pManager {
 
     }
     public static final class P2pStateListener {
-        private final android.net.wifi.p2p.WifiP2pManager.P2pStateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public P2pStateListener(android.net.wifi.p2p.WifiP2pManager.P2pStateListener real) {
+        private final java.lang.Object real;
+
+        private P2pStateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.P2pStateListener wrap(android.net.wifi.p2p.WifiP2pManager.P2pStateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.P2pStateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.P2pStateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.P2pStateListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.P2pStateListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.P2pStateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onP2pStateAvailable(int arg0) {
@@ -443,18 +534,25 @@ public final class WifiP2pManager {
 
     }
     public static final class PeerListListener {
-        private final android.net.wifi.p2p.WifiP2pManager.PeerListListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PeerListListener(android.net.wifi.p2p.WifiP2pManager.PeerListListener real) {
+        private final java.lang.Object real;
+
+        private PeerListListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.PeerListListener wrap(android.net.wifi.p2p.WifiP2pManager.PeerListListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.PeerListListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.PeerListListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.PeerListListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.PeerListListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.PeerListListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onPeersAvailable(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDeviceList arg0) {
@@ -463,18 +561,25 @@ public final class WifiP2pManager {
 
     }
     public static final class ServiceResponseListener {
-        private final android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ServiceResponseListener(android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener real) {
+        private final java.lang.Object real;
+
+        private ServiceResponseListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener wrap(android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.ServiceResponseListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onServiceAvailable(int arg0, byte[] arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg2) {
@@ -483,34 +588,48 @@ public final class WifiP2pManager {
 
     }
     public static final class UpnpServiceResponseListener {
-        private final android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UpnpServiceResponseListener(android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener real) {
+        private final java.lang.Object real;
+
+        private UpnpServiceResponseListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener wrap(android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.UpnpServiceResponseListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class WifiP2pListener {
-        private final android.net.wifi.p2p.WifiP2pManager.WifiP2pListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WifiP2pListener(android.net.wifi.p2p.WifiP2pManager.WifiP2pListener real) {
+        private final java.lang.Object real;
+
+        private WifiP2pListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.WifiP2pListener wrap(android.net.wifi.p2p.WifiP2pManager.WifiP2pListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.WifiP2pListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.WifiP2pListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pManager.WifiP2pListener getReal() {
+            return (android.net.wifi.p2p.WifiP2pManager.WifiP2pListener) real;
         }
 
         public android.net.wifi.p2p.WifiP2pManager.WifiP2pListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDeviceConfigurationChanged(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg0) {

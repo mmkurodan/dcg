@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.renderscript;
 
 public final class RenderScript {
-    private final android.renderscript.RenderScript real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RenderScript(android.renderscript.RenderScript real) {
+    private final java.lang.Object real;
+
+    private RenderScript(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RenderScript wrap(android.renderscript.RenderScript real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.renderscript.RenderScript getReal() {
+        return (android.renderscript.RenderScript) real;
     }
 
     public android.renderscript.RenderScript unwrap() {
-        return real;
+        return getReal();
     }
 
     public void contextDump() {
-        real.contextDump();
+        ((android.renderscript.RenderScript) real).contextDump();
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RenderScript create(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RenderScript create(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType arg1) {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RenderScript create(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.create(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RenderScript createMultiContext(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType arg1, int arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.createMultiContext(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.wrap(android.renderscript.RenderScript.createMultiContext(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3));
     }
 
     public void destroy() {
-        real.destroy();
+        ((android.renderscript.RenderScript) real).destroy();
     }
 
     public void finish() {
-        real.finish();
+        ((android.renderscript.RenderScript) real).finish();
     }
 
     public com.micklab.dcg.wrapper.android.content.Context getApplicationContext() {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.getApplicationContext());
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.renderscript.RenderScript) real).getApplicationContext());
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler getErrorHandler() {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler.wrap(real.getErrorHandler());
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler.wrap(((android.renderscript.RenderScript) real).getErrorHandler());
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler getMessageHandler() {
-        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler.wrap(real.getMessageHandler());
+        return com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler.wrap(((android.renderscript.RenderScript) real).getMessageHandler());
     }
 
     public static long getMinorVersion() {
@@ -65,19 +72,19 @@ public final class RenderScript {
     }
 
     public void sendMessage(int arg0, int[] arg1) {
-        real.sendMessage(arg0, arg1);
+        ((android.renderscript.RenderScript) real).sendMessage(arg0, arg1);
     }
 
     public void setErrorHandler(com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler arg0) {
-        real.setErrorHandler(arg0 == null ? null : arg0.unwrap());
+        ((android.renderscript.RenderScript) real).setErrorHandler(arg0 == null ? null : arg0.getReal());
     }
 
     public void setMessageHandler(com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler arg0) {
-        real.setMessageHandler(arg0 == null ? null : arg0.unwrap());
+        ((android.renderscript.RenderScript) real).setMessageHandler(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPriority(com.micklab.dcg.wrapper.android.renderscript.RenderScript.Priority arg0) {
-        real.setPriority(arg0 == null ? null : arg0.unwrap());
+        ((android.renderscript.RenderScript) real).setPriority(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int CREATE_FLAG_LOW_LATENCY = android.renderscript.RenderScript.CREATE_FLAG_LOW_LATENCY;
@@ -85,18 +92,25 @@ public final class RenderScript {
     public static final int CREATE_FLAG_NONE = android.renderscript.RenderScript.CREATE_FLAG_NONE;
 
     public static final class ContextType {
-        private final android.renderscript.RenderScript.ContextType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ContextType(android.renderscript.RenderScript.ContextType real) {
+        private final java.lang.Object real;
+
+        private ContextType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType wrap(android.renderscript.RenderScript.ContextType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.RenderScript.ContextType getReal() {
+            return (android.renderscript.RenderScript.ContextType) real;
         }
 
         public android.renderscript.RenderScript.ContextType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.ContextType valueOf(java.lang.String arg0) {
@@ -112,18 +126,25 @@ public final class RenderScript {
 
     }
     public static final class Priority {
-        private final android.renderscript.RenderScript.Priority real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Priority(android.renderscript.RenderScript.Priority real) {
+        private final java.lang.Object real;
+
+        private Priority(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.Priority wrap(android.renderscript.RenderScript.Priority real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.Priority(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.Priority(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.RenderScript.Priority getReal() {
+            return (android.renderscript.RenderScript.Priority) real;
         }
 
         public android.renderscript.RenderScript.Priority unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.Priority valueOf(java.lang.String arg0) {
@@ -139,51 +160,65 @@ public final class RenderScript {
 
     }
     public static final class RSErrorHandler {
-        private final android.renderscript.RenderScript.RSErrorHandler real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RSErrorHandler(android.renderscript.RenderScript.RSErrorHandler real) {
+        private final java.lang.Object real;
+
+        private RSErrorHandler(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler wrap(android.renderscript.RenderScript.RSErrorHandler real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSErrorHandler(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.RenderScript.RSErrorHandler getReal() {
+            return (android.renderscript.RenderScript.RSErrorHandler) real;
         }
 
         public android.renderscript.RenderScript.RSErrorHandler unwrap() {
-            return real;
+            return getReal();
         }
 
         public RSErrorHandler() {
-            this(new android.renderscript.RenderScript.RSErrorHandler());
+            this(new android.renderscript.RenderScript.RSErrorHandler(), (__DcgwBridgeToken) null);
         }
 
         public void run() {
-            real.run();
+            ((android.renderscript.RenderScript.RSErrorHandler) real).run();
         }
 
 
     }
     public static final class RSMessageHandler {
-        private final android.renderscript.RenderScript.RSMessageHandler real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RSMessageHandler(android.renderscript.RenderScript.RSMessageHandler real) {
+        private final java.lang.Object real;
+
+        private RSMessageHandler(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler wrap(android.renderscript.RenderScript.RSMessageHandler real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RenderScript.RSMessageHandler(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.RenderScript.RSMessageHandler getReal() {
+            return (android.renderscript.RenderScript.RSMessageHandler) real;
         }
 
         public android.renderscript.RenderScript.RSMessageHandler unwrap() {
-            return real;
+            return getReal();
         }
 
         public RSMessageHandler() {
-            this(new android.renderscript.RenderScript.RSMessageHandler());
+            this(new android.renderscript.RenderScript.RSMessageHandler(), (__DcgwBridgeToken) null);
         }
 
         public void run() {
-            real.run();
+            ((android.renderscript.RenderScript.RSMessageHandler) real).run();
         }
 
 

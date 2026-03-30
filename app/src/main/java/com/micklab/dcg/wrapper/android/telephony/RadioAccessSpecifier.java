@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class RadioAccessSpecifier {
-    private final android.telephony.RadioAccessSpecifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RadioAccessSpecifier(android.telephony.RadioAccessSpecifier real) {
+    private final java.lang.Object real;
+
+    private RadioAccessSpecifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.RadioAccessSpecifier wrap(android.telephony.RadioAccessSpecifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.RadioAccessSpecifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.RadioAccessSpecifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.RadioAccessSpecifier getReal() {
+        return (android.telephony.RadioAccessSpecifier) real;
     }
 
     public android.telephony.RadioAccessSpecifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public RadioAccessSpecifier(int arg0, int[] arg1, int[] arg2) {

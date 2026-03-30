@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.hardware.usb;
 
 public final class UsbConstants {
-    private final android.hardware.usb.UsbConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UsbConstants(android.hardware.usb.UsbConstants real) {
+    private final java.lang.Object real;
+
+    private UsbConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.usb.UsbConstants wrap(android.hardware.usb.UsbConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.usb.UsbConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.usb.UsbConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.usb.UsbConstants getReal() {
+        return (android.hardware.usb.UsbConstants) real;
     }
 
     public android.hardware.usb.UsbConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public UsbConstants() {
-        this(new android.hardware.usb.UsbConstants());
+        this(new android.hardware.usb.UsbConstants(), (__DcgwBridgeToken) null);
     }
 
     public static final int USB_CLASS_APP_SPEC = android.hardware.usb.UsbConstants.USB_CLASS_APP_SPEC;

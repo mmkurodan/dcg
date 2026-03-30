@@ -2,45 +2,59 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class FontsContract {
-    private final android.provider.FontsContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FontsContract(android.provider.FontsContract real) {
+    private final java.lang.Object real;
+
+    private FontsContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.FontsContract wrap(android.provider.FontsContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.FontsContract getReal() {
+        return (android.provider.FontsContract) real;
     }
 
     public android.provider.FontsContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Typeface buildTypeface(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.os.CancellationSignal arg1, android.provider.FontsContract.FontInfo[] arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(android.provider.FontsContract.buildTypeface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(android.provider.FontsContract.buildTypeface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult fetchFonts(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.os.CancellationSignal arg1, com.micklab.dcg.wrapper.android.provider.FontRequest arg2) throws android.content.pm.PackageManager.NameNotFoundException {
-        return com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult.wrap(android.provider.FontsContract.fetchFonts(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult.wrap(android.provider.FontsContract.fetchFonts(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public static void requestFonts(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.provider.FontRequest arg1, com.micklab.dcg.wrapper.android.os.Handler arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3, com.micklab.dcg.wrapper.android.provider.FontsContract.FontRequestCallback arg4) {
-        android.provider.FontsContract.requestFonts(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        android.provider.FontsContract.requestFonts(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public static final class Columns {
-        private final android.provider.FontsContract.Columns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Columns(android.provider.FontsContract.Columns real) {
+        private final java.lang.Object real;
+
+        private Columns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.FontsContract.Columns wrap(android.provider.FontsContract.Columns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.Columns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.Columns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.FontsContract.Columns getReal() {
+            return (android.provider.FontsContract.Columns) real;
         }
 
         public android.provider.FontsContract.Columns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ITALIC = android.provider.FontsContract.Columns.ITALIC;
@@ -55,26 +69,33 @@ public final class FontsContract {
 
     }
     public static final class FontFamilyResult {
-        private final android.provider.FontsContract.FontFamilyResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FontFamilyResult(android.provider.FontsContract.FontFamilyResult real) {
+        private final java.lang.Object real;
+
+        private FontFamilyResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult wrap(android.provider.FontsContract.FontFamilyResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontFamilyResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.FontsContract.FontFamilyResult getReal() {
+            return (android.provider.FontsContract.FontFamilyResult) real;
         }
 
         public android.provider.FontsContract.FontFamilyResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public android.provider.FontsContract.FontInfo[] getFonts() {
-            return real.getFonts();
+            return ((android.provider.FontsContract.FontFamilyResult) real).getFonts();
         }
 
         public int getStatusCode() {
-            return real.getStatusCode();
+            return ((android.provider.FontsContract.FontFamilyResult) real).getStatusCode();
         }
 
         public static final int STATUS_OK = android.provider.FontsContract.FontFamilyResult.STATUS_OK;
@@ -84,70 +105,84 @@ public final class FontsContract {
 
     }
     public static final class FontInfo {
-        private final android.provider.FontsContract.FontInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FontInfo(android.provider.FontsContract.FontInfo real) {
+        private final java.lang.Object real;
+
+        private FontInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.FontsContract.FontInfo wrap(android.provider.FontsContract.FontInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.FontsContract.FontInfo getReal() {
+            return (android.provider.FontsContract.FontInfo) real;
         }
 
         public android.provider.FontsContract.FontInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public android.graphics.fonts.FontVariationAxis[] getAxes() {
-            return real.getAxes();
+            return ((android.provider.FontsContract.FontInfo) real).getAxes();
         }
 
         public int getResultCode() {
-            return real.getResultCode();
+            return ((android.provider.FontsContract.FontInfo) real).getResultCode();
         }
 
         public int getTtcIndex() {
-            return real.getTtcIndex();
+            return ((android.provider.FontsContract.FontInfo) real).getTtcIndex();
         }
 
         public com.micklab.dcg.wrapper.android.net.Uri getUri() {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getUri());
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.provider.FontsContract.FontInfo) real).getUri());
         }
 
         public int getWeight() {
-            return real.getWeight();
+            return ((android.provider.FontsContract.FontInfo) real).getWeight();
         }
 
         public boolean isItalic() {
-            return real.isItalic();
+            return ((android.provider.FontsContract.FontInfo) real).isItalic();
         }
 
     }
     public static final class FontRequestCallback {
-        private final android.provider.FontsContract.FontRequestCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FontRequestCallback(android.provider.FontsContract.FontRequestCallback real) {
+        private final java.lang.Object real;
+
+        private FontRequestCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.FontsContract.FontRequestCallback wrap(android.provider.FontsContract.FontRequestCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontRequestCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.FontsContract.FontRequestCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.FontsContract.FontRequestCallback getReal() {
+            return (android.provider.FontsContract.FontRequestCallback) real;
         }
 
         public android.provider.FontsContract.FontRequestCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public FontRequestCallback() {
-            this(new android.provider.FontsContract.FontRequestCallback());
+            this(new android.provider.FontsContract.FontRequestCallback(), (__DcgwBridgeToken) null);
         }
 
         public void onTypefaceRequestFailed(int arg0) {
-            real.onTypefaceRequestFailed(arg0);
+            ((android.provider.FontsContract.FontRequestCallback) real).onTypefaceRequestFailed(arg0);
         }
 
         public void onTypefaceRetrieved(com.micklab.dcg.wrapper.android.graphics.Typeface arg0) {
-            real.onTypefaceRetrieved(arg0 == null ? null : arg0.unwrap());
+            ((android.provider.FontsContract.FontRequestCallback) real).onTypefaceRetrieved(arg0 == null ? null : arg0.getReal());
         }
 
         public static final int FAIL_REASON_FONT_LOAD_ERROR = android.provider.FontsContract.FontRequestCallback.FAIL_REASON_FONT_LOAD_ERROR;

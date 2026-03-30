@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class TunnelModeChildSessionParams {
-    private final android.net.ipsec.ike.TunnelModeChildSessionParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TunnelModeChildSessionParams(android.net.ipsec.ike.TunnelModeChildSessionParams real) {
+    private final java.lang.Object real;
+
+    private TunnelModeChildSessionParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams wrap(android.net.ipsec.ike.TunnelModeChildSessionParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.TunnelModeChildSessionParams getReal() {
+        return (android.net.ipsec.ike.TunnelModeChildSessionParams) real;
     }
 
     public android.net.ipsec.ike.TunnelModeChildSessionParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -25,18 +32,25 @@ public final class TunnelModeChildSessionParams {
     }
 
     public static final class Builder {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.ipsec.ike.TunnelModeChildSessionParams.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.Builder getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.Builder) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
@@ -89,18 +103,25 @@ public final class TunnelModeChildSessionParams {
 
     }
     public static final class ConfigRequestIpv4Address {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv4Address(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv4Address(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Address unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.net.Inet4Address getAddress() {
@@ -109,66 +130,94 @@ public final class TunnelModeChildSessionParams {
 
     }
     public static final class ConfigRequestIpv4DhcpServer {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv4DhcpServer(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv4DhcpServer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DhcpServer unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class ConfigRequestIpv4DnsServer {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv4DnsServer(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv4DnsServer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4DnsServer unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class ConfigRequestIpv4Netmask {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv4Netmask(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv4Netmask(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv4Netmask unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class ConfigRequestIpv6Address {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv6Address(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv6Address(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6Address unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.net.Inet6Address getAddress() {
@@ -181,34 +230,48 @@ public final class TunnelModeChildSessionParams {
 
     }
     public static final class ConfigRequestIpv6DnsServer {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfigRequestIpv6DnsServer(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer real) {
+        private final java.lang.Object real;
+
+        private ConfigRequestIpv6DnsServer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.ConfigRequestIpv6DnsServer unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class TunnelModeChildConfigRequest {
-        private final android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TunnelModeChildConfigRequest(android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest real) {
+        private final java.lang.Object real;
+
+        private TunnelModeChildConfigRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest wrap(android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest getReal() {
+            return (android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest) real;
         }
 
         public android.net.ipsec.ike.TunnelModeChildSessionParams.TunnelModeChildConfigRequest unwrap() {
-            return real;
+            return getReal();
         }
 
     }

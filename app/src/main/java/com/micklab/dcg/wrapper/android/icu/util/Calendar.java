@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class Calendar {
-    private final android.icu.util.Calendar real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Calendar(android.icu.util.Calendar real) {
+    private final java.lang.Object real;
+
+    private Calendar(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar wrap(android.icu.util.Calendar real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Calendar(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Calendar(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.Calendar getReal() {
+        return (android.icu.util.Calendar) real;
     }
 
     public android.icu.util.Calendar unwrap() {
-        return real;
+        return getReal();
     }
 
     public void add(int arg0, int arg1) {
-        real.add(arg0, arg1);
+        ((android.icu.util.Calendar) real).add(arg0, arg1);
     }
 
     public boolean after(java.lang.Object arg0) {
-        return real.after(arg0);
+        return ((android.icu.util.Calendar) real).after(arg0);
     }
 
     public boolean before(java.lang.Object arg0) {
-        return real.before(arg0);
+        return ((android.icu.util.Calendar) real).before(arg0);
     }
 
     public void clear() {
-        real.clear();
+        ((android.icu.util.Calendar) real).clear();
     }
 
     public void clear(int arg0) {
-        real.clear(arg0);
+        ((android.icu.util.Calendar) real).clear(arg0);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.util.Calendar) real).clone();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Calendar) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.util.Calendar) real).equals(arg0);
     }
 
     public int fieldDifference(java.util.Date arg0, int arg1) {
-        return real.fieldDifference(arg0, arg1);
+        return ((android.icu.util.Calendar) real).fieldDifference(arg0, arg1);
     }
 
     public int get(int arg0) {
-        return real.get(arg0);
+        return ((android.icu.util.Calendar) real).get(arg0);
     }
 
     public int getActualMaximum(int arg0) {
-        return real.getActualMaximum(arg0);
+        return ((android.icu.util.Calendar) real).getActualMaximum(arg0);
     }
 
     public int getActualMinimum(int arg0) {
-        return real.getActualMinimum(arg0);
+        return ((android.icu.util.Calendar) real).getActualMinimum(arg0);
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -69,31 +76,31 @@ public final class Calendar {
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeFormat(int arg0, int arg1, java.util.Locale arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(real.getDateTimeFormat(arg0, arg1, arg2));
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(((android.icu.util.Calendar) real).getDateTimeFormat(arg0, arg1, arg2));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeFormat(int arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(real.getDateTimeFormat(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(((android.icu.util.Calendar) real).getDateTimeFormat(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayName(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Calendar) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getDisplayName(java.util.Locale arg0) {
-        return real.getDisplayName(arg0);
+        return ((android.icu.util.Calendar) real).getDisplayName(arg0);
     }
 
     public int getFieldCount() {
-        return real.getFieldCount();
+        return ((android.icu.util.Calendar) real).getFieldCount();
     }
 
     public int getFirstDayOfWeek() {
-        return real.getFirstDayOfWeek();
+        return ((android.icu.util.Calendar) real).getFirstDayOfWeek();
     }
 
     public int getGreatestMinimum(int arg0) {
-        return real.getGreatestMinimum(arg0);
+        return ((android.icu.util.Calendar) real).getGreatestMinimum(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance() {
@@ -105,67 +112,67 @@ public final class Calendar {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static java.lang.String[] getKeywordValuesForLocale(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, boolean arg2) {
-        return android.icu.util.Calendar.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.icu.util.Calendar.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int getLeastMaximum(int arg0) {
-        return real.getLeastMaximum(arg0);
+        return ((android.icu.util.Calendar) real).getLeastMaximum(arg0);
     }
 
     public int getMaximum(int arg0) {
-        return real.getMaximum(arg0);
+        return ((android.icu.util.Calendar) real).getMaximum(arg0);
     }
 
     public int getMinimalDaysInFirstWeek() {
-        return real.getMinimalDaysInFirstWeek();
+        return ((android.icu.util.Calendar) real).getMinimalDaysInFirstWeek();
     }
 
     public int getMinimum(int arg0) {
-        return real.getMinimum(arg0);
+        return ((android.icu.util.Calendar) real).getMinimum(arg0);
     }
 
     public int getRepeatedWallTimeOption() {
-        return real.getRepeatedWallTimeOption();
+        return ((android.icu.util.Calendar) real).getRepeatedWallTimeOption();
     }
 
     public int getSkippedWallTimeOption() {
-        return real.getSkippedWallTimeOption();
+        return ((android.icu.util.Calendar) real).getSkippedWallTimeOption();
     }
 
     public java.util.Date getTime() {
-        return real.getTime();
+        return ((android.icu.util.Calendar) real).getTime();
     }
 
     public long getTimeInMillis() {
-        return real.getTimeInMillis();
+        return ((android.icu.util.Calendar) real).getTimeInMillis();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.TimeZone getTimeZone() {
-        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(real.getTimeZone());
+        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(((android.icu.util.Calendar) real).getTimeZone());
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.icu.util.Calendar) real).getType();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData getWeekData() {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData.wrap(real.getWeekData());
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData.wrap(((android.icu.util.Calendar) real).getWeekData());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData getWeekDataForRegion(java.lang.String arg0) {
@@ -173,91 +180,91 @@ public final class Calendar {
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.util.Calendar) real).hashCode();
     }
 
     public boolean isEquivalentTo(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0) {
-        return real.isEquivalentTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Calendar) real).isEquivalentTo(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isLenient() {
-        return real.isLenient();
+        return ((android.icu.util.Calendar) real).isLenient();
     }
 
     public boolean isSet(int arg0) {
-        return real.isSet(arg0);
+        return ((android.icu.util.Calendar) real).isSet(arg0);
     }
 
     public boolean isWeekend() {
-        return real.isWeekend();
+        return ((android.icu.util.Calendar) real).isWeekend();
     }
 
     public boolean isWeekend(java.util.Date arg0) {
-        return real.isWeekend(arg0);
+        return ((android.icu.util.Calendar) real).isWeekend(arg0);
     }
 
     public void roll(int arg0, int arg1) {
-        real.roll(arg0, arg1);
+        ((android.icu.util.Calendar) real).roll(arg0, arg1);
     }
 
     public void roll(int arg0, boolean arg1) {
-        real.roll(arg0, arg1);
+        ((android.icu.util.Calendar) real).roll(arg0, arg1);
     }
 
     public void set(int arg0, int arg1) {
-        real.set(arg0, arg1);
+        ((android.icu.util.Calendar) real).set(arg0, arg1);
     }
 
     public void set(int arg0, int arg1, int arg2) {
-        real.set(arg0, arg1, arg2);
+        ((android.icu.util.Calendar) real).set(arg0, arg1, arg2);
     }
 
     public void set(int arg0, int arg1, int arg2, int arg3, int arg4) {
-        real.set(arg0, arg1, arg2, arg3, arg4);
+        ((android.icu.util.Calendar) real).set(arg0, arg1, arg2, arg3, arg4);
     }
 
     public void set(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        real.set(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.icu.util.Calendar) real).set(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public void setFirstDayOfWeek(int arg0) {
-        real.setFirstDayOfWeek(arg0);
+        ((android.icu.util.Calendar) real).setFirstDayOfWeek(arg0);
     }
 
     public void setLenient(boolean arg0) {
-        real.setLenient(arg0);
+        ((android.icu.util.Calendar) real).setLenient(arg0);
     }
 
     public void setMinimalDaysInFirstWeek(int arg0) {
-        real.setMinimalDaysInFirstWeek(arg0);
+        ((android.icu.util.Calendar) real).setMinimalDaysInFirstWeek(arg0);
     }
 
     public void setRepeatedWallTimeOption(int arg0) {
-        real.setRepeatedWallTimeOption(arg0);
+        ((android.icu.util.Calendar) real).setRepeatedWallTimeOption(arg0);
     }
 
     public void setSkippedWallTimeOption(int arg0) {
-        real.setSkippedWallTimeOption(arg0);
+        ((android.icu.util.Calendar) real).setSkippedWallTimeOption(arg0);
     }
 
     public void setTime(java.util.Date arg0) {
-        real.setTime(arg0);
+        ((android.icu.util.Calendar) real).setTime(arg0);
     }
 
     public void setTimeInMillis(long arg0) {
-        real.setTimeInMillis(arg0);
+        ((android.icu.util.Calendar) real).setTimeInMillis(arg0);
     }
 
     public void setTimeZone(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        real.setTimeZone(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.util.Calendar) real).setTimeZone(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.Calendar setWeekData(com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(real.setWeekData(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(((android.icu.util.Calendar) real).setWeekData(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.util.Calendar) real).toString();
     }
 
     public static final int AM = android.icu.util.Calendar.AM;
@@ -311,34 +318,41 @@ public final class Calendar {
     public static final int ZONE_OFFSET = android.icu.util.Calendar.ZONE_OFFSET;
 
     public static final class WeekData {
-        private final android.icu.util.Calendar.WeekData real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WeekData(android.icu.util.Calendar.WeekData real) {
+        private final java.lang.Object real;
+
+        private WeekData(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData wrap(android.icu.util.Calendar.WeekData real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Calendar.WeekData(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.Calendar.WeekData getReal() {
+            return (android.icu.util.Calendar.WeekData) real;
         }
 
         public android.icu.util.Calendar.WeekData unwrap() {
-            return real;
+            return getReal();
         }
 
         public WeekData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-            this(new android.icu.util.Calendar.WeekData(arg0, arg1, arg2, arg3, arg4, arg5));
+            this(new android.icu.util.Calendar.WeekData(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.icu.util.Calendar.WeekData) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.icu.util.Calendar.WeekData) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.icu.util.Calendar.WeekData) real).toString();
         }
 
 

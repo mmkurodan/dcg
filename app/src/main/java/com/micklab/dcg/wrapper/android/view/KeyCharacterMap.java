@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class KeyCharacterMap {
-    private final android.view.KeyCharacterMap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyCharacterMap(android.view.KeyCharacterMap real) {
+    private final java.lang.Object real;
+
+    private KeyCharacterMap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyCharacterMap wrap(android.view.KeyCharacterMap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.KeyCharacterMap getReal() {
+        return (android.view.KeyCharacterMap) real;
     }
 
     public android.view.KeyCharacterMap unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.KeyCharacterMap) real).describeContents();
     }
 
     public static boolean deviceHasKey(int arg0) {
@@ -29,11 +36,11 @@ public final class KeyCharacterMap {
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.KeyCharacterMap) real).equals(arg0);
     }
 
     public int get(int arg0, int arg1) {
-        return real.get(arg0, arg1);
+        return ((android.view.KeyCharacterMap) real).get(arg0, arg1);
     }
 
     public static int getDeadChar(int arg0, int arg1) {
@@ -41,39 +48,39 @@ public final class KeyCharacterMap {
     }
 
     public char getDisplayLabel(int arg0) {
-        return real.getDisplayLabel(arg0);
+        return ((android.view.KeyCharacterMap) real).getDisplayLabel(arg0);
     }
 
     public android.view.KeyEvent[] getEvents(char[] arg0) {
-        return real.getEvents(arg0);
+        return ((android.view.KeyCharacterMap) real).getEvents(arg0);
     }
 
     public boolean getKeyData(int arg0, com.micklab.dcg.wrapper.android.view.KeyCharacterMap.KeyData arg1) {
-        return real.getKeyData(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.view.KeyCharacterMap) real).getKeyData(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int getKeyboardType() {
-        return real.getKeyboardType();
+        return ((android.view.KeyCharacterMap) real).getKeyboardType();
     }
 
     public char getMatch(int arg0, char[] arg1) {
-        return real.getMatch(arg0, arg1);
+        return ((android.view.KeyCharacterMap) real).getMatch(arg0, arg1);
     }
 
     public char getMatch(int arg0, char[] arg1, int arg2) {
-        return real.getMatch(arg0, arg1, arg2);
+        return ((android.view.KeyCharacterMap) real).getMatch(arg0, arg1, arg2);
     }
 
     public int getModifierBehavior() {
-        return real.getModifierBehavior();
+        return ((android.view.KeyCharacterMap) real).getModifierBehavior();
     }
 
     public char getNumber(int arg0) {
-        return real.getNumber(arg0);
+        return ((android.view.KeyCharacterMap) real).getNumber(arg0);
     }
 
     public boolean isPrintingKey(int arg0) {
-        return real.isPrintingKey(arg0);
+        return ((android.view.KeyCharacterMap) real).isPrintingKey(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyCharacterMap load(int arg0) {
@@ -81,7 +88,7 @@ public final class KeyCharacterMap {
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.KeyCharacterMap) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ALPHA = android.view.KeyCharacterMap.ALPHA;
@@ -99,44 +106,58 @@ public final class KeyCharacterMap {
     public static final int VIRTUAL_KEYBOARD = android.view.KeyCharacterMap.VIRTUAL_KEYBOARD;
 
     public static final class KeyData {
-        private final android.view.KeyCharacterMap.KeyData real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public KeyData(android.view.KeyCharacterMap.KeyData real) {
+        private final java.lang.Object real;
+
+        private KeyData(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.KeyCharacterMap.KeyData wrap(android.view.KeyCharacterMap.KeyData real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap.KeyData(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap.KeyData(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.KeyCharacterMap.KeyData getReal() {
+            return (android.view.KeyCharacterMap.KeyData) real;
         }
 
         public android.view.KeyCharacterMap.KeyData unwrap() {
-            return real;
+            return getReal();
         }
 
         public KeyData() {
-            this(new android.view.KeyCharacterMap.KeyData());
+            this(new android.view.KeyCharacterMap.KeyData(), (__DcgwBridgeToken) null);
         }
 
         public static final int META_LENGTH = android.view.KeyCharacterMap.KeyData.META_LENGTH;
 
     }
     public static final class UnavailableException {
-        private final android.view.KeyCharacterMap.UnavailableException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnavailableException(android.view.KeyCharacterMap.UnavailableException real) {
+        private final java.lang.Object real;
+
+        private UnavailableException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.KeyCharacterMap.UnavailableException wrap(android.view.KeyCharacterMap.UnavailableException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap.UnavailableException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyCharacterMap.UnavailableException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.KeyCharacterMap.UnavailableException getReal() {
+            return (android.view.KeyCharacterMap.UnavailableException) real;
         }
 
         public android.view.KeyCharacterMap.UnavailableException unwrap() {
-            return real;
+            return getReal();
         }
 
         public UnavailableException(java.lang.String arg0) {
-            this(new android.view.KeyCharacterMap.UnavailableException(arg0));
+            this(new android.view.KeyCharacterMap.UnavailableException(arg0), (__DcgwBridgeToken) null);
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnUnderlyingNetworkTemplate {
-    private final android.net.vcn.VcnUnderlyingNetworkTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnUnderlyingNetworkTemplate(android.net.vcn.VcnUnderlyingNetworkTemplate real) {
+    private final java.lang.Object real;
+
+    private VcnUnderlyingNetworkTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnUnderlyingNetworkTemplate wrap(android.net.vcn.VcnUnderlyingNetworkTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnUnderlyingNetworkTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnUnderlyingNetworkTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnUnderlyingNetworkTemplate getReal() {
+        return (android.net.vcn.VcnUnderlyingNetworkTemplate) real;
     }
 
     public android.net.vcn.VcnUnderlyingNetworkTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

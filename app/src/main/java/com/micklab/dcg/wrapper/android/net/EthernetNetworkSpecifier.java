@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class EthernetNetworkSpecifier {
-    private final android.net.EthernetNetworkSpecifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EthernetNetworkSpecifier(android.net.EthernetNetworkSpecifier real) {
+    private final java.lang.Object real;
+
+    private EthernetNetworkSpecifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.EthernetNetworkSpecifier wrap(android.net.EthernetNetworkSpecifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.EthernetNetworkSpecifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.EthernetNetworkSpecifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.EthernetNetworkSpecifier getReal() {
+        return (android.net.EthernetNetworkSpecifier) real;
     }
 
     public android.net.EthernetNetworkSpecifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public EthernetNetworkSpecifier(java.lang.String arg0) {

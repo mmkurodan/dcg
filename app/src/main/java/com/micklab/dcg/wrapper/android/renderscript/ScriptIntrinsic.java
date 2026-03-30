@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.renderscript;
 
 public final class ScriptIntrinsic {
-    private final android.renderscript.ScriptIntrinsic real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScriptIntrinsic(android.renderscript.ScriptIntrinsic real) {
+    private final java.lang.Object real;
+
+    private ScriptIntrinsic(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.ScriptIntrinsic wrap(android.renderscript.ScriptIntrinsic real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.ScriptIntrinsic(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.ScriptIntrinsic(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.renderscript.ScriptIntrinsic getReal() {
+        return (android.renderscript.ScriptIntrinsic) real;
     }
 
     public android.renderscript.ScriptIntrinsic unwrap() {
-        return real;
+        return getReal();
     }
 
 }

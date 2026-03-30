@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p;
 
 public final class WifiP2pWfdInfo {
-    private final android.net.wifi.p2p.WifiP2pWfdInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pWfdInfo(android.net.wifi.p2p.WifiP2pWfdInfo real) {
+    private final java.lang.Object real;
+
+    private WifiP2pWfdInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pWfdInfo wrap(android.net.wifi.p2p.WifiP2pWfdInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pWfdInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pWfdInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.WifiP2pWfdInfo getReal() {
+        return (android.net.wifi.p2p.WifiP2pWfdInfo) real;
     }
 
     public android.net.wifi.p2p.WifiP2pWfdInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public WifiP2pWfdInfo() {

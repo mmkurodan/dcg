@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class RemoteException {
-    private final android.os.RemoteException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RemoteException(android.os.RemoteException real) {
+    private final java.lang.Object real;
+
+    private RemoteException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.RemoteException wrap(android.os.RemoteException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RemoteException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RemoteException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.RemoteException getReal() {
+        return (android.os.RemoteException) real;
     }
 
     public android.os.RemoteException unwrap() {
-        return real;
+        return getReal();
     }
 
     public RemoteException() {

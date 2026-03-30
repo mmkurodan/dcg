@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class ListAdapter {
-    private final android.widget.ListAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ListAdapter(android.widget.ListAdapter real) {
+    private final java.lang.Object real;
+
+    private ListAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.ListAdapter wrap(android.widget.ListAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ListAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ListAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.ListAdapter getReal() {
+        return (android.widget.ListAdapter) real;
     }
 
     public android.widget.ListAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean areAllItemsEnabled() {
-        return real.areAllItemsEnabled();
+        return ((android.widget.ListAdapter) real).areAllItemsEnabled();
     }
 
     public boolean isEnabled(int arg0) {
-        return real.isEnabled(arg0);
+        return ((android.widget.ListAdapter) real).isEnabled(arg0);
     }
 
 }

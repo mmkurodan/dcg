@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpSecAlgorithm {
-    private final android.net.IpSecAlgorithm real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpSecAlgorithm(android.net.IpSecAlgorithm real) {
+    private final java.lang.Object real;
+
+    private IpSecAlgorithm(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpSecAlgorithm wrap(android.net.IpSecAlgorithm real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecAlgorithm(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecAlgorithm(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpSecAlgorithm getReal() {
+        return (android.net.IpSecAlgorithm) real;
     }
 
     public android.net.IpSecAlgorithm unwrap() {
-        return real;
+        return getReal();
     }
 
     public IpSecAlgorithm(java.lang.String arg0, byte[] arg1) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class VpnProfileState {
-    private final android.net.VpnProfileState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VpnProfileState(android.net.VpnProfileState real) {
+    private final java.lang.Object real;
+
+    private VpnProfileState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.VpnProfileState wrap(android.net.VpnProfileState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnProfileState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnProfileState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.VpnProfileState getReal() {
+        return (android.net.VpnProfileState) real;
     }
 
     public android.net.VpnProfileState unwrap() {
-        return real;
+        return getReal();
     }
 
     public VpnProfileState(int arg0, java.lang.String arg1, boolean arg2, boolean arg3) {

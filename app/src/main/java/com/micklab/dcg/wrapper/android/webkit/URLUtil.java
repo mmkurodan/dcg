@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class URLUtil {
-    private final android.webkit.URLUtil real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public URLUtil(android.webkit.URLUtil real) {
+    private final java.lang.Object real;
+
+    private URLUtil(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.URLUtil wrap(android.webkit.URLUtil real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.URLUtil(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.URLUtil(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.URLUtil getReal() {
+        return (android.webkit.URLUtil) real;
     }
 
     public android.webkit.URLUtil unwrap() {
-        return real;
+        return getReal();
     }
 
     public URLUtil() {
-        this(new android.webkit.URLUtil());
+        this(new android.webkit.URLUtil(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String composeSearchUrl(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {

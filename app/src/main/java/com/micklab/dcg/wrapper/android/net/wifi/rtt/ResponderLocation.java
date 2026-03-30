@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.rtt;
 
 public final class ResponderLocation {
-    private final android.net.wifi.rtt.ResponderLocation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ResponderLocation(android.net.wifi.rtt.ResponderLocation real) {
+    private final java.lang.Object real;
+
+    private ResponderLocation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderLocation wrap(android.net.wifi.rtt.ResponderLocation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderLocation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderLocation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.rtt.ResponderLocation getReal() {
+        return (android.net.wifi.rtt.ResponderLocation) real;
     }
 
     public android.net.wifi.rtt.ResponderLocation unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

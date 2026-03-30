@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Parcelable {
-    private final android.os.Parcelable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Parcelable(android.os.Parcelable real) {
+    private final java.lang.Object real;
+
+    private Parcelable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Parcelable wrap(android.os.Parcelable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Parcelable getReal() {
+        return (android.os.Parcelable) real;
     }
 
     public android.os.Parcelable unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -26,18 +33,25 @@ public final class Parcelable {
 
 
     public static final class ClassLoaderCreator {
-        private final android.os.Parcelable.ClassLoaderCreator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ClassLoaderCreator(android.os.Parcelable.ClassLoaderCreator real) {
+        private final java.lang.Object real;
+
+        private ClassLoaderCreator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Parcelable.ClassLoaderCreator wrap(android.os.Parcelable.ClassLoaderCreator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable.ClassLoaderCreator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable.ClassLoaderCreator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Parcelable.ClassLoaderCreator getReal() {
+            return (android.os.Parcelable.ClassLoaderCreator) real;
         }
 
         public android.os.Parcelable.ClassLoaderCreator unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.Object createFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, java.lang.ClassLoader arg1) {
@@ -46,18 +60,25 @@ public final class Parcelable {
 
     }
     public static final class Creator {
-        private final android.os.Parcelable.Creator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Creator(android.os.Parcelable.Creator real) {
+        private final java.lang.Object real;
+
+        private Creator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Parcelable.Creator wrap(android.os.Parcelable.Creator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable.Creator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcelable.Creator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Parcelable.Creator getReal() {
+            return (android.os.Parcelable.Creator) real;
         }
 
         public android.os.Parcelable.Creator unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.Object createFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {

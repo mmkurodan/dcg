@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class LauncherApps {
-    private final android.content.pm.LauncherApps real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LauncherApps(android.content.pm.LauncherApps real) {
+    private final java.lang.Object real;
+
+    private LauncherApps(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.LauncherApps wrap(android.content.pm.LauncherApps real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.LauncherApps getReal() {
+        return (android.content.pm.LauncherApps) real;
     }
 
     public android.content.pm.LauncherApps unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.IntentSender getAppMarketActivityIntent(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
@@ -118,18 +125,25 @@ public final class LauncherApps {
 
 
     public static final class ArchiveCompatibilityParams {
-        private final android.content.pm.LauncherApps.ArchiveCompatibilityParams real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ArchiveCompatibilityParams(android.content.pm.LauncherApps.ArchiveCompatibilityParams real) {
+        private final java.lang.Object real;
+
+        private ArchiveCompatibilityParams(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ArchiveCompatibilityParams wrap(android.content.pm.LauncherApps.ArchiveCompatibilityParams real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ArchiveCompatibilityParams(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ArchiveCompatibilityParams(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.LauncherApps.ArchiveCompatibilityParams getReal() {
+            return (android.content.pm.LauncherApps.ArchiveCompatibilityParams) real;
         }
 
         public android.content.pm.LauncherApps.ArchiveCompatibilityParams unwrap() {
-            return real;
+            return getReal();
         }
 
         public ArchiveCompatibilityParams() {
@@ -146,18 +160,25 @@ public final class LauncherApps {
 
     }
     public static final class Callback {
-        private final android.content.pm.LauncherApps.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.content.pm.LauncherApps.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.LauncherApps.Callback wrap(android.content.pm.LauncherApps.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.LauncherApps.Callback getReal() {
+            return (android.content.pm.LauncherApps.Callback) real;
         }
 
         public android.content.pm.LauncherApps.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onPackageAdded(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
@@ -198,18 +219,25 @@ public final class LauncherApps {
 
     }
     public static final class PinItemRequest {
-        private final android.content.pm.LauncherApps.PinItemRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PinItemRequest(android.content.pm.LauncherApps.PinItemRequest real) {
+        private final java.lang.Object real;
+
+        private PinItemRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.LauncherApps.PinItemRequest wrap(android.content.pm.LauncherApps.PinItemRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.PinItemRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.PinItemRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.LauncherApps.PinItemRequest getReal() {
+            return (android.content.pm.LauncherApps.PinItemRequest) real;
         }
 
         public android.content.pm.LauncherApps.PinItemRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean accept() {
@@ -251,18 +279,25 @@ public final class LauncherApps {
 
     }
     public static final class ShortcutQuery {
-        private final android.content.pm.LauncherApps.ShortcutQuery real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ShortcutQuery(android.content.pm.LauncherApps.ShortcutQuery real) {
+        private final java.lang.Object real;
+
+        private ShortcutQuery(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ShortcutQuery wrap(android.content.pm.LauncherApps.ShortcutQuery real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ShortcutQuery(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.LauncherApps.ShortcutQuery(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.LauncherApps.ShortcutQuery getReal() {
+            return (android.content.pm.LauncherApps.ShortcutQuery) real;
         }
 
         public android.content.pm.LauncherApps.ShortcutQuery unwrap() {
-            return real;
+            return getReal();
         }
 
         public ShortcutQuery() {

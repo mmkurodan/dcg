@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Message {
-    private final android.os.Message real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Message(android.os.Message real) {
+    private final java.lang.Object real;
+
+    private Message(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Message wrap(android.os.Message real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Message(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Message(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Message getReal() {
+        return (android.os.Message) real;
     }
 
     public android.os.Message unwrap() {
-        return real;
+        return getReal();
     }
 
     public Message() {

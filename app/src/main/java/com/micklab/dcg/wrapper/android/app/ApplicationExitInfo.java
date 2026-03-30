@@ -2,98 +2,105 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class ApplicationExitInfo {
-    private final android.app.ApplicationExitInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ApplicationExitInfo(android.app.ApplicationExitInfo real) {
+    private final java.lang.Object real;
+
+    private ApplicationExitInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.ApplicationExitInfo wrap(android.app.ApplicationExitInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ApplicationExitInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ApplicationExitInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.ApplicationExitInfo getReal() {
+        return (android.app.ApplicationExitInfo) real;
     }
 
     public android.app.ApplicationExitInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.ApplicationExitInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.ApplicationExitInfo) real).equals(arg0);
     }
 
     public int getDefiningUid() {
-        return real.getDefiningUid();
+        return ((android.app.ApplicationExitInfo) real).getDefiningUid();
     }
 
     public java.lang.String getDescription() {
-        return real.getDescription();
+        return ((android.app.ApplicationExitInfo) real).getDescription();
     }
 
     public int getImportance() {
-        return real.getImportance();
+        return ((android.app.ApplicationExitInfo) real).getImportance();
     }
 
     public int getPackageUid() {
-        return real.getPackageUid();
+        return ((android.app.ApplicationExitInfo) real).getPackageUid();
     }
 
     public int getPid() {
-        return real.getPid();
+        return ((android.app.ApplicationExitInfo) real).getPid();
     }
 
     public java.lang.String getProcessName() {
-        return real.getProcessName();
+        return ((android.app.ApplicationExitInfo) real).getProcessName();
     }
 
     public byte[] getProcessStateSummary() {
-        return real.getProcessStateSummary();
+        return ((android.app.ApplicationExitInfo) real).getProcessStateSummary();
     }
 
     public long getPss() {
-        return real.getPss();
+        return ((android.app.ApplicationExitInfo) real).getPss();
     }
 
     public int getRealUid() {
-        return real.getRealUid();
+        return ((android.app.ApplicationExitInfo) real).getRealUid();
     }
 
     public int getReason() {
-        return real.getReason();
+        return ((android.app.ApplicationExitInfo) real).getReason();
     }
 
     public long getRss() {
-        return real.getRss();
+        return ((android.app.ApplicationExitInfo) real).getRss();
     }
 
     public int getStatus() {
-        return real.getStatus();
+        return ((android.app.ApplicationExitInfo) real).getStatus();
     }
 
     public long getTimestamp() {
-        return real.getTimestamp();
+        return ((android.app.ApplicationExitInfo) real).getTimestamp();
     }
 
     public java.io.InputStream getTraceInputStream() throws java.io.IOException {
-        return real.getTraceInputStream();
+        return ((android.app.ApplicationExitInfo) real).getTraceInputStream();
     }
 
     public com.micklab.dcg.wrapper.android.os.UserHandle getUserHandle() {
-        return com.micklab.dcg.wrapper.android.os.UserHandle.wrap(real.getUserHandle());
+        return com.micklab.dcg.wrapper.android.os.UserHandle.wrap(((android.app.ApplicationExitInfo) real).getUserHandle());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.ApplicationExitInfo) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.ApplicationExitInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.ApplicationExitInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int REASON_ANR = android.app.ApplicationExitInfo.REASON_ANR;

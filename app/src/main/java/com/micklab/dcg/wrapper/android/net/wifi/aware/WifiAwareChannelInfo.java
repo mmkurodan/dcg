@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class WifiAwareChannelInfo {
-    private final android.net.wifi.aware.WifiAwareChannelInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiAwareChannelInfo(android.net.wifi.aware.WifiAwareChannelInfo real) {
+    private final java.lang.Object real;
+
+    private WifiAwareChannelInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareChannelInfo wrap(android.net.wifi.aware.WifiAwareChannelInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareChannelInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareChannelInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.WifiAwareChannelInfo getReal() {
+        return (android.net.wifi.aware.WifiAwareChannelInfo) real;
     }
 
     public android.net.wifi.aware.WifiAwareChannelInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

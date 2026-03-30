@@ -2,36 +2,50 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class SimPhonebookContract {
-    private final android.provider.SimPhonebookContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SimPhonebookContract(android.provider.SimPhonebookContract real) {
+    private final java.lang.Object real;
+
+    private SimPhonebookContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.SimPhonebookContract wrap(android.provider.SimPhonebookContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.SimPhonebookContract getReal() {
+        return (android.provider.SimPhonebookContract) real;
     }
 
     public android.provider.SimPhonebookContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String AUTHORITY = android.provider.SimPhonebookContract.AUTHORITY;
     public static final com.micklab.dcg.wrapper.android.net.Uri AUTHORITY_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.SimPhonebookContract.AUTHORITY_URI);
 
     public static final class ElementaryFiles {
-        private final android.provider.SimPhonebookContract.ElementaryFiles real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ElementaryFiles(android.provider.SimPhonebookContract.ElementaryFiles real) {
+        private final java.lang.Object real;
+
+        private ElementaryFiles(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.ElementaryFiles wrap(android.provider.SimPhonebookContract.ElementaryFiles real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.ElementaryFiles(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.ElementaryFiles(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.SimPhonebookContract.ElementaryFiles getReal() {
+            return (android.provider.SimPhonebookContract.ElementaryFiles) real;
         }
 
         public android.provider.SimPhonebookContract.ElementaryFiles unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getItemUri(int arg0, int arg1) {
@@ -55,18 +69,25 @@ public final class SimPhonebookContract {
 
     }
     public static final class SimRecords {
-        private final android.provider.SimPhonebookContract.SimRecords real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SimRecords(android.provider.SimPhonebookContract.SimRecords real) {
+        private final java.lang.Object real;
+
+        private SimRecords(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.SimRecords wrap(android.provider.SimPhonebookContract.SimRecords real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.SimRecords(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SimPhonebookContract.SimRecords(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.SimPhonebookContract.SimRecords getReal() {
+            return (android.provider.SimPhonebookContract.SimRecords) real;
         }
 
         public android.provider.SimPhonebookContract.SimRecords unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(int arg0, int arg1) {
@@ -74,7 +95,7 @@ public final class SimPhonebookContract {
         }
 
         public static int getEncodedNameLength(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-            return android.provider.SimPhonebookContract.SimRecords.getEncodedNameLength(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.SimPhonebookContract.SimRecords.getEncodedNameLength(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getItemUri(int arg0, int arg1, int arg2) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class PhoneNumberUtils {
-    private final android.telephony.PhoneNumberUtils real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PhoneNumberUtils(android.telephony.PhoneNumberUtils real) {
+    private final java.lang.Object real;
+
+    private PhoneNumberUtils(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.PhoneNumberUtils wrap(android.telephony.PhoneNumberUtils real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhoneNumberUtils(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhoneNumberUtils(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.PhoneNumberUtils getReal() {
+        return (android.telephony.PhoneNumberUtils) real;
     }
 
     public android.telephony.PhoneNumberUtils unwrap() {
-        return real;
+        return getReal();
     }
 
     public PhoneNumberUtils() {

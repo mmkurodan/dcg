@@ -2,74 +2,88 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothClass {
-    private final android.bluetooth.BluetoothClass real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothClass(android.bluetooth.BluetoothClass real) {
+    private final java.lang.Object real;
+
+    private BluetoothClass(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass wrap(android.bluetooth.BluetoothClass real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothClass getReal() {
+        return (android.bluetooth.BluetoothClass) real;
     }
 
     public android.bluetooth.BluetoothClass unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothClass) real).describeContents();
     }
 
     public boolean doesClassMatch(int arg0) {
-        return real.doesClassMatch(arg0);
+        return ((android.bluetooth.BluetoothClass) real).doesClassMatch(arg0);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.BluetoothClass) real).equals(arg0);
     }
 
     public int getDeviceClass() {
-        return real.getDeviceClass();
+        return ((android.bluetooth.BluetoothClass) real).getDeviceClass();
     }
 
     public int getMajorDeviceClass() {
-        return real.getMajorDeviceClass();
+        return ((android.bluetooth.BluetoothClass) real).getMajorDeviceClass();
     }
 
     public boolean hasService(int arg0) {
-        return real.hasService(arg0);
+        return ((android.bluetooth.BluetoothClass) real).hasService(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.BluetoothClass) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.BluetoothClass) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothClass) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Device {
-        private final android.bluetooth.BluetoothClass.Device real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Device(android.bluetooth.BluetoothClass.Device real) {
+        private final java.lang.Object real;
+
+        private Device(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device wrap(android.bluetooth.BluetoothClass.Device real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothClass.Device getReal() {
+            return (android.bluetooth.BluetoothClass.Device) real;
         }
 
         public android.bluetooth.BluetoothClass.Device unwrap() {
-            return real;
+            return getReal();
         }
 
         public Device() {
-            this(new android.bluetooth.BluetoothClass.Device());
+            this(new android.bluetooth.BluetoothClass.Device(), (__DcgwBridgeToken) null);
         }
 
         public static final int AUDIO_VIDEO_CAMCORDER = android.bluetooth.BluetoothClass.Device.AUDIO_VIDEO_CAMCORDER;
@@ -128,22 +142,29 @@ public final class BluetoothClass {
         public static final int WEARABLE_WRIST_WATCH = android.bluetooth.BluetoothClass.Device.WEARABLE_WRIST_WATCH;
 
         public static final class Major {
-            private final android.bluetooth.BluetoothClass.Device.Major real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Major(android.bluetooth.BluetoothClass.Device.Major real) {
+            private final java.lang.Object real;
+
+            private Major(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device.Major wrap(android.bluetooth.BluetoothClass.Device.Major real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device.Major(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Device.Major(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.bluetooth.BluetoothClass.Device.Major getReal() {
+                return (android.bluetooth.BluetoothClass.Device.Major) real;
             }
 
             public android.bluetooth.BluetoothClass.Device.Major unwrap() {
-                return real;
+                return getReal();
             }
 
             public Major() {
-                this(new android.bluetooth.BluetoothClass.Device.Major());
+                this(new android.bluetooth.BluetoothClass.Device.Major(), (__DcgwBridgeToken) null);
             }
 
             public static final int AUDIO_VIDEO = android.bluetooth.BluetoothClass.Device.Major.AUDIO_VIDEO;
@@ -160,22 +181,29 @@ public final class BluetoothClass {
         }
     }
     public static final class Service {
-        private final android.bluetooth.BluetoothClass.Service real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Service(android.bluetooth.BluetoothClass.Service real) {
+        private final java.lang.Object real;
+
+        private Service(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Service wrap(android.bluetooth.BluetoothClass.Service real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Service(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.Service(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothClass.Service getReal() {
+            return (android.bluetooth.BluetoothClass.Service) real;
         }
 
         public android.bluetooth.BluetoothClass.Service unwrap() {
-            return real;
+            return getReal();
         }
 
         public Service() {
-            this(new android.bluetooth.BluetoothClass.Service());
+            this(new android.bluetooth.BluetoothClass.Service(), (__DcgwBridgeToken) null);
         }
 
         public static final int AUDIO = android.bluetooth.BluetoothClass.Service.AUDIO;

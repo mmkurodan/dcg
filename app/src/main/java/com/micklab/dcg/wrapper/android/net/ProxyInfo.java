@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class ProxyInfo {
-    private final android.net.ProxyInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProxyInfo(android.net.ProxyInfo real) {
+    private final java.lang.Object real;
+
+    private ProxyInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ProxyInfo wrap(android.net.ProxyInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ProxyInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ProxyInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ProxyInfo getReal() {
+        return (android.net.ProxyInfo) real;
     }
 
     public android.net.ProxyInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ProxyInfo(com.micklab.dcg.wrapper.android.net.ProxyInfo arg0) {

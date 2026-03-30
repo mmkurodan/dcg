@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class TelephonyManager {
-    private final android.telephony.TelephonyManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TelephonyManager(android.telephony.TelephonyManager real) {
+    private final java.lang.Object real;
+
+    private TelephonyManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager wrap(android.telephony.TelephonyManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.TelephonyManager getReal() {
+        return (android.telephony.TelephonyManager) real;
     }
 
     public android.telephony.TelephonyManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canChangeDtmfToneLength() {
@@ -538,18 +545,25 @@ public final class TelephonyManager {
 
 
     public static final class CallComposerException {
-        private final android.telephony.TelephonyManager.CallComposerException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CallComposerException(android.telephony.TelephonyManager.CallComposerException real) {
+        private final java.lang.Object real;
+
+        private CallComposerException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CallComposerException wrap(android.telephony.TelephonyManager.CallComposerException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CallComposerException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CallComposerException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.CallComposerException getReal() {
+            return (android.telephony.TelephonyManager.CallComposerException) real;
         }
 
         public android.telephony.TelephonyManager.CallComposerException unwrap() {
-            return real;
+            return getReal();
         }
 
         public CallComposerException(int arg0, java.io.IOException arg1) {
@@ -567,18 +581,25 @@ public final class TelephonyManager {
 
     }
     public static final class CellInfoCallback {
-        private final android.telephony.TelephonyManager.CellInfoCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CellInfoCallback(android.telephony.TelephonyManager.CellInfoCallback real) {
+        private final java.lang.Object real;
+
+        private CellInfoCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CellInfoCallback wrap(android.telephony.TelephonyManager.CellInfoCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CellInfoCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.CellInfoCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.CellInfoCallback getReal() {
+            return (android.telephony.TelephonyManager.CellInfoCallback) real;
         }
 
         public android.telephony.TelephonyManager.CellInfoCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onError(int arg0, java.lang.Throwable arg1) {
@@ -588,18 +609,25 @@ public final class TelephonyManager {
 
     }
     public static final class NetworkSlicingException {
-        private final android.telephony.TelephonyManager.NetworkSlicingException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NetworkSlicingException(android.telephony.TelephonyManager.NetworkSlicingException real) {
+        private final java.lang.Object real;
+
+        private NetworkSlicingException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.NetworkSlicingException wrap(android.telephony.TelephonyManager.NetworkSlicingException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.NetworkSlicingException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.NetworkSlicingException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.NetworkSlicingException getReal() {
+            return (android.telephony.TelephonyManager.NetworkSlicingException) real;
         }
 
         public android.telephony.TelephonyManager.NetworkSlicingException unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String toString() {
@@ -608,18 +636,25 @@ public final class TelephonyManager {
 
     }
     public static final class UssdResponseCallback {
-        private final android.telephony.TelephonyManager.UssdResponseCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UssdResponseCallback(android.telephony.TelephonyManager.UssdResponseCallback real) {
+        private final java.lang.Object real;
+
+        private UssdResponseCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.UssdResponseCallback wrap(android.telephony.TelephonyManager.UssdResponseCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.UssdResponseCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.UssdResponseCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.UssdResponseCallback getReal() {
+            return (android.telephony.TelephonyManager.UssdResponseCallback) real;
         }
 
         public android.telephony.TelephonyManager.UssdResponseCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onReceiveUssdResponse(com.micklab.dcg.wrapper.android.telephony.TelephonyManager arg0, java.lang.String arg1, java.lang.CharSequence arg2) {

@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class CallAttributes {
-    private final android.telecom.CallAttributes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CallAttributes(android.telecom.CallAttributes real) {
+    private final java.lang.Object real;
+
+    private CallAttributes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.CallAttributes wrap(android.telecom.CallAttributes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallAttributes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallAttributes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.CallAttributes getReal() {
+        return (android.telecom.CallAttributes) real;
     }
 
     public android.telecom.CallAttributes unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.CallAttributes) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.telecom.CallAttributes) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getAddress() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getAddress());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.CallAttributes) real).getAddress());
     }
 
     public int getCallCapabilities() {
-        return real.getCallCapabilities();
+        return ((android.telecom.CallAttributes) real).getCallCapabilities();
     }
 
     public int getCallType() {
-        return real.getCallType();
+        return ((android.telecom.CallAttributes) real).getCallType();
     }
 
     public int getDirection() {
-        return real.getDirection();
+        return ((android.telecom.CallAttributes) real).getDirection();
     }
 
     public java.lang.CharSequence getDisplayName() {
-        return real.getDisplayName();
+        return ((android.telecom.CallAttributes) real).getDisplayName();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getPhoneAccountHandle() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getPhoneAccountHandle());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.CallAttributes) real).getPhoneAccountHandle());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.telecom.CallAttributes) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.telecom.CallAttributes) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.CallAttributes) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int AUDIO_CALL = android.telecom.CallAttributes.AUDIO_CALL;
@@ -70,34 +77,41 @@ public final class CallAttributes {
     public static final int VIDEO_CALL = android.telecom.CallAttributes.VIDEO_CALL;
 
     public static final class Builder {
-        private final android.telecom.CallAttributes.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telecom.CallAttributes.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder wrap(android.telecom.CallAttributes.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.CallAttributes.Builder getReal() {
+            return (android.telecom.CallAttributes.Builder) real;
         }
 
         public android.telecom.CallAttributes.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, int arg1, java.lang.CharSequence arg2, com.micklab.dcg.wrapper.android.net.Uri arg3) {
-            this(new android.telecom.CallAttributes.Builder(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+            this(new android.telecom.CallAttributes.Builder(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.telecom.CallAttributes build() {
-            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.wrap(((android.telecom.CallAttributes.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder setCallCapabilities(int arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder.wrap(real.setCallCapabilities(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder.wrap(((android.telecom.CallAttributes.Builder) real).setCallCapabilities(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder setCallType(int arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder.wrap(real.setCallType(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.CallAttributes.Builder.wrap(((android.telecom.CallAttributes.Builder) real).setCallType(arg0));
         }
 
     }

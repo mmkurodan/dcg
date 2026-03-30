@@ -2,75 +2,89 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothCodecStatus {
-    private final android.bluetooth.BluetoothCodecStatus real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothCodecStatus(android.bluetooth.BluetoothCodecStatus real) {
+    private final java.lang.Object real;
+
+    private BluetoothCodecStatus(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus wrap(android.bluetooth.BluetoothCodecStatus real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothCodecStatus getReal() {
+        return (android.bluetooth.BluetoothCodecStatus) real;
     }
 
     public android.bluetooth.BluetoothCodecStatus unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothCodecStatus) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.BluetoothCodecStatus) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecConfig getCodecConfig() {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecConfig.wrap(real.getCodecConfig());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecConfig.wrap(((android.bluetooth.BluetoothCodecStatus) real).getCodecConfig());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.BluetoothCodecStatus) real).hashCode();
     }
 
     public boolean isCodecConfigSelectable(com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecConfig arg0) {
-        return real.isCodecConfigSelectable(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothCodecStatus) real).isCodecConfigSelectable(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.BluetoothCodecStatus) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothCodecStatus) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String EXTRA_CODEC_STATUS = android.bluetooth.BluetoothCodecStatus.EXTRA_CODEC_STATUS;
 
     public static final class Builder {
-        private final android.bluetooth.BluetoothCodecStatus.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.bluetooth.BluetoothCodecStatus.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder wrap(android.bluetooth.BluetoothCodecStatus.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothCodecStatus.Builder getReal() {
+            return (android.bluetooth.BluetoothCodecStatus.Builder) real;
         }
 
         public android.bluetooth.BluetoothCodecStatus.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.bluetooth.BluetoothCodecStatus.Builder());
+            this(new android.bluetooth.BluetoothCodecStatus.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus build() {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.wrap(((android.bluetooth.BluetoothCodecStatus.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder setCodecConfig(com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecConfig arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder.wrap(real.setCodecConfig(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecStatus.Builder.wrap(((android.bluetooth.BluetoothCodecStatus.Builder) real).setCodecConfig(arg0 == null ? null : arg0.getReal()));
         }
 
     }

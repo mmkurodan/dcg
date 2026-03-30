@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothLeAudio {
-    private final android.bluetooth.BluetoothLeAudio real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothLeAudio(android.bluetooth.BluetoothLeAudio real) {
+    private final java.lang.Object real;
+
+    private BluetoothLeAudio(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudio wrap(android.bluetooth.BluetoothLeAudio real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudio(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothLeAudio(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothLeAudio getReal() {
+        return (android.bluetooth.BluetoothLeAudio) real;
     }
 
     public android.bluetooth.BluetoothLeAudio unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.bluetooth.BluetoothLeAudio) real).close();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getConnectedGroupLeadDevice(int arg0) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getConnectedGroupLeadDevice(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothLeAudio) real).getConnectedGroupLeadDevice(arg0));
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothLeAudio) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public int getGroupId(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getGroupId(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothLeAudio) real).getGroupId(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_LE_AUDIO_CONNECTION_STATE_CHANGED = android.bluetooth.BluetoothLeAudio.ACTION_LE_AUDIO_CONNECTION_STATE_CHANGED;

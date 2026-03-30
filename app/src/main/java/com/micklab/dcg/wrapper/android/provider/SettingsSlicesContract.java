@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class SettingsSlicesContract {
-    private final android.provider.SettingsSlicesContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SettingsSlicesContract(android.provider.SettingsSlicesContract real) {
+    private final java.lang.Object real;
+
+    private SettingsSlicesContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.SettingsSlicesContract wrap(android.provider.SettingsSlicesContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SettingsSlicesContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SettingsSlicesContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.SettingsSlicesContract getReal() {
+        return (android.provider.SettingsSlicesContract) real;
     }
 
     public android.provider.SettingsSlicesContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String AUTHORITY = android.provider.SettingsSlicesContract.AUTHORITY;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteException {
-    private final android.database.sqlite.SQLiteException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteException(android.database.sqlite.SQLiteException real) {
+    private final java.lang.Object real;
+
+    private SQLiteException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteException wrap(android.database.sqlite.SQLiteException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteException getReal() {
+        return (android.database.sqlite.SQLiteException) real;
     }
 
     public android.database.sqlite.SQLiteException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteException() {

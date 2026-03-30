@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class NetworkCapabilities {
-    private final android.net.NetworkCapabilities real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkCapabilities(android.net.NetworkCapabilities real) {
+    private final java.lang.Object real;
+
+    private NetworkCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.NetworkCapabilities wrap(android.net.NetworkCapabilities real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkCapabilities(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkCapabilities(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.NetworkCapabilities getReal() {
+        return (android.net.NetworkCapabilities) real;
     }
 
     public android.net.NetworkCapabilities unwrap() {
-        return real;
+        return getReal();
     }
 
     public NetworkCapabilities() {

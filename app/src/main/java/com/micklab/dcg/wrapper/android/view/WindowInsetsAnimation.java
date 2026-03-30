@@ -2,121 +2,142 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class WindowInsetsAnimation {
-    private final android.view.WindowInsetsAnimation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WindowInsetsAnimation(android.view.WindowInsetsAnimation real) {
+    private final java.lang.Object real;
+
+    private WindowInsetsAnimation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation wrap(android.view.WindowInsetsAnimation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.WindowInsetsAnimation getReal() {
+        return (android.view.WindowInsetsAnimation) real;
     }
 
     public android.view.WindowInsetsAnimation unwrap() {
-        return real;
+        return getReal();
     }
 
     public WindowInsetsAnimation(int arg0, com.micklab.dcg.wrapper.android.view.animation.Interpolator arg1, long arg2) {
-        this(new android.view.WindowInsetsAnimation(arg0, arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.view.WindowInsetsAnimation(arg0, arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public float getAlpha() {
-        return real.getAlpha();
+        return ((android.view.WindowInsetsAnimation) real).getAlpha();
     }
 
     public long getDurationMillis() {
-        return real.getDurationMillis();
+        return ((android.view.WindowInsetsAnimation) real).getDurationMillis();
     }
 
     public float getFraction() {
-        return real.getFraction();
+        return ((android.view.WindowInsetsAnimation) real).getFraction();
     }
 
     public float getInterpolatedFraction() {
-        return real.getInterpolatedFraction();
+        return ((android.view.WindowInsetsAnimation) real).getInterpolatedFraction();
     }
 
     public com.micklab.dcg.wrapper.android.view.animation.Interpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(((android.view.WindowInsetsAnimation) real).getInterpolator());
     }
 
     public int getTypeMask() {
-        return real.getTypeMask();
+        return ((android.view.WindowInsetsAnimation) real).getTypeMask();
     }
 
     public void setAlpha(float arg0) {
-        real.setAlpha(arg0);
+        ((android.view.WindowInsetsAnimation) real).setAlpha(arg0);
     }
 
     public void setFraction(float arg0) {
-        real.setFraction(arg0);
+        ((android.view.WindowInsetsAnimation) real).setFraction(arg0);
     }
 
     public static final class Bounds {
-        private final android.view.WindowInsetsAnimation.Bounds real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Bounds(android.view.WindowInsetsAnimation.Bounds real) {
+        private final java.lang.Object real;
+
+        private Bounds(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds wrap(android.view.WindowInsetsAnimation.Bounds real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowInsetsAnimation.Bounds getReal() {
+            return (android.view.WindowInsetsAnimation.Bounds) real;
         }
 
         public android.view.WindowInsetsAnimation.Bounds unwrap() {
-            return real;
+            return getReal();
         }
 
         public Bounds(com.micklab.dcg.wrapper.android.graphics.Insets arg0, com.micklab.dcg.wrapper.android.graphics.Insets arg1) {
-            this(new android.view.WindowInsetsAnimation.Bounds(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            this(new android.view.WindowInsetsAnimation.Bounds(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Insets getLowerBound() {
-            return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(real.getLowerBound());
+            return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(((android.view.WindowInsetsAnimation.Bounds) real).getLowerBound());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Insets getUpperBound() {
-            return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(real.getUpperBound());
+            return com.micklab.dcg.wrapper.android.graphics.Insets.wrap(((android.view.WindowInsetsAnimation.Bounds) real).getUpperBound());
         }
 
         public com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds inset(com.micklab.dcg.wrapper.android.graphics.Insets arg0) {
-            return com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds.wrap(real.inset(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds.wrap(((android.view.WindowInsetsAnimation.Bounds) real).inset(arg0 == null ? null : arg0.getReal()));
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.view.WindowInsetsAnimation.Bounds) real).toString();
         }
 
     }
     public static final class Callback {
-        private final android.view.WindowInsetsAnimation.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.view.WindowInsetsAnimation.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Callback wrap(android.view.WindowInsetsAnimation.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowInsetsAnimation.Callback getReal() {
+            return (android.view.WindowInsetsAnimation.Callback) real;
         }
 
         public android.view.WindowInsetsAnimation.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getDispatchMode() {
-            return real.getDispatchMode();
+            return ((android.view.WindowInsetsAnimation.Callback) real).getDispatchMode();
         }
 
         public void onEnd(com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation arg0) {
-            real.onEnd(arg0 == null ? null : arg0.unwrap());
+            ((android.view.WindowInsetsAnimation.Callback) real).onEnd(arg0 == null ? null : arg0.getReal());
         }
 
         public void onPrepare(com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation arg0) {
-            real.onPrepare(arg0 == null ? null : arg0.unwrap());
+            ((android.view.WindowInsetsAnimation.Callback) real).onPrepare(arg0 == null ? null : arg0.getReal());
         }
 
         public com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds onStart(com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation arg0, com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds arg1) {
-            return com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds.wrap(real.onStart(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.WindowInsetsAnimation.Bounds.wrap(((android.view.WindowInsetsAnimation.Callback) real).onStart(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static final int DISPATCH_MODE_CONTINUE_ON_SUBTREE = android.view.WindowInsetsAnimation.Callback.DISPATCH_MODE_CONTINUE_ON_SUBTREE;

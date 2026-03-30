@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class SharedLibraryInfo {
-    private final android.content.pm.SharedLibraryInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SharedLibraryInfo(android.content.pm.SharedLibraryInfo real) {
+    private final java.lang.Object real;
+
+    private SharedLibraryInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.SharedLibraryInfo wrap(android.content.pm.SharedLibraryInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.SharedLibraryInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.SharedLibraryInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.SharedLibraryInfo getReal() {
+        return (android.content.pm.SharedLibraryInfo) real;
     }
 
     public android.content.pm.SharedLibraryInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

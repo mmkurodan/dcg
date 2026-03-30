@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class ServiceConnection {
-    private final android.content.ServiceConnection real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceConnection(android.content.ServiceConnection real) {
+    private final java.lang.Object real;
+
+    private ServiceConnection(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.ServiceConnection wrap(android.content.ServiceConnection real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ServiceConnection(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ServiceConnection(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.ServiceConnection getReal() {
+        return (android.content.ServiceConnection) real;
     }
 
     public android.content.ServiceConnection unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onBindingDied(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.onBindingDied(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ServiceConnection) real).onBindingDied(arg0 == null ? null : arg0.getReal());
     }
 
     public void onNullBinding(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.onNullBinding(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ServiceConnection) real).onNullBinding(arg0 == null ? null : arg0.getReal());
     }
 
     public void onServiceConnected(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.IBinder arg1) {
-        real.onServiceConnected(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.ServiceConnection) real).onServiceConnected(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void onServiceDisconnected(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.onServiceDisconnected(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ServiceConnection) real).onServiceDisconnected(arg0 == null ? null : arg0.getReal());
     }
 
 }

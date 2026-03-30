@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class UserManager {
-    private final android.os.UserManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UserManager(android.os.UserManager real) {
+    private final java.lang.Object real;
+
+    private UserManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.UserManager wrap(android.os.UserManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.UserManager getReal() {
+        return (android.os.UserManager) real;
     }
 
     public android.os.UserManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent createUserCreationIntent(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.PersistableBundle arg3) {
@@ -138,18 +145,25 @@ public final class UserManager {
 
 
     public static final class UserOperationException {
-        private final android.os.UserManager.UserOperationException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UserOperationException(android.os.UserManager.UserOperationException real) {
+        private final java.lang.Object real;
+
+        private UserOperationException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.UserManager.UserOperationException wrap(android.os.UserManager.UserOperationException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserManager.UserOperationException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserManager.UserOperationException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.UserManager.UserOperationException getReal() {
+            return (android.os.UserManager.UserOperationException) real;
         }
 
         public android.os.UserManager.UserOperationException unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getUserOperationResult() {

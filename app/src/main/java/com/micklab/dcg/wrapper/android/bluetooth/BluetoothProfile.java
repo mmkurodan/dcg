@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothProfile {
-    private final android.bluetooth.BluetoothProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothProfile(android.bluetooth.BluetoothProfile real) {
+    private final java.lang.Object real;
+
+    private BluetoothProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile wrap(android.bluetooth.BluetoothProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothProfile getReal() {
+        return (android.bluetooth.BluetoothProfile) real;
     }
 
     public android.bluetooth.BluetoothProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothProfile) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int A2DP = android.bluetooth.BluetoothProfile.A2DP;
@@ -39,26 +46,33 @@ public final class BluetoothProfile {
     public static final int STATE_DISCONNECTING = android.bluetooth.BluetoothProfile.STATE_DISCONNECTING;
 
     public static final class ServiceListener {
-        private final android.bluetooth.BluetoothProfile.ServiceListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ServiceListener(android.bluetooth.BluetoothProfile.ServiceListener real) {
+        private final java.lang.Object real;
+
+        private ServiceListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile.ServiceListener wrap(android.bluetooth.BluetoothProfile.ServiceListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile.ServiceListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile.ServiceListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothProfile.ServiceListener getReal() {
+            return (android.bluetooth.BluetoothProfile.ServiceListener) real;
         }
 
         public android.bluetooth.BluetoothProfile.ServiceListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onServiceConnected(int arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothProfile arg1) {
-            real.onServiceConnected(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.bluetooth.BluetoothProfile.ServiceListener) real).onServiceConnected(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void onServiceDisconnected(int arg0) {
-            real.onServiceDisconnected(arg0);
+            ((android.bluetooth.BluetoothProfile.ServiceListener) real).onServiceDisconnected(arg0);
         }
 
     }

@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.view.animation;
 
 public final class Transformation {
-    private final android.view.animation.Transformation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Transformation(android.view.animation.Transformation real) {
+    private final java.lang.Object real;
+
+    private Transformation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.animation.Transformation wrap(android.view.animation.Transformation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Transformation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Transformation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.animation.Transformation getReal() {
+        return (android.view.animation.Transformation) real;
     }
 
     public android.view.animation.Transformation unwrap() {
-        return real;
+        return getReal();
     }
 
     public Transformation() {
-        this(new android.view.animation.Transformation());
+        this(new android.view.animation.Transformation(), (__DcgwBridgeToken) null);
     }
 
     public void clear() {
-        real.clear();
+        ((android.view.animation.Transformation) real).clear();
     }
 
     public void compose(com.micklab.dcg.wrapper.android.view.animation.Transformation arg0) {
-        real.compose(arg0 == null ? null : arg0.unwrap());
+        ((android.view.animation.Transformation) real).compose(arg0 == null ? null : arg0.getReal());
     }
 
     public float getAlpha() {
-        return real.getAlpha();
+        return ((android.view.animation.Transformation) real).getAlpha();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Matrix getMatrix() {
-        return com.micklab.dcg.wrapper.android.graphics.Matrix.wrap(real.getMatrix());
+        return com.micklab.dcg.wrapper.android.graphics.Matrix.wrap(((android.view.animation.Transformation) real).getMatrix());
     }
 
     public int getTransformationType() {
-        return real.getTransformationType();
+        return ((android.view.animation.Transformation) real).getTransformationType();
     }
 
     public void set(com.micklab.dcg.wrapper.android.view.animation.Transformation arg0) {
-        real.set(arg0 == null ? null : arg0.unwrap());
+        ((android.view.animation.Transformation) real).set(arg0 == null ? null : arg0.getReal());
     }
 
     public void setAlpha(float arg0) {
-        real.setAlpha(arg0);
+        ((android.view.animation.Transformation) real).setAlpha(arg0);
     }
 
     public void setTransformationType(int arg0) {
-        real.setTransformationType(arg0);
+        ((android.view.animation.Transformation) real).setTransformationType(arg0);
     }
 
     public java.lang.String toShortString() {
-        return real.toShortString();
+        return ((android.view.animation.Transformation) real).toShortString();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.animation.Transformation) real).toString();
     }
 
     public static final int TYPE_ALPHA = android.view.animation.Transformation.TYPE_ALPHA;

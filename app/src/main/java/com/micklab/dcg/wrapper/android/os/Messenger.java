@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Messenger {
-    private final android.os.Messenger real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Messenger(android.os.Messenger real) {
+    private final java.lang.Object real;
+
+    private Messenger(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Messenger wrap(android.os.Messenger real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Messenger(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Messenger(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Messenger getReal() {
+        return (android.os.Messenger) real;
     }
 
     public android.os.Messenger unwrap() {
-        return real;
+        return getReal();
     }
 
     public Messenger(com.micklab.dcg.wrapper.android.os.Handler arg0) {

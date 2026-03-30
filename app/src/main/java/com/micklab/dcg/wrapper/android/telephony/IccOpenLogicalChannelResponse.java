@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class IccOpenLogicalChannelResponse {
-    private final android.telephony.IccOpenLogicalChannelResponse real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IccOpenLogicalChannelResponse(android.telephony.IccOpenLogicalChannelResponse real) {
+    private final java.lang.Object real;
+
+    private IccOpenLogicalChannelResponse(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.IccOpenLogicalChannelResponse wrap(android.telephony.IccOpenLogicalChannelResponse real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.IccOpenLogicalChannelResponse(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.IccOpenLogicalChannelResponse(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.IccOpenLogicalChannelResponse getReal() {
+        return (android.telephony.IccOpenLogicalChannelResponse) real;
     }
 
     public android.telephony.IccOpenLogicalChannelResponse unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

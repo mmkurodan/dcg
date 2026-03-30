@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class WorkSource {
-    private final android.os.WorkSource real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WorkSource(android.os.WorkSource real) {
+    private final java.lang.Object real;
+
+    private WorkSource(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.WorkSource wrap(android.os.WorkSource real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.WorkSource(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.WorkSource(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.WorkSource getReal() {
+        return (android.os.WorkSource) real;
     }
 
     public android.os.WorkSource unwrap() {
-        return real;
+        return getReal();
     }
 
     public WorkSource() {

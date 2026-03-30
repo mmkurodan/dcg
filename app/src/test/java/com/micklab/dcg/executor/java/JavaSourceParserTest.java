@@ -40,6 +40,27 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationRewritesAndroidGraphicsWildcardImport() {
+        String source = "import android.graphics.*;\n"
+                + "public class HelloJava {\n"
+                + "  public static String run() {\n"
+                + "    Bitmap bmp = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);\n"
+                + "    Canvas canvas = new Canvas(bmp);\n"
+                + "    Paint paint = new Paint();\n"
+                + "    paint.setColor(Color.RED);\n"
+                + "    canvas.drawRect(0, 0, 1, 1, paint);\n"
+                + "    return \"ok\";\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.graphics.*;"));
+        assertTrue(prepared.hadAndroidReferences());
+        assertTrue(prepared.getRewriteCount() > 0);
+    }
+
+    @Test
     public void prepareForCompilationLeavesNonAndroidSourceUntouched() {
         String source = "public class HelloJava {\n"
                 + "  public static String run() {\n"

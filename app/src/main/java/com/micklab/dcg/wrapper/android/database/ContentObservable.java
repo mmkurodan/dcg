@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class ContentObservable {
-    private final android.database.ContentObservable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ContentObservable(android.database.ContentObservable real) {
+    private final java.lang.Object real;
+
+    private ContentObservable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.ContentObservable wrap(android.database.ContentObservable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.ContentObservable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.ContentObservable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.ContentObservable getReal() {
+        return (android.database.ContentObservable) real;
     }
 
     public android.database.ContentObservable unwrap() {
-        return real;
+        return getReal();
     }
 
     public ContentObservable() {

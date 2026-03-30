@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.adservices.topics;
 
 public final class EncryptedTopic {
-    private final android.adservices.topics.EncryptedTopic real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EncryptedTopic(android.adservices.topics.EncryptedTopic real) {
+    private final java.lang.Object real;
+
+    private EncryptedTopic(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.topics.EncryptedTopic wrap(android.adservices.topics.EncryptedTopic real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.topics.EncryptedTopic(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.topics.EncryptedTopic(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.topics.EncryptedTopic getReal() {
+        return (android.adservices.topics.EncryptedTopic) real;
     }
 
     public android.adservices.topics.EncryptedTopic unwrap() {
-        return real;
+        return getReal();
     }
 
     public EncryptedTopic(byte[] arg0, java.lang.String arg1, byte[] arg2) {
-        this(new android.adservices.topics.EncryptedTopic(arg0, arg1, arg2));
+        this(new android.adservices.topics.EncryptedTopic(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.topics.EncryptedTopic) real).equals(arg0);
     }
 
     public byte[] getEncapsulatedKey() {
-        return real.getEncapsulatedKey();
+        return ((android.adservices.topics.EncryptedTopic) real).getEncapsulatedKey();
     }
 
     public byte[] getEncryptedTopic() {
-        return real.getEncryptedTopic();
+        return ((android.adservices.topics.EncryptedTopic) real).getEncryptedTopic();
     }
 
     public java.lang.String getKeyIdentifier() {
-        return real.getKeyIdentifier();
+        return ((android.adservices.topics.EncryptedTopic) real).getKeyIdentifier();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.topics.EncryptedTopic) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.adservices.topics.EncryptedTopic) real).toString();
     }
 
 }

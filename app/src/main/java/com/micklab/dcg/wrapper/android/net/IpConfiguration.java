@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpConfiguration {
-    private final android.net.IpConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpConfiguration(android.net.IpConfiguration real) {
+    private final java.lang.Object real;
+
+    private IpConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpConfiguration wrap(android.net.IpConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpConfiguration getReal() {
+        return (android.net.IpConfiguration) real;
     }
 
     public android.net.IpConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -46,18 +53,25 @@ public final class IpConfiguration {
 
 
     public static final class Builder {
-        private final android.net.IpConfiguration.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.IpConfiguration.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpConfiguration.Builder wrap(android.net.IpConfiguration.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpConfiguration.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpConfiguration.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpConfiguration.Builder getReal() {
+            return (android.net.IpConfiguration.Builder) real;
         }
 
         public android.net.IpConfiguration.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.renderscript;
 
 public final class RSIllegalArgumentException {
-    private final android.renderscript.RSIllegalArgumentException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RSIllegalArgumentException(android.renderscript.RSIllegalArgumentException real) {
+    private final java.lang.Object real;
+
+    private RSIllegalArgumentException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.RSIllegalArgumentException wrap(android.renderscript.RSIllegalArgumentException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RSIllegalArgumentException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.RSIllegalArgumentException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.renderscript.RSIllegalArgumentException getReal() {
+        return (android.renderscript.RSIllegalArgumentException) real;
     }
 
     public android.renderscript.RSIllegalArgumentException unwrap() {
-        return real;
+        return getReal();
     }
 
     public RSIllegalArgumentException(java.lang.String arg0) {
-        this(new android.renderscript.RSIllegalArgumentException(arg0));
+        this(new android.renderscript.RSIllegalArgumentException(arg0), (__DcgwBridgeToken) null);
     }
 
 }

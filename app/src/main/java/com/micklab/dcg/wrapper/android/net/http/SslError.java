@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class SslError {
-    private final android.net.http.SslError real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SslError(android.net.http.SslError real) {
+    private final java.lang.Object real;
+
+    private SslError(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.SslError wrap(android.net.http.SslError real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.SslError(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.SslError(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.SslError getReal() {
+        return (android.net.http.SslError) real;
     }
 
     public android.net.http.SslError unwrap() {
-        return real;
+        return getReal();
     }
 
     public SslError(int arg0, java.security.cert.X509Certificate arg1) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class Ikev2VpnProfile {
-    private final android.net.Ikev2VpnProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Ikev2VpnProfile(android.net.Ikev2VpnProfile real) {
+    private final java.lang.Object real;
+
+    private Ikev2VpnProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile wrap(android.net.Ikev2VpnProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.Ikev2VpnProfile getReal() {
+        return (android.net.Ikev2VpnProfile) real;
     }
 
     public android.net.Ikev2VpnProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -89,18 +96,25 @@ public final class Ikev2VpnProfile {
     }
 
     public static final class Builder {
-        private final android.net.Ikev2VpnProfile.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.Ikev2VpnProfile.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile.Builder wrap(android.net.Ikev2VpnProfile.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.Ikev2VpnProfile.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.Ikev2VpnProfile.Builder getReal() {
+            return (android.net.Ikev2VpnProfile.Builder) real;
         }
 
         public android.net.Ikev2VpnProfile.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTunnelConnectionParams arg0) {

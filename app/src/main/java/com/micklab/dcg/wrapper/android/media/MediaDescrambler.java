@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaDescrambler {
-    private final android.media.MediaDescrambler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaDescrambler(android.media.MediaDescrambler real) {
+    private final java.lang.Object real;
+
+    private MediaDescrambler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaDescrambler wrap(android.media.MediaDescrambler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescrambler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescrambler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaDescrambler getReal() {
+        return (android.media.MediaDescrambler) real;
     }
 
     public android.media.MediaDescrambler unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaDescrambler(int arg0) throws android.media.MediaCasException.UnsupportedCasException {
-        this(new android.media.MediaDescrambler(arg0));
+        this(new android.media.MediaDescrambler(arg0), (__DcgwBridgeToken) null);
     }
 
     public void close() {
-        real.close();
+        ((android.media.MediaDescrambler) real).close();
     }
 
     public int descramble(java.nio.ByteBuffer arg0, java.nio.ByteBuffer arg1, com.micklab.dcg.wrapper.android.media.MediaCodec.CryptoInfo arg2) {
-        return real.descramble(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.media.MediaDescrambler) real).descramble(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean requiresSecureDecoderComponent(java.lang.String arg0) {
-        return real.requiresSecureDecoderComponent(arg0);
+        return ((android.media.MediaDescrambler) real).requiresSecureDecoderComponent(arg0);
     }
 
     public void setMediaCasSession(android.media.MediaCas.Session arg0) {
-        real.setMediaCasSession(arg0);
+        ((android.media.MediaDescrambler) real).setMediaCasSession(arg0);
     }
 
     public static final byte SCRAMBLE_CONTROL_EVEN_KEY = android.media.MediaDescrambler.SCRAMBLE_CONTROL_EVEN_KEY;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.health;
 
 public final class SystemHealthManager {
-    private final android.os.health.SystemHealthManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SystemHealthManager(android.os.health.SystemHealthManager real) {
+    private final java.lang.Object real;
+
+    private SystemHealthManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.health.SystemHealthManager wrap(android.os.health.SystemHealthManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.SystemHealthManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.SystemHealthManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.health.SystemHealthManager getReal() {
+        return (android.os.health.SystemHealthManager) real;
     }
 
     public android.os.health.SystemHealthManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.health.HealthStats takeMyUidSnapshot() {

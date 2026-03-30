@@ -2,138 +2,145 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class AbsSeekBar {
-    private final android.widget.AbsSeekBar real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AbsSeekBar(android.widget.AbsSeekBar real) {
+    private final java.lang.Object real;
+
+    private AbsSeekBar(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.AbsSeekBar wrap(android.widget.AbsSeekBar real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.AbsSeekBar(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.AbsSeekBar(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.AbsSeekBar getReal() {
+        return (android.widget.AbsSeekBar) real;
     }
 
     public android.widget.AbsSeekBar unwrap() {
-        return real;
+        return getReal();
     }
 
     public void drawableHotspotChanged(float arg0, float arg1) {
-        real.drawableHotspotChanged(arg0, arg1);
+        ((android.widget.AbsSeekBar) real).drawableHotspotChanged(arg0, arg1);
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.AbsSeekBar) real).getAccessibilityClassName();
     }
 
     public int getKeyProgressIncrement() {
-        return real.getKeyProgressIncrement();
+        return ((android.widget.AbsSeekBar) real).getKeyProgressIncrement();
     }
 
     public boolean getSplitTrack() {
-        return real.getSplitTrack();
+        return ((android.widget.AbsSeekBar) real).getSplitTrack();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getThumb() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getThumb());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.AbsSeekBar) real).getThumb());
     }
 
     public int getThumbOffset() {
-        return real.getThumbOffset();
+        return ((android.widget.AbsSeekBar) real).getThumbOffset();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getThumbTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getThumbTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.AbsSeekBar) real).getThumbTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getThumbTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getThumbTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.AbsSeekBar) real).getThumbTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getThumbTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getThumbTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.AbsSeekBar) real).getThumbTintMode());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getTickMark() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getTickMark());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.AbsSeekBar) real).getTickMark());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getTickMarkTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getTickMarkTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.AbsSeekBar) real).getTickMarkTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getTickMarkTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getTickMarkTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.AbsSeekBar) real).getTickMarkTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getTickMarkTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getTickMarkTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.AbsSeekBar) real).getTickMarkTintMode());
     }
 
     public void jumpDrawablesToCurrentState() {
-        real.jumpDrawablesToCurrentState();
+        ((android.widget.AbsSeekBar) real).jumpDrawablesToCurrentState();
     }
 
     public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.AbsSeekBar) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void onRtlPropertiesChanged(int arg0) {
-        real.onRtlPropertiesChanged(arg0);
+        ((android.widget.AbsSeekBar) real).onRtlPropertiesChanged(arg0);
     }
 
     public boolean onTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.AbsSeekBar) real).onTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void setKeyProgressIncrement(int arg0) {
-        real.setKeyProgressIncrement(arg0);
+        ((android.widget.AbsSeekBar) real).setKeyProgressIncrement(arg0);
     }
 
     public void setMax(int arg0) {
-        real.setMax(arg0);
+        ((android.widget.AbsSeekBar) real).setMax(arg0);
     }
 
     public void setMin(int arg0) {
-        real.setMin(arg0);
+        ((android.widget.AbsSeekBar) real).setMin(arg0);
     }
 
     public void setSplitTrack(boolean arg0) {
-        real.setSplitTrack(arg0);
+        ((android.widget.AbsSeekBar) real).setSplitTrack(arg0);
     }
 
     public void setThumb(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setThumb(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setThumb(arg0 == null ? null : arg0.getReal());
     }
 
     public void setThumbOffset(int arg0) {
-        real.setThumbOffset(arg0);
+        ((android.widget.AbsSeekBar) real).setThumbOffset(arg0);
     }
 
     public void setThumbTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setThumbTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setThumbTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setThumbTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setThumbTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setThumbTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setThumbTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setThumbTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setThumbTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTickMark(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setTickMark(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setTickMark(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTickMarkTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setTickMarkTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setTickMarkTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTickMarkTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setTickMarkTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setTickMarkTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTickMarkTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setTickMarkTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AbsSeekBar) real).setTickMarkTintMode(arg0 == null ? null : arg0.getReal());
     }
 
 }

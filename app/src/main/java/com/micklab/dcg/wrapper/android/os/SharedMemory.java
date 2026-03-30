@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class SharedMemory {
-    private final android.os.SharedMemory real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SharedMemory(android.os.SharedMemory real) {
+    private final java.lang.Object real;
+
+    private SharedMemory(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.SharedMemory wrap(android.os.SharedMemory real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.SharedMemory(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.SharedMemory(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.SharedMemory getReal() {
+        return (android.os.SharedMemory) real;
     }
 
     public android.os.SharedMemory unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {

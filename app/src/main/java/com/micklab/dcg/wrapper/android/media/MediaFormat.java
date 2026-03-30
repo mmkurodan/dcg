@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaFormat {
-    private final android.media.MediaFormat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaFormat(android.media.MediaFormat real) {
+    private final java.lang.Object real;
+
+    private MediaFormat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaFormat wrap(android.media.MediaFormat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaFormat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaFormat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaFormat getReal() {
+        return (android.media.MediaFormat) real;
     }
 
     public android.media.MediaFormat unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaFormat() {
-        this(new android.media.MediaFormat());
+        this(new android.media.MediaFormat(), (__DcgwBridgeToken) null);
     }
 
     public MediaFormat(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
-        this(new android.media.MediaFormat(arg0 == null ? null : arg0.unwrap()));
+        this(new android.media.MediaFormat(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public boolean containsFeature(java.lang.String arg0) {
-        return real.containsFeature(arg0);
+        return ((android.media.MediaFormat) real).containsFeature(arg0);
     }
 
     public boolean containsKey(java.lang.String arg0) {
-        return real.containsKey(arg0);
+        return ((android.media.MediaFormat) real).containsKey(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaFormat createAudioFormat(java.lang.String arg0, int arg1, int arg2) {
@@ -45,95 +52,95 @@ public final class MediaFormat {
     }
 
     public java.nio.ByteBuffer getByteBuffer(java.lang.String arg0) {
-        return real.getByteBuffer(arg0);
+        return ((android.media.MediaFormat) real).getByteBuffer(arg0);
     }
 
     public java.nio.ByteBuffer getByteBuffer(java.lang.String arg0, java.nio.ByteBuffer arg1) {
-        return real.getByteBuffer(arg0, arg1);
+        return ((android.media.MediaFormat) real).getByteBuffer(arg0, arg1);
     }
 
     public boolean getFeatureEnabled(java.lang.String arg0) {
-        return real.getFeatureEnabled(arg0);
+        return ((android.media.MediaFormat) real).getFeatureEnabled(arg0);
     }
 
     public float getFloat(java.lang.String arg0) {
-        return real.getFloat(arg0);
+        return ((android.media.MediaFormat) real).getFloat(arg0);
     }
 
     public float getFloat(java.lang.String arg0, float arg1) {
-        return real.getFloat(arg0, arg1);
+        return ((android.media.MediaFormat) real).getFloat(arg0, arg1);
     }
 
     public int getInteger(java.lang.String arg0) {
-        return real.getInteger(arg0);
+        return ((android.media.MediaFormat) real).getInteger(arg0);
     }
 
     public int getInteger(java.lang.String arg0, int arg1) {
-        return real.getInteger(arg0, arg1);
+        return ((android.media.MediaFormat) real).getInteger(arg0, arg1);
     }
 
     public long getLong(java.lang.String arg0) {
-        return real.getLong(arg0);
+        return ((android.media.MediaFormat) real).getLong(arg0);
     }
 
     public long getLong(java.lang.String arg0, long arg1) {
-        return real.getLong(arg0, arg1);
+        return ((android.media.MediaFormat) real).getLong(arg0, arg1);
     }
 
     public java.lang.Number getNumber(java.lang.String arg0) {
-        return real.getNumber(arg0);
+        return ((android.media.MediaFormat) real).getNumber(arg0);
     }
 
     public java.lang.Number getNumber(java.lang.String arg0, java.lang.Number arg1) {
-        return real.getNumber(arg0, arg1);
+        return ((android.media.MediaFormat) real).getNumber(arg0, arg1);
     }
 
     public java.lang.String getString(java.lang.String arg0) {
-        return real.getString(arg0);
+        return ((android.media.MediaFormat) real).getString(arg0);
     }
 
     public java.lang.String getString(java.lang.String arg0, java.lang.String arg1) {
-        return real.getString(arg0, arg1);
+        return ((android.media.MediaFormat) real).getString(arg0, arg1);
     }
 
     public int getValueTypeForKey(java.lang.String arg0) {
-        return real.getValueTypeForKey(arg0);
+        return ((android.media.MediaFormat) real).getValueTypeForKey(arg0);
     }
 
     public void removeFeature(java.lang.String arg0) {
-        real.removeFeature(arg0);
+        ((android.media.MediaFormat) real).removeFeature(arg0);
     }
 
     public void removeKey(java.lang.String arg0) {
-        real.removeKey(arg0);
+        ((android.media.MediaFormat) real).removeKey(arg0);
     }
 
     public void setByteBuffer(java.lang.String arg0, java.nio.ByteBuffer arg1) {
-        real.setByteBuffer(arg0, arg1);
+        ((android.media.MediaFormat) real).setByteBuffer(arg0, arg1);
     }
 
     public void setFeatureEnabled(java.lang.String arg0, boolean arg1) {
-        real.setFeatureEnabled(arg0, arg1);
+        ((android.media.MediaFormat) real).setFeatureEnabled(arg0, arg1);
     }
 
     public void setFloat(java.lang.String arg0, float arg1) {
-        real.setFloat(arg0, arg1);
+        ((android.media.MediaFormat) real).setFloat(arg0, arg1);
     }
 
     public void setInteger(java.lang.String arg0, int arg1) {
-        real.setInteger(arg0, arg1);
+        ((android.media.MediaFormat) real).setInteger(arg0, arg1);
     }
 
     public void setLong(java.lang.String arg0, long arg1) {
-        real.setLong(arg0, arg1);
+        ((android.media.MediaFormat) real).setLong(arg0, arg1);
     }
 
     public void setString(java.lang.String arg0, java.lang.String arg1) {
-        real.setString(arg0, arg1);
+        ((android.media.MediaFormat) real).setString(arg0, arg1);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.MediaFormat) real).toString();
     }
 
     public static final int COLOR_RANGE_FULL = android.media.MediaFormat.COLOR_RANGE_FULL;
@@ -309,30 +316,37 @@ public final class MediaFormat {
     public static final int VIDEO_ENCODING_STATISTICS_LEVEL_NONE = android.media.MediaFormat.VIDEO_ENCODING_STATISTICS_LEVEL_NONE;
 
     public static final class QpOffsetRect {
-        private final android.media.MediaFormat.QpOffsetRect real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public QpOffsetRect(android.media.MediaFormat.QpOffsetRect real) {
+        private final java.lang.Object real;
+
+        private QpOffsetRect(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaFormat.QpOffsetRect wrap(android.media.MediaFormat.QpOffsetRect real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaFormat.QpOffsetRect(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaFormat.QpOffsetRect(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaFormat.QpOffsetRect getReal() {
+            return (android.media.MediaFormat.QpOffsetRect) real;
         }
 
         public android.media.MediaFormat.QpOffsetRect unwrap() {
-            return real;
+            return getReal();
         }
 
         public QpOffsetRect(com.micklab.dcg.wrapper.android.graphics.Rect arg0, int arg1) {
-            this(new android.media.MediaFormat.QpOffsetRect(arg0 == null ? null : arg0.unwrap(), arg1));
+            this(new android.media.MediaFormat.QpOffsetRect(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
         }
 
         public java.lang.String flattenToString() {
-            return real.flattenToString();
+            return ((android.media.MediaFormat.QpOffsetRect) real).flattenToString();
         }
 
         public void set(com.micklab.dcg.wrapper.android.graphics.Rect arg0, int arg1) {
-            real.set(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.MediaFormat.QpOffsetRect) real).set(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }

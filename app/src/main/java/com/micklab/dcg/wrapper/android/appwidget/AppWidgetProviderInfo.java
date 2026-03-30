@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.appwidget;
 
 public final class AppWidgetProviderInfo {
-    private final android.appwidget.AppWidgetProviderInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppWidgetProviderInfo(android.appwidget.AppWidgetProviderInfo real) {
+    private final java.lang.Object real;
+
+    private AppWidgetProviderInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo wrap(android.appwidget.AppWidgetProviderInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.appwidget.AppWidgetProviderInfo getReal() {
+        return (android.appwidget.AppWidgetProviderInfo) real;
     }
 
     public android.appwidget.AppWidgetProviderInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public AppWidgetProviderInfo() {
-        this(new android.appwidget.AppWidgetProviderInfo());
+        this(new android.appwidget.AppWidgetProviderInfo(), (__DcgwBridgeToken) null);
     }
 
     public AppWidgetProviderInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.appwidget.AppWidgetProviderInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.appwidget.AppWidgetProviderInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo clone() {
-        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo.wrap(((android.appwidget.AppWidgetProviderInfo) real).clone());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.appwidget.AppWidgetProviderInfo) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ActivityInfo getActivityInfo() {
-        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(real.getActivityInfo());
+        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(((android.appwidget.AppWidgetProviderInfo) real).getActivityInfo());
     }
 
     public com.micklab.dcg.wrapper.android.os.UserHandle getProfile() {
@@ -41,27 +48,27 @@ public final class AppWidgetProviderInfo {
     }
 
     public java.lang.CharSequence loadDescription(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return real.loadDescription(arg0 == null ? null : arg0.unwrap());
+        return ((android.appwidget.AppWidgetProviderInfo) real).loadDescription(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable loadIcon(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.loadIcon(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.appwidget.AppWidgetProviderInfo) real).loadIcon(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public java.lang.String loadLabel(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return real.loadLabel(arg0 == null ? null : arg0.unwrap());
+        return ((android.appwidget.AppWidgetProviderInfo) real).loadLabel(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable loadPreviewImage(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.loadPreviewImage(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.appwidget.AppWidgetProviderInfo) real).loadPreviewImage(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.appwidget.AppWidgetProviderInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.appwidget.AppWidgetProviderInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int RESIZE_BOTH = android.appwidget.AppWidgetProviderInfo.RESIZE_BOTH;

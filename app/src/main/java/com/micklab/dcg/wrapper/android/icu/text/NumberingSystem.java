@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class NumberingSystem {
-    private final android.icu.text.NumberingSystem real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NumberingSystem(android.icu.text.NumberingSystem real) {
+    private final java.lang.Object real;
+
+    private NumberingSystem(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberingSystem wrap(android.icu.text.NumberingSystem real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberingSystem(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberingSystem(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.NumberingSystem getReal() {
+        return (android.icu.text.NumberingSystem) real;
     }
 
     public android.icu.text.NumberingSystem unwrap() {
-        return real;
+        return getReal();
     }
 
     public NumberingSystem() {
-        this(new android.icu.text.NumberingSystem());
+        this(new android.icu.text.NumberingSystem(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String[] getAvailableNames() {
@@ -25,7 +32,7 @@ public final class NumberingSystem {
     }
 
     public java.lang.String getDescription() {
-        return real.getDescription();
+        return ((android.icu.text.NumberingSystem) real).getDescription();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberingSystem getInstance() {
@@ -37,7 +44,7 @@ public final class NumberingSystem {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberingSystem getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberingSystem.wrap(android.icu.text.NumberingSystem.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberingSystem.wrap(android.icu.text.NumberingSystem.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberingSystem getInstance(int arg0, boolean arg1, java.lang.String arg2) {
@@ -49,15 +56,15 @@ public final class NumberingSystem {
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.icu.text.NumberingSystem) real).getName();
     }
 
     public int getRadix() {
-        return real.getRadix();
+        return ((android.icu.text.NumberingSystem) real).getRadix();
     }
 
     public boolean isAlgorithmic() {
-        return real.isAlgorithmic();
+        return ((android.icu.text.NumberingSystem) real).isAlgorithmic();
     }
 
     public static boolean isValidDigitString(java.lang.String arg0) {

@@ -2,86 +2,93 @@
 package com.micklab.dcg.wrapper.android.content.res;
 
 public final class Configuration {
-    private final android.content.res.Configuration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Configuration(android.content.res.Configuration real) {
+    private final java.lang.Object real;
+
+    private Configuration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.res.Configuration wrap(android.content.res.Configuration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.Configuration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.Configuration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.res.Configuration getReal() {
+        return (android.content.res.Configuration) real;
     }
 
     public android.content.res.Configuration unwrap() {
-        return real;
+        return getReal();
     }
 
     public Configuration() {
-        this(new android.content.res.Configuration());
+        this(new android.content.res.Configuration(), (__DcgwBridgeToken) null);
     }
 
     public Configuration(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        this(new android.content.res.Configuration(arg0 == null ? null : arg0.unwrap()));
+        this(new android.content.res.Configuration(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.res.Configuration) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.content.res.Configuration) real).describeContents();
     }
 
     public int diff(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        return real.diff(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.res.Configuration) real).diff(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.content.res.Configuration) real).equals(arg0);
     }
 
     public boolean equals(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        return real.equals(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.res.Configuration) real).equals(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.content.res.Configuration generateDelta(com.micklab.dcg.wrapper.android.content.res.Configuration arg0, com.micklab.dcg.wrapper.android.content.res.Configuration arg1) {
-        return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(android.content.res.Configuration.generateDelta(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(android.content.res.Configuration.generateDelta(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public int getGrammaticalGender() {
-        return real.getGrammaticalGender();
+        return ((android.content.res.Configuration) real).getGrammaticalGender();
     }
 
     public int getLayoutDirection() {
-        return real.getLayoutDirection();
+        return ((android.content.res.Configuration) real).getLayoutDirection();
     }
 
     public com.micklab.dcg.wrapper.android.os.LocaleList getLocales() {
-        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(real.getLocales());
+        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(((android.content.res.Configuration) real).getLocales());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.content.res.Configuration) real).hashCode();
     }
 
     public boolean isLayoutSizeAtLeast(int arg0) {
-        return real.isLayoutSizeAtLeast(arg0);
+        return ((android.content.res.Configuration) real).isLayoutSizeAtLeast(arg0);
     }
 
     public boolean isNightModeActive() {
-        return real.isNightModeActive();
+        return ((android.content.res.Configuration) real).isNightModeActive();
     }
 
     public boolean isScreenHdr() {
-        return real.isScreenHdr();
+        return ((android.content.res.Configuration) real).isScreenHdr();
     }
 
     public boolean isScreenRound() {
-        return real.isScreenRound();
+        return ((android.content.res.Configuration) real).isScreenRound();
     }
 
     public boolean isScreenWideColorGamut() {
-        return real.isScreenWideColorGamut();
+        return ((android.content.res.Configuration) real).isScreenWideColorGamut();
     }
 
     public static boolean needNewResources(int arg0, int arg1) {
@@ -89,39 +96,39 @@ public final class Configuration {
     }
 
     public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+        ((android.content.res.Configuration) real).readFromParcel(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLayoutDirection(java.util.Locale arg0) {
-        real.setLayoutDirection(arg0);
+        ((android.content.res.Configuration) real).setLayoutDirection(arg0);
     }
 
     public void setLocale(java.util.Locale arg0) {
-        real.setLocale(arg0);
+        ((android.content.res.Configuration) real).setLocale(arg0);
     }
 
     public void setLocales(com.micklab.dcg.wrapper.android.os.LocaleList arg0) {
-        real.setLocales(arg0 == null ? null : arg0.unwrap());
+        ((android.content.res.Configuration) real).setLocales(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTo(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        real.setTo(arg0 == null ? null : arg0.unwrap());
+        ((android.content.res.Configuration) real).setTo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setToDefaults() {
-        real.setToDefaults();
+        ((android.content.res.Configuration) real).setToDefaults();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.res.Configuration) real).toString();
     }
 
     public int updateFrom(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        return real.updateFrom(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.res.Configuration) real).updateFrom(arg0 == null ? null : arg0.getReal());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.res.Configuration) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int COLOR_MODE_HDR_MASK = android.content.res.Configuration.COLOR_MODE_HDR_MASK;

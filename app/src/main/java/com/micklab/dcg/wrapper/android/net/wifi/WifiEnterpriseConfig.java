@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiEnterpriseConfig {
-    private final android.net.wifi.WifiEnterpriseConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiEnterpriseConfig(android.net.wifi.WifiEnterpriseConfig real) {
+    private final java.lang.Object real;
+
+    private WifiEnterpriseConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig wrap(android.net.wifi.WifiEnterpriseConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiEnterpriseConfig getReal() {
+        return (android.net.wifi.WifiEnterpriseConfig) real;
     }
 
     public android.net.wifi.WifiEnterpriseConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public WifiEnterpriseConfig() {
@@ -202,35 +209,49 @@ public final class WifiEnterpriseConfig {
 
 
     public static final class Eap {
-        private final android.net.wifi.WifiEnterpriseConfig.Eap real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Eap(android.net.wifi.WifiEnterpriseConfig.Eap real) {
+        private final java.lang.Object real;
+
+        private Eap(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Eap wrap(android.net.wifi.WifiEnterpriseConfig.Eap real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Eap(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Eap(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiEnterpriseConfig.Eap getReal() {
+            return (android.net.wifi.WifiEnterpriseConfig.Eap) real;
         }
 
         public android.net.wifi.WifiEnterpriseConfig.Eap unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class Phase2 {
-        private final android.net.wifi.WifiEnterpriseConfig.Phase2 real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Phase2(android.net.wifi.WifiEnterpriseConfig.Phase2 real) {
+        private final java.lang.Object real;
+
+        private Phase2(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Phase2 wrap(android.net.wifi.WifiEnterpriseConfig.Phase2 real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Phase2(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiEnterpriseConfig.Phase2(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiEnterpriseConfig.Phase2 getReal() {
+            return (android.net.wifi.WifiEnterpriseConfig.Phase2) real;
         }
 
         public android.net.wifi.WifiEnterpriseConfig.Phase2 unwrap() {
-            return real;
+            return getReal();
         }
 
 

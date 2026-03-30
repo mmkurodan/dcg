@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class AttachCallback {
-    private final android.net.wifi.aware.AttachCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AttachCallback(android.net.wifi.aware.AttachCallback real) {
+    private final java.lang.Object real;
+
+    private AttachCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.AttachCallback wrap(android.net.wifi.aware.AttachCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.AttachCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.AttachCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.AttachCallback getReal() {
+        return (android.net.wifi.aware.AttachCallback) real;
     }
 
     public android.net.wifi.aware.AttachCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public AttachCallback() {

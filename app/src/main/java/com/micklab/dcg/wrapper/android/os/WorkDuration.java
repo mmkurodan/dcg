@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class WorkDuration {
-    private final android.os.WorkDuration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WorkDuration(android.os.WorkDuration real) {
+    private final java.lang.Object real;
+
+    private WorkDuration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.WorkDuration wrap(android.os.WorkDuration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.WorkDuration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.WorkDuration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.WorkDuration getReal() {
+        return (android.os.WorkDuration) real;
     }
 
     public android.os.WorkDuration unwrap() {
-        return real;
+        return getReal();
     }
 
     public WorkDuration() {

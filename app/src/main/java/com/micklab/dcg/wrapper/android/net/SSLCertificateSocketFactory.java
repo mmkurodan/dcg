@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class SSLCertificateSocketFactory {
-    private final android.net.SSLCertificateSocketFactory real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SSLCertificateSocketFactory(android.net.SSLCertificateSocketFactory real) {
+    private final java.lang.Object real;
+
+    private SSLCertificateSocketFactory(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.SSLCertificateSocketFactory wrap(android.net.SSLCertificateSocketFactory real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SSLCertificateSocketFactory(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SSLCertificateSocketFactory(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.SSLCertificateSocketFactory getReal() {
+        return (android.net.SSLCertificateSocketFactory) real;
     }
 
     public android.net.SSLCertificateSocketFactory unwrap() {
-        return real;
+        return getReal();
     }
 
     public SSLCertificateSocketFactory(int arg0) {

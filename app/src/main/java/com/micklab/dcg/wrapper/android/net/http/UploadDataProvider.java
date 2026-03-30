@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class UploadDataProvider {
-    private final android.net.http.UploadDataProvider real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UploadDataProvider(android.net.http.UploadDataProvider real) {
+    private final java.lang.Object real;
+
+    private UploadDataProvider(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.UploadDataProvider wrap(android.net.http.UploadDataProvider real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UploadDataProvider(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UploadDataProvider(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.UploadDataProvider getReal() {
+        return (android.net.http.UploadDataProvider) real;
     }
 
     public android.net.http.UploadDataProvider unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() throws java.io.IOException {

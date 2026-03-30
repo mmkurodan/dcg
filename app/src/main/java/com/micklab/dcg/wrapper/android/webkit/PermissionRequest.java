@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class PermissionRequest {
-    private final android.webkit.PermissionRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PermissionRequest(android.webkit.PermissionRequest real) {
+    private final java.lang.Object real;
+
+    private PermissionRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.PermissionRequest wrap(android.webkit.PermissionRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.PermissionRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.PermissionRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.PermissionRequest getReal() {
+        return (android.webkit.PermissionRequest) real;
     }
 
     public android.webkit.PermissionRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public void deny() {
-        real.deny();
+        ((android.webkit.PermissionRequest) real).deny();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getOrigin() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getOrigin());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.webkit.PermissionRequest) real).getOrigin());
     }
 
     public java.lang.String[] getResources() {
-        return real.getResources();
+        return ((android.webkit.PermissionRequest) real).getResources();
     }
 
     public void grant(java.lang.String[] arg0) {
-        real.grant(arg0);
+        ((android.webkit.PermissionRequest) real).grant(arg0);
     }
 
     public static final java.lang.String RESOURCE_AUDIO_CAPTURE = android.webkit.PermissionRequest.RESOURCE_AUDIO_CAPTURE;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class InetAddresses {
-    private final android.net.InetAddresses real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InetAddresses(android.net.InetAddresses real) {
+    private final java.lang.Object real;
+
+    private InetAddresses(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.InetAddresses wrap(android.net.InetAddresses real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.InetAddresses(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.InetAddresses(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.InetAddresses getReal() {
+        return (android.net.InetAddresses) real;
     }
 
     public android.net.InetAddresses unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean isNumericAddress(java.lang.String arg0) {

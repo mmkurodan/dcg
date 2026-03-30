@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.drm;
 
 public final class DrmEvent {
-    private final android.drm.DrmEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DrmEvent(android.drm.DrmEvent real) {
+    private final java.lang.Object real;
+
+    private DrmEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.drm.DrmEvent wrap(android.drm.DrmEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.drm.DrmEvent getReal() {
+        return (android.drm.DrmEvent) real;
     }
 
     public android.drm.DrmEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object getAttribute(java.lang.String arg0) {
-        return real.getAttribute(arg0);
+        return ((android.drm.DrmEvent) real).getAttribute(arg0);
     }
 
     public java.lang.String getMessage() {
-        return real.getMessage();
+        return ((android.drm.DrmEvent) real).getMessage();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.drm.DrmEvent) real).getType();
     }
 
     public int getUniqueId() {
-        return real.getUniqueId();
+        return ((android.drm.DrmEvent) real).getUniqueId();
     }
 
     public static final java.lang.String DRM_INFO_OBJECT = android.drm.DrmEvent.DRM_INFO_OBJECT;

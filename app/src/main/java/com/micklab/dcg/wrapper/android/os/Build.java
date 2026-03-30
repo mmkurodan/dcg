@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Build {
-    private final android.os.Build real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Build(android.os.Build real) {
+    private final java.lang.Object real;
+
+    private Build(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Build wrap(android.os.Build real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Build getReal() {
+        return (android.os.Build) real;
     }
 
     public android.os.Build unwrap() {
-        return real;
+        return getReal();
     }
 
     public Build() {
@@ -30,18 +37,25 @@ public final class Build {
 
 
     public static final class Partition {
-        private final android.os.Build.Partition real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Partition(android.os.Build.Partition real) {
+        private final java.lang.Object real;
+
+        private Partition(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Build.Partition wrap(android.os.Build.Partition real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.Partition(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.Partition(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Build.Partition getReal() {
+            return (android.os.Build.Partition) real;
         }
 
         public android.os.Build.Partition unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -67,18 +81,25 @@ public final class Build {
 
     }
     public static final class VERSION {
-        private final android.os.Build.VERSION real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VERSION(android.os.Build.VERSION real) {
+        private final java.lang.Object real;
+
+        private VERSION(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Build.VERSION wrap(android.os.Build.VERSION real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Build.VERSION getReal() {
+            return (android.os.Build.VERSION) real;
         }
 
         public android.os.Build.VERSION unwrap() {
-            return real;
+            return getReal();
         }
 
         public VERSION() {
@@ -88,18 +109,25 @@ public final class Build {
 
     }
     public static final class VERSION_CODES {
-        private final android.os.Build.VERSION_CODES real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VERSION_CODES(android.os.Build.VERSION_CODES real) {
+        private final java.lang.Object real;
+
+        private VERSION_CODES(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES wrap(android.os.Build.VERSION_CODES real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Build.VERSION_CODES getReal() {
+            return (android.os.Build.VERSION_CODES) real;
         }
 
         public android.os.Build.VERSION_CODES unwrap() {
-            return real;
+            return getReal();
         }
 
         public VERSION_CODES() {

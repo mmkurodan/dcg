@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.graphics.fonts;
 
 public final class FontVariationAxis {
-    private final android.graphics.fonts.FontVariationAxis real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FontVariationAxis(android.graphics.fonts.FontVariationAxis real) {
+    private final java.lang.Object real;
+
+    private FontVariationAxis(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.fonts.FontVariationAxis wrap(android.graphics.fonts.FontVariationAxis real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.fonts.FontVariationAxis(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.fonts.FontVariationAxis(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.fonts.FontVariationAxis getReal() {
+        return (android.graphics.fonts.FontVariationAxis) real;
     }
 
     public android.graphics.fonts.FontVariationAxis unwrap() {
-        return real;
+        return getReal();
     }
 
     public FontVariationAxis(java.lang.String arg0, float arg1) {
-        this(new android.graphics.fonts.FontVariationAxis(arg0, arg1));
+        this(new android.graphics.fonts.FontVariationAxis(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.graphics.fonts.FontVariationAxis) real).equals(arg0);
     }
 
     public static android.graphics.fonts.FontVariationAxis[] fromFontVariationSettings(java.lang.String arg0) {
@@ -29,15 +36,15 @@ public final class FontVariationAxis {
     }
 
     public float getStyleValue() {
-        return real.getStyleValue();
+        return ((android.graphics.fonts.FontVariationAxis) real).getStyleValue();
     }
 
     public java.lang.String getTag() {
-        return real.getTag();
+        return ((android.graphics.fonts.FontVariationAxis) real).getTag();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.graphics.fonts.FontVariationAxis) real).hashCode();
     }
 
     public static java.lang.String toFontVariationSettings(android.graphics.fonts.FontVariationAxis[] arg0) {
@@ -45,7 +52,7 @@ public final class FontVariationAxis {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.graphics.fonts.FontVariationAxis) real).toString();
     }
 
 }

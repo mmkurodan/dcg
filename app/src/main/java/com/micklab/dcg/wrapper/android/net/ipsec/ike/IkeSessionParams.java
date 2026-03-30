@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeSessionParams {
-    private final android.net.ipsec.ike.IkeSessionParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeSessionParams(android.net.ipsec.ike.IkeSessionParams real) {
+    private final java.lang.Object real;
+
+    private IkeSessionParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams wrap(android.net.ipsec.ike.IkeSessionParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeSessionParams getReal() {
+        return (android.net.ipsec.ike.IkeSessionParams) real;
     }
 
     public android.net.ipsec.ike.IkeSessionParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -74,18 +81,25 @@ public final class IkeSessionParams {
 
 
     public static final class Builder {
-        private final android.net.ipsec.ike.IkeSessionParams.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.ipsec.ike.IkeSessionParams.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.Builder wrap(android.net.ipsec.ike.IkeSessionParams.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.Builder getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.Builder) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
@@ -158,18 +172,25 @@ public final class IkeSessionParams {
 
     }
     public static final class IkeAuthConfig {
-        private final android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IkeAuthConfig(android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig real) {
+        private final java.lang.Object real;
+
+        private IkeAuthConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig wrap(android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.IkeAuthConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -182,18 +203,25 @@ public final class IkeSessionParams {
 
     }
     public static final class IkeAuthDigitalSignLocalConfig {
-        private final android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IkeAuthDigitalSignLocalConfig(android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig real) {
+        private final java.lang.Object real;
+
+        private IkeAuthDigitalSignLocalConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig wrap(android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignLocalConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -214,18 +242,25 @@ public final class IkeSessionParams {
 
     }
     public static final class IkeAuthDigitalSignRemoteConfig {
-        private final android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IkeAuthDigitalSignRemoteConfig(android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig real) {
+        private final java.lang.Object real;
+
+        private IkeAuthDigitalSignRemoteConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig wrap(android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.IkeAuthDigitalSignRemoteConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -242,18 +277,25 @@ public final class IkeSessionParams {
 
     }
     public static final class IkeAuthEapConfig {
-        private final android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IkeAuthEapConfig(android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig real) {
+        private final java.lang.Object real;
+
+        private IkeAuthEapConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig wrap(android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.IkeAuthEapConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -270,18 +312,25 @@ public final class IkeSessionParams {
 
     }
     public static final class IkeAuthPskConfig {
-        private final android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IkeAuthPskConfig(android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig real) {
+        private final java.lang.Object real;
+
+        private IkeAuthPskConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig wrap(android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig getReal() {
+            return (android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig) real;
         }
 
         public android.net.ipsec.ike.IkeSessionParams.IkeAuthPskConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {

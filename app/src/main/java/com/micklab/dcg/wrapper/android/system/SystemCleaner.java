@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class SystemCleaner {
-    private final android.system.SystemCleaner real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SystemCleaner(android.system.SystemCleaner real) {
+    private final java.lang.Object real;
+
+    private SystemCleaner(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.SystemCleaner wrap(android.system.SystemCleaner real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.SystemCleaner(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.SystemCleaner(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.SystemCleaner getReal() {
+        return (android.system.SystemCleaner) real;
     }
 
     public android.system.SystemCleaner unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.ref.Cleaner cleaner() {

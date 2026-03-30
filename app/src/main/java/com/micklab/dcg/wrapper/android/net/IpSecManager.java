@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class IpSecManager {
-    private final android.net.IpSecManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IpSecManager(android.net.IpSecManager real) {
+    private final java.lang.Object real;
+
+    private IpSecManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.IpSecManager wrap(android.net.IpSecManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.IpSecManager getReal() {
+        return (android.net.IpSecManager) real;
     }
 
     public android.net.IpSecManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.net.IpSecManager.SecurityParameterIndex allocateSecurityParameterIndex(java.net.InetAddress arg0) throws android.net.IpSecManager.ResourceUnavailableException {
@@ -58,34 +65,48 @@ public final class IpSecManager {
 
 
     public static final class ResourceUnavailableException {
-        private final android.net.IpSecManager.ResourceUnavailableException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ResourceUnavailableException(android.net.IpSecManager.ResourceUnavailableException real) {
+        private final java.lang.Object real;
+
+        private ResourceUnavailableException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecManager.ResourceUnavailableException wrap(android.net.IpSecManager.ResourceUnavailableException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.ResourceUnavailableException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.ResourceUnavailableException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecManager.ResourceUnavailableException getReal() {
+            return (android.net.IpSecManager.ResourceUnavailableException) real;
         }
 
         public android.net.IpSecManager.ResourceUnavailableException unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class SecurityParameterIndex {
-        private final android.net.IpSecManager.SecurityParameterIndex real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SecurityParameterIndex(android.net.IpSecManager.SecurityParameterIndex real) {
+        private final java.lang.Object real;
+
+        private SecurityParameterIndex(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecManager.SecurityParameterIndex wrap(android.net.IpSecManager.SecurityParameterIndex real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.SecurityParameterIndex(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.SecurityParameterIndex(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecManager.SecurityParameterIndex getReal() {
+            return (android.net.IpSecManager.SecurityParameterIndex) real;
         }
 
         public android.net.IpSecManager.SecurityParameterIndex unwrap() {
-            return real;
+            return getReal();
         }
 
         public void close() {
@@ -102,18 +123,25 @@ public final class IpSecManager {
 
     }
     public static final class SpiUnavailableException {
-        private final android.net.IpSecManager.SpiUnavailableException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SpiUnavailableException(android.net.IpSecManager.SpiUnavailableException real) {
+        private final java.lang.Object real;
+
+        private SpiUnavailableException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecManager.SpiUnavailableException wrap(android.net.IpSecManager.SpiUnavailableException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.SpiUnavailableException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.SpiUnavailableException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecManager.SpiUnavailableException getReal() {
+            return (android.net.IpSecManager.SpiUnavailableException) real;
         }
 
         public android.net.IpSecManager.SpiUnavailableException unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getSpi() {
@@ -122,18 +150,25 @@ public final class IpSecManager {
 
     }
     public static final class UdpEncapsulationSocket {
-        private final android.net.IpSecManager.UdpEncapsulationSocket real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UdpEncapsulationSocket(android.net.IpSecManager.UdpEncapsulationSocket real) {
+        private final java.lang.Object real;
+
+        private UdpEncapsulationSocket(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.IpSecManager.UdpEncapsulationSocket wrap(android.net.IpSecManager.UdpEncapsulationSocket real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.UdpEncapsulationSocket(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.IpSecManager.UdpEncapsulationSocket(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.IpSecManager.UdpEncapsulationSocket getReal() {
+            return (android.net.IpSecManager.UdpEncapsulationSocket) real;
         }
 
         public android.net.IpSecManager.UdpEncapsulationSocket unwrap() {
-            return real;
+            return getReal();
         }
 
         public void close() throws java.io.IOException {

@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Size {
-    private final android.util.Size real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Size(android.util.Size real) {
+    private final java.lang.Object real;
+
+    private Size(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Size wrap(android.util.Size real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Size(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Size(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Size getReal() {
+        return (android.util.Size) real;
     }
 
     public android.util.Size unwrap() {
-        return real;
+        return getReal();
     }
 
     public Size(int arg0, int arg1) {
-        this(new android.util.Size(arg0, arg1));
+        this(new android.util.Size(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.util.Size) real).equals(arg0);
     }
 
     public int getHeight() {
-        return real.getHeight();
+        return ((android.util.Size) real).getHeight();
     }
 
     public int getWidth() {
-        return real.getWidth();
+        return ((android.util.Size) real).getWidth();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.util.Size) real).hashCode();
     }
 
     public static com.micklab.dcg.wrapper.android.util.Size parseSize(java.lang.String arg0) throws java.lang.NumberFormatException {
@@ -41,7 +48,7 @@ public final class Size {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.util.Size) real).toString();
     }
 
 }

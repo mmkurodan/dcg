@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.euicc;
 
 public final class DownloadableSubscription {
-    private final android.telephony.euicc.DownloadableSubscription real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DownloadableSubscription(android.telephony.euicc.DownloadableSubscription real) {
+    private final java.lang.Object real;
+
+    private DownloadableSubscription(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription wrap(android.telephony.euicc.DownloadableSubscription real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.euicc.DownloadableSubscription getReal() {
+        return (android.telephony.euicc.DownloadableSubscription) real;
     }
 
     public android.telephony.euicc.DownloadableSubscription unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -38,18 +45,25 @@ public final class DownloadableSubscription {
 
 
     public static final class Builder {
-        private final android.telephony.euicc.DownloadableSubscription.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.euicc.DownloadableSubscription.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription.Builder wrap(android.telephony.euicc.DownloadableSubscription.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.euicc.DownloadableSubscription.Builder getReal() {
+            return (android.telephony.euicc.DownloadableSubscription.Builder) real;
         }
 
         public android.telephony.euicc.DownloadableSubscription.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.telephony.euicc.DownloadableSubscription arg0) {

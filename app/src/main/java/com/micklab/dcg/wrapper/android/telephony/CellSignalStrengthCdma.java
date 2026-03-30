@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class CellSignalStrengthCdma {
-    private final android.telephony.CellSignalStrengthCdma real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CellSignalStrengthCdma(android.telephony.CellSignalStrengthCdma real) {
+    private final java.lang.Object real;
+
+    private CellSignalStrengthCdma(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellSignalStrengthCdma wrap(android.telephony.CellSignalStrengthCdma real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellSignalStrengthCdma(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellSignalStrengthCdma(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.CellSignalStrengthCdma getReal() {
+        return (android.telephony.CellSignalStrengthCdma) real;
     }
 
     public android.telephony.CellSignalStrengthCdma unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.app.people;
 
 public final class ConversationStatus {
-    private final android.app.people.ConversationStatus real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConversationStatus(android.app.people.ConversationStatus real) {
+    private final java.lang.Object real;
+
+    private ConversationStatus(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.people.ConversationStatus wrap(android.app.people.ConversationStatus real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.people.ConversationStatus(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.people.ConversationStatus(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.people.ConversationStatus getReal() {
+        return (android.app.people.ConversationStatus) real;
     }
 
     public android.app.people.ConversationStatus unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.people.ConversationStatus) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.people.ConversationStatus) real).equals(arg0);
     }
 
     public int getActivity() {
-        return real.getActivity();
+        return ((android.app.people.ConversationStatus) real).getActivity();
     }
 
     public int getAvailability() {
-        return real.getAvailability();
+        return ((android.app.people.ConversationStatus) real).getAvailability();
     }
 
     public java.lang.CharSequence getDescription() {
-        return real.getDescription();
+        return ((android.app.people.ConversationStatus) real).getDescription();
     }
 
     public long getEndTimeMillis() {
-        return real.getEndTimeMillis();
+        return ((android.app.people.ConversationStatus) real).getEndTimeMillis();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.people.ConversationStatus) real).getIcon());
     }
 
     public java.lang.String getId() {
-        return real.getId();
+        return ((android.app.people.ConversationStatus) real).getId();
     }
 
     public long getStartTimeMillis() {
-        return real.getStartTimeMillis();
+        return ((android.app.people.ConversationStatus) real).getStartTimeMillis();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.people.ConversationStatus) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.people.ConversationStatus) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.people.ConversationStatus) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACTIVITY_ANNIVERSARY = android.app.people.ConversationStatus.ACTIVITY_ANNIVERSARY;
@@ -79,46 +86,53 @@ public final class ConversationStatus {
     public static final int AVAILABILITY_UNKNOWN = android.app.people.ConversationStatus.AVAILABILITY_UNKNOWN;
 
     public static final class Builder {
-        private final android.app.people.ConversationStatus.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.people.ConversationStatus.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder wrap(android.app.people.ConversationStatus.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.people.ConversationStatus.Builder getReal() {
+            return (android.app.people.ConversationStatus.Builder) real;
         }
 
         public android.app.people.ConversationStatus.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0, int arg1) {
-            this(new android.app.people.ConversationStatus.Builder(arg0, arg1));
+            this(new android.app.people.ConversationStatus.Builder(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus build() {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.wrap(((android.app.people.ConversationStatus.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder setAvailability(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(real.setAvailability(arg0));
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(((android.app.people.ConversationStatus.Builder) real).setAvailability(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder setDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(real.setDescription(arg0));
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(((android.app.people.ConversationStatus.Builder) real).setDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder setEndTimeMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(real.setEndTimeMillis(arg0));
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(((android.app.people.ConversationStatus.Builder) real).setEndTimeMillis(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(real.setIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(((android.app.people.ConversationStatus.Builder) real).setIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder setStartTimeMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(real.setStartTimeMillis(arg0));
+            return com.micklab.dcg.wrapper.android.app.people.ConversationStatus.Builder.wrap(((android.app.people.ConversationStatus.Builder) real).setStartTimeMillis(arg0));
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class MergeCursor {
-    private final android.database.MergeCursor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MergeCursor(android.database.MergeCursor real) {
+    private final java.lang.Object real;
+
+    private MergeCursor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.MergeCursor wrap(android.database.MergeCursor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.MergeCursor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.MergeCursor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.MergeCursor getReal() {
+        return (android.database.MergeCursor) real;
     }
 
     public android.database.MergeCursor unwrap() {
-        return real;
+        return getReal();
     }
 
     public MergeCursor(android.database.Cursor[] arg0) {

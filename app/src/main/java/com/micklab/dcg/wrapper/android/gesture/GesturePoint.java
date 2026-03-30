@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.gesture;
 
 public final class GesturePoint {
-    private final android.gesture.GesturePoint real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GesturePoint(android.gesture.GesturePoint real) {
+    private final java.lang.Object real;
+
+    private GesturePoint(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GesturePoint wrap(android.gesture.GesturePoint real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GesturePoint(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GesturePoint(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.gesture.GesturePoint getReal() {
+        return (android.gesture.GesturePoint) real;
     }
 
     public android.gesture.GesturePoint unwrap() {
-        return real;
+        return getReal();
     }
 
     public GesturePoint(float arg0, float arg1, long arg2) {
-        this(new android.gesture.GesturePoint(arg0, arg1, arg2));
+        this(new android.gesture.GesturePoint(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.gesture.GesturePoint) real).clone();
     }
 
 

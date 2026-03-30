@@ -2,105 +2,126 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaCodecInfo {
-    private final android.media.MediaCodecInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaCodecInfo(android.media.MediaCodecInfo real) {
+    private final java.lang.Object real;
+
+    private MediaCodecInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo wrap(android.media.MediaCodecInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaCodecInfo getReal() {
+        return (android.media.MediaCodecInfo) real;
     }
 
     public android.media.MediaCodecInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getCanonicalName() {
-        return real.getCanonicalName();
+        return ((android.media.MediaCodecInfo) real).getCanonicalName();
     }
 
     public com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities getCapabilitiesForType(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities.wrap(real.getCapabilitiesForType(arg0));
+        return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities.wrap(((android.media.MediaCodecInfo) real).getCapabilitiesForType(arg0));
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.media.MediaCodecInfo) real).getName();
     }
 
     public java.lang.String[] getSupportedTypes() {
-        return real.getSupportedTypes();
+        return ((android.media.MediaCodecInfo) real).getSupportedTypes();
     }
 
     public boolean isAlias() {
-        return real.isAlias();
+        return ((android.media.MediaCodecInfo) real).isAlias();
     }
 
     public boolean isEncoder() {
-        return real.isEncoder();
+        return ((android.media.MediaCodecInfo) real).isEncoder();
     }
 
     public boolean isHardwareAccelerated() {
-        return real.isHardwareAccelerated();
+        return ((android.media.MediaCodecInfo) real).isHardwareAccelerated();
     }
 
     public boolean isSoftwareOnly() {
-        return real.isSoftwareOnly();
+        return ((android.media.MediaCodecInfo) real).isSoftwareOnly();
     }
 
     public boolean isVendor() {
-        return real.isVendor();
+        return ((android.media.MediaCodecInfo) real).isVendor();
     }
 
     public static final class AudioCapabilities {
-        private final android.media.MediaCodecInfo.AudioCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AudioCapabilities(android.media.MediaCodecInfo.AudioCapabilities real) {
+        private final java.lang.Object real;
+
+        private AudioCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities wrap(android.media.MediaCodecInfo.AudioCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodecInfo.AudioCapabilities getReal() {
+            return (android.media.MediaCodecInfo.AudioCapabilities) real;
         }
 
         public android.media.MediaCodecInfo.AudioCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getMaxInputChannelCount() {
-            return real.getMaxInputChannelCount();
+            return ((android.media.MediaCodecInfo.AudioCapabilities) real).getMaxInputChannelCount();
         }
 
         public int getMinInputChannelCount() {
-            return real.getMinInputChannelCount();
+            return ((android.media.MediaCodecInfo.AudioCapabilities) real).getMinInputChannelCount();
         }
 
         public int[] getSupportedSampleRates() {
-            return real.getSupportedSampleRates();
+            return ((android.media.MediaCodecInfo.AudioCapabilities) real).getSupportedSampleRates();
         }
 
         public boolean isSampleRateSupported(int arg0) {
-            return real.isSampleRateSupported(arg0);
+            return ((android.media.MediaCodecInfo.AudioCapabilities) real).isSampleRateSupported(arg0);
         }
 
     }
     public static final class CodecCapabilities {
-        private final android.media.MediaCodecInfo.CodecCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CodecCapabilities(android.media.MediaCodecInfo.CodecCapabilities real) {
+        private final java.lang.Object real;
+
+        private CodecCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities wrap(android.media.MediaCodecInfo.CodecCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodecInfo.CodecCapabilities getReal() {
+            return (android.media.MediaCodecInfo.CodecCapabilities) real;
         }
 
         public android.media.MediaCodecInfo.CodecCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public CodecCapabilities() {
-            this(new android.media.MediaCodecInfo.CodecCapabilities());
+            this(new android.media.MediaCodecInfo.CodecCapabilities(), (__DcgwBridgeToken) null);
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecCapabilities createFromProfileLevel(java.lang.String arg0, int arg1, int arg2) {
@@ -108,39 +129,39 @@ public final class MediaCodecInfo {
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities getAudioCapabilities() {
-            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities.wrap(real.getAudioCapabilities());
+            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.AudioCapabilities.wrap(((android.media.MediaCodecInfo.CodecCapabilities) real).getAudioCapabilities());
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaFormat getDefaultFormat() {
-            return com.micklab.dcg.wrapper.android.media.MediaFormat.wrap(real.getDefaultFormat());
+            return com.micklab.dcg.wrapper.android.media.MediaFormat.wrap(((android.media.MediaCodecInfo.CodecCapabilities) real).getDefaultFormat());
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities getEncoderCapabilities() {
-            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities.wrap(real.getEncoderCapabilities());
+            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities.wrap(((android.media.MediaCodecInfo.CodecCapabilities) real).getEncoderCapabilities());
         }
 
         public int getMaxSupportedInstances() {
-            return real.getMaxSupportedInstances();
+            return ((android.media.MediaCodecInfo.CodecCapabilities) real).getMaxSupportedInstances();
         }
 
         public java.lang.String getMimeType() {
-            return real.getMimeType();
+            return ((android.media.MediaCodecInfo.CodecCapabilities) real).getMimeType();
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities getVideoCapabilities() {
-            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.wrap(real.getVideoCapabilities());
+            return com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.wrap(((android.media.MediaCodecInfo.CodecCapabilities) real).getVideoCapabilities());
         }
 
         public boolean isFeatureRequired(java.lang.String arg0) {
-            return real.isFeatureRequired(arg0);
+            return ((android.media.MediaCodecInfo.CodecCapabilities) real).isFeatureRequired(arg0);
         }
 
         public boolean isFeatureSupported(java.lang.String arg0) {
-            return real.isFeatureSupported(arg0);
+            return ((android.media.MediaCodecInfo.CodecCapabilities) real).isFeatureSupported(arg0);
         }
 
         public boolean isFormatSupported(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
-            return real.isFormatSupported(arg0 == null ? null : arg0.unwrap());
+            return ((android.media.MediaCodecInfo.CodecCapabilities) real).isFormatSupported(arg0 == null ? null : arg0.getReal());
         }
 
         public static final int COLOR_Format12bitRGB444 = android.media.MediaCodecInfo.CodecCapabilities.COLOR_Format12bitRGB444;
@@ -217,18 +238,25 @@ public final class MediaCodecInfo {
 
     }
     public static final class CodecProfileLevel {
-        private final android.media.MediaCodecInfo.CodecProfileLevel real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CodecProfileLevel(android.media.MediaCodecInfo.CodecProfileLevel real) {
+        private final java.lang.Object real;
+
+        private CodecProfileLevel(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecProfileLevel wrap(android.media.MediaCodecInfo.CodecProfileLevel real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecProfileLevel(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.CodecProfileLevel(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodecInfo.CodecProfileLevel getReal() {
+            return (android.media.MediaCodecInfo.CodecProfileLevel) real;
         }
 
         public android.media.MediaCodecInfo.CodecProfileLevel unwrap() {
-            return real;
+            return getReal();
         }
 
         public CodecProfileLevel() {
@@ -236,11 +264,11 @@ public final class MediaCodecInfo {
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.media.MediaCodecInfo.CodecProfileLevel) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.media.MediaCodecInfo.CodecProfileLevel) real).hashCode();
         }
 
         public static final int AACObjectELD = android.media.MediaCodecInfo.CodecProfileLevel.AACObjectELD;
@@ -386,22 +414,29 @@ public final class MediaCodecInfo {
 
     }
     public static final class EncoderCapabilities {
-        private final android.media.MediaCodecInfo.EncoderCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EncoderCapabilities(android.media.MediaCodecInfo.EncoderCapabilities real) {
+        private final java.lang.Object real;
+
+        private EncoderCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities wrap(android.media.MediaCodecInfo.EncoderCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.EncoderCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodecInfo.EncoderCapabilities getReal() {
+            return (android.media.MediaCodecInfo.EncoderCapabilities) real;
         }
 
         public android.media.MediaCodecInfo.EncoderCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean isBitrateModeSupported(int arg0) {
-            return real.isBitrateModeSupported(arg0);
+            return ((android.media.MediaCodecInfo.EncoderCapabilities) real).isBitrateModeSupported(arg0);
         }
 
         public static final int BITRATE_MODE_CBR = android.media.MediaCodecInfo.EncoderCapabilities.BITRATE_MODE_CBR;
@@ -411,73 +446,87 @@ public final class MediaCodecInfo {
 
     }
     public static final class VideoCapabilities {
-        private final android.media.MediaCodecInfo.VideoCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VideoCapabilities(android.media.MediaCodecInfo.VideoCapabilities real) {
+        private final java.lang.Object real;
+
+        private VideoCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities wrap(android.media.MediaCodecInfo.VideoCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodecInfo.VideoCapabilities getReal() {
+            return (android.media.MediaCodecInfo.VideoCapabilities) real;
         }
 
         public android.media.MediaCodecInfo.VideoCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean areSizeAndRateSupported(int arg0, int arg1, double arg2) {
-            return real.areSizeAndRateSupported(arg0, arg1, arg2);
+            return ((android.media.MediaCodecInfo.VideoCapabilities) real).areSizeAndRateSupported(arg0, arg1, arg2);
         }
 
         public int getHeightAlignment() {
-            return real.getHeightAlignment();
+            return ((android.media.MediaCodecInfo.VideoCapabilities) real).getHeightAlignment();
         }
 
         public int getWidthAlignment() {
-            return real.getWidthAlignment();
+            return ((android.media.MediaCodecInfo.VideoCapabilities) real).getWidthAlignment();
         }
 
         public boolean isSizeSupported(int arg0, int arg1) {
-            return real.isSizeSupported(arg0, arg1);
+            return ((android.media.MediaCodecInfo.VideoCapabilities) real).isSizeSupported(arg0, arg1);
         }
 
         public static final class PerformancePoint {
-            private final android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public PerformancePoint(android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint real) {
+            private final java.lang.Object real;
+
+            private PerformancePoint(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint wrap(android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint getReal() {
+                return (android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real;
             }
 
             public android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint unwrap() {
-                return real;
+                return getReal();
             }
 
             public PerformancePoint(int arg0, int arg1, int arg2) {
-                this(new android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint(arg0, arg1, arg2));
+                this(new android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint(arg0, arg1, arg2), (__DcgwBridgeToken) null);
             }
 
             public boolean covers(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
-                return real.covers(arg0 == null ? null : arg0.unwrap());
+                return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).covers(arg0 == null ? null : arg0.getReal());
             }
 
             public boolean covers(com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint arg0) {
-                return real.covers(arg0 == null ? null : arg0.unwrap());
+                return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).covers(arg0 == null ? null : arg0.getReal());
             }
 
             public boolean equals(java.lang.Object arg0) {
-                return real.equals(arg0);
+                return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).equals(arg0);
             }
 
             public int hashCode() {
-                return real.hashCode();
+                return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).hashCode();
             }
 
             public java.lang.String toString() {
-                return real.toString();
+                return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).toString();
             }
 
             public static final com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint FHD_100 = com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint.wrap(android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint.FHD_100);

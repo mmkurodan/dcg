@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Handler {
-    private final android.os.Handler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Handler(android.os.Handler real) {
+    private final java.lang.Object real;
+
+    private Handler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Handler wrap(android.os.Handler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Handler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Handler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Handler getReal() {
+        return (android.os.Handler) real;
     }
 
     public android.os.Handler unwrap() {
-        return real;
+        return getReal();
     }
 
     public Handler() {
@@ -169,18 +176,25 @@ public final class Handler {
     }
 
     public static final class Callback {
-        private final android.os.Handler.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.os.Handler.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Handler.Callback wrap(android.os.Handler.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Handler.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Handler.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Handler.Callback getReal() {
+            return (android.os.Handler.Callback) real;
         }
 
         public android.os.Handler.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean handleMessage(com.micklab.dcg.wrapper.android.os.Message arg0) {

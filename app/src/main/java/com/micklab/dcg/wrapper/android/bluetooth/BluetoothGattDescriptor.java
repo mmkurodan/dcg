@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothGattDescriptor {
-    private final android.bluetooth.BluetoothGattDescriptor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothGattDescriptor(android.bluetooth.BluetoothGattDescriptor real) {
+    private final java.lang.Object real;
+
+    private BluetoothGattDescriptor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor wrap(android.bluetooth.BluetoothGattDescriptor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothGattDescriptor getReal() {
+        return (android.bluetooth.BluetoothGattDescriptor) real;
     }
 
     public android.bluetooth.BluetoothGattDescriptor unwrap() {
-        return real;
+        return getReal();
     }
 
     public BluetoothGattDescriptor(java.util.UUID arg0, int arg1) {
-        this(new android.bluetooth.BluetoothGattDescriptor(arg0, arg1));
+        this(new android.bluetooth.BluetoothGattDescriptor(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothGattDescriptor) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic getCharacteristic() {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic.wrap(real.getCharacteristic());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic.wrap(((android.bluetooth.BluetoothGattDescriptor) real).getCharacteristic());
     }
 
     public int getPermissions() {
-        return real.getPermissions();
+        return ((android.bluetooth.BluetoothGattDescriptor) real).getPermissions();
     }
 
     public java.util.UUID getUuid() {
-        return real.getUuid();
+        return ((android.bluetooth.BluetoothGattDescriptor) real).getUuid();
     }
 
     public byte[] getValue() {
-        return real.getValue();
+        return ((android.bluetooth.BluetoothGattDescriptor) real).getValue();
     }
 
     public boolean setValue(byte[] arg0) {
-        return real.setValue(arg0);
+        return ((android.bluetooth.BluetoothGattDescriptor) real).setValue(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothGattDescriptor) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final byte[] DISABLE_NOTIFICATION_VALUE = android.bluetooth.BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE;

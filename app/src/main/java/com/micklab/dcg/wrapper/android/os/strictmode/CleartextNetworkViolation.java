@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.strictmode;
 
 public final class CleartextNetworkViolation {
-    private final android.os.strictmode.CleartextNetworkViolation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CleartextNetworkViolation(android.os.strictmode.CleartextNetworkViolation real) {
+    private final java.lang.Object real;
+
+    private CleartextNetworkViolation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.strictmode.CleartextNetworkViolation wrap(android.os.strictmode.CleartextNetworkViolation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.CleartextNetworkViolation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.CleartextNetworkViolation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.strictmode.CleartextNetworkViolation getReal() {
+        return (android.os.strictmode.CleartextNetworkViolation) real;
     }
 
     public android.os.strictmode.CleartextNetworkViolation unwrap() {
-        return real;
+        return getReal();
     }
 
 }

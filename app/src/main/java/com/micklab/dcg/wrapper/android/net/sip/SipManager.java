@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.sip;
 
 public final class SipManager {
-    private final android.net.sip.SipManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SipManager(android.net.sip.SipManager real) {
+    private final java.lang.Object real;
+
+    private SipManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.sip.SipManager wrap(android.net.sip.SipManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.sip.SipManager getReal() {
+        return (android.net.sip.SipManager) real;
     }
 
     public android.net.sip.SipManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close(java.lang.String arg0) throws android.net.sip.SipException {

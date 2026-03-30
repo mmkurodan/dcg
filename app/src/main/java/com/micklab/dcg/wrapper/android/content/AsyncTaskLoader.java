@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class AsyncTaskLoader {
-    private final android.content.AsyncTaskLoader real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AsyncTaskLoader(android.content.AsyncTaskLoader real) {
+    private final java.lang.Object real;
+
+    private AsyncTaskLoader(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.AsyncTaskLoader wrap(android.content.AsyncTaskLoader real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.AsyncTaskLoader(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.AsyncTaskLoader(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.AsyncTaskLoader getReal() {
+        return (android.content.AsyncTaskLoader) real;
     }
 
     public android.content.AsyncTaskLoader unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancelLoadInBackground() {
-        real.cancelLoadInBackground();
+        ((android.content.AsyncTaskLoader) real).cancelLoadInBackground();
     }
 
     public void dump(java.lang.String arg0, java.io.FileDescriptor arg1, java.io.PrintWriter arg2, java.lang.String[] arg3) {
-        real.dump(arg0, arg1, arg2, arg3);
+        ((android.content.AsyncTaskLoader) real).dump(arg0, arg1, arg2, arg3);
     }
 
     public boolean isLoadInBackgroundCanceled() {
-        return real.isLoadInBackgroundCanceled();
+        return ((android.content.AsyncTaskLoader) real).isLoadInBackgroundCanceled();
     }
 
     public java.lang.Object loadInBackground() {
-        return real.loadInBackground();
+        return ((android.content.AsyncTaskLoader) real).loadInBackground();
     }
 
     public void onCanceled(java.lang.Object arg0) {
-        real.onCanceled(arg0);
+        ((android.content.AsyncTaskLoader) real).onCanceled(arg0);
     }
 
     public void setUpdateThrottle(long arg0) {
-        real.setUpdateThrottle(arg0);
+        ((android.content.AsyncTaskLoader) real).setUpdateThrottle(arg0);
     }
 
 }

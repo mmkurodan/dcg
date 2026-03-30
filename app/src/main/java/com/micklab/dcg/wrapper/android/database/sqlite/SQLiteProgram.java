@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteProgram {
-    private final android.database.sqlite.SQLiteProgram real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteProgram(android.database.sqlite.SQLiteProgram real) {
+    private final java.lang.Object real;
+
+    private SQLiteProgram(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteProgram wrap(android.database.sqlite.SQLiteProgram real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteProgram(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteProgram(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteProgram getReal() {
+        return (android.database.sqlite.SQLiteProgram) real;
     }
 
     public android.database.sqlite.SQLiteProgram unwrap() {
-        return real;
+        return getReal();
     }
 
     public void bindAllArgsAsStrings(java.lang.String[] arg0) {

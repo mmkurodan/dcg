@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class TimeZone {
-    private final android.icu.util.TimeZone real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TimeZone(android.icu.util.TimeZone real) {
+    private final java.lang.Object real;
+
+    private TimeZone(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.TimeZone wrap(android.icu.util.TimeZone real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.TimeZone(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.TimeZone(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.TimeZone getReal() {
+        return (android.icu.util.TimeZone) real;
     }
 
     public android.icu.util.TimeZone unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.util.TimeZone) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.TimeZone cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(((android.icu.util.TimeZone) real).cloneAsThawed());
     }
 
     public static int countEquivalentIDs(java.lang.String arg0) {
@@ -29,11 +36,11 @@ public final class TimeZone {
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.util.TimeZone) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.TimeZone freeze() {
-        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.util.TimeZone.wrap(((android.icu.util.TimeZone) real).freeze());
     }
 
     public static java.lang.String[] getAvailableIDs() {
@@ -57,7 +64,7 @@ public final class TimeZone {
     }
 
     public int getDSTSavings() {
-        return real.getDSTSavings();
+        return ((android.icu.util.TimeZone) real).getDSTSavings();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.TimeZone getDefault() {
@@ -65,27 +72,27 @@ public final class TimeZone {
     }
 
     public java.lang.String getDisplayName() {
-        return real.getDisplayName();
+        return ((android.icu.util.TimeZone) real).getDisplayName();
     }
 
     public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayName(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getDisplayName(java.util.Locale arg0) {
-        return real.getDisplayName(arg0);
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0);
     }
 
     public java.lang.String getDisplayName(boolean arg0, int arg1) {
-        return real.getDisplayName(arg0, arg1);
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1);
     }
 
     public java.lang.String getDisplayName(boolean arg0, int arg1, java.util.Locale arg2) {
-        return real.getDisplayName(arg0, arg1, arg2);
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1, arg2);
     }
 
     public java.lang.String getDisplayName(boolean arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return real.getDisplayName(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static java.lang.String getEquivalentID(java.lang.String arg0, int arg1) {
@@ -97,7 +104,7 @@ public final class TimeZone {
     }
 
     public java.lang.String getID() {
-        return real.getID();
+        return ((android.icu.util.TimeZone) real).getID();
     }
 
     public static java.lang.String getIDForWindowsID(java.lang.String arg0, java.lang.String arg1) {
@@ -105,19 +112,19 @@ public final class TimeZone {
     }
 
     public int getOffset(long arg0) {
-        return real.getOffset(arg0);
+        return ((android.icu.util.TimeZone) real).getOffset(arg0);
     }
 
     public void getOffset(long arg0, boolean arg1, int[] arg2) {
-        real.getOffset(arg0, arg1, arg2);
+        ((android.icu.util.TimeZone) real).getOffset(arg0, arg1, arg2);
     }
 
     public int getOffset(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        return real.getOffset(arg0, arg1, arg2, arg3, arg4, arg5);
+        return ((android.icu.util.TimeZone) real).getOffset(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public int getRawOffset() {
-        return real.getRawOffset();
+        return ((android.icu.util.TimeZone) real).getRawOffset();
     }
 
     public static java.lang.String getRegion(java.lang.String arg0) {
@@ -141,35 +148,35 @@ public final class TimeZone {
     }
 
     public boolean hasSameRules(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        return real.hasSameRules(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.TimeZone) real).hasSameRules(arg0 == null ? null : arg0.getReal());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.util.TimeZone) real).hashCode();
     }
 
     public boolean inDaylightTime(java.util.Date arg0) {
-        return real.inDaylightTime(arg0);
+        return ((android.icu.util.TimeZone) real).inDaylightTime(arg0);
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.util.TimeZone) real).isFrozen();
     }
 
     public boolean observesDaylightTime() {
-        return real.observesDaylightTime();
+        return ((android.icu.util.TimeZone) real).observesDaylightTime();
     }
 
     public void setID(java.lang.String arg0) {
-        real.setID(arg0);
+        ((android.icu.util.TimeZone) real).setID(arg0);
     }
 
     public void setRawOffset(int arg0) {
-        real.setRawOffset(arg0);
+        ((android.icu.util.TimeZone) real).setRawOffset(arg0);
     }
 
     public boolean useDaylightTime() {
-        return real.useDaylightTime();
+        return ((android.icu.util.TimeZone) real).useDaylightTime();
     }
 
     public static final int GENERIC_LOCATION = android.icu.util.TimeZone.GENERIC_LOCATION;
@@ -187,18 +194,25 @@ public final class TimeZone {
     public static final java.lang.String UNKNOWN_ZONE_ID = android.icu.util.TimeZone.UNKNOWN_ZONE_ID;
 
     public static final class SystemTimeZoneType {
-        private final android.icu.util.TimeZone.SystemTimeZoneType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SystemTimeZoneType(android.icu.util.TimeZone.SystemTimeZoneType real) {
+        private final java.lang.Object real;
+
+        private SystemTimeZoneType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.TimeZone.SystemTimeZoneType wrap(android.icu.util.TimeZone.SystemTimeZoneType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.TimeZone.SystemTimeZoneType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.TimeZone.SystemTimeZoneType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.TimeZone.SystemTimeZoneType getReal() {
+            return (android.icu.util.TimeZone.SystemTimeZoneType) real;
         }
 
         public android.icu.util.TimeZone.SystemTimeZoneType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.TimeZone.SystemTimeZoneType valueOf(java.lang.String arg0) {

@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.service.controls;
 
 public final class ControlsProviderService {
-    private final android.service.controls.ControlsProviderService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ControlsProviderService(android.service.controls.ControlsProviderService real) {
+    private final java.lang.Object real;
+
+    private ControlsProviderService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.ControlsProviderService wrap(android.service.controls.ControlsProviderService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.ControlsProviderService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.ControlsProviderService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.ControlsProviderService getReal() {
+        return (android.service.controls.ControlsProviderService) real;
     }
 
     public android.service.controls.ControlsProviderService unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.service.controls.ControlsProviderService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean onUnbind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return real.onUnbind(arg0 == null ? null : arg0.unwrap());
+        return ((android.service.controls.ControlsProviderService) real).onUnbind(arg0 == null ? null : arg0.getReal());
     }
 
     public static void requestAddControl(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1, com.micklab.dcg.wrapper.android.service.controls.Control arg2) {
-        android.service.controls.ControlsProviderService.requestAddControl(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        android.service.controls.ControlsProviderService.requestAddControl(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static final int CONTROLS_SURFACE_ACTIVITY_PANEL = android.service.controls.ControlsProviderService.CONTROLS_SURFACE_ACTIVITY_PANEL;

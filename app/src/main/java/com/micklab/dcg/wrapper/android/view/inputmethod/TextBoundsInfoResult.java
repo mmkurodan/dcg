@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.view.inputmethod;
 
 public final class TextBoundsInfoResult {
-    private final android.view.inputmethod.TextBoundsInfoResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextBoundsInfoResult(android.view.inputmethod.TextBoundsInfoResult real) {
+    private final java.lang.Object real;
+
+    private TextBoundsInfoResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfoResult wrap(android.view.inputmethod.TextBoundsInfoResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfoResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfoResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.inputmethod.TextBoundsInfoResult getReal() {
+        return (android.view.inputmethod.TextBoundsInfoResult) real;
     }
 
     public android.view.inputmethod.TextBoundsInfoResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public TextBoundsInfoResult(int arg0) {
-        this(new android.view.inputmethod.TextBoundsInfoResult(arg0));
+        this(new android.view.inputmethod.TextBoundsInfoResult(arg0), (__DcgwBridgeToken) null);
     }
 
     public TextBoundsInfoResult(int arg0, com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfo arg1) {
-        this(new android.view.inputmethod.TextBoundsInfoResult(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.view.inputmethod.TextBoundsInfoResult(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int getResultCode() {
-        return real.getResultCode();
+        return ((android.view.inputmethod.TextBoundsInfoResult) real).getResultCode();
     }
 
     public com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfo getTextBoundsInfo() {
-        return com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfo.wrap(real.getTextBoundsInfo());
+        return com.micklab.dcg.wrapper.android.view.inputmethod.TextBoundsInfo.wrap(((android.view.inputmethod.TextBoundsInfoResult) real).getTextBoundsInfo());
     }
 
     public static final int CODE_CANCELLED = android.view.inputmethod.TextBoundsInfoResult.CODE_CANCELLED;

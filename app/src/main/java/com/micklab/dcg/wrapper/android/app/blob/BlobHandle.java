@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.app.blob;
 
 public final class BlobHandle {
-    private final android.app.blob.BlobHandle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BlobHandle(android.app.blob.BlobHandle real) {
+    private final java.lang.Object real;
+
+    private BlobHandle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.blob.BlobHandle wrap(android.app.blob.BlobHandle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.blob.BlobHandle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.blob.BlobHandle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.blob.BlobHandle getReal() {
+        return (android.app.blob.BlobHandle) real;
     }
 
     public android.app.blob.BlobHandle unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.app.blob.BlobHandle createWithSha256(byte[] arg0, java.lang.CharSequence arg1, long arg2, java.lang.String arg3) {
@@ -21,39 +28,39 @@ public final class BlobHandle {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.blob.BlobHandle) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.blob.BlobHandle) real).equals(arg0);
     }
 
     public long getExpiryTimeMillis() {
-        return real.getExpiryTimeMillis();
+        return ((android.app.blob.BlobHandle) real).getExpiryTimeMillis();
     }
 
     public java.lang.CharSequence getLabel() {
-        return real.getLabel();
+        return ((android.app.blob.BlobHandle) real).getLabel();
     }
 
     public byte[] getSha256Digest() {
-        return real.getSha256Digest();
+        return ((android.app.blob.BlobHandle) real).getSha256Digest();
     }
 
     public java.lang.String getTag() {
-        return real.getTag();
+        return ((android.app.blob.BlobHandle) real).getTag();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.blob.BlobHandle) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.blob.BlobHandle) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.blob.BlobHandle) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

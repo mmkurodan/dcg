@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class GrammaticalInflectionManager {
-    private final android.app.GrammaticalInflectionManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GrammaticalInflectionManager(android.app.GrammaticalInflectionManager real) {
+    private final java.lang.Object real;
+
+    private GrammaticalInflectionManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.GrammaticalInflectionManager wrap(android.app.GrammaticalInflectionManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.GrammaticalInflectionManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.GrammaticalInflectionManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.GrammaticalInflectionManager getReal() {
+        return (android.app.GrammaticalInflectionManager) real;
     }
 
     public android.app.GrammaticalInflectionManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getApplicationGrammaticalGender() {
-        return real.getApplicationGrammaticalGender();
+        return ((android.app.GrammaticalInflectionManager) real).getApplicationGrammaticalGender();
     }
 
     public int getSystemGrammaticalGender() {
-        return real.getSystemGrammaticalGender();
+        return ((android.app.GrammaticalInflectionManager) real).getSystemGrammaticalGender();
     }
 
     public void setRequestedApplicationGrammaticalGender(int arg0) {
-        real.setRequestedApplicationGrammaticalGender(arg0);
+        ((android.app.GrammaticalInflectionManager) real).setRequestedApplicationGrammaticalGender(arg0);
     }
 
 }

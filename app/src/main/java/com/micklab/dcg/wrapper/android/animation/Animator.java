@@ -2,179 +2,200 @@
 package com.micklab.dcg.wrapper.android.animation;
 
 public final class Animator {
-    private final android.animation.Animator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Animator(android.animation.Animator real) {
+    private final java.lang.Object real;
+
+    private Animator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.animation.Animator wrap(android.animation.Animator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.animation.Animator getReal() {
+        return (android.animation.Animator) real;
     }
 
     public android.animation.Animator unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addListener(com.micklab.dcg.wrapper.android.animation.Animator.AnimatorListener arg0) {
-        real.addListener(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Animator) real).addListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void addPauseListener(com.micklab.dcg.wrapper.android.animation.Animator.AnimatorPauseListener arg0) {
-        real.addPauseListener(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Animator) real).addPauseListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void cancel() {
-        real.cancel();
+        ((android.animation.Animator) real).cancel();
     }
 
     public com.micklab.dcg.wrapper.android.animation.Animator clone() {
-        return com.micklab.dcg.wrapper.android.animation.Animator.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.animation.Animator.wrap(((android.animation.Animator) real).clone());
     }
 
     public void end() {
-        real.end();
+        ((android.animation.Animator) real).end();
     }
 
     public long getDuration() {
-        return real.getDuration();
+        return ((android.animation.Animator) real).getDuration();
     }
 
     public com.micklab.dcg.wrapper.android.animation.TimeInterpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.animation.TimeInterpolator.wrap(((android.animation.Animator) real).getInterpolator());
     }
 
     public long getStartDelay() {
-        return real.getStartDelay();
+        return ((android.animation.Animator) real).getStartDelay();
     }
 
     public long getTotalDuration() {
-        return real.getTotalDuration();
+        return ((android.animation.Animator) real).getTotalDuration();
     }
 
     public boolean isPaused() {
-        return real.isPaused();
+        return ((android.animation.Animator) real).isPaused();
     }
 
     public boolean isRunning() {
-        return real.isRunning();
+        return ((android.animation.Animator) real).isRunning();
     }
 
     public boolean isStarted() {
-        return real.isStarted();
+        return ((android.animation.Animator) real).isStarted();
     }
 
     public void pause() {
-        real.pause();
+        ((android.animation.Animator) real).pause();
     }
 
     public void removeAllListeners() {
-        real.removeAllListeners();
+        ((android.animation.Animator) real).removeAllListeners();
     }
 
     public void removeListener(com.micklab.dcg.wrapper.android.animation.Animator.AnimatorListener arg0) {
-        real.removeListener(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Animator) real).removeListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void removePauseListener(com.micklab.dcg.wrapper.android.animation.Animator.AnimatorPauseListener arg0) {
-        real.removePauseListener(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Animator) real).removePauseListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void resume() {
-        real.resume();
+        ((android.animation.Animator) real).resume();
     }
 
     public com.micklab.dcg.wrapper.android.animation.Animator setDuration(long arg0) {
-        return com.micklab.dcg.wrapper.android.animation.Animator.wrap(real.setDuration(arg0));
+        return com.micklab.dcg.wrapper.android.animation.Animator.wrap(((android.animation.Animator) real).setDuration(arg0));
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.animation.TimeInterpolator arg0) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap());
+        ((android.animation.Animator) real).setInterpolator(arg0 == null ? null : arg0.getReal());
     }
 
     public void setStartDelay(long arg0) {
-        real.setStartDelay(arg0);
+        ((android.animation.Animator) real).setStartDelay(arg0);
     }
 
     public void setTarget(java.lang.Object arg0) {
-        real.setTarget(arg0);
+        ((android.animation.Animator) real).setTarget(arg0);
     }
 
     public void setupEndValues() {
-        real.setupEndValues();
+        ((android.animation.Animator) real).setupEndValues();
     }
 
     public void setupStartValues() {
-        real.setupStartValues();
+        ((android.animation.Animator) real).setupStartValues();
     }
 
     public void start() {
-        real.start();
+        ((android.animation.Animator) real).start();
     }
 
     public static final long DURATION_INFINITE = android.animation.Animator.DURATION_INFINITE;
 
     public static final class AnimatorListener {
-        private final android.animation.Animator.AnimatorListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AnimatorListener(android.animation.Animator.AnimatorListener real) {
+        private final java.lang.Object real;
+
+        private AnimatorListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.animation.Animator.AnimatorListener wrap(android.animation.Animator.AnimatorListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator.AnimatorListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator.AnimatorListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.animation.Animator.AnimatorListener getReal() {
+            return (android.animation.Animator.AnimatorListener) real;
         }
 
         public android.animation.Animator.AnimatorListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAnimationCancel(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationCancel(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorListener) real).onAnimationCancel(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationEnd(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationEnd(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorListener) real).onAnimationEnd(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationEnd(com.micklab.dcg.wrapper.android.animation.Animator arg0, boolean arg1) {
-            real.onAnimationEnd(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.animation.Animator.AnimatorListener) real).onAnimationEnd(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onAnimationRepeat(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationRepeat(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorListener) real).onAnimationRepeat(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationStart(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationStart(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorListener) real).onAnimationStart(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationStart(com.micklab.dcg.wrapper.android.animation.Animator arg0, boolean arg1) {
-            real.onAnimationStart(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.animation.Animator.AnimatorListener) real).onAnimationStart(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }
     public static final class AnimatorPauseListener {
-        private final android.animation.Animator.AnimatorPauseListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AnimatorPauseListener(android.animation.Animator.AnimatorPauseListener real) {
+        private final java.lang.Object real;
+
+        private AnimatorPauseListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.animation.Animator.AnimatorPauseListener wrap(android.animation.Animator.AnimatorPauseListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator.AnimatorPauseListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.animation.Animator.AnimatorPauseListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.animation.Animator.AnimatorPauseListener getReal() {
+            return (android.animation.Animator.AnimatorPauseListener) real;
         }
 
         public android.animation.Animator.AnimatorPauseListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAnimationPause(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationPause(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorPauseListener) real).onAnimationPause(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationResume(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-            real.onAnimationResume(arg0 == null ? null : arg0.unwrap());
+            ((android.animation.Animator.AnimatorPauseListener) real).onAnimationResume(arg0 == null ? null : arg0.getReal());
         }
 
     }

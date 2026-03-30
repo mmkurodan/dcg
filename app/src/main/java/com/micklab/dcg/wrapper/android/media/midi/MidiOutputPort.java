@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media.midi;
 
 public final class MidiOutputPort {
-    private final android.media.midi.MidiOutputPort real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MidiOutputPort(android.media.midi.MidiOutputPort real) {
+    private final java.lang.Object real;
+
+    private MidiOutputPort(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.midi.MidiOutputPort wrap(android.media.midi.MidiOutputPort real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.midi.MidiOutputPort(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.midi.MidiOutputPort(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.midi.MidiOutputPort getReal() {
+        return (android.media.midi.MidiOutputPort) real;
     }
 
     public android.media.midi.MidiOutputPort unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() throws java.io.IOException {
-        real.close();
+        ((android.media.midi.MidiOutputPort) real).close();
     }
 
     public int getPortNumber() {
-        return real.getPortNumber();
+        return ((android.media.midi.MidiOutputPort) real).getPortNumber();
     }
 
     public void onConnect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.onConnect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiOutputPort) real).onConnect(arg0 == null ? null : arg0.getReal());
     }
 
     public void onDisconnect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.onDisconnect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiOutputPort) real).onDisconnect(arg0 == null ? null : arg0.getReal());
     }
 
 }

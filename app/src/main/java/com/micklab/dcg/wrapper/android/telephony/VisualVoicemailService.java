@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class VisualVoicemailService {
-    private final android.telephony.VisualVoicemailService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VisualVoicemailService(android.telephony.VisualVoicemailService real) {
+    private final java.lang.Object real;
+
+    private VisualVoicemailService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService wrap(android.telephony.VisualVoicemailService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.VisualVoicemailService getReal() {
+        return (android.telephony.VisualVoicemailService) real;
     }
 
     public android.telephony.VisualVoicemailService unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
@@ -38,18 +45,25 @@ public final class VisualVoicemailService {
 
 
     public static final class VisualVoicemailTask {
-        private final android.telephony.VisualVoicemailService.VisualVoicemailTask real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VisualVoicemailTask(android.telephony.VisualVoicemailService.VisualVoicemailTask real) {
+        private final java.lang.Object real;
+
+        private VisualVoicemailTask(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService.VisualVoicemailTask wrap(android.telephony.VisualVoicemailService.VisualVoicemailTask real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService.VisualVoicemailTask(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailService.VisualVoicemailTask(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.VisualVoicemailService.VisualVoicemailTask getReal() {
+            return (android.telephony.VisualVoicemailService.VisualVoicemailTask) real;
         }
 
         public android.telephony.VisualVoicemailService.VisualVoicemailTask unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {

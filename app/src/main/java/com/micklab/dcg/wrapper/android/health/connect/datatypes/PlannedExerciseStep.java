@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class PlannedExerciseStep {
-    private final android.health.connect.datatypes.PlannedExerciseStep real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PlannedExerciseStep(android.health.connect.datatypes.PlannedExerciseStep real) {
+    private final java.lang.Object real;
+
+    private PlannedExerciseStep(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep wrap(android.health.connect.datatypes.PlannedExerciseStep real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.PlannedExerciseStep getReal() {
+        return (android.health.connect.datatypes.PlannedExerciseStep) real;
     }
 
     public android.health.connect.datatypes.PlannedExerciseStep unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.health.connect.datatypes.PlannedExerciseStep) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal getCompletionGoal() {
-        return com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.wrap(real.getCompletionGoal());
+        return com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal.wrap(((android.health.connect.datatypes.PlannedExerciseStep) real).getCompletionGoal());
     }
 
     public java.lang.CharSequence getDescription() {
-        return real.getDescription();
+        return ((android.health.connect.datatypes.PlannedExerciseStep) real).getDescription();
     }
 
     public int getExerciseCategory() {
-        return real.getExerciseCategory();
+        return ((android.health.connect.datatypes.PlannedExerciseStep) real).getExerciseCategory();
     }
 
     public int getExerciseType() {
-        return real.getExerciseType();
+        return ((android.health.connect.datatypes.PlannedExerciseStep) real).getExerciseType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.health.connect.datatypes.PlannedExerciseStep) real).hashCode();
     }
 
     public static final int EXERCISE_CATEGORY_ACTIVE = android.health.connect.datatypes.PlannedExerciseStep.EXERCISE_CATEGORY_ACTIVE;
@@ -48,50 +55,57 @@ public final class PlannedExerciseStep {
     public static final int EXERCISE_CATEGORY_WARMUP = android.health.connect.datatypes.PlannedExerciseStep.EXERCISE_CATEGORY_WARMUP;
 
     public static final class Builder {
-        private final android.health.connect.datatypes.PlannedExerciseStep.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.health.connect.datatypes.PlannedExerciseStep.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder wrap(android.health.connect.datatypes.PlannedExerciseStep.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.PlannedExerciseStep.Builder getReal() {
+            return (android.health.connect.datatypes.PlannedExerciseStep.Builder) real;
         }
 
         public android.health.connect.datatypes.PlannedExerciseStep.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0, int arg1, com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal arg2) {
-            this(new android.health.connect.datatypes.PlannedExerciseStep.Builder(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            this(new android.health.connect.datatypes.PlannedExerciseStep.Builder(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder addPerformanceGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.ExercisePerformanceGoal arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.addPerformanceGoal(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).addPerformanceGoal(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep build() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder clearPerformanceGoals() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.clearPerformanceGoals());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).clearPerformanceGoals());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder setCompletionGoal(com.micklab.dcg.wrapper.android.health.connect.datatypes.ExerciseCompletionGoal arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.setCompletionGoal(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).setCompletionGoal(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder setDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.setDescription(arg0));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).setDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder setExerciseCategory(int arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.setExerciseCategory(arg0));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).setExerciseCategory(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder setExerciseType(int arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(real.setExerciseType(arg0));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.PlannedExerciseStep.Builder.wrap(((android.health.connect.datatypes.PlannedExerciseStep.Builder) real).setExerciseType(arg0));
         }
 
     }

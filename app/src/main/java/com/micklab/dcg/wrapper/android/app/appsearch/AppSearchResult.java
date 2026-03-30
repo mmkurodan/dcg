@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class AppSearchResult {
-    private final android.app.appsearch.AppSearchResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppSearchResult(android.app.appsearch.AppSearchResult real) {
+    private final java.lang.Object real;
+
+    private AppSearchResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchResult wrap(android.app.appsearch.AppSearchResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.AppSearchResult getReal() {
+        return (android.app.appsearch.AppSearchResult) real;
     }
 
     public android.app.appsearch.AppSearchResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.appsearch.AppSearchResult) real).equals(arg0);
     }
 
     public java.lang.String getErrorMessage() {
-        return real.getErrorMessage();
+        return ((android.app.appsearch.AppSearchResult) real).getErrorMessage();
     }
 
     public int getResultCode() {
-        return real.getResultCode();
+        return ((android.app.appsearch.AppSearchResult) real).getResultCode();
     }
 
     public java.lang.Object getResultValue() {
-        return real.getResultValue();
+        return ((android.app.appsearch.AppSearchResult) real).getResultValue();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.appsearch.AppSearchResult) real).hashCode();
     }
 
     public boolean isSuccess() {
-        return real.isSuccess();
+        return ((android.app.appsearch.AppSearchResult) real).isSuccess();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.appsearch.AppSearchResult) real).toString();
     }
 
     public static final int RESULT_DENIED = android.app.appsearch.AppSearchResult.RESULT_DENIED;

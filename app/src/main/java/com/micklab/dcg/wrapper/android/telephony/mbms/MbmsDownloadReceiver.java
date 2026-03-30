@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class MbmsDownloadReceiver {
-    private final android.telephony.mbms.MbmsDownloadReceiver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MbmsDownloadReceiver(android.telephony.mbms.MbmsDownloadReceiver real) {
+    private final java.lang.Object real;
+
+    private MbmsDownloadReceiver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.MbmsDownloadReceiver wrap(android.telephony.mbms.MbmsDownloadReceiver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsDownloadReceiver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.MbmsDownloadReceiver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.MbmsDownloadReceiver getReal() {
+        return (android.telephony.mbms.MbmsDownloadReceiver) real;
     }
 
     public android.telephony.mbms.MbmsDownloadReceiver unwrap() {
-        return real;
+        return getReal();
     }
 
     public MbmsDownloadReceiver() {

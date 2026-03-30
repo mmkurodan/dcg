@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class StructTimeval {
-    private final android.system.StructTimeval real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StructTimeval(android.system.StructTimeval real) {
+    private final java.lang.Object real;
+
+    private StructTimeval(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.StructTimeval wrap(android.system.StructTimeval real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructTimeval(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructTimeval(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.StructTimeval getReal() {
+        return (android.system.StructTimeval) real;
     }
 
     public android.system.StructTimeval unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

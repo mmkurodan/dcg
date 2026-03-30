@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class UrlQuerySanitizer {
-    private final android.net.UrlQuerySanitizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UrlQuerySanitizer(android.net.UrlQuerySanitizer real) {
+    private final java.lang.Object real;
+
+    private UrlQuerySanitizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer wrap(android.net.UrlQuerySanitizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.UrlQuerySanitizer getReal() {
+        return (android.net.UrlQuerySanitizer) real;
     }
 
     public android.net.UrlQuerySanitizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public UrlQuerySanitizer() {
@@ -121,18 +128,25 @@ public final class UrlQuerySanitizer {
     }
 
     public static final class IllegalCharacterValueSanitizer {
-        private final android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IllegalCharacterValueSanitizer(android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer real) {
+        private final java.lang.Object real;
+
+        private IllegalCharacterValueSanitizer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer wrap(android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer getReal() {
+            return (android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer) real;
         }
 
         public android.net.UrlQuerySanitizer.IllegalCharacterValueSanitizer unwrap() {
-            return real;
+            return getReal();
         }
 
         public IllegalCharacterValueSanitizer(int arg0) {
@@ -146,18 +160,25 @@ public final class UrlQuerySanitizer {
 
     }
     public static final class ValueSanitizer {
-        private final android.net.UrlQuerySanitizer.ValueSanitizer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ValueSanitizer(android.net.UrlQuerySanitizer.ValueSanitizer real) {
+        private final java.lang.Object real;
+
+        private ValueSanitizer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.ValueSanitizer wrap(android.net.UrlQuerySanitizer.ValueSanitizer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.ValueSanitizer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.ValueSanitizer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.UrlQuerySanitizer.ValueSanitizer getReal() {
+            return (android.net.UrlQuerySanitizer.ValueSanitizer) real;
         }
 
         public android.net.UrlQuerySanitizer.ValueSanitizer unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String sanitize(java.lang.String arg0) {

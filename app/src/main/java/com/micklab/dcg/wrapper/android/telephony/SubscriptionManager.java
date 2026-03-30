@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SubscriptionManager {
-    private final android.telephony.SubscriptionManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SubscriptionManager(android.telephony.SubscriptionManager real) {
+    private final java.lang.Object real;
+
+    private SubscriptionManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SubscriptionManager wrap(android.telephony.SubscriptionManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SubscriptionManager getReal() {
+        return (android.telephony.SubscriptionManager) real;
     }
 
     public android.telephony.SubscriptionManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addOnOpportunisticSubscriptionsChangedListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener arg1) {
@@ -154,18 +161,25 @@ public final class SubscriptionManager {
 
 
     public static final class OnOpportunisticSubscriptionsChangedListener {
-        private final android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnOpportunisticSubscriptionsChangedListener(android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnOpportunisticSubscriptionsChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener wrap(android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener getReal() {
+            return (android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener) real;
         }
 
         public android.telephony.SubscriptionManager.OnOpportunisticSubscriptionsChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public OnOpportunisticSubscriptionsChangedListener() {
@@ -178,18 +192,25 @@ public final class SubscriptionManager {
 
     }
     public static final class OnSubscriptionsChangedListener {
-        private final android.telephony.SubscriptionManager.OnSubscriptionsChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnSubscriptionsChangedListener(android.telephony.SubscriptionManager.OnSubscriptionsChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnSubscriptionsChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnSubscriptionsChangedListener wrap(android.telephony.SubscriptionManager.OnSubscriptionsChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnSubscriptionsChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionManager.OnSubscriptionsChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SubscriptionManager.OnSubscriptionsChangedListener getReal() {
+            return (android.telephony.SubscriptionManager.OnSubscriptionsChangedListener) real;
         }
 
         public android.telephony.SubscriptionManager.OnSubscriptionsChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public OnSubscriptionsChangedListener() {

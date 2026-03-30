@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class NetworkRegistrationInfo {
-    private final android.telephony.NetworkRegistrationInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkRegistrationInfo(android.telephony.NetworkRegistrationInfo real) {
+    private final java.lang.Object real;
+
+    private NetworkRegistrationInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.NetworkRegistrationInfo wrap(android.telephony.NetworkRegistrationInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NetworkRegistrationInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NetworkRegistrationInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.NetworkRegistrationInfo getReal() {
+        return (android.telephony.NetworkRegistrationInfo) real;
     }
 
     public android.telephony.NetworkRegistrationInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

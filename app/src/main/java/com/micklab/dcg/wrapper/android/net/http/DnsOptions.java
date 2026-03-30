@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class DnsOptions {
-    private final android.net.http.DnsOptions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DnsOptions(android.net.http.DnsOptions real) {
+    private final java.lang.Object real;
+
+    private DnsOptions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.DnsOptions wrap(android.net.http.DnsOptions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.DnsOptions getReal() {
+        return (android.net.http.DnsOptions) real;
     }
 
     public android.net.http.DnsOptions unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getPersistHostCache() {
@@ -42,18 +49,25 @@ public final class DnsOptions {
 
 
     public static final class Builder {
-        private final android.net.http.DnsOptions.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.DnsOptions.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.DnsOptions.Builder wrap(android.net.http.DnsOptions.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.DnsOptions.Builder getReal() {
+            return (android.net.http.DnsOptions.Builder) real;
         }
 
         public android.net.http.DnsOptions.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
@@ -90,18 +104,25 @@ public final class DnsOptions {
 
     }
     public static final class StaleDnsOptions {
-        private final android.net.http.DnsOptions.StaleDnsOptions real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StaleDnsOptions(android.net.http.DnsOptions.StaleDnsOptions real) {
+        private final java.lang.Object real;
+
+        private StaleDnsOptions(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions wrap(android.net.http.DnsOptions.StaleDnsOptions real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.DnsOptions.StaleDnsOptions getReal() {
+            return (android.net.http.DnsOptions.StaleDnsOptions) real;
         }
 
         public android.net.http.DnsOptions.StaleDnsOptions unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getAllowCrossNetworkUsage() {
@@ -121,18 +142,25 @@ public final class DnsOptions {
         }
 
         public static final class Builder {
-            private final android.net.http.DnsOptions.StaleDnsOptions.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.net.http.DnsOptions.StaleDnsOptions.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions.Builder wrap(android.net.http.DnsOptions.StaleDnsOptions.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.DnsOptions.StaleDnsOptions.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.net.http.DnsOptions.StaleDnsOptions.Builder getReal() {
+                return (android.net.http.DnsOptions.StaleDnsOptions.Builder) real;
             }
 
             public android.net.http.DnsOptions.StaleDnsOptions.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {

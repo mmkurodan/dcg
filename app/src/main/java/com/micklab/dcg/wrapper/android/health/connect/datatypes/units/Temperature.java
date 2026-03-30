@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes.units;
 
 public final class Temperature {
-    private final android.health.connect.datatypes.units.Temperature real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Temperature(android.health.connect.datatypes.units.Temperature real) {
+    private final java.lang.Object real;
+
+    private Temperature(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature wrap(android.health.connect.datatypes.units.Temperature real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.units.Temperature getReal() {
+        return (android.health.connect.datatypes.units.Temperature) real;
     }
 
     public android.health.connect.datatypes.units.Temperature unwrap() {
-        return real;
+        return getReal();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.health.connect.datatypes.units.Temperature) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.health.connect.datatypes.units.Temperature) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature fromCelsius(double arg0) {
@@ -29,15 +36,15 @@ public final class Temperature {
     }
 
     public double getInCelsius() {
-        return real.getInCelsius();
+        return ((android.health.connect.datatypes.units.Temperature) real).getInCelsius();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.health.connect.datatypes.units.Temperature) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.health.connect.datatypes.units.Temperature) real).toString();
     }
 
 }

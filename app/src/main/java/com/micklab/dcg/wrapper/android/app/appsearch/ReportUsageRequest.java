@@ -2,66 +2,80 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class ReportUsageRequest {
-    private final android.app.appsearch.ReportUsageRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ReportUsageRequest(android.app.appsearch.ReportUsageRequest real) {
+    private final java.lang.Object real;
+
+    private ReportUsageRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest wrap(android.app.appsearch.ReportUsageRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.ReportUsageRequest getReal() {
+        return (android.app.appsearch.ReportUsageRequest) real;
     }
 
     public android.app.appsearch.ReportUsageRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.appsearch.ReportUsageRequest) real).describeContents();
     }
 
     public java.lang.String getDocumentId() {
-        return real.getDocumentId();
+        return ((android.app.appsearch.ReportUsageRequest) real).getDocumentId();
     }
 
     public java.lang.String getNamespace() {
-        return real.getNamespace();
+        return ((android.app.appsearch.ReportUsageRequest) real).getNamespace();
     }
 
     public long getUsageTimestampMillis() {
-        return real.getUsageTimestampMillis();
+        return ((android.app.appsearch.ReportUsageRequest) real).getUsageTimestampMillis();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.appsearch.ReportUsageRequest) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.app.appsearch.ReportUsageRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.appsearch.ReportUsageRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder wrap(android.app.appsearch.ReportUsageRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.ReportUsageRequest.Builder getReal() {
+            return (android.app.appsearch.ReportUsageRequest.Builder) real;
         }
 
         public android.app.appsearch.ReportUsageRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0, java.lang.String arg1) {
-            this(new android.app.appsearch.ReportUsageRequest.Builder(arg0, arg1));
+            this(new android.app.appsearch.ReportUsageRequest.Builder(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest build() {
-            return com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.wrap(((android.app.appsearch.ReportUsageRequest.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder setUsageTimestampMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder.wrap(real.setUsageTimestampMillis(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.ReportUsageRequest.Builder.wrap(((android.app.appsearch.ReportUsageRequest.Builder) real).setUsageTimestampMillis(arg0));
         }
 
     }

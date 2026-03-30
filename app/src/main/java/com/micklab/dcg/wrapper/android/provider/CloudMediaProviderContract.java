@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class CloudMediaProviderContract {
-    private final android.provider.CloudMediaProviderContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CloudMediaProviderContract(android.provider.CloudMediaProviderContract real) {
+    private final java.lang.Object real;
+
+    private CloudMediaProviderContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract wrap(android.provider.CloudMediaProviderContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.CloudMediaProviderContract getReal() {
+        return (android.provider.CloudMediaProviderContract) real;
     }
 
     public android.provider.CloudMediaProviderContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String EXTRA_ALBUM_ID = android.provider.CloudMediaProviderContract.EXTRA_ALBUM_ID;
@@ -28,18 +35,25 @@ public final class CloudMediaProviderContract {
     public static final java.lang.String PROVIDER_INTERFACE = android.provider.CloudMediaProviderContract.PROVIDER_INTERFACE;
 
     public static final class AlbumColumns {
-        private final android.provider.CloudMediaProviderContract.AlbumColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AlbumColumns(android.provider.CloudMediaProviderContract.AlbumColumns real) {
+        private final java.lang.Object real;
+
+        private AlbumColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.AlbumColumns wrap(android.provider.CloudMediaProviderContract.AlbumColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.AlbumColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.AlbumColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CloudMediaProviderContract.AlbumColumns getReal() {
+            return (android.provider.CloudMediaProviderContract.AlbumColumns) real;
         }
 
         public android.provider.CloudMediaProviderContract.AlbumColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String DATE_TAKEN_MILLIS = android.provider.CloudMediaProviderContract.AlbumColumns.DATE_TAKEN_MILLIS;
@@ -50,18 +64,25 @@ public final class CloudMediaProviderContract {
 
     }
     public static final class MediaCollectionInfo {
-        private final android.provider.CloudMediaProviderContract.MediaCollectionInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaCollectionInfo(android.provider.CloudMediaProviderContract.MediaCollectionInfo real) {
+        private final java.lang.Object real;
+
+        private MediaCollectionInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaCollectionInfo wrap(android.provider.CloudMediaProviderContract.MediaCollectionInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaCollectionInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaCollectionInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CloudMediaProviderContract.MediaCollectionInfo getReal() {
+            return (android.provider.CloudMediaProviderContract.MediaCollectionInfo) real;
         }
 
         public android.provider.CloudMediaProviderContract.MediaCollectionInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ACCOUNT_CONFIGURATION_INTENT = android.provider.CloudMediaProviderContract.MediaCollectionInfo.ACCOUNT_CONFIGURATION_INTENT;
@@ -71,18 +92,25 @@ public final class CloudMediaProviderContract {
 
     }
     public static final class MediaColumns {
-        private final android.provider.CloudMediaProviderContract.MediaColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaColumns(android.provider.CloudMediaProviderContract.MediaColumns real) {
+        private final java.lang.Object real;
+
+        private MediaColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaColumns wrap(android.provider.CloudMediaProviderContract.MediaColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.MediaColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CloudMediaProviderContract.MediaColumns getReal() {
+            return (android.provider.CloudMediaProviderContract.MediaColumns) real;
         }
 
         public android.provider.CloudMediaProviderContract.MediaColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String DATE_TAKEN_MILLIS = android.provider.CloudMediaProviderContract.MediaColumns.DATE_TAKEN_MILLIS;

@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.adservices.common;
 
 public final class AdServicesOutcomeReceiver {
-    private final android.adservices.common.AdServicesOutcomeReceiver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdServicesOutcomeReceiver(android.adservices.common.AdServicesOutcomeReceiver real) {
+    private final java.lang.Object real;
+
+    private AdServicesOutcomeReceiver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.common.AdServicesOutcomeReceiver wrap(android.adservices.common.AdServicesOutcomeReceiver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.AdServicesOutcomeReceiver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.AdServicesOutcomeReceiver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.common.AdServicesOutcomeReceiver getReal() {
+        return (android.adservices.common.AdServicesOutcomeReceiver) real;
     }
 
     public android.adservices.common.AdServicesOutcomeReceiver unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onError(java.lang.Throwable arg0) {
-        real.onError(arg0);
+        ((android.adservices.common.AdServicesOutcomeReceiver) real).onError(arg0);
     }
 
     public void onResult(java.lang.Object arg0) {
-        real.onResult(arg0);
+        ((android.adservices.common.AdServicesOutcomeReceiver) real).onResult(arg0);
     }
 
 }

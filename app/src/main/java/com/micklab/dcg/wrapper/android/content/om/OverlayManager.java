@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.content.om;
 
 public final class OverlayManager {
-    private final android.content.om.OverlayManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OverlayManager(android.content.om.OverlayManager real) {
+    private final java.lang.Object real;
+
+    private OverlayManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.om.OverlayManager wrap(android.content.om.OverlayManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.om.OverlayManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.om.OverlayManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.om.OverlayManager getReal() {
+        return (android.content.om.OverlayManager) real;
     }
 
     public android.content.om.OverlayManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void commit(com.micklab.dcg.wrapper.android.content.om.OverlayManagerTransaction arg0) {
-        real.commit(arg0 == null ? null : arg0.unwrap());
+        ((android.content.om.OverlayManager) real).commit(arg0 == null ? null : arg0.getReal());
     }
 
 }

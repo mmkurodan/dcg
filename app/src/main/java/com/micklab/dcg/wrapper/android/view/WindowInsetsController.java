@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class WindowInsetsController {
-    private final android.view.WindowInsetsController real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WindowInsetsController(android.view.WindowInsetsController real) {
+    private final java.lang.Object real;
+
+    private WindowInsetsController(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.WindowInsetsController wrap(android.view.WindowInsetsController real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsController(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsController(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.WindowInsetsController getReal() {
+        return (android.view.WindowInsetsController) real;
     }
 
     public android.view.WindowInsetsController unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addOnControllableInsetsChangedListener(com.micklab.dcg.wrapper.android.view.WindowInsetsController.OnControllableInsetsChangedListener arg0) {
-        real.addOnControllableInsetsChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.WindowInsetsController) real).addOnControllableInsetsChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void controlWindowInsetsAnimation(int arg0, long arg1, com.micklab.dcg.wrapper.android.view.animation.Interpolator arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3, com.micklab.dcg.wrapper.android.view.WindowInsetsAnimationControlListener arg4) {
-        real.controlWindowInsetsAnimation(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        ((android.view.WindowInsetsController) real).controlWindowInsetsAnimation(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public int getSystemBarsAppearance() {
-        return real.getSystemBarsAppearance();
+        return ((android.view.WindowInsetsController) real).getSystemBarsAppearance();
     }
 
     public int getSystemBarsBehavior() {
-        return real.getSystemBarsBehavior();
+        return ((android.view.WindowInsetsController) real).getSystemBarsBehavior();
     }
 
     public void hide(int arg0) {
-        real.hide(arg0);
+        ((android.view.WindowInsetsController) real).hide(arg0);
     }
 
     public void removeOnControllableInsetsChangedListener(com.micklab.dcg.wrapper.android.view.WindowInsetsController.OnControllableInsetsChangedListener arg0) {
-        real.removeOnControllableInsetsChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.WindowInsetsController) real).removeOnControllableInsetsChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSystemBarsAppearance(int arg0, int arg1) {
-        real.setSystemBarsAppearance(arg0, arg1);
+        ((android.view.WindowInsetsController) real).setSystemBarsAppearance(arg0, arg1);
     }
 
     public void setSystemBarsBehavior(int arg0) {
-        real.setSystemBarsBehavior(arg0);
+        ((android.view.WindowInsetsController) real).setSystemBarsBehavior(arg0);
     }
 
     public void show(int arg0) {
-        real.show(arg0);
+        ((android.view.WindowInsetsController) real).show(arg0);
     }
 
     public static final int APPEARANCE_LIGHT_CAPTION_BARS = android.view.WindowInsetsController.APPEARANCE_LIGHT_CAPTION_BARS;
@@ -62,22 +69,29 @@ public final class WindowInsetsController {
     public static final int BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE = android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE;
 
     public static final class OnControllableInsetsChangedListener {
-        private final android.view.WindowInsetsController.OnControllableInsetsChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnControllableInsetsChangedListener(android.view.WindowInsetsController.OnControllableInsetsChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnControllableInsetsChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowInsetsController.OnControllableInsetsChangedListener wrap(android.view.WindowInsetsController.OnControllableInsetsChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsController.OnControllableInsetsChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowInsetsController.OnControllableInsetsChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowInsetsController.OnControllableInsetsChangedListener getReal() {
+            return (android.view.WindowInsetsController.OnControllableInsetsChangedListener) real;
         }
 
         public android.view.WindowInsetsController.OnControllableInsetsChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onControllableInsetsChanged(com.micklab.dcg.wrapper.android.view.WindowInsetsController arg0, int arg1) {
-            real.onControllableInsetsChanged(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.WindowInsetsController.OnControllableInsetsChangedListener) real).onControllableInsetsChanged(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }

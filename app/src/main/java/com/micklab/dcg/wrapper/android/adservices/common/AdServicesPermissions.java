@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.adservices.common;
 
 public final class AdServicesPermissions {
-    private final android.adservices.common.AdServicesPermissions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdServicesPermissions(android.adservices.common.AdServicesPermissions real) {
+    private final java.lang.Object real;
+
+    private AdServicesPermissions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.common.AdServicesPermissions wrap(android.adservices.common.AdServicesPermissions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.AdServicesPermissions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.AdServicesPermissions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.common.AdServicesPermissions getReal() {
+        return (android.adservices.common.AdServicesPermissions) real;
     }
 
     public android.adservices.common.AdServicesPermissions unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String ACCESS_ADSERVICES_AD_ID = android.adservices.common.AdServicesPermissions.ACCESS_ADSERVICES_AD_ID;

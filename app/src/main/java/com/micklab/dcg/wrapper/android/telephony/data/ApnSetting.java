@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class ApnSetting {
-    private final android.telephony.data.ApnSetting real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ApnSetting(android.telephony.data.ApnSetting real) {
+    private final java.lang.Object real;
+
+    private ApnSetting(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.ApnSetting wrap(android.telephony.data.ApnSetting real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.ApnSetting(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.ApnSetting(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.ApnSetting getReal() {
+        return (android.telephony.data.ApnSetting) real;
     }
 
     public android.telephony.data.ApnSetting unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -142,18 +149,25 @@ public final class ApnSetting {
 
 
     public static final class Builder {
-        private final android.telephony.data.ApnSetting.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.data.ApnSetting.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder wrap(android.telephony.data.ApnSetting.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.data.ApnSetting.Builder getReal() {
+            return (android.telephony.data.ApnSetting.Builder) real;
         }
 
         public android.telephony.data.ApnSetting.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

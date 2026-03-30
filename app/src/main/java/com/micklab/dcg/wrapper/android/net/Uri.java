@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class Uri {
-    private final android.net.Uri real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Uri(android.net.Uri real) {
+    private final java.lang.Object real;
+
+    private Uri(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri wrap(android.net.Uri real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Uri(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Uri(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.Uri getReal() {
+        return (android.net.Uri) real;
     }
 
     public android.net.Uri unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri.Builder buildUpon() {
@@ -162,18 +169,25 @@ public final class Uri {
 
 
     public static final class Builder {
-        private final android.net.Uri.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.Uri.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri.Builder wrap(android.net.Uri.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.Uri.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.Uri.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.Uri.Builder getReal() {
+            return (android.net.Uri.Builder) real;
         }
 
         public android.net.Uri.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

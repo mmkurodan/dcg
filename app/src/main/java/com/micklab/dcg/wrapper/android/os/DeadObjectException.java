@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class DeadObjectException {
-    private final android.os.DeadObjectException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DeadObjectException(android.os.DeadObjectException real) {
+    private final java.lang.Object real;
+
+    private DeadObjectException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.DeadObjectException wrap(android.os.DeadObjectException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.DeadObjectException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.DeadObjectException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.DeadObjectException getReal() {
+        return (android.os.DeadObjectException) real;
     }
 
     public android.os.DeadObjectException unwrap() {
-        return real;
+        return getReal();
     }
 
     public DeadObjectException() {

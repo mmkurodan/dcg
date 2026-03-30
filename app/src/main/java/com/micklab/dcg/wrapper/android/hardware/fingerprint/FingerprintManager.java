@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.hardware.fingerprint;
 
 public final class FingerprintManager {
-    private final android.hardware.fingerprint.FingerprintManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FingerprintManager(android.hardware.fingerprint.FingerprintManager real) {
+    private final java.lang.Object real;
+
+    private FingerprintManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager wrap(android.hardware.fingerprint.FingerprintManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.fingerprint.FingerprintManager getReal() {
+        return (android.hardware.fingerprint.FingerprintManager) real;
     }
 
     public android.hardware.fingerprint.FingerprintManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void authenticate(com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject arg0, com.micklab.dcg.wrapper.android.os.CancellationSignal arg1, int arg2, com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationCallback arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
-        real.authenticate(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        ((android.hardware.fingerprint.FingerprintManager) real).authenticate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public boolean hasEnrolledFingerprints() {
-        return real.hasEnrolledFingerprints();
+        return ((android.hardware.fingerprint.FingerprintManager) real).hasEnrolledFingerprints();
     }
 
     public boolean isHardwareDetected() {
-        return real.isHardwareDetected();
+        return ((android.hardware.fingerprint.FingerprintManager) real).isHardwareDetected();
     }
 
     public static final int FINGERPRINT_ACQUIRED_GOOD = android.hardware.fingerprint.FingerprintManager.FINGERPRINT_ACQUIRED_GOOD;
@@ -47,94 +54,115 @@ public final class FingerprintManager {
     public static final int FINGERPRINT_ERROR_VENDOR = android.hardware.fingerprint.FingerprintManager.FINGERPRINT_ERROR_VENDOR;
 
     public static final class AuthenticationCallback {
-        private final android.hardware.fingerprint.FingerprintManager.AuthenticationCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AuthenticationCallback(android.hardware.fingerprint.FingerprintManager.AuthenticationCallback real) {
+        private final java.lang.Object real;
+
+        private AuthenticationCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationCallback wrap(android.hardware.fingerprint.FingerprintManager.AuthenticationCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.fingerprint.FingerprintManager.AuthenticationCallback getReal() {
+            return (android.hardware.fingerprint.FingerprintManager.AuthenticationCallback) real;
         }
 
         public android.hardware.fingerprint.FingerprintManager.AuthenticationCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAuthenticationError(int arg0, java.lang.CharSequence arg1) {
-            real.onAuthenticationError(arg0, arg1);
+            ((android.hardware.fingerprint.FingerprintManager.AuthenticationCallback) real).onAuthenticationError(arg0, arg1);
         }
 
         public void onAuthenticationFailed() {
-            real.onAuthenticationFailed();
+            ((android.hardware.fingerprint.FingerprintManager.AuthenticationCallback) real).onAuthenticationFailed();
         }
 
         public void onAuthenticationHelp(int arg0, java.lang.CharSequence arg1) {
-            real.onAuthenticationHelp(arg0, arg1);
+            ((android.hardware.fingerprint.FingerprintManager.AuthenticationCallback) real).onAuthenticationHelp(arg0, arg1);
         }
 
         public void onAuthenticationSucceeded(com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationResult arg0) {
-            real.onAuthenticationSucceeded(arg0 == null ? null : arg0.unwrap());
+            ((android.hardware.fingerprint.FingerprintManager.AuthenticationCallback) real).onAuthenticationSucceeded(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class AuthenticationResult {
-        private final android.hardware.fingerprint.FingerprintManager.AuthenticationResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AuthenticationResult(android.hardware.fingerprint.FingerprintManager.AuthenticationResult real) {
+        private final java.lang.Object real;
+
+        private AuthenticationResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationResult wrap(android.hardware.fingerprint.FingerprintManager.AuthenticationResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.AuthenticationResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.fingerprint.FingerprintManager.AuthenticationResult getReal() {
+            return (android.hardware.fingerprint.FingerprintManager.AuthenticationResult) real;
         }
 
         public android.hardware.fingerprint.FingerprintManager.AuthenticationResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject getCryptoObject() {
-            return com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject.wrap(real.getCryptoObject());
+            return com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject.wrap(((android.hardware.fingerprint.FingerprintManager.AuthenticationResult) real).getCryptoObject());
         }
 
     }
     public static final class CryptoObject {
-        private final android.hardware.fingerprint.FingerprintManager.CryptoObject real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CryptoObject(android.hardware.fingerprint.FingerprintManager.CryptoObject real) {
+        private final java.lang.Object real;
+
+        private CryptoObject(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject wrap(android.hardware.fingerprint.FingerprintManager.CryptoObject real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.fingerprint.FingerprintManager.CryptoObject(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.fingerprint.FingerprintManager.CryptoObject getReal() {
+            return (android.hardware.fingerprint.FingerprintManager.CryptoObject) real;
         }
 
         public android.hardware.fingerprint.FingerprintManager.CryptoObject unwrap() {
-            return real;
+            return getReal();
         }
 
         public CryptoObject(javax.crypto.Mac arg0) {
-            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0));
+            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
         public CryptoObject(javax.crypto.Cipher arg0) {
-            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0));
+            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
         public CryptoObject(java.security.Signature arg0) {
-            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0));
+            this(new android.hardware.fingerprint.FingerprintManager.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
         public javax.crypto.Cipher getCipher() {
-            return real.getCipher();
+            return ((android.hardware.fingerprint.FingerprintManager.CryptoObject) real).getCipher();
         }
 
         public javax.crypto.Mac getMac() {
-            return real.getMac();
+            return ((android.hardware.fingerprint.FingerprintManager.CryptoObject) real).getMac();
         }
 
         public java.security.Signature getSignature() {
-            return real.getSignature();
+            return ((android.hardware.fingerprint.FingerprintManager.CryptoObject) real).getSignature();
         }
 
     }

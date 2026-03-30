@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class UniversalTimeScale {
-    private final android.icu.util.UniversalTimeScale real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UniversalTimeScale(android.icu.util.UniversalTimeScale real) {
+    private final java.lang.Object real;
+
+    private UniversalTimeScale(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.UniversalTimeScale wrap(android.icu.util.UniversalTimeScale real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.UniversalTimeScale(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.UniversalTimeScale(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.UniversalTimeScale getReal() {
+        return (android.icu.util.UniversalTimeScale) real;
     }
 
     public android.icu.util.UniversalTimeScale unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(long arg0, int arg1) {
@@ -21,7 +28,7 @@ public final class UniversalTimeScale {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.bigDecimalFrom(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.bigDecimalFrom(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(double arg0, int arg1) {
@@ -37,7 +44,7 @@ public final class UniversalTimeScale {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal toBigDecimal(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.toBigDecimal(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.toBigDecimal(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal toBigDecimal(long arg0, int arg1) {

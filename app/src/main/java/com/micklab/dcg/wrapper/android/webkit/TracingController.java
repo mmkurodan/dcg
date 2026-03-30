@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class TracingController {
-    private final android.webkit.TracingController real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TracingController(android.webkit.TracingController real) {
+    private final java.lang.Object real;
+
+    private TracingController(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.TracingController wrap(android.webkit.TracingController real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingController(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingController(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.TracingController getReal() {
+        return (android.webkit.TracingController) real;
     }
 
     public android.webkit.TracingController unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.TracingController getInstance() {
@@ -21,15 +28,15 @@ public final class TracingController {
     }
 
     public boolean isTracing() {
-        return real.isTracing();
+        return ((android.webkit.TracingController) real).isTracing();
     }
 
     public void start(com.micklab.dcg.wrapper.android.webkit.TracingConfig arg0) {
-        real.start(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.TracingController) real).start(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean stop(java.io.OutputStream arg0, java.util.concurrent.Executor arg1) {
-        return real.stop(arg0, arg1);
+        return ((android.webkit.TracingController) real).stop(arg0, arg1);
     }
 
 }

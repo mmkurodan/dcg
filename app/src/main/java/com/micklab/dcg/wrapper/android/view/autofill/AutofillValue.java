@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view.autofill;
 
 public final class AutofillValue {
-    private final android.view.autofill.AutofillValue real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AutofillValue(android.view.autofill.AutofillValue real) {
+    private final java.lang.Object real;
+
+    private AutofillValue(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.autofill.AutofillValue wrap(android.view.autofill.AutofillValue real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.autofill.AutofillValue(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.autofill.AutofillValue(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.autofill.AutofillValue getReal() {
+        return (android.view.autofill.AutofillValue) real;
     }
 
     public android.view.autofill.AutofillValue unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.autofill.AutofillValue) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.autofill.AutofillValue) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.view.autofill.AutofillValue forDate(long arg0) {
@@ -41,47 +48,47 @@ public final class AutofillValue {
     }
 
     public long getDateValue() {
-        return real.getDateValue();
+        return ((android.view.autofill.AutofillValue) real).getDateValue();
     }
 
     public int getListValue() {
-        return real.getListValue();
+        return ((android.view.autofill.AutofillValue) real).getListValue();
     }
 
     public java.lang.CharSequence getTextValue() {
-        return real.getTextValue();
+        return ((android.view.autofill.AutofillValue) real).getTextValue();
     }
 
     public boolean getToggleValue() {
-        return real.getToggleValue();
+        return ((android.view.autofill.AutofillValue) real).getToggleValue();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.autofill.AutofillValue) real).hashCode();
     }
 
     public boolean isDate() {
-        return real.isDate();
+        return ((android.view.autofill.AutofillValue) real).isDate();
     }
 
     public boolean isList() {
-        return real.isList();
+        return ((android.view.autofill.AutofillValue) real).isList();
     }
 
     public boolean isText() {
-        return real.isText();
+        return ((android.view.autofill.AutofillValue) real).isText();
     }
 
     public boolean isToggle() {
-        return real.isToggle();
+        return ((android.view.autofill.AutofillValue) real).isToggle();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.autofill.AutofillValue) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.autofill.AutofillValue) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

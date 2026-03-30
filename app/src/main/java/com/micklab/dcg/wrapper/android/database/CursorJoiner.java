@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class CursorJoiner {
-    private final android.database.CursorJoiner real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CursorJoiner(android.database.CursorJoiner real) {
+    private final java.lang.Object real;
+
+    private CursorJoiner(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.CursorJoiner wrap(android.database.CursorJoiner real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorJoiner(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorJoiner(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.CursorJoiner getReal() {
+        return (android.database.CursorJoiner) real;
     }
 
     public android.database.CursorJoiner unwrap() {
-        return real;
+        return getReal();
     }
 
     public CursorJoiner(com.micklab.dcg.wrapper.android.database.Cursor arg0, java.lang.String[] arg1, com.micklab.dcg.wrapper.android.database.Cursor arg2, java.lang.String[] arg3) {
@@ -33,18 +40,25 @@ public final class CursorJoiner {
     }
 
     public static final class Result {
-        private final android.database.CursorJoiner.Result real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Result(android.database.CursorJoiner.Result real) {
+        private final java.lang.Object real;
+
+        private Result(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.database.CursorJoiner.Result wrap(android.database.CursorJoiner.Result real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorJoiner.Result(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorJoiner.Result(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.database.CursorJoiner.Result getReal() {
+            return (android.database.CursorJoiner.Result) real;
         }
 
         public android.database.CursorJoiner.Result unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.database.CursorJoiner.Result valueOf(java.lang.String arg0) {

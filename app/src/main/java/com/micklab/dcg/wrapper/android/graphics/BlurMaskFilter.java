@@ -2,37 +2,51 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class BlurMaskFilter {
-    private final android.graphics.BlurMaskFilter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BlurMaskFilter(android.graphics.BlurMaskFilter real) {
+    private final java.lang.Object real;
+
+    private BlurMaskFilter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter wrap(android.graphics.BlurMaskFilter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.BlurMaskFilter getReal() {
+        return (android.graphics.BlurMaskFilter) real;
     }
 
     public android.graphics.BlurMaskFilter unwrap() {
-        return real;
+        return getReal();
     }
 
     public BlurMaskFilter(float arg0, com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter.Blur arg1) {
-        this(new android.graphics.BlurMaskFilter(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.graphics.BlurMaskFilter(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public static final class Blur {
-        private final android.graphics.BlurMaskFilter.Blur real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Blur(android.graphics.BlurMaskFilter.Blur real) {
+        private final java.lang.Object real;
+
+        private Blur(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter.Blur wrap(android.graphics.BlurMaskFilter.Blur real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter.Blur(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter.Blur(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.BlurMaskFilter.Blur getReal() {
+            return (android.graphics.BlurMaskFilter.Blur) real;
         }
 
         public android.graphics.BlurMaskFilter.Blur unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.BlurMaskFilter.Blur valueOf(java.lang.String arg0) {

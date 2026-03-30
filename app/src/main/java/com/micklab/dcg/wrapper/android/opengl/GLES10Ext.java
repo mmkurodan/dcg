@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES10Ext {
-    private final android.opengl.GLES10Ext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES10Ext(android.opengl.GLES10Ext real) {
+    private final java.lang.Object real;
+
+    private GLES10Ext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES10Ext wrap(android.opengl.GLES10Ext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES10Ext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES10Ext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES10Ext getReal() {
+        return (android.opengl.GLES10Ext) real;
     }
 
     public android.opengl.GLES10Ext unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLES10Ext() {
-        this(new android.opengl.GLES10Ext());
+        this(new android.opengl.GLES10Ext(), (__DcgwBridgeToken) null);
     }
 
     public static int glQueryMatrixxOES(java.nio.IntBuffer arg0, java.nio.IntBuffer arg1) {

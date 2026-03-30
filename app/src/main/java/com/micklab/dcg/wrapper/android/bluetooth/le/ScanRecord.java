@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class ScanRecord {
-    private final android.bluetooth.le.ScanRecord real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScanRecord(android.bluetooth.le.ScanRecord real) {
+    private final java.lang.Object real;
+
+    private ScanRecord(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord wrap(android.bluetooth.le.ScanRecord real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.ScanRecord getReal() {
+        return (android.bluetooth.le.ScanRecord) real;
     }
 
     public android.bluetooth.le.ScanRecord unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getAdvertiseFlags() {
-        return real.getAdvertiseFlags();
+        return ((android.bluetooth.le.ScanRecord) real).getAdvertiseFlags();
     }
 
     public byte[] getBytes() {
-        return real.getBytes();
+        return ((android.bluetooth.le.ScanRecord) real).getBytes();
     }
 
     public java.lang.String getDeviceName() {
-        return real.getDeviceName();
+        return ((android.bluetooth.le.ScanRecord) real).getDeviceName();
     }
 
     public byte[] getManufacturerSpecificData(int arg0) {
-        return real.getManufacturerSpecificData(arg0);
+        return ((android.bluetooth.le.ScanRecord) real).getManufacturerSpecificData(arg0);
     }
 
     public byte[] getServiceData(com.micklab.dcg.wrapper.android.os.ParcelUuid arg0) {
-        return real.getServiceData(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.le.ScanRecord) real).getServiceData(arg0 == null ? null : arg0.getReal());
     }
 
     public int getTxPowerLevel() {
-        return real.getTxPowerLevel();
+        return ((android.bluetooth.le.ScanRecord) real).getTxPowerLevel();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.le.ScanRecord) real).toString();
     }
 
     public static final int DATA_TYPE_3D_INFORMATION_DATA = android.bluetooth.le.ScanRecord.DATA_TYPE_3D_INFORMATION_DATA;

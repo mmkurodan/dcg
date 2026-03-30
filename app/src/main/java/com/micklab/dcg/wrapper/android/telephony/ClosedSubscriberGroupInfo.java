@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class ClosedSubscriberGroupInfo {
-    private final android.telephony.ClosedSubscriberGroupInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ClosedSubscriberGroupInfo(android.telephony.ClosedSubscriberGroupInfo real) {
+    private final java.lang.Object real;
+
+    private ClosedSubscriberGroupInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ClosedSubscriberGroupInfo wrap(android.telephony.ClosedSubscriberGroupInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ClosedSubscriberGroupInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ClosedSubscriberGroupInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ClosedSubscriberGroupInfo getReal() {
+        return (android.telephony.ClosedSubscriberGroupInfo) real;
     }
 
     public android.telephony.ClosedSubscriberGroupInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

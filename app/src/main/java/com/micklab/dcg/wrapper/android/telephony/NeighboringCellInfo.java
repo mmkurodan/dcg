@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class NeighboringCellInfo {
-    private final android.telephony.NeighboringCellInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NeighboringCellInfo(android.telephony.NeighboringCellInfo real) {
+    private final java.lang.Object real;
+
+    private NeighboringCellInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.NeighboringCellInfo wrap(android.telephony.NeighboringCellInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NeighboringCellInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NeighboringCellInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.NeighboringCellInfo getReal() {
+        return (android.telephony.NeighboringCellInfo) real;
     }
 
     public android.telephony.NeighboringCellInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public NeighboringCellInfo() {

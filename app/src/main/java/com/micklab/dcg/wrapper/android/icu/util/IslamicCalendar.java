@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class IslamicCalendar {
-    private final android.icu.util.IslamicCalendar real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IslamicCalendar(android.icu.util.IslamicCalendar real) {
+    private final java.lang.Object real;
+
+    private IslamicCalendar(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar wrap(android.icu.util.IslamicCalendar real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.IslamicCalendar getReal() {
+        return (android.icu.util.IslamicCalendar) real;
     }
 
     public android.icu.util.IslamicCalendar unwrap() {
-        return real;
+        return getReal();
     }
 
     public IslamicCalendar() {
-        this(new android.icu.util.IslamicCalendar());
+        this(new android.icu.util.IslamicCalendar(), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(java.util.Date arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0));
+        this(new android.icu.util.IslamicCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0));
+        this(new android.icu.util.IslamicCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(int arg0, int arg1, int arg2) {
-        this(new android.icu.util.IslamicCalendar(arg0, arg1, arg2));
+        this(new android.icu.util.IslamicCalendar(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        this(new android.icu.util.IslamicCalendar(arg0, arg1, arg2, arg3, arg4, arg5));
+        this(new android.icu.util.IslamicCalendar(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType getCalculationType() {
-        return com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType.wrap(real.getCalculationType());
+        return com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType.wrap(((android.icu.util.IslamicCalendar) real).getCalculationType());
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.icu.util.IslamicCalendar) real).getType();
     }
 
     public void setCalculationType(com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType arg0) {
-        real.setCalculationType(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.util.IslamicCalendar) real).setCalculationType(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int DHU_AL_HIJJAH = android.icu.util.IslamicCalendar.DHU_AL_HIJJAH;
@@ -78,18 +85,25 @@ public final class IslamicCalendar {
     public static final int SHAWWAL = android.icu.util.IslamicCalendar.SHAWWAL;
 
     public static final class CalculationType {
-        private final android.icu.util.IslamicCalendar.CalculationType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CalculationType(android.icu.util.IslamicCalendar.CalculationType real) {
+        private final java.lang.Object real;
+
+        private CalculationType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType wrap(android.icu.util.IslamicCalendar.CalculationType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.IslamicCalendar.CalculationType getReal() {
+            return (android.icu.util.IslamicCalendar.CalculationType) real;
         }
 
         public android.icu.util.IslamicCalendar.CalculationType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType valueOf(java.lang.String arg0) {

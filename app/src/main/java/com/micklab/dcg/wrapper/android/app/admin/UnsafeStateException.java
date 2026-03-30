@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class UnsafeStateException {
-    private final android.app.admin.UnsafeStateException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UnsafeStateException(android.app.admin.UnsafeStateException real) {
+    private final java.lang.Object real;
+
+    private UnsafeStateException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.UnsafeStateException wrap(android.app.admin.UnsafeStateException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.UnsafeStateException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.UnsafeStateException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.UnsafeStateException getReal() {
+        return (android.app.admin.UnsafeStateException) real;
     }
 
     public android.app.admin.UnsafeStateException unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.admin.UnsafeStateException) real).describeContents();
     }
 
     public java.lang.String getMessage() {
-        return real.getMessage();
+        return ((android.app.admin.UnsafeStateException) real).getMessage();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.UnsafeStateException) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

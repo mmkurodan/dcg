@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioMetadata {
-    private final android.media.AudioMetadata real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioMetadata(android.media.AudioMetadata real) {
+    private final java.lang.Object real;
+
+    private AudioMetadata(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioMetadata wrap(android.media.AudioMetadata real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioMetadata getReal() {
+        return (android.media.AudioMetadata) real;
     }
 
     public android.media.AudioMetadata unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioMetadataMap createMap() {
@@ -21,39 +28,53 @@ public final class AudioMetadata {
     }
 
     public static final class Format {
-        private final android.media.AudioMetadata.Format real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Format(android.media.AudioMetadata.Format real) {
+        private final java.lang.Object real;
+
+        private Format(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioMetadata.Format wrap(android.media.AudioMetadata.Format real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata.Format(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata.Format(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioMetadata.Format getReal() {
+            return (android.media.AudioMetadata.Format) real;
         }
 
         public android.media.AudioMetadata.Format unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class Key {
-        private final android.media.AudioMetadata.Key real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Key(android.media.AudioMetadata.Key real) {
+        private final java.lang.Object real;
+
+        private Key(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioMetadata.Key wrap(android.media.AudioMetadata.Key real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata.Key(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadata.Key(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioMetadata.Key getReal() {
+            return (android.media.AudioMetadata.Key) real;
         }
 
         public android.media.AudioMetadata.Key unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getName() {
-            return real.getName();
+            return ((android.media.AudioMetadata.Key) real).getName();
         }
 
     }

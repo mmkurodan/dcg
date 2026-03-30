@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteOpenHelper {
-    private final android.database.sqlite.SQLiteOpenHelper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteOpenHelper(android.database.sqlite.SQLiteOpenHelper real) {
+    private final java.lang.Object real;
+
+    private SQLiteOpenHelper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOpenHelper wrap(android.database.sqlite.SQLiteOpenHelper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOpenHelper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOpenHelper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteOpenHelper getReal() {
+        return (android.database.sqlite.SQLiteOpenHelper) real;
     }
 
     public android.database.sqlite.SQLiteOpenHelper unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {

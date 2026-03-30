@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Trace {
-    private final android.os.Trace real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Trace(android.os.Trace real) {
+    private final java.lang.Object real;
+
+    private Trace(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Trace wrap(android.os.Trace real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Trace(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Trace(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Trace getReal() {
+        return (android.os.Trace) real;
     }
 
     public android.os.Trace unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void beginAsyncSection(java.lang.String arg0, int arg1) {

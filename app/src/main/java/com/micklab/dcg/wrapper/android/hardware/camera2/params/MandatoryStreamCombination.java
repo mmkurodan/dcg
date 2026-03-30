@@ -2,85 +2,99 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class MandatoryStreamCombination {
-    private final android.hardware.camera2.params.MandatoryStreamCombination real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MandatoryStreamCombination(android.hardware.camera2.params.MandatoryStreamCombination real) {
+    private final java.lang.Object real;
+
+    private MandatoryStreamCombination(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination wrap(android.hardware.camera2.params.MandatoryStreamCombination real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.MandatoryStreamCombination getReal() {
+        return (android.hardware.camera2.params.MandatoryStreamCombination) real;
     }
 
     public android.hardware.camera2.params.MandatoryStreamCombination unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.hardware.camera2.params.MandatoryStreamCombination) real).equals(arg0);
     }
 
     public java.lang.CharSequence getDescription() {
-        return real.getDescription();
+        return ((android.hardware.camera2.params.MandatoryStreamCombination) real).getDescription();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.hardware.camera2.params.MandatoryStreamCombination) real).hashCode();
     }
 
     public boolean isReprocessable() {
-        return real.isReprocessable();
+        return ((android.hardware.camera2.params.MandatoryStreamCombination) real).isReprocessable();
     }
 
     public static final class MandatoryStreamInformation {
-        private final android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MandatoryStreamInformation(android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation real) {
+        private final java.lang.Object real;
+
+        private MandatoryStreamInformation(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation wrap(android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation getReal() {
+            return (android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real;
         }
 
         public android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).equals(arg0);
         }
 
         public int get10BitFormat() {
-            return real.get10BitFormat();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).get10BitFormat();
         }
 
         public int getFormat() {
-            return real.getFormat();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).getFormat();
         }
 
         public long getStreamUseCase() {
-            return real.getStreamUseCase();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).getStreamUseCase();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).hashCode();
         }
 
         public boolean is10BitCapable() {
-            return real.is10BitCapable();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).is10BitCapable();
         }
 
         public boolean isInput() {
-            return real.isInput();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).isInput();
         }
 
         public boolean isMaximumSize() {
-            return real.isMaximumSize();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).isMaximumSize();
         }
 
         public boolean isUltraHighResolution() {
-            return real.isUltraHighResolution();
+            return ((android.hardware.camera2.params.MandatoryStreamCombination.MandatoryStreamInformation) real).isUltraHighResolution();
         }
 
     }

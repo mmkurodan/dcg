@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DateTimePatternGenerator {
-    private final android.icu.text.DateTimePatternGenerator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DateTimePatternGenerator(android.icu.text.DateTimePatternGenerator real) {
+    private final java.lang.Object real;
+
+    private DateTimePatternGenerator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator wrap(android.icu.text.DateTimePatternGenerator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DateTimePatternGenerator getReal() {
+        return (android.icu.text.DateTimePatternGenerator) real;
     }
 
     public android.icu.text.DateTimePatternGenerator unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator addPattern(java.lang.String arg0, boolean arg1, com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.PatternInfo arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(real.addPattern(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(((android.icu.text.DateTimePatternGenerator) real).addPattern(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.DateTimePatternGenerator) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(((android.icu.text.DateTimePatternGenerator) real).cloneAsThawed());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator freeze() {
-        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(((android.icu.text.DateTimePatternGenerator) real).freeze());
     }
 
     public java.lang.String getAppendItemFormat(int arg0) {
-        return real.getAppendItemFormat(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getAppendItemFormat(arg0);
     }
 
     public java.lang.String getAppendItemName(int arg0) {
-        return real.getAppendItemName(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getAppendItemName(arg0);
     }
 
     public java.lang.String getBaseSkeleton(java.lang.String arg0) {
-        return real.getBaseSkeleton(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getBaseSkeleton(arg0);
     }
 
     public java.lang.String getBestPattern(java.lang.String arg0) {
-        return real.getBestPattern(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getBestPattern(arg0);
     }
 
     public java.lang.String getBestPattern(java.lang.String arg0, int arg1) {
-        return real.getBestPattern(arg0, arg1);
+        return ((android.icu.text.DateTimePatternGenerator) real).getBestPattern(arg0, arg1);
     }
 
     public java.lang.String getDateTimeFormat() {
-        return real.getDateTimeFormat();
+        return ((android.icu.text.DateTimePatternGenerator) real).getDateTimeFormat();
     }
 
     public java.lang.String getDateTimeFormat(int arg0) {
-        return real.getDateTimeFormat(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getDateTimeFormat(arg0);
     }
 
     public java.lang.String getDecimal() {
-        return real.getDecimal();
+        return ((android.icu.text.DateTimePatternGenerator) real).getDecimal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DateFormat.HourCycle getDefaultHourCycle() {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.HourCycle.wrap(real.getDefaultHourCycle());
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.HourCycle.wrap(((android.icu.text.DateTimePatternGenerator) real).getDefaultHourCycle());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator getEmptyInstance() {
@@ -73,7 +80,7 @@ public final class DateTimePatternGenerator {
     }
 
     public java.lang.String getFieldDisplayName(int arg0, com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.DisplayWidth arg1) {
-        return real.getFieldDisplayName(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.text.DateTimePatternGenerator) real).getFieldDisplayName(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator getInstance() {
@@ -81,7 +88,7 @@ public final class DateTimePatternGenerator {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(android.icu.text.DateTimePatternGenerator.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.wrap(android.icu.text.DateTimePatternGenerator.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator getInstance(java.util.Locale arg0) {
@@ -89,39 +96,39 @@ public final class DateTimePatternGenerator {
     }
 
     public java.lang.String getSkeleton(java.lang.String arg0) {
-        return real.getSkeleton(arg0);
+        return ((android.icu.text.DateTimePatternGenerator) real).getSkeleton(arg0);
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.text.DateTimePatternGenerator) real).isFrozen();
     }
 
     public java.lang.String replaceFieldTypes(java.lang.String arg0, java.lang.String arg1) {
-        return real.replaceFieldTypes(arg0, arg1);
+        return ((android.icu.text.DateTimePatternGenerator) real).replaceFieldTypes(arg0, arg1);
     }
 
     public java.lang.String replaceFieldTypes(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        return real.replaceFieldTypes(arg0, arg1, arg2);
+        return ((android.icu.text.DateTimePatternGenerator) real).replaceFieldTypes(arg0, arg1, arg2);
     }
 
     public void setAppendItemFormat(int arg0, java.lang.String arg1) {
-        real.setAppendItemFormat(arg0, arg1);
+        ((android.icu.text.DateTimePatternGenerator) real).setAppendItemFormat(arg0, arg1);
     }
 
     public void setAppendItemName(int arg0, java.lang.String arg1) {
-        real.setAppendItemName(arg0, arg1);
+        ((android.icu.text.DateTimePatternGenerator) real).setAppendItemName(arg0, arg1);
     }
 
     public void setDateTimeFormat(java.lang.String arg0) {
-        real.setDateTimeFormat(arg0);
+        ((android.icu.text.DateTimePatternGenerator) real).setDateTimeFormat(arg0);
     }
 
     public void setDateTimeFormat(int arg0, java.lang.String arg1) {
-        real.setDateTimeFormat(arg0, arg1);
+        ((android.icu.text.DateTimePatternGenerator) real).setDateTimeFormat(arg0, arg1);
     }
 
     public void setDecimal(java.lang.String arg0) {
-        real.setDecimal(arg0);
+        ((android.icu.text.DateTimePatternGenerator) real).setDecimal(arg0);
     }
 
     public static final int DAY = android.icu.text.DateTimePatternGenerator.DAY;
@@ -145,18 +152,25 @@ public final class DateTimePatternGenerator {
     public static final int ZONE = android.icu.text.DateTimePatternGenerator.ZONE;
 
     public static final class DisplayWidth {
-        private final android.icu.text.DateTimePatternGenerator.DisplayWidth real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DisplayWidth(android.icu.text.DateTimePatternGenerator.DisplayWidth real) {
+        private final java.lang.Object real;
+
+        private DisplayWidth(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.DisplayWidth wrap(android.icu.text.DateTimePatternGenerator.DisplayWidth real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.DisplayWidth(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.DisplayWidth(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DateTimePatternGenerator.DisplayWidth getReal() {
+            return (android.icu.text.DateTimePatternGenerator.DisplayWidth) real;
         }
 
         public android.icu.text.DateTimePatternGenerator.DisplayWidth unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.DisplayWidth valueOf(java.lang.String arg0) {
@@ -173,22 +187,29 @@ public final class DateTimePatternGenerator {
 
     }
     public static final class PatternInfo {
-        private final android.icu.text.DateTimePatternGenerator.PatternInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PatternInfo(android.icu.text.DateTimePatternGenerator.PatternInfo real) {
+        private final java.lang.Object real;
+
+        private PatternInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.PatternInfo wrap(android.icu.text.DateTimePatternGenerator.PatternInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.PatternInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateTimePatternGenerator.PatternInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DateTimePatternGenerator.PatternInfo getReal() {
+            return (android.icu.text.DateTimePatternGenerator.PatternInfo) real;
         }
 
         public android.icu.text.DateTimePatternGenerator.PatternInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public PatternInfo() {
-            this(new android.icu.text.DateTimePatternGenerator.PatternInfo());
+            this(new android.icu.text.DateTimePatternGenerator.PatternInfo(), (__DcgwBridgeToken) null);
         }
 
         public static final int BASE_CONFLICT = android.icu.text.DateTimePatternGenerator.PatternInfo.BASE_CONFLICT;

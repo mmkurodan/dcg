@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class HttpEngine {
-    private final android.net.http.HttpEngine real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HttpEngine(android.net.http.HttpEngine real) {
+    private final java.lang.Object real;
+
+    private HttpEngine(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.HttpEngine wrap(android.net.http.HttpEngine real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpEngine(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpEngine(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.HttpEngine getReal() {
+        return (android.net.http.HttpEngine) real;
     }
 
     public android.net.http.HttpEngine unwrap() {
-        return real;
+        return getReal();
     }
 
     public void bindToNetwork(com.micklab.dcg.wrapper.android.net.Network arg0) {
@@ -45,18 +52,25 @@ public final class HttpEngine {
     }
 
     public static final class Builder {
-        private final android.net.http.HttpEngine.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.HttpEngine.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.HttpEngine.Builder wrap(android.net.http.HttpEngine.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpEngine.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpEngine.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.HttpEngine.Builder getReal() {
+            return (android.net.http.HttpEngine.Builder) real;
         }
 
         public android.net.http.HttpEngine.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0) {

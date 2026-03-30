@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioAttributes {
-    private final android.media.AudioAttributes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioAttributes(android.media.AudioAttributes real) {
+    private final java.lang.Object real;
+
+    private AudioAttributes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioAttributes wrap(android.media.AudioAttributes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioAttributes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioAttributes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioAttributes getReal() {
+        return (android.media.AudioAttributes) real;
     }
 
     public android.media.AudioAttributes unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean areHapticChannelsMuted() {
-        return real.areHapticChannelsMuted();
+        return ((android.media.AudioAttributes) real).areHapticChannelsMuted();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.AudioAttributes) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.AudioAttributes) real).equals(arg0);
     }
 
     public int getAllowedCapturePolicy() {
-        return real.getAllowedCapturePolicy();
+        return ((android.media.AudioAttributes) real).getAllowedCapturePolicy();
     }
 
     public int getContentType() {
-        return real.getContentType();
+        return ((android.media.AudioAttributes) real).getContentType();
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.media.AudioAttributes) real).getFlags();
     }
 
     public int getSpatializationBehavior() {
-        return real.getSpatializationBehavior();
+        return ((android.media.AudioAttributes) real).getSpatializationBehavior();
     }
 
     public int getUsage() {
-        return real.getUsage();
+        return ((android.media.AudioAttributes) real).getUsage();
     }
 
     public int getVolumeControlStream() {
-        return real.getVolumeControlStream();
+        return ((android.media.AudioAttributes) real).getVolumeControlStream();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.AudioAttributes) real).hashCode();
     }
 
     public boolean isContentSpatialized() {
-        return real.isContentSpatialized();
+        return ((android.media.AudioAttributes) real).isContentSpatialized();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.AudioAttributes) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.AudioAttributes) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ALLOW_CAPTURE_BY_ALL = android.media.AudioAttributes.ALLOW_CAPTURE_BY_ALL;
@@ -99,62 +106,69 @@ public final class AudioAttributes {
     public static final int USAGE_VOICE_COMMUNICATION_SIGNALLING = android.media.AudioAttributes.USAGE_VOICE_COMMUNICATION_SIGNALLING;
 
     public static final class Builder {
-        private final android.media.AudioAttributes.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.AudioAttributes.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder wrap(android.media.AudioAttributes.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioAttributes.Builder getReal() {
+            return (android.media.AudioAttributes.Builder) real;
         }
 
         public android.media.AudioAttributes.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.AudioAttributes.Builder());
+            this(new android.media.AudioAttributes.Builder(), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0) {
-            this(new android.media.AudioAttributes.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.media.AudioAttributes.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes build() {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.wrap(((android.media.AudioAttributes.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setAllowedCapturePolicy(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setAllowedCapturePolicy(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setAllowedCapturePolicy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setContentType(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setContentType(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setContentType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setFlags(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setFlags(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setFlags(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setHapticChannelsMuted(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setHapticChannelsMuted(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setHapticChannelsMuted(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setIsContentSpatialized(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setIsContentSpatialized(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setIsContentSpatialized(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setLegacyStreamType(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setLegacyStreamType(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setLegacyStreamType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setSpatializationBehavior(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setSpatializationBehavior(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setSpatializationBehavior(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder setUsage(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(real.setUsage(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioAttributes.Builder.wrap(((android.media.AudioAttributes.Builder) real).setUsage(arg0));
         }
 
     }

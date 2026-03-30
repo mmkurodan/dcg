@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class DevicePolicyManager {
-    private final android.app.admin.DevicePolicyManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DevicePolicyManager(android.app.admin.DevicePolicyManager real) {
+    private final java.lang.Object real;
+
+    private DevicePolicyManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager wrap(android.app.admin.DevicePolicyManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.DevicePolicyManager getReal() {
+        return (android.app.admin.DevicePolicyManager) real;
     }
 
     public android.app.admin.DevicePolicyManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void acknowledgeDeviceCompliant() {
-        real.acknowledgeDeviceCompliant();
+        ((android.app.admin.DevicePolicyManager) real).acknowledgeDeviceCompliant();
     }
 
     public void addCrossProfileIntentFilter(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1, int arg2) {
@@ -29,39 +36,39 @@ public final class DevicePolicyManager {
     }
 
     public int addOverrideApn(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.telephony.data.ApnSetting arg1) {
-        return real.addOverrideApn(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).addOverrideApn(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addPersistentPreferredActivity(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1, com.micklab.dcg.wrapper.android.content.ComponentName arg2) {
-        real.addPersistentPreferredActivity(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).addPersistentPreferredActivity(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void addUserRestriction(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.addUserRestriction(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).addUserRestriction(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void addUserRestrictionGlobally(java.lang.String arg0) {
-        real.addUserRestrictionGlobally(arg0);
+        ((android.app.admin.DevicePolicyManager) real).addUserRestrictionGlobally(arg0);
     }
 
     public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
-        return real.bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, int arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
-        return real.bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4 == null ? null : arg4.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public boolean canAdminGrantSensorsPermissions() {
-        return real.canAdminGrantSensorsPermissions();
+        return ((android.app.admin.DevicePolicyManager) real).canAdminGrantSensorsPermissions();
     }
 
     public boolean canUsbDataSignalingBeDisabled() {
-        return real.canUsbDataSignalingBeDisabled();
+        return ((android.app.admin.DevicePolicyManager) real).canUsbDataSignalingBeDisabled();
     }
 
     public void clearApplicationUserData(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener arg3) {
-        real.clearApplicationUserData(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).clearApplicationUserData(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void clearCrossProfileIntentFilters(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -69,11 +76,11 @@ public final class DevicePolicyManager {
     }
 
     public void clearDeviceOwnerApp(java.lang.String arg0) {
-        real.clearDeviceOwnerApp(arg0);
+        ((android.app.admin.DevicePolicyManager) real).clearDeviceOwnerApp(arg0);
     }
 
     public void clearPackagePersistentPreferredActivities(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.clearPackagePersistentPreferredActivities(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).clearPackagePersistentPreferredActivities(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void clearProfileOwner(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -81,79 +88,79 @@ public final class DevicePolicyManager {
     }
 
     public boolean clearResetPasswordToken(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.clearResetPasswordToken(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).clearResetPasswordToken(arg0 == null ? null : arg0.getReal());
     }
 
     public void clearUserRestriction(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.clearUserRestriction(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).clearUserRestriction(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createAdminSupportIntent(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.createAdminSupportIntent(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.app.admin.DevicePolicyManager) real).createAdminSupportIntent(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.os.UserHandle createAndManageUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.content.ComponentName arg2, com.micklab.dcg.wrapper.android.os.PersistableBundle arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.os.UserHandle.wrap(real.createAndManageUser(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4));
+        return com.micklab.dcg.wrapper.android.os.UserHandle.wrap(((android.app.admin.DevicePolicyManager) real).createAndManageUser(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4));
     }
 
     public int enableSystemApp(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
-        return real.enableSystemApp(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).enableSystemApp(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void enableSystemApp(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.enableSystemApp(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).enableSystemApp(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public com.micklab.dcg.wrapper.android.security.AttestedKeyPair generateKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.security.keystore.KeyGenParameterSpec arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.security.AttestedKeyPair.wrap(real.generateKeyPair(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3));
+        return com.micklab.dcg.wrapper.android.security.AttestedKeyPair.wrap(((android.app.admin.DevicePolicyManager) real).generateKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3));
     }
 
     public java.lang.String[] getAccountTypesWithManagementDisabled() {
-        return real.getAccountTypesWithManagementDisabled();
+        return ((android.app.admin.DevicePolicyManager) real).getAccountTypesWithManagementDisabled();
     }
 
     public java.lang.String getAlwaysOnVpnPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getAlwaysOnVpnPackage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getAlwaysOnVpnPackage(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getApplicationRestrictions(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getApplicationRestrictions(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.admin.DevicePolicyManager) real).getApplicationRestrictions(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public java.lang.String getApplicationRestrictionsManagingPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getApplicationRestrictionsManagingPackage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getApplicationRestrictionsManagingPackage(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean getAutoTimeEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getAutoTimeEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getAutoTimeEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean getAutoTimeRequired() {
-        return real.getAutoTimeRequired();
+        return ((android.app.admin.DevicePolicyManager) real).getAutoTimeRequired();
     }
 
     public boolean getAutoTimeZoneEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getAutoTimeZoneEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getAutoTimeZoneEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean getBluetoothContactSharingDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getBluetoothContactSharingDisabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getBluetoothContactSharingDisabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean getCameraDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getCameraDisabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getCameraDisabled(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getCertInstallerPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) throws java.lang.SecurityException {
-        return real.getCertInstallerPackage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getCertInstallerPackage(arg0 == null ? null : arg0.getReal());
     }
 
     public int getContentProtectionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getContentProtectionPolicy(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getContentProtectionPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.PackagePolicy getCredentialManagerPolicy() {
-        return com.micklab.dcg.wrapper.android.app.admin.PackagePolicy.wrap(real.getCredentialManagerPolicy());
+        return com.micklab.dcg.wrapper.android.app.admin.PackagePolicy.wrap(((android.app.admin.DevicePolicyManager) real).getCredentialManagerPolicy());
     }
 
     public boolean getCrossProfileCallerIdDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -165,51 +172,51 @@ public final class DevicePolicyManager {
     }
 
     public int getCurrentFailedPasswordAttempts() {
-        return real.getCurrentFailedPasswordAttempts();
+        return ((android.app.admin.DevicePolicyManager) real).getCurrentFailedPasswordAttempts();
     }
 
     public java.lang.CharSequence getDeviceOwnerLockScreenInfo() {
-        return real.getDeviceOwnerLockScreenInfo();
+        return ((android.app.admin.DevicePolicyManager) real).getDeviceOwnerLockScreenInfo();
     }
 
     public java.lang.String getDevicePolicyManagementRoleHolderPackage() {
-        return real.getDevicePolicyManagementRoleHolderPackage();
+        return ((android.app.admin.DevicePolicyManager) real).getDevicePolicyManagementRoleHolderPackage();
     }
 
     public java.lang.CharSequence getEndUserSessionMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getEndUserSessionMessage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getEndUserSessionMessage(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getEnrollmentSpecificId() {
-        return real.getEnrollmentSpecificId();
+        return ((android.app.admin.DevicePolicyManager) real).getEnrollmentSpecificId();
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.FactoryResetProtectionPolicy getFactoryResetProtectionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.app.admin.FactoryResetProtectionPolicy.wrap(real.getFactoryResetProtectionPolicy(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.app.admin.FactoryResetProtectionPolicy.wrap(((android.app.admin.DevicePolicyManager) real).getFactoryResetProtectionPolicy(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String getGlobalPrivateDnsHost(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getGlobalPrivateDnsHost(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getGlobalPrivateDnsHost(arg0 == null ? null : arg0.getReal());
     }
 
     public int getGlobalPrivateDnsMode(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getGlobalPrivateDnsMode(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getGlobalPrivateDnsMode(arg0 == null ? null : arg0.getReal());
     }
 
     public int getKeyguardDisabledFeatures(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getKeyguardDisabledFeatures(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getKeyguardDisabledFeatures(arg0 == null ? null : arg0.getReal());
     }
 
     public int getLockTaskFeatures(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getLockTaskFeatures(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getLockTaskFeatures(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String[] getLockTaskPackages(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getLockTaskPackages(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getLockTaskPackages(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getLongSupportMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getLongSupportMessage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getLongSupportMessage(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.PackagePolicy getManagedProfileCallerIdAccessPolicy() {
@@ -225,39 +232,39 @@ public final class DevicePolicyManager {
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.ManagedSubscriptionsPolicy getManagedSubscriptionsPolicy() {
-        return com.micklab.dcg.wrapper.android.app.admin.ManagedSubscriptionsPolicy.wrap(real.getManagedSubscriptionsPolicy());
+        return com.micklab.dcg.wrapper.android.app.admin.ManagedSubscriptionsPolicy.wrap(((android.app.admin.DevicePolicyManager) real).getManagedSubscriptionsPolicy());
     }
 
     public int getMaximumFailedPasswordsForWipe(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getMaximumFailedPasswordsForWipe(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getMaximumFailedPasswordsForWipe(arg0 == null ? null : arg0.getReal());
     }
 
     public long getMaximumTimeToLock(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getMaximumTimeToLock(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getMaximumTimeToLock(arg0 == null ? null : arg0.getReal());
     }
 
     public int getMinimumRequiredWifiSecurityLevel() {
-        return real.getMinimumRequiredWifiSecurityLevel();
+        return ((android.app.admin.DevicePolicyManager) real).getMinimumRequiredWifiSecurityLevel();
     }
 
     public int getMtePolicy() {
-        return real.getMtePolicy();
+        return ((android.app.admin.DevicePolicyManager) real).getMtePolicy();
     }
 
     public int getNearbyAppStreamingPolicy() {
-        return real.getNearbyAppStreamingPolicy();
+        return ((android.app.admin.DevicePolicyManager) real).getNearbyAppStreamingPolicy();
     }
 
     public int getNearbyNotificationStreamingPolicy() {
-        return real.getNearbyNotificationStreamingPolicy();
+        return ((android.app.admin.DevicePolicyManager) real).getNearbyNotificationStreamingPolicy();
     }
 
     public int getOrganizationColor(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getOrganizationColor(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getOrganizationColor(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getOrganizationName(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getOrganizationName(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getOrganizationName(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager getParentProfileInstance(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -265,147 +272,147 @@ public final class DevicePolicyManager {
     }
 
     public int getPasswordComplexity() {
-        return real.getPasswordComplexity();
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordComplexity();
     }
 
     public long getPasswordExpiration(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordExpiration(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordExpiration(arg0 == null ? null : arg0.getReal());
     }
 
     public long getPasswordExpirationTimeout(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordExpirationTimeout(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordExpirationTimeout(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordHistoryLength(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordHistoryLength(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordHistoryLength(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMaximumLength(int arg0) {
-        return real.getPasswordMaximumLength(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMaximumLength(arg0);
     }
 
     public int getPasswordMinimumLength(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumLength(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumLength(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumLetters(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumLetters(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumLetters(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumLowerCase(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumLowerCase(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumLowerCase(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumNonLetter(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumNonLetter(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumNonLetter(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumNumeric(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumNumeric(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumNumeric(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumSymbols(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumSymbols(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumSymbols(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordMinimumUpperCase(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordMinimumUpperCase(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordMinimumUpperCase(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPasswordQuality(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPasswordQuality(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPasswordQuality(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.SystemUpdateInfo getPendingSystemUpdate(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.app.admin.SystemUpdateInfo.wrap(real.getPendingSystemUpdate(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.app.admin.SystemUpdateInfo.wrap(((android.app.admin.DevicePolicyManager) real).getPendingSystemUpdate(arg0 == null ? null : arg0.getReal()));
     }
 
     public int getPermissionGrantState(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        return real.getPermissionGrantState(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.app.admin.DevicePolicyManager) real).getPermissionGrantState(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public int getPermissionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPermissionPolicy(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPermissionPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public int getPersonalAppsSuspendedReasons(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getPersonalAppsSuspendedReasons(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getPersonalAppsSuspendedReasons(arg0 == null ? null : arg0.getReal());
     }
 
     public int getRequiredPasswordComplexity() {
-        return real.getRequiredPasswordComplexity();
+        return ((android.app.admin.DevicePolicyManager) real).getRequiredPasswordComplexity();
     }
 
     public long getRequiredStrongAuthTimeout(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getRequiredStrongAuthTimeout(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getRequiredStrongAuthTimeout(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.DevicePolicyResourcesManager getResources() {
-        return com.micklab.dcg.wrapper.android.app.admin.DevicePolicyResourcesManager.wrap(real.getResources());
+        return com.micklab.dcg.wrapper.android.app.admin.DevicePolicyResourcesManager.wrap(((android.app.admin.DevicePolicyManager) real).getResources());
     }
 
     public boolean getScreenCaptureDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getScreenCaptureDisabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getScreenCaptureDisabled(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getShortSupportMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getShortSupportMessage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getShortSupportMessage(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getStartUserSessionMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getStartUserSessionMessage(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getStartUserSessionMessage(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean getStorageEncryption(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getStorageEncryption(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getStorageEncryption(arg0 == null ? null : arg0.getReal());
     }
 
     public int getStorageEncryptionStatus() {
-        return real.getStorageEncryptionStatus();
+        return ((android.app.admin.DevicePolicyManager) real).getStorageEncryptionStatus();
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy getSystemUpdatePolicy() {
-        return com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy.wrap(real.getSystemUpdatePolicy());
+        return com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy.wrap(((android.app.admin.DevicePolicyManager) real).getSystemUpdatePolicy());
     }
 
     public com.micklab.dcg.wrapper.android.os.PersistableBundle getTransferOwnershipBundle() {
-        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getTransferOwnershipBundle());
+        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.app.admin.DevicePolicyManager) real).getTransferOwnershipBundle());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getUserRestrictions(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getUserRestrictions(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.admin.DevicePolicyManager) real).getUserRestrictions(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getUserRestrictionsGlobally() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getUserRestrictionsGlobally());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.admin.DevicePolicyManager) real).getUserRestrictionsGlobally());
     }
 
     public java.lang.String getWifiMacAddress(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getWifiMacAddress(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).getWifiMacAddress(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.admin.WifiSsidPolicy getWifiSsidPolicy() {
-        return com.micklab.dcg.wrapper.android.app.admin.WifiSsidPolicy.wrap(real.getWifiSsidPolicy());
+        return com.micklab.dcg.wrapper.android.app.admin.WifiSsidPolicy.wrap(((android.app.admin.DevicePolicyManager) real).getWifiSsidPolicy());
     }
 
     public boolean grantKeyPairToApp(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        return real.grantKeyPairToApp(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.app.admin.DevicePolicyManager) real).grantKeyPairToApp(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean grantKeyPairToWifiAuth(java.lang.String arg0) {
-        return real.grantKeyPairToWifiAuth(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).grantKeyPairToWifiAuth(arg0);
     }
 
     public boolean hasCaCertInstalled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, byte[] arg1) {
-        return real.hasCaCertInstalled(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).hasCaCertInstalled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean hasGrantedPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        return real.hasGrantedPolicy(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).hasGrantedPolicy(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean hasKeyPair(java.lang.String arg0) {
-        return real.hasKeyPair(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).hasKeyPair(arg0);
     }
 
     public boolean hasLockdownAdminConfiguredNetworks(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -413,95 +420,95 @@ public final class DevicePolicyManager {
     }
 
     public boolean installCaCert(com.micklab.dcg.wrapper.android.content.ComponentName arg0, byte[] arg1) {
-        return real.installCaCert(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).installCaCert(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean installExistingPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.installExistingPackage(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).installExistingPackage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate arg2, java.lang.String arg3) {
-        return real.installKeyPair(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, boolean arg4) {
-        return real.installKeyPair(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, int arg4) {
-        return real.installKeyPair(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public void installSystemUpdate(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback arg3) {
-        real.installSystemUpdate(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).installSystemUpdate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean isActivePasswordSufficient() {
-        return real.isActivePasswordSufficient();
+        return ((android.app.admin.DevicePolicyManager) real).isActivePasswordSufficient();
     }
 
     public boolean isActivePasswordSufficientForDeviceRequirement() {
-        return real.isActivePasswordSufficientForDeviceRequirement();
+        return ((android.app.admin.DevicePolicyManager) real).isActivePasswordSufficientForDeviceRequirement();
     }
 
     public boolean isAdminActive(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isAdminActive(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isAdminActive(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isAffiliatedUser() {
-        return real.isAffiliatedUser();
+        return ((android.app.admin.DevicePolicyManager) real).isAffiliatedUser();
     }
 
     public boolean isAlwaysOnVpnLockdownEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isAlwaysOnVpnLockdownEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isAlwaysOnVpnLockdownEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isApplicationHidden(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.isApplicationHidden(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).isApplicationHidden(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean isBackupServiceEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isBackupServiceEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isBackupServiceEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isCallerApplicationRestrictionsManagingPackage() {
-        return real.isCallerApplicationRestrictionsManagingPackage();
+        return ((android.app.admin.DevicePolicyManager) real).isCallerApplicationRestrictionsManagingPackage();
     }
 
     public boolean isCommonCriteriaModeEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isCommonCriteriaModeEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isCommonCriteriaModeEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isComplianceAcknowledgementRequired() {
-        return real.isComplianceAcknowledgementRequired();
+        return ((android.app.admin.DevicePolicyManager) real).isComplianceAcknowledgementRequired();
     }
 
     public boolean isDeviceFinanced() {
-        return real.isDeviceFinanced();
+        return ((android.app.admin.DevicePolicyManager) real).isDeviceFinanced();
     }
 
     public boolean isDeviceIdAttestationSupported() {
-        return real.isDeviceIdAttestationSupported();
+        return ((android.app.admin.DevicePolicyManager) real).isDeviceIdAttestationSupported();
     }
 
     public boolean isDeviceOwnerApp(java.lang.String arg0) {
-        return real.isDeviceOwnerApp(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).isDeviceOwnerApp(arg0);
     }
 
     public boolean isEphemeralUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isEphemeralUser(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isEphemeralUser(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isKeyPairGrantedToWifiAuth(java.lang.String arg0) {
-        return real.isKeyPairGrantedToWifiAuth(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).isKeyPairGrantedToWifiAuth(arg0);
     }
 
     public boolean isLockTaskPermitted(java.lang.String arg0) {
-        return real.isLockTaskPermitted(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).isLockTaskPermitted(arg0);
     }
 
     public boolean isLogoutEnabled() {
-        return real.isLogoutEnabled();
+        return ((android.app.admin.DevicePolicyManager) real).isLogoutEnabled();
     }
 
     public boolean isManagedProfile(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -509,7 +516,7 @@ public final class DevicePolicyManager {
     }
 
     public boolean isMasterVolumeMuted(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isMasterVolumeMuted(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isMasterVolumeMuted(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isMtePolicyEnforced() {
@@ -525,11 +532,11 @@ public final class DevicePolicyManager {
     }
 
     public boolean isOverrideApnEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isOverrideApnEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isOverrideApnEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isPackageSuspended(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        return real.isPackageSuspended(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).isPackageSuspended(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean isPreferentialNetworkServiceEnabled() {
@@ -541,59 +548,59 @@ public final class DevicePolicyManager {
     }
 
     public boolean isProvisioningAllowed(java.lang.String arg0) {
-        return real.isProvisioningAllowed(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).isProvisioningAllowed(arg0);
     }
 
     public boolean isResetPasswordTokenActive(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isResetPasswordTokenActive(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isResetPasswordTokenActive(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isSafeOperation(int arg0) {
-        return real.isSafeOperation(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).isSafeOperation(arg0);
     }
 
     public boolean isSecurityLoggingEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isSecurityLoggingEnabled(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isSecurityLoggingEnabled(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isStatusBarDisabled() {
-        return real.isStatusBarDisabled();
+        return ((android.app.admin.DevicePolicyManager) real).isStatusBarDisabled();
     }
 
     public boolean isUninstallBlocked(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.isUninstallBlocked(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).isUninstallBlocked(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean isUniqueDeviceAttestationSupported() {
-        return real.isUniqueDeviceAttestationSupported();
+        return ((android.app.admin.DevicePolicyManager) real).isUniqueDeviceAttestationSupported();
     }
 
     public boolean isUsbDataSignalingEnabled() {
-        return real.isUsbDataSignalingEnabled();
+        return ((android.app.admin.DevicePolicyManager) real).isUsbDataSignalingEnabled();
     }
 
     public boolean isUsingUnifiedPassword(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isUsingUnifiedPassword(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).isUsingUnifiedPassword(arg0 == null ? null : arg0.getReal());
     }
 
     public void lockNow() {
-        real.lockNow();
+        ((android.app.admin.DevicePolicyManager) real).lockNow();
     }
 
     public void lockNow(int arg0) {
-        real.lockNow(arg0);
+        ((android.app.admin.DevicePolicyManager) real).lockNow(arg0);
     }
 
     public int logoutUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.logoutUser(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).logoutUser(arg0 == null ? null : arg0.getReal());
     }
 
     public void reboot(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.reboot(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).reboot(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeActiveAdmin(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.removeActiveAdmin(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).removeActiveAdmin(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean removeCrossProfileWidgetProvider(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
@@ -601,87 +608,87 @@ public final class DevicePolicyManager {
     }
 
     public boolean removeKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.removeKeyPair(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).removeKeyPair(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean removeOverrideApn(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        return real.removeOverrideApn(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).removeOverrideApn(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean removeUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        return real.removeUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).removeUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean requestBugreport(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.requestBugreport(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).requestBugreport(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean resetPassword(java.lang.String arg0, int arg1) {
-        return real.resetPassword(arg0, arg1);
+        return ((android.app.admin.DevicePolicyManager) real).resetPassword(arg0, arg1);
     }
 
     public boolean resetPasswordWithToken(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, byte[] arg2, int arg3) {
-        return real.resetPasswordWithToken(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.app.admin.DevicePolicyManager) real).resetPasswordWithToken(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public boolean revokeKeyPairFromApp(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        return real.revokeKeyPairFromApp(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.app.admin.DevicePolicyManager) real).revokeKeyPairFromApp(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean revokeKeyPairFromWifiAuth(java.lang.String arg0) {
-        return real.revokeKeyPairFromWifiAuth(arg0);
+        return ((android.app.admin.DevicePolicyManager) real).revokeKeyPairFromWifiAuth(arg0);
     }
 
     public void setAccountManagementDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, boolean arg2) {
-        real.setAccountManagementDisabled(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setAccountManagementDisabled(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setAlwaysOnVpnPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, boolean arg2) throws android.content.pm.PackageManager.NameNotFoundException {
-        real.setAlwaysOnVpnPackage(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setAlwaysOnVpnPackage(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean setApplicationHidden(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, boolean arg2) {
-        return real.setApplicationHidden(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.app.admin.DevicePolicyManager) real).setApplicationHidden(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setApplicationRestrictions(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.setApplicationRestrictions(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setApplicationRestrictions(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void setApplicationRestrictionsManagingPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        real.setApplicationRestrictionsManagingPackage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setApplicationRestrictionsManagingPackage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAutoTimeEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setAutoTimeEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setAutoTimeEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAutoTimeRequired(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setAutoTimeRequired(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setAutoTimeRequired(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAutoTimeZoneEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setAutoTimeZoneEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setAutoTimeZoneEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setBackupServiceEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setBackupServiceEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setBackupServiceEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setBluetoothContactSharingDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setBluetoothContactSharingDisabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setBluetoothContactSharingDisabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setCameraDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setCameraDisabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setCameraDisabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setCertInstallerPackage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) throws java.lang.SecurityException {
-        real.setCertInstallerPackage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setCertInstallerPackage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setCommonCriteriaModeEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setCommonCriteriaModeEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setCommonCriteriaModeEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setConfiguredNetworksLockdownState(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
@@ -689,11 +696,11 @@ public final class DevicePolicyManager {
     }
 
     public void setContentProtectionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setContentProtectionPolicy(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setContentProtectionPolicy(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setCredentialManagerPolicy(com.micklab.dcg.wrapper.android.app.admin.PackagePolicy arg0) {
-        real.setCredentialManagerPolicy(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setCredentialManagerPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCrossProfileCallerIdDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
@@ -705,63 +712,63 @@ public final class DevicePolicyManager {
     }
 
     public void setDefaultDialerApplication(java.lang.String arg0) {
-        real.setDefaultDialerApplication(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setDefaultDialerApplication(arg0);
     }
 
     public void setDefaultSmsApplication(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.setDefaultSmsApplication(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setDefaultSmsApplication(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setDeviceOwnerLockScreenInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setDeviceOwnerLockScreenInfo(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setDeviceOwnerLockScreenInfo(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setEndUserSessionMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setEndUserSessionMessage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setEndUserSessionMessage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setFactoryResetProtectionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.app.admin.FactoryResetProtectionPolicy arg1) {
-        real.setFactoryResetProtectionPolicy(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setFactoryResetProtectionPolicy(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public int setGlobalPrivateDnsModeOpportunistic(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.setGlobalPrivateDnsModeOpportunistic(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).setGlobalPrivateDnsModeOpportunistic(arg0 == null ? null : arg0.getReal());
     }
 
     public int setGlobalPrivateDnsModeSpecifiedHost(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.setGlobalPrivateDnsModeSpecifiedHost(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setGlobalPrivateDnsModeSpecifiedHost(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setGlobalSetting(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.setGlobalSetting(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setGlobalSetting(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean setKeyguardDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        return real.setKeyguardDisabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setKeyguardDisabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setKeyguardDisabledFeatures(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setKeyguardDisabledFeatures(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setKeyguardDisabledFeatures(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLocationEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setLocationEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setLocationEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLockTaskFeatures(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setLockTaskFeatures(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setLockTaskFeatures(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLockTaskPackages(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String[] arg1) throws java.lang.SecurityException {
-        real.setLockTaskPackages(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setLockTaskPackages(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLogoutEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setLogoutEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setLogoutEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setLongSupportMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setLongSupportMessage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setLongSupportMessage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setManagedProfileCallerIdAccessPolicy(com.micklab.dcg.wrapper.android.app.admin.PackagePolicy arg0) {
@@ -777,35 +784,35 @@ public final class DevicePolicyManager {
     }
 
     public void setManagedSubscriptionsPolicy(com.micklab.dcg.wrapper.android.app.admin.ManagedSubscriptionsPolicy arg0) {
-        real.setManagedSubscriptionsPolicy(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setManagedSubscriptionsPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public void setMasterVolumeMuted(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setMasterVolumeMuted(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setMasterVolumeMuted(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setMaximumFailedPasswordsForWipe(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setMaximumFailedPasswordsForWipe(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setMaximumFailedPasswordsForWipe(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setMaximumTimeToLock(com.micklab.dcg.wrapper.android.content.ComponentName arg0, long arg1) {
-        real.setMaximumTimeToLock(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setMaximumTimeToLock(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setMinimumRequiredWifiSecurityLevel(int arg0) {
-        real.setMinimumRequiredWifiSecurityLevel(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setMinimumRequiredWifiSecurityLevel(arg0);
     }
 
     public void setMtePolicy(int arg0) {
-        real.setMtePolicy(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setMtePolicy(arg0);
     }
 
     public void setNearbyAppStreamingPolicy(int arg0) {
-        real.setNearbyAppStreamingPolicy(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setNearbyAppStreamingPolicy(arg0);
     }
 
     public void setNearbyNotificationStreamingPolicy(int arg0) {
-        real.setNearbyNotificationStreamingPolicy(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setNearbyNotificationStreamingPolicy(arg0);
     }
 
     public void setNetworkLoggingEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
@@ -813,75 +820,75 @@ public final class DevicePolicyManager {
     }
 
     public void setOrganizationColor(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setOrganizationColor(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setOrganizationColor(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setOrganizationId(java.lang.String arg0) {
-        real.setOrganizationId(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setOrganizationId(arg0);
     }
 
     public void setOrganizationName(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setOrganizationName(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setOrganizationName(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setOverrideApnsEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setOverrideApnsEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setOverrideApnsEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public java.lang.String[] setPackagesSuspended(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String[] arg1, boolean arg2) {
-        return real.setPackagesSuspended(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.app.admin.DevicePolicyManager) real).setPackagesSuspended(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setPasswordExpirationTimeout(com.micklab.dcg.wrapper.android.content.ComponentName arg0, long arg1) {
-        real.setPasswordExpirationTimeout(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordExpirationTimeout(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordHistoryLength(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordHistoryLength(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordHistoryLength(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumLength(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumLength(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumLength(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumLetters(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumLetters(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumLetters(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumLowerCase(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumLowerCase(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumLowerCase(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumNonLetter(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumNonLetter(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumNonLetter(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumNumeric(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumNumeric(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumNumeric(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumSymbols(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumSymbols(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumSymbols(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordMinimumUpperCase(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordMinimumUpperCase(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordMinimumUpperCase(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPasswordQuality(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPasswordQuality(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPasswordQuality(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean setPermissionGrantState(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2, int arg3) {
-        return real.setPermissionGrantState(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.app.admin.DevicePolicyManager) real).setPermissionGrantState(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public void setPermissionPolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.setPermissionPolicy(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPermissionPolicy(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPersonalAppsSuspended(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setPersonalAppsSuspended(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setPersonalAppsSuspended(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPreferentialNetworkServiceEnabled(boolean arg0) {
@@ -897,127 +904,127 @@ public final class DevicePolicyManager {
     }
 
     public void setRecommendedGlobalProxy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.net.ProxyInfo arg1) {
-        real.setRecommendedGlobalProxy(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setRecommendedGlobalProxy(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setRequiredPasswordComplexity(int arg0) {
-        real.setRequiredPasswordComplexity(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setRequiredPasswordComplexity(arg0);
     }
 
     public void setRequiredStrongAuthTimeout(com.micklab.dcg.wrapper.android.content.ComponentName arg0, long arg1) {
-        real.setRequiredStrongAuthTimeout(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setRequiredStrongAuthTimeout(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean setResetPasswordToken(com.micklab.dcg.wrapper.android.content.ComponentName arg0, byte[] arg1) {
-        return real.setResetPasswordToken(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setResetPasswordToken(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setRestrictionsProvider(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1) {
-        real.setRestrictionsProvider(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setRestrictionsProvider(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setScreenCaptureDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setScreenCaptureDisabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setScreenCaptureDisabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setSecureSetting(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.setSecureSetting(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setSecureSetting(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setSecurityLoggingEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        real.setSecurityLoggingEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setSecurityLoggingEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setShortSupportMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setShortSupportMessage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setShortSupportMessage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setStartUserSessionMessage(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.CharSequence arg1) {
-        real.setStartUserSessionMessage(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).setStartUserSessionMessage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean setStatusBarDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        return real.setStatusBarDisabled(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setStatusBarDisabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public int setStorageEncryption(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
-        return real.setStorageEncryption(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setStorageEncryption(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setSystemSetting(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.setSystemSetting(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setSystemSetting(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setSystemUpdatePolicy(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy arg1) {
-        real.setSystemUpdatePolicy(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setSystemUpdatePolicy(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean setTime(com.micklab.dcg.wrapper.android.content.ComponentName arg0, long arg1) {
-        return real.setTime(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setTime(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean setTimeZone(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        return real.setTimeZone(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.admin.DevicePolicyManager) real).setTimeZone(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setTrustAgentConfiguration(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1, com.micklab.dcg.wrapper.android.os.PersistableBundle arg2) {
-        real.setTrustAgentConfiguration(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setTrustAgentConfiguration(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void setUninstallBlocked(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, boolean arg2) {
-        real.setUninstallBlocked(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.app.admin.DevicePolicyManager) real).setUninstallBlocked(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setUsbDataSignalingEnabled(boolean arg0) {
-        real.setUsbDataSignalingEnabled(arg0);
+        ((android.app.admin.DevicePolicyManager) real).setUsbDataSignalingEnabled(arg0);
     }
 
     public void setUserIcon(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
-        real.setUserIcon(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setUserIcon(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setWifiSsidPolicy(com.micklab.dcg.wrapper.android.app.admin.WifiSsidPolicy arg0) {
-        real.setWifiSsidPolicy(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).setWifiSsidPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public int startUserInBackground(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        return real.startUserInBackground(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).startUserInBackground(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public int stopUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        return real.stopUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).stopUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean switchUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        return real.switchUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).switchUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void transferOwnership(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1, com.micklab.dcg.wrapper.android.os.PersistableBundle arg2) {
-        real.transferOwnership(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).transferOwnership(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void uninstallAllUserCaCerts(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.uninstallAllUserCaCerts(arg0 == null ? null : arg0.unwrap());
+        ((android.app.admin.DevicePolicyManager) real).uninstallAllUserCaCerts(arg0 == null ? null : arg0.getReal());
     }
 
     public void uninstallCaCert(com.micklab.dcg.wrapper.android.content.ComponentName arg0, byte[] arg1) {
-        real.uninstallCaCert(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DevicePolicyManager) real).uninstallCaCert(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean updateOverrideApn(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1, com.micklab.dcg.wrapper.android.telephony.data.ApnSetting arg2) {
-        return real.updateOverrideApn(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.app.admin.DevicePolicyManager) real).updateOverrideApn(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void wipeData(int arg0) {
-        real.wipeData(arg0);
+        ((android.app.admin.DevicePolicyManager) real).wipeData(arg0);
     }
 
     public void wipeData(int arg0, java.lang.CharSequence arg1) {
-        real.wipeData(arg0, arg1);
+        ((android.app.admin.DevicePolicyManager) real).wipeData(arg0, arg1);
     }
 
     public void wipeDevice(int arg0) {
-        real.wipeDevice(arg0);
+        ((android.app.admin.DevicePolicyManager) real).wipeDevice(arg0);
     }
 
     public static final java.lang.String ACTION_ADD_DEVICE_ADMIN = android.app.admin.DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN;
@@ -1195,22 +1202,29 @@ public final class DevicePolicyManager {
     public static final int WIPE_SILENTLY = android.app.admin.DevicePolicyManager.WIPE_SILENTLY;
 
     public static final class InstallSystemUpdateCallback {
-        private final android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InstallSystemUpdateCallback(android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback real) {
+        private final java.lang.Object real;
+
+        private InstallSystemUpdateCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback wrap(android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback getReal() {
+            return (android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback) real;
         }
 
         public android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onInstallUpdateError(int arg0, java.lang.String arg1) {
-            real.onInstallUpdateError(arg0, arg1);
+            ((android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback) real).onInstallUpdateError(arg0, arg1);
         }
 
         public static final int UPDATE_ERROR_BATTERY_LOW = android.app.admin.DevicePolicyManager.InstallSystemUpdateCallback.UPDATE_ERROR_BATTERY_LOW;
@@ -1219,22 +1233,29 @@ public final class DevicePolicyManager {
 
     }
     public static final class OnClearApplicationUserDataListener {
-        private final android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnClearApplicationUserDataListener(android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener real) {
+        private final java.lang.Object real;
+
+        private OnClearApplicationUserDataListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener wrap(android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener getReal() {
+            return (android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener) real;
         }
 
         public android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onApplicationUserDataCleared(java.lang.String arg0, boolean arg1) {
-            real.onApplicationUserDataCleared(arg0, arg1);
+            ((android.app.admin.DevicePolicyManager.OnClearApplicationUserDataListener) real).onApplicationUserDataCleared(arg0, arg1);
         }
 
     }

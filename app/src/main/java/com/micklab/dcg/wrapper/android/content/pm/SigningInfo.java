@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class SigningInfo {
-    private final android.content.pm.SigningInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SigningInfo(android.content.pm.SigningInfo real) {
+    private final java.lang.Object real;
+
+    private SigningInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.SigningInfo wrap(android.content.pm.SigningInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.SigningInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.SigningInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.SigningInfo getReal() {
+        return (android.content.pm.SigningInfo) real;
     }
 
     public android.content.pm.SigningInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public SigningInfo() {

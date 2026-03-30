@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class RequestToken {
-    private final android.adservices.ondevicepersonalization.RequestToken real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RequestToken(android.adservices.ondevicepersonalization.RequestToken real) {
+    private final java.lang.Object real;
+
+    private RequestToken(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.RequestToken wrap(android.adservices.ondevicepersonalization.RequestToken real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.RequestToken(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.RequestToken(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.RequestToken getReal() {
+        return (android.adservices.ondevicepersonalization.RequestToken) real;
     }
 
     public android.adservices.ondevicepersonalization.RequestToken unwrap() {
-        return real;
+        return getReal();
     }
 
 }

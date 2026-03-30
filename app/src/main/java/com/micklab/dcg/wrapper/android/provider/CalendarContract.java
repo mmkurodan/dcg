@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class CalendarContract {
-    private final android.provider.CalendarContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CalendarContract(android.provider.CalendarContract real) {
+    private final java.lang.Object real;
+
+    private CalendarContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.CalendarContract wrap(android.provider.CalendarContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.CalendarContract getReal() {
+        return (android.provider.CalendarContract) real;
     }
 
     public android.provider.CalendarContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean startViewCalendarEventInManagedProfile(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, long arg2, long arg3, boolean arg4, int arg5) {
@@ -33,40 +40,54 @@ public final class CalendarContract {
     public static final java.lang.String EXTRA_EVENT_ID = android.provider.CalendarContract.EXTRA_EVENT_ID;
 
     public static final class Attendees {
-        private final android.provider.CalendarContract.Attendees real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Attendees(android.provider.CalendarContract.Attendees real) {
+        private final java.lang.Object real;
+
+        private Attendees(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Attendees wrap(android.provider.CalendarContract.Attendees real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Attendees(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Attendees(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Attendees getReal() {
+            return (android.provider.CalendarContract.Attendees) real;
         }
 
         public android.provider.CalendarContract.Attendees unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, java.lang.String[] arg2) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Attendees.query(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Attendees.query(arg0 == null ? null : arg0.getReal(), arg1, arg2));
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.Attendees.CONTENT_URI);
 
     }
     public static final class CalendarAlerts {
-        private final android.provider.CalendarContract.CalendarAlerts real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CalendarAlerts(android.provider.CalendarContract.CalendarAlerts real) {
+        private final java.lang.Object real;
+
+        private CalendarAlerts(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarAlerts wrap(android.provider.CalendarContract.CalendarAlerts real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarAlerts(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarAlerts(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.CalendarAlerts getReal() {
+            return (android.provider.CalendarContract.CalendarAlerts) real;
         }
 
         public android.provider.CalendarContract.CalendarAlerts unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.CalendarAlerts.CONTENT_URI);
@@ -74,18 +95,25 @@ public final class CalendarContract {
 
     }
     public static final class CalendarCache {
-        private final android.provider.CalendarContract.CalendarCache real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CalendarCache(android.provider.CalendarContract.CalendarCache real) {
+        private final java.lang.Object real;
+
+        private CalendarCache(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarCache wrap(android.provider.CalendarContract.CalendarCache real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarCache(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarCache(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.CalendarCache getReal() {
+            return (android.provider.CalendarContract.CalendarCache) real;
         }
 
         public android.provider.CalendarContract.CalendarCache unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String KEY_TIMEZONE_INSTANCES = android.provider.CalendarContract.CalendarCache.KEY_TIMEZONE_INSTANCES;
@@ -97,40 +125,54 @@ public final class CalendarContract {
 
     }
     public static final class CalendarEntity {
-        private final android.provider.CalendarContract.CalendarEntity real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CalendarEntity(android.provider.CalendarContract.CalendarEntity real) {
+        private final java.lang.Object real;
+
+        private CalendarEntity(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarEntity wrap(android.provider.CalendarContract.CalendarEntity real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarEntity(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.CalendarEntity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.CalendarEntity getReal() {
+            return (android.provider.CalendarContract.CalendarEntity) real;
         }
 
         public android.provider.CalendarContract.CalendarEntity unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0) {
-            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.CalendarEntity.newEntityIterator(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.CalendarEntity.newEntityIterator(arg0 == null ? null : arg0.getReal()));
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.CalendarEntity.CONTENT_URI);
 
     }
     public static final class Calendars {
-        private final android.provider.CalendarContract.Calendars real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Calendars(android.provider.CalendarContract.Calendars real) {
+        private final java.lang.Object real;
+
+        private Calendars(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Calendars wrap(android.provider.CalendarContract.Calendars real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Calendars(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Calendars(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Calendars getReal() {
+            return (android.provider.CalendarContract.Calendars) real;
         }
 
         public android.provider.CalendarContract.Calendars unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CALENDAR_LOCATION = android.provider.CalendarContract.Calendars.CALENDAR_LOCATION;
@@ -141,58 +183,79 @@ public final class CalendarContract {
 
     }
     public static final class Colors {
-        private final android.provider.CalendarContract.Colors real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Colors(android.provider.CalendarContract.Colors real) {
+        private final java.lang.Object real;
+
+        private Colors(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Colors wrap(android.provider.CalendarContract.Colors real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Colors(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Colors(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Colors getReal() {
+            return (android.provider.CalendarContract.Colors) real;
         }
 
         public android.provider.CalendarContract.Colors unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.Colors.CONTENT_URI);
 
     }
     public static final class EventDays {
-        private final android.provider.CalendarContract.EventDays real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EventDays(android.provider.CalendarContract.EventDays real) {
+        private final java.lang.Object real;
+
+        private EventDays(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.EventDays wrap(android.provider.CalendarContract.EventDays real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.EventDays(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.EventDays(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.EventDays getReal() {
+            return (android.provider.CalendarContract.EventDays) real;
         }
 
         public android.provider.CalendarContract.EventDays unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, int arg1, int arg2, java.lang.String[] arg3) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.EventDays.query(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.EventDays.query(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.EventDays.CONTENT_URI);
 
     }
     public static final class Events {
-        private final android.provider.CalendarContract.Events real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Events(android.provider.CalendarContract.Events real) {
+        private final java.lang.Object real;
+
+        private Events(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Events wrap(android.provider.CalendarContract.Events real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Events(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Events(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Events getReal() {
+            return (android.provider.CalendarContract.Events) real;
         }
 
         public android.provider.CalendarContract.Events unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_EXCEPTION_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.Events.CONTENT_EXCEPTION_URI);
@@ -201,70 +264,91 @@ public final class CalendarContract {
 
     }
     public static final class EventsEntity {
-        private final android.provider.CalendarContract.EventsEntity real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EventsEntity(android.provider.CalendarContract.EventsEntity real) {
+        private final java.lang.Object real;
+
+        private EventsEntity(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.EventsEntity wrap(android.provider.CalendarContract.EventsEntity real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.EventsEntity(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.EventsEntity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.EventsEntity getReal() {
+            return (android.provider.CalendarContract.EventsEntity) real;
         }
 
         public android.provider.CalendarContract.EventsEntity unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentResolver arg1) {
-            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentProviderClient arg1) {
-            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.EventsEntity.CONTENT_URI);
 
     }
     public static final class ExtendedProperties {
-        private final android.provider.CalendarContract.ExtendedProperties real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExtendedProperties(android.provider.CalendarContract.ExtendedProperties real) {
+        private final java.lang.Object real;
+
+        private ExtendedProperties(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.ExtendedProperties wrap(android.provider.CalendarContract.ExtendedProperties real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.ExtendedProperties(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.ExtendedProperties(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.ExtendedProperties getReal() {
+            return (android.provider.CalendarContract.ExtendedProperties) real;
         }
 
         public android.provider.CalendarContract.ExtendedProperties unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.ExtendedProperties.CONTENT_URI);
 
     }
     public static final class Instances {
-        private final android.provider.CalendarContract.Instances real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Instances(android.provider.CalendarContract.Instances real) {
+        private final java.lang.Object real;
+
+        private Instances(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Instances wrap(android.provider.CalendarContract.Instances real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Instances(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Instances(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Instances getReal() {
+            return (android.provider.CalendarContract.Instances) real;
         }
 
         public android.provider.CalendarContract.Instances unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String[] arg1, long arg2, long arg3) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Instances.query(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Instances.query(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String[] arg1, long arg2, long arg3, java.lang.String arg4) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Instances.query(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Instances.query(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4));
         }
 
         public static final java.lang.String BEGIN = android.provider.CalendarContract.Instances.BEGIN;
@@ -285,40 +369,54 @@ public final class CalendarContract {
 
     }
     public static final class Reminders {
-        private final android.provider.CalendarContract.Reminders real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Reminders(android.provider.CalendarContract.Reminders real) {
+        private final java.lang.Object real;
+
+        private Reminders(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.Reminders wrap(android.provider.CalendarContract.Reminders real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Reminders(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.Reminders(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.Reminders getReal() {
+            return (android.provider.CalendarContract.Reminders) real;
         }
 
         public android.provider.CalendarContract.Reminders unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, java.lang.String[] arg2) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Reminders.query(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.CalendarContract.Reminders.query(arg0 == null ? null : arg0.getReal(), arg1, arg2));
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.Reminders.CONTENT_URI);
 
     }
     public static final class SyncState {
-        private final android.provider.CalendarContract.SyncState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SyncState(android.provider.CalendarContract.SyncState real) {
+        private final java.lang.Object real;
+
+        private SyncState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.CalendarContract.SyncState wrap(android.provider.CalendarContract.SyncState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.SyncState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.CalendarContract.SyncState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.CalendarContract.SyncState getReal() {
+            return (android.provider.CalendarContract.SyncState) real;
         }
 
         public android.provider.CalendarContract.SyncState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.CalendarContract.SyncState.CONTENT_URI);

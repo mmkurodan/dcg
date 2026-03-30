@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd;
 
 public final class WifiP2pServiceRequest {
-    private final android.net.wifi.p2p.nsd.WifiP2pServiceRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pServiceRequest(android.net.wifi.p2p.nsd.WifiP2pServiceRequest real) {
+    private final java.lang.Object real;
+
+    private WifiP2pServiceRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pServiceRequest wrap(android.net.wifi.p2p.nsd.WifiP2pServiceRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pServiceRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pServiceRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.nsd.WifiP2pServiceRequest getReal() {
+        return (android.net.wifi.p2p.nsd.WifiP2pServiceRequest) real;
     }
 
     public android.net.wifi.p2p.nsd.WifiP2pServiceRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

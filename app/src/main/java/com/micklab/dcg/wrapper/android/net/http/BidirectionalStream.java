@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class BidirectionalStream {
-    private final android.net.http.BidirectionalStream real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BidirectionalStream(android.net.http.BidirectionalStream real) {
+    private final java.lang.Object real;
+
+    private BidirectionalStream(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.BidirectionalStream wrap(android.net.http.BidirectionalStream real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.BidirectionalStream getReal() {
+        return (android.net.http.BidirectionalStream) real;
     }
 
     public android.net.http.BidirectionalStream unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {
@@ -74,18 +81,25 @@ public final class BidirectionalStream {
 
 
     public static final class Builder {
-        private final android.net.http.BidirectionalStream.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.BidirectionalStream.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Builder wrap(android.net.http.BidirectionalStream.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.BidirectionalStream.Builder getReal() {
+            return (android.net.http.BidirectionalStream.Builder) real;
         }
 
         public android.net.http.BidirectionalStream.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Builder addHeader(java.lang.String arg0, java.lang.String arg1) {
@@ -118,18 +132,25 @@ public final class BidirectionalStream {
 
     }
     public static final class Callback {
-        private final android.net.http.BidirectionalStream.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.net.http.BidirectionalStream.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Callback wrap(android.net.http.BidirectionalStream.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.BidirectionalStream.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.BidirectionalStream.Callback getReal() {
+            return (android.net.http.BidirectionalStream.Callback) real;
         }
 
         public android.net.http.BidirectionalStream.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCanceled(com.micklab.dcg.wrapper.android.net.http.BidirectionalStream arg0, com.micklab.dcg.wrapper.android.net.http.UrlResponseInfo arg1) {

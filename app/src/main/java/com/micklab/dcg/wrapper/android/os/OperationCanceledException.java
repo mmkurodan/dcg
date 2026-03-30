@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class OperationCanceledException {
-    private final android.os.OperationCanceledException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OperationCanceledException(android.os.OperationCanceledException real) {
+    private final java.lang.Object real;
+
+    private OperationCanceledException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.OperationCanceledException wrap(android.os.OperationCanceledException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.OperationCanceledException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.OperationCanceledException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.OperationCanceledException getReal() {
+        return (android.os.OperationCanceledException) real;
     }
 
     public android.os.OperationCanceledException unwrap() {
-        return real;
+        return getReal();
     }
 
     public OperationCanceledException() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class LinkAddress {
-    private final android.net.LinkAddress real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LinkAddress(android.net.LinkAddress real) {
+    private final java.lang.Object real;
+
+    private LinkAddress(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.LinkAddress wrap(android.net.LinkAddress real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LinkAddress(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LinkAddress(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.LinkAddress getReal() {
+        return (android.net.LinkAddress) real;
     }
 
     public android.net.LinkAddress unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

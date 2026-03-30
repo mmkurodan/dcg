@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class CaptivePortal {
-    private final android.net.CaptivePortal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CaptivePortal(android.net.CaptivePortal real) {
+    private final java.lang.Object real;
+
+    private CaptivePortal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.CaptivePortal wrap(android.net.CaptivePortal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.CaptivePortal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.CaptivePortal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.CaptivePortal getReal() {
+        return (android.net.CaptivePortal) real;
     }
 
     public android.net.CaptivePortal unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

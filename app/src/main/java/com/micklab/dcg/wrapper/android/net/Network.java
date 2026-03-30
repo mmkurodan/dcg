@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class Network {
-    private final android.net.Network real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Network(android.net.Network real) {
+    private final java.lang.Object real;
+
+    private Network(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.Network wrap(android.net.Network real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Network(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.Network(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.Network getReal() {
+        return (android.net.Network) real;
     }
 
     public android.net.Network unwrap() {
-        return real;
+        return getReal();
     }
 
     public void bindSocket(java.io.FileDescriptor arg0) throws java.io.IOException {

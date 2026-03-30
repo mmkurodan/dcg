@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.drm;
 
 public final class DrmErrorEvent {
-    private final android.drm.DrmErrorEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DrmErrorEvent(android.drm.DrmErrorEvent real) {
+    private final java.lang.Object real;
+
+    private DrmErrorEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.drm.DrmErrorEvent wrap(android.drm.DrmErrorEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmErrorEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmErrorEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.drm.DrmErrorEvent getReal() {
+        return (android.drm.DrmErrorEvent) real;
     }
 
     public android.drm.DrmErrorEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public DrmErrorEvent(int arg0, int arg1, java.lang.String arg2) {
-        this(new android.drm.DrmErrorEvent(arg0, arg1, arg2));
+        this(new android.drm.DrmErrorEvent(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public DrmErrorEvent(int arg0, int arg1, java.lang.String arg2, java.util.HashMap arg3) {
-        this(new android.drm.DrmErrorEvent(arg0, arg1, arg2, arg3));
+        this(new android.drm.DrmErrorEvent(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public static final int TYPE_ACQUIRE_DRM_INFO_FAILED = android.drm.DrmErrorEvent.TYPE_ACQUIRE_DRM_INFO_FAILED;

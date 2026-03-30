@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class VisualVoicemailSms {
-    private final android.telephony.VisualVoicemailSms real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VisualVoicemailSms(android.telephony.VisualVoicemailSms real) {
+    private final java.lang.Object real;
+
+    private VisualVoicemailSms(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSms wrap(android.telephony.VisualVoicemailSms real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSms(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSms(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.VisualVoicemailSms getReal() {
+        return (android.telephony.VisualVoicemailSms) real;
     }
 
     public android.telephony.VisualVoicemailSms unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

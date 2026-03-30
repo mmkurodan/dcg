@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class AlarmClock {
-    private final android.provider.AlarmClock real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AlarmClock(android.provider.AlarmClock real) {
+    private final java.lang.Object real;
+
+    private AlarmClock(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.AlarmClock wrap(android.provider.AlarmClock real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.AlarmClock(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.AlarmClock(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.AlarmClock getReal() {
+        return (android.provider.AlarmClock) real;
     }
 
     public android.provider.AlarmClock unwrap() {
-        return real;
+        return getReal();
     }
 
     public AlarmClock() {
-        this(new android.provider.AlarmClock());
+        this(new android.provider.AlarmClock(), (__DcgwBridgeToken) null);
     }
 
     public static final java.lang.String ACTION_DISMISS_ALARM = android.provider.AlarmClock.ACTION_DISMISS_ALARM;

@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.text.method;
 
 public final class DialerKeyListener {
-    private final android.text.method.DialerKeyListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DialerKeyListener(android.text.method.DialerKeyListener real) {
+    private final java.lang.Object real;
+
+    private DialerKeyListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.method.DialerKeyListener wrap(android.text.method.DialerKeyListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.method.DialerKeyListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.method.DialerKeyListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.method.DialerKeyListener getReal() {
+        return (android.text.method.DialerKeyListener) real;
     }
 
     public android.text.method.DialerKeyListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public DialerKeyListener() {
-        this(new android.text.method.DialerKeyListener());
+        this(new android.text.method.DialerKeyListener(), (__DcgwBridgeToken) null);
     }
 
     public int getInputType() {
-        return real.getInputType();
+        return ((android.text.method.DialerKeyListener) real).getInputType();
     }
 
     public static com.micklab.dcg.wrapper.android.text.method.DialerKeyListener getInstance() {

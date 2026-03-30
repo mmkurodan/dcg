@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class EGL14 {
-    private final android.opengl.EGL14 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EGL14(android.opengl.EGL14 real) {
+    private final java.lang.Object real;
+
+    private EGL14(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGL14 wrap(android.opengl.EGL14 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGL14(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGL14(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.EGL14 getReal() {
+        return (android.opengl.EGL14) real;
     }
 
     public android.opengl.EGL14 unwrap() {
-        return real;
+        return getReal();
     }
 
     public EGL14() {
-        this(new android.opengl.EGL14());
+        this(new android.opengl.EGL14(), (__DcgwBridgeToken) null);
     }
 
     public static boolean eglBindAPI(int arg0) {
@@ -25,51 +32,51 @@ public final class EGL14 {
     }
 
     public static boolean eglBindTexImage(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, int arg2) {
-        return android.opengl.EGL14.eglBindTexImage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.opengl.EGL14.eglBindTexImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static boolean eglChooseConfig(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int[] arg1, int arg2, android.opengl.EGLConfig[] arg3, int arg4, int arg5, int[] arg6, int arg7) {
-        return android.opengl.EGL14.eglChooseConfig(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+        return android.opengl.EGL14.eglChooseConfig(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5, arg6, arg7);
     }
 
     public static boolean eglCopyBuffers(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, int arg2) {
-        return android.opengl.EGL14.eglCopyBuffers(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.opengl.EGL14.eglCopyBuffers(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLContext eglCreateContext(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, com.micklab.dcg.wrapper.android.opengl.EGLContext arg2, int[] arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLContext.wrap(android.opengl.EGL14.eglCreateContext(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4));
+        return com.micklab.dcg.wrapper.android.opengl.EGLContext.wrap(android.opengl.EGL14.eglCreateContext(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreatePbufferFromClientBuffer(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg3, int[] arg4, int arg5) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePbufferFromClientBuffer(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4, arg5));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePbufferFromClientBuffer(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4, arg5));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreatePbufferSurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, int[] arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePbufferSurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePbufferSurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreatePixmapSurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, int arg2, int[] arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePixmapSurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreatePixmapSurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4));
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLSurface eglCreateWindowSurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, java.lang.Object arg2, int[] arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreateWindowSurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+        return com.micklab.dcg.wrapper.android.opengl.EGLSurface.wrap(android.opengl.EGL14.eglCreateWindowSurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4));
     }
 
     public static boolean eglDestroyContext(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLContext arg1) {
-        return android.opengl.EGL14.eglDestroyContext(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.opengl.EGL14.eglDestroyContext(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean eglDestroySurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1) {
-        return android.opengl.EGL14.eglDestroySurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.opengl.EGL14.eglDestroySurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean eglGetConfigAttrib(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLConfig arg1, int arg2, int[] arg3, int arg4) {
-        return android.opengl.EGL14.eglGetConfigAttrib(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4);
+        return android.opengl.EGL14.eglGetConfigAttrib(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
     }
 
     public static boolean eglGetConfigs(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, android.opengl.EGLConfig[] arg1, int arg2, int arg3, int[] arg4, int arg5) {
-        return android.opengl.EGL14.eglGetConfigs(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5);
+        return android.opengl.EGL14.eglGetConfigs(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5);
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLContext eglGetCurrentContext() {
@@ -93,11 +100,11 @@ public final class EGL14 {
     }
 
     public static boolean eglInitialize(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int[] arg1, int arg2, int[] arg3, int arg4) {
-        return android.opengl.EGL14.eglInitialize(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        return android.opengl.EGL14.eglInitialize(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public static boolean eglMakeCurrent(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg2, com.micklab.dcg.wrapper.android.opengl.EGLContext arg3) {
-        return android.opengl.EGL14.eglMakeCurrent(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        return android.opengl.EGL14.eglMakeCurrent(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public static int eglQueryAPI() {
@@ -105,19 +112,19 @@ public final class EGL14 {
     }
 
     public static boolean eglQueryContext(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLContext arg1, int arg2, int[] arg3, int arg4) {
-        return android.opengl.EGL14.eglQueryContext(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4);
+        return android.opengl.EGL14.eglQueryContext(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
     }
 
     public static java.lang.String eglQueryString(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int arg1) {
-        return android.opengl.EGL14.eglQueryString(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.opengl.EGL14.eglQueryString(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static boolean eglQuerySurface(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, int arg2, int[] arg3, int arg4) {
-        return android.opengl.EGL14.eglQuerySurface(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4);
+        return android.opengl.EGL14.eglQuerySurface(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
     }
 
     public static boolean eglReleaseTexImage(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, int arg2) {
-        return android.opengl.EGL14.eglReleaseTexImage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.opengl.EGL14.eglReleaseTexImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static boolean eglReleaseThread() {
@@ -125,19 +132,19 @@ public final class EGL14 {
     }
 
     public static boolean eglSurfaceAttrib(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, int arg2, int arg3) {
-        return android.opengl.EGL14.eglSurfaceAttrib(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        return android.opengl.EGL14.eglSurfaceAttrib(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public static boolean eglSwapBuffers(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1) {
-        return android.opengl.EGL14.eglSwapBuffers(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.opengl.EGL14.eglSwapBuffers(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean eglSwapInterval(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, int arg1) {
-        return android.opengl.EGL14.eglSwapInterval(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.opengl.EGL14.eglSwapInterval(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static boolean eglTerminate(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0) {
-        return android.opengl.EGL14.eglTerminate(arg0 == null ? null : arg0.unwrap());
+        return android.opengl.EGL14.eglTerminate(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean eglWaitClient() {

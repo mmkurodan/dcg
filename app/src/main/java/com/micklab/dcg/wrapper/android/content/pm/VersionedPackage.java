@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class VersionedPackage {
-    private final android.content.pm.VersionedPackage real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VersionedPackage(android.content.pm.VersionedPackage real) {
+    private final java.lang.Object real;
+
+    private VersionedPackage(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.VersionedPackage wrap(android.content.pm.VersionedPackage real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.VersionedPackage(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.VersionedPackage(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.VersionedPackage getReal() {
+        return (android.content.pm.VersionedPackage) real;
     }
 
     public android.content.pm.VersionedPackage unwrap() {
-        return real;
+        return getReal();
     }
 
     public VersionedPackage(java.lang.String arg0, int arg1) {

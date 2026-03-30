@@ -2,578 +2,585 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class Window {
-    private final android.view.Window real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Window(android.view.Window real) {
+    private final java.lang.Object real;
+
+    private Window(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.Window wrap(android.view.Window real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.Window getReal() {
+        return (android.view.Window) real;
     }
 
     public android.view.Window unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
-        real.addContentView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).addContentView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addFlags(int arg0) {
-        real.addFlags(arg0);
+        ((android.view.Window) real).addFlags(arg0);
     }
 
     public void addOnFrameMetricsAvailableListener(com.micklab.dcg.wrapper.android.view.Window.OnFrameMetricsAvailableListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.addOnFrameMetricsAvailableListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).addOnFrameMetricsAvailableListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void clearFlags(int arg0) {
-        real.clearFlags(arg0);
+        ((android.view.Window) real).clearFlags(arg0);
     }
 
     public void closeAllPanels() {
-        real.closeAllPanels();
+        ((android.view.Window) real).closeAllPanels();
     }
 
     public void closePanel(int arg0) {
-        real.closePanel(arg0);
+        ((android.view.Window) real).closePanel(arg0);
     }
 
     public boolean getAllowEnterTransitionOverlap() {
-        return real.getAllowEnterTransitionOverlap();
+        return ((android.view.Window) real).getAllowEnterTransitionOverlap();
     }
 
     public boolean getAllowReturnTransitionOverlap() {
-        return real.getAllowReturnTransitionOverlap();
+        return ((android.view.Window) real).getAllowReturnTransitionOverlap();
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams getAttributes() {
-        return com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams.wrap(real.getAttributes());
+        return com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams.wrap(((android.view.Window) real).getAttributes());
     }
 
     public com.micklab.dcg.wrapper.android.view.Window.Callback getCallback() {
-        return com.micklab.dcg.wrapper.android.view.Window.Callback.wrap(real.getCallback());
+        return com.micklab.dcg.wrapper.android.view.Window.Callback.wrap(((android.view.Window) real).getCallback());
     }
 
     public int getColorMode() {
-        return real.getColorMode();
+        return ((android.view.Window) real).getColorMode();
     }
 
     public com.micklab.dcg.wrapper.android.view.Window getContainer() {
-        return com.micklab.dcg.wrapper.android.view.Window.wrap(real.getContainer());
+        return com.micklab.dcg.wrapper.android.view.Window.wrap(((android.view.Window) real).getContainer());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Scene getContentScene() {
-        return com.micklab.dcg.wrapper.android.transition.Scene.wrap(real.getContentScene());
+        return com.micklab.dcg.wrapper.android.transition.Scene.wrap(((android.view.Window) real).getContentScene());
     }
 
     public com.micklab.dcg.wrapper.android.content.Context getContext() {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.getContext());
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.view.Window) real).getContext());
     }
 
     public com.micklab.dcg.wrapper.android.view.View getCurrentFocus() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.getCurrentFocus());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.Window) real).getCurrentFocus());
     }
 
     public com.micklab.dcg.wrapper.android.view.View getDecorView() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.getDecorView());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.Window) real).getDecorView());
     }
 
     public static int getDefaultFeatures(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.view.Window.getDefaultFeatures(arg0 == null ? null : arg0.unwrap());
+        return android.view.Window.getDefaultFeatures(arg0 == null ? null : arg0.getReal());
     }
 
     public float getDesiredHdrHeadroom() {
-        return real.getDesiredHdrHeadroom();
+        return ((android.view.Window) real).getDesiredHdrHeadroom();
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getEnterTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getEnterTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getEnterTransition());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getExitTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getExitTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getExitTransition());
     }
 
     public boolean getFrameRateBoostOnTouchEnabled() {
-        return real.getFrameRateBoostOnTouchEnabled();
+        return ((android.view.Window) real).getFrameRateBoostOnTouchEnabled();
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowInsetsController getInsetsController() {
-        return com.micklab.dcg.wrapper.android.view.WindowInsetsController.wrap(real.getInsetsController());
+        return com.micklab.dcg.wrapper.android.view.WindowInsetsController.wrap(((android.view.Window) real).getInsetsController());
     }
 
     public com.micklab.dcg.wrapper.android.view.LayoutInflater getLayoutInflater() {
-        return com.micklab.dcg.wrapper.android.view.LayoutInflater.wrap(real.getLayoutInflater());
+        return com.micklab.dcg.wrapper.android.view.LayoutInflater.wrap(((android.view.Window) real).getLayoutInflater());
     }
 
     public com.micklab.dcg.wrapper.android.media.session.MediaController getMediaController() {
-        return com.micklab.dcg.wrapper.android.media.session.MediaController.wrap(real.getMediaController());
+        return com.micklab.dcg.wrapper.android.media.session.MediaController.wrap(((android.view.Window) real).getMediaController());
     }
 
     public int getNavigationBarColor() {
-        return real.getNavigationBarColor();
+        return ((android.view.Window) real).getNavigationBarColor();
     }
 
     public int getNavigationBarDividerColor() {
-        return real.getNavigationBarDividerColor();
+        return ((android.view.Window) real).getNavigationBarDividerColor();
     }
 
     public com.micklab.dcg.wrapper.android.window.OnBackInvokedDispatcher getOnBackInvokedDispatcher() {
-        return com.micklab.dcg.wrapper.android.window.OnBackInvokedDispatcher.wrap(real.getOnBackInvokedDispatcher());
+        return com.micklab.dcg.wrapper.android.window.OnBackInvokedDispatcher.wrap(((android.view.Window) real).getOnBackInvokedDispatcher());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getReenterTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getReenterTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getReenterTransition());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getReturnTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getReturnTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getReturnTransition());
     }
 
     public com.micklab.dcg.wrapper.android.view.AttachedSurfaceControl getRootSurfaceControl() {
-        return com.micklab.dcg.wrapper.android.view.AttachedSurfaceControl.wrap(real.getRootSurfaceControl());
+        return com.micklab.dcg.wrapper.android.view.AttachedSurfaceControl.wrap(((android.view.Window) real).getRootSurfaceControl());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getSharedElementEnterTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getSharedElementEnterTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getSharedElementEnterTransition());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getSharedElementExitTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getSharedElementExitTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getSharedElementExitTransition());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getSharedElementReenterTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getSharedElementReenterTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getSharedElementReenterTransition());
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition getSharedElementReturnTransition() {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(real.getSharedElementReturnTransition());
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.view.Window) real).getSharedElementReturnTransition());
     }
 
     public boolean getSharedElementsUseOverlay() {
-        return real.getSharedElementsUseOverlay();
+        return ((android.view.Window) real).getSharedElementsUseOverlay();
     }
 
     public int getStatusBarColor() {
-        return real.getStatusBarColor();
+        return ((android.view.Window) real).getStatusBarColor();
     }
 
     public long getTransitionBackgroundFadeDuration() {
-        return real.getTransitionBackgroundFadeDuration();
+        return ((android.view.Window) real).getTransitionBackgroundFadeDuration();
     }
 
     public com.micklab.dcg.wrapper.android.transition.TransitionManager getTransitionManager() {
-        return com.micklab.dcg.wrapper.android.transition.TransitionManager.wrap(real.getTransitionManager());
+        return com.micklab.dcg.wrapper.android.transition.TransitionManager.wrap(((android.view.Window) real).getTransitionManager());
     }
 
     public int getVolumeControlStream() {
-        return real.getVolumeControlStream();
+        return ((android.view.Window) real).getVolumeControlStream();
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowManager getWindowManager() {
-        return com.micklab.dcg.wrapper.android.view.WindowManager.wrap(real.getWindowManager());
+        return com.micklab.dcg.wrapper.android.view.WindowManager.wrap(((android.view.Window) real).getWindowManager());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray getWindowStyle() {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(real.getWindowStyle());
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.view.Window) real).getWindowStyle());
     }
 
     public boolean hasChildren() {
-        return real.hasChildren();
+        return ((android.view.Window) real).hasChildren();
     }
 
     public boolean hasFeature(int arg0) {
-        return real.hasFeature(arg0);
+        return ((android.view.Window) real).hasFeature(arg0);
     }
 
     public void injectInputEvent(com.micklab.dcg.wrapper.android.view.InputEvent arg0) {
-        real.injectInputEvent(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).injectInputEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void invalidatePanelMenu(int arg0) {
-        real.invalidatePanelMenu(arg0);
+        ((android.view.Window) real).invalidatePanelMenu(arg0);
     }
 
     public boolean isActive() {
-        return real.isActive();
+        return ((android.view.Window) real).isActive();
     }
 
     public boolean isFloating() {
-        return real.isFloating();
+        return ((android.view.Window) real).isFloating();
     }
 
     public boolean isFrameRatePowerSavingsBalanced() {
-        return real.isFrameRatePowerSavingsBalanced();
+        return ((android.view.Window) real).isFrameRatePowerSavingsBalanced();
     }
 
     public boolean isNavigationBarContrastEnforced() {
-        return real.isNavigationBarContrastEnforced();
+        return ((android.view.Window) real).isNavigationBarContrastEnforced();
     }
 
     public boolean isShortcutKey(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.isShortcutKey(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.view.Window) real).isShortcutKey(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean isStatusBarContrastEnforced() {
-        return real.isStatusBarContrastEnforced();
+        return ((android.view.Window) real).isStatusBarContrastEnforced();
     }
 
     public boolean isWideColorGamut() {
-        return real.isWideColorGamut();
+        return ((android.view.Window) real).isWideColorGamut();
     }
 
     public void makeActive() {
-        real.makeActive();
+        ((android.view.Window) real).makeActive();
     }
 
     public void onConfigurationChanged(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        real.onConfigurationChanged(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).onConfigurationChanged(arg0 == null ? null : arg0.getReal());
     }
 
     public void openPanel(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        real.openPanel(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).openPanel(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.View peekDecorView() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.peekDecorView());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.Window) real).peekDecorView());
     }
 
     public boolean performContextMenuIdentifierAction(int arg0, int arg1) {
-        return real.performContextMenuIdentifierAction(arg0, arg1);
+        return ((android.view.Window) real).performContextMenuIdentifierAction(arg0, arg1);
     }
 
     public boolean performPanelIdentifierAction(int arg0, int arg1, int arg2) {
-        return real.performPanelIdentifierAction(arg0, arg1, arg2);
+        return ((android.view.Window) real).performPanelIdentifierAction(arg0, arg1, arg2);
     }
 
     public boolean performPanelShortcut(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2, int arg3) {
-        return real.performPanelShortcut(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        return ((android.view.Window) real).performPanelShortcut(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public void registerScrollCaptureCallback(com.micklab.dcg.wrapper.android.view.ScrollCaptureCallback arg0) {
-        real.registerScrollCaptureCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).registerScrollCaptureCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnFrameMetricsAvailableListener(com.micklab.dcg.wrapper.android.view.Window.OnFrameMetricsAvailableListener arg0) {
-        real.removeOnFrameMetricsAvailableListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).removeOnFrameMetricsAvailableListener(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean requestFeature(int arg0) {
-        return real.requestFeature(arg0);
+        return ((android.view.Window) real).requestFeature(arg0);
     }
 
     public void restoreHierarchyState(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.restoreHierarchyState(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).restoreHierarchyState(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle saveHierarchyState() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.saveHierarchyState());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.view.Window) real).saveHierarchyState());
     }
 
     public void setAllowEnterTransitionOverlap(boolean arg0) {
-        real.setAllowEnterTransitionOverlap(arg0);
+        ((android.view.Window) real).setAllowEnterTransitionOverlap(arg0);
     }
 
     public void setAllowReturnTransitionOverlap(boolean arg0) {
-        real.setAllowReturnTransitionOverlap(arg0);
+        ((android.view.Window) real).setAllowReturnTransitionOverlap(arg0);
     }
 
     public void setAttributes(com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams arg0) {
-        real.setAttributes(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setAttributes(arg0 == null ? null : arg0.getReal());
     }
 
     public void setBackgroundBlurRadius(int arg0) {
-        real.setBackgroundBlurRadius(arg0);
+        ((android.view.Window) real).setBackgroundBlurRadius(arg0);
     }
 
     public void setBackgroundDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setBackgroundDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setBackgroundDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setBackgroundDrawableResource(int arg0) {
-        real.setBackgroundDrawableResource(arg0);
+        ((android.view.Window) real).setBackgroundDrawableResource(arg0);
     }
 
     public void setCallback(com.micklab.dcg.wrapper.android.view.Window.Callback arg0) {
-        real.setCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void setChildDrawable(int arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1) {
-        real.setChildDrawable(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).setChildDrawable(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setChildInt(int arg0, int arg1) {
-        real.setChildInt(arg0, arg1);
+        ((android.view.Window) real).setChildInt(arg0, arg1);
     }
 
     public void setClipToOutline(boolean arg0) {
-        real.setClipToOutline(arg0);
+        ((android.view.Window) real).setClipToOutline(arg0);
     }
 
     public void setColorMode(int arg0) {
-        real.setColorMode(arg0);
+        ((android.view.Window) real).setColorMode(arg0);
     }
 
     public void setContainer(com.micklab.dcg.wrapper.android.view.Window arg0) {
-        real.setContainer(arg0 == null ? null : arg0.unwrap());
-    }
-
-    public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setContentView(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setContainer(arg0 == null ? null : arg0.getReal());
     }
 
     public void setContentView(int arg0) {
-        real.setContentView(arg0);
+        ((android.view.Window) real).setContentView(arg0);
+    }
+
+    public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
+        ((android.view.Window) real).setContentView(arg0 == null ? null : arg0.getReal());
     }
 
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
-        real.setContentView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).setContentView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setDecorCaptionShade(int arg0) {
-        real.setDecorCaptionShade(arg0);
+        ((android.view.Window) real).setDecorCaptionShade(arg0);
     }
 
     public void setDecorFitsSystemWindows(boolean arg0) {
-        real.setDecorFitsSystemWindows(arg0);
+        ((android.view.Window) real).setDecorFitsSystemWindows(arg0);
     }
 
     public void setDesiredHdrHeadroom(float arg0) {
-        real.setDesiredHdrHeadroom(arg0);
+        ((android.view.Window) real).setDesiredHdrHeadroom(arg0);
     }
 
     public void setDimAmount(float arg0) {
-        real.setDimAmount(arg0);
+        ((android.view.Window) real).setDimAmount(arg0);
     }
 
     public void setElevation(float arg0) {
-        real.setElevation(arg0);
+        ((android.view.Window) real).setElevation(arg0);
     }
 
     public void setEnterTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setEnterTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setEnterTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setExitTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setExitTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setExitTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setFeatureDrawable(int arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1) {
-        real.setFeatureDrawable(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).setFeatureDrawable(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setFeatureDrawableAlpha(int arg0, int arg1) {
-        real.setFeatureDrawableAlpha(arg0, arg1);
+        ((android.view.Window) real).setFeatureDrawableAlpha(arg0, arg1);
     }
 
     public void setFeatureDrawableResource(int arg0, int arg1) {
-        real.setFeatureDrawableResource(arg0, arg1);
+        ((android.view.Window) real).setFeatureDrawableResource(arg0, arg1);
     }
 
     public void setFeatureDrawableUri(int arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        real.setFeatureDrawableUri(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).setFeatureDrawableUri(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setFeatureInt(int arg0, int arg1) {
-        real.setFeatureInt(arg0, arg1);
+        ((android.view.Window) real).setFeatureInt(arg0, arg1);
     }
 
     public void setFlags(int arg0, int arg1) {
-        real.setFlags(arg0, arg1);
+        ((android.view.Window) real).setFlags(arg0, arg1);
     }
 
     public void setFormat(int arg0) {
-        real.setFormat(arg0);
+        ((android.view.Window) real).setFormat(arg0);
     }
 
     public void setFrameRateBoostOnTouchEnabled(boolean arg0) {
-        real.setFrameRateBoostOnTouchEnabled(arg0);
+        ((android.view.Window) real).setFrameRateBoostOnTouchEnabled(arg0);
     }
 
     public void setFrameRatePowerSavingsBalanced(boolean arg0) {
-        real.setFrameRatePowerSavingsBalanced(arg0);
+        ((android.view.Window) real).setFrameRatePowerSavingsBalanced(arg0);
     }
 
     public void setGravity(int arg0) {
-        real.setGravity(arg0);
+        ((android.view.Window) real).setGravity(arg0);
     }
 
     public void setHideOverlayWindows(boolean arg0) {
-        real.setHideOverlayWindows(arg0);
+        ((android.view.Window) real).setHideOverlayWindows(arg0);
     }
 
     public void setIcon(int arg0) {
-        real.setIcon(arg0);
+        ((android.view.Window) real).setIcon(arg0);
     }
 
     public void setLayout(int arg0, int arg1) {
-        real.setLayout(arg0, arg1);
+        ((android.view.Window) real).setLayout(arg0, arg1);
     }
 
     public void setLocalFocus(boolean arg0, boolean arg1) {
-        real.setLocalFocus(arg0, arg1);
+        ((android.view.Window) real).setLocalFocus(arg0, arg1);
     }
 
     public void setLogo(int arg0) {
-        real.setLogo(arg0);
+        ((android.view.Window) real).setLogo(arg0);
     }
 
     public void setMediaController(com.micklab.dcg.wrapper.android.media.session.MediaController arg0) {
-        real.setMediaController(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setMediaController(arg0 == null ? null : arg0.getReal());
     }
 
     public void setNavigationBarColor(int arg0) {
-        real.setNavigationBarColor(arg0);
+        ((android.view.Window) real).setNavigationBarColor(arg0);
     }
 
     public void setNavigationBarContrastEnforced(boolean arg0) {
-        real.setNavigationBarContrastEnforced(arg0);
+        ((android.view.Window) real).setNavigationBarContrastEnforced(arg0);
     }
 
     public void setNavigationBarDividerColor(int arg0) {
-        real.setNavigationBarDividerColor(arg0);
+        ((android.view.Window) real).setNavigationBarDividerColor(arg0);
     }
 
     public void setPreferMinimalPostProcessing(boolean arg0) {
-        real.setPreferMinimalPostProcessing(arg0);
+        ((android.view.Window) real).setPreferMinimalPostProcessing(arg0);
     }
 
     public void setReenterTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setReenterTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setReenterTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setResizingCaptionDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setResizingCaptionDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setResizingCaptionDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRestrictedCaptionAreaListener(com.micklab.dcg.wrapper.android.view.Window.OnRestrictedCaptionAreaChangedListener arg0) {
-        real.setRestrictedCaptionAreaListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setRestrictedCaptionAreaListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setReturnTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setReturnTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setReturnTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSharedElementEnterTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setSharedElementEnterTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setSharedElementEnterTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSharedElementExitTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setSharedElementExitTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setSharedElementExitTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSharedElementReenterTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setSharedElementReenterTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setSharedElementReenterTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSharedElementReturnTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
-        real.setSharedElementReturnTransition(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setSharedElementReturnTransition(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSharedElementsUseOverlay(boolean arg0) {
-        real.setSharedElementsUseOverlay(arg0);
+        ((android.view.Window) real).setSharedElementsUseOverlay(arg0);
     }
 
     public void setSoftInputMode(int arg0) {
-        real.setSoftInputMode(arg0);
+        ((android.view.Window) real).setSoftInputMode(arg0);
     }
 
     public void setStatusBarColor(int arg0) {
-        real.setStatusBarColor(arg0);
+        ((android.view.Window) real).setStatusBarColor(arg0);
     }
 
     public void setStatusBarContrastEnforced(boolean arg0) {
-        real.setStatusBarContrastEnforced(arg0);
+        ((android.view.Window) real).setStatusBarContrastEnforced(arg0);
     }
 
     public void setSustainedPerformanceMode(boolean arg0) {
-        real.setSustainedPerformanceMode(arg0);
+        ((android.view.Window) real).setSustainedPerformanceMode(arg0);
     }
 
     public void setTitle(java.lang.CharSequence arg0) {
-        real.setTitle(arg0);
+        ((android.view.Window) real).setTitle(arg0);
     }
 
     public void setTitleColor(int arg0) {
-        real.setTitleColor(arg0);
+        ((android.view.Window) real).setTitleColor(arg0);
     }
 
     public void setTransitionBackgroundFadeDuration(long arg0) {
-        real.setTransitionBackgroundFadeDuration(arg0);
+        ((android.view.Window) real).setTransitionBackgroundFadeDuration(arg0);
     }
 
     public void setTransitionManager(com.micklab.dcg.wrapper.android.transition.TransitionManager arg0) {
-        real.setTransitionManager(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).setTransitionManager(arg0 == null ? null : arg0.getReal());
     }
 
     public void setType(int arg0) {
-        real.setType(arg0);
+        ((android.view.Window) real).setType(arg0);
     }
 
     public void setUiOptions(int arg0) {
-        real.setUiOptions(arg0);
+        ((android.view.Window) real).setUiOptions(arg0);
     }
 
     public void setUiOptions(int arg0, int arg1) {
-        real.setUiOptions(arg0, arg1);
+        ((android.view.Window) real).setUiOptions(arg0, arg1);
     }
 
     public void setVolumeControlStream(int arg0) {
-        real.setVolumeControlStream(arg0);
+        ((android.view.Window) real).setVolumeControlStream(arg0);
     }
 
     public void setWindowAnimations(int arg0) {
-        real.setWindowAnimations(arg0);
+        ((android.view.Window) real).setWindowAnimations(arg0);
     }
 
     public void setWindowManager(com.micklab.dcg.wrapper.android.view.WindowManager arg0, com.micklab.dcg.wrapper.android.os.IBinder arg1, java.lang.String arg2) {
-        real.setWindowManager(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.view.Window) real).setWindowManager(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void setWindowManager(com.micklab.dcg.wrapper.android.view.WindowManager arg0, com.micklab.dcg.wrapper.android.os.IBinder arg1, java.lang.String arg2, boolean arg3) {
-        real.setWindowManager(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        ((android.view.Window) real).setWindowManager(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public boolean superDispatchGenericMotionEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.superDispatchGenericMotionEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.Window) real).superDispatchGenericMotionEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean superDispatchKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        return real.superDispatchKeyEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.Window) real).superDispatchKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean superDispatchKeyShortcutEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        return real.superDispatchKeyShortcutEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.Window) real).superDispatchKeyShortcutEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean superDispatchTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.superDispatchTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.Window) real).superDispatchTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean superDispatchTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.superDispatchTrackballEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.Window) real).superDispatchTrackballEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void takeInputQueue(com.micklab.dcg.wrapper.android.view.InputQueue.Callback arg0) {
-        real.takeInputQueue(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).takeInputQueue(arg0 == null ? null : arg0.getReal());
     }
 
     public void takeKeyEvents(boolean arg0) {
-        real.takeKeyEvents(arg0);
+        ((android.view.Window) real).takeKeyEvents(arg0);
     }
 
     public void takeSurface(com.micklab.dcg.wrapper.android.view.SurfaceHolder.Callback2 arg0) {
-        real.takeSurface(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).takeSurface(arg0 == null ? null : arg0.getReal());
     }
 
     public void togglePanel(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        real.togglePanel(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.Window) real).togglePanel(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterScrollCaptureCallback(com.micklab.dcg.wrapper.android.view.ScrollCaptureCallback arg0) {
-        real.unregisterScrollCaptureCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Window) real).unregisterScrollCaptureCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int DECOR_CAPTION_SHADE_AUTO = android.view.Window.DECOR_CAPTION_SHADE_AUTO;
@@ -606,154 +613,175 @@ public final class Window {
     public static final java.lang.String STATUS_BAR_BACKGROUND_TRANSITION_NAME = android.view.Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME;
 
     public static final class Callback {
-        private final android.view.Window.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.view.Window.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.Window.Callback wrap(android.view.Window.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.Window.Callback getReal() {
+            return (android.view.Window.Callback) real;
         }
 
         public android.view.Window.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean dispatchGenericMotionEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-            return real.dispatchGenericMotionEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchGenericMotionEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean dispatchKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-            return real.dispatchKeyEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchKeyEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean dispatchKeyShortcutEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-            return real.dispatchKeyShortcutEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchKeyShortcutEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean dispatchPopulateAccessibilityEvent(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
-            return real.dispatchPopulateAccessibilityEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchPopulateAccessibilityEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean dispatchTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-            return real.dispatchTouchEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchTouchEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean dispatchTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-            return real.dispatchTrackballEvent(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).dispatchTrackballEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public void onActionModeFinished(com.micklab.dcg.wrapper.android.view.ActionMode arg0) {
-            real.onActionModeFinished(arg0 == null ? null : arg0.unwrap());
+            ((android.view.Window.Callback) real).onActionModeFinished(arg0 == null ? null : arg0.getReal());
         }
 
         public void onActionModeStarted(com.micklab.dcg.wrapper.android.view.ActionMode arg0) {
-            real.onActionModeStarted(arg0 == null ? null : arg0.unwrap());
+            ((android.view.Window.Callback) real).onActionModeStarted(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAttachedToWindow() {
-            real.onAttachedToWindow();
+            ((android.view.Window.Callback) real).onAttachedToWindow();
         }
 
         public void onContentChanged() {
-            real.onContentChanged();
+            ((android.view.Window.Callback) real).onContentChanged();
         }
 
         public boolean onCreatePanelMenu(int arg0, com.micklab.dcg.wrapper.android.view.Menu arg1) {
-            return real.onCreatePanelMenu(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.Window.Callback) real).onCreatePanelMenu(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public com.micklab.dcg.wrapper.android.view.View onCreatePanelView(int arg0) {
-            return com.micklab.dcg.wrapper.android.view.View.wrap(real.onCreatePanelView(arg0));
+            return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.Window.Callback) real).onCreatePanelView(arg0));
         }
 
         public void onDetachedFromWindow() {
-            real.onDetachedFromWindow();
+            ((android.view.Window.Callback) real).onDetachedFromWindow();
         }
 
         public boolean onMenuItemSelected(int arg0, com.micklab.dcg.wrapper.android.view.MenuItem arg1) {
-            return real.onMenuItemSelected(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.Window.Callback) real).onMenuItemSelected(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public boolean onMenuOpened(int arg0, com.micklab.dcg.wrapper.android.view.Menu arg1) {
-            return real.onMenuOpened(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.Window.Callback) real).onMenuOpened(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void onPanelClosed(int arg0, com.micklab.dcg.wrapper.android.view.Menu arg1) {
-            real.onPanelClosed(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.view.Window.Callback) real).onPanelClosed(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void onPointerCaptureChanged(boolean arg0) {
-            real.onPointerCaptureChanged(arg0);
+            ((android.view.Window.Callback) real).onPointerCaptureChanged(arg0);
         }
 
         public boolean onPreparePanel(int arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.view.Menu arg2) {
-            return real.onPreparePanel(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+            return ((android.view.Window.Callback) real).onPreparePanel(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
         }
 
         public boolean onSearchRequested() {
-            return real.onSearchRequested();
+            return ((android.view.Window.Callback) real).onSearchRequested();
         }
 
         public boolean onSearchRequested(com.micklab.dcg.wrapper.android.view.SearchEvent arg0) {
-            return real.onSearchRequested(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.Window.Callback) real).onSearchRequested(arg0 == null ? null : arg0.getReal());
         }
 
         public void onWindowAttributesChanged(com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams arg0) {
-            real.onWindowAttributesChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.view.Window.Callback) real).onWindowAttributesChanged(arg0 == null ? null : arg0.getReal());
         }
 
         public void onWindowFocusChanged(boolean arg0) {
-            real.onWindowFocusChanged(arg0);
+            ((android.view.Window.Callback) real).onWindowFocusChanged(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.view.ActionMode onWindowStartingActionMode(com.micklab.dcg.wrapper.android.view.ActionMode.Callback arg0) {
-            return com.micklab.dcg.wrapper.android.view.ActionMode.wrap(real.onWindowStartingActionMode(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.ActionMode.wrap(((android.view.Window.Callback) real).onWindowStartingActionMode(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.view.ActionMode onWindowStartingActionMode(com.micklab.dcg.wrapper.android.view.ActionMode.Callback arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.view.ActionMode.wrap(real.onWindowStartingActionMode(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.view.ActionMode.wrap(((android.view.Window.Callback) real).onWindowStartingActionMode(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
     }
     public static final class OnFrameMetricsAvailableListener {
-        private final android.view.Window.OnFrameMetricsAvailableListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnFrameMetricsAvailableListener(android.view.Window.OnFrameMetricsAvailableListener real) {
+        private final java.lang.Object real;
+
+        private OnFrameMetricsAvailableListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.Window.OnFrameMetricsAvailableListener wrap(android.view.Window.OnFrameMetricsAvailableListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.OnFrameMetricsAvailableListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.OnFrameMetricsAvailableListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.Window.OnFrameMetricsAvailableListener getReal() {
+            return (android.view.Window.OnFrameMetricsAvailableListener) real;
         }
 
         public android.view.Window.OnFrameMetricsAvailableListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFrameMetricsAvailable(com.micklab.dcg.wrapper.android.view.Window arg0, com.micklab.dcg.wrapper.android.view.FrameMetrics arg1, int arg2) {
-            real.onFrameMetricsAvailable(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            ((android.view.Window.OnFrameMetricsAvailableListener) real).onFrameMetricsAvailable(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
     }
     public static final class OnRestrictedCaptionAreaChangedListener {
-        private final android.view.Window.OnRestrictedCaptionAreaChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnRestrictedCaptionAreaChangedListener(android.view.Window.OnRestrictedCaptionAreaChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnRestrictedCaptionAreaChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.Window.OnRestrictedCaptionAreaChangedListener wrap(android.view.Window.OnRestrictedCaptionAreaChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.OnRestrictedCaptionAreaChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Window.OnRestrictedCaptionAreaChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.Window.OnRestrictedCaptionAreaChangedListener getReal() {
+            return (android.view.Window.OnRestrictedCaptionAreaChangedListener) real;
         }
 
         public android.view.Window.OnRestrictedCaptionAreaChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onRestrictedCaptionAreaChanged(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-            real.onRestrictedCaptionAreaChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.view.Window.OnRestrictedCaptionAreaChangedListener) real).onRestrictedCaptionAreaChanged(arg0 == null ? null : arg0.getReal());
         }
 
     }

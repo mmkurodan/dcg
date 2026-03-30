@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.service.controls;
 
 public final class DeviceTypes {
-    private final android.service.controls.DeviceTypes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DeviceTypes(android.service.controls.DeviceTypes real) {
+    private final java.lang.Object real;
+
+    private DeviceTypes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.DeviceTypes wrap(android.service.controls.DeviceTypes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.DeviceTypes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.DeviceTypes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.DeviceTypes getReal() {
+        return (android.service.controls.DeviceTypes) real;
     }
 
     public android.service.controls.DeviceTypes unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean validDeviceType(int arg0) {

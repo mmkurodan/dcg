@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class AdvertiseCallback {
-    private final android.bluetooth.le.AdvertiseCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdvertiseCallback(android.bluetooth.le.AdvertiseCallback real) {
+    private final java.lang.Object real;
+
+    private AdvertiseCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.AdvertiseCallback wrap(android.bluetooth.le.AdvertiseCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertiseCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertiseCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.AdvertiseCallback getReal() {
+        return (android.bluetooth.le.AdvertiseCallback) real;
     }
 
     public android.bluetooth.le.AdvertiseCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onStartFailure(int arg0) {
-        real.onStartFailure(arg0);
+        ((android.bluetooth.le.AdvertiseCallback) real).onStartFailure(arg0);
     }
 
     public void onStartSuccess(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertiseSettings arg0) {
-        real.onStartSuccess(arg0 == null ? null : arg0.unwrap());
+        ((android.bluetooth.le.AdvertiseCallback) real).onStartSuccess(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int ADVERTISE_FAILED_ALREADY_STARTED = android.bluetooth.le.AdvertiseCallback.ADVERTISE_FAILED_ALREADY_STARTED;

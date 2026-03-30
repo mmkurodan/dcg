@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class FileObserver {
-    private final android.os.FileObserver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FileObserver(android.os.FileObserver real) {
+    private final java.lang.Object real;
+
+    private FileObserver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.FileObserver wrap(android.os.FileObserver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileObserver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileObserver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.FileObserver getReal() {
+        return (android.os.FileObserver) real;
     }
 
     public android.os.FileObserver unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onEvent(int arg0, java.lang.String arg1) {

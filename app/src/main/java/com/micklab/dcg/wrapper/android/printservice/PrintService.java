@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.printservice;
 
 public final class PrintService {
-    private final android.printservice.PrintService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PrintService(android.printservice.PrintService real) {
+    private final java.lang.Object real;
+
+    private PrintService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.printservice.PrintService wrap(android.printservice.PrintService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.printservice.PrintService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.printservice.PrintService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.printservice.PrintService getReal() {
+        return (android.printservice.PrintService) real;
     }
 
     public android.printservice.PrintService unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.print.PrinterId generatePrinterId(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.print.PrinterId.wrap(real.generatePrinterId(arg0));
+        return com.micklab.dcg.wrapper.android.print.PrinterId.wrap(((android.printservice.PrintService) real).generatePrinterId(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.printservice.PrintService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final java.lang.String EXTRA_CAN_SELECT_PRINTER = android.printservice.PrintService.EXTRA_CAN_SELECT_PRINTER;

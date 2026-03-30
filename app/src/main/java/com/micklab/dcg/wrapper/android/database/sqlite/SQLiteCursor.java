@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteCursor {
-    private final android.database.sqlite.SQLiteCursor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteCursor(android.database.sqlite.SQLiteCursor real) {
+    private final java.lang.Object real;
+
+    private SQLiteCursor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteCursor wrap(android.database.sqlite.SQLiteCursor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteCursor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteCursor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteCursor getReal() {
+        return (android.database.sqlite.SQLiteCursor) real;
     }
 
     public android.database.sqlite.SQLiteCursor unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteCursor(com.micklab.dcg.wrapper.android.database.sqlite.SQLiteCursorDriver arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteQuery arg2) {

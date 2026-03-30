@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class CrossProfileApps {
-    private final android.content.pm.CrossProfileApps real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CrossProfileApps(android.content.pm.CrossProfileApps real) {
+    private final java.lang.Object real;
+
+    private CrossProfileApps(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.CrossProfileApps wrap(android.content.pm.CrossProfileApps real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CrossProfileApps(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CrossProfileApps(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.CrossProfileApps getReal() {
+        return (android.content.pm.CrossProfileApps) real;
     }
 
     public android.content.pm.CrossProfileApps unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canInteractAcrossProfiles() {

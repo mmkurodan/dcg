@@ -2,174 +2,181 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class Intent {
-    private final android.content.Intent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Intent(android.content.Intent real) {
+    private final java.lang.Object real;
+
+    private Intent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent wrap(android.content.Intent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.Intent getReal() {
+        return (android.content.Intent) real;
     }
 
     public android.content.Intent unwrap() {
-        return real;
+        return getReal();
     }
 
     public Intent() {
-        this(new android.content.Intent());
+        this(new android.content.Intent(), (__DcgwBridgeToken) null);
     }
 
     public Intent(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        this(new android.content.Intent(arg0 == null ? null : arg0.unwrap()));
+        this(new android.content.Intent(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public Intent(java.lang.String arg0) {
-        this(new android.content.Intent(arg0));
+        this(new android.content.Intent(arg0), (__DcgwBridgeToken) null);
     }
 
     public Intent(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.Class arg1) {
-        this(new android.content.Intent(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.content.Intent(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public Intent(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        this(new android.content.Intent(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.content.Intent(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public Intent(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.content.Context arg2, java.lang.Class arg3) {
-        this(new android.content.Intent(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3));
+        this(new android.content.Intent(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent addCategory(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.addCategory(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).addCategory(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent addFlags(int arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.addFlags(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).addFlags(arg0));
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.content.Intent) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent cloneFilter() {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.cloneFilter());
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).cloneFilter());
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent createChooser(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.CharSequence arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.createChooser(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.createChooser(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent createChooser(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.CharSequence arg1, com.micklab.dcg.wrapper.android.content.IntentSender arg2) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.createChooser(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.createChooser(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.content.Intent) real).describeContents();
     }
 
     public int fillIn(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1) {
-        return real.fillIn(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.content.Intent) real).fillIn(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean filterEquals(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return real.filterEquals(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.Intent) real).filterEquals(arg0 == null ? null : arg0.getReal());
     }
 
     public int filterHashCode() {
-        return real.filterHashCode();
+        return ((android.content.Intent) real).filterHashCode();
     }
 
     public java.lang.String getAction() {
-        return real.getAction();
+        return ((android.content.Intent) real).getAction();
     }
 
     public boolean[] getBooleanArrayExtra(java.lang.String arg0) {
-        return real.getBooleanArrayExtra(arg0);
+        return ((android.content.Intent) real).getBooleanArrayExtra(arg0);
     }
 
     public boolean getBooleanExtra(java.lang.String arg0, boolean arg1) {
-        return real.getBooleanExtra(arg0, arg1);
+        return ((android.content.Intent) real).getBooleanExtra(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getBundleExtra(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getBundleExtra(arg0));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.Intent) real).getBundleExtra(arg0));
     }
 
     public byte[] getByteArrayExtra(java.lang.String arg0) {
-        return real.getByteArrayExtra(arg0);
+        return ((android.content.Intent) real).getByteArrayExtra(arg0);
     }
 
     public byte getByteExtra(java.lang.String arg0, byte arg1) {
-        return real.getByteExtra(arg0, arg1);
+        return ((android.content.Intent) real).getByteExtra(arg0, arg1);
     }
 
     public char[] getCharArrayExtra(java.lang.String arg0) {
-        return real.getCharArrayExtra(arg0);
+        return ((android.content.Intent) real).getCharArrayExtra(arg0);
     }
 
     public char getCharExtra(java.lang.String arg0, char arg1) {
-        return real.getCharExtra(arg0, arg1);
+        return ((android.content.Intent) real).getCharExtra(arg0, arg1);
     }
 
     public java.lang.CharSequence[] getCharSequenceArrayExtra(java.lang.String arg0) {
-        return real.getCharSequenceArrayExtra(arg0);
+        return ((android.content.Intent) real).getCharSequenceArrayExtra(arg0);
     }
 
     public java.lang.CharSequence getCharSequenceExtra(java.lang.String arg0) {
-        return real.getCharSequenceExtra(arg0);
+        return ((android.content.Intent) real).getCharSequenceExtra(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.content.ClipData getClipData() {
-        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(real.getClipData());
+        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(((android.content.Intent) real).getClipData());
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName getComponent() {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.getComponent());
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.content.Intent) real).getComponent());
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getData() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getData());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.content.Intent) real).getData());
     }
 
     public java.lang.String getDataString() {
-        return real.getDataString();
+        return ((android.content.Intent) real).getDataString();
     }
 
     public double[] getDoubleArrayExtra(java.lang.String arg0) {
-        return real.getDoubleArrayExtra(arg0);
+        return ((android.content.Intent) real).getDoubleArrayExtra(arg0);
     }
 
     public double getDoubleExtra(java.lang.String arg0, double arg1) {
-        return real.getDoubleExtra(arg0, arg1);
+        return ((android.content.Intent) real).getDoubleExtra(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.Intent) real).getExtras());
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.content.Intent) real).getFlags();
     }
 
     public float[] getFloatArrayExtra(java.lang.String arg0) {
-        return real.getFloatArrayExtra(arg0);
+        return ((android.content.Intent) real).getFloatArrayExtra(arg0);
     }
 
     public float getFloatExtra(java.lang.String arg0, float arg1) {
-        return real.getFloatExtra(arg0, arg1);
+        return ((android.content.Intent) real).getFloatExtra(arg0, arg1);
     }
 
     public java.lang.String getIdentifier() {
-        return real.getIdentifier();
+        return ((android.content.Intent) real).getIdentifier();
     }
 
     public int[] getIntArrayExtra(java.lang.String arg0) {
-        return real.getIntArrayExtra(arg0);
+        return ((android.content.Intent) real).getIntArrayExtra(arg0);
     }
 
     public int getIntExtra(java.lang.String arg0, int arg1) {
-        return real.getIntExtra(arg0, arg1);
+        return ((android.content.Intent) real).getIntExtra(arg0, arg1);
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent getIntent(java.lang.String arg0) throws java.net.URISyntaxException {
@@ -181,63 +188,63 @@ public final class Intent {
     }
 
     public long[] getLongArrayExtra(java.lang.String arg0) {
-        return real.getLongArrayExtra(arg0);
+        return ((android.content.Intent) real).getLongArrayExtra(arg0);
     }
 
     public long getLongExtra(java.lang.String arg0, long arg1) {
-        return real.getLongExtra(arg0, arg1);
+        return ((android.content.Intent) real).getLongExtra(arg0, arg1);
     }
 
     public java.lang.String getPackage() {
-        return real.getPackage();
+        return ((android.content.Intent) real).getPackage();
     }
 
     public android.os.Parcelable[] getParcelableArrayExtra(java.lang.String arg0) {
-        return real.getParcelableArrayExtra(arg0);
+        return ((android.content.Intent) real).getParcelableArrayExtra(arg0);
     }
 
     public java.lang.String getScheme() {
-        return real.getScheme();
+        return ((android.content.Intent) real).getScheme();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent getSelector() {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.getSelector());
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).getSelector());
     }
 
     public java.io.Serializable getSerializableExtra(java.lang.String arg0) {
-        return real.getSerializableExtra(arg0);
+        return ((android.content.Intent) real).getSerializableExtra(arg0);
     }
 
     public short[] getShortArrayExtra(java.lang.String arg0) {
-        return real.getShortArrayExtra(arg0);
+        return ((android.content.Intent) real).getShortArrayExtra(arg0);
     }
 
     public short getShortExtra(java.lang.String arg0, short arg1) {
-        return real.getShortExtra(arg0, arg1);
+        return ((android.content.Intent) real).getShortExtra(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Rect getSourceBounds() {
-        return com.micklab.dcg.wrapper.android.graphics.Rect.wrap(real.getSourceBounds());
+        return com.micklab.dcg.wrapper.android.graphics.Rect.wrap(((android.content.Intent) real).getSourceBounds());
     }
 
     public java.lang.String[] getStringArrayExtra(java.lang.String arg0) {
-        return real.getStringArrayExtra(arg0);
+        return ((android.content.Intent) real).getStringArrayExtra(arg0);
     }
 
     public java.lang.String getStringExtra(java.lang.String arg0) {
-        return real.getStringExtra(arg0);
+        return ((android.content.Intent) real).getStringExtra(arg0);
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.content.Intent) real).getType();
     }
 
     public boolean hasCategory(java.lang.String arg0) {
-        return real.hasCategory(arg0);
+        return ((android.content.Intent) real).hasCategory(arg0);
     }
 
     public boolean hasExtra(java.lang.String arg0) {
-        return real.hasExtra(arg0);
+        return ((android.content.Intent) real).hasExtra(arg0);
     }
 
     public boolean hasFileDescriptors() {
@@ -245,11 +252,11 @@ public final class Intent {
     }
 
     public boolean isMismatchingFilter() {
-        return real.isMismatchingFilter();
+        return ((android.content.Intent) real).isMismatchingFilter();
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent makeMainActivity(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.makeMainActivity(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.makeMainActivity(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent makeMainSelectorActivity(java.lang.String arg0, java.lang.String arg1) {
@@ -257,7 +264,7 @@ public final class Intent {
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent makeRestartActivityTask(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.makeRestartActivityTask(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.makeRestartActivityTask(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.lang.String normalizeMimeType(java.lang.String arg0) {
@@ -265,7 +272,7 @@ public final class Intent {
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent parseIntent(com.micklab.dcg.wrapper.android.content.res.Resources arg0, org.xmlpull.v1.XmlPullParser arg1, com.micklab.dcg.wrapper.android.util.AttributeSet arg2) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.parseIntent(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.content.Intent.parseIntent(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent parseUri(java.lang.String arg0, int arg1) throws java.net.URISyntaxException {
@@ -273,187 +280,187 @@ public final class Intent {
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, java.io.Serializable arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, boolean[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, short[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, byte[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, android.os.Parcelable[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Parcelable arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, java.lang.CharSequence arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, double[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, java.lang.String[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, java.lang.CharSequence[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, float[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, long[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, char[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, char arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, short arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, long arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, byte arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, boolean arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, int[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, double arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtra(java.lang.String arg0, float arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtra(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtras(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtras(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.putExtras(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtras(arg0 == null ? null : arg0.getReal()));
     }
 
     public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Intent) real).readFromParcel(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeCategory(java.lang.String arg0) {
-        real.removeCategory(arg0);
+        ((android.content.Intent) real).removeCategory(arg0);
     }
 
     public void removeExtra(java.lang.String arg0) {
-        real.removeExtra(arg0);
+        ((android.content.Intent) real).removeExtra(arg0);
     }
 
     public void removeFlags(int arg0) {
-        real.removeFlags(arg0);
+        ((android.content.Intent) real).removeFlags(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.replaceExtras(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).replaceExtras(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.replaceExtras(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).replaceExtras(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName resolveActivity(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.resolveActivity(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.content.Intent) real).resolveActivity(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ActivityInfo resolveActivityInfo(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(real.resolveActivityInfo(arg0 == null ? null : arg0.unwrap(), arg1));
-    }
-
-    public java.lang.String resolveType(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
-        return real.resolveType(arg0 == null ? null : arg0.unwrap());
+        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(((android.content.Intent) real).resolveActivityInfo(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public java.lang.String resolveType(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return real.resolveType(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.Intent) real).resolveType(arg0 == null ? null : arg0.getReal());
+    }
+
+    public java.lang.String resolveType(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
+        return ((android.content.Intent) real).resolveType(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String resolveTypeIfNeeded(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
-        return real.resolveTypeIfNeeded(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.Intent) real).resolveTypeIfNeeded(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setAction(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setAction(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setAction(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setClassName(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setClassName(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setClassName(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setClassName(java.lang.String arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setClassName(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setClassName(arg0, arg1));
     }
 
     public void setClipData(com.micklab.dcg.wrapper.android.content.ClipData arg0) {
-        real.setClipData(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Intent) real).setClipData(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setComponent(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setComponent(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setComponent(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setData(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setData(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setData(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setDataAndNormalize(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setDataAndNormalize(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setDataAndNormalize(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setDataAndType(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setDataAndType(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setDataAndType(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setDataAndTypeAndNormalize(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setDataAndTypeAndNormalize(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setDataAndTypeAndNormalize(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public void setExtrasClassLoader(java.lang.ClassLoader arg0) {
@@ -461,47 +468,47 @@ public final class Intent {
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setFlags(int arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setFlags(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setFlags(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setIdentifier(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setIdentifier(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setIdentifier(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setPackage(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setPackage(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setPackage(arg0));
     }
 
     public void setSelector(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.setSelector(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Intent) real).setSelector(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSourceBounds(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.setSourceBounds(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Intent) real).setSourceBounds(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setType(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setType(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setType(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent setTypeAndNormalize(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.setTypeAndNormalize(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).setTypeAndNormalize(arg0));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.Intent) real).toString();
     }
 
     public java.lang.String toURI() {
-        return real.toURI();
+        return ((android.content.Intent) real).toURI();
     }
 
     public java.lang.String toUri(int arg0) {
-        return real.toUri(arg0);
+        return ((android.content.Intent) real).toUri(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.Intent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ACTION_AIRPLANE_MODE_CHANGED = android.content.Intent.ACTION_AIRPLANE_MODE_CHANGED;
@@ -835,70 +842,84 @@ public final class Intent {
     public static final int URI_INTENT_SCHEME = android.content.Intent.URI_INTENT_SCHEME;
 
     public static final class FilterComparison {
-        private final android.content.Intent.FilterComparison real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FilterComparison(android.content.Intent.FilterComparison real) {
+        private final java.lang.Object real;
+
+        private FilterComparison(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.Intent.FilterComparison wrap(android.content.Intent.FilterComparison real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent.FilterComparison(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent.FilterComparison(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Intent.FilterComparison getReal() {
+            return (android.content.Intent.FilterComparison) real;
         }
 
         public android.content.Intent.FilterComparison unwrap() {
-            return real;
+            return getReal();
         }
 
         public FilterComparison(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-            this(new android.content.Intent.FilterComparison(arg0 == null ? null : arg0.unwrap()));
+            this(new android.content.Intent.FilterComparison(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.content.Intent.FilterComparison) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.content.Intent getIntent() {
-            return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.getIntent());
+            return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent.FilterComparison) real).getIntent());
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.content.Intent.FilterComparison) real).hashCode();
         }
 
     }
     public static final class ShortcutIconResource {
-        private final android.content.Intent.ShortcutIconResource real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ShortcutIconResource(android.content.Intent.ShortcutIconResource real) {
+        private final java.lang.Object real;
+
+        private ShortcutIconResource(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource wrap(android.content.Intent.ShortcutIconResource real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Intent.ShortcutIconResource getReal() {
+            return (android.content.Intent.ShortcutIconResource) real;
         }
 
         public android.content.Intent.ShortcutIconResource unwrap() {
-            return real;
+            return getReal();
         }
 
         public ShortcutIconResource() {
-            this(new android.content.Intent.ShortcutIconResource());
+            this(new android.content.Intent.ShortcutIconResource(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.content.Intent.ShortcutIconResource) real).describeContents();
         }
 
         public static com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource fromContext(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource.wrap(android.content.Intent.ShortcutIconResource.fromContext(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.content.Intent.ShortcutIconResource.wrap(android.content.Intent.ShortcutIconResource.fromContext(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.content.Intent.ShortcutIconResource) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.content.Intent.ShortcutIconResource) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

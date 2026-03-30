@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class UriRelativeFilterGroup {
-    private final android.content.UriRelativeFilterGroup real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UriRelativeFilterGroup(android.content.UriRelativeFilterGroup real) {
+    private final java.lang.Object real;
+
+    private UriRelativeFilterGroup(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.UriRelativeFilterGroup wrap(android.content.UriRelativeFilterGroup real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.UriRelativeFilterGroup(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.UriRelativeFilterGroup(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.UriRelativeFilterGroup getReal() {
+        return (android.content.UriRelativeFilterGroup) real;
     }
 
     public android.content.UriRelativeFilterGroup unwrap() {
-        return real;
+        return getReal();
     }
 
     public UriRelativeFilterGroup(int arg0) {
-        this(new android.content.UriRelativeFilterGroup(arg0));
+        this(new android.content.UriRelativeFilterGroup(arg0), (__DcgwBridgeToken) null);
     }
 
     public void addUriRelativeFilter(com.micklab.dcg.wrapper.android.content.UriRelativeFilter arg0) {
-        real.addUriRelativeFilter(arg0 == null ? null : arg0.unwrap());
+        ((android.content.UriRelativeFilterGroup) real).addUriRelativeFilter(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.content.UriRelativeFilterGroup) real).equals(arg0);
     }
 
     public int getAction() {
-        return real.getAction();
+        return ((android.content.UriRelativeFilterGroup) real).getAction();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.content.UriRelativeFilterGroup) real).hashCode();
     }
 
     public boolean matchData(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return real.matchData(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.UriRelativeFilterGroup) real).matchData(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.UriRelativeFilterGroup) real).toString();
     }
 
     public static final int ACTION_ALLOW = android.content.UriRelativeFilterGroup.ACTION_ALLOW;

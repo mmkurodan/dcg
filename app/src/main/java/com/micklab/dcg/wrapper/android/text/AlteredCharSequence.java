@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class AlteredCharSequence {
-    private final android.text.AlteredCharSequence real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AlteredCharSequence(android.text.AlteredCharSequence real) {
+    private final java.lang.Object real;
+
+    private AlteredCharSequence(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.AlteredCharSequence wrap(android.text.AlteredCharSequence real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.AlteredCharSequence(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.AlteredCharSequence(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.AlteredCharSequence getReal() {
+        return (android.text.AlteredCharSequence) real;
     }
 
     public android.text.AlteredCharSequence unwrap() {
-        return real;
+        return getReal();
     }
 
     public char charAt(int arg0) {
-        return real.charAt(arg0);
+        return ((android.text.AlteredCharSequence) real).charAt(arg0);
     }
 
     public void getChars(int arg0, int arg1, char[] arg2, int arg3) {
-        real.getChars(arg0, arg1, arg2, arg3);
+        ((android.text.AlteredCharSequence) real).getChars(arg0, arg1, arg2, arg3);
     }
 
     public int length() {
-        return real.length();
+        return ((android.text.AlteredCharSequence) real).length();
     }
 
     public static com.micklab.dcg.wrapper.android.text.AlteredCharSequence make(java.lang.CharSequence arg0, char[] arg1, int arg2, int arg3) {
@@ -33,11 +40,11 @@ public final class AlteredCharSequence {
     }
 
     public java.lang.CharSequence subSequence(int arg0, int arg1) {
-        return real.subSequence(arg0, arg1);
+        return ((android.text.AlteredCharSequence) real).subSequence(arg0, arg1);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.text.AlteredCharSequence) real).toString();
     }
 
 }

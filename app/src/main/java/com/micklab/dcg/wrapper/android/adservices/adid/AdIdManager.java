@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.adservices.adid;
 
 public final class AdIdManager {
-    private final android.adservices.adid.AdIdManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdIdManager(android.adservices.adid.AdIdManager real) {
+    private final java.lang.Object real;
+
+    private AdIdManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager wrap(android.adservices.adid.AdIdManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adid.AdIdManager getReal() {
+        return (android.adservices.adid.AdIdManager) real;
     }
 
     public android.adservices.adid.AdIdManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager get(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager.wrap(android.adservices.adid.AdIdManager.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.adservices.adid.AdIdManager.wrap(android.adservices.adid.AdIdManager.get(arg0 == null ? null : arg0.getReal()));
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.rtp;
 
 public final class AudioStream {
-    private final android.net.rtp.AudioStream real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioStream(android.net.rtp.AudioStream real) {
+    private final java.lang.Object real;
+
+    private AudioStream(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.rtp.AudioStream wrap(android.net.rtp.AudioStream real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.AudioStream(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.AudioStream(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.rtp.AudioStream getReal() {
+        return (android.net.rtp.AudioStream) real;
     }
 
     public android.net.rtp.AudioStream unwrap() {
-        return real;
+        return getReal();
     }
 
     public AudioStream(java.net.InetAddress arg0) throws java.net.SocketException {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class ParagraphStyle {
-    private final android.text.style.ParagraphStyle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParagraphStyle(android.text.style.ParagraphStyle real) {
+    private final java.lang.Object real;
+
+    private ParagraphStyle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.ParagraphStyle wrap(android.text.style.ParagraphStyle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.ParagraphStyle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.ParagraphStyle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.ParagraphStyle getReal() {
+        return (android.text.style.ParagraphStyle) real;
     }
 
     public android.text.style.ParagraphStyle unwrap() {
-        return real;
+        return getReal();
     }
 
 }

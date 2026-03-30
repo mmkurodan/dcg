@@ -2,82 +2,89 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class AppOpsManager {
-    private final android.app.AppOpsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppOpsManager(android.app.AppOpsManager real) {
+    private final java.lang.Object real;
+
+    private AppOpsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.AppOpsManager wrap(android.app.AppOpsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.AppOpsManager getReal() {
+        return (android.app.AppOpsManager) real;
     }
 
     public android.app.AppOpsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int checkOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.checkOp(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).checkOp(arg0, arg1, arg2);
     }
 
     public int checkOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.checkOpNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).checkOpNoThrow(arg0, arg1, arg2);
     }
 
     public void checkPackage(int arg0, java.lang.String arg1) {
-        real.checkPackage(arg0, arg1);
+        ((android.app.AppOpsManager) real).checkPackage(arg0, arg1);
     }
 
     public void finishOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        real.finishOp(arg0, arg1, arg2);
+        ((android.app.AppOpsManager) real).finishOp(arg0, arg1, arg2);
     }
 
     public void finishOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
-        real.finishOp(arg0, arg1, arg2, arg3);
+        ((android.app.AppOpsManager) real).finishOp(arg0, arg1, arg2, arg3);
     }
 
     public void finishProxyOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
-        real.finishProxyOp(arg0, arg1, arg2, arg3);
+        ((android.app.AppOpsManager) real).finishProxyOp(arg0, arg1, arg2, arg3);
     }
 
     public boolean isOpActive(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.isOpActive(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).isOpActive(arg0, arg1, arg2);
     }
 
     public int noteOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.noteOp(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).noteOp(arg0, arg1, arg2);
     }
 
     public int noteOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.noteOp(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).noteOp(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int noteOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.noteOpNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).noteOpNoThrow(arg0, arg1, arg2);
     }
 
     public int noteOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.noteOpNoThrow(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).noteOpNoThrow(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int noteProxyOp(java.lang.String arg0, java.lang.String arg1) {
-        return real.noteProxyOp(arg0, arg1);
+        return ((android.app.AppOpsManager) real).noteProxyOp(arg0, arg1);
     }
 
     public int noteProxyOp(java.lang.String arg0, java.lang.String arg1, int arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.noteProxyOp(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).noteProxyOp(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int noteProxyOpNoThrow(java.lang.String arg0, java.lang.String arg1) {
-        return real.noteProxyOpNoThrow(arg0, arg1);
+        return ((android.app.AppOpsManager) real).noteProxyOpNoThrow(arg0, arg1);
     }
 
     public int noteProxyOpNoThrow(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        return real.noteProxyOpNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).noteProxyOpNoThrow(arg0, arg1, arg2);
     }
 
     public int noteProxyOpNoThrow(java.lang.String arg0, java.lang.String arg1, int arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.noteProxyOpNoThrow(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).noteProxyOpNoThrow(arg0, arg1, arg2, arg3, arg4);
     }
 
     public static java.lang.String permissionToOp(java.lang.String arg0) {
@@ -85,67 +92,67 @@ public final class AppOpsManager {
     }
 
     public void setOnOpNotedCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback arg1) {
-        real.setOnOpNotedCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.app.AppOpsManager) real).setOnOpNotedCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int startOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.startOp(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).startOp(arg0, arg1, arg2);
     }
 
     public int startOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.startOp(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).startOp(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int startOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.startOpNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).startOpNoThrow(arg0, arg1, arg2);
     }
 
     public int startOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.startOpNoThrow(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).startOpNoThrow(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int startProxyOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.startProxyOp(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).startProxyOp(arg0, arg1, arg2, arg3, arg4);
     }
 
     public int startProxyOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        return real.startProxyOpNoThrow(arg0, arg1, arg2, arg3, arg4);
+        return ((android.app.AppOpsManager) real).startProxyOpNoThrow(arg0, arg1, arg2, arg3, arg4);
     }
 
     public void startWatchingActive(java.lang.String[] arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpActiveChangedListener arg2) {
-        real.startWatchingActive(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AppOpsManager) real).startWatchingActive(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void startWatchingMode(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener arg2) {
-        real.startWatchingMode(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.AppOpsManager) real).startWatchingMode(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void startWatchingMode(java.lang.String arg0, java.lang.String arg1, int arg2, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener arg3) {
-        real.startWatchingMode(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.AppOpsManager) real).startWatchingMode(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void stopWatchingActive(com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpActiveChangedListener arg0) {
-        real.stopWatchingActive(arg0 == null ? null : arg0.unwrap());
+        ((android.app.AppOpsManager) real).stopWatchingActive(arg0 == null ? null : arg0.getReal());
     }
 
     public void stopWatchingMode(com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener arg0) {
-        real.stopWatchingMode(arg0 == null ? null : arg0.unwrap());
+        ((android.app.AppOpsManager) real).stopWatchingMode(arg0 == null ? null : arg0.getReal());
     }
 
     public int unsafeCheckOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.unsafeCheckOp(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).unsafeCheckOp(arg0, arg1, arg2);
     }
 
     public int unsafeCheckOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.unsafeCheckOpNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).unsafeCheckOpNoThrow(arg0, arg1, arg2);
     }
 
     public int unsafeCheckOpRaw(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.unsafeCheckOpRaw(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).unsafeCheckOpRaw(arg0, arg1, arg2);
     }
 
     public int unsafeCheckOpRawNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
-        return real.unsafeCheckOpRawNoThrow(arg0, arg1, arg2);
+        return ((android.app.AppOpsManager) real).unsafeCheckOpRawNoThrow(arg0, arg1, arg2);
     }
 
     public static final int MODE_ALLOWED = android.app.AppOpsManager.MODE_ALLOWED;
@@ -190,78 +197,99 @@ public final class AppOpsManager {
     public static final int WATCH_FOREGROUND_CHANGES = android.app.AppOpsManager.WATCH_FOREGROUND_CHANGES;
 
     public static final class OnOpActiveChangedListener {
-        private final android.app.AppOpsManager.OnOpActiveChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnOpActiveChangedListener(android.app.AppOpsManager.OnOpActiveChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnOpActiveChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpActiveChangedListener wrap(android.app.AppOpsManager.OnOpActiveChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpActiveChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpActiveChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.AppOpsManager.OnOpActiveChangedListener getReal() {
+            return (android.app.AppOpsManager.OnOpActiveChangedListener) real;
         }
 
         public android.app.AppOpsManager.OnOpActiveChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onOpActiveChanged(java.lang.String arg0, int arg1, java.lang.String arg2, boolean arg3) {
-            real.onOpActiveChanged(arg0, arg1, arg2, arg3);
+            ((android.app.AppOpsManager.OnOpActiveChangedListener) real).onOpActiveChanged(arg0, arg1, arg2, arg3);
         }
 
         public void onOpActiveChanged(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3, int arg4, boolean arg5, int arg6, int arg7) {
-            real.onOpActiveChanged(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+            ((android.app.AppOpsManager.OnOpActiveChangedListener) real).onOpActiveChanged(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
         }
 
     }
     public static final class OnOpChangedListener {
-        private final android.app.AppOpsManager.OnOpChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnOpChangedListener(android.app.AppOpsManager.OnOpChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnOpChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener wrap(android.app.AppOpsManager.OnOpChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.AppOpsManager.OnOpChangedListener getReal() {
+            return (android.app.AppOpsManager.OnOpChangedListener) real;
         }
 
         public android.app.AppOpsManager.OnOpChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onOpChanged(java.lang.String arg0, java.lang.String arg1) {
-            real.onOpChanged(arg0, arg1);
+            ((android.app.AppOpsManager.OnOpChangedListener) real).onOpChanged(arg0, arg1);
         }
 
         public void onOpChanged(java.lang.String arg0, java.lang.String arg1, int arg2, java.lang.String arg3) {
-            real.onOpChanged(arg0, arg1, arg2, arg3);
+            ((android.app.AppOpsManager.OnOpChangedListener) real).onOpChanged(arg0, arg1, arg2, arg3);
         }
 
     }
     public static final class OnOpNotedCallback {
-        private final android.app.AppOpsManager.OnOpNotedCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnOpNotedCallback(android.app.AppOpsManager.OnOpNotedCallback real) {
+        private final java.lang.Object real;
+
+        private OnOpNotedCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback wrap(android.app.AppOpsManager.OnOpNotedCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.AppOpsManager.OnOpNotedCallback getReal() {
+            return (android.app.AppOpsManager.OnOpNotedCallback) real;
         }
 
         public android.app.AppOpsManager.OnOpNotedCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAsyncNoted(com.micklab.dcg.wrapper.android.app.AsyncNotedAppOp arg0) {
-            real.onAsyncNoted(arg0 == null ? null : arg0.unwrap());
+            ((android.app.AppOpsManager.OnOpNotedCallback) real).onAsyncNoted(arg0 == null ? null : arg0.getReal());
         }
 
         public void onNoted(com.micklab.dcg.wrapper.android.app.SyncNotedAppOp arg0) {
-            real.onNoted(arg0 == null ? null : arg0.unwrap());
+            ((android.app.AppOpsManager.OnOpNotedCallback) real).onNoted(arg0 == null ? null : arg0.getReal());
         }
 
         public void onSelfNoted(com.micklab.dcg.wrapper.android.app.SyncNotedAppOp arg0) {
-            real.onSelfNoted(arg0 == null ? null : arg0.unwrap());
+            ((android.app.AppOpsManager.OnOpNotedCallback) real).onSelfNoted(arg0 == null ? null : arg0.getReal());
         }
 
     }

@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.drm;
 
 public final class DrmInfoRequest {
-    private final android.drm.DrmInfoRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DrmInfoRequest(android.drm.DrmInfoRequest real) {
+    private final java.lang.Object real;
+
+    private DrmInfoRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.drm.DrmInfoRequest wrap(android.drm.DrmInfoRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmInfoRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmInfoRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.drm.DrmInfoRequest getReal() {
+        return (android.drm.DrmInfoRequest) real;
     }
 
     public android.drm.DrmInfoRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public DrmInfoRequest(int arg0, java.lang.String arg1) {
-        this(new android.drm.DrmInfoRequest(arg0, arg1));
+        this(new android.drm.DrmInfoRequest(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object get(java.lang.String arg0) {
-        return real.get(arg0);
+        return ((android.drm.DrmInfoRequest) real).get(arg0);
     }
 
     public int getInfoType() {
-        return real.getInfoType();
+        return ((android.drm.DrmInfoRequest) real).getInfoType();
     }
 
     public java.lang.String getMimeType() {
-        return real.getMimeType();
+        return ((android.drm.DrmInfoRequest) real).getMimeType();
     }
 
     public void put(java.lang.String arg0, java.lang.Object arg1) {
-        real.put(arg0, arg1);
+        ((android.drm.DrmInfoRequest) real).put(arg0, arg1);
     }
 
     public static final java.lang.String ACCOUNT_ID = android.drm.DrmInfoRequest.ACCOUNT_ID;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class IdentityChangedListener {
-    private final android.net.wifi.aware.IdentityChangedListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IdentityChangedListener(android.net.wifi.aware.IdentityChangedListener real) {
+    private final java.lang.Object real;
+
+    private IdentityChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.IdentityChangedListener wrap(android.net.wifi.aware.IdentityChangedListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.IdentityChangedListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.IdentityChangedListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.IdentityChangedListener getReal() {
+        return (android.net.wifi.aware.IdentityChangedListener) real;
     }
 
     public android.net.wifi.aware.IdentityChangedListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public IdentityChangedListener() {

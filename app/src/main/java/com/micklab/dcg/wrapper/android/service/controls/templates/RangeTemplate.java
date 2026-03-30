@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.service.controls.templates;
 
 public final class RangeTemplate {
-    private final android.service.controls.templates.RangeTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RangeTemplate(android.service.controls.templates.RangeTemplate real) {
+    private final java.lang.Object real;
+
+    private RangeTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.templates.RangeTemplate wrap(android.service.controls.templates.RangeTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.RangeTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.templates.RangeTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.templates.RangeTemplate getReal() {
+        return (android.service.controls.templates.RangeTemplate) real;
     }
 
     public android.service.controls.templates.RangeTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public RangeTemplate(java.lang.String arg0, float arg1, float arg2, float arg3, float arg4, java.lang.CharSequence arg5) {
-        this(new android.service.controls.templates.RangeTemplate(arg0, arg1, arg2, arg3, arg4, arg5));
+        this(new android.service.controls.templates.RangeTemplate(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
     public float getCurrentValue() {
-        return real.getCurrentValue();
+        return ((android.service.controls.templates.RangeTemplate) real).getCurrentValue();
     }
 
     public java.lang.CharSequence getFormatString() {
-        return real.getFormatString();
+        return ((android.service.controls.templates.RangeTemplate) real).getFormatString();
     }
 
     public float getMaxValue() {
-        return real.getMaxValue();
+        return ((android.service.controls.templates.RangeTemplate) real).getMaxValue();
     }
 
     public float getMinValue() {
-        return real.getMinValue();
+        return ((android.service.controls.templates.RangeTemplate) real).getMinValue();
     }
 
     public float getStepValue() {
-        return real.getStepValue();
+        return ((android.service.controls.templates.RangeTemplate) real).getStepValue();
     }
 
     public int getTemplateType() {
-        return real.getTemplateType();
+        return ((android.service.controls.templates.RangeTemplate) real).getTemplateType();
     }
 
 }

@@ -2,98 +2,105 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class Sensor {
-    private final android.hardware.Sensor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Sensor(android.hardware.Sensor real) {
+    private final java.lang.Object real;
+
+    private Sensor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.Sensor wrap(android.hardware.Sensor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.Sensor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.Sensor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.Sensor getReal() {
+        return (android.hardware.Sensor) real;
     }
 
     public android.hardware.Sensor unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getFifoMaxEventCount() {
-        return real.getFifoMaxEventCount();
+        return ((android.hardware.Sensor) real).getFifoMaxEventCount();
     }
 
     public int getFifoReservedEventCount() {
-        return real.getFifoReservedEventCount();
+        return ((android.hardware.Sensor) real).getFifoReservedEventCount();
     }
 
     public int getHighestDirectReportRateLevel() {
-        return real.getHighestDirectReportRateLevel();
+        return ((android.hardware.Sensor) real).getHighestDirectReportRateLevel();
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.hardware.Sensor) real).getId();
     }
 
     public int getMaxDelay() {
-        return real.getMaxDelay();
+        return ((android.hardware.Sensor) real).getMaxDelay();
     }
 
     public float getMaximumRange() {
-        return real.getMaximumRange();
+        return ((android.hardware.Sensor) real).getMaximumRange();
     }
 
     public int getMinDelay() {
-        return real.getMinDelay();
+        return ((android.hardware.Sensor) real).getMinDelay();
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.hardware.Sensor) real).getName();
     }
 
     public float getPower() {
-        return real.getPower();
+        return ((android.hardware.Sensor) real).getPower();
     }
 
     public int getReportingMode() {
-        return real.getReportingMode();
+        return ((android.hardware.Sensor) real).getReportingMode();
     }
 
     public float getResolution() {
-        return real.getResolution();
+        return ((android.hardware.Sensor) real).getResolution();
     }
 
     public java.lang.String getStringType() {
-        return real.getStringType();
+        return ((android.hardware.Sensor) real).getStringType();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.hardware.Sensor) real).getType();
     }
 
     public java.lang.String getVendor() {
-        return real.getVendor();
+        return ((android.hardware.Sensor) real).getVendor();
     }
 
     public int getVersion() {
-        return real.getVersion();
+        return ((android.hardware.Sensor) real).getVersion();
     }
 
     public boolean isAdditionalInfoSupported() {
-        return real.isAdditionalInfoSupported();
+        return ((android.hardware.Sensor) real).isAdditionalInfoSupported();
     }
 
     public boolean isDirectChannelTypeSupported(int arg0) {
-        return real.isDirectChannelTypeSupported(arg0);
+        return ((android.hardware.Sensor) real).isDirectChannelTypeSupported(arg0);
     }
 
     public boolean isDynamicSensor() {
-        return real.isDynamicSensor();
+        return ((android.hardware.Sensor) real).isDynamicSensor();
     }
 
     public boolean isWakeUpSensor() {
-        return real.isWakeUpSensor();
+        return ((android.hardware.Sensor) real).isWakeUpSensor();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.hardware.Sensor) real).toString();
     }
 
     public static final int REPORTING_MODE_CONTINUOUS = android.hardware.Sensor.REPORTING_MODE_CONTINUOUS;

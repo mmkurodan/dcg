@@ -2,41 +2,55 @@
 package com.micklab.dcg.wrapper.android.drm;
 
 public final class DrmStore {
-    private final android.drm.DrmStore real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DrmStore(android.drm.DrmStore real) {
+    private final java.lang.Object real;
+
+    private DrmStore(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.drm.DrmStore wrap(android.drm.DrmStore real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.drm.DrmStore getReal() {
+        return (android.drm.DrmStore) real;
     }
 
     public android.drm.DrmStore unwrap() {
-        return real;
+        return getReal();
     }
 
     public DrmStore() {
-        this(new android.drm.DrmStore());
+        this(new android.drm.DrmStore(), (__DcgwBridgeToken) null);
     }
 
     public static final class Action {
-        private final android.drm.DrmStore.Action real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Action(android.drm.DrmStore.Action real) {
+        private final java.lang.Object real;
+
+        private Action(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.drm.DrmStore.Action wrap(android.drm.DrmStore.Action real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.Action(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.Action(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.drm.DrmStore.Action getReal() {
+            return (android.drm.DrmStore.Action) real;
         }
 
         public android.drm.DrmStore.Action unwrap() {
-            return real;
+            return getReal();
         }
 
         public Action() {
-            this(new android.drm.DrmStore.Action());
+            this(new android.drm.DrmStore.Action(), (__DcgwBridgeToken) null);
         }
 
         public static final int DEFAULT = android.drm.DrmStore.Action.DEFAULT;
@@ -50,18 +64,25 @@ public final class DrmStore {
 
     }
     public static final class ConstraintsColumns {
-        private final android.drm.DrmStore.ConstraintsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConstraintsColumns(android.drm.DrmStore.ConstraintsColumns real) {
+        private final java.lang.Object real;
+
+        private ConstraintsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.drm.DrmStore.ConstraintsColumns wrap(android.drm.DrmStore.ConstraintsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.ConstraintsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.ConstraintsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.drm.DrmStore.ConstraintsColumns getReal() {
+            return (android.drm.DrmStore.ConstraintsColumns) real;
         }
 
         public android.drm.DrmStore.ConstraintsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String EXTENDED_METADATA = android.drm.DrmStore.ConstraintsColumns.EXTENDED_METADATA;
@@ -73,22 +94,29 @@ public final class DrmStore {
 
     }
     public static final class DrmObjectType {
-        private final android.drm.DrmStore.DrmObjectType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DrmObjectType(android.drm.DrmStore.DrmObjectType real) {
+        private final java.lang.Object real;
+
+        private DrmObjectType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.drm.DrmStore.DrmObjectType wrap(android.drm.DrmStore.DrmObjectType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.DrmObjectType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.DrmObjectType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.drm.DrmStore.DrmObjectType getReal() {
+            return (android.drm.DrmStore.DrmObjectType) real;
         }
 
         public android.drm.DrmStore.DrmObjectType unwrap() {
-            return real;
+            return getReal();
         }
 
         public DrmObjectType() {
-            this(new android.drm.DrmStore.DrmObjectType());
+            this(new android.drm.DrmStore.DrmObjectType(), (__DcgwBridgeToken) null);
         }
 
         public static final int CONTENT = android.drm.DrmStore.DrmObjectType.CONTENT;
@@ -98,22 +126,29 @@ public final class DrmStore {
 
     }
     public static final class Playback {
-        private final android.drm.DrmStore.Playback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Playback(android.drm.DrmStore.Playback real) {
+        private final java.lang.Object real;
+
+        private Playback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.drm.DrmStore.Playback wrap(android.drm.DrmStore.Playback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.Playback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.Playback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.drm.DrmStore.Playback getReal() {
+            return (android.drm.DrmStore.Playback) real;
         }
 
         public android.drm.DrmStore.Playback unwrap() {
-            return real;
+            return getReal();
         }
 
         public Playback() {
-            this(new android.drm.DrmStore.Playback());
+            this(new android.drm.DrmStore.Playback(), (__DcgwBridgeToken) null);
         }
 
         public static final int PAUSE = android.drm.DrmStore.Playback.PAUSE;
@@ -123,22 +158,29 @@ public final class DrmStore {
 
     }
     public static final class RightsStatus {
-        private final android.drm.DrmStore.RightsStatus real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RightsStatus(android.drm.DrmStore.RightsStatus real) {
+        private final java.lang.Object real;
+
+        private RightsStatus(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.drm.DrmStore.RightsStatus wrap(android.drm.DrmStore.RightsStatus real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.RightsStatus(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmStore.RightsStatus(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.drm.DrmStore.RightsStatus getReal() {
+            return (android.drm.DrmStore.RightsStatus) real;
         }
 
         public android.drm.DrmStore.RightsStatus unwrap() {
-            return real;
+            return getReal();
         }
 
         public RightsStatus() {
-            this(new android.drm.DrmStore.RightsStatus());
+            this(new android.drm.DrmStore.RightsStatus(), (__DcgwBridgeToken) null);
         }
 
         public static final int RIGHTS_EXPIRED = android.drm.DrmStore.RightsStatus.RIGHTS_EXPIRED;

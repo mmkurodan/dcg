@@ -33,6 +33,9 @@ public final class JavaSourceParser {
     private static final String ANDROID_PREFIX = "android.";
     private static final String WRAPPER_PREFIX = "com.micklab.dcg.wrapper.";
     private static final String WRAPPER_ANDROID_PREFIX = WRAPPER_PREFIX + "android.";
+    private static final String GRAPHICS_IMPORT_PREFIX = "android.graphics.";
+    private static final String WRAPPER_GRAPHICS_IMPORT_PREFIX = "com.micklab.dcg.wrapper.android.graphics.";
+    private static final String WRAPPER_GRAPHICS_WILDCARD_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;";
     private static final String PARSER_FILE_NAME = "Snippet.java";
     private static final String PARSER_ENCODING = "UTF-8";
 
@@ -204,6 +207,9 @@ public final class JavaSourceParser {
     }
 
     private static String rewriteImportStatement(String statement) {
+        if (isAndroidGraphicsWildcardImport(statement)) {
+            return WRAPPER_GRAPHICS_WILDCARD_IMPORT;
+        }
         int androidIndex = statement.indexOf(ANDROID_PREFIX);
         if (androidIndex < 0) {
             return statement;
@@ -211,6 +217,23 @@ public final class JavaSourceParser {
         return statement.substring(0, androidIndex)
                 + WRAPPER_ANDROID_PREFIX
                 + statement.substring(androidIndex + ANDROID_PREFIX.length());
+    }
+
+    private static boolean isAndroidGraphicsWildcardImport(String statement) {
+        if (statement == null) {
+            return false;
+        }
+        String trimmed = statement.trim();
+        if (!trimmed.startsWith("import")) {
+            return false;
+        }
+        if (trimmed.startsWith("import static")) {
+            return false;
+        }
+        if (trimmed.endsWith(WRAPPER_GRAPHICS_IMPORT_PREFIX + "*;")) {
+            return true;
+        }
+        return trimmed.endsWith(GRAPHICS_IMPORT_PREFIX + "*;");
     }
 
     private static void collectQualifiedReferenceReplacements(

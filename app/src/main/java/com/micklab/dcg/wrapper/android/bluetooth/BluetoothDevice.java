@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothDevice {
-    private final android.bluetooth.BluetoothDevice real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothDevice(android.bluetooth.BluetoothDevice real) {
+    private final java.lang.Object real;
+
+    private BluetoothDevice(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice wrap(android.bluetooth.BluetoothDevice real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothDevice getReal() {
+        return (android.bluetooth.BluetoothDevice) real;
     }
 
     public android.bluetooth.BluetoothDevice unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt connectGatt(com.micklab.dcg.wrapper.android.content.Context arg0, boolean arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCallback arg2) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(real.connectGatt(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(((android.bluetooth.BluetoothDevice) real).connectGatt(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt connectGatt(com.micklab.dcg.wrapper.android.content.Context arg0, boolean arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCallback arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(real.connectGatt(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(((android.bluetooth.BluetoothDevice) real).connectGatt(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt connectGatt(com.micklab.dcg.wrapper.android.content.Context arg0, boolean arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCallback arg2, int arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(real.connectGatt(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3, arg4));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(((android.bluetooth.BluetoothDevice) real).connectGatt(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt connectGatt(com.micklab.dcg.wrapper.android.content.Context arg0, boolean arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCallback arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.os.Handler arg5) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(real.connectGatt(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3, arg4, arg5 == null ? null : arg5.unwrap()));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt.wrap(((android.bluetooth.BluetoothDevice) real).connectGatt(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4, arg5 == null ? null : arg5.getReal()));
     }
 
     public boolean createBond() {
-        return real.createBond();
+        return ((android.bluetooth.BluetoothDevice) real).createBond();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket createInsecureL2capChannel(int arg0) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket.wrap(real.createInsecureL2capChannel(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket.wrap(((android.bluetooth.BluetoothDevice) real).createInsecureL2capChannel(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket createInsecureRfcommSocketToServiceRecord(java.util.UUID arg0) throws java.io.IOException {
@@ -45,7 +52,7 @@ public final class BluetoothDevice {
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket createL2capChannel(int arg0) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket.wrap(real.createL2capChannel(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket.wrap(((android.bluetooth.BluetoothDevice) real).createL2capChannel(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket createRfcommSocketToServiceRecord(java.util.UUID arg0) throws java.io.IOException {
@@ -53,71 +60,71 @@ public final class BluetoothDevice {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothDevice) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.BluetoothDevice) real).equals(arg0);
     }
 
     public boolean fetchUuidsWithSdp() {
-        return real.fetchUuidsWithSdp();
+        return ((android.bluetooth.BluetoothDevice) real).fetchUuidsWithSdp();
     }
 
     public java.lang.String getAddress() {
-        return real.getAddress();
+        return ((android.bluetooth.BluetoothDevice) real).getAddress();
     }
 
     public int getAddressType() {
-        return real.getAddressType();
+        return ((android.bluetooth.BluetoothDevice) real).getAddressType();
     }
 
     public java.lang.String getAlias() {
-        return real.getAlias();
+        return ((android.bluetooth.BluetoothDevice) real).getAlias();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass getBluetoothClass() {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.wrap(real.getBluetoothClass());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothClass.wrap(((android.bluetooth.BluetoothDevice) real).getBluetoothClass());
     }
 
     public int getBondState() {
-        return real.getBondState();
+        return ((android.bluetooth.BluetoothDevice) real).getBondState();
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.bluetooth.BluetoothDevice) real).getName();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.bluetooth.BluetoothDevice) real).getType();
     }
 
     public android.os.ParcelUuid[] getUuids() {
-        return real.getUuids();
+        return ((android.bluetooth.BluetoothDevice) real).getUuids();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.BluetoothDevice) real).hashCode();
     }
 
     public int setAlias(java.lang.String arg0) {
-        return real.setAlias(arg0);
+        return ((android.bluetooth.BluetoothDevice) real).setAlias(arg0);
     }
 
     public boolean setPairingConfirmation(boolean arg0) {
-        return real.setPairingConfirmation(arg0);
+        return ((android.bluetooth.BluetoothDevice) real).setPairingConfirmation(arg0);
     }
 
     public boolean setPin(byte[] arg0) {
-        return real.setPin(arg0);
+        return ((android.bluetooth.BluetoothDevice) real).setPin(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.BluetoothDevice) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothDevice) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ACTION_ACL_CONNECTED = android.bluetooth.BluetoothDevice.ACTION_ACL_CONNECTED;

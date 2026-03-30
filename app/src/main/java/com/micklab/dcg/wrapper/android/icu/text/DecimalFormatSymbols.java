@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DecimalFormatSymbols {
-    private final android.icu.text.DecimalFormatSymbols real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DecimalFormatSymbols(android.icu.text.DecimalFormatSymbols real) {
+    private final java.lang.Object real;
+
+    private DecimalFormatSymbols(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols wrap(android.icu.text.DecimalFormatSymbols real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DecimalFormatSymbols getReal() {
+        return (android.icu.text.DecimalFormatSymbols) real;
     }
 
     public android.icu.text.DecimalFormatSymbols unwrap() {
-        return real;
+        return getReal();
     }
 
     public DecimalFormatSymbols() {
-        this(new android.icu.text.DecimalFormatSymbols());
+        this(new android.icu.text.DecimalFormatSymbols(), (__DcgwBridgeToken) null);
     }
 
     public DecimalFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.DecimalFormatSymbols(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.text.DecimalFormatSymbols(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DecimalFormatSymbols(java.util.Locale arg0) {
-        this(new android.icu.text.DecimalFormatSymbols(arg0));
+        this(new android.icu.text.DecimalFormatSymbols(arg0), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.DecimalFormatSymbols) real).clone();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.DecimalFormatSymbols) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols forNumberingSystem(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.NumberingSystem arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.forNumberingSystem(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.forNumberingSystem(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols forNumberingSystem(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.NumberingSystem arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.forNumberingSystem(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.forNumberingSystem(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -53,51 +60,51 @@ public final class DecimalFormatSymbols {
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.Currency getCurrency() {
-        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(real.getCurrency());
+        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(((android.icu.text.DecimalFormatSymbols) real).getCurrency());
     }
 
     public java.lang.String getCurrencySymbol() {
-        return real.getCurrencySymbol();
+        return ((android.icu.text.DecimalFormatSymbols) real).getCurrencySymbol();
     }
 
     public char getDecimalSeparator() {
-        return real.getDecimalSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getDecimalSeparator();
     }
 
     public java.lang.String getDecimalSeparatorString() {
-        return real.getDecimalSeparatorString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getDecimalSeparatorString();
     }
 
     public char getDigit() {
-        return real.getDigit();
+        return ((android.icu.text.DecimalFormatSymbols) real).getDigit();
     }
 
     public java.lang.String[] getDigitStrings() {
-        return real.getDigitStrings();
+        return ((android.icu.text.DecimalFormatSymbols) real).getDigitStrings();
     }
 
     public char[] getDigits() {
-        return real.getDigits();
+        return ((android.icu.text.DecimalFormatSymbols) real).getDigits();
     }
 
     public java.lang.String getExponentMultiplicationSign() {
-        return real.getExponentMultiplicationSign();
+        return ((android.icu.text.DecimalFormatSymbols) real).getExponentMultiplicationSign();
     }
 
     public java.lang.String getExponentSeparator() {
-        return real.getExponentSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getExponentSeparator();
     }
 
     public char getGroupingSeparator() {
-        return real.getGroupingSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getGroupingSeparator();
     }
 
     public java.lang.String getGroupingSeparatorString() {
-        return real.getGroupingSeparatorString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getGroupingSeparatorString();
     }
 
     public java.lang.String getInfinity() {
-        return real.getInfinity();
+        return ((android.icu.text.DecimalFormatSymbols) real).getInfinity();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols getInstance() {
@@ -109,215 +116,215 @@ public final class DecimalFormatSymbols {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DecimalFormatSymbols.wrap(android.icu.text.DecimalFormatSymbols.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String getInternationalCurrencySymbol() {
-        return real.getInternationalCurrencySymbol();
+        return ((android.icu.text.DecimalFormatSymbols) real).getInternationalCurrencySymbol();
     }
 
     public java.util.Locale getLocale() {
-        return real.getLocale();
+        return ((android.icu.text.DecimalFormatSymbols) real).getLocale();
     }
 
     public char getMinusSign() {
-        return real.getMinusSign();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMinusSign();
     }
 
     public java.lang.String getMinusSignString() {
-        return real.getMinusSignString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMinusSignString();
     }
 
     public char getMonetaryDecimalSeparator() {
-        return real.getMonetaryDecimalSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMonetaryDecimalSeparator();
     }
 
     public java.lang.String getMonetaryDecimalSeparatorString() {
-        return real.getMonetaryDecimalSeparatorString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMonetaryDecimalSeparatorString();
     }
 
     public char getMonetaryGroupingSeparator() {
-        return real.getMonetaryGroupingSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMonetaryGroupingSeparator();
     }
 
     public java.lang.String getMonetaryGroupingSeparatorString() {
-        return real.getMonetaryGroupingSeparatorString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getMonetaryGroupingSeparatorString();
     }
 
     public java.lang.String getNaN() {
-        return real.getNaN();
+        return ((android.icu.text.DecimalFormatSymbols) real).getNaN();
     }
 
     public char getPadEscape() {
-        return real.getPadEscape();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPadEscape();
     }
 
     public java.lang.String getPatternForCurrencySpacing(int arg0, boolean arg1) {
-        return real.getPatternForCurrencySpacing(arg0, arg1);
+        return ((android.icu.text.DecimalFormatSymbols) real).getPatternForCurrencySpacing(arg0, arg1);
     }
 
     public char getPatternSeparator() {
-        return real.getPatternSeparator();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPatternSeparator();
     }
 
     public char getPerMill() {
-        return real.getPerMill();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPerMill();
     }
 
     public java.lang.String getPerMillString() {
-        return real.getPerMillString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPerMillString();
     }
 
     public char getPercent() {
-        return real.getPercent();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPercent();
     }
 
     public java.lang.String getPercentString() {
-        return real.getPercentString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPercentString();
     }
 
     public char getPlusSign() {
-        return real.getPlusSign();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPlusSign();
     }
 
     public java.lang.String getPlusSignString() {
-        return real.getPlusSignString();
+        return ((android.icu.text.DecimalFormatSymbols) real).getPlusSignString();
     }
 
     public char getSignificantDigit() {
-        return real.getSignificantDigit();
+        return ((android.icu.text.DecimalFormatSymbols) real).getSignificantDigit();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getULocale() {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.getULocale());
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.icu.text.DecimalFormatSymbols) real).getULocale());
     }
 
     public char getZeroDigit() {
-        return real.getZeroDigit();
+        return ((android.icu.text.DecimalFormatSymbols) real).getZeroDigit();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.DecimalFormatSymbols) real).hashCode();
     }
 
     public void setCurrency(com.micklab.dcg.wrapper.android.icu.util.Currency arg0) {
-        real.setCurrency(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.DecimalFormatSymbols) real).setCurrency(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCurrencySymbol(java.lang.String arg0) {
-        real.setCurrencySymbol(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setCurrencySymbol(arg0);
     }
 
     public void setDecimalSeparator(char arg0) {
-        real.setDecimalSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setDecimalSeparator(arg0);
     }
 
     public void setDecimalSeparatorString(java.lang.String arg0) {
-        real.setDecimalSeparatorString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setDecimalSeparatorString(arg0);
     }
 
     public void setDigit(char arg0) {
-        real.setDigit(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setDigit(arg0);
     }
 
     public void setDigitStrings(java.lang.String[] arg0) {
-        real.setDigitStrings(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setDigitStrings(arg0);
     }
 
     public void setExponentMultiplicationSign(java.lang.String arg0) {
-        real.setExponentMultiplicationSign(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setExponentMultiplicationSign(arg0);
     }
 
     public void setExponentSeparator(java.lang.String arg0) {
-        real.setExponentSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setExponentSeparator(arg0);
     }
 
     public void setGroupingSeparator(char arg0) {
-        real.setGroupingSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setGroupingSeparator(arg0);
     }
 
     public void setGroupingSeparatorString(java.lang.String arg0) {
-        real.setGroupingSeparatorString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setGroupingSeparatorString(arg0);
     }
 
     public void setInfinity(java.lang.String arg0) {
-        real.setInfinity(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setInfinity(arg0);
     }
 
     public void setInternationalCurrencySymbol(java.lang.String arg0) {
-        real.setInternationalCurrencySymbol(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setInternationalCurrencySymbol(arg0);
     }
 
     public void setMinusSign(char arg0) {
-        real.setMinusSign(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMinusSign(arg0);
     }
 
     public void setMinusSignString(java.lang.String arg0) {
-        real.setMinusSignString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMinusSignString(arg0);
     }
 
     public void setMonetaryDecimalSeparator(char arg0) {
-        real.setMonetaryDecimalSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMonetaryDecimalSeparator(arg0);
     }
 
     public void setMonetaryDecimalSeparatorString(java.lang.String arg0) {
-        real.setMonetaryDecimalSeparatorString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMonetaryDecimalSeparatorString(arg0);
     }
 
     public void setMonetaryGroupingSeparator(char arg0) {
-        real.setMonetaryGroupingSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMonetaryGroupingSeparator(arg0);
     }
 
     public void setMonetaryGroupingSeparatorString(java.lang.String arg0) {
-        real.setMonetaryGroupingSeparatorString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setMonetaryGroupingSeparatorString(arg0);
     }
 
     public void setNaN(java.lang.String arg0) {
-        real.setNaN(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setNaN(arg0);
     }
 
     public void setPadEscape(char arg0) {
-        real.setPadEscape(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPadEscape(arg0);
     }
 
     public void setPatternForCurrencySpacing(int arg0, boolean arg1, java.lang.String arg2) {
-        real.setPatternForCurrencySpacing(arg0, arg1, arg2);
+        ((android.icu.text.DecimalFormatSymbols) real).setPatternForCurrencySpacing(arg0, arg1, arg2);
     }
 
     public void setPatternSeparator(char arg0) {
-        real.setPatternSeparator(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPatternSeparator(arg0);
     }
 
     public void setPerMill(char arg0) {
-        real.setPerMill(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPerMill(arg0);
     }
 
     public void setPerMillString(java.lang.String arg0) {
-        real.setPerMillString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPerMillString(arg0);
     }
 
     public void setPercent(char arg0) {
-        real.setPercent(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPercent(arg0);
     }
 
     public void setPercentString(java.lang.String arg0) {
-        real.setPercentString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPercentString(arg0);
     }
 
     public void setPlusSign(char arg0) {
-        real.setPlusSign(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPlusSign(arg0);
     }
 
     public void setPlusSignString(java.lang.String arg0) {
-        real.setPlusSignString(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setPlusSignString(arg0);
     }
 
     public void setSignificantDigit(char arg0) {
-        real.setSignificantDigit(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setSignificantDigit(arg0);
     }
 
     public void setZeroDigit(char arg0) {
-        real.setZeroDigit(arg0);
+        ((android.icu.text.DecimalFormatSymbols) real).setZeroDigit(arg0);
     }
 
     public static final int CURRENCY_SPC_CURRENCY_MATCH = android.icu.text.DecimalFormatSymbols.CURRENCY_SPC_CURRENCY_MATCH;

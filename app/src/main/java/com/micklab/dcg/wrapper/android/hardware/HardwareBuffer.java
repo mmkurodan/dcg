@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class HardwareBuffer {
-    private final android.hardware.HardwareBuffer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HardwareBuffer(android.hardware.HardwareBuffer real) {
+    private final java.lang.Object real;
+
+    private HardwareBuffer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.HardwareBuffer wrap(android.hardware.HardwareBuffer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.HardwareBuffer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.HardwareBuffer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.HardwareBuffer getReal() {
+        return (android.hardware.HardwareBuffer) real;
     }
 
     public android.hardware.HardwareBuffer unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.hardware.HardwareBuffer) real).close();
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.HardwareBuffer create(int arg0, int arg1, int arg2, int arg3, long arg4) {
@@ -25,35 +32,35 @@ public final class HardwareBuffer {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.hardware.HardwareBuffer) real).describeContents();
     }
 
     public int getFormat() {
-        return real.getFormat();
+        return ((android.hardware.HardwareBuffer) real).getFormat();
     }
 
     public int getHeight() {
-        return real.getHeight();
+        return ((android.hardware.HardwareBuffer) real).getHeight();
     }
 
     public long getId() {
-        return real.getId();
+        return ((android.hardware.HardwareBuffer) real).getId();
     }
 
     public int getLayers() {
-        return real.getLayers();
+        return ((android.hardware.HardwareBuffer) real).getLayers();
     }
 
     public long getUsage() {
-        return real.getUsage();
+        return ((android.hardware.HardwareBuffer) real).getUsage();
     }
 
     public int getWidth() {
-        return real.getWidth();
+        return ((android.hardware.HardwareBuffer) real).getWidth();
     }
 
     public boolean isClosed() {
-        return real.isClosed();
+        return ((android.hardware.HardwareBuffer) real).isClosed();
     }
 
     public static boolean isSupported(int arg0, int arg1, int arg2, int arg3, long arg4) {
@@ -61,7 +68,7 @@ public final class HardwareBuffer {
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.HardwareBuffer) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int BLOB = android.hardware.HardwareBuffer.BLOB;

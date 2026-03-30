@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.security.keystore;
 
 public final class KeyProperties {
-    private final android.security.keystore.KeyProperties real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyProperties(android.security.keystore.KeyProperties real) {
+    private final java.lang.Object real;
+
+    private KeyProperties(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.keystore.KeyProperties wrap(android.security.keystore.KeyProperties real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyProperties(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyProperties(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.keystore.KeyProperties getReal() {
+        return (android.security.keystore.KeyProperties) real;
     }
 
     public android.security.keystore.KeyProperties unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int AUTH_BIOMETRIC_STRONG = android.security.keystore.KeyProperties.AUTH_BIOMETRIC_STRONG;

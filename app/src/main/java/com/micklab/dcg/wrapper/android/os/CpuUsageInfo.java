@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class CpuUsageInfo {
-    private final android.os.CpuUsageInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CpuUsageInfo(android.os.CpuUsageInfo real) {
+    private final java.lang.Object real;
+
+    private CpuUsageInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.CpuUsageInfo wrap(android.os.CpuUsageInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CpuUsageInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CpuUsageInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.CpuUsageInfo getReal() {
+        return (android.os.CpuUsageInfo) real;
     }
 
     public android.os.CpuUsageInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

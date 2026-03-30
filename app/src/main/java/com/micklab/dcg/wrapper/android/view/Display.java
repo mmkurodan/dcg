@@ -2,158 +2,165 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class Display {
-    private final android.view.Display real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Display(android.view.Display real) {
+    private final java.lang.Object real;
+
+    private Display(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.Display wrap(android.view.Display real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.Display getReal() {
+        return (android.view.Display) real;
     }
 
     public android.view.Display unwrap() {
-        return real;
+        return getReal();
     }
 
     public long getAppVsyncOffsetNanos() {
-        return real.getAppVsyncOffsetNanos();
+        return ((android.view.Display) real).getAppVsyncOffsetNanos();
     }
 
     public void getCurrentSizeRange(com.micklab.dcg.wrapper.android.graphics.Point arg0, com.micklab.dcg.wrapper.android.graphics.Point arg1) {
-        real.getCurrentSizeRange(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.view.Display) real).getCurrentSizeRange(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.DisplayCutout getCutout() {
-        return com.micklab.dcg.wrapper.android.view.DisplayCutout.wrap(real.getCutout());
+        return com.micklab.dcg.wrapper.android.view.DisplayCutout.wrap(((android.view.Display) real).getCutout());
     }
 
     public com.micklab.dcg.wrapper.android.hardware.display.DeviceProductInfo getDeviceProductInfo() {
-        return com.micklab.dcg.wrapper.android.hardware.display.DeviceProductInfo.wrap(real.getDeviceProductInfo());
+        return com.micklab.dcg.wrapper.android.hardware.display.DeviceProductInfo.wrap(((android.view.Display) real).getDeviceProductInfo());
     }
 
     public int getDisplayId() {
-        return real.getDisplayId();
+        return ((android.view.Display) real).getDisplayId();
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.view.Display) real).getFlags();
     }
 
     public com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities getHdrCapabilities() {
-        return com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities.wrap(real.getHdrCapabilities());
+        return com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities.wrap(((android.view.Display) real).getHdrCapabilities());
     }
 
     public float getHdrSdrRatio() {
-        return real.getHdrSdrRatio();
+        return ((android.view.Display) real).getHdrSdrRatio();
     }
 
     public int getHeight() {
-        return real.getHeight();
+        return ((android.view.Display) real).getHeight();
     }
 
     public void getMetrics(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
-        real.getMetrics(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Display) real).getMetrics(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.Display.Mode getMode() {
-        return com.micklab.dcg.wrapper.android.view.Display.Mode.wrap(real.getMode());
+        return com.micklab.dcg.wrapper.android.view.Display.Mode.wrap(((android.view.Display) real).getMode());
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.view.Display) real).getName();
     }
 
     public int getOrientation() {
-        return real.getOrientation();
+        return ((android.view.Display) real).getOrientation();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.OverlayProperties getOverlaySupport() {
-        return com.micklab.dcg.wrapper.android.hardware.OverlayProperties.wrap(real.getOverlaySupport());
+        return com.micklab.dcg.wrapper.android.hardware.OverlayProperties.wrap(((android.view.Display) real).getOverlaySupport());
     }
 
     public int getPixelFormat() {
-        return real.getPixelFormat();
+        return ((android.view.Display) real).getPixelFormat();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.ColorSpace getPreferredWideGamutColorSpace() {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(real.getPreferredWideGamutColorSpace());
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.view.Display) real).getPreferredWideGamutColorSpace());
     }
 
     public long getPresentationDeadlineNanos() {
-        return real.getPresentationDeadlineNanos();
+        return ((android.view.Display) real).getPresentationDeadlineNanos();
     }
 
     public void getRealMetrics(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
-        real.getRealMetrics(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Display) real).getRealMetrics(arg0 == null ? null : arg0.getReal());
     }
 
     public void getRealSize(com.micklab.dcg.wrapper.android.graphics.Point arg0) {
-        real.getRealSize(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Display) real).getRealSize(arg0 == null ? null : arg0.getReal());
     }
 
     public void getRectSize(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.getRectSize(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Display) real).getRectSize(arg0 == null ? null : arg0.getReal());
     }
 
     public float getRefreshRate() {
-        return real.getRefreshRate();
+        return ((android.view.Display) real).getRefreshRate();
     }
 
     public int getRotation() {
-        return real.getRotation();
+        return ((android.view.Display) real).getRotation();
     }
 
     public com.micklab.dcg.wrapper.android.view.RoundedCorner getRoundedCorner(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.RoundedCorner.wrap(real.getRoundedCorner(arg0));
+        return com.micklab.dcg.wrapper.android.view.RoundedCorner.wrap(((android.view.Display) real).getRoundedCorner(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.DisplayShape getShape() {
-        return com.micklab.dcg.wrapper.android.view.DisplayShape.wrap(real.getShape());
+        return com.micklab.dcg.wrapper.android.view.DisplayShape.wrap(((android.view.Display) real).getShape());
     }
 
     public void getSize(com.micklab.dcg.wrapper.android.graphics.Point arg0) {
-        real.getSize(arg0 == null ? null : arg0.unwrap());
+        ((android.view.Display) real).getSize(arg0 == null ? null : arg0.getReal());
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.view.Display) real).getState();
     }
 
     public android.view.Display.Mode[] getSupportedModes() {
-        return real.getSupportedModes();
+        return ((android.view.Display) real).getSupportedModes();
     }
 
     public float[] getSupportedRefreshRates() {
-        return real.getSupportedRefreshRates();
+        return ((android.view.Display) real).getSupportedRefreshRates();
     }
 
     public int getWidth() {
-        return real.getWidth();
+        return ((android.view.Display) real).getWidth();
     }
 
     public boolean isHdr() {
-        return real.isHdr();
+        return ((android.view.Display) real).isHdr();
     }
 
     public boolean isHdrSdrRatioAvailable() {
-        return real.isHdrSdrRatioAvailable();
+        return ((android.view.Display) real).isHdrSdrRatioAvailable();
     }
 
     public boolean isMinimalPostProcessingSupported() {
-        return real.isMinimalPostProcessingSupported();
+        return ((android.view.Display) real).isMinimalPostProcessingSupported();
     }
 
     public boolean isValid() {
-        return real.isValid();
+        return ((android.view.Display) real).isValid();
     }
 
     public boolean isWideColorGamut() {
-        return real.isWideColorGamut();
+        return ((android.view.Display) real).isWideColorGamut();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.Display) real).toString();
     }
 
     public static final int DEFAULT_DISPLAY = android.view.Display.DEFAULT_DISPLAY;
@@ -172,54 +179,61 @@ public final class Display {
     public static final int STATE_VR = android.view.Display.STATE_VR;
 
     public static final class HdrCapabilities {
-        private final android.view.Display.HdrCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public HdrCapabilities(android.view.Display.HdrCapabilities real) {
+        private final java.lang.Object real;
+
+        private HdrCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities wrap(android.view.Display.HdrCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display.HdrCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.Display.HdrCapabilities getReal() {
+            return (android.view.Display.HdrCapabilities) real;
         }
 
         public android.view.Display.HdrCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.view.Display.HdrCapabilities) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.view.Display.HdrCapabilities) real).equals(arg0);
         }
 
         public float getDesiredMaxAverageLuminance() {
-            return real.getDesiredMaxAverageLuminance();
+            return ((android.view.Display.HdrCapabilities) real).getDesiredMaxAverageLuminance();
         }
 
         public float getDesiredMaxLuminance() {
-            return real.getDesiredMaxLuminance();
+            return ((android.view.Display.HdrCapabilities) real).getDesiredMaxLuminance();
         }
 
         public float getDesiredMinLuminance() {
-            return real.getDesiredMinLuminance();
+            return ((android.view.Display.HdrCapabilities) real).getDesiredMinLuminance();
         }
 
         public int[] getSupportedHdrTypes() {
-            return real.getSupportedHdrTypes();
+            return ((android.view.Display.HdrCapabilities) real).getSupportedHdrTypes();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.view.Display.HdrCapabilities) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.view.Display.HdrCapabilities) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.Display.HdrCapabilities) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int HDR_TYPE_DOLBY_VISION = android.view.Display.HdrCapabilities.HDR_TYPE_DOLBY_VISION;
@@ -231,62 +245,69 @@ public final class Display {
 
     }
     public static final class Mode {
-        private final android.view.Display.Mode real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Mode(android.view.Display.Mode real) {
+        private final java.lang.Object real;
+
+        private Mode(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.Display.Mode wrap(android.view.Display.Mode real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display.Mode(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.Display.Mode(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.Display.Mode getReal() {
+            return (android.view.Display.Mode) real;
         }
 
         public android.view.Display.Mode unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.view.Display.Mode) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.view.Display.Mode) real).equals(arg0);
         }
 
         public float[] getAlternativeRefreshRates() {
-            return real.getAlternativeRefreshRates();
+            return ((android.view.Display.Mode) real).getAlternativeRefreshRates();
         }
 
         public int getModeId() {
-            return real.getModeId();
+            return ((android.view.Display.Mode) real).getModeId();
         }
 
         public int getPhysicalHeight() {
-            return real.getPhysicalHeight();
+            return ((android.view.Display.Mode) real).getPhysicalHeight();
         }
 
         public int getPhysicalWidth() {
-            return real.getPhysicalWidth();
+            return ((android.view.Display.Mode) real).getPhysicalWidth();
         }
 
         public float getRefreshRate() {
-            return real.getRefreshRate();
+            return ((android.view.Display.Mode) real).getRefreshRate();
         }
 
         public int[] getSupportedHdrTypes() {
-            return real.getSupportedHdrTypes();
+            return ((android.view.Display.Mode) real).getSupportedHdrTypes();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.view.Display.Mode) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.view.Display.Mode) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.Display.Mode) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

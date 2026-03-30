@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class FileInfo {
-    private final android.telephony.mbms.FileInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FileInfo(android.telephony.mbms.FileInfo real) {
+    private final java.lang.Object real;
+
+    private FileInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.FileInfo wrap(android.telephony.mbms.FileInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.FileInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.FileInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.FileInfo getReal() {
+        return (android.telephony.mbms.FileInfo) real;
     }
 
     public android.telephony.mbms.FileInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

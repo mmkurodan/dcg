@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class NetworkInfo {
-    private final android.net.NetworkInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkInfo(android.net.NetworkInfo real) {
+    private final java.lang.Object real;
+
+    private NetworkInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.NetworkInfo wrap(android.net.NetworkInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.NetworkInfo getReal() {
+        return (android.net.NetworkInfo) real;
     }
 
     public android.net.NetworkInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public NetworkInfo(int arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
@@ -90,18 +97,25 @@ public final class NetworkInfo {
 
 
     public static final class DetailedState {
-        private final android.net.NetworkInfo.DetailedState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DetailedState(android.net.NetworkInfo.DetailedState real) {
+        private final java.lang.Object real;
+
+        private DetailedState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.NetworkInfo.DetailedState wrap(android.net.NetworkInfo.DetailedState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo.DetailedState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo.DetailedState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.NetworkInfo.DetailedState getReal() {
+            return (android.net.NetworkInfo.DetailedState) real;
         }
 
         public android.net.NetworkInfo.DetailedState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.NetworkInfo.DetailedState valueOf(java.lang.String arg0) {
@@ -115,18 +129,25 @@ public final class NetworkInfo {
 
     }
     public static final class State {
-        private final android.net.NetworkInfo.State real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public State(android.net.NetworkInfo.State real) {
+        private final java.lang.Object real;
+
+        private State(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.NetworkInfo.State wrap(android.net.NetworkInfo.State real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo.State(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.NetworkInfo.State(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.NetworkInfo.State getReal() {
+            return (android.net.NetworkInfo.State) real;
         }
 
         public android.net.NetworkInfo.State unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.NetworkInfo.State valueOf(java.lang.String arg0) {

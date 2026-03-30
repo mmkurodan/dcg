@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaDescription {
-    private final android.media.MediaDescription real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaDescription(android.media.MediaDescription real) {
+    private final java.lang.Object real;
+
+    private MediaDescription(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaDescription wrap(android.media.MediaDescription real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescription(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescription(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaDescription getReal() {
+        return (android.media.MediaDescription) real;
     }
 
     public android.media.MediaDescription unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.MediaDescription) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.MediaDescription) real).equals(arg0);
     }
 
     public java.lang.CharSequence getDescription() {
-        return real.getDescription();
+        return ((android.media.MediaDescription) real).getDescription();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.media.MediaDescription) real).getExtras());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getIconBitmap() {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getIconBitmap());
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.MediaDescription) real).getIconBitmap());
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getIconUri() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getIconUri());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.media.MediaDescription) real).getIconUri());
     }
 
     public java.lang.String getMediaId() {
-        return real.getMediaId();
+        return ((android.media.MediaDescription) real).getMediaId();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getMediaUri() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getMediaUri());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.media.MediaDescription) real).getMediaUri());
     }
 
     public java.lang.CharSequence getSubtitle() {
-        return real.getSubtitle();
+        return ((android.media.MediaDescription) real).getSubtitle();
     }
 
     public java.lang.CharSequence getTitle() {
-        return real.getTitle();
+        return ((android.media.MediaDescription) real).getTitle();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.MediaDescription) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.MediaDescription) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final long BT_FOLDER_TYPE_ALBUMS = android.media.MediaDescription.BT_FOLDER_TYPE_ALBUMS;
@@ -74,58 +81,65 @@ public final class MediaDescription {
     public static final java.lang.String EXTRA_BT_FOLDER_TYPE = android.media.MediaDescription.EXTRA_BT_FOLDER_TYPE;
 
     public static final class Builder {
-        private final android.media.MediaDescription.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.MediaDescription.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDescription.Builder wrap(android.media.MediaDescription.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescription.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDescription.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDescription.Builder getReal() {
+            return (android.media.MediaDescription.Builder) real;
         }
 
         public android.media.MediaDescription.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.MediaDescription.Builder());
+            this(new android.media.MediaDescription.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription build() {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.wrap(((android.media.MediaDescription.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setDescription(arg0));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setExtras(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setExtras(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setIconBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setIconBitmap(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setIconBitmap(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setIconUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setIconUri(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setIconUri(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setMediaId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setMediaId(arg0));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setMediaId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setMediaUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setMediaUri(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setMediaUri(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setSubtitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setSubtitle(arg0));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setSubtitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.MediaDescription.Builder setTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(real.setTitle(arg0));
+            return com.micklab.dcg.wrapper.android.media.MediaDescription.Builder.wrap(((android.media.MediaDescription.Builder) real).setTitle(arg0));
         }
 
     }

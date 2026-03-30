@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteDatabaseCorruptException {
-    private final android.database.sqlite.SQLiteDatabaseCorruptException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteDatabaseCorruptException(android.database.sqlite.SQLiteDatabaseCorruptException real) {
+    private final java.lang.Object real;
+
+    private SQLiteDatabaseCorruptException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabaseCorruptException wrap(android.database.sqlite.SQLiteDatabaseCorruptException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabaseCorruptException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabaseCorruptException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteDatabaseCorruptException getReal() {
+        return (android.database.sqlite.SQLiteDatabaseCorruptException) real;
     }
 
     public android.database.sqlite.SQLiteDatabaseCorruptException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteDatabaseCorruptException() {

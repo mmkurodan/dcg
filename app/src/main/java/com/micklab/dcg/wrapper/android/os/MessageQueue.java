@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class MessageQueue {
-    private final android.os.MessageQueue real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MessageQueue(android.os.MessageQueue real) {
+    private final java.lang.Object real;
+
+    private MessageQueue(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.MessageQueue wrap(android.os.MessageQueue real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.MessageQueue getReal() {
+        return (android.os.MessageQueue) real;
     }
 
     public android.os.MessageQueue unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addIdleHandler(com.micklab.dcg.wrapper.android.os.MessageQueue.IdleHandler arg0) {
@@ -37,18 +44,25 @@ public final class MessageQueue {
     }
 
     public static final class IdleHandler {
-        private final android.os.MessageQueue.IdleHandler real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IdleHandler(android.os.MessageQueue.IdleHandler real) {
+        private final java.lang.Object real;
+
+        private IdleHandler(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.MessageQueue.IdleHandler wrap(android.os.MessageQueue.IdleHandler real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue.IdleHandler(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue.IdleHandler(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.MessageQueue.IdleHandler getReal() {
+            return (android.os.MessageQueue.IdleHandler) real;
         }
 
         public android.os.MessageQueue.IdleHandler unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean queueIdle() {
@@ -57,18 +71,25 @@ public final class MessageQueue {
 
     }
     public static final class OnFileDescriptorEventListener {
-        private final android.os.MessageQueue.OnFileDescriptorEventListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnFileDescriptorEventListener(android.os.MessageQueue.OnFileDescriptorEventListener real) {
+        private final java.lang.Object real;
+
+        private OnFileDescriptorEventListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.MessageQueue.OnFileDescriptorEventListener wrap(android.os.MessageQueue.OnFileDescriptorEventListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue.OnFileDescriptorEventListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.MessageQueue.OnFileDescriptorEventListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.MessageQueue.OnFileDescriptorEventListener getReal() {
+            return (android.os.MessageQueue.OnFileDescriptorEventListener) real;
         }
 
         public android.os.MessageQueue.OnFileDescriptorEventListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public int onFileDescriptorEvents(java.io.FileDescriptor arg0, int arg1) {

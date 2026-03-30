@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.eap;
 
 public final class EapSessionConfig {
-    private final android.net.eap.EapSessionConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EapSessionConfig(android.net.eap.EapSessionConfig real) {
+    private final java.lang.Object real;
+
+    private EapSessionConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig wrap(android.net.eap.EapSessionConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.eap.EapSessionConfig getReal() {
+        return (android.net.eap.EapSessionConfig) real;
     }
 
     public android.net.eap.EapSessionConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -49,18 +56,25 @@ public final class EapSessionConfig {
     }
 
     public static final class Builder {
-        private final android.net.eap.EapSessionConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.eap.EapSessionConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.Builder wrap(android.net.eap.EapSessionConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.Builder getReal() {
+            return (android.net.eap.EapSessionConfig.Builder) real;
         }
 
         public android.net.eap.EapSessionConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
@@ -101,18 +115,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapAkaConfig {
-        private final android.net.eap.EapSessionConfig.EapAkaConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapAkaConfig(android.net.eap.EapSessionConfig.EapAkaConfig real) {
+        private final java.lang.Object real;
+
+        private EapAkaConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaConfig wrap(android.net.eap.EapSessionConfig.EapAkaConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapAkaConfig getReal() {
+            return (android.net.eap.EapSessionConfig.EapAkaConfig) real;
         }
 
         public android.net.eap.EapSessionConfig.EapAkaConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -137,18 +158,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapAkaOption {
-        private final android.net.eap.EapSessionConfig.EapAkaOption real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapAkaOption(android.net.eap.EapSessionConfig.EapAkaOption real) {
+        private final java.lang.Object real;
+
+        private EapAkaOption(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption wrap(android.net.eap.EapSessionConfig.EapAkaOption real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapAkaOption getReal() {
+            return (android.net.eap.EapSessionConfig.EapAkaOption) real;
         }
 
         public android.net.eap.EapSessionConfig.EapAkaOption unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -164,18 +192,25 @@ public final class EapSessionConfig {
         }
 
         public static final class Builder {
-            private final android.net.eap.EapSessionConfig.EapAkaOption.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.net.eap.EapSessionConfig.EapAkaOption.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption.Builder wrap(android.net.eap.EapSessionConfig.EapAkaOption.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaOption.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.net.eap.EapSessionConfig.EapAkaOption.Builder getReal() {
+                return (android.net.eap.EapSessionConfig.EapAkaOption.Builder) real;
             }
 
             public android.net.eap.EapSessionConfig.EapAkaOption.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
@@ -193,18 +228,25 @@ public final class EapSessionConfig {
         }
     }
     public static final class EapAkaPrimeConfig {
-        private final android.net.eap.EapSessionConfig.EapAkaPrimeConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapAkaPrimeConfig(android.net.eap.EapSessionConfig.EapAkaPrimeConfig real) {
+        private final java.lang.Object real;
+
+        private EapAkaPrimeConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaPrimeConfig wrap(android.net.eap.EapSessionConfig.EapAkaPrimeConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaPrimeConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapAkaPrimeConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapAkaPrimeConfig getReal() {
+            return (android.net.eap.EapSessionConfig.EapAkaPrimeConfig) real;
         }
 
         public android.net.eap.EapSessionConfig.EapAkaPrimeConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean allowsMismatchedNetworkNames() {
@@ -225,18 +267,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapMethodConfig {
-        private final android.net.eap.EapSessionConfig.EapMethodConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapMethodConfig(android.net.eap.EapSessionConfig.EapMethodConfig real) {
+        private final java.lang.Object real;
+
+        private EapMethodConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMethodConfig wrap(android.net.eap.EapSessionConfig.EapMethodConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMethodConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMethodConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapMethodConfig getReal() {
+            return (android.net.eap.EapSessionConfig.EapMethodConfig) real;
         }
 
         public android.net.eap.EapSessionConfig.EapMethodConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -254,18 +303,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapMsChapV2Config {
-        private final android.net.eap.EapSessionConfig.EapMsChapV2Config real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapMsChapV2Config(android.net.eap.EapSessionConfig.EapMsChapV2Config real) {
+        private final java.lang.Object real;
+
+        private EapMsChapV2Config(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMsChapV2Config wrap(android.net.eap.EapSessionConfig.EapMsChapV2Config real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMsChapV2Config(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapMsChapV2Config(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapMsChapV2Config getReal() {
+            return (android.net.eap.EapSessionConfig.EapMsChapV2Config) real;
         }
 
         public android.net.eap.EapSessionConfig.EapMsChapV2Config unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -286,18 +342,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapSimConfig {
-        private final android.net.eap.EapSessionConfig.EapSimConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapSimConfig(android.net.eap.EapSessionConfig.EapSimConfig real) {
+        private final java.lang.Object real;
+
+        private EapSimConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapSimConfig wrap(android.net.eap.EapSessionConfig.EapSimConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapSimConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapSimConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapSimConfig getReal() {
+            return (android.net.eap.EapSessionConfig.EapSimConfig) real;
         }
 
         public android.net.eap.EapSessionConfig.EapSimConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
@@ -318,18 +381,25 @@ public final class EapSessionConfig {
 
     }
     public static final class EapTtlsConfig {
-        private final android.net.eap.EapSessionConfig.EapTtlsConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EapTtlsConfig(android.net.eap.EapSessionConfig.EapTtlsConfig real) {
+        private final java.lang.Object real;
+
+        private EapTtlsConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapTtlsConfig wrap(android.net.eap.EapSessionConfig.EapTtlsConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapTtlsConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.eap.EapSessionConfig.EapTtlsConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.eap.EapSessionConfig.EapTtlsConfig getReal() {
+            return (android.net.eap.EapSessionConfig.EapTtlsConfig) real;
         }
 
         public android.net.eap.EapSessionConfig.EapTtlsConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {

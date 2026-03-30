@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class SectionIndexer {
-    private final android.widget.SectionIndexer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SectionIndexer(android.widget.SectionIndexer real) {
+    private final java.lang.Object real;
+
+    private SectionIndexer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.SectionIndexer wrap(android.widget.SectionIndexer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SectionIndexer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SectionIndexer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.SectionIndexer getReal() {
+        return (android.widget.SectionIndexer) real;
     }
 
     public android.widget.SectionIndexer unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getPositionForSection(int arg0) {
-        return real.getPositionForSection(arg0);
+        return ((android.widget.SectionIndexer) real).getPositionForSection(arg0);
     }
 
     public int getSectionForPosition(int arg0) {
-        return real.getSectionForPosition(arg0);
+        return ((android.widget.SectionIndexer) real).getSectionForPosition(arg0);
     }
 
     public java.lang.Object[] getSections() {
-        return real.getSections();
+        return ((android.widget.SectionIndexer) real).getSections();
     }
 
 }

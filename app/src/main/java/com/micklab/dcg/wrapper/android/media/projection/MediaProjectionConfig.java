@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media.projection;
 
 public final class MediaProjectionConfig {
-    private final android.media.projection.MediaProjectionConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaProjectionConfig(android.media.projection.MediaProjectionConfig real) {
+    private final java.lang.Object real;
+
+    private MediaProjectionConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.projection.MediaProjectionConfig wrap(android.media.projection.MediaProjectionConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.projection.MediaProjectionConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.projection.MediaProjectionConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.projection.MediaProjectionConfig getReal() {
+        return (android.media.projection.MediaProjectionConfig) real;
     }
 
     public android.media.projection.MediaProjectionConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.media.projection.MediaProjectionConfig createConfigForDefaultDisplay() {
@@ -25,23 +32,23 @@ public final class MediaProjectionConfig {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.projection.MediaProjectionConfig) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.projection.MediaProjectionConfig) real).equals(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.projection.MediaProjectionConfig) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.projection.MediaProjectionConfig) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.projection.MediaProjectionConfig) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

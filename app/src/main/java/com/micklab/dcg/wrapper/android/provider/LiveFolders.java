@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class LiveFolders {
-    private final android.provider.LiveFolders real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LiveFolders(android.provider.LiveFolders real) {
+    private final java.lang.Object real;
+
+    private LiveFolders(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.LiveFolders wrap(android.provider.LiveFolders real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.LiveFolders(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.LiveFolders(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.LiveFolders getReal() {
+        return (android.provider.LiveFolders) real;
     }
 
     public android.provider.LiveFolders unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String ACTION_CREATE_LIVE_FOLDER = android.provider.LiveFolders.ACTION_CREATE_LIVE_FOLDER;

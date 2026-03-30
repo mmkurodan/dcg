@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.hardware.biometrics;
 
 public final class BiometricManager {
-    private final android.hardware.biometrics.BiometricManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BiometricManager(android.hardware.biometrics.BiometricManager real) {
+    private final java.lang.Object real;
+
+    private BiometricManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager wrap(android.hardware.biometrics.BiometricManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.biometrics.BiometricManager getReal() {
+        return (android.hardware.biometrics.BiometricManager) real;
     }
 
     public android.hardware.biometrics.BiometricManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int canAuthenticate() {
-        return real.canAuthenticate();
+        return ((android.hardware.biometrics.BiometricManager) real).canAuthenticate();
     }
 
     public int canAuthenticate(int arg0) {
-        return real.canAuthenticate(arg0);
+        return ((android.hardware.biometrics.BiometricManager) real).canAuthenticate(arg0);
     }
 
     public long getLastAuthenticationTime(int arg0) {
-        return real.getLastAuthenticationTime(arg0);
+        return ((android.hardware.biometrics.BiometricManager) real).getLastAuthenticationTime(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings getStrings(int arg0) {
-        return com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings.wrap(real.getStrings(arg0));
+        return com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings.wrap(((android.hardware.biometrics.BiometricManager) real).getStrings(arg0));
     }
 
     public static final int BIOMETRIC_ERROR_HW_UNAVAILABLE = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE;
@@ -40,18 +47,25 @@ public final class BiometricManager {
     public static final int BIOMETRIC_SUCCESS = android.hardware.biometrics.BiometricManager.BIOMETRIC_SUCCESS;
 
     public static final class Authenticators {
-        private final android.hardware.biometrics.BiometricManager.Authenticators real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Authenticators(android.hardware.biometrics.BiometricManager.Authenticators real) {
+        private final java.lang.Object real;
+
+        private Authenticators(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Authenticators wrap(android.hardware.biometrics.BiometricManager.Authenticators real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Authenticators(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Authenticators(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.biometrics.BiometricManager.Authenticators getReal() {
+            return (android.hardware.biometrics.BiometricManager.Authenticators) real;
         }
 
         public android.hardware.biometrics.BiometricManager.Authenticators unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int BIOMETRIC_STRONG = android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG;
@@ -60,30 +74,37 @@ public final class BiometricManager {
 
     }
     public static final class Strings {
-        private final android.hardware.biometrics.BiometricManager.Strings real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Strings(android.hardware.biometrics.BiometricManager.Strings real) {
+        private final java.lang.Object real;
+
+        private Strings(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings wrap(android.hardware.biometrics.BiometricManager.Strings real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.biometrics.BiometricManager.Strings(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.biometrics.BiometricManager.Strings getReal() {
+            return (android.hardware.biometrics.BiometricManager.Strings) real;
         }
 
         public android.hardware.biometrics.BiometricManager.Strings unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.CharSequence getButtonLabel() {
-            return real.getButtonLabel();
+            return ((android.hardware.biometrics.BiometricManager.Strings) real).getButtonLabel();
         }
 
         public java.lang.CharSequence getPromptMessage() {
-            return real.getPromptMessage();
+            return ((android.hardware.biometrics.BiometricManager.Strings) real).getPromptMessage();
         }
 
         public java.lang.CharSequence getSettingName() {
-            return real.getSettingName();
+            return ((android.hardware.biometrics.BiometricManager.Strings) real).getSettingName();
         }
 
     }

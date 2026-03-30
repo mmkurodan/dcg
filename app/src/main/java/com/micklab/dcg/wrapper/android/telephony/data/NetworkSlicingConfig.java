@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class NetworkSlicingConfig {
-    private final android.telephony.data.NetworkSlicingConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkSlicingConfig(android.telephony.data.NetworkSlicingConfig real) {
+    private final java.lang.Object real;
+
+    private NetworkSlicingConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.NetworkSlicingConfig wrap(android.telephony.data.NetworkSlicingConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSlicingConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSlicingConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.NetworkSlicingConfig getReal() {
+        return (android.telephony.data.NetworkSlicingConfig) real;
     }
 
     public android.telephony.data.NetworkSlicingConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public NetworkSlicingConfig() {

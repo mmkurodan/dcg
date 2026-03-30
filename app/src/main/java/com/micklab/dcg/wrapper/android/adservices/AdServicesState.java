@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.adservices;
 
 public final class AdServicesState {
-    private final android.adservices.AdServicesState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdServicesState(android.adservices.AdServicesState real) {
+    private final java.lang.Object real;
+
+    private AdServicesState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.AdServicesState wrap(android.adservices.AdServicesState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.AdServicesState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.AdServicesState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.AdServicesState getReal() {
+        return (android.adservices.AdServicesState) real;
     }
 
     public android.adservices.AdServicesState unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean isAdServicesStateEnabled() {

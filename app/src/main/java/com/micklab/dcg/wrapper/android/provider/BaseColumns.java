@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class BaseColumns {
-    private final android.provider.BaseColumns real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BaseColumns(android.provider.BaseColumns real) {
+    private final java.lang.Object real;
+
+    private BaseColumns(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.BaseColumns wrap(android.provider.BaseColumns real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.BaseColumns(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.BaseColumns(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.BaseColumns getReal() {
+        return (android.provider.BaseColumns) real;
     }
 
     public android.provider.BaseColumns unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String _COUNT = android.provider.BaseColumns._COUNT;

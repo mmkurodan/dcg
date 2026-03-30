@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.companion;
 
 public final class CompanionException {
-    private final android.companion.CompanionException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CompanionException(android.companion.CompanionException real) {
+    private final java.lang.Object real;
+
+    private CompanionException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.companion.CompanionException wrap(android.companion.CompanionException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.companion.CompanionException getReal() {
+        return (android.companion.CompanionException) real;
     }
 
     public android.companion.CompanionException unwrap() {
-        return real;
+        return getReal();
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class CapabilityParams {
-    private final android.content.pm.CapabilityParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CapabilityParams(android.content.pm.CapabilityParams real) {
+    private final java.lang.Object real;
+
+    private CapabilityParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.CapabilityParams wrap(android.content.pm.CapabilityParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CapabilityParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CapabilityParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.CapabilityParams getReal() {
+        return (android.content.pm.CapabilityParams) real;
     }
 
     public android.content.pm.CapabilityParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -42,18 +49,25 @@ public final class CapabilityParams {
 
 
     public static final class Builder {
-        private final android.content.pm.CapabilityParams.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.content.pm.CapabilityParams.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.CapabilityParams.Builder wrap(android.content.pm.CapabilityParams.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CapabilityParams.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.CapabilityParams.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.CapabilityParams.Builder getReal() {
+            return (android.content.pm.CapabilityParams.Builder) real;
         }
 
         public android.content.pm.CapabilityParams.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0, java.lang.String arg1) {

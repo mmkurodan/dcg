@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class JsResult {
-    private final android.webkit.JsResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JsResult(android.webkit.JsResult real) {
+    private final java.lang.Object real;
+
+    private JsResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.JsResult wrap(android.webkit.JsResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.JsResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.JsResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.JsResult getReal() {
+        return (android.webkit.JsResult) real;
     }
 
     public android.webkit.JsResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {
-        real.cancel();
+        ((android.webkit.JsResult) real).cancel();
     }
 
     public void confirm() {
-        real.confirm();
+        ((android.webkit.JsResult) real).confirm();
     }
 
 }

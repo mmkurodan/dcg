@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class ColorSpace {
-    private final android.graphics.ColorSpace real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ColorSpace(android.graphics.ColorSpace real) {
+    private final java.lang.Object real;
+
+    private ColorSpace(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace wrap(android.graphics.ColorSpace real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.ColorSpace getReal() {
+        return (android.graphics.ColorSpace) real;
     }
 
     public android.graphics.ColorSpace unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace adapt(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0, float[] arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.adapt(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.adapt(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace adapt(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0, float[] arg1, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.adapt(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.adapt(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public static float[] cctToXyz(int arg0) {
@@ -29,47 +36,47 @@ public final class ColorSpace {
     }
 
     public static float[] chromaticAdaptation(com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation arg0, float[] arg1, float[] arg2) {
-        return android.graphics.ColorSpace.chromaticAdaptation(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return android.graphics.ColorSpace.chromaticAdaptation(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector connect(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector connect(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector connect(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector connect(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1, com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector.wrap(android.graphics.ColorSpace.connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.graphics.ColorSpace) real).equals(arg0);
     }
 
     public float[] fromXyz(float[] arg0) {
-        return real.fromXyz(arg0);
+        return ((android.graphics.ColorSpace) real).fromXyz(arg0);
     }
 
     public float[] fromXyz(float arg0, float arg1, float arg2) {
-        return real.fromXyz(arg0, arg1, arg2);
+        return ((android.graphics.ColorSpace) real).fromXyz(arg0, arg1, arg2);
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace get(com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public int getComponentCount() {
-        return real.getComponentCount();
+        return ((android.graphics.ColorSpace) real).getComponentCount();
     }
 
     public int getDataSpace() {
-        return real.getDataSpace();
+        return ((android.graphics.ColorSpace) real).getDataSpace();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace getFromDataSpace(int arg0) {
@@ -77,51 +84,51 @@ public final class ColorSpace {
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.graphics.ColorSpace) real).getId();
     }
 
     public float getMaxValue(int arg0) {
-        return real.getMaxValue(arg0);
+        return ((android.graphics.ColorSpace) real).getMaxValue(arg0);
     }
 
     public float getMinValue(int arg0) {
-        return real.getMinValue(arg0);
+        return ((android.graphics.ColorSpace) real).getMinValue(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model getModel() {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model.wrap(real.getModel());
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model.wrap(((android.graphics.ColorSpace) real).getModel());
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.graphics.ColorSpace) real).getName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.graphics.ColorSpace) real).hashCode();
     }
 
     public boolean isSrgb() {
-        return real.isSrgb();
+        return ((android.graphics.ColorSpace) real).isSrgb();
     }
 
     public boolean isWideGamut() {
-        return real.isWideGamut();
+        return ((android.graphics.ColorSpace) real).isWideGamut();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ColorSpace match(float[] arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.match(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(android.graphics.ColorSpace.match(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.graphics.ColorSpace) real).toString();
     }
 
     public float[] toXyz(float[] arg0) {
-        return real.toXyz(arg0);
+        return ((android.graphics.ColorSpace) real).toXyz(arg0);
     }
 
     public float[] toXyz(float arg0, float arg1, float arg2) {
-        return real.toXyz(arg0, arg1, arg2);
+        return ((android.graphics.ColorSpace) real).toXyz(arg0, arg1, arg2);
     }
 
     public static final float[] ILLUMINANT_A = android.graphics.ColorSpace.ILLUMINANT_A;
@@ -137,18 +144,25 @@ public final class ColorSpace {
     public static final int MIN_ID = android.graphics.ColorSpace.MIN_ID;
 
     public static final class Adaptation {
-        private final android.graphics.ColorSpace.Adaptation real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Adaptation(android.graphics.ColorSpace.Adaptation real) {
+        private final java.lang.Object real;
+
+        private Adaptation(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation wrap(android.graphics.ColorSpace.Adaptation real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.Adaptation getReal() {
+            return (android.graphics.ColorSpace.Adaptation) real;
         }
 
         public android.graphics.ColorSpace.Adaptation unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Adaptation valueOf(java.lang.String arg0) {
@@ -165,58 +179,72 @@ public final class ColorSpace {
 
     }
     public static final class Connector {
-        private final android.graphics.ColorSpace.Connector real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Connector(android.graphics.ColorSpace.Connector real) {
+        private final java.lang.Object real;
+
+        private Connector(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector wrap(android.graphics.ColorSpace.Connector real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.Connector getReal() {
+            return (android.graphics.ColorSpace.Connector) real;
         }
 
         public android.graphics.ColorSpace.Connector unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.ColorSpace getDestination() {
-            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(real.getDestination());
+            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.graphics.ColorSpace.Connector) real).getDestination());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent getRenderIntent() {
-            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent.wrap(real.getRenderIntent());
+            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent.wrap(((android.graphics.ColorSpace.Connector) real).getRenderIntent());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.ColorSpace getSource() {
-            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(real.getSource());
+            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.graphics.ColorSpace.Connector) real).getSource());
         }
 
         public float[] transform(float[] arg0) {
-            return real.transform(arg0);
+            return ((android.graphics.ColorSpace.Connector) real).transform(arg0);
         }
 
         public float[] transform(float arg0, float arg1, float arg2) {
-            return real.transform(arg0, arg1, arg2);
+            return ((android.graphics.ColorSpace.Connector) real).transform(arg0, arg1, arg2);
         }
 
     }
     public static final class Model {
-        private final android.graphics.ColorSpace.Model real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Model(android.graphics.ColorSpace.Model real) {
+        private final java.lang.Object real;
+
+        private Model(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model wrap(android.graphics.ColorSpace.Model real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.Model getReal() {
+            return (android.graphics.ColorSpace.Model) real;
         }
 
         public android.graphics.ColorSpace.Model unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getComponentCount() {
-            return real.getComponentCount();
+            return ((android.graphics.ColorSpace.Model) real).getComponentCount();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model valueOf(java.lang.String arg0) {
@@ -234,18 +262,25 @@ public final class ColorSpace {
 
     }
     public static final class Named {
-        private final android.graphics.ColorSpace.Named real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Named(android.graphics.ColorSpace.Named real) {
+        private final java.lang.Object real;
+
+        private Named(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named wrap(android.graphics.ColorSpace.Named real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.Named getReal() {
+            return (android.graphics.ColorSpace.Named) real;
         }
 
         public android.graphics.ColorSpace.Named unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named valueOf(java.lang.String arg0) {
@@ -277,18 +312,25 @@ public final class ColorSpace {
 
     }
     public static final class RenderIntent {
-        private final android.graphics.ColorSpace.RenderIntent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RenderIntent(android.graphics.ColorSpace.RenderIntent real) {
+        private final java.lang.Object real;
+
+        private RenderIntent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent wrap(android.graphics.ColorSpace.RenderIntent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.RenderIntent getReal() {
+            return (android.graphics.ColorSpace.RenderIntent) real;
         }
 
         public android.graphics.ColorSpace.RenderIntent unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.RenderIntent valueOf(java.lang.String arg0) {
@@ -306,165 +348,179 @@ public final class ColorSpace {
 
     }
     public static final class Rgb {
-        private final android.graphics.ColorSpace.Rgb real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Rgb(android.graphics.ColorSpace.Rgb real) {
+        private final java.lang.Object real;
+
+        private Rgb(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb wrap(android.graphics.ColorSpace.Rgb real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.ColorSpace.Rgb getReal() {
+            return (android.graphics.ColorSpace.Rgb) real;
         }
 
         public android.graphics.ColorSpace.Rgb unwrap() {
-            return real;
+            return getReal();
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, double arg2) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters arg2) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, float[] arg2, double arg3) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, float[] arg2, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters arg3) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, java.util.function.DoubleUnaryOperator arg2, java.util.function.DoubleUnaryOperator arg3) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public Rgb(java.lang.String arg0, float[] arg1, float[] arg2, java.util.function.DoubleUnaryOperator arg3, java.util.function.DoubleUnaryOperator arg4, float arg5, float arg6) {
-            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3, arg4, arg5, arg6));
+            this(new android.graphics.ColorSpace.Rgb(arg0, arg1, arg2, arg3, arg4, arg5, arg6), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).equals(arg0);
         }
 
         public float[] fromLinear(float[] arg0) {
-            return real.fromLinear(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).fromLinear(arg0);
         }
 
         public float[] fromLinear(float arg0, float arg1, float arg2) {
-            return real.fromLinear(arg0, arg1, arg2);
+            return ((android.graphics.ColorSpace.Rgb) real).fromLinear(arg0, arg1, arg2);
         }
 
         public float[] fromXyz(float[] arg0) {
-            return real.fromXyz(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).fromXyz(arg0);
         }
 
         public java.util.function.DoubleUnaryOperator getEotf() {
-            return real.getEotf();
+            return ((android.graphics.ColorSpace.Rgb) real).getEotf();
         }
 
         public float[] getInverseTransform() {
-            return real.getInverseTransform();
+            return ((android.graphics.ColorSpace.Rgb) real).getInverseTransform();
         }
 
         public float[] getInverseTransform(float[] arg0) {
-            return real.getInverseTransform(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getInverseTransform(arg0);
         }
 
         public float getMaxValue(int arg0) {
-            return real.getMaxValue(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getMaxValue(arg0);
         }
 
         public float getMinValue(int arg0) {
-            return real.getMinValue(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getMinValue(arg0);
         }
 
         public java.util.function.DoubleUnaryOperator getOetf() {
-            return real.getOetf();
+            return ((android.graphics.ColorSpace.Rgb) real).getOetf();
         }
 
         public float[] getPrimaries() {
-            return real.getPrimaries();
+            return ((android.graphics.ColorSpace.Rgb) real).getPrimaries();
         }
 
         public float[] getPrimaries(float[] arg0) {
-            return real.getPrimaries(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getPrimaries(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters getTransferParameters() {
-            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters.wrap(real.getTransferParameters());
+            return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters.wrap(((android.graphics.ColorSpace.Rgb) real).getTransferParameters());
         }
 
         public float[] getTransform() {
-            return real.getTransform();
+            return ((android.graphics.ColorSpace.Rgb) real).getTransform();
         }
 
         public float[] getTransform(float[] arg0) {
-            return real.getTransform(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getTransform(arg0);
         }
 
         public float[] getWhitePoint() {
-            return real.getWhitePoint();
+            return ((android.graphics.ColorSpace.Rgb) real).getWhitePoint();
         }
 
         public float[] getWhitePoint(float[] arg0) {
-            return real.getWhitePoint(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).getWhitePoint(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.graphics.ColorSpace.Rgb) real).hashCode();
         }
 
         public boolean isSrgb() {
-            return real.isSrgb();
+            return ((android.graphics.ColorSpace.Rgb) real).isSrgb();
         }
 
         public boolean isWideGamut() {
-            return real.isWideGamut();
+            return ((android.graphics.ColorSpace.Rgb) real).isWideGamut();
         }
 
         public float[] toLinear(float[] arg0) {
-            return real.toLinear(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).toLinear(arg0);
         }
 
         public float[] toLinear(float arg0, float arg1, float arg2) {
-            return real.toLinear(arg0, arg1, arg2);
+            return ((android.graphics.ColorSpace.Rgb) real).toLinear(arg0, arg1, arg2);
         }
 
         public float[] toXyz(float[] arg0) {
-            return real.toXyz(arg0);
+            return ((android.graphics.ColorSpace.Rgb) real).toXyz(arg0);
         }
 
         public static final class TransferParameters {
-            private final android.graphics.ColorSpace.Rgb.TransferParameters real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public TransferParameters(android.graphics.ColorSpace.Rgb.TransferParameters real) {
+            private final java.lang.Object real;
+
+            private TransferParameters(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters wrap(android.graphics.ColorSpace.Rgb.TransferParameters real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ColorSpace.Rgb.TransferParameters(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.graphics.ColorSpace.Rgb.TransferParameters getReal() {
+                return (android.graphics.ColorSpace.Rgb.TransferParameters) real;
             }
 
             public android.graphics.ColorSpace.Rgb.TransferParameters unwrap() {
-                return real;
+                return getReal();
             }
 
             public TransferParameters(double arg0, double arg1, double arg2, double arg3, double arg4) {
-                this(new android.graphics.ColorSpace.Rgb.TransferParameters(arg0, arg1, arg2, arg3, arg4));
+                this(new android.graphics.ColorSpace.Rgb.TransferParameters(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
             }
 
             public TransferParameters(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5, double arg6) {
-                this(new android.graphics.ColorSpace.Rgb.TransferParameters(arg0, arg1, arg2, arg3, arg4, arg5, arg6));
+                this(new android.graphics.ColorSpace.Rgb.TransferParameters(arg0, arg1, arg2, arg3, arg4, arg5, arg6), (__DcgwBridgeToken) null);
             }
 
             public boolean equals(java.lang.Object arg0) {
-                return real.equals(arg0);
+                return ((android.graphics.ColorSpace.Rgb.TransferParameters) real).equals(arg0);
             }
 
             public int hashCode() {
-                return real.hashCode();
+                return ((android.graphics.ColorSpace.Rgb.TransferParameters) real).hashCode();
             }
 
 

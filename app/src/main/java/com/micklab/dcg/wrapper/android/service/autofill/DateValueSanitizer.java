@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.service.autofill;
 
 public final class DateValueSanitizer {
-    private final android.service.autofill.DateValueSanitizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DateValueSanitizer(android.service.autofill.DateValueSanitizer real) {
+    private final java.lang.Object real;
+
+    private DateValueSanitizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.autofill.DateValueSanitizer wrap(android.service.autofill.DateValueSanitizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.DateValueSanitizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.DateValueSanitizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.autofill.DateValueSanitizer getReal() {
+        return (android.service.autofill.DateValueSanitizer) real;
     }
 
     public android.service.autofill.DateValueSanitizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public DateValueSanitizer(com.micklab.dcg.wrapper.android.icu.text.DateFormat arg0) {
-        this(new android.service.autofill.DateValueSanitizer(arg0 == null ? null : arg0.unwrap()));
+        this(new android.service.autofill.DateValueSanitizer(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.service.autofill.DateValueSanitizer) real).describeContents();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.service.autofill.DateValueSanitizer) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.service.autofill.DateValueSanitizer) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

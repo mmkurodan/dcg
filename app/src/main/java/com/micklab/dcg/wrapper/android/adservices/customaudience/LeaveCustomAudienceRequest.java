@@ -2,65 +2,79 @@
 package com.micklab.dcg.wrapper.android.adservices.customaudience;
 
 public final class LeaveCustomAudienceRequest {
-    private final android.adservices.customaudience.LeaveCustomAudienceRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LeaveCustomAudienceRequest(android.adservices.customaudience.LeaveCustomAudienceRequest real) {
+    private final java.lang.Object real;
+
+    private LeaveCustomAudienceRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest wrap(android.adservices.customaudience.LeaveCustomAudienceRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.customaudience.LeaveCustomAudienceRequest getReal() {
+        return (android.adservices.customaudience.LeaveCustomAudienceRequest) real;
     }
 
     public android.adservices.customaudience.LeaveCustomAudienceRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.customaudience.LeaveCustomAudienceRequest) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier getBuyer() {
-        return com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier.wrap(real.getBuyer());
+        return com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier.wrap(((android.adservices.customaudience.LeaveCustomAudienceRequest) real).getBuyer());
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.adservices.customaudience.LeaveCustomAudienceRequest) real).getName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.customaudience.LeaveCustomAudienceRequest) real).hashCode();
     }
 
     public static final class Builder {
-        private final android.adservices.customaudience.LeaveCustomAudienceRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.customaudience.LeaveCustomAudienceRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder wrap(android.adservices.customaudience.LeaveCustomAudienceRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.customaudience.LeaveCustomAudienceRequest.Builder getReal() {
+            return (android.adservices.customaudience.LeaveCustomAudienceRequest.Builder) real;
         }
 
         public android.adservices.customaudience.LeaveCustomAudienceRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.adservices.customaudience.LeaveCustomAudienceRequest.Builder());
+            this(new android.adservices.customaudience.LeaveCustomAudienceRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest build() {
-            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.wrap(((android.adservices.customaudience.LeaveCustomAudienceRequest.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder setBuyer(com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder.wrap(real.setBuyer(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder.wrap(((android.adservices.customaudience.LeaveCustomAudienceRequest.Builder) real).setBuyer(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder setName(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder.wrap(real.setName(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.LeaveCustomAudienceRequest.Builder.wrap(((android.adservices.customaudience.LeaveCustomAudienceRequest.Builder) real).setName(arg0));
         }
 
     }

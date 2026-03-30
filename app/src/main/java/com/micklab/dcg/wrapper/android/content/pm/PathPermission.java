@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PathPermission {
-    private final android.content.pm.PathPermission real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PathPermission(android.content.pm.PathPermission real) {
+    private final java.lang.Object real;
+
+    private PathPermission(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PathPermission wrap(android.content.pm.PathPermission real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PathPermission(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PathPermission(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PathPermission getReal() {
+        return (android.content.pm.PathPermission) real;
     }
 
     public android.content.pm.PathPermission unwrap() {
-        return real;
+        return getReal();
     }
 
     public PathPermission(com.micklab.dcg.wrapper.android.os.Parcel arg0) {

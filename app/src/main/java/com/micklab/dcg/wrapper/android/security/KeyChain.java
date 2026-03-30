@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.security;
 
 public final class KeyChain {
-    private final android.security.KeyChain real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyChain(android.security.KeyChain real) {
+    private final java.lang.Object real;
+
+    private KeyChain(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.KeyChain wrap(android.security.KeyChain real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.KeyChain(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.KeyChain(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.KeyChain getReal() {
+        return (android.security.KeyChain) real;
     }
 
     public android.security.KeyChain unwrap() {
-        return real;
+        return getReal();
     }
 
     public KeyChain() {
-        this(new android.security.KeyChain());
+        this(new android.security.KeyChain(), (__DcgwBridgeToken) null);
     }
 
     public static void choosePrivateKeyAlias(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.security.KeyChainAliasCallback arg1, java.lang.String[] arg2, java.security.Principal[] arg3, com.micklab.dcg.wrapper.android.net.Uri arg4, java.lang.String arg5) {
-        android.security.KeyChain.choosePrivateKeyAlias(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4 == null ? null : arg4.unwrap(), arg5);
+        android.security.KeyChain.choosePrivateKeyAlias(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5);
     }
 
     public static void choosePrivateKeyAlias(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.security.KeyChainAliasCallback arg1, java.lang.String[] arg2, java.security.Principal[] arg3, java.lang.String arg4, int arg5, java.lang.String arg6) {
-        android.security.KeyChain.choosePrivateKeyAlias(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4, arg5, arg6);
+        android.security.KeyChain.choosePrivateKeyAlias(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5, arg6);
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent createInstallIntent() {
@@ -33,19 +40,19 @@ public final class KeyChain {
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent createManageCredentialsIntent(com.micklab.dcg.wrapper.android.security.AppUriAuthenticationPolicy arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.security.KeyChain.createManageCredentialsIntent(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.security.KeyChain.createManageCredentialsIntent(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.security.cert.X509Certificate[] getCertificateChain(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) throws java.lang.InterruptedException, android.security.KeyChainException {
-        return android.security.KeyChain.getCertificateChain(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.security.KeyChain.getCertificateChain(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static com.micklab.dcg.wrapper.android.security.AppUriAuthenticationPolicy getCredentialManagementAppPolicy(com.micklab.dcg.wrapper.android.content.Context arg0) throws java.lang.SecurityException {
-        return com.micklab.dcg.wrapper.android.security.AppUriAuthenticationPolicy.wrap(android.security.KeyChain.getCredentialManagementAppPolicy(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.security.AppUriAuthenticationPolicy.wrap(android.security.KeyChain.getCredentialManagementAppPolicy(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.security.PrivateKey getPrivateKey(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) throws java.lang.InterruptedException, android.security.KeyChainException {
-        return android.security.KeyChain.getPrivateKey(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.security.KeyChain.getPrivateKey(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static boolean isBoundKeyAlgorithm(java.lang.String arg0) {
@@ -53,7 +60,7 @@ public final class KeyChain {
     }
 
     public static boolean isCredentialManagementApp(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.security.KeyChain.isCredentialManagementApp(arg0 == null ? null : arg0.unwrap());
+        return android.security.KeyChain.isCredentialManagementApp(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isKeyAlgorithmSupported(java.lang.String arg0) {
@@ -61,7 +68,7 @@ public final class KeyChain {
     }
 
     public static boolean removeCredentialManagementApp(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.security.KeyChain.removeCredentialManagementApp(arg0 == null ? null : arg0.unwrap());
+        return android.security.KeyChain.removeCredentialManagementApp(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_KEYCHAIN_CHANGED = android.security.KeyChain.ACTION_KEYCHAIN_CHANGED;

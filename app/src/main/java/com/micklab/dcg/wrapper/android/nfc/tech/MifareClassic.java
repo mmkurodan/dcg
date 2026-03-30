@@ -2,114 +2,121 @@
 package com.micklab.dcg.wrapper.android.nfc.tech;
 
 public final class MifareClassic {
-    private final android.nfc.tech.MifareClassic real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MifareClassic(android.nfc.tech.MifareClassic real) {
+    private final java.lang.Object real;
+
+    private MifareClassic(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic wrap(android.nfc.tech.MifareClassic real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.tech.MifareClassic getReal() {
+        return (android.nfc.tech.MifareClassic) real;
     }
 
     public android.nfc.tech.MifareClassic unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean authenticateSectorWithKeyA(int arg0, byte[] arg1) throws java.io.IOException {
-        return real.authenticateSectorWithKeyA(arg0, arg1);
+        return ((android.nfc.tech.MifareClassic) real).authenticateSectorWithKeyA(arg0, arg1);
     }
 
     public boolean authenticateSectorWithKeyB(int arg0, byte[] arg1) throws java.io.IOException {
-        return real.authenticateSectorWithKeyB(arg0, arg1);
+        return ((android.nfc.tech.MifareClassic) real).authenticateSectorWithKeyB(arg0, arg1);
     }
 
     public int blockToSector(int arg0) {
-        return real.blockToSector(arg0);
+        return ((android.nfc.tech.MifareClassic) real).blockToSector(arg0);
     }
 
     public void close() throws java.io.IOException {
-        real.close();
+        ((android.nfc.tech.MifareClassic) real).close();
     }
 
     public void connect() throws java.io.IOException {
-        real.connect();
+        ((android.nfc.tech.MifareClassic) real).connect();
     }
 
     public void decrement(int arg0, int arg1) throws java.io.IOException {
-        real.decrement(arg0, arg1);
+        ((android.nfc.tech.MifareClassic) real).decrement(arg0, arg1);
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic get(com.micklab.dcg.wrapper.android.nfc.Tag arg0) {
-        return com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic.wrap(android.nfc.tech.MifareClassic.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.nfc.tech.MifareClassic.wrap(android.nfc.tech.MifareClassic.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public int getBlockCount() {
-        return real.getBlockCount();
+        return ((android.nfc.tech.MifareClassic) real).getBlockCount();
     }
 
     public int getBlockCountInSector(int arg0) {
-        return real.getBlockCountInSector(arg0);
+        return ((android.nfc.tech.MifareClassic) real).getBlockCountInSector(arg0);
     }
 
     public int getMaxTransceiveLength() {
-        return real.getMaxTransceiveLength();
+        return ((android.nfc.tech.MifareClassic) real).getMaxTransceiveLength();
     }
 
     public int getSectorCount() {
-        return real.getSectorCount();
+        return ((android.nfc.tech.MifareClassic) real).getSectorCount();
     }
 
     public int getSize() {
-        return real.getSize();
+        return ((android.nfc.tech.MifareClassic) real).getSize();
     }
 
     public com.micklab.dcg.wrapper.android.nfc.Tag getTag() {
-        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(real.getTag());
+        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(((android.nfc.tech.MifareClassic) real).getTag());
     }
 
     public int getTimeout() {
-        return real.getTimeout();
+        return ((android.nfc.tech.MifareClassic) real).getTimeout();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.nfc.tech.MifareClassic) real).getType();
     }
 
     public void increment(int arg0, int arg1) throws java.io.IOException {
-        real.increment(arg0, arg1);
+        ((android.nfc.tech.MifareClassic) real).increment(arg0, arg1);
     }
 
     public boolean isConnected() {
-        return real.isConnected();
+        return ((android.nfc.tech.MifareClassic) real).isConnected();
     }
 
     public byte[] readBlock(int arg0) throws java.io.IOException {
-        return real.readBlock(arg0);
+        return ((android.nfc.tech.MifareClassic) real).readBlock(arg0);
     }
 
     public void restore(int arg0) throws java.io.IOException {
-        real.restore(arg0);
+        ((android.nfc.tech.MifareClassic) real).restore(arg0);
     }
 
     public int sectorToBlock(int arg0) {
-        return real.sectorToBlock(arg0);
+        return ((android.nfc.tech.MifareClassic) real).sectorToBlock(arg0);
     }
 
     public void setTimeout(int arg0) {
-        real.setTimeout(arg0);
+        ((android.nfc.tech.MifareClassic) real).setTimeout(arg0);
     }
 
     public byte[] transceive(byte[] arg0) throws java.io.IOException {
-        return real.transceive(arg0);
+        return ((android.nfc.tech.MifareClassic) real).transceive(arg0);
     }
 
     public void transfer(int arg0) throws java.io.IOException {
-        real.transfer(arg0);
+        ((android.nfc.tech.MifareClassic) real).transfer(arg0);
     }
 
     public void writeBlock(int arg0, byte[] arg1) throws java.io.IOException {
-        real.writeBlock(arg0, arg1);
+        ((android.nfc.tech.MifareClassic) real).writeBlock(arg0, arg1);
     }
 
     public static final int BLOCK_SIZE = android.nfc.tech.MifareClassic.BLOCK_SIZE;

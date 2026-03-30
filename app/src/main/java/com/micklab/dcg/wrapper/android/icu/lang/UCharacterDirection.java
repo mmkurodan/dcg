@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UCharacterDirection {
-    private final android.icu.lang.UCharacterDirection real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UCharacterDirection(android.icu.lang.UCharacterDirection real) {
+    private final java.lang.Object real;
+
+    private UCharacterDirection(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UCharacterDirection wrap(android.icu.lang.UCharacterDirection real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterDirection(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterDirection(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UCharacterDirection getReal() {
+        return (android.icu.lang.UCharacterDirection) real;
     }
 
     public android.icu.lang.UCharacterDirection unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String toString(int arg0) {

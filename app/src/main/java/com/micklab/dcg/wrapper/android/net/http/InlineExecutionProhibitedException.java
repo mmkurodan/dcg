@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class InlineExecutionProhibitedException {
-    private final android.net.http.InlineExecutionProhibitedException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InlineExecutionProhibitedException(android.net.http.InlineExecutionProhibitedException real) {
+    private final java.lang.Object real;
+
+    private InlineExecutionProhibitedException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.InlineExecutionProhibitedException wrap(android.net.http.InlineExecutionProhibitedException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.InlineExecutionProhibitedException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.InlineExecutionProhibitedException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.InlineExecutionProhibitedException getReal() {
+        return (android.net.http.InlineExecutionProhibitedException) real;
     }
 
     public android.net.http.InlineExecutionProhibitedException unwrap() {
-        return real;
+        return getReal();
     }
 
     public InlineExecutionProhibitedException() {

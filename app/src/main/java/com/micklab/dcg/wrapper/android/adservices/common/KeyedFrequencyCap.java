@@ -2,86 +2,100 @@
 package com.micklab.dcg.wrapper.android.adservices.common;
 
 public final class KeyedFrequencyCap {
-    private final android.adservices.common.KeyedFrequencyCap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyedFrequencyCap(android.adservices.common.KeyedFrequencyCap real) {
+    private final java.lang.Object real;
+
+    private KeyedFrequencyCap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap wrap(android.adservices.common.KeyedFrequencyCap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.common.KeyedFrequencyCap getReal() {
+        return (android.adservices.common.KeyedFrequencyCap) real;
     }
 
     public android.adservices.common.KeyedFrequencyCap unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.adservices.common.KeyedFrequencyCap) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.common.KeyedFrequencyCap) real).equals(arg0);
     }
 
     public int getAdCounterKey() {
-        return real.getAdCounterKey();
+        return ((android.adservices.common.KeyedFrequencyCap) real).getAdCounterKey();
     }
 
     public java.time.Duration getInterval() {
-        return real.getInterval();
+        return ((android.adservices.common.KeyedFrequencyCap) real).getInterval();
     }
 
     public int getMaxCount() {
-        return real.getMaxCount();
+        return ((android.adservices.common.KeyedFrequencyCap) real).getMaxCount();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.common.KeyedFrequencyCap) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.adservices.common.KeyedFrequencyCap) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.adservices.common.KeyedFrequencyCap) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.adservices.common.KeyedFrequencyCap.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.common.KeyedFrequencyCap.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder wrap(android.adservices.common.KeyedFrequencyCap.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.common.KeyedFrequencyCap.Builder getReal() {
+            return (android.adservices.common.KeyedFrequencyCap.Builder) real;
         }
 
         public android.adservices.common.KeyedFrequencyCap.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0, int arg1, java.time.Duration arg2) {
-            this(new android.adservices.common.KeyedFrequencyCap.Builder(arg0, arg1, arg2));
+            this(new android.adservices.common.KeyedFrequencyCap.Builder(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap build() {
-            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.wrap(((android.adservices.common.KeyedFrequencyCap.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder setAdCounterKey(int arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(real.setAdCounterKey(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(((android.adservices.common.KeyedFrequencyCap.Builder) real).setAdCounterKey(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder setInterval(java.time.Duration arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(real.setInterval(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(((android.adservices.common.KeyedFrequencyCap.Builder) real).setInterval(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder setMaxCount(int arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(real.setMaxCount(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.common.KeyedFrequencyCap.Builder.wrap(((android.adservices.common.KeyedFrequencyCap.Builder) real).setMaxCount(arg0));
         }
 
     }

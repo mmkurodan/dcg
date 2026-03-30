@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class OsConstants {
-    private final android.system.OsConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OsConstants(android.system.OsConstants real) {
+    private final java.lang.Object real;
+
+    private OsConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.OsConstants wrap(android.system.OsConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.OsConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.OsConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.OsConstants getReal() {
+        return (android.system.OsConstants) real;
     }
 
     public android.system.OsConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean S_ISBLK(int arg0) {

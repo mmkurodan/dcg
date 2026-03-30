@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class EntityIterator {
-    private final android.content.EntityIterator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EntityIterator(android.content.EntityIterator real) {
+    private final java.lang.Object real;
+
+    private EntityIterator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.EntityIterator wrap(android.content.EntityIterator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.EntityIterator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.EntityIterator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.EntityIterator getReal() {
+        return (android.content.EntityIterator) real;
     }
 
     public android.content.EntityIterator unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.content.EntityIterator) real).close();
     }
 
     public void reset() {
-        real.reset();
+        ((android.content.EntityIterator) real).reset();
     }
 
 }

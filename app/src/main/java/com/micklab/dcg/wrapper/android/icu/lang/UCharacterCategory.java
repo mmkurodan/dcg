@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UCharacterCategory {
-    private final android.icu.lang.UCharacterCategory real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UCharacterCategory(android.icu.lang.UCharacterCategory real) {
+    private final java.lang.Object real;
+
+    private UCharacterCategory(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UCharacterCategory wrap(android.icu.lang.UCharacterCategory real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterCategory(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterCategory(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UCharacterCategory getReal() {
+        return (android.icu.lang.UCharacterCategory) real;
     }
 
     public android.icu.lang.UCharacterCategory unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String toString(int arg0) {

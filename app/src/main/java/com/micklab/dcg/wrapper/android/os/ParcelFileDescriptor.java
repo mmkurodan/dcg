@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ParcelFileDescriptor {
-    private final android.os.ParcelFileDescriptor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParcelFileDescriptor(android.os.ParcelFileDescriptor real) {
+    private final java.lang.Object real;
+
+    private ParcelFileDescriptor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor wrap(android.os.ParcelFileDescriptor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ParcelFileDescriptor getReal() {
+        return (android.os.ParcelFileDescriptor) real;
     }
 
     public android.os.ParcelFileDescriptor unwrap() {
-        return real;
+        return getReal();
     }
 
     public ParcelFileDescriptor(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {
@@ -122,18 +129,25 @@ public final class ParcelFileDescriptor {
 
 
     public static final class AutoCloseInputStream {
-        private final android.os.ParcelFileDescriptor.AutoCloseInputStream real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AutoCloseInputStream(android.os.ParcelFileDescriptor.AutoCloseInputStream real) {
+        private final java.lang.Object real;
+
+        private AutoCloseInputStream(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseInputStream wrap(android.os.ParcelFileDescriptor.AutoCloseInputStream real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseInputStream(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseInputStream(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.ParcelFileDescriptor.AutoCloseInputStream getReal() {
+            return (android.os.ParcelFileDescriptor.AutoCloseInputStream) real;
         }
 
         public android.os.ParcelFileDescriptor.AutoCloseInputStream unwrap() {
-            return real;
+            return getReal();
         }
 
         public AutoCloseInputStream(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {
@@ -158,18 +172,25 @@ public final class ParcelFileDescriptor {
 
     }
     public static final class AutoCloseOutputStream {
-        private final android.os.ParcelFileDescriptor.AutoCloseOutputStream real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AutoCloseOutputStream(android.os.ParcelFileDescriptor.AutoCloseOutputStream real) {
+        private final java.lang.Object real;
+
+        private AutoCloseOutputStream(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseOutputStream wrap(android.os.ParcelFileDescriptor.AutoCloseOutputStream real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseOutputStream(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.AutoCloseOutputStream(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.ParcelFileDescriptor.AutoCloseOutputStream getReal() {
+            return (android.os.ParcelFileDescriptor.AutoCloseOutputStream) real;
         }
 
         public android.os.ParcelFileDescriptor.AutoCloseOutputStream unwrap() {
-            return real;
+            return getReal();
         }
 
         public AutoCloseOutputStream(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {
@@ -182,18 +203,25 @@ public final class ParcelFileDescriptor {
 
     }
     public static final class FileDescriptorDetachedException {
-        private final android.os.ParcelFileDescriptor.FileDescriptorDetachedException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FileDescriptorDetachedException(android.os.ParcelFileDescriptor.FileDescriptorDetachedException real) {
+        private final java.lang.Object real;
+
+        private FileDescriptorDetachedException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.FileDescriptorDetachedException wrap(android.os.ParcelFileDescriptor.FileDescriptorDetachedException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.FileDescriptorDetachedException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.FileDescriptorDetachedException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.ParcelFileDescriptor.FileDescriptorDetachedException getReal() {
+            return (android.os.ParcelFileDescriptor.FileDescriptorDetachedException) real;
         }
 
         public android.os.ParcelFileDescriptor.FileDescriptorDetachedException unwrap() {
-            return real;
+            return getReal();
         }
 
         public FileDescriptorDetachedException() {
@@ -202,18 +230,25 @@ public final class ParcelFileDescriptor {
 
     }
     public static final class OnCloseListener {
-        private final android.os.ParcelFileDescriptor.OnCloseListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnCloseListener(android.os.ParcelFileDescriptor.OnCloseListener real) {
+        private final java.lang.Object real;
+
+        private OnCloseListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.OnCloseListener wrap(android.os.ParcelFileDescriptor.OnCloseListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.OnCloseListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.OnCloseListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.ParcelFileDescriptor.OnCloseListener getReal() {
+            return (android.os.ParcelFileDescriptor.OnCloseListener) real;
         }
 
         public android.os.ParcelFileDescriptor.OnCloseListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onClose(java.io.IOException arg0) {

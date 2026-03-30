@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class FeatureGroupInfo {
-    private final android.content.pm.FeatureGroupInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FeatureGroupInfo(android.content.pm.FeatureGroupInfo real) {
+    private final java.lang.Object real;
+
+    private FeatureGroupInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.FeatureGroupInfo wrap(android.content.pm.FeatureGroupInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.FeatureGroupInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.FeatureGroupInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.FeatureGroupInfo getReal() {
+        return (android.content.pm.FeatureGroupInfo) real;
     }
 
     public android.content.pm.FeatureGroupInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public FeatureGroupInfo() {

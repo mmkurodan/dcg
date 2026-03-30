@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class AdvertisingSetCallback {
-    private final android.bluetooth.le.AdvertisingSetCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdvertisingSetCallback(android.bluetooth.le.AdvertisingSetCallback real) {
+    private final java.lang.Object real;
+
+    private AdvertisingSetCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetCallback wrap(android.bluetooth.le.AdvertisingSetCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.AdvertisingSetCallback getReal() {
+        return (android.bluetooth.le.AdvertisingSetCallback) real;
     }
 
     public android.bluetooth.le.AdvertisingSetCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onAdvertisingDataSet(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1) {
-        real.onAdvertisingDataSet(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onAdvertisingDataSet(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void onAdvertisingEnabled(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, boolean arg1, int arg2) {
-        real.onAdvertisingEnabled(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onAdvertisingEnabled(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void onAdvertisingParametersUpdated(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1, int arg2) {
-        real.onAdvertisingParametersUpdated(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onAdvertisingParametersUpdated(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void onAdvertisingSetStarted(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1, int arg2) {
-        real.onAdvertisingSetStarted(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onAdvertisingSetStarted(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void onAdvertisingSetStopped(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0) {
-        real.onAdvertisingSetStopped(arg0 == null ? null : arg0.unwrap());
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onAdvertisingSetStopped(arg0 == null ? null : arg0.getReal());
     }
 
     public void onPeriodicAdvertisingDataSet(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1) {
-        real.onPeriodicAdvertisingDataSet(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onPeriodicAdvertisingDataSet(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void onPeriodicAdvertisingEnabled(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, boolean arg1, int arg2) {
-        real.onPeriodicAdvertisingEnabled(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onPeriodicAdvertisingEnabled(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void onPeriodicAdvertisingParametersUpdated(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1) {
-        real.onPeriodicAdvertisingParametersUpdated(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onPeriodicAdvertisingParametersUpdated(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void onScanResponseDataSet(com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSet arg0, int arg1) {
-        real.onScanResponseDataSet(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.AdvertisingSetCallback) real).onScanResponseDataSet(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ADVERTISE_FAILED_ALREADY_STARTED = android.bluetooth.le.AdvertisingSetCallback.ADVERTISE_FAILED_ALREADY_STARTED;

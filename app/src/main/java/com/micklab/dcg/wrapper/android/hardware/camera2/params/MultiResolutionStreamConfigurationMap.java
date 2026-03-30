@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class MultiResolutionStreamConfigurationMap {
-    private final android.hardware.camera2.params.MultiResolutionStreamConfigurationMap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MultiResolutionStreamConfigurationMap(android.hardware.camera2.params.MultiResolutionStreamConfigurationMap real) {
+    private final java.lang.Object real;
+
+    private MultiResolutionStreamConfigurationMap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.MultiResolutionStreamConfigurationMap wrap(android.hardware.camera2.params.MultiResolutionStreamConfigurationMap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MultiResolutionStreamConfigurationMap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.MultiResolutionStreamConfigurationMap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.MultiResolutionStreamConfigurationMap getReal() {
+        return (android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real;
     }
 
     public android.hardware.camera2.params.MultiResolutionStreamConfigurationMap unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real).equals(arg0);
     }
 
     public int[] getInputFormats() {
-        return real.getInputFormats();
+        return ((android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real).getInputFormats();
     }
 
     public int[] getOutputFormats() {
-        return real.getOutputFormats();
+        return ((android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real).getOutputFormats();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.hardware.camera2.params.MultiResolutionStreamConfigurationMap) real).toString();
     }
 
 }

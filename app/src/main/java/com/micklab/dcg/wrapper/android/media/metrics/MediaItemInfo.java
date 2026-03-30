@@ -2,86 +2,93 @@
 package com.micklab.dcg.wrapper.android.media.metrics;
 
 public final class MediaItemInfo {
-    private final android.media.metrics.MediaItemInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaItemInfo(android.media.metrics.MediaItemInfo real) {
+    private final java.lang.Object real;
+
+    private MediaItemInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo wrap(android.media.metrics.MediaItemInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.metrics.MediaItemInfo getReal() {
+        return (android.media.metrics.MediaItemInfo) real;
     }
 
     public android.media.metrics.MediaItemInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.metrics.MediaItemInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.metrics.MediaItemInfo) real).equals(arg0);
     }
 
     public int getAudioChannelCount() {
-        return real.getAudioChannelCount();
+        return ((android.media.metrics.MediaItemInfo) real).getAudioChannelCount();
     }
 
     public long getAudioSampleCount() {
-        return real.getAudioSampleCount();
+        return ((android.media.metrics.MediaItemInfo) real).getAudioSampleCount();
     }
 
     public int getAudioSampleRateHz() {
-        return real.getAudioSampleRateHz();
+        return ((android.media.metrics.MediaItemInfo) real).getAudioSampleRateHz();
     }
 
     public long getClipDurationMillis() {
-        return real.getClipDurationMillis();
+        return ((android.media.metrics.MediaItemInfo) real).getClipDurationMillis();
     }
 
     public java.lang.String getContainerMimeType() {
-        return real.getContainerMimeType();
+        return ((android.media.metrics.MediaItemInfo) real).getContainerMimeType();
     }
 
     public long getDataTypes() {
-        return real.getDataTypes();
+        return ((android.media.metrics.MediaItemInfo) real).getDataTypes();
     }
 
     public long getDurationMillis() {
-        return real.getDurationMillis();
+        return ((android.media.metrics.MediaItemInfo) real).getDurationMillis();
     }
 
     public int getSourceType() {
-        return real.getSourceType();
+        return ((android.media.metrics.MediaItemInfo) real).getSourceType();
     }
 
     public int getVideoDataSpace() {
-        return real.getVideoDataSpace();
+        return ((android.media.metrics.MediaItemInfo) real).getVideoDataSpace();
     }
 
     public float getVideoFrameRate() {
-        return real.getVideoFrameRate();
+        return ((android.media.metrics.MediaItemInfo) real).getVideoFrameRate();
     }
 
     public long getVideoSampleCount() {
-        return real.getVideoSampleCount();
+        return ((android.media.metrics.MediaItemInfo) real).getVideoSampleCount();
     }
 
     public com.micklab.dcg.wrapper.android.util.Size getVideoSize() {
-        return com.micklab.dcg.wrapper.android.util.Size.wrap(real.getVideoSize());
+        return com.micklab.dcg.wrapper.android.util.Size.wrap(((android.media.metrics.MediaItemInfo) real).getVideoSize());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.metrics.MediaItemInfo) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.metrics.MediaItemInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.metrics.MediaItemInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final long DATA_TYPE_AUDIO = android.media.metrics.MediaItemInfo.DATA_TYPE_AUDIO;
@@ -104,82 +111,89 @@ public final class MediaItemInfo {
     public static final int VALUE_UNSPECIFIED = android.media.metrics.MediaItemInfo.VALUE_UNSPECIFIED;
 
     public static final class Builder {
-        private final android.media.metrics.MediaItemInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.metrics.MediaItemInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder wrap(android.media.metrics.MediaItemInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.metrics.MediaItemInfo.Builder getReal() {
+            return (android.media.metrics.MediaItemInfo.Builder) real;
         }
 
         public android.media.metrics.MediaItemInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.metrics.MediaItemInfo.Builder());
+            this(new android.media.metrics.MediaItemInfo.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder addCodecName(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.addCodecName(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).addCodecName(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder addDataType(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.addDataType(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).addDataType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder addSampleMimeType(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.addSampleMimeType(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).addSampleMimeType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo build() {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.wrap(((android.media.metrics.MediaItemInfo.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setAudioChannelCount(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setAudioChannelCount(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setAudioChannelCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setAudioSampleCount(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setAudioSampleCount(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setAudioSampleCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setAudioSampleRateHz(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setAudioSampleRateHz(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setAudioSampleRateHz(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setClipDurationMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setClipDurationMillis(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setClipDurationMillis(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setContainerMimeType(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setContainerMimeType(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setContainerMimeType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setDurationMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setDurationMillis(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setDurationMillis(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setSourceType(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setSourceType(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setSourceType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setVideoDataSpace(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setVideoDataSpace(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setVideoDataSpace(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setVideoFrameRate(float arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setVideoFrameRate(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setVideoFrameRate(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setVideoSampleCount(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setVideoSampleCount(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setVideoSampleCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder setVideoSize(com.micklab.dcg.wrapper.android.util.Size arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(real.setVideoSize(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.Builder.wrap(((android.media.metrics.MediaItemInfo.Builder) real).setVideoSize(arg0 == null ? null : arg0.getReal()));
         }
 
     }

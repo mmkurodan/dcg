@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class AccountAuthenticatorActivity {
-    private final android.accounts.AccountAuthenticatorActivity real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccountAuthenticatorActivity(android.accounts.AccountAuthenticatorActivity real) {
+    private final java.lang.Object real;
+
+    private AccountAuthenticatorActivity(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.AccountAuthenticatorActivity wrap(android.accounts.AccountAuthenticatorActivity real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountAuthenticatorActivity(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountAuthenticatorActivity(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.AccountAuthenticatorActivity getReal() {
+        return (android.accounts.AccountAuthenticatorActivity) real;
     }
 
     public android.accounts.AccountAuthenticatorActivity unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccountAuthenticatorActivity() {
-        this(new android.accounts.AccountAuthenticatorActivity());
+        this(new android.accounts.AccountAuthenticatorActivity(), (__DcgwBridgeToken) null);
     }
 
     public void finish() {
-        real.finish();
+        ((android.accounts.AccountAuthenticatorActivity) real).finish();
     }
 
     public void setAccountAuthenticatorResult(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.setAccountAuthenticatorResult(arg0 == null ? null : arg0.unwrap());
+        ((android.accounts.AccountAuthenticatorActivity) real).setAccountAuthenticatorResult(arg0 == null ? null : arg0.getReal());
     }
 
 }

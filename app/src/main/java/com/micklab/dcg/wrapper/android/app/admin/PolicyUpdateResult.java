@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class PolicyUpdateResult {
-    private final android.app.admin.PolicyUpdateResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PolicyUpdateResult(android.app.admin.PolicyUpdateResult real) {
+    private final java.lang.Object real;
+
+    private PolicyUpdateResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.PolicyUpdateResult wrap(android.app.admin.PolicyUpdateResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PolicyUpdateResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PolicyUpdateResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.PolicyUpdateResult getReal() {
+        return (android.app.admin.PolicyUpdateResult) real;
     }
 
     public android.app.admin.PolicyUpdateResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public PolicyUpdateResult(int arg0) {
-        this(new android.app.admin.PolicyUpdateResult(arg0));
+        this(new android.app.admin.PolicyUpdateResult(arg0), (__DcgwBridgeToken) null);
     }
 
     public int getResultCode() {
-        return real.getResultCode();
+        return ((android.app.admin.PolicyUpdateResult) real).getResultCode();
     }
 
     public static final int RESULT_FAILURE_CONFLICTING_ADMIN_POLICY = android.app.admin.PolicyUpdateResult.RESULT_FAILURE_CONFLICTING_ADMIN_POLICY;

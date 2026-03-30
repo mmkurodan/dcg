@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class Capability {
-    private final android.content.pm.Capability real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Capability(android.content.pm.Capability real) {
+    private final java.lang.Object real;
+
+    private Capability(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.Capability wrap(android.content.pm.Capability real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Capability(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Capability(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.Capability getReal() {
+        return (android.content.pm.Capability) real;
     }
 
     public android.content.pm.Capability unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -38,18 +45,25 @@ public final class Capability {
 
 
     public static final class Builder {
-        private final android.content.pm.Capability.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.content.pm.Capability.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.Capability.Builder wrap(android.content.pm.Capability.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Capability.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.Capability.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.Capability.Builder getReal() {
+            return (android.content.pm.Capability.Builder) real;
         }
 
         public android.content.pm.Capability.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) {

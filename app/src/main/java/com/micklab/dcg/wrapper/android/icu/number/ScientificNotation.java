@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class ScientificNotation {
-    private final android.icu.number.ScientificNotation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScientificNotation(android.icu.number.ScientificNotation real) {
+    private final java.lang.Object real;
+
+    private ScientificNotation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.ScientificNotation wrap(android.icu.number.ScientificNotation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.ScientificNotation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.ScientificNotation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.ScientificNotation getReal() {
+        return (android.icu.number.ScientificNotation) real;
     }
 
     public android.icu.number.ScientificNotation unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.ScientificNotation withExponentSignDisplay(com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.SignDisplay arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.ScientificNotation.wrap(real.withExponentSignDisplay(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.ScientificNotation.wrap(((android.icu.number.ScientificNotation) real).withExponentSignDisplay(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.ScientificNotation withMinExponentDigits(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.ScientificNotation.wrap(real.withMinExponentDigits(arg0));
+        return com.micklab.dcg.wrapper.android.icu.number.ScientificNotation.wrap(((android.icu.number.ScientificNotation) real).withMinExponentDigits(arg0));
     }
 
 }

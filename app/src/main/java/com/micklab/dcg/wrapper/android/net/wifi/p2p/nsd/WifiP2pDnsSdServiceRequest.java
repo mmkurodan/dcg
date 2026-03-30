@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd;
 
 public final class WifiP2pDnsSdServiceRequest {
-    private final android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pDnsSdServiceRequest(android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest real) {
+    private final java.lang.Object real;
+
+    private WifiP2pDnsSdServiceRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest wrap(android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest getReal() {
+        return (android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest) real;
     }
 
     public android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest newInstance() {

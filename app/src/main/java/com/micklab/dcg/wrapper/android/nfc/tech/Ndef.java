@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.nfc.tech;
 
 public final class Ndef {
-    private final android.nfc.tech.Ndef real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Ndef(android.nfc.tech.Ndef real) {
+    private final java.lang.Object real;
+
+    private Ndef(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.Ndef wrap(android.nfc.tech.Ndef real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.Ndef(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.Ndef(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.tech.Ndef getReal() {
+        return (android.nfc.tech.Ndef) real;
     }
 
     public android.nfc.tech.Ndef unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canMakeReadOnly() {
-        return real.canMakeReadOnly();
+        return ((android.nfc.tech.Ndef) real).canMakeReadOnly();
     }
 
     public void close() throws java.io.IOException {
-        real.close();
+        ((android.nfc.tech.Ndef) real).close();
     }
 
     public void connect() throws java.io.IOException {
-        real.connect();
+        ((android.nfc.tech.Ndef) real).connect();
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.Ndef get(com.micklab.dcg.wrapper.android.nfc.Tag arg0) {
-        return com.micklab.dcg.wrapper.android.nfc.tech.Ndef.wrap(android.nfc.tech.Ndef.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.nfc.tech.Ndef.wrap(android.nfc.tech.Ndef.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.nfc.NdefMessage getCachedNdefMessage() {
-        return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(real.getCachedNdefMessage());
+        return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(((android.nfc.tech.Ndef) real).getCachedNdefMessage());
     }
 
     public int getMaxSize() {
-        return real.getMaxSize();
+        return ((android.nfc.tech.Ndef) real).getMaxSize();
     }
 
     public com.micklab.dcg.wrapper.android.nfc.NdefMessage getNdefMessage() throws android.nfc.FormatException, java.io.IOException {
-        return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(real.getNdefMessage());
+        return com.micklab.dcg.wrapper.android.nfc.NdefMessage.wrap(((android.nfc.tech.Ndef) real).getNdefMessage());
     }
 
     public com.micklab.dcg.wrapper.android.nfc.Tag getTag() {
-        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(real.getTag());
+        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(((android.nfc.tech.Ndef) real).getTag());
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.nfc.tech.Ndef) real).getType();
     }
 
     public boolean isConnected() {
-        return real.isConnected();
+        return ((android.nfc.tech.Ndef) real).isConnected();
     }
 
     public boolean isWritable() {
-        return real.isWritable();
+        return ((android.nfc.tech.Ndef) real).isWritable();
     }
 
     public boolean makeReadOnly() throws java.io.IOException {
-        return real.makeReadOnly();
+        return ((android.nfc.tech.Ndef) real).makeReadOnly();
     }
 
     public void writeNdefMessage(com.micklab.dcg.wrapper.android.nfc.NdefMessage arg0) throws android.nfc.FormatException, java.io.IOException {
-        real.writeNdefMessage(arg0 == null ? null : arg0.unwrap());
+        ((android.nfc.tech.Ndef) real).writeNdefMessage(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String MIFARE_CLASSIC = android.nfc.tech.Ndef.MIFARE_CLASSIC;

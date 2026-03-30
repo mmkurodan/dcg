@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.util.proto;
 
 public final class ProtoOutputStream {
-    private final android.util.proto.ProtoOutputStream real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProtoOutputStream(android.util.proto.ProtoOutputStream real) {
+    private final java.lang.Object real;
+
+    private ProtoOutputStream(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.proto.ProtoOutputStream wrap(android.util.proto.ProtoOutputStream real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.proto.ProtoOutputStream(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.proto.ProtoOutputStream(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.proto.ProtoOutputStream getReal() {
+        return (android.util.proto.ProtoOutputStream) real;
     }
 
     public android.util.proto.ProtoOutputStream unwrap() {
-        return real;
+        return getReal();
     }
 
     public ProtoOutputStream() {
-        this(new android.util.proto.ProtoOutputStream());
+        this(new android.util.proto.ProtoOutputStream(), (__DcgwBridgeToken) null);
     }
 
     public ProtoOutputStream(java.io.OutputStream arg0) {
-        this(new android.util.proto.ProtoOutputStream(arg0));
+        this(new android.util.proto.ProtoOutputStream(arg0), (__DcgwBridgeToken) null);
     }
 
     public ProtoOutputStream(int arg0) {
-        this(new android.util.proto.ProtoOutputStream(arg0));
+        this(new android.util.proto.ProtoOutputStream(arg0), (__DcgwBridgeToken) null);
     }
 
     public static int checkFieldId(long arg0, long arg1) {
@@ -33,19 +40,19 @@ public final class ProtoOutputStream {
     }
 
     public void dump(java.lang.String arg0) {
-        real.dump(arg0);
+        ((android.util.proto.ProtoOutputStream) real).dump(arg0);
     }
 
     public void end(long arg0) {
-        real.end(arg0);
+        ((android.util.proto.ProtoOutputStream) real).end(arg0);
     }
 
     public void flush() {
-        real.flush();
+        ((android.util.proto.ProtoOutputStream) real).flush();
     }
 
     public byte[] getBytes() {
-        return real.getBytes();
+        return ((android.util.proto.ProtoOutputStream) real).getBytes();
     }
 
     public static java.lang.String getFieldCountString(long arg0) {
@@ -61,7 +68,7 @@ public final class ProtoOutputStream {
     }
 
     public int getRawSize() {
-        return real.getRawSize();
+        return ((android.util.proto.ProtoOutputStream) real).getRawSize();
     }
 
     public static java.lang.String getWireTypeString(int arg0) {
@@ -77,7 +84,7 @@ public final class ProtoOutputStream {
     }
 
     public long start(long arg0) {
-        return real.start(arg0);
+        return ((android.util.proto.ProtoOutputStream) real).start(arg0);
     }
 
     public static java.lang.String token2String(long arg0) {
@@ -85,35 +92,35 @@ public final class ProtoOutputStream {
     }
 
     public void write(long arg0, double arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, byte[] arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, java.lang.String arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, int arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, float arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, long arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void write(long arg0, boolean arg1) {
-        real.write(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
     public void writeTag(int arg0, int arg1) {
-        real.writeTag(arg0, arg1);
+        ((android.util.proto.ProtoOutputStream) real).writeTag(arg0, arg1);
     }
 
     public static final long FIELD_COUNT_MASK = android.util.proto.ProtoOutputStream.FIELD_COUNT_MASK;

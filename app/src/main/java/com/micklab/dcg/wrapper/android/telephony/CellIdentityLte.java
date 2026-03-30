@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class CellIdentityLte {
-    private final android.telephony.CellIdentityLte real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CellIdentityLte(android.telephony.CellIdentityLte real) {
+    private final java.lang.Object real;
+
+    private CellIdentityLte(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellIdentityLte wrap(android.telephony.CellIdentityLte real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellIdentityLte(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellIdentityLte(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.CellIdentityLte getReal() {
+        return (android.telephony.CellIdentityLte) real;
     }
 
     public android.telephony.CellIdentityLte unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class PhysicalChannelConfig {
-    private final android.telephony.PhysicalChannelConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PhysicalChannelConfig(android.telephony.PhysicalChannelConfig real) {
+    private final java.lang.Object real;
+
+    private PhysicalChannelConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.PhysicalChannelConfig wrap(android.telephony.PhysicalChannelConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhysicalChannelConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhysicalChannelConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.PhysicalChannelConfig getReal() {
+        return (android.telephony.PhysicalChannelConfig) real;
     }
 
     public android.telephony.PhysicalChannelConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.storage;
 
 public final class StorageManager {
-    private final android.os.storage.StorageManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StorageManager(android.os.storage.StorageManager real) {
+    private final java.lang.Object real;
+
+    private StorageManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.storage.StorageManager wrap(android.os.storage.StorageManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.storage.StorageManager getReal() {
+        return (android.os.storage.StorageManager) real;
     }
 
     public android.os.storage.StorageManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void allocateBytes(java.io.FileDescriptor arg0, long arg1) throws java.io.IOException {
@@ -114,18 +121,25 @@ public final class StorageManager {
 
 
     public static final class StorageVolumeCallback {
-        private final android.os.storage.StorageManager.StorageVolumeCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StorageVolumeCallback(android.os.storage.StorageManager.StorageVolumeCallback real) {
+        private final java.lang.Object real;
+
+        private StorageVolumeCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.storage.StorageManager.StorageVolumeCallback wrap(android.os.storage.StorageManager.StorageVolumeCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageManager.StorageVolumeCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageManager.StorageVolumeCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.storage.StorageManager.StorageVolumeCallback getReal() {
+            return (android.os.storage.StorageManager.StorageVolumeCallback) real;
         }
 
         public android.os.storage.StorageManager.StorageVolumeCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public StorageVolumeCallback() {

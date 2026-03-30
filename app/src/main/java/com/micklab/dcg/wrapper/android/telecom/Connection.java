@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class Connection {
-    private final android.telecom.Connection real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Connection(android.telecom.Connection real) {
+    private final java.lang.Object real;
+
+    private Connection(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.Connection wrap(android.telecom.Connection real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.Connection getReal() {
+        return (android.telecom.Connection) real;
     }
 
     public android.telecom.Connection unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String capabilitiesToString(int arg0) {
@@ -25,203 +32,203 @@ public final class Connection {
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.Connection createFailedConnection(com.micklab.dcg.wrapper.android.telecom.DisconnectCause arg0) {
-        return com.micklab.dcg.wrapper.android.telecom.Connection.wrap(android.telecom.Connection.createFailedConnection(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.telecom.Connection.wrap(android.telecom.Connection.createFailedConnection(arg0 == null ? null : arg0.getReal()));
     }
 
     public void destroy() {
-        real.destroy();
+        ((android.telecom.Connection) real).destroy();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getAddress() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getAddress());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.Connection) real).getAddress());
     }
 
     public int getAddressPresentation() {
-        return real.getAddressPresentation();
+        return ((android.telecom.Connection) real).getAddressPresentation();
     }
 
     public boolean getAudioModeIsVoip() {
-        return real.getAudioModeIsVoip();
+        return ((android.telecom.Connection) real).getAudioModeIsVoip();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.CallAudioState getCallAudioState() {
-        return com.micklab.dcg.wrapper.android.telecom.CallAudioState.wrap(real.getCallAudioState());
+        return com.micklab.dcg.wrapper.android.telecom.CallAudioState.wrap(((android.telecom.Connection) real).getCallAudioState());
     }
 
     public java.lang.String getCallerDisplayName() {
-        return real.getCallerDisplayName();
+        return ((android.telecom.Connection) real).getCallerDisplayName();
     }
 
     public int getCallerDisplayNamePresentation() {
-        return real.getCallerDisplayNamePresentation();
+        return ((android.telecom.Connection) real).getCallerDisplayNamePresentation();
     }
 
     public int getCallerNumberVerificationStatus() {
-        return real.getCallerNumberVerificationStatus();
+        return ((android.telecom.Connection) real).getCallerNumberVerificationStatus();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Conference getConference() {
-        return com.micklab.dcg.wrapper.android.telecom.Conference.wrap(real.getConference());
+        return com.micklab.dcg.wrapper.android.telecom.Conference.wrap(((android.telecom.Connection) real).getConference());
     }
 
     public int getConnectionCapabilities() {
-        return real.getConnectionCapabilities();
+        return ((android.telecom.Connection) real).getConnectionCapabilities();
     }
 
     public int getConnectionProperties() {
-        return real.getConnectionProperties();
+        return ((android.telecom.Connection) real).getConnectionProperties();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.CallEndpoint getCurrentCallEndpoint() {
-        return com.micklab.dcg.wrapper.android.telecom.CallEndpoint.wrap(real.getCurrentCallEndpoint());
+        return com.micklab.dcg.wrapper.android.telecom.CallEndpoint.wrap(((android.telecom.Connection) real).getCurrentCallEndpoint());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.DisconnectCause getDisconnectCause() {
-        return com.micklab.dcg.wrapper.android.telecom.DisconnectCause.wrap(real.getDisconnectCause());
+        return com.micklab.dcg.wrapper.android.telecom.DisconnectCause.wrap(((android.telecom.Connection) real).getDisconnectCause());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.telecom.Connection) real).getExtras());
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.telecom.Connection) real).getState();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.StatusHints getStatusHints() {
-        return com.micklab.dcg.wrapper.android.telecom.StatusHints.wrap(real.getStatusHints());
+        return com.micklab.dcg.wrapper.android.telecom.StatusHints.wrap(((android.telecom.Connection) real).getStatusHints());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider getVideoProvider() {
-        return com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider.wrap(real.getVideoProvider());
+        return com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider.wrap(((android.telecom.Connection) real).getVideoProvider());
     }
 
     public int getVideoState() {
-        return real.getVideoState();
+        return ((android.telecom.Connection) real).getVideoState();
     }
 
     public void handleRttUpgradeResponse(com.micklab.dcg.wrapper.android.telecom.Connection.RttTextStream arg0) {
-        real.handleRttUpgradeResponse(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).handleRttUpgradeResponse(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isRingbackRequested() {
-        return real.isRingbackRequested();
+        return ((android.telecom.Connection) real).isRingbackRequested();
     }
 
     public void notifyConferenceMergeFailed() {
-        real.notifyConferenceMergeFailed();
+        ((android.telecom.Connection) real).notifyConferenceMergeFailed();
     }
 
     public void onAbort() {
-        real.onAbort();
+        ((android.telecom.Connection) real).onAbort();
     }
 
     public void onAnswer() {
-        real.onAnswer();
+        ((android.telecom.Connection) real).onAnswer();
     }
 
     public void onAnswer(int arg0) {
-        real.onAnswer(arg0);
+        ((android.telecom.Connection) real).onAnswer(arg0);
     }
 
     public void onCallAudioStateChanged(com.micklab.dcg.wrapper.android.telecom.CallAudioState arg0) {
-        real.onCallAudioStateChanged(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).onCallAudioStateChanged(arg0 == null ? null : arg0.getReal());
     }
 
     public void onCallEndpointChanged(com.micklab.dcg.wrapper.android.telecom.CallEndpoint arg0) {
-        real.onCallEndpointChanged(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).onCallEndpointChanged(arg0 == null ? null : arg0.getReal());
     }
 
     public void onCallEvent(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.onCallEvent(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.Connection) real).onCallEvent(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void onDeflect(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        real.onDeflect(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).onDeflect(arg0 == null ? null : arg0.getReal());
     }
 
     public void onDisconnect() {
-        real.onDisconnect();
+        ((android.telecom.Connection) real).onDisconnect();
     }
 
     public void onExtrasChanged(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.onExtrasChanged(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).onExtrasChanged(arg0 == null ? null : arg0.getReal());
     }
 
     public void onHandoverComplete() {
-        real.onHandoverComplete();
+        ((android.telecom.Connection) real).onHandoverComplete();
     }
 
     public void onHold() {
-        real.onHold();
+        ((android.telecom.Connection) real).onHold();
     }
 
     public void onMuteStateChanged(boolean arg0) {
-        real.onMuteStateChanged(arg0);
+        ((android.telecom.Connection) real).onMuteStateChanged(arg0);
     }
 
     public void onPlayDtmfTone(char arg0) {
-        real.onPlayDtmfTone(arg0);
+        ((android.telecom.Connection) real).onPlayDtmfTone(arg0);
     }
 
     public void onPostDialContinue(boolean arg0) {
-        real.onPostDialContinue(arg0);
+        ((android.telecom.Connection) real).onPostDialContinue(arg0);
     }
 
     public void onPullExternalCall() {
-        real.onPullExternalCall();
+        ((android.telecom.Connection) real).onPullExternalCall();
     }
 
     public void onReject() {
-        real.onReject();
+        ((android.telecom.Connection) real).onReject();
     }
 
     public void onReject(java.lang.String arg0) {
-        real.onReject(arg0);
+        ((android.telecom.Connection) real).onReject(arg0);
     }
 
     public void onReject(int arg0) {
-        real.onReject(arg0);
+        ((android.telecom.Connection) real).onReject(arg0);
     }
 
     public void onSeparate() {
-        real.onSeparate();
+        ((android.telecom.Connection) real).onSeparate();
     }
 
     public void onShowIncomingCallUi() {
-        real.onShowIncomingCallUi();
+        ((android.telecom.Connection) real).onShowIncomingCallUi();
     }
 
     public void onSilence() {
-        real.onSilence();
+        ((android.telecom.Connection) real).onSilence();
     }
 
     public void onStartRtt(com.micklab.dcg.wrapper.android.telecom.Connection.RttTextStream arg0) {
-        real.onStartRtt(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).onStartRtt(arg0 == null ? null : arg0.getReal());
     }
 
     public void onStateChanged(int arg0) {
-        real.onStateChanged(arg0);
+        ((android.telecom.Connection) real).onStateChanged(arg0);
     }
 
     public void onStopDtmfTone() {
-        real.onStopDtmfTone();
+        ((android.telecom.Connection) real).onStopDtmfTone();
     }
 
     public void onStopRtt() {
-        real.onStopRtt();
+        ((android.telecom.Connection) real).onStopRtt();
     }
 
     public void onTrackedByNonUiService(boolean arg0) {
-        real.onTrackedByNonUiService(arg0);
+        ((android.telecom.Connection) real).onTrackedByNonUiService(arg0);
     }
 
     public void onUnhold() {
-        real.onUnhold();
+        ((android.telecom.Connection) real).onUnhold();
     }
 
     public void onUsingAlternativeUi(boolean arg0) {
-        real.onUsingAlternativeUi(arg0);
+        ((android.telecom.Connection) real).onUsingAlternativeUi(arg0);
     }
 
     public static java.lang.String propertiesToString(int arg0) {
@@ -229,123 +236,123 @@ public final class Connection {
     }
 
     public void putExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.putExtras(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).putExtras(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeExtras(java.lang.String... arg0) {
-        real.removeExtras(arg0);
+        ((android.telecom.Connection) real).removeExtras(arg0);
     }
 
     public void requestBluetoothAudio(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        real.requestBluetoothAudio(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).requestBluetoothAudio(arg0 == null ? null : arg0.getReal());
     }
 
     public void sendConnectionEvent(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.sendConnectionEvent(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.Connection) real).sendConnectionEvent(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void sendRemoteRttRequest() {
-        real.sendRemoteRttRequest();
+        ((android.telecom.Connection) real).sendRemoteRttRequest();
     }
 
     public void sendRttInitiationFailure(int arg0) {
-        real.sendRttInitiationFailure(arg0);
+        ((android.telecom.Connection) real).sendRttInitiationFailure(arg0);
     }
 
     public void sendRttInitiationSuccess() {
-        real.sendRttInitiationSuccess();
+        ((android.telecom.Connection) real).sendRttInitiationSuccess();
     }
 
     public void sendRttSessionRemotelyTerminated() {
-        real.sendRttSessionRemotelyTerminated();
+        ((android.telecom.Connection) real).sendRttSessionRemotelyTerminated();
     }
 
     public void setActive() {
-        real.setActive();
+        ((android.telecom.Connection) real).setActive();
     }
 
     public void setAddress(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        real.setAddress(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.Connection) real).setAddress(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAudioModeIsVoip(boolean arg0) {
-        real.setAudioModeIsVoip(arg0);
+        ((android.telecom.Connection) real).setAudioModeIsVoip(arg0);
     }
 
     public void setAudioRoute(int arg0) {
-        real.setAudioRoute(arg0);
+        ((android.telecom.Connection) real).setAudioRoute(arg0);
     }
 
     public void setCallerDisplayName(java.lang.String arg0, int arg1) {
-        real.setCallerDisplayName(arg0, arg1);
+        ((android.telecom.Connection) real).setCallerDisplayName(arg0, arg1);
     }
 
     public void setCallerNumberVerificationStatus(int arg0) {
-        real.setCallerNumberVerificationStatus(arg0);
+        ((android.telecom.Connection) real).setCallerNumberVerificationStatus(arg0);
     }
 
     public void setConnectionCapabilities(int arg0) {
-        real.setConnectionCapabilities(arg0);
+        ((android.telecom.Connection) real).setConnectionCapabilities(arg0);
     }
 
     public void setConnectionProperties(int arg0) {
-        real.setConnectionProperties(arg0);
+        ((android.telecom.Connection) real).setConnectionProperties(arg0);
     }
 
     public void setDialing() {
-        real.setDialing();
+        ((android.telecom.Connection) real).setDialing();
     }
 
     public void setDisconnected(com.micklab.dcg.wrapper.android.telecom.DisconnectCause arg0) {
-        real.setDisconnected(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).setDisconnected(arg0 == null ? null : arg0.getReal());
     }
 
     public void setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.setExtras(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).setExtras(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInitialized() {
-        real.setInitialized();
+        ((android.telecom.Connection) real).setInitialized();
     }
 
     public void setInitializing() {
-        real.setInitializing();
+        ((android.telecom.Connection) real).setInitializing();
     }
 
     public void setNextPostDialChar(char arg0) {
-        real.setNextPostDialChar(arg0);
+        ((android.telecom.Connection) real).setNextPostDialChar(arg0);
     }
 
     public void setOnHold() {
-        real.setOnHold();
+        ((android.telecom.Connection) real).setOnHold();
     }
 
     public void setPostDialWait(java.lang.String arg0) {
-        real.setPostDialWait(arg0);
+        ((android.telecom.Connection) real).setPostDialWait(arg0);
     }
 
     public void setPulling() {
-        real.setPulling();
+        ((android.telecom.Connection) real).setPulling();
     }
 
     public void setRingbackRequested(boolean arg0) {
-        real.setRingbackRequested(arg0);
+        ((android.telecom.Connection) real).setRingbackRequested(arg0);
     }
 
     public void setRinging() {
-        real.setRinging();
+        ((android.telecom.Connection) real).setRinging();
     }
 
     public void setStatusHints(com.micklab.dcg.wrapper.android.telecom.StatusHints arg0) {
-        real.setStatusHints(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).setStatusHints(arg0 == null ? null : arg0.getReal());
     }
 
     public void setVideoProvider(com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider arg0) {
-        real.setVideoProvider(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Connection) real).setVideoProvider(arg0 == null ? null : arg0.getReal());
     }
 
     public void setVideoState(int arg0) {
-        real.setVideoState(arg0);
+        ((android.telecom.Connection) real).setVideoState(arg0);
     }
 
     public static java.lang.String stateToString(int arg0) {
@@ -440,18 +447,25 @@ public final class Connection {
     public static final int VERIFICATION_STATUS_PASSED = android.telecom.Connection.VERIFICATION_STATUS_PASSED;
 
     public static final class RttModifyStatus {
-        private final android.telecom.Connection.RttModifyStatus real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RttModifyStatus(android.telecom.Connection.RttModifyStatus real) {
+        private final java.lang.Object real;
+
+        private RttModifyStatus(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Connection.RttModifyStatus wrap(android.telecom.Connection.RttModifyStatus real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.RttModifyStatus(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.RttModifyStatus(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Connection.RttModifyStatus getReal() {
+            return (android.telecom.Connection.RttModifyStatus) real;
         }
 
         public android.telecom.Connection.RttModifyStatus unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int SESSION_MODIFY_REQUEST_FAIL = android.telecom.Connection.RttModifyStatus.SESSION_MODIFY_REQUEST_FAIL;
@@ -462,114 +476,128 @@ public final class Connection {
 
     }
     public static final class RttTextStream {
-        private final android.telecom.Connection.RttTextStream real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RttTextStream(android.telecom.Connection.RttTextStream real) {
+        private final java.lang.Object real;
+
+        private RttTextStream(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Connection.RttTextStream wrap(android.telecom.Connection.RttTextStream real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.RttTextStream(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.RttTextStream(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Connection.RttTextStream getReal() {
+            return (android.telecom.Connection.RttTextStream) real;
         }
 
         public android.telecom.Connection.RttTextStream unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String read() throws java.io.IOException {
-            return real.read();
+            return ((android.telecom.Connection.RttTextStream) real).read();
         }
 
         public java.lang.String readImmediately() throws java.io.IOException {
-            return real.readImmediately();
+            return ((android.telecom.Connection.RttTextStream) real).readImmediately();
         }
 
         public void write(java.lang.String arg0) throws java.io.IOException {
-            real.write(arg0);
+            ((android.telecom.Connection.RttTextStream) real).write(arg0);
         }
 
     }
     public static final class VideoProvider {
-        private final android.telecom.Connection.VideoProvider real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VideoProvider(android.telecom.Connection.VideoProvider real) {
+        private final java.lang.Object real;
+
+        private VideoProvider(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider wrap(android.telecom.Connection.VideoProvider real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Connection.VideoProvider(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Connection.VideoProvider getReal() {
+            return (android.telecom.Connection.VideoProvider) real;
         }
 
         public android.telecom.Connection.VideoProvider unwrap() {
-            return real;
+            return getReal();
         }
 
         public void changeCameraCapabilities(com.micklab.dcg.wrapper.android.telecom.VideoProfile.CameraCapabilities arg0) {
-            real.changeCameraCapabilities(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).changeCameraCapabilities(arg0 == null ? null : arg0.getReal());
         }
 
         public void changePeerDimensions(int arg0, int arg1) {
-            real.changePeerDimensions(arg0, arg1);
+            ((android.telecom.Connection.VideoProvider) real).changePeerDimensions(arg0, arg1);
         }
 
         public void changeVideoQuality(int arg0) {
-            real.changeVideoQuality(arg0);
+            ((android.telecom.Connection.VideoProvider) real).changeVideoQuality(arg0);
         }
 
         public void handleCallSessionEvent(int arg0) {
-            real.handleCallSessionEvent(arg0);
+            ((android.telecom.Connection.VideoProvider) real).handleCallSessionEvent(arg0);
         }
 
         public void onRequestCameraCapabilities() {
-            real.onRequestCameraCapabilities();
+            ((android.telecom.Connection.VideoProvider) real).onRequestCameraCapabilities();
         }
 
         public void onRequestConnectionDataUsage() {
-            real.onRequestConnectionDataUsage();
+            ((android.telecom.Connection.VideoProvider) real).onRequestConnectionDataUsage();
         }
 
         public void onSendSessionModifyRequest(com.micklab.dcg.wrapper.android.telecom.VideoProfile arg0, com.micklab.dcg.wrapper.android.telecom.VideoProfile arg1) {
-            real.onSendSessionModifyRequest(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).onSendSessionModifyRequest(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onSendSessionModifyResponse(com.micklab.dcg.wrapper.android.telecom.VideoProfile arg0) {
-            real.onSendSessionModifyResponse(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).onSendSessionModifyResponse(arg0 == null ? null : arg0.getReal());
         }
 
         public void onSetCamera(java.lang.String arg0) {
-            real.onSetCamera(arg0);
+            ((android.telecom.Connection.VideoProvider) real).onSetCamera(arg0);
         }
 
         public void onSetDeviceOrientation(int arg0) {
-            real.onSetDeviceOrientation(arg0);
+            ((android.telecom.Connection.VideoProvider) real).onSetDeviceOrientation(arg0);
         }
 
         public void onSetDisplaySurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-            real.onSetDisplaySurface(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).onSetDisplaySurface(arg0 == null ? null : arg0.getReal());
         }
 
         public void onSetPauseImage(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            real.onSetPauseImage(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).onSetPauseImage(arg0 == null ? null : arg0.getReal());
         }
 
         public void onSetPreviewSurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-            real.onSetPreviewSurface(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).onSetPreviewSurface(arg0 == null ? null : arg0.getReal());
         }
 
         public void onSetZoom(float arg0) {
-            real.onSetZoom(arg0);
+            ((android.telecom.Connection.VideoProvider) real).onSetZoom(arg0);
         }
 
         public void receiveSessionModifyRequest(com.micklab.dcg.wrapper.android.telecom.VideoProfile arg0) {
-            real.receiveSessionModifyRequest(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).receiveSessionModifyRequest(arg0 == null ? null : arg0.getReal());
         }
 
         public void receiveSessionModifyResponse(int arg0, com.micklab.dcg.wrapper.android.telecom.VideoProfile arg1, com.micklab.dcg.wrapper.android.telecom.VideoProfile arg2) {
-            real.receiveSessionModifyResponse(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+            ((android.telecom.Connection.VideoProvider) real).receiveSessionModifyResponse(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
         }
 
         public void setCallDataUsage(long arg0) {
-            real.setCallDataUsage(arg0);
+            ((android.telecom.Connection.VideoProvider) real).setCallDataUsage(arg0);
         }
 
         public static final int SESSION_EVENT_CAMERA_FAILURE = android.telecom.Connection.VideoProvider.SESSION_EVENT_CAMERA_FAILURE;

@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.view.textservice;
 
 public final class SuggestionsInfo {
-    private final android.view.textservice.SuggestionsInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SuggestionsInfo(android.view.textservice.SuggestionsInfo real) {
+    private final java.lang.Object real;
+
+    private SuggestionsInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.textservice.SuggestionsInfo wrap(android.view.textservice.SuggestionsInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textservice.SuggestionsInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textservice.SuggestionsInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.textservice.SuggestionsInfo getReal() {
+        return (android.view.textservice.SuggestionsInfo) real;
     }
 
     public android.view.textservice.SuggestionsInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public SuggestionsInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.view.textservice.SuggestionsInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.textservice.SuggestionsInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public SuggestionsInfo(int arg0, java.lang.String[] arg1) {
-        this(new android.view.textservice.SuggestionsInfo(arg0, arg1));
+        this(new android.view.textservice.SuggestionsInfo(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public SuggestionsInfo(int arg0, java.lang.String[] arg1, int arg2, int arg3) {
-        this(new android.view.textservice.SuggestionsInfo(arg0, arg1, arg2, arg3));
+        this(new android.view.textservice.SuggestionsInfo(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.textservice.SuggestionsInfo) real).describeContents();
     }
 
     public int getCookie() {
-        return real.getCookie();
+        return ((android.view.textservice.SuggestionsInfo) real).getCookie();
     }
 
     public int getSequence() {
-        return real.getSequence();
+        return ((android.view.textservice.SuggestionsInfo) real).getSequence();
     }
 
     public java.lang.String getSuggestionAt(int arg0) {
-        return real.getSuggestionAt(arg0);
+        return ((android.view.textservice.SuggestionsInfo) real).getSuggestionAt(arg0);
     }
 
     public int getSuggestionsAttributes() {
-        return real.getSuggestionsAttributes();
+        return ((android.view.textservice.SuggestionsInfo) real).getSuggestionsAttributes();
     }
 
     public int getSuggestionsCount() {
-        return real.getSuggestionsCount();
+        return ((android.view.textservice.SuggestionsInfo) real).getSuggestionsCount();
     }
 
     public void setCookieAndSequence(int arg0, int arg1) {
-        real.setCookieAndSequence(arg0, arg1);
+        ((android.view.textservice.SuggestionsInfo) real).setCookieAndSequence(arg0, arg1);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.textservice.SuggestionsInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int RESULT_ATTR_DONT_SHOW_UI_FOR_SUGGESTIONS = android.view.textservice.SuggestionsInfo.RESULT_ATTR_DONT_SHOW_UI_FOR_SUGGESTIONS;

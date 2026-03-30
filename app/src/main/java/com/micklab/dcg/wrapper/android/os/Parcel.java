@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Parcel {
-    private final android.os.Parcel real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Parcel(android.os.Parcel real) {
+    private final java.lang.Object real;
+
+    private Parcel(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Parcel wrap(android.os.Parcel real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcel(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Parcel(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Parcel getReal() {
+        return (android.os.Parcel) real;
     }
 
     public android.os.Parcel unwrap() {
-        return real;
+        return getReal();
     }
 
     public void appendFrom(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1, int arg2) {

@@ -2,37 +2,51 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class PorterDuff {
-    private final android.graphics.PorterDuff real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PorterDuff(android.graphics.PorterDuff real) {
+    private final java.lang.Object real;
+
+    private PorterDuff(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.PorterDuff wrap(android.graphics.PorterDuff real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PorterDuff(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PorterDuff(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.PorterDuff getReal() {
+        return (android.graphics.PorterDuff) real;
     }
 
     public android.graphics.PorterDuff unwrap() {
-        return real;
+        return getReal();
     }
 
     public PorterDuff() {
-        this(new android.graphics.PorterDuff());
+        this(new android.graphics.PorterDuff(), (__DcgwBridgeToken) null);
     }
 
     public static final class Mode {
-        private final android.graphics.PorterDuff.Mode real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Mode(android.graphics.PorterDuff.Mode real) {
+        private final java.lang.Object real;
+
+        private Mode(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode wrap(android.graphics.PorterDuff.Mode real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.PorterDuff.Mode getReal() {
+            return (android.graphics.PorterDuff.Mode) real;
         }
 
         public android.graphics.PorterDuff.Mode unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode valueOf(java.lang.String arg0) {

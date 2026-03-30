@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Bundle {
-    private final android.os.Bundle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Bundle(android.os.Bundle real) {
+    private final java.lang.Object real;
+
+    private Bundle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Bundle wrap(android.os.Bundle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Bundle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Bundle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Bundle getReal() {
+        return (android.os.Bundle) real;
     }
 
     public android.os.Bundle unwrap() {
-        return real;
+        return getReal();
     }
 
     public Bundle() {

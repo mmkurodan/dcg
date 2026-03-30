@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class PixelFormat {
-    private final android.graphics.PixelFormat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PixelFormat(android.graphics.PixelFormat real) {
+    private final java.lang.Object real;
+
+    private PixelFormat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.PixelFormat wrap(android.graphics.PixelFormat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PixelFormat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PixelFormat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.PixelFormat getReal() {
+        return (android.graphics.PixelFormat) real;
     }
 
     public android.graphics.PixelFormat unwrap() {
-        return real;
+        return getReal();
     }
 
     public PixelFormat() {
-        this(new android.graphics.PixelFormat());
+        this(new android.graphics.PixelFormat(), (__DcgwBridgeToken) null);
     }
 
     public static boolean formatHasAlpha(int arg0) {
@@ -25,7 +32,7 @@ public final class PixelFormat {
     }
 
     public static void getPixelFormatInfo(int arg0, com.micklab.dcg.wrapper.android.graphics.PixelFormat arg1) {
-        android.graphics.PixelFormat.getPixelFormatInfo(arg0, arg1 == null ? null : arg1.unwrap());
+        android.graphics.PixelFormat.getPixelFormatInfo(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static final int A_8 = android.graphics.PixelFormat.A_8;

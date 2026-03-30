@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.sip;
 
 public final class SipSession {
-    private final android.net.sip.SipSession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SipSession(android.net.sip.SipSession real) {
+    private final java.lang.Object real;
+
+    private SipSession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.sip.SipSession wrap(android.net.sip.SipSession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.sip.SipSession getReal() {
+        return (android.net.sip.SipSession) real;
     }
 
     public android.net.sip.SipSession unwrap() {
-        return real;
+        return getReal();
     }
 
     public void answerCall(java.lang.String arg0, int arg1) {
@@ -69,18 +76,25 @@ public final class SipSession {
     }
 
     public static final class Listener {
-        private final android.net.sip.SipSession.Listener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Listener(android.net.sip.SipSession.Listener real) {
+        private final java.lang.Object real;
+
+        private Listener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.sip.SipSession.Listener wrap(android.net.sip.SipSession.Listener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession.Listener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession.Listener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.sip.SipSession.Listener getReal() {
+            return (android.net.sip.SipSession.Listener) real;
         }
 
         public android.net.sip.SipSession.Listener unwrap() {
-            return real;
+            return getReal();
         }
 
         public Listener() {
@@ -137,18 +151,25 @@ public final class SipSession {
 
     }
     public static final class State {
-        private final android.net.sip.SipSession.State real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public State(android.net.sip.SipSession.State real) {
+        private final java.lang.Object real;
+
+        private State(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.sip.SipSession.State wrap(android.net.sip.SipSession.State real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession.State(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipSession.State(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.sip.SipSession.State getReal() {
+            return (android.net.sip.SipSession.State) real;
         }
 
         public android.net.sip.SipSession.State unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.String toString(int arg0) {

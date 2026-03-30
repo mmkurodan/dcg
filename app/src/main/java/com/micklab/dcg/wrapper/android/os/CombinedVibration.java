@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class CombinedVibration {
-    private final android.os.CombinedVibration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CombinedVibration(android.os.CombinedVibration real) {
+    private final java.lang.Object real;
+
+    private CombinedVibration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.CombinedVibration wrap(android.os.CombinedVibration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CombinedVibration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CombinedVibration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.CombinedVibration getReal() {
+        return (android.os.CombinedVibration) real;
     }
 
     public android.os.CombinedVibration unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.os.CombinedVibration createParallel(com.micklab.dcg.wrapper.android.os.VibrationEffect arg0) {
@@ -30,18 +37,25 @@ public final class CombinedVibration {
 
 
     public static final class ParallelCombination {
-        private final android.os.CombinedVibration.ParallelCombination real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ParallelCombination(android.os.CombinedVibration.ParallelCombination real) {
+        private final java.lang.Object real;
+
+        private ParallelCombination(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.CombinedVibration.ParallelCombination wrap(android.os.CombinedVibration.ParallelCombination real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.CombinedVibration.ParallelCombination(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.CombinedVibration.ParallelCombination(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.CombinedVibration.ParallelCombination getReal() {
+            return (android.os.CombinedVibration.ParallelCombination) real;
         }
 
         public android.os.CombinedVibration.ParallelCombination unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.os.CombinedVibration.ParallelCombination addVibrator(int arg0, com.micklab.dcg.wrapper.android.os.VibrationEffect arg1) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class FileUtils {
-    private final android.os.FileUtils real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FileUtils(android.os.FileUtils real) {
+    private final java.lang.Object real;
+
+    private FileUtils(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.FileUtils wrap(android.os.FileUtils real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUtils(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUtils(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.FileUtils getReal() {
+        return (android.os.FileUtils) real;
     }
 
     public android.os.FileUtils unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void closeQuietly(java.io.FileDescriptor arg0) {
@@ -41,18 +48,25 @@ public final class FileUtils {
     }
 
     public static final class ProgressListener {
-        private final android.os.FileUtils.ProgressListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProgressListener(android.os.FileUtils.ProgressListener real) {
+        private final java.lang.Object real;
+
+        private ProgressListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.FileUtils.ProgressListener wrap(android.os.FileUtils.ProgressListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUtils.ProgressListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUtils.ProgressListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.FileUtils.ProgressListener getReal() {
+            return (android.os.FileUtils.ProgressListener) real;
         }
 
         public android.os.FileUtils.ProgressListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onProgress(long arg0) {

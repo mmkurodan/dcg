@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Binder {
-    private final android.os.Binder real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Binder(android.os.Binder real) {
+    private final java.lang.Object real;
+
+    private Binder(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Binder wrap(android.os.Binder real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Binder(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Binder(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Binder getReal() {
+        return (android.os.Binder) real;
     }
 
     public android.os.Binder unwrap() {
-        return real;
+        return getReal();
     }
 
     public Binder() {

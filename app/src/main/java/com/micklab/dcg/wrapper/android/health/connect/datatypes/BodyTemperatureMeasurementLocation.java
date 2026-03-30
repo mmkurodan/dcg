@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class BodyTemperatureMeasurementLocation {
-    private final android.health.connect.datatypes.BodyTemperatureMeasurementLocation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BodyTemperatureMeasurementLocation(android.health.connect.datatypes.BodyTemperatureMeasurementLocation real) {
+    private final java.lang.Object real;
+
+    private BodyTemperatureMeasurementLocation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BodyTemperatureMeasurementLocation wrap(android.health.connect.datatypes.BodyTemperatureMeasurementLocation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BodyTemperatureMeasurementLocation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BodyTemperatureMeasurementLocation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.BodyTemperatureMeasurementLocation getReal() {
+        return (android.health.connect.datatypes.BodyTemperatureMeasurementLocation) real;
     }
 
     public android.health.connect.datatypes.BodyTemperatureMeasurementLocation unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int MEASUREMENT_LOCATION_ARMPIT = android.health.connect.datatypes.BodyTemperatureMeasurementLocation.MEASUREMENT_LOCATION_ARMPIT;

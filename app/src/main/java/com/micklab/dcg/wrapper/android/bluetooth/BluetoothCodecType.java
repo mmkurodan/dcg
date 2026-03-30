@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothCodecType {
-    private final android.bluetooth.BluetoothCodecType real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothCodecType(android.bluetooth.BluetoothCodecType real) {
+    private final java.lang.Object real;
+
+    private BluetoothCodecType(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecType wrap(android.bluetooth.BluetoothCodecType real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecType(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothCodecType(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothCodecType getReal() {
+        return (android.bluetooth.BluetoothCodecType) real;
     }
 
     public android.bluetooth.BluetoothCodecType unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.BluetoothCodecType) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.BluetoothCodecType) real).equals(arg0);
     }
 
     public long getCodecId() {
-        return real.getCodecId();
+        return ((android.bluetooth.BluetoothCodecType) real).getCodecId();
     }
 
     public java.lang.String getCodecName() {
-        return real.getCodecName();
+        return ((android.bluetooth.BluetoothCodecType) real).getCodecName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.BluetoothCodecType) real).hashCode();
     }
 
     public boolean isMandatoryCodec() {
-        return real.isMandatoryCodec();
+        return ((android.bluetooth.BluetoothCodecType) real).isMandatoryCodec();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.BluetoothCodecType) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.BluetoothCodecType) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final long CODEC_ID_AAC = android.bluetooth.BluetoothCodecType.CODEC_ID_AAC;

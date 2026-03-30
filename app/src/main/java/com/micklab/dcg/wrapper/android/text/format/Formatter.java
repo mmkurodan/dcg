@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.text.format;
 
 public final class Formatter {
-    private final android.text.format.Formatter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Formatter(android.text.format.Formatter real) {
+    private final java.lang.Object real;
+
+    private Formatter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.format.Formatter wrap(android.text.format.Formatter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.Formatter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.Formatter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.format.Formatter getReal() {
+        return (android.text.format.Formatter) real;
     }
 
     public android.text.format.Formatter unwrap() {
-        return real;
+        return getReal();
     }
 
     public Formatter() {
-        this(new android.text.format.Formatter());
+        this(new android.text.format.Formatter(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String formatFileSize(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1) {

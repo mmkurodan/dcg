@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class ConnectivityManager {
-    private final android.net.ConnectivityManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConnectivityManager(android.net.ConnectivityManager real) {
+    private final java.lang.Object real;
+
+    private ConnectivityManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ConnectivityManager wrap(android.net.ConnectivityManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ConnectivityManager getReal() {
+        return (android.net.ConnectivityManager) real;
     }
 
     public android.net.ConnectivityManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addDefaultNetworkActiveListener(com.micklab.dcg.wrapper.android.net.ConnectivityManager.OnNetworkActiveListener arg0) {
@@ -190,18 +197,25 @@ public final class ConnectivityManager {
 
 
     public static final class NetworkCallback {
-        private final android.net.ConnectivityManager.NetworkCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NetworkCallback(android.net.ConnectivityManager.NetworkCallback real) {
+        private final java.lang.Object real;
+
+        private NetworkCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback wrap(android.net.ConnectivityManager.NetworkCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ConnectivityManager.NetworkCallback getReal() {
+            return (android.net.ConnectivityManager.NetworkCallback) real;
         }
 
         public android.net.ConnectivityManager.NetworkCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public NetworkCallback() {
@@ -243,18 +257,25 @@ public final class ConnectivityManager {
 
     }
     public static final class OnNetworkActiveListener {
-        private final android.net.ConnectivityManager.OnNetworkActiveListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnNetworkActiveListener(android.net.ConnectivityManager.OnNetworkActiveListener real) {
+        private final java.lang.Object real;
+
+        private OnNetworkActiveListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ConnectivityManager.OnNetworkActiveListener wrap(android.net.ConnectivityManager.OnNetworkActiveListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager.OnNetworkActiveListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ConnectivityManager.OnNetworkActiveListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ConnectivityManager.OnNetworkActiveListener getReal() {
+            return (android.net.ConnectivityManager.OnNetworkActiveListener) real;
         }
 
         public android.net.ConnectivityManager.OnNetworkActiveListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onNetworkActive() {

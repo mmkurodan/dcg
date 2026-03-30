@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class ContactsContract {
-    private final android.provider.ContactsContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ContactsContract(android.provider.ContactsContract real) {
+    private final java.lang.Object real;
+
+    private ContactsContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.ContactsContract wrap(android.provider.ContactsContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.ContactsContract getReal() {
+        return (android.provider.ContactsContract) real;
     }
 
     public android.provider.ContactsContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public ContactsContract() {
-        this(new android.provider.ContactsContract());
+        this(new android.provider.ContactsContract(), (__DcgwBridgeToken) null);
     }
 
     public static boolean isProfileId(long arg0) {
@@ -37,18 +44,25 @@ public final class ContactsContract {
     public static final java.lang.String STREQUENT_PHONE_ONLY = android.provider.ContactsContract.STREQUENT_PHONE_ONLY;
 
     public static final class AggregationExceptions {
-        private final android.provider.ContactsContract.AggregationExceptions real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AggregationExceptions(android.provider.ContactsContract.AggregationExceptions real) {
+        private final java.lang.Object real;
+
+        private AggregationExceptions(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.AggregationExceptions wrap(android.provider.ContactsContract.AggregationExceptions real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.AggregationExceptions(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.AggregationExceptions(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.AggregationExceptions getReal() {
+            return (android.provider.ContactsContract.AggregationExceptions) real;
         }
 
         public android.provider.ContactsContract.AggregationExceptions unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.AggregationExceptions.CONTENT_ITEM_TYPE;
@@ -63,55 +77,76 @@ public final class ContactsContract {
 
     }
     public static final class CommonDataKinds {
-        private final android.provider.ContactsContract.CommonDataKinds real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CommonDataKinds(android.provider.ContactsContract.CommonDataKinds real) {
+        private final java.lang.Object real;
+
+        private CommonDataKinds(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds wrap(android.provider.ContactsContract.CommonDataKinds real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.CommonDataKinds getReal() {
+            return (android.provider.ContactsContract.CommonDataKinds) real;
         }
 
         public android.provider.ContactsContract.CommonDataKinds unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final class BaseTypes {
-            private final android.provider.ContactsContract.CommonDataKinds.BaseTypes real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public BaseTypes(android.provider.ContactsContract.CommonDataKinds.BaseTypes real) {
+            private final java.lang.Object real;
+
+            private BaseTypes(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.BaseTypes wrap(android.provider.ContactsContract.CommonDataKinds.BaseTypes real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.BaseTypes(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.BaseTypes(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.BaseTypes getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.BaseTypes) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.BaseTypes unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final int TYPE_CUSTOM = android.provider.ContactsContract.CommonDataKinds.BaseTypes.TYPE_CUSTOM;
 
         }
         public static final class Callable {
-            private final android.provider.ContactsContract.CommonDataKinds.Callable real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Callable(android.provider.ContactsContract.CommonDataKinds.Callable real) {
+            private final java.lang.Object real;
+
+            private Callable(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Callable wrap(android.provider.ContactsContract.CommonDataKinds.Callable real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Callable(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Callable(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Callable getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Callable) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Callable unwrap() {
-                return real;
+                return getReal();
             }
 
             public Callable() {
-                this(new android.provider.ContactsContract.CommonDataKinds.Callable());
+                this(new android.provider.ContactsContract.CommonDataKinds.Callable(), (__DcgwBridgeToken) null);
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.CommonDataKinds.Callable.CONTENT_FILTER_URI);
@@ -123,22 +158,29 @@ public final class ContactsContract {
 
         }
         public static final class Contactables {
-            private final android.provider.ContactsContract.CommonDataKinds.Contactables real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Contactables(android.provider.ContactsContract.CommonDataKinds.Contactables real) {
+            private final java.lang.Object real;
+
+            private Contactables(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Contactables wrap(android.provider.ContactsContract.CommonDataKinds.Contactables real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Contactables(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Contactables(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Contactables getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Contactables) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Contactables unwrap() {
-                return real;
+                return getReal();
             }
 
             public Contactables() {
-                this(new android.provider.ContactsContract.CommonDataKinds.Contactables());
+                this(new android.provider.ContactsContract.CommonDataKinds.Contactables(), (__DcgwBridgeToken) null);
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.CommonDataKinds.Contactables.CONTENT_FILTER_URI);
@@ -150,22 +192,29 @@ public final class ContactsContract {
 
         }
         public static final class Email {
-            private final android.provider.ContactsContract.CommonDataKinds.Email real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Email(android.provider.ContactsContract.CommonDataKinds.Email real) {
+            private final java.lang.Object real;
+
+            private Email(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Email wrap(android.provider.ContactsContract.CommonDataKinds.Email real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Email(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Email(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Email getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Email) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Email unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Email.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Email.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -191,22 +240,29 @@ public final class ContactsContract {
 
         }
         public static final class Event {
-            private final android.provider.ContactsContract.CommonDataKinds.Event real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Event(android.provider.ContactsContract.CommonDataKinds.Event real) {
+            private final java.lang.Object real;
+
+            private Event(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Event wrap(android.provider.ContactsContract.CommonDataKinds.Event real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Event(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Event(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Event getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Event) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Event unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Event.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Event.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeResource(java.lang.Integer arg0) {
@@ -224,18 +280,25 @@ public final class ContactsContract {
 
         }
         public static final class GroupMembership {
-            private final android.provider.ContactsContract.CommonDataKinds.GroupMembership real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public GroupMembership(android.provider.ContactsContract.CommonDataKinds.GroupMembership real) {
+            private final java.lang.Object real;
+
+            private GroupMembership(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.GroupMembership wrap(android.provider.ContactsContract.CommonDataKinds.GroupMembership real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.GroupMembership(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.GroupMembership(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.GroupMembership getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.GroupMembership) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.GroupMembership unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.GroupMembership.CONTENT_ITEM_TYPE;
@@ -247,18 +310,25 @@ public final class ContactsContract {
 
         }
         public static final class Identity {
-            private final android.provider.ContactsContract.CommonDataKinds.Identity real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Identity(android.provider.ContactsContract.CommonDataKinds.Identity real) {
+            private final java.lang.Object real;
+
+            private Identity(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Identity wrap(android.provider.ContactsContract.CommonDataKinds.Identity real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Identity(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Identity(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Identity getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Identity) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Identity unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.Identity.CONTENT_ITEM_TYPE;
@@ -270,22 +340,29 @@ public final class ContactsContract {
 
         }
         public static final class Im {
-            private final android.provider.ContactsContract.CommonDataKinds.Im real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Im(android.provider.ContactsContract.CommonDataKinds.Im real) {
+            private final java.lang.Object real;
+
+            private Im(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Im wrap(android.provider.ContactsContract.CommonDataKinds.Im real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Im(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Im(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Im getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Im) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Im unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getProtocolLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Im.getProtocolLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Im.getProtocolLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getProtocolLabelResource(int arg0) {
@@ -293,7 +370,7 @@ public final class ContactsContract {
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Im.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Im.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -322,18 +399,25 @@ public final class ContactsContract {
 
         }
         public static final class Nickname {
-            private final android.provider.ContactsContract.CommonDataKinds.Nickname real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Nickname(android.provider.ContactsContract.CommonDataKinds.Nickname real) {
+            private final java.lang.Object real;
+
+            private Nickname(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Nickname wrap(android.provider.ContactsContract.CommonDataKinds.Nickname real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Nickname(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Nickname(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Nickname getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Nickname) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Nickname unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.Nickname.CONTENT_ITEM_TYPE;
@@ -350,18 +434,25 @@ public final class ContactsContract {
 
         }
         public static final class Note {
-            private final android.provider.ContactsContract.CommonDataKinds.Note real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Note(android.provider.ContactsContract.CommonDataKinds.Note real) {
+            private final java.lang.Object real;
+
+            private Note(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Note wrap(android.provider.ContactsContract.CommonDataKinds.Note real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Note(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Note(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Note getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Note) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Note unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.Note.CONTENT_ITEM_TYPE;
@@ -372,22 +463,29 @@ public final class ContactsContract {
 
         }
         public static final class Organization {
-            private final android.provider.ContactsContract.CommonDataKinds.Organization real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Organization(android.provider.ContactsContract.CommonDataKinds.Organization real) {
+            private final java.lang.Object real;
+
+            private Organization(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Organization wrap(android.provider.ContactsContract.CommonDataKinds.Organization real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Organization(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Organization(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Organization getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Organization) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Organization unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Organization.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Organization.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -411,22 +509,29 @@ public final class ContactsContract {
 
         }
         public static final class Phone {
-            private final android.provider.ContactsContract.CommonDataKinds.Phone real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Phone(android.provider.ContactsContract.CommonDataKinds.Phone real) {
+            private final java.lang.Object real;
+
+            private Phone(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Phone wrap(android.provider.ContactsContract.CommonDataKinds.Phone real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Phone(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Phone(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Phone getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Phone) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Phone unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Phone.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Phone.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -469,18 +574,25 @@ public final class ContactsContract {
 
         }
         public static final class Photo {
-            private final android.provider.ContactsContract.CommonDataKinds.Photo real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Photo(android.provider.ContactsContract.CommonDataKinds.Photo real) {
+            private final java.lang.Object real;
+
+            private Photo(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Photo wrap(android.provider.ContactsContract.CommonDataKinds.Photo real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Photo(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Photo(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Photo getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Photo) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Photo unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE;
@@ -491,22 +603,29 @@ public final class ContactsContract {
 
         }
         public static final class Relation {
-            private final android.provider.ContactsContract.CommonDataKinds.Relation real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Relation(android.provider.ContactsContract.CommonDataKinds.Relation real) {
+            private final java.lang.Object real;
+
+            private Relation(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Relation wrap(android.provider.ContactsContract.CommonDataKinds.Relation real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Relation(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Relation(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Relation getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Relation) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Relation unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.Relation.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.Relation.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -535,22 +654,29 @@ public final class ContactsContract {
 
         }
         public static final class SipAddress {
-            private final android.provider.ContactsContract.CommonDataKinds.SipAddress real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public SipAddress(android.provider.ContactsContract.CommonDataKinds.SipAddress real) {
+            private final java.lang.Object real;
+
+            private SipAddress(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.SipAddress wrap(android.provider.ContactsContract.CommonDataKinds.SipAddress real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.SipAddress(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.SipAddress(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.SipAddress getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.SipAddress) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.SipAddress unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.SipAddress.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.SipAddress.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -568,18 +694,25 @@ public final class ContactsContract {
 
         }
         public static final class StructuredName {
-            private final android.provider.ContactsContract.CommonDataKinds.StructuredName real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public StructuredName(android.provider.ContactsContract.CommonDataKinds.StructuredName real) {
+            private final java.lang.Object real;
+
+            private StructuredName(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredName wrap(android.provider.ContactsContract.CommonDataKinds.StructuredName real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredName(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredName(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.StructuredName getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.StructuredName) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.StructuredName unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE;
@@ -600,22 +733,29 @@ public final class ContactsContract {
 
         }
         public static final class StructuredPostal {
-            private final android.provider.ContactsContract.CommonDataKinds.StructuredPostal real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public StructuredPostal(android.provider.ContactsContract.CommonDataKinds.StructuredPostal real) {
+            private final java.lang.Object real;
+
+            private StructuredPostal(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredPostal wrap(android.provider.ContactsContract.CommonDataKinds.StructuredPostal real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredPostal(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.StructuredPostal(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.StructuredPostal getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.StructuredPostal) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.StructuredPostal unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.CharSequence getTypeLabel(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1, java.lang.CharSequence arg2) {
-                return android.provider.ContactsContract.CommonDataKinds.StructuredPostal.getTypeLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                return android.provider.ContactsContract.CommonDataKinds.StructuredPostal.getTypeLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static int getTypeLabelResource(int arg0) {
@@ -642,18 +782,25 @@ public final class ContactsContract {
 
         }
         public static final class Website {
-            private final android.provider.ContactsContract.CommonDataKinds.Website real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Website(android.provider.ContactsContract.CommonDataKinds.Website real) {
+            private final java.lang.Object real;
+
+            private Website(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Website wrap(android.provider.ContactsContract.CommonDataKinds.Website real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Website(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.CommonDataKinds.Website(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.CommonDataKinds.Website getReal() {
+                return (android.provider.ContactsContract.CommonDataKinds.Website) real;
             }
 
             public android.provider.ContactsContract.CommonDataKinds.Website unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.CommonDataKinds.Website.CONTENT_ITEM_TYPE;
@@ -671,18 +818,25 @@ public final class ContactsContract {
         }
     }
     public static final class Contacts {
-        private final android.provider.ContactsContract.Contacts real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Contacts(android.provider.ContactsContract.Contacts real) {
+        private final java.lang.Object real;
+
+        private Contacts(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts wrap(android.provider.ContactsContract.Contacts real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Contacts getReal() {
+            return (android.provider.ContactsContract.Contacts) real;
         }
 
         public android.provider.ContactsContract.Contacts unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getLookupUri(long arg0, java.lang.String arg1) {
@@ -690,7 +844,7 @@ public final class ContactsContract {
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getLookupUri(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Contacts.getLookupUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Contacts.getLookupUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static boolean isEnterpriseContactId(long arg0) {
@@ -698,19 +852,19 @@ public final class ContactsContract {
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri lookupContact(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Contacts.lookupContact(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Contacts.lookupContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static void markAsContacted(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-            android.provider.ContactsContract.Contacts.markAsContacted(arg0 == null ? null : arg0.unwrap(), arg1);
+            android.provider.ContactsContract.Contacts.markAsContacted(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static java.io.InputStream openContactPhotoInputStream(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return android.provider.ContactsContract.Contacts.openContactPhotoInputStream(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return android.provider.ContactsContract.Contacts.openContactPhotoInputStream(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static java.io.InputStream openContactPhotoInputStream(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2) {
-            return android.provider.ContactsContract.Contacts.openContactPhotoInputStream(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            return android.provider.ContactsContract.Contacts.openContactPhotoInputStream(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Contacts.CONTENT_FILTER_URI);
@@ -733,90 +887,118 @@ public final class ContactsContract {
         public static final java.lang.String QUERY_PARAMETER_VCARD_NO_PHOTO = android.provider.ContactsContract.Contacts.QUERY_PARAMETER_VCARD_NO_PHOTO;
 
         public static final class AggregationSuggestions {
-            private final android.provider.ContactsContract.Contacts.AggregationSuggestions real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public AggregationSuggestions(android.provider.ContactsContract.Contacts.AggregationSuggestions real) {
+            private final java.lang.Object real;
+
+            private AggregationSuggestions(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions wrap(android.provider.ContactsContract.Contacts.AggregationSuggestions real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.Contacts.AggregationSuggestions getReal() {
+                return (android.provider.ContactsContract.Contacts.AggregationSuggestions) real;
             }
 
             public android.provider.ContactsContract.Contacts.AggregationSuggestions unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.Contacts.AggregationSuggestions.CONTENT_DIRECTORY;
 
             public static final class Builder {
-                private final android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder real;
+                private static final class __DcgwBridgeToken {
+                }
 
-                public Builder(android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder real) {
+                private final java.lang.Object real;
+
+                private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                     this.real = real;
                 }
 
                 public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder wrap(android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder real) {
-                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder(real);
+                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder(real, (__DcgwBridgeToken) null);
+                }
+
+                public android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder getReal() {
+                    return (android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder) real;
                 }
 
                 public android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder unwrap() {
-                    return real;
+                    return getReal();
                 }
 
                 public Builder() {
-                    this(new android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder());
+                    this(new android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder(), (__DcgwBridgeToken) null);
                 }
 
                 public com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder addNameParameter(java.lang.String arg0) {
-                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(real.addNameParameter(arg0));
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(((android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder) real).addNameParameter(arg0));
                 }
 
                 public com.micklab.dcg.wrapper.android.net.Uri build() {
-                    return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.build());
+                    return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder) real).build());
                 }
 
                 public com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder setContactId(long arg0) {
-                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(real.setContactId(arg0));
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(((android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder) real).setContactId(arg0));
                 }
 
                 public com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder setLimit(int arg0) {
-                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(real.setLimit(arg0));
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder.wrap(((android.provider.ContactsContract.Contacts.AggregationSuggestions.Builder) real).setLimit(arg0));
                 }
 
             }
         }
         public static final class Data {
-            private final android.provider.ContactsContract.Contacts.Data real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Data(android.provider.ContactsContract.Contacts.Data real) {
+            private final java.lang.Object real;
+
+            private Data(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Data wrap(android.provider.ContactsContract.Contacts.Data real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Data(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Data(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.Contacts.Data getReal() {
+                return (android.provider.ContactsContract.Contacts.Data) real;
             }
 
             public android.provider.ContactsContract.Contacts.Data unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.Contacts.Data.CONTENT_DIRECTORY;
 
         }
         public static final class Entity {
-            private final android.provider.ContactsContract.Contacts.Entity real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Entity(android.provider.ContactsContract.Contacts.Entity real) {
+            private final java.lang.Object real;
+
+            private Entity(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Entity wrap(android.provider.ContactsContract.Contacts.Entity real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Entity(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Entity(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.Contacts.Entity getReal() {
+                return (android.provider.ContactsContract.Contacts.Entity) real;
             }
 
             public android.provider.ContactsContract.Contacts.Entity unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.Contacts.Entity.CONTENT_DIRECTORY;
@@ -825,18 +1007,25 @@ public final class ContactsContract {
 
         }
         public static final class Photo {
-            private final android.provider.ContactsContract.Contacts.Photo real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Photo(android.provider.ContactsContract.Contacts.Photo real) {
+            private final java.lang.Object real;
+
+            private Photo(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Photo wrap(android.provider.ContactsContract.Contacts.Photo real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Photo(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Contacts.Photo(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.Contacts.Photo getReal() {
+                return (android.provider.ContactsContract.Contacts.Photo) real;
             }
 
             public android.provider.ContactsContract.Contacts.Photo unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.Contacts.Photo.CONTENT_DIRECTORY;
@@ -846,22 +1035,29 @@ public final class ContactsContract {
         }
     }
     public static final class Data {
-        private final android.provider.ContactsContract.Data real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Data(android.provider.ContactsContract.Data real) {
+        private final java.lang.Object real;
+
+        private Data(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Data wrap(android.provider.ContactsContract.Data real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Data(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Data(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Data getReal() {
+            return (android.provider.ContactsContract.Data) real;
         }
 
         public android.provider.ContactsContract.Data unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getContactLookupUri(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Data.getContactLookupUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Data.getContactLookupUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static final java.lang.String CONTENT_TYPE = android.provider.ContactsContract.Data.CONTENT_TYPE;
@@ -873,22 +1069,29 @@ public final class ContactsContract {
 
     }
     public static final class DataUsageFeedback {
-        private final android.provider.ContactsContract.DataUsageFeedback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DataUsageFeedback(android.provider.ContactsContract.DataUsageFeedback real) {
+        private final java.lang.Object real;
+
+        private DataUsageFeedback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.DataUsageFeedback wrap(android.provider.ContactsContract.DataUsageFeedback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DataUsageFeedback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DataUsageFeedback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.DataUsageFeedback getReal() {
+            return (android.provider.ContactsContract.DataUsageFeedback) real;
         }
 
         public android.provider.ContactsContract.DataUsageFeedback unwrap() {
-            return real;
+            return getReal();
         }
 
         public DataUsageFeedback() {
-            this(new android.provider.ContactsContract.DataUsageFeedback());
+            this(new android.provider.ContactsContract.DataUsageFeedback(), (__DcgwBridgeToken) null);
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri DELETE_USAGE_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.DataUsageFeedback.DELETE_USAGE_URI);
@@ -900,18 +1103,25 @@ public final class ContactsContract {
 
     }
     public static final class DeletedContacts {
-        private final android.provider.ContactsContract.DeletedContacts real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DeletedContacts(android.provider.ContactsContract.DeletedContacts real) {
+        private final java.lang.Object real;
+
+        private DeletedContacts(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.DeletedContacts wrap(android.provider.ContactsContract.DeletedContacts real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DeletedContacts(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DeletedContacts(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.DeletedContacts getReal() {
+            return (android.provider.ContactsContract.DeletedContacts) real;
         }
 
         public android.provider.ContactsContract.DeletedContacts unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.DeletedContacts.CONTENT_URI);
@@ -919,18 +1129,25 @@ public final class ContactsContract {
 
     }
     public static final class Directory {
-        private final android.provider.ContactsContract.Directory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Directory(android.provider.ContactsContract.Directory real) {
+        private final java.lang.Object real;
+
+        private Directory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Directory wrap(android.provider.ContactsContract.Directory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Directory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Directory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Directory getReal() {
+            return (android.provider.ContactsContract.Directory) real;
         }
 
         public android.provider.ContactsContract.Directory unwrap() {
-            return real;
+            return getReal();
         }
 
         public static boolean isEnterpriseDirectoryId(long arg0) {
@@ -942,7 +1159,7 @@ public final class ContactsContract {
         }
 
         public static void notifyDirectoryChange(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
-            android.provider.ContactsContract.Directory.notifyDirectoryChange(arg0 == null ? null : arg0.unwrap());
+            android.provider.ContactsContract.Directory.notifyDirectoryChange(arg0 == null ? null : arg0.getReal());
         }
 
         public static final java.lang.String ACCOUNT_NAME = android.provider.ContactsContract.Directory.ACCOUNT_NAME;
@@ -976,18 +1193,25 @@ public final class ContactsContract {
 
     }
     public static final class DisplayNameSources {
-        private final android.provider.ContactsContract.DisplayNameSources real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DisplayNameSources(android.provider.ContactsContract.DisplayNameSources real) {
+        private final java.lang.Object real;
+
+        private DisplayNameSources(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayNameSources wrap(android.provider.ContactsContract.DisplayNameSources real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayNameSources(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayNameSources(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.DisplayNameSources getReal() {
+            return (android.provider.ContactsContract.DisplayNameSources) real;
         }
 
         public android.provider.ContactsContract.DisplayNameSources unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int EMAIL = android.provider.ContactsContract.DisplayNameSources.EMAIL;
@@ -1000,18 +1224,25 @@ public final class ContactsContract {
 
     }
     public static final class DisplayPhoto {
-        private final android.provider.ContactsContract.DisplayPhoto real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DisplayPhoto(android.provider.ContactsContract.DisplayPhoto real) {
+        private final java.lang.Object real;
+
+        private DisplayPhoto(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayPhoto wrap(android.provider.ContactsContract.DisplayPhoto real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayPhoto(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.DisplayPhoto(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.DisplayPhoto getReal() {
+            return (android.provider.ContactsContract.DisplayPhoto) real;
         }
 
         public android.provider.ContactsContract.DisplayPhoto unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_MAX_DIMENSIONS_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.DisplayPhoto.CONTENT_MAX_DIMENSIONS_URI);
@@ -1021,18 +1252,25 @@ public final class ContactsContract {
 
     }
     public static final class FullNameStyle {
-        private final android.provider.ContactsContract.FullNameStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FullNameStyle(android.provider.ContactsContract.FullNameStyle real) {
+        private final java.lang.Object real;
+
+        private FullNameStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.FullNameStyle wrap(android.provider.ContactsContract.FullNameStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.FullNameStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.FullNameStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.FullNameStyle getReal() {
+            return (android.provider.ContactsContract.FullNameStyle) real;
         }
 
         public android.provider.ContactsContract.FullNameStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int CHINESE = android.provider.ContactsContract.FullNameStyle.CHINESE;
@@ -1044,22 +1282,29 @@ public final class ContactsContract {
 
     }
     public static final class Groups {
-        private final android.provider.ContactsContract.Groups real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Groups(android.provider.ContactsContract.Groups real) {
+        private final java.lang.Object real;
+
+        private Groups(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Groups wrap(android.provider.ContactsContract.Groups real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Groups(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Groups(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Groups getReal() {
+            return (android.provider.ContactsContract.Groups) real;
         }
 
         public android.provider.ContactsContract.Groups unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0) {
-            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.ContactsContract.Groups.newEntityIterator(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.ContactsContract.Groups.newEntityIterator(arg0 == null ? null : arg0.getReal()));
         }
 
         public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.ContactsContract.Groups.CONTENT_ITEM_TYPE;
@@ -1069,22 +1314,29 @@ public final class ContactsContract {
 
     }
     public static final class Intents {
-        private final android.provider.ContactsContract.Intents real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Intents(android.provider.ContactsContract.Intents real) {
+        private final java.lang.Object real;
+
+        private Intents(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents wrap(android.provider.ContactsContract.Intents real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Intents getReal() {
+            return (android.provider.ContactsContract.Intents) real;
         }
 
         public android.provider.ContactsContract.Intents unwrap() {
-            return real;
+            return getReal();
         }
 
         public Intents() {
-            this(new android.provider.ContactsContract.Intents());
+            this(new android.provider.ContactsContract.Intents(), (__DcgwBridgeToken) null);
         }
 
         public static final java.lang.String ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS = android.provider.ContactsContract.Intents.ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS;
@@ -1104,22 +1356,29 @@ public final class ContactsContract {
         public static final java.lang.String SHOW_OR_CREATE_CONTACT = android.provider.ContactsContract.Intents.SHOW_OR_CREATE_CONTACT;
 
         public static final class Insert {
-            private final android.provider.ContactsContract.Intents.Insert real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Insert(android.provider.ContactsContract.Intents.Insert real) {
+            private final java.lang.Object real;
+
+            private Insert(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents.Insert wrap(android.provider.ContactsContract.Intents.Insert real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents.Insert(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Intents.Insert(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.Intents.Insert getReal() {
+                return (android.provider.ContactsContract.Intents.Insert) real;
             }
 
             public android.provider.ContactsContract.Intents.Insert unwrap() {
-                return real;
+                return getReal();
             }
 
             public Insert() {
-                this(new android.provider.ContactsContract.Intents.Insert());
+                this(new android.provider.ContactsContract.Intents.Insert(), (__DcgwBridgeToken) null);
             }
 
             public static final java.lang.String ACTION = android.provider.ContactsContract.Intents.Insert.ACTION;
@@ -1156,18 +1415,25 @@ public final class ContactsContract {
         }
     }
     public static final class PhoneLookup {
-        private final android.provider.ContactsContract.PhoneLookup real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PhoneLookup(android.provider.ContactsContract.PhoneLookup real) {
+        private final java.lang.Object real;
+
+        private PhoneLookup(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneLookup wrap(android.provider.ContactsContract.PhoneLookup real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneLookup(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneLookup(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.PhoneLookup getReal() {
+            return (android.provider.ContactsContract.PhoneLookup) real;
         }
 
         public android.provider.ContactsContract.PhoneLookup unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.PhoneLookup.CONTENT_FILTER_URI);
@@ -1176,18 +1442,25 @@ public final class ContactsContract {
 
     }
     public static final class PhoneticNameStyle {
-        private final android.provider.ContactsContract.PhoneticNameStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PhoneticNameStyle(android.provider.ContactsContract.PhoneticNameStyle real) {
+        private final java.lang.Object real;
+
+        private PhoneticNameStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneticNameStyle wrap(android.provider.ContactsContract.PhoneticNameStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneticNameStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PhoneticNameStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.PhoneticNameStyle getReal() {
+            return (android.provider.ContactsContract.PhoneticNameStyle) real;
         }
 
         public android.provider.ContactsContract.PhoneticNameStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int JAPANESE = android.provider.ContactsContract.PhoneticNameStyle.JAPANESE;
@@ -1197,30 +1470,37 @@ public final class ContactsContract {
 
     }
     public static final class PinnedPositions {
-        private final android.provider.ContactsContract.PinnedPositions real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PinnedPositions(android.provider.ContactsContract.PinnedPositions real) {
+        private final java.lang.Object real;
+
+        private PinnedPositions(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.PinnedPositions wrap(android.provider.ContactsContract.PinnedPositions real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PinnedPositions(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.PinnedPositions(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.PinnedPositions getReal() {
+            return (android.provider.ContactsContract.PinnedPositions) real;
         }
 
         public android.provider.ContactsContract.PinnedPositions unwrap() {
-            return real;
+            return getReal();
         }
 
         public PinnedPositions() {
-            this(new android.provider.ContactsContract.PinnedPositions());
+            this(new android.provider.ContactsContract.PinnedPositions(), (__DcgwBridgeToken) null);
         }
 
         public static void pin(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, int arg2) {
-            android.provider.ContactsContract.PinnedPositions.pin(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            android.provider.ContactsContract.PinnedPositions.pin(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static void undemote(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-            android.provider.ContactsContract.PinnedPositions.undemote(arg0 == null ? null : arg0.unwrap(), arg1);
+            android.provider.ContactsContract.PinnedPositions.undemote(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int DEMOTED = android.provider.ContactsContract.PinnedPositions.DEMOTED;
@@ -1228,38 +1508,52 @@ public final class ContactsContract {
 
     }
     public static final class Presence {
-        private final android.provider.ContactsContract.Presence real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Presence(android.provider.ContactsContract.Presence real) {
+        private final java.lang.Object real;
+
+        private Presence(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Presence wrap(android.provider.ContactsContract.Presence real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Presence(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Presence(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Presence getReal() {
+            return (android.provider.ContactsContract.Presence) real;
         }
 
         public android.provider.ContactsContract.Presence unwrap() {
-            return real;
+            return getReal();
         }
 
         public Presence() {
-            this(new android.provider.ContactsContract.Presence());
+            this(new android.provider.ContactsContract.Presence(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class Profile {
-        private final android.provider.ContactsContract.Profile real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Profile(android.provider.ContactsContract.Profile real) {
+        private final java.lang.Object real;
+
+        private Profile(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Profile wrap(android.provider.ContactsContract.Profile real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Profile(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Profile(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Profile getReal() {
+            return (android.provider.ContactsContract.Profile) real;
         }
 
         public android.provider.ContactsContract.Profile unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_RAW_CONTACTS_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.Profile.CONTENT_RAW_CONTACTS_URI);
@@ -1269,30 +1563,37 @@ public final class ContactsContract {
 
     }
     public static final class ProfileSyncState {
-        private final android.provider.ContactsContract.ProfileSyncState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProfileSyncState(android.provider.ContactsContract.ProfileSyncState real) {
+        private final java.lang.Object real;
+
+        private ProfileSyncState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.ProfileSyncState wrap(android.provider.ContactsContract.ProfileSyncState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.ProfileSyncState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.ProfileSyncState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.ProfileSyncState getReal() {
+            return (android.provider.ContactsContract.ProfileSyncState) real;
         }
 
         public android.provider.ContactsContract.ProfileSyncState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static byte[] get(com.micklab.dcg.wrapper.android.content.ContentProviderClient arg0, com.micklab.dcg.wrapper.android.accounts.Account arg1) throws android.os.RemoteException {
-            return android.provider.ContactsContract.ProfileSyncState.get(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return android.provider.ContactsContract.ProfileSyncState.get(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static com.micklab.dcg.wrapper.android.content.ContentProviderOperation newSetOperation(com.micklab.dcg.wrapper.android.accounts.Account arg0, byte[] arg1) {
-            return com.micklab.dcg.wrapper.android.content.ContentProviderOperation.wrap(android.provider.ContactsContract.ProfileSyncState.newSetOperation(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.content.ContentProviderOperation.wrap(android.provider.ContactsContract.ProfileSyncState.newSetOperation(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public static void set(com.micklab.dcg.wrapper.android.content.ContentProviderClient arg0, com.micklab.dcg.wrapper.android.accounts.Account arg1, byte[] arg2) throws android.os.RemoteException {
-            android.provider.ContactsContract.ProfileSyncState.set(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            android.provider.ContactsContract.ProfileSyncState.set(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.ProfileSyncState.CONTENT_DIRECTORY;
@@ -1300,18 +1601,25 @@ public final class ContactsContract {
 
     }
     public static final class ProviderStatus {
-        private final android.provider.ContactsContract.ProviderStatus real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProviderStatus(android.provider.ContactsContract.ProviderStatus real) {
+        private final java.lang.Object real;
+
+        private ProviderStatus(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.ProviderStatus wrap(android.provider.ContactsContract.ProviderStatus real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.ProviderStatus(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.ProviderStatus(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.ProviderStatus getReal() {
+            return (android.provider.ContactsContract.ProviderStatus) real;
         }
 
         public android.provider.ContactsContract.ProviderStatus unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_TYPE = android.provider.ContactsContract.ProviderStatus.CONTENT_TYPE;
@@ -1324,38 +1632,45 @@ public final class ContactsContract {
 
     }
     public static final class QuickContact {
-        private final android.provider.ContactsContract.QuickContact real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public QuickContact(android.provider.ContactsContract.QuickContact real) {
+        private final java.lang.Object real;
+
+        private QuickContact(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.QuickContact wrap(android.provider.ContactsContract.QuickContact real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.QuickContact(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.QuickContact(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.QuickContact getReal() {
+            return (android.provider.ContactsContract.QuickContact) real;
         }
 
         public android.provider.ContactsContract.QuickContact unwrap() {
-            return real;
+            return getReal();
         }
 
         public QuickContact() {
-            this(new android.provider.ContactsContract.QuickContact());
+            this(new android.provider.ContactsContract.QuickContact(), (__DcgwBridgeToken) null);
         }
 
         public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, java.lang.String[] arg3, java.lang.String arg4) {
-            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4);
+            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
         public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, java.lang.String[] arg3, java.lang.String arg4) {
-            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4);
+            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
         public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
-            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4);
+            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
         public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
-            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4);
+            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
         public static final java.lang.String ACTION_QUICK_CONTACT = android.provider.ContactsContract.QuickContact.ACTION_QUICK_CONTACT;
@@ -1368,34 +1683,41 @@ public final class ContactsContract {
 
     }
     public static final class RawContacts {
-        private final android.provider.ContactsContract.RawContacts real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RawContacts(android.provider.ContactsContract.RawContacts real) {
+        private final java.lang.Object real;
+
+        private RawContacts(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts wrap(android.provider.ContactsContract.RawContacts real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.RawContacts getReal() {
+            return (android.provider.ContactsContract.RawContacts) real;
         }
 
         public android.provider.ContactsContract.RawContacts unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getContactLookupUri(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.RawContacts.getContactLookupUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.RawContacts.getContactLookupUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static java.lang.String getLocalAccountName(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return android.provider.ContactsContract.RawContacts.getLocalAccountName(arg0 == null ? null : arg0.unwrap());
+            return android.provider.ContactsContract.RawContacts.getLocalAccountName(arg0 == null ? null : arg0.getReal());
         }
 
         public static java.lang.String getLocalAccountType(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return android.provider.ContactsContract.RawContacts.getLocalAccountType(arg0 == null ? null : arg0.unwrap());
+            return android.provider.ContactsContract.RawContacts.getLocalAccountType(arg0 == null ? null : arg0.getReal());
         }
 
         public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0) {
-            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.ContactsContract.RawContacts.newEntityIterator(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.ContactsContract.RawContacts.newEntityIterator(arg0 == null ? null : arg0.getReal()));
         }
 
         public static final int AGGREGATION_MODE_DEFAULT = android.provider.ContactsContract.RawContacts.AGGREGATION_MODE_DEFAULT;
@@ -1407,54 +1729,75 @@ public final class ContactsContract {
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.ContactsContract.RawContacts.CONTENT_URI);
 
         public static final class Data {
-            private final android.provider.ContactsContract.RawContacts.Data real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Data(android.provider.ContactsContract.RawContacts.Data real) {
+            private final java.lang.Object real;
+
+            private Data(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Data wrap(android.provider.ContactsContract.RawContacts.Data real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Data(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Data(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.RawContacts.Data getReal() {
+                return (android.provider.ContactsContract.RawContacts.Data) real;
             }
 
             public android.provider.ContactsContract.RawContacts.Data unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.RawContacts.Data.CONTENT_DIRECTORY;
 
         }
         public static final class DisplayPhoto {
-            private final android.provider.ContactsContract.RawContacts.DisplayPhoto real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public DisplayPhoto(android.provider.ContactsContract.RawContacts.DisplayPhoto real) {
+            private final java.lang.Object real;
+
+            private DisplayPhoto(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DisplayPhoto wrap(android.provider.ContactsContract.RawContacts.DisplayPhoto real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DisplayPhoto(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DisplayPhoto(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.RawContacts.DisplayPhoto getReal() {
+                return (android.provider.ContactsContract.RawContacts.DisplayPhoto) real;
             }
 
             public android.provider.ContactsContract.RawContacts.DisplayPhoto unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.RawContacts.DisplayPhoto.CONTENT_DIRECTORY;
 
         }
         public static final class Entity {
-            private final android.provider.ContactsContract.RawContacts.Entity real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Entity(android.provider.ContactsContract.RawContacts.Entity real) {
+            private final java.lang.Object real;
+
+            private Entity(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Entity wrap(android.provider.ContactsContract.RawContacts.Entity real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Entity(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.Entity(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.RawContacts.Entity getReal() {
+                return (android.provider.ContactsContract.RawContacts.Entity) real;
             }
 
             public android.provider.ContactsContract.RawContacts.Entity unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.RawContacts.Entity.CONTENT_DIRECTORY;
@@ -1463,18 +1806,25 @@ public final class ContactsContract {
         }
     }
     public static final class RawContactsEntity {
-        private final android.provider.ContactsContract.RawContactsEntity real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RawContactsEntity(android.provider.ContactsContract.RawContactsEntity real) {
+        private final java.lang.Object real;
+
+        private RawContactsEntity(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContactsEntity wrap(android.provider.ContactsContract.RawContactsEntity real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContactsEntity(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContactsEntity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.RawContactsEntity getReal() {
+            return (android.provider.ContactsContract.RawContactsEntity) real;
         }
 
         public android.provider.ContactsContract.RawContactsEntity unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_TYPE = android.provider.ContactsContract.RawContactsEntity.CONTENT_TYPE;
@@ -1483,22 +1833,29 @@ public final class ContactsContract {
 
     }
     public static final class SearchSnippets {
-        private final android.provider.ContactsContract.SearchSnippets real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SearchSnippets(android.provider.ContactsContract.SearchSnippets real) {
+        private final java.lang.Object real;
+
+        private SearchSnippets(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.SearchSnippets wrap(android.provider.ContactsContract.SearchSnippets real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SearchSnippets(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SearchSnippets(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.SearchSnippets getReal() {
+            return (android.provider.ContactsContract.SearchSnippets) real;
         }
 
         public android.provider.ContactsContract.SearchSnippets unwrap() {
-            return real;
+            return getReal();
         }
 
         public SearchSnippets() {
-            this(new android.provider.ContactsContract.SearchSnippets());
+            this(new android.provider.ContactsContract.SearchSnippets(), (__DcgwBridgeToken) null);
         }
 
         public static final java.lang.String DEFERRED_SNIPPETING_KEY = android.provider.ContactsContract.SearchSnippets.DEFERRED_SNIPPETING_KEY;
@@ -1506,22 +1863,29 @@ public final class ContactsContract {
 
     }
     public static final class Settings {
-        private final android.provider.ContactsContract.Settings real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Settings(android.provider.ContactsContract.Settings real) {
+        private final java.lang.Object real;
+
+        private Settings(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.Settings wrap(android.provider.ContactsContract.Settings real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Settings(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.Settings(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.Settings getReal() {
+            return (android.provider.ContactsContract.Settings) real;
         }
 
         public android.provider.ContactsContract.Settings unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.accounts.Account getDefaultAccount(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
-            return com.micklab.dcg.wrapper.android.accounts.Account.wrap(android.provider.ContactsContract.Settings.getDefaultAccount(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.accounts.Account.wrap(android.provider.ContactsContract.Settings.getDefaultAccount(arg0 == null ? null : arg0.getReal()));
         }
 
         public static final java.lang.String ACTION_SET_DEFAULT_ACCOUNT = android.provider.ContactsContract.Settings.ACTION_SET_DEFAULT_ACCOUNT;
@@ -1531,50 +1895,57 @@ public final class ContactsContract {
 
     }
     public static final class SimAccount {
-        private final android.provider.ContactsContract.SimAccount real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SimAccount(android.provider.ContactsContract.SimAccount real) {
+        private final java.lang.Object real;
+
+        private SimAccount(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.SimAccount wrap(android.provider.ContactsContract.SimAccount real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SimAccount(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SimAccount(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.SimAccount getReal() {
+            return (android.provider.ContactsContract.SimAccount) real;
         }
 
         public android.provider.ContactsContract.SimAccount unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.provider.ContactsContract.SimAccount) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.provider.ContactsContract.SimAccount) real).equals(arg0);
         }
 
         public java.lang.String getAccountName() {
-            return real.getAccountName();
+            return ((android.provider.ContactsContract.SimAccount) real).getAccountName();
         }
 
         public java.lang.String getAccountType() {
-            return real.getAccountType();
+            return ((android.provider.ContactsContract.SimAccount) real).getAccountType();
         }
 
         public int getEfType() {
-            return real.getEfType();
+            return ((android.provider.ContactsContract.SimAccount) real).getEfType();
         }
 
         public int getSimSlotIndex() {
-            return real.getSimSlotIndex();
+            return ((android.provider.ContactsContract.SimAccount) real).getSimSlotIndex();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.provider.ContactsContract.SimAccount) real).hashCode();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.provider.ContactsContract.SimAccount) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int ADN_EF_TYPE = android.provider.ContactsContract.SimAccount.ADN_EF_TYPE;
@@ -1584,36 +1955,50 @@ public final class ContactsContract {
 
     }
     public static final class SimContacts {
-        private final android.provider.ContactsContract.SimContacts real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SimContacts(android.provider.ContactsContract.SimContacts real) {
+        private final java.lang.Object real;
+
+        private SimContacts(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.SimContacts wrap(android.provider.ContactsContract.SimContacts real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SimContacts(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SimContacts(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.SimContacts getReal() {
+            return (android.provider.ContactsContract.SimContacts) real;
         }
 
         public android.provider.ContactsContract.SimContacts unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ACTION_SIM_ACCOUNTS_CHANGED = android.provider.ContactsContract.SimContacts.ACTION_SIM_ACCOUNTS_CHANGED;
 
     }
     public static final class StatusUpdates {
-        private final android.provider.ContactsContract.StatusUpdates real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StatusUpdates(android.provider.ContactsContract.StatusUpdates real) {
+        private final java.lang.Object real;
+
+        private StatusUpdates(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.StatusUpdates wrap(android.provider.ContactsContract.StatusUpdates real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.StatusUpdates(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.StatusUpdates(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.StatusUpdates getReal() {
+            return (android.provider.ContactsContract.StatusUpdates) real;
         }
 
         public android.provider.ContactsContract.StatusUpdates unwrap() {
-            return real;
+            return getReal();
         }
 
         public static int getPresenceIconResourceId(int arg0) {
@@ -1630,30 +2015,37 @@ public final class ContactsContract {
 
     }
     public static final class SyncState {
-        private final android.provider.ContactsContract.SyncState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SyncState(android.provider.ContactsContract.SyncState real) {
+        private final java.lang.Object real;
+
+        private SyncState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.ContactsContract.SyncState wrap(android.provider.ContactsContract.SyncState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SyncState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.SyncState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.ContactsContract.SyncState getReal() {
+            return (android.provider.ContactsContract.SyncState) real;
         }
 
         public android.provider.ContactsContract.SyncState unwrap() {
-            return real;
+            return getReal();
         }
 
         public static byte[] get(com.micklab.dcg.wrapper.android.content.ContentProviderClient arg0, com.micklab.dcg.wrapper.android.accounts.Account arg1) throws android.os.RemoteException {
-            return android.provider.ContactsContract.SyncState.get(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return android.provider.ContactsContract.SyncState.get(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static com.micklab.dcg.wrapper.android.content.ContentProviderOperation newSetOperation(com.micklab.dcg.wrapper.android.accounts.Account arg0, byte[] arg1) {
-            return com.micklab.dcg.wrapper.android.content.ContentProviderOperation.wrap(android.provider.ContactsContract.SyncState.newSetOperation(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.content.ContentProviderOperation.wrap(android.provider.ContactsContract.SyncState.newSetOperation(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public static void set(com.micklab.dcg.wrapper.android.content.ContentProviderClient arg0, com.micklab.dcg.wrapper.android.accounts.Account arg1, byte[] arg2) throws android.os.RemoteException {
-            android.provider.ContactsContract.SyncState.set(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            android.provider.ContactsContract.SyncState.set(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.SyncState.CONTENT_DIRECTORY;

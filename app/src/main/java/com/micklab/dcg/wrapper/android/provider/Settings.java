@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class Settings {
-    private final android.provider.Settings real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Settings(android.provider.Settings real) {
+    private final java.lang.Object real;
+
+    private Settings(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.Settings wrap(android.provider.Settings real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.Settings getReal() {
+        return (android.provider.Settings) real;
     }
 
     public android.provider.Settings unwrap() {
-        return real;
+        return getReal();
     }
 
     public Settings() {
-        this(new android.provider.Settings());
+        this(new android.provider.Settings(), (__DcgwBridgeToken) null);
     }
 
     public static boolean canDrawOverlays(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.provider.Settings.canDrawOverlays(arg0 == null ? null : arg0.unwrap());
+        return android.provider.Settings.canDrawOverlays(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_ACCESSIBILITY_SETTINGS = android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS;
@@ -148,50 +155,57 @@ public final class Settings {
     public static final int SUPERVISOR_VERIFICATION_SETTING_UNKNOWN = android.provider.Settings.SUPERVISOR_VERIFICATION_SETTING_UNKNOWN;
 
     public static final class Global {
-        private final android.provider.Settings.Global real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Global(android.provider.Settings.Global real) {
+        private final java.lang.Object real;
+
+        private Global(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.Global wrap(android.provider.Settings.Global real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Global(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Global(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.Global getReal() {
+            return (android.provider.Settings.Global) real;
         }
 
         public android.provider.Settings.Global unwrap() {
-            return real;
+            return getReal();
         }
 
         public Global() {
-            this(new android.provider.Settings.Global());
+            this(new android.provider.Settings.Global(), (__DcgwBridgeToken) null);
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Global.getFloat(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Global.getFloat(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.Global.getFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.getFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Global.getInt(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Global.getInt(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.Global.getInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.getInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Global.getLong(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Global.getLong(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.Global.getLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.getLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static java.lang.String getString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-            return android.provider.Settings.Global.getString(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Global.getString(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getUriFor(java.lang.String arg0) {
@@ -199,19 +213,19 @@ public final class Settings {
         }
 
         public static boolean putFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.Global.putFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.putFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.Global.putInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.putInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.Global.putLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.putLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2) {
-            return android.provider.Settings.Global.putString(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Global.putString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static final java.lang.String ADB_ENABLED = android.provider.Settings.Global.ADB_ENABLED;
@@ -258,26 +272,33 @@ public final class Settings {
 
     }
     public static final class NameValueTable {
-        private final android.provider.Settings.NameValueTable real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NameValueTable(android.provider.Settings.NameValueTable real) {
+        private final java.lang.Object real;
+
+        private NameValueTable(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.NameValueTable wrap(android.provider.Settings.NameValueTable real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.NameValueTable(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.NameValueTable(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.NameValueTable getReal() {
+            return (android.provider.Settings.NameValueTable) real;
         }
 
         public android.provider.Settings.NameValueTable unwrap() {
-            return real;
+            return getReal();
         }
 
         public NameValueTable() {
-            this(new android.provider.Settings.NameValueTable());
+            this(new android.provider.Settings.NameValueTable(), (__DcgwBridgeToken) null);
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getUriFor(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Settings.NameValueTable.getUriFor(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Settings.NameValueTable.getUriFor(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public static final java.lang.String NAME = android.provider.Settings.NameValueTable.NAME;
@@ -285,18 +306,25 @@ public final class Settings {
 
     }
     public static final class Panel {
-        private final android.provider.Settings.Panel real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Panel(android.provider.Settings.Panel real) {
+        private final java.lang.Object real;
+
+        private Panel(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.Panel wrap(android.provider.Settings.Panel real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Panel(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Panel(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.Panel getReal() {
+            return (android.provider.Settings.Panel) real;
         }
 
         public android.provider.Settings.Panel unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ACTION_INTERNET_CONNECTIVITY = android.provider.Settings.Panel.ACTION_INTERNET_CONNECTIVITY;
@@ -306,50 +334,57 @@ public final class Settings {
 
     }
     public static final class Secure {
-        private final android.provider.Settings.Secure real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Secure(android.provider.Settings.Secure real) {
+        private final java.lang.Object real;
+
+        private Secure(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.Secure wrap(android.provider.Settings.Secure real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Secure(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.Secure(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.Secure getReal() {
+            return (android.provider.Settings.Secure) real;
         }
 
         public android.provider.Settings.Secure unwrap() {
-            return real;
+            return getReal();
         }
 
         public Secure() {
-            this(new android.provider.Settings.Secure());
+            this(new android.provider.Settings.Secure(), (__DcgwBridgeToken) null);
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Secure.getFloat(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Secure.getFloat(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.Secure.getFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.getFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Secure.getInt(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Secure.getInt(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.Secure.getInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.getInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.Secure.getLong(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Secure.getLong(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.Secure.getLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.getLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static java.lang.String getString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-            return android.provider.Settings.Secure.getString(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Secure.getString(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getUriFor(java.lang.String arg0) {
@@ -357,27 +392,27 @@ public final class Settings {
         }
 
         public static boolean isLocationProviderEnabled(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-            return android.provider.Settings.Secure.isLocationProviderEnabled(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.Secure.isLocationProviderEnabled(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static boolean putFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.Secure.putFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.putFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.Secure.putInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.putInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.Secure.putLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.putLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2) {
-            return android.provider.Settings.Secure.putString(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.Secure.putString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static void setLocationProviderEnabled(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, boolean arg2) {
-            android.provider.Settings.Secure.setLocationProviderEnabled(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            android.provider.Settings.Secure.setLocationProviderEnabled(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static final java.lang.String ACCESSIBILITY_DISPLAY_INVERSION_ENABLED = android.provider.Settings.Secure.ACCESSIBILITY_DISPLAY_INVERSION_ENABLED;
@@ -446,82 +481,96 @@ public final class Settings {
 
     }
     public static final class SettingNotFoundException {
-        private final android.provider.Settings.SettingNotFoundException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SettingNotFoundException(android.provider.Settings.SettingNotFoundException real) {
+        private final java.lang.Object real;
+
+        private SettingNotFoundException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.SettingNotFoundException wrap(android.provider.Settings.SettingNotFoundException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.SettingNotFoundException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.SettingNotFoundException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.SettingNotFoundException getReal() {
+            return (android.provider.Settings.SettingNotFoundException) real;
         }
 
         public android.provider.Settings.SettingNotFoundException unwrap() {
-            return real;
+            return getReal();
         }
 
         public SettingNotFoundException(java.lang.String arg0) {
-            this(new android.provider.Settings.SettingNotFoundException(arg0));
+            this(new android.provider.Settings.SettingNotFoundException(arg0), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class System {
-        private final android.provider.Settings.System real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public System(android.provider.Settings.System real) {
+        private final java.lang.Object real;
+
+        private System(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Settings.System wrap(android.provider.Settings.System real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.System(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Settings.System(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Settings.System getReal() {
+            return (android.provider.Settings.System) real;
         }
 
         public android.provider.Settings.System unwrap() {
-            return real;
+            return getReal();
         }
 
         public System() {
-            this(new android.provider.Settings.System());
+            this(new android.provider.Settings.System(), (__DcgwBridgeToken) null);
         }
 
         public static boolean canWrite(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return android.provider.Settings.System.canWrite(arg0 == null ? null : arg0.unwrap());
+            return android.provider.Settings.System.canWrite(arg0 == null ? null : arg0.getReal());
         }
 
         public static void getConfiguration(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.content.res.Configuration arg1) {
-            android.provider.Settings.System.getConfiguration(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            android.provider.Settings.System.getConfiguration(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.System.getFloat(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.System.getFloat(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static float getFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.System.getFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.getFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.System.getInt(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.System.getInt(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static int getInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.System.getInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.getInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) throws android.provider.Settings.SettingNotFoundException {
-            return android.provider.Settings.System.getLong(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.System.getLong(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static long getLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.System.getLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.getLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean getShowGTalkServiceStatus(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
-            return android.provider.Settings.System.getShowGTalkServiceStatus(arg0 == null ? null : arg0.unwrap());
+            return android.provider.Settings.System.getShowGTalkServiceStatus(arg0 == null ? null : arg0.getReal());
         }
 
         public static java.lang.String getString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-            return android.provider.Settings.System.getString(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Settings.System.getString(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getUriFor(java.lang.String arg0) {
@@ -529,27 +578,27 @@ public final class Settings {
         }
 
         public static boolean putConfiguration(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.content.res.Configuration arg1) {
-            return android.provider.Settings.System.putConfiguration(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return android.provider.Settings.System.putConfiguration(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static boolean putFloat(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, float arg2) {
-            return android.provider.Settings.System.putFloat(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.putFloat(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putInt(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, int arg2) {
-            return android.provider.Settings.System.putInt(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.putInt(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putLong(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, long arg2) {
-            return android.provider.Settings.System.putLong(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.putLong(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static boolean putString(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2) {
-            return android.provider.Settings.System.putString(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Settings.System.putString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static void setShowGTalkServiceStatus(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, boolean arg1) {
-            android.provider.Settings.System.setShowGTalkServiceStatus(arg0 == null ? null : arg0.unwrap(), arg1);
+            android.provider.Settings.System.setShowGTalkServiceStatus(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final java.lang.String ACCELEROMETER_ROTATION = android.provider.Settings.System.ACCELEROMETER_ROTATION;

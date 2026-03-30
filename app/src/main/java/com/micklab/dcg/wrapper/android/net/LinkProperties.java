@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class LinkProperties {
-    private final android.net.LinkProperties real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LinkProperties(android.net.LinkProperties real) {
+    private final java.lang.Object real;
+
+    private LinkProperties(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.LinkProperties wrap(android.net.LinkProperties real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LinkProperties(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LinkProperties(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.LinkProperties getReal() {
+        return (android.net.LinkProperties) real;
     }
 
     public android.net.LinkProperties unwrap() {
-        return real;
+        return getReal();
     }
 
     public LinkProperties() {

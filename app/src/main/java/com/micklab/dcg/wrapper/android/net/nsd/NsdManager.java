@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.nsd;
 
 public final class NsdManager {
-    private final android.net.nsd.NsdManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NsdManager(android.net.nsd.NsdManager real) {
+    private final java.lang.Object real;
+
+    private NsdManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.nsd.NsdManager wrap(android.net.nsd.NsdManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.nsd.NsdManager getReal() {
+        return (android.net.nsd.NsdManager) real;
     }
 
     public android.net.nsd.NsdManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void discoverServices(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener arg2) {
@@ -70,18 +77,25 @@ public final class NsdManager {
 
 
     public static final class DiscoveryListener {
-        private final android.net.nsd.NsdManager.DiscoveryListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DiscoveryListener(android.net.nsd.NsdManager.DiscoveryListener real) {
+        private final java.lang.Object real;
+
+        private DiscoveryListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener wrap(android.net.nsd.NsdManager.DiscoveryListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.nsd.NsdManager.DiscoveryListener getReal() {
+            return (android.net.nsd.NsdManager.DiscoveryListener) real;
         }
 
         public android.net.nsd.NsdManager.DiscoveryListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDiscoveryStarted(java.lang.String arg0) {
@@ -110,18 +124,25 @@ public final class NsdManager {
 
     }
     public static final class RegistrationListener {
-        private final android.net.nsd.NsdManager.RegistrationListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RegistrationListener(android.net.nsd.NsdManager.RegistrationListener real) {
+        private final java.lang.Object real;
+
+        private RegistrationListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.nsd.NsdManager.RegistrationListener wrap(android.net.nsd.NsdManager.RegistrationListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.RegistrationListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.RegistrationListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.nsd.NsdManager.RegistrationListener getReal() {
+            return (android.net.nsd.NsdManager.RegistrationListener) real;
         }
 
         public android.net.nsd.NsdManager.RegistrationListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onRegistrationFailed(com.micklab.dcg.wrapper.android.net.nsd.NsdServiceInfo arg0, int arg1) {
@@ -142,18 +163,25 @@ public final class NsdManager {
 
     }
     public static final class ResolveListener {
-        private final android.net.nsd.NsdManager.ResolveListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ResolveListener(android.net.nsd.NsdManager.ResolveListener real) {
+        private final java.lang.Object real;
+
+        private ResolveListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ResolveListener wrap(android.net.nsd.NsdManager.ResolveListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ResolveListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ResolveListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.nsd.NsdManager.ResolveListener getReal() {
+            return (android.net.nsd.NsdManager.ResolveListener) real;
         }
 
         public android.net.nsd.NsdManager.ResolveListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onResolutionStopped(com.micklab.dcg.wrapper.android.net.nsd.NsdServiceInfo arg0) {
@@ -174,18 +202,25 @@ public final class NsdManager {
 
     }
     public static final class ServiceInfoCallback {
-        private final android.net.nsd.NsdManager.ServiceInfoCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ServiceInfoCallback(android.net.nsd.NsdManager.ServiceInfoCallback real) {
+        private final java.lang.Object real;
+
+        private ServiceInfoCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ServiceInfoCallback wrap(android.net.nsd.NsdManager.ServiceInfoCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ServiceInfoCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.NsdManager.ServiceInfoCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.nsd.NsdManager.ServiceInfoCallback getReal() {
+            return (android.net.nsd.NsdManager.ServiceInfoCallback) real;
         }
 
         public android.net.nsd.NsdManager.ServiceInfoCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onServiceInfoCallbackRegistrationFailed(int arg0) {

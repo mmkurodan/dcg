@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteClosable {
-    private final android.database.sqlite.SQLiteClosable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteClosable(android.database.sqlite.SQLiteClosable real) {
+    private final java.lang.Object real;
+
+    private SQLiteClosable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteClosable wrap(android.database.sqlite.SQLiteClosable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteClosable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteClosable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteClosable getReal() {
+        return (android.database.sqlite.SQLiteClosable) real;
     }
 
     public android.database.sqlite.SQLiteClosable unwrap() {
-        return real;
+        return getReal();
     }
 
     public void acquireReference() {

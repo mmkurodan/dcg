@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class ScanCallback {
-    private final android.bluetooth.le.ScanCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScanCallback(android.bluetooth.le.ScanCallback real) {
+    private final java.lang.Object real;
+
+    private ScanCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.ScanCallback wrap(android.bluetooth.le.ScanCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.ScanCallback getReal() {
+        return (android.bluetooth.le.ScanCallback) real;
     }
 
     public android.bluetooth.le.ScanCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onScanFailed(int arg0) {
-        real.onScanFailed(arg0);
+        ((android.bluetooth.le.ScanCallback) real).onScanFailed(arg0);
     }
 
     public void onScanResult(int arg0, com.micklab.dcg.wrapper.android.bluetooth.le.ScanResult arg1) {
-        real.onScanResult(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.bluetooth.le.ScanCallback) real).onScanResult(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static final int SCAN_FAILED_ALREADY_STARTED = android.bluetooth.le.ScanCallback.SCAN_FAILED_ALREADY_STARTED;

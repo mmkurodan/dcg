@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class ServiceState {
-    private final android.telephony.ServiceState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceState(android.telephony.ServiceState real) {
+    private final java.lang.Object real;
+
+    private ServiceState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ServiceState wrap(android.telephony.ServiceState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ServiceState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ServiceState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ServiceState getReal() {
+        return (android.telephony.ServiceState) real;
     }
 
     public android.telephony.ServiceState unwrap() {
-        return real;
+        return getReal();
     }
 
     public ServiceState() {

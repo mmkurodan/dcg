@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class PhoneAccountSuggestion {
-    private final android.telecom.PhoneAccountSuggestion real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PhoneAccountSuggestion(android.telecom.PhoneAccountSuggestion real) {
+    private final java.lang.Object real;
+
+    private PhoneAccountSuggestion(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.PhoneAccountSuggestion wrap(android.telecom.PhoneAccountSuggestion real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccountSuggestion(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccountSuggestion(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.PhoneAccountSuggestion getReal() {
+        return (android.telecom.PhoneAccountSuggestion) real;
     }
 
     public android.telecom.PhoneAccountSuggestion unwrap() {
-        return real;
+        return getReal();
     }
 
     public PhoneAccountSuggestion(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, int arg1, boolean arg2) {
-        this(new android.telecom.PhoneAccountSuggestion(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        this(new android.telecom.PhoneAccountSuggestion(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.PhoneAccountSuggestion) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.telecom.PhoneAccountSuggestion) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getPhoneAccountHandle() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getPhoneAccountHandle());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.PhoneAccountSuggestion) real).getPhoneAccountHandle());
     }
 
     public int getReason() {
-        return real.getReason();
+        return ((android.telecom.PhoneAccountSuggestion) real).getReason();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.telecom.PhoneAccountSuggestion) real).hashCode();
     }
 
     public boolean shouldAutoSelect() {
-        return real.shouldAutoSelect();
+        return ((android.telecom.PhoneAccountSuggestion) real).shouldAutoSelect();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.PhoneAccountSuggestion) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int REASON_FREQUENT = android.telecom.PhoneAccountSuggestion.REASON_FREQUENT;

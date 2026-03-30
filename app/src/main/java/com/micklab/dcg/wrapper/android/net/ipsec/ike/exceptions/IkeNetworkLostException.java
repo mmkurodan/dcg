@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions;
 
 public final class IkeNetworkLostException {
-    private final android.net.ipsec.ike.exceptions.IkeNetworkLostException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeNetworkLostException(android.net.ipsec.ike.exceptions.IkeNetworkLostException real) {
+    private final java.lang.Object real;
+
+    private IkeNetworkLostException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeNetworkLostException wrap(android.net.ipsec.ike.exceptions.IkeNetworkLostException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeNetworkLostException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeNetworkLostException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.exceptions.IkeNetworkLostException getReal() {
+        return (android.net.ipsec.ike.exceptions.IkeNetworkLostException) real;
     }
 
     public android.net.ipsec.ike.exceptions.IkeNetworkLostException unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeNetworkLostException(com.micklab.dcg.wrapper.android.net.Network arg0) {

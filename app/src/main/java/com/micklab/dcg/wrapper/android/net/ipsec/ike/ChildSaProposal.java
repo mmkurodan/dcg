@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class ChildSaProposal {
-    private final android.net.ipsec.ike.ChildSaProposal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ChildSaProposal(android.net.ipsec.ike.ChildSaProposal real) {
+    private final java.lang.Object real;
+
+    private ChildSaProposal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal wrap(android.net.ipsec.ike.ChildSaProposal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.ChildSaProposal getReal() {
+        return (android.net.ipsec.ike.ChildSaProposal) real;
     }
 
     public android.net.ipsec.ike.ChildSaProposal unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -25,18 +32,25 @@ public final class ChildSaProposal {
     }
 
     public static final class Builder {
-        private final android.net.ipsec.ike.ChildSaProposal.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.ipsec.ike.ChildSaProposal.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal.Builder wrap(android.net.ipsec.ike.ChildSaProposal.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSaProposal.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.ChildSaProposal.Builder getReal() {
+            return (android.net.ipsec.ike.ChildSaProposal.Builder) real;
         }
 
         public android.net.ipsec.ike.ChildSaProposal.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.media.tv;
 
 public final class TvContentRating {
-    private final android.media.tv.TvContentRating real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TvContentRating(android.media.tv.TvContentRating real) {
+    private final java.lang.Object real;
+
+    private TvContentRating(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.TvContentRating wrap(android.media.tv.TvContentRating real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContentRating(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContentRating(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.tv.TvContentRating getReal() {
+        return (android.media.tv.TvContentRating) real;
     }
 
     public android.media.tv.TvContentRating unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean contains(com.micklab.dcg.wrapper.android.media.tv.TvContentRating arg0) {
-        return real.contains(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.tv.TvContentRating) real).contains(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.TvContentRating createRating(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String... arg3) {
@@ -25,27 +32,27 @@ public final class TvContentRating {
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.tv.TvContentRating) real).equals(arg0);
     }
 
     public java.lang.String flattenToString() {
-        return real.flattenToString();
+        return ((android.media.tv.TvContentRating) real).flattenToString();
     }
 
     public java.lang.String getDomain() {
-        return real.getDomain();
+        return ((android.media.tv.TvContentRating) real).getDomain();
     }
 
     public java.lang.String getMainRating() {
-        return real.getMainRating();
+        return ((android.media.tv.TvContentRating) real).getMainRating();
     }
 
     public java.lang.String getRatingSystem() {
-        return real.getRatingSystem();
+        return ((android.media.tv.TvContentRating) real).getRatingSystem();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.tv.TvContentRating) real).hashCode();
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.TvContentRating unflattenFromString(java.lang.String arg0) {

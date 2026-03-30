@@ -2,106 +2,113 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class ExifInterface {
-    private final android.media.ExifInterface real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExifInterface(android.media.ExifInterface real) {
+    private final java.lang.Object real;
+
+    private ExifInterface(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.ExifInterface wrap(android.media.ExifInterface real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.ExifInterface(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.ExifInterface(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.ExifInterface getReal() {
+        return (android.media.ExifInterface) real;
     }
 
     public android.media.ExifInterface unwrap() {
-        return real;
+        return getReal();
     }
 
     public ExifInterface(java.io.InputStream arg0) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0));
+        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 
     public ExifInterface(java.io.FileDescriptor arg0) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0));
+        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 
     public ExifInterface(java.lang.String arg0) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0));
+        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 
     public ExifInterface(java.io.File arg0) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0));
+        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 
     public ExifInterface(java.io.InputStream arg0, int arg1) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0, arg1));
+        this(new android.media.ExifInterface(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public double getAltitude(double arg0) {
-        return real.getAltitude(arg0);
+        return ((android.media.ExifInterface) real).getAltitude(arg0);
     }
 
     public java.lang.String getAttribute(java.lang.String arg0) {
-        return real.getAttribute(arg0);
+        return ((android.media.ExifInterface) real).getAttribute(arg0);
     }
 
     public byte[] getAttributeBytes(java.lang.String arg0) {
-        return real.getAttributeBytes(arg0);
+        return ((android.media.ExifInterface) real).getAttributeBytes(arg0);
     }
 
     public double getAttributeDouble(java.lang.String arg0, double arg1) {
-        return real.getAttributeDouble(arg0, arg1);
+        return ((android.media.ExifInterface) real).getAttributeDouble(arg0, arg1);
     }
 
     public int getAttributeInt(java.lang.String arg0, int arg1) {
-        return real.getAttributeInt(arg0, arg1);
+        return ((android.media.ExifInterface) real).getAttributeInt(arg0, arg1);
     }
 
     public long[] getAttributeRange(java.lang.String arg0) {
-        return real.getAttributeRange(arg0);
+        return ((android.media.ExifInterface) real).getAttributeRange(arg0);
     }
 
     public long getDateTime() {
-        return real.getDateTime();
+        return ((android.media.ExifInterface) real).getDateTime();
     }
 
     public long getDateTimeDigitized() {
-        return real.getDateTimeDigitized();
+        return ((android.media.ExifInterface) real).getDateTimeDigitized();
     }
 
     public long getDateTimeOriginal() {
-        return real.getDateTimeOriginal();
+        return ((android.media.ExifInterface) real).getDateTimeOriginal();
     }
 
     public long getGpsDateTime() {
-        return real.getGpsDateTime();
+        return ((android.media.ExifInterface) real).getGpsDateTime();
     }
 
     public boolean getLatLong(float[] arg0) {
-        return real.getLatLong(arg0);
+        return ((android.media.ExifInterface) real).getLatLong(arg0);
     }
 
     public byte[] getThumbnail() {
-        return real.getThumbnail();
+        return ((android.media.ExifInterface) real).getThumbnail();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getThumbnailBitmap() {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getThumbnailBitmap());
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.media.ExifInterface) real).getThumbnailBitmap());
     }
 
     public byte[] getThumbnailBytes() {
-        return real.getThumbnailBytes();
+        return ((android.media.ExifInterface) real).getThumbnailBytes();
     }
 
     public long[] getThumbnailRange() {
-        return real.getThumbnailRange();
+        return ((android.media.ExifInterface) real).getThumbnailRange();
     }
 
     public boolean hasAttribute(java.lang.String arg0) {
-        return real.hasAttribute(arg0);
+        return ((android.media.ExifInterface) real).hasAttribute(arg0);
     }
 
     public boolean hasThumbnail() {
-        return real.hasThumbnail();
+        return ((android.media.ExifInterface) real).hasThumbnail();
     }
 
     public static boolean isSupportedMimeType(java.lang.String arg0) {
@@ -109,15 +116,15 @@ public final class ExifInterface {
     }
 
     public boolean isThumbnailCompressed() {
-        return real.isThumbnailCompressed();
+        return ((android.media.ExifInterface) real).isThumbnailCompressed();
     }
 
     public void saveAttributes() throws java.io.IOException {
-        real.saveAttributes();
+        ((android.media.ExifInterface) real).saveAttributes();
     }
 
     public void setAttribute(java.lang.String arg0, java.lang.String arg1) {
-        real.setAttribute(arg0, arg1);
+        ((android.media.ExifInterface) real).setAttribute(arg0, arg1);
     }
 
     public static final int ORIENTATION_FLIP_HORIZONTAL = android.media.ExifInterface.ORIENTATION_FLIP_HORIZONTAL;

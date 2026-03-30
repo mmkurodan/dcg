@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class SSLSessionCache {
-    private final android.net.SSLSessionCache real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SSLSessionCache(android.net.SSLSessionCache real) {
+    private final java.lang.Object real;
+
+    private SSLSessionCache(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.SSLSessionCache wrap(android.net.SSLSessionCache real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SSLSessionCache(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.SSLSessionCache(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.SSLSessionCache getReal() {
+        return (android.net.SSLSessionCache) real;
     }
 
     public android.net.SSLSessionCache unwrap() {
-        return real;
+        return getReal();
     }
 
     public SSLSessionCache(java.io.File arg0) throws java.io.IOException {

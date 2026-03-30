@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.service.controls.actions;
 
 public final class ControlAction {
-    private final android.service.controls.actions.ControlAction real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ControlAction(android.service.controls.actions.ControlAction real) {
+    private final java.lang.Object real;
+
+    private ControlAction(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.actions.ControlAction wrap(android.service.controls.actions.ControlAction real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.actions.ControlAction(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.controls.actions.ControlAction(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.controls.actions.ControlAction getReal() {
+        return (android.service.controls.actions.ControlAction) real;
     }
 
     public android.service.controls.actions.ControlAction unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getActionType() {
-        return real.getActionType();
+        return ((android.service.controls.actions.ControlAction) real).getActionType();
     }
 
     public java.lang.String getChallengeValue() {
-        return real.getChallengeValue();
+        return ((android.service.controls.actions.ControlAction) real).getChallengeValue();
     }
 
     public static com.micklab.dcg.wrapper.android.service.controls.actions.ControlAction getErrorAction() {
@@ -29,7 +36,7 @@ public final class ControlAction {
     }
 
     public java.lang.String getTemplateId() {
-        return real.getTemplateId();
+        return ((android.service.controls.actions.ControlAction) real).getTemplateId();
     }
 
     public static boolean isValidResponse(int arg0) {

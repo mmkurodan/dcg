@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.sip;
 
 public final class SipProfile {
-    private final android.net.sip.SipProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SipProfile(android.net.sip.SipProfile real) {
+    private final java.lang.Object real;
+
+    private SipProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.sip.SipProfile wrap(android.net.sip.SipProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.sip.SipProfile getReal() {
+        return (android.net.sip.SipProfile) real;
     }
 
     public android.net.sip.SipProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -78,18 +85,25 @@ public final class SipProfile {
 
 
     public static final class Builder {
-        private final android.net.sip.SipProfile.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.sip.SipProfile.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.sip.SipProfile.Builder wrap(android.net.sip.SipProfile.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipProfile.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipProfile.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.sip.SipProfile.Builder getReal() {
+            return (android.net.sip.SipProfile.Builder) real;
         }
 
         public android.net.sip.SipProfile.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) throws java.text.ParseException {

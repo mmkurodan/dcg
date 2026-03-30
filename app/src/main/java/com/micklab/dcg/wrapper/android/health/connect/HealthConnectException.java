@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.health.connect;
 
 public final class HealthConnectException {
-    private final android.health.connect.HealthConnectException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HealthConnectException(android.health.connect.HealthConnectException real) {
+    private final java.lang.Object real;
+
+    private HealthConnectException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.HealthConnectException wrap(android.health.connect.HealthConnectException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthConnectException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthConnectException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.HealthConnectException getReal() {
+        return (android.health.connect.HealthConnectException) real;
     }
 
     public android.health.connect.HealthConnectException unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getErrorCode() {
-        return real.getErrorCode();
+        return ((android.health.connect.HealthConnectException) real).getErrorCode();
     }
 
     public static final int ERROR_DATA_SYNC_IN_PROGRESS = android.health.connect.HealthConnectException.ERROR_DATA_SYNC_IN_PROGRESS;

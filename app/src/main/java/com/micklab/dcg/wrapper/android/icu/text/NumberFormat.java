@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class NumberFormat {
-    private final android.icu.text.NumberFormat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NumberFormat(android.icu.text.NumberFormat real) {
+    private final java.lang.Object real;
+
+    private NumberFormat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat wrap(android.icu.text.NumberFormat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberFormat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberFormat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.NumberFormat getReal() {
+        return (android.icu.text.NumberFormat) real;
     }
 
     public android.icu.text.NumberFormat unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.NumberFormat) real).clone();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.NumberFormat) real).equals(arg0);
     }
 
     public java.lang.String format(java.math.BigInteger arg0) {
-        return real.format(arg0);
+        return ((android.icu.text.NumberFormat) real).format(arg0);
     }
 
     public java.lang.String format(long arg0) {
-        return real.format(arg0);
+        return ((android.icu.text.NumberFormat) real).format(arg0);
     }
 
     public java.lang.String format(double arg0) {
-        return real.format(arg0);
+        return ((android.icu.text.NumberFormat) real).format(arg0);
     }
 
     public java.lang.String format(com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount arg0) {
-        return real.format(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.text.NumberFormat) real).format(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String format(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return real.format(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.text.NumberFormat) real).format(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String format(java.math.BigDecimal arg0) {
-        return real.format(arg0);
+        return ((android.icu.text.NumberFormat) real).format(arg0);
     }
 
     public java.lang.StringBuffer format(long arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0, arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0, arg1, arg2);
     }
 
     public java.lang.StringBuffer format(java.math.BigInteger arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0, arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0, arg1, arg2);
     }
 
     public java.lang.StringBuffer format(double arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0, arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0, arg1, arg2);
     }
 
     public java.lang.StringBuffer format(java.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0, arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0, arg1, arg2);
     }
 
     public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public java.lang.StringBuffer format(java.lang.Object arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return real.format(arg0, arg1, arg2);
+        return ((android.icu.text.NumberFormat) real).format(arg0, arg1, arg2);
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -81,11 +88,11 @@ public final class NumberFormat {
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayContext getContext(com.micklab.dcg.wrapper.android.icu.text.DisplayContext.Type arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.wrap(real.getContext(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayContext.wrap(((android.icu.text.NumberFormat) real).getContext(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.Currency getCurrency() {
-        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(real.getCurrency());
+        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(((android.icu.text.NumberFormat) real).getCurrency());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getCurrencyInstance() {
@@ -93,7 +100,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getCurrencyInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getCurrencyInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getCurrencyInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getCurrencyInstance(java.util.Locale arg0) {
@@ -105,7 +112,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getInstance(java.util.Locale arg0) {
@@ -121,7 +128,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getInstance(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getInstance(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getIntegerInstance() {
@@ -129,7 +136,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getIntegerInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getIntegerInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getIntegerInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getIntegerInstance(java.util.Locale arg0) {
@@ -137,19 +144,19 @@ public final class NumberFormat {
     }
 
     public int getMaximumFractionDigits() {
-        return real.getMaximumFractionDigits();
+        return ((android.icu.text.NumberFormat) real).getMaximumFractionDigits();
     }
 
     public int getMaximumIntegerDigits() {
-        return real.getMaximumIntegerDigits();
+        return ((android.icu.text.NumberFormat) real).getMaximumIntegerDigits();
     }
 
     public int getMinimumFractionDigits() {
-        return real.getMinimumFractionDigits();
+        return ((android.icu.text.NumberFormat) real).getMinimumFractionDigits();
     }
 
     public int getMinimumIntegerDigits() {
-        return real.getMinimumIntegerDigits();
+        return ((android.icu.text.NumberFormat) real).getMinimumIntegerDigits();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getNumberInstance() {
@@ -161,7 +168,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getNumberInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getNumberInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getNumberInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getPercentInstance() {
@@ -169,7 +176,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getPercentInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getPercentInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getPercentInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getPercentInstance(java.util.Locale arg0) {
@@ -177,7 +184,7 @@ public final class NumberFormat {
     }
 
     public int getRoundingMode() {
-        return real.getRoundingMode();
+        return ((android.icu.text.NumberFormat) real).getRoundingMode();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getScientificInstance() {
@@ -185,7 +192,7 @@ public final class NumberFormat {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getScientificInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getScientificInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.NumberFormat.wrap(android.icu.text.NumberFormat.getScientificInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat getScientificInstance(java.util.Locale arg0) {
@@ -193,75 +200,75 @@ public final class NumberFormat {
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.NumberFormat) real).hashCode();
     }
 
     public boolean isGroupingUsed() {
-        return real.isGroupingUsed();
+        return ((android.icu.text.NumberFormat) real).isGroupingUsed();
     }
 
     public boolean isParseIntegerOnly() {
-        return real.isParseIntegerOnly();
+        return ((android.icu.text.NumberFormat) real).isParseIntegerOnly();
     }
 
     public boolean isParseStrict() {
-        return real.isParseStrict();
+        return ((android.icu.text.NumberFormat) real).isParseStrict();
     }
 
     public java.lang.Number parse(java.lang.String arg0) throws java.text.ParseException {
-        return real.parse(arg0);
+        return ((android.icu.text.NumberFormat) real).parse(arg0);
     }
 
     public java.lang.Number parse(java.lang.String arg0, java.text.ParsePosition arg1) {
-        return real.parse(arg0, arg1);
+        return ((android.icu.text.NumberFormat) real).parse(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount parseCurrency(java.lang.CharSequence arg0, java.text.ParsePosition arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount.wrap(real.parseCurrency(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount.wrap(((android.icu.text.NumberFormat) real).parseCurrency(arg0, arg1));
     }
 
     public java.lang.Object parseObject(java.lang.String arg0, java.text.ParsePosition arg1) {
-        return real.parseObject(arg0, arg1);
+        return ((android.icu.text.NumberFormat) real).parseObject(arg0, arg1);
     }
 
     public void setContext(com.micklab.dcg.wrapper.android.icu.text.DisplayContext arg0) {
-        real.setContext(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.NumberFormat) real).setContext(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCurrency(com.micklab.dcg.wrapper.android.icu.util.Currency arg0) {
-        real.setCurrency(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.NumberFormat) real).setCurrency(arg0 == null ? null : arg0.getReal());
     }
 
     public void setGroupingUsed(boolean arg0) {
-        real.setGroupingUsed(arg0);
+        ((android.icu.text.NumberFormat) real).setGroupingUsed(arg0);
     }
 
     public void setMaximumFractionDigits(int arg0) {
-        real.setMaximumFractionDigits(arg0);
+        ((android.icu.text.NumberFormat) real).setMaximumFractionDigits(arg0);
     }
 
     public void setMaximumIntegerDigits(int arg0) {
-        real.setMaximumIntegerDigits(arg0);
+        ((android.icu.text.NumberFormat) real).setMaximumIntegerDigits(arg0);
     }
 
     public void setMinimumFractionDigits(int arg0) {
-        real.setMinimumFractionDigits(arg0);
+        ((android.icu.text.NumberFormat) real).setMinimumFractionDigits(arg0);
     }
 
     public void setMinimumIntegerDigits(int arg0) {
-        real.setMinimumIntegerDigits(arg0);
+        ((android.icu.text.NumberFormat) real).setMinimumIntegerDigits(arg0);
     }
 
     public void setParseIntegerOnly(boolean arg0) {
-        real.setParseIntegerOnly(arg0);
+        ((android.icu.text.NumberFormat) real).setParseIntegerOnly(arg0);
     }
 
     public void setParseStrict(boolean arg0) {
-        real.setParseStrict(arg0);
+        ((android.icu.text.NumberFormat) real).setParseStrict(arg0);
     }
 
     public void setRoundingMode(int arg0) {
-        real.setRoundingMode(arg0);
+        ((android.icu.text.NumberFormat) real).setRoundingMode(arg0);
     }
 
     public static final int ACCOUNTINGCURRENCYSTYLE = android.icu.text.NumberFormat.ACCOUNTINGCURRENCYSTYLE;
@@ -278,18 +285,25 @@ public final class NumberFormat {
     public static final int STANDARDCURRENCYSTYLE = android.icu.text.NumberFormat.STANDARDCURRENCYSTYLE;
 
     public static final class Field {
-        private final android.icu.text.NumberFormat.Field real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Field(android.icu.text.NumberFormat.Field real) {
+        private final java.lang.Object real;
+
+        private Field(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.NumberFormat.Field wrap(android.icu.text.NumberFormat.Field real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberFormat.Field(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.NumberFormat.Field(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.NumberFormat.Field getReal() {
+            return (android.icu.text.NumberFormat.Field) real;
         }
 
         public android.icu.text.NumberFormat.Field unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.icu.text.NumberFormat.Field APPROXIMATELY_SIGN = com.micklab.dcg.wrapper.android.icu.text.NumberFormat.Field.wrap(android.icu.text.NumberFormat.Field.APPROXIMATELY_SIGN);

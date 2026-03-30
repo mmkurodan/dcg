@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaDrmThrowable {
-    private final android.media.MediaDrmThrowable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaDrmThrowable(android.media.MediaDrmThrowable real) {
+    private final java.lang.Object real;
+
+    private MediaDrmThrowable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaDrmThrowable wrap(android.media.MediaDrmThrowable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrmThrowable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrmThrowable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaDrmThrowable getReal() {
+        return (android.media.MediaDrmThrowable) real;
     }
 
     public android.media.MediaDrmThrowable unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getErrorContext() {
-        return real.getErrorContext();
+        return ((android.media.MediaDrmThrowable) real).getErrorContext();
     }
 
     public int getOemError() {
-        return real.getOemError();
+        return ((android.media.MediaDrmThrowable) real).getOemError();
     }
 
     public int getVendorError() {
-        return real.getVendorError();
+        return ((android.media.MediaDrmThrowable) real).getVendorError();
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Log {
-    private final android.util.Log real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Log(android.util.Log real) {
+    private final java.lang.Object real;
+
+    private Log(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Log wrap(android.util.Log real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Log(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Log(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Log getReal() {
+        return (android.util.Log) real;
     }
 
     public android.util.Log unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int d(java.lang.String arg0, java.lang.String arg1) {

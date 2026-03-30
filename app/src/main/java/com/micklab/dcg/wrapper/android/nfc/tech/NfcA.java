@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.nfc.tech;
 
 public final class NfcA {
-    private final android.nfc.tech.NfcA real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NfcA(android.nfc.tech.NfcA real) {
+    private final java.lang.Object real;
+
+    private NfcA(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.NfcA wrap(android.nfc.tech.NfcA real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.NfcA(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.tech.NfcA(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.tech.NfcA getReal() {
+        return (android.nfc.tech.NfcA) real;
     }
 
     public android.nfc.tech.NfcA unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() throws java.io.IOException {
-        real.close();
+        ((android.nfc.tech.NfcA) real).close();
     }
 
     public void connect() throws java.io.IOException {
-        real.connect();
+        ((android.nfc.tech.NfcA) real).connect();
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.tech.NfcA get(com.micklab.dcg.wrapper.android.nfc.Tag arg0) {
-        return com.micklab.dcg.wrapper.android.nfc.tech.NfcA.wrap(android.nfc.tech.NfcA.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.nfc.tech.NfcA.wrap(android.nfc.tech.NfcA.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public byte[] getAtqa() {
-        return real.getAtqa();
+        return ((android.nfc.tech.NfcA) real).getAtqa();
     }
 
     public int getMaxTransceiveLength() {
-        return real.getMaxTransceiveLength();
+        return ((android.nfc.tech.NfcA) real).getMaxTransceiveLength();
     }
 
     public short getSak() {
-        return real.getSak();
+        return ((android.nfc.tech.NfcA) real).getSak();
     }
 
     public com.micklab.dcg.wrapper.android.nfc.Tag getTag() {
-        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(real.getTag());
+        return com.micklab.dcg.wrapper.android.nfc.Tag.wrap(((android.nfc.tech.NfcA) real).getTag());
     }
 
     public int getTimeout() {
-        return real.getTimeout();
+        return ((android.nfc.tech.NfcA) real).getTimeout();
     }
 
     public boolean isConnected() {
-        return real.isConnected();
+        return ((android.nfc.tech.NfcA) real).isConnected();
     }
 
     public void setTimeout(int arg0) {
-        real.setTimeout(arg0);
+        ((android.nfc.tech.NfcA) real).setTimeout(arg0);
     }
 
     public byte[] transceive(byte[] arg0) throws java.io.IOException {
-        return real.transceive(arg0);
+        return ((android.nfc.tech.NfcA) real).transceive(arg0);
     }
 
 }

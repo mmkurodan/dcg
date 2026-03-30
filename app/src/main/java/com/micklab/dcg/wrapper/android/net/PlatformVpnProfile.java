@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class PlatformVpnProfile {
-    private final android.net.PlatformVpnProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PlatformVpnProfile(android.net.PlatformVpnProfile real) {
+    private final java.lang.Object real;
+
+    private PlatformVpnProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.PlatformVpnProfile wrap(android.net.PlatformVpnProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.PlatformVpnProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.PlatformVpnProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.PlatformVpnProfile getReal() {
+        return (android.net.PlatformVpnProfile) real;
     }
 
     public android.net.PlatformVpnProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean areLocalRoutesExcluded() {

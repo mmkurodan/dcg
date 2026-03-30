@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.rtt;
 
 public final class RangingResult {
-    private final android.net.wifi.rtt.RangingResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RangingResult(android.net.wifi.rtt.RangingResult real) {
+    private final java.lang.Object real;
+
+    private RangingResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult wrap(android.net.wifi.rtt.RangingResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.rtt.RangingResult getReal() {
+        return (android.net.wifi.rtt.RangingResult) real;
     }
 
     public android.net.wifi.rtt.RangingResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -126,18 +133,25 @@ public final class RangingResult {
 
 
     public static final class Builder {
-        private final android.net.wifi.rtt.RangingResult.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.rtt.RangingResult.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder wrap(android.net.wifi.rtt.RangingResult.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.rtt.RangingResult.Builder getReal() {
+            return (android.net.wifi.rtt.RangingResult.Builder) real;
         }
 
         public android.net.wifi.rtt.RangingResult.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.service.notification;
 
 public final class ConditionProviderService {
-    private final android.service.notification.ConditionProviderService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConditionProviderService(android.service.notification.ConditionProviderService real) {
+    private final java.lang.Object real;
+
+    private ConditionProviderService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.notification.ConditionProviderService wrap(android.service.notification.ConditionProviderService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ConditionProviderService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ConditionProviderService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.notification.ConditionProviderService getReal() {
+        return (android.service.notification.ConditionProviderService) real;
     }
 
     public android.service.notification.ConditionProviderService unwrap() {
-        return real;
+        return getReal();
     }
 
     public void notifyCondition(com.micklab.dcg.wrapper.android.service.notification.Condition arg0) {
-        real.notifyCondition(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.ConditionProviderService) real).notifyCondition(arg0 == null ? null : arg0.getReal());
     }
 
     public void notifyConditions(android.service.notification.Condition... arg0) {
-        real.notifyConditions(arg0);
+        ((android.service.notification.ConditionProviderService) real).notifyConditions(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.service.notification.ConditionProviderService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public void onConnected() {
-        real.onConnected();
+        ((android.service.notification.ConditionProviderService) real).onConnected();
     }
 
     public void onRequestConditions(int arg0) {
-        real.onRequestConditions(arg0);
+        ((android.service.notification.ConditionProviderService) real).onRequestConditions(arg0);
     }
 
     public void onSubscribe(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        real.onSubscribe(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.ConditionProviderService) real).onSubscribe(arg0 == null ? null : arg0.getReal());
     }
 
     public void onUnsubscribe(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        real.onUnsubscribe(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.ConditionProviderService) real).onUnsubscribe(arg0 == null ? null : arg0.getReal());
     }
 
     public static void requestRebind(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        android.service.notification.ConditionProviderService.requestRebind(arg0 == null ? null : arg0.unwrap());
+        android.service.notification.ConditionProviderService.requestRebind(arg0 == null ? null : arg0.getReal());
     }
 
     public void requestUnbind() {
-        real.requestUnbind();
+        ((android.service.notification.ConditionProviderService) real).requestUnbind();
     }
 
     public static final java.lang.String EXTRA_RULE_ID = android.service.notification.ConditionProviderService.EXTRA_RULE_ID;

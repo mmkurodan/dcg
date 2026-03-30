@@ -2,81 +2,95 @@
 package com.micklab.dcg.wrapper.android.security.identity;
 
 public final class CredentialDataRequest {
-    private final android.security.identity.CredentialDataRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CredentialDataRequest(android.security.identity.CredentialDataRequest real) {
+    private final java.lang.Object real;
+
+    private CredentialDataRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest wrap(android.security.identity.CredentialDataRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.identity.CredentialDataRequest getReal() {
+        return (android.security.identity.CredentialDataRequest) real;
     }
 
     public android.security.identity.CredentialDataRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public byte[] getReaderSignature() {
-        return real.getReaderSignature();
+        return ((android.security.identity.CredentialDataRequest) real).getReaderSignature();
     }
 
     public byte[] getRequestMessage() {
-        return real.getRequestMessage();
+        return ((android.security.identity.CredentialDataRequest) real).getRequestMessage();
     }
 
     public boolean isAllowUsingExhaustedKeys() {
-        return real.isAllowUsingExhaustedKeys();
+        return ((android.security.identity.CredentialDataRequest) real).isAllowUsingExhaustedKeys();
     }
 
     public boolean isAllowUsingExpiredKeys() {
-        return real.isAllowUsingExpiredKeys();
+        return ((android.security.identity.CredentialDataRequest) real).isAllowUsingExpiredKeys();
     }
 
     public boolean isIncrementUseCount() {
-        return real.isIncrementUseCount();
+        return ((android.security.identity.CredentialDataRequest) real).isIncrementUseCount();
     }
 
     public static final class Builder {
-        private final android.security.identity.CredentialDataRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.security.identity.CredentialDataRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder wrap(android.security.identity.CredentialDataRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.security.identity.CredentialDataRequest.Builder getReal() {
+            return (android.security.identity.CredentialDataRequest.Builder) real;
         }
 
         public android.security.identity.CredentialDataRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.security.identity.CredentialDataRequest.Builder());
+            this(new android.security.identity.CredentialDataRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest build() {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.wrap(((android.security.identity.CredentialDataRequest.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder setAllowUsingExhaustedKeys(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(real.setAllowUsingExhaustedKeys(arg0));
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(((android.security.identity.CredentialDataRequest.Builder) real).setAllowUsingExhaustedKeys(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder setAllowUsingExpiredKeys(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(real.setAllowUsingExpiredKeys(arg0));
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(((android.security.identity.CredentialDataRequest.Builder) real).setAllowUsingExpiredKeys(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder setIncrementUseCount(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(real.setIncrementUseCount(arg0));
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(((android.security.identity.CredentialDataRequest.Builder) real).setIncrementUseCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder setReaderSignature(byte[] arg0) {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(real.setReaderSignature(arg0));
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(((android.security.identity.CredentialDataRequest.Builder) real).setReaderSignature(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder setRequestMessage(byte[] arg0) {
-            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(real.setRequestMessage(arg0));
+            return com.micklab.dcg.wrapper.android.security.identity.CredentialDataRequest.Builder.wrap(((android.security.identity.CredentialDataRequest.Builder) real).setRequestMessage(arg0));
         }
 
     }

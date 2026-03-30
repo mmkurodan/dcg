@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class LocalSocketAddress {
-    private final android.net.LocalSocketAddress real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LocalSocketAddress(android.net.LocalSocketAddress real) {
+    private final java.lang.Object real;
+
+    private LocalSocketAddress(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.LocalSocketAddress wrap(android.net.LocalSocketAddress real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalSocketAddress(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalSocketAddress(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.LocalSocketAddress getReal() {
+        return (android.net.LocalSocketAddress) real;
     }
 
     public android.net.LocalSocketAddress unwrap() {
-        return real;
+        return getReal();
     }
 
     public LocalSocketAddress(java.lang.String arg0) {
@@ -33,18 +40,25 @@ public final class LocalSocketAddress {
     }
 
     public static final class Namespace {
-        private final android.net.LocalSocketAddress.Namespace real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Namespace(android.net.LocalSocketAddress.Namespace real) {
+        private final java.lang.Object real;
+
+        private Namespace(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.LocalSocketAddress.Namespace wrap(android.net.LocalSocketAddress.Namespace real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalSocketAddress.Namespace(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalSocketAddress.Namespace(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.LocalSocketAddress.Namespace getReal() {
+            return (android.net.LocalSocketAddress.Namespace) real;
         }
 
         public android.net.LocalSocketAddress.Namespace unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.LocalSocketAddress.Namespace valueOf(java.lang.String arg0) {

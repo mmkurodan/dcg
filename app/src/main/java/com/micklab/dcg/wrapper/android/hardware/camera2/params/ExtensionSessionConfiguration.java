@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class ExtensionSessionConfiguration {
-    private final android.hardware.camera2.params.ExtensionSessionConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExtensionSessionConfiguration(android.hardware.camera2.params.ExtensionSessionConfiguration real) {
+    private final java.lang.Object real;
+
+    private ExtensionSessionConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.ExtensionSessionConfiguration wrap(android.hardware.camera2.params.ExtensionSessionConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.ExtensionSessionConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.ExtensionSessionConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.ExtensionSessionConfiguration getReal() {
+        return (android.hardware.camera2.params.ExtensionSessionConfiguration) real;
     }
 
     public android.hardware.camera2.params.ExtensionSessionConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public ExtensionSessionConfiguration(int arg0, java.util.List arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionSession.StateCallback arg3) {
-        this(new android.hardware.camera2.params.ExtensionSessionConfiguration(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+        this(new android.hardware.camera2.params.ExtensionSessionConfiguration(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void clearColorSpace() {
-        real.clearColorSpace();
+        ((android.hardware.camera2.params.ExtensionSessionConfiguration) real).clearColorSpace();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.ColorSpace getColorSpace() {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(real.getColorSpace());
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.hardware.camera2.params.ExtensionSessionConfiguration) real).getColorSpace());
     }
 
     public java.util.concurrent.Executor getExecutor() {
-        return real.getExecutor();
+        return ((android.hardware.camera2.params.ExtensionSessionConfiguration) real).getExecutor();
     }
 
     public int getExtension() {
-        return real.getExtension();
+        return ((android.hardware.camera2.params.ExtensionSessionConfiguration) real).getExtension();
     }
 
     public com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration getPostviewOutputConfiguration() {
-        return com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration.wrap(real.getPostviewOutputConfiguration());
+        return com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration.wrap(((android.hardware.camera2.params.ExtensionSessionConfiguration) real).getPostviewOutputConfiguration());
     }
 
     public com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionSession.StateCallback getStateCallback() {
-        return com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionSession.StateCallback.wrap(real.getStateCallback());
+        return com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionSession.StateCallback.wrap(((android.hardware.camera2.params.ExtensionSessionConfiguration) real).getStateCallback());
     }
 
     public void setColorSpace(com.micklab.dcg.wrapper.android.graphics.ColorSpace.Named arg0) {
-        real.setColorSpace(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.camera2.params.ExtensionSessionConfiguration) real).setColorSpace(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPostviewOutputConfiguration(com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration arg0) {
-        real.setPostviewOutputConfiguration(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.camera2.params.ExtensionSessionConfiguration) real).setPostviewOutputConfiguration(arg0 == null ? null : arg0.getReal());
     }
 
 }

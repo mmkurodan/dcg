@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class BatteryManager {
-    private final android.os.BatteryManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BatteryManager(android.os.BatteryManager real) {
+    private final java.lang.Object real;
+
+    private BatteryManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.BatteryManager wrap(android.os.BatteryManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BatteryManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BatteryManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.BatteryManager getReal() {
+        return (android.os.BatteryManager) real;
     }
 
     public android.os.BatteryManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public long computeChargeTimeRemaining() {

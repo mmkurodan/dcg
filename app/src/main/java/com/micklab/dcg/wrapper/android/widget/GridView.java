@@ -2,134 +2,141 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class GridView {
-    private final android.widget.GridView real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GridView(android.widget.GridView real) {
+    private final java.lang.Object real;
+
+    private GridView(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.GridView wrap(android.widget.GridView real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.GridView(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.GridView(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.GridView getReal() {
+        return (android.widget.GridView) real;
     }
 
     public android.widget.GridView unwrap() {
-        return real;
+        return getReal();
     }
 
     public GridView(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.GridView(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.GridView(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public GridView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.GridView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.GridView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public GridView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.widget.GridView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.widget.GridView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public GridView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.widget.GridView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.widget.GridView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.GridView) real).getAccessibilityClassName();
     }
 
     public com.micklab.dcg.wrapper.android.widget.ListAdapter getAdapter() {
-        return com.micklab.dcg.wrapper.android.widget.ListAdapter.wrap(real.getAdapter());
+        return com.micklab.dcg.wrapper.android.widget.ListAdapter.wrap(((android.widget.GridView) real).getAdapter());
     }
 
     public int getColumnWidth() {
-        return real.getColumnWidth();
+        return ((android.widget.GridView) real).getColumnWidth();
     }
 
     public int getGravity() {
-        return real.getGravity();
+        return ((android.widget.GridView) real).getGravity();
     }
 
     public int getHorizontalSpacing() {
-        return real.getHorizontalSpacing();
+        return ((android.widget.GridView) real).getHorizontalSpacing();
     }
 
     public int getNumColumns() {
-        return real.getNumColumns();
+        return ((android.widget.GridView) real).getNumColumns();
     }
 
     public int getRequestedColumnWidth() {
-        return real.getRequestedColumnWidth();
+        return ((android.widget.GridView) real).getRequestedColumnWidth();
     }
 
     public int getRequestedHorizontalSpacing() {
-        return real.getRequestedHorizontalSpacing();
+        return ((android.widget.GridView) real).getRequestedHorizontalSpacing();
     }
 
     public int getStretchMode() {
-        return real.getStretchMode();
+        return ((android.widget.GridView) real).getStretchMode();
     }
 
     public int getVerticalSpacing() {
-        return real.getVerticalSpacing();
+        return ((android.widget.GridView) real).getVerticalSpacing();
     }
 
     public void onInitializeAccessibilityNodeInfoForItem(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg2) {
-        real.onInitializeAccessibilityNodeInfoForItem(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.widget.GridView) real).onInitializeAccessibilityNodeInfoForItem(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.GridView) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyMultiple(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-        return real.onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.widget.GridView) real).onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyUp(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyUp(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.GridView) real).onKeyUp(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setAdapter(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0) {
-        real.setAdapter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.GridView) real).setAdapter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setColumnWidth(int arg0) {
-        real.setColumnWidth(arg0);
+        ((android.widget.GridView) real).setColumnWidth(arg0);
     }
 
     public void setGravity(int arg0) {
-        real.setGravity(arg0);
+        ((android.widget.GridView) real).setGravity(arg0);
     }
 
     public void setHorizontalSpacing(int arg0) {
-        real.setHorizontalSpacing(arg0);
+        ((android.widget.GridView) real).setHorizontalSpacing(arg0);
     }
 
     public void setNumColumns(int arg0) {
-        real.setNumColumns(arg0);
+        ((android.widget.GridView) real).setNumColumns(arg0);
     }
 
     public void setRemoteViewsAdapter(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.setRemoteViewsAdapter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.GridView) real).setRemoteViewsAdapter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSelection(int arg0) {
-        real.setSelection(arg0);
+        ((android.widget.GridView) real).setSelection(arg0);
     }
 
     public void setStretchMode(int arg0) {
-        real.setStretchMode(arg0);
+        ((android.widget.GridView) real).setStretchMode(arg0);
     }
 
     public void setVerticalSpacing(int arg0) {
-        real.setVerticalSpacing(arg0);
+        ((android.widget.GridView) real).setVerticalSpacing(arg0);
     }
 
     public void smoothScrollByOffset(int arg0) {
-        real.smoothScrollByOffset(arg0);
+        ((android.widget.GridView) real).smoothScrollByOffset(arg0);
     }
 
     public void smoothScrollToPosition(int arg0) {
-        real.smoothScrollToPosition(arg0);
+        ((android.widget.GridView) real).smoothScrollToPosition(arg0);
     }
 
     public static final int AUTO_FIT = android.widget.GridView.AUTO_FIT;

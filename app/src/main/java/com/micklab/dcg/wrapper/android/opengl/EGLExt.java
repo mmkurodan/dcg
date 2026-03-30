@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class EGLExt {
-    private final android.opengl.EGLExt real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EGLExt(android.opengl.EGLExt real) {
+    private final java.lang.Object real;
+
+    private EGLExt(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.EGLExt wrap(android.opengl.EGLExt real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGLExt(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.EGLExt(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.EGLExt getReal() {
+        return (android.opengl.EGLExt) real;
     }
 
     public android.opengl.EGLExt unwrap() {
-        return real;
+        return getReal();
     }
 
     public EGLExt() {
-        this(new android.opengl.EGLExt());
+        this(new android.opengl.EGLExt(), (__DcgwBridgeToken) null);
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.SyncFence eglDupNativeFenceFDANDROID(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSync arg1) {
-        return com.micklab.dcg.wrapper.android.hardware.SyncFence.wrap(android.opengl.EGLExt.eglDupNativeFenceFDANDROID(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.hardware.SyncFence.wrap(android.opengl.EGLExt.eglDupNativeFenceFDANDROID(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static boolean eglPresentationTimeANDROID(com.micklab.dcg.wrapper.android.opengl.EGLDisplay arg0, com.micklab.dcg.wrapper.android.opengl.EGLSurface arg1, long arg2) {
-        return android.opengl.EGLExt.eglPresentationTimeANDROID(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.opengl.EGLExt.eglPresentationTimeANDROID(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static final int EGL_CONTEXT_FLAGS_KHR = android.opengl.EGLExt.EGL_CONTEXT_FLAGS_KHR;

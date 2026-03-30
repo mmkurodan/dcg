@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES31Ext {
-    private final android.opengl.GLES31Ext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES31Ext(android.opengl.GLES31Ext real) {
+    private final java.lang.Object real;
+
+    private GLES31Ext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES31Ext wrap(android.opengl.GLES31Ext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES31Ext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES31Ext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES31Ext getReal() {
+        return (android.opengl.GLES31Ext) real;
     }
 
     public android.opengl.GLES31Ext unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void glBlendBarrierKHR() {
@@ -45,7 +52,7 @@ public final class GLES31Ext {
     }
 
     public static void glDebugMessageCallbackKHR(com.micklab.dcg.wrapper.android.opengl.GLES31Ext.DebugProcKHR arg0) {
-        android.opengl.GLES31Ext.glDebugMessageCallbackKHR(arg0 == null ? null : arg0.unwrap());
+        android.opengl.GLES31Ext.glDebugMessageCallbackKHR(arg0 == null ? null : arg0.getReal());
     }
 
     public static void glDebugMessageControlKHR(int arg0, int arg1, int arg2, int arg3, java.nio.IntBuffer arg4, boolean arg5) {
@@ -410,22 +417,29 @@ public final class GLES31Ext {
     public static final int GL_VERTEX_ARRAY_KHR = android.opengl.GLES31Ext.GL_VERTEX_ARRAY_KHR;
 
     public static final class DebugProcKHR {
-        private final android.opengl.GLES31Ext.DebugProcKHR real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DebugProcKHR(android.opengl.GLES31Ext.DebugProcKHR real) {
+        private final java.lang.Object real;
+
+        private DebugProcKHR(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.opengl.GLES31Ext.DebugProcKHR wrap(android.opengl.GLES31Ext.DebugProcKHR real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES31Ext.DebugProcKHR(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES31Ext.DebugProcKHR(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.opengl.GLES31Ext.DebugProcKHR getReal() {
+            return (android.opengl.GLES31Ext.DebugProcKHR) real;
         }
 
         public android.opengl.GLES31Ext.DebugProcKHR unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onMessage(int arg0, int arg1, int arg2, int arg3, java.lang.String arg4) {
-            real.onMessage(arg0, arg1, arg2, arg3, arg4);
+            ((android.opengl.GLES31Ext.DebugProcKHR) real).onMessage(arg0, arg1, arg2, arg3, arg4);
         }
 
     }

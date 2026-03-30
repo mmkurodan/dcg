@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsRegistrationAttributes {
-    private final android.telephony.ims.ImsRegistrationAttributes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsRegistrationAttributes(android.telephony.ims.ImsRegistrationAttributes real) {
+    private final java.lang.Object real;
+
+    private ImsRegistrationAttributes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes wrap(android.telephony.ims.ImsRegistrationAttributes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsRegistrationAttributes getReal() {
+        return (android.telephony.ims.ImsRegistrationAttributes) real;
     }
 
     public android.telephony.ims.ImsRegistrationAttributes unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

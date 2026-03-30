@@ -2,82 +2,89 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class AdapterViewFlipper {
-    private final android.widget.AdapterViewFlipper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdapterViewFlipper(android.widget.AdapterViewFlipper real) {
+    private final java.lang.Object real;
+
+    private AdapterViewFlipper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.AdapterViewFlipper wrap(android.widget.AdapterViewFlipper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.AdapterViewFlipper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.AdapterViewFlipper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.AdapterViewFlipper getReal() {
+        return (android.widget.AdapterViewFlipper) real;
     }
 
     public android.widget.AdapterViewFlipper unwrap() {
-        return real;
+        return getReal();
     }
 
     public AdapterViewFlipper(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AdapterViewFlipper(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AdapterViewFlipper(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public AdapterViewFlipper(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.widget.AdapterViewFlipper(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void fyiWillBeAdvancedByHostKThx() {
-        real.fyiWillBeAdvancedByHostKThx();
+        ((android.widget.AdapterViewFlipper) real).fyiWillBeAdvancedByHostKThx();
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.AdapterViewFlipper) real).getAccessibilityClassName();
     }
 
     public int getFlipInterval() {
-        return real.getFlipInterval();
+        return ((android.widget.AdapterViewFlipper) real).getFlipInterval();
     }
 
     public boolean isAutoStart() {
-        return real.isAutoStart();
+        return ((android.widget.AdapterViewFlipper) real).isAutoStart();
     }
 
     public boolean isFlipping() {
-        return real.isFlipping();
+        return ((android.widget.AdapterViewFlipper) real).isFlipping();
     }
 
     public void setAdapter(com.micklab.dcg.wrapper.android.widget.Adapter arg0) {
-        real.setAdapter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.AdapterViewFlipper) real).setAdapter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setAutoStart(boolean arg0) {
-        real.setAutoStart(arg0);
+        ((android.widget.AdapterViewFlipper) real).setAutoStart(arg0);
     }
 
     public void setFlipInterval(int arg0) {
-        real.setFlipInterval(arg0);
+        ((android.widget.AdapterViewFlipper) real).setFlipInterval(arg0);
     }
 
     public void showNext() {
-        real.showNext();
+        ((android.widget.AdapterViewFlipper) real).showNext();
     }
 
     public void showPrevious() {
-        real.showPrevious();
+        ((android.widget.AdapterViewFlipper) real).showPrevious();
     }
 
     public void startFlipping() {
-        real.startFlipping();
+        ((android.widget.AdapterViewFlipper) real).startFlipping();
     }
 
     public void stopFlipping() {
-        real.stopFlipping();
+        ((android.widget.AdapterViewFlipper) real).stopFlipping();
     }
 
 }

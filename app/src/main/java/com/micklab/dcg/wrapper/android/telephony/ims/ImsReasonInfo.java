@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsReasonInfo {
-    private final android.telephony.ims.ImsReasonInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsReasonInfo(android.telephony.ims.ImsReasonInfo real) {
+    private final java.lang.Object real;
+
+    private ImsReasonInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsReasonInfo wrap(android.telephony.ims.ImsReasonInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsReasonInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsReasonInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsReasonInfo getReal() {
+        return (android.telephony.ims.ImsReasonInfo) real;
     }
 
     public android.telephony.ims.ImsReasonInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ImsReasonInfo(int arg0, int arg1, java.lang.String arg2) {

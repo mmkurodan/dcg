@@ -2,194 +2,201 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class ListView {
-    private final android.widget.ListView real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ListView(android.widget.ListView real) {
+    private final java.lang.Object real;
+
+    private ListView(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.ListView wrap(android.widget.ListView real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ListView(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ListView(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.ListView getReal() {
+        return (android.widget.ListView) real;
     }
 
     public android.widget.ListView unwrap() {
-        return real;
+        return getReal();
     }
 
     public ListView(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.ListView(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.ListView(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ListView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.ListView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.ListView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ListView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.widget.ListView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.widget.ListView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public ListView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.widget.ListView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.widget.ListView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void addFooterView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.addFooterView(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).addFooterView(arg0 == null ? null : arg0.getReal());
     }
 
     public void addFooterView(com.micklab.dcg.wrapper.android.view.View arg0, java.lang.Object arg1, boolean arg2) {
-        real.addFooterView(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.widget.ListView) real).addFooterView(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void addHeaderView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.addHeaderView(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).addHeaderView(arg0 == null ? null : arg0.getReal());
     }
 
     public void addHeaderView(com.micklab.dcg.wrapper.android.view.View arg0, java.lang.Object arg1, boolean arg2) {
-        real.addHeaderView(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.widget.ListView) real).addHeaderView(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean areFooterDividersEnabled() {
-        return real.areFooterDividersEnabled();
+        return ((android.widget.ListView) real).areFooterDividersEnabled();
     }
 
     public boolean areHeaderDividersEnabled() {
-        return real.areHeaderDividersEnabled();
+        return ((android.widget.ListView) real).areHeaderDividersEnabled();
     }
 
     public boolean dispatchKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        return real.dispatchKeyEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.ListView) real).dispatchKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.ListView) real).getAccessibilityClassName();
     }
 
     public com.micklab.dcg.wrapper.android.widget.ListAdapter getAdapter() {
-        return com.micklab.dcg.wrapper.android.widget.ListAdapter.wrap(real.getAdapter());
+        return com.micklab.dcg.wrapper.android.widget.ListAdapter.wrap(((android.widget.ListView) real).getAdapter());
     }
 
     public long[] getCheckItemIds() {
-        return real.getCheckItemIds();
+        return ((android.widget.ListView) real).getCheckItemIds();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDivider() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getDivider());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ListView) real).getDivider());
     }
 
     public int getDividerHeight() {
-        return real.getDividerHeight();
+        return ((android.widget.ListView) real).getDividerHeight();
     }
 
     public int getFooterViewsCount() {
-        return real.getFooterViewsCount();
+        return ((android.widget.ListView) real).getFooterViewsCount();
     }
 
     public int getHeaderViewsCount() {
-        return real.getHeaderViewsCount();
+        return ((android.widget.ListView) real).getHeaderViewsCount();
     }
 
     public boolean getItemsCanFocus() {
-        return real.getItemsCanFocus();
+        return ((android.widget.ListView) real).getItemsCanFocus();
     }
 
     public int getMaxScrollAmount() {
-        return real.getMaxScrollAmount();
+        return ((android.widget.ListView) real).getMaxScrollAmount();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getOverscrollFooter() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getOverscrollFooter());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ListView) real).getOverscrollFooter());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getOverscrollHeader() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getOverscrollHeader());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.ListView) real).getOverscrollHeader());
     }
 
     public boolean isOpaque() {
-        return real.isOpaque();
+        return ((android.widget.ListView) real).isOpaque();
     }
 
     public void onInitializeAccessibilityNodeInfoForItem(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg2) {
-        real.onInitializeAccessibilityNodeInfoForItem(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.widget.ListView) real).onInitializeAccessibilityNodeInfoForItem(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.ListView) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyMultiple(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-        return real.onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.widget.ListView) real).onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyUp(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyUp(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.ListView) real).onKeyUp(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean removeFooterView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.removeFooterView(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.ListView) real).removeFooterView(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean removeHeaderView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.removeHeaderView(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.ListView) real).removeHeaderView(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean requestChildRectangleOnScreen(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, boolean arg2) {
-        return real.requestChildRectangleOnScreen(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.widget.ListView) real).requestChildRectangleOnScreen(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void setAdapter(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0) {
-        real.setAdapter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).setAdapter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCacheColorHint(int arg0) {
-        real.setCacheColorHint(arg0);
+        ((android.widget.ListView) real).setCacheColorHint(arg0);
     }
 
     public void setDivider(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setDivider(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).setDivider(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDividerHeight(int arg0) {
-        real.setDividerHeight(arg0);
+        ((android.widget.ListView) real).setDividerHeight(arg0);
     }
 
     public void setFooterDividersEnabled(boolean arg0) {
-        real.setFooterDividersEnabled(arg0);
+        ((android.widget.ListView) real).setFooterDividersEnabled(arg0);
     }
 
     public void setHeaderDividersEnabled(boolean arg0) {
-        real.setHeaderDividersEnabled(arg0);
+        ((android.widget.ListView) real).setHeaderDividersEnabled(arg0);
     }
 
     public void setItemsCanFocus(boolean arg0) {
-        real.setItemsCanFocus(arg0);
+        ((android.widget.ListView) real).setItemsCanFocus(arg0);
     }
 
     public void setOverscrollFooter(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setOverscrollFooter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).setOverscrollFooter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOverscrollHeader(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setOverscrollHeader(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).setOverscrollHeader(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRemoteViewsAdapter(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.setRemoteViewsAdapter(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ListView) real).setRemoteViewsAdapter(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSelection(int arg0) {
-        real.setSelection(arg0);
+        ((android.widget.ListView) real).setSelection(arg0);
     }
 
     public void setSelectionAfterHeaderView() {
-        real.setSelectionAfterHeaderView();
+        ((android.widget.ListView) real).setSelectionAfterHeaderView();
     }
 
     public void smoothScrollByOffset(int arg0) {
-        real.smoothScrollByOffset(arg0);
+        ((android.widget.ListView) real).smoothScrollByOffset(arg0);
     }
 
     public void smoothScrollToPosition(int arg0) {
-        real.smoothScrollToPosition(arg0);
+        ((android.widget.ListView) real).smoothScrollToPosition(arg0);
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UScript {
-    private final android.icu.lang.UScript real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UScript(android.icu.lang.UScript real) {
+    private final java.lang.Object real;
+
+    private UScript(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UScript wrap(android.icu.lang.UScript real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UScript(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UScript(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UScript getReal() {
+        return (android.icu.lang.UScript) real;
     }
 
     public android.icu.lang.UScript unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean breaksBetweenLetters(int arg0) {
@@ -25,7 +32,7 @@ public final class UScript {
     }
 
     public static int[] getCode(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return android.icu.lang.UScript.getCode(arg0 == null ? null : arg0.unwrap());
+        return android.icu.lang.UScript.getCode(arg0 == null ? null : arg0.getReal());
     }
 
     public static int[] getCode(java.lang.String arg0) {
@@ -280,18 +287,25 @@ public final class UScript {
     public static final int ZANABAZAR_SQUARE = android.icu.lang.UScript.ZANABAZAR_SQUARE;
 
     public static final class ScriptUsage {
-        private final android.icu.lang.UScript.ScriptUsage real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ScriptUsage(android.icu.lang.UScript.ScriptUsage real) {
+        private final java.lang.Object real;
+
+        private ScriptUsage(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UScript.ScriptUsage wrap(android.icu.lang.UScript.ScriptUsage real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UScript.ScriptUsage(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UScript.ScriptUsage(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UScript.ScriptUsage getReal() {
+            return (android.icu.lang.UScript.ScriptUsage) real;
         }
 
         public android.icu.lang.UScript.ScriptUsage unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UScript.ScriptUsage valueOf(java.lang.String arg0) {

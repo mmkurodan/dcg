@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class DataSpace {
-    private final android.hardware.DataSpace real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DataSpace(android.hardware.DataSpace real) {
+    private final java.lang.Object real;
+
+    private DataSpace(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.DataSpace wrap(android.hardware.DataSpace real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.DataSpace(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.DataSpace(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.DataSpace getReal() {
+        return (android.hardware.DataSpace) real;
     }
 
     public android.hardware.DataSpace unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int getRange(int arg0) {

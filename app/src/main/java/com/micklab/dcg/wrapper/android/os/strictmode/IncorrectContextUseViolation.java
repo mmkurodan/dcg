@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.strictmode;
 
 public final class IncorrectContextUseViolation {
-    private final android.os.strictmode.IncorrectContextUseViolation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IncorrectContextUseViolation(android.os.strictmode.IncorrectContextUseViolation real) {
+    private final java.lang.Object real;
+
+    private IncorrectContextUseViolation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.strictmode.IncorrectContextUseViolation wrap(android.os.strictmode.IncorrectContextUseViolation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.IncorrectContextUseViolation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.IncorrectContextUseViolation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.strictmode.IncorrectContextUseViolation getReal() {
+        return (android.os.strictmode.IncorrectContextUseViolation) real;
     }
 
     public android.os.strictmode.IncorrectContextUseViolation unwrap() {
-        return real;
+        return getReal();
     }
 
     public IncorrectContextUseViolation(java.lang.String arg0, java.lang.Throwable arg1) {

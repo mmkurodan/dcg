@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.nfc.cardemulation;
 
 public final class PollingFrame {
-    private final android.nfc.cardemulation.PollingFrame real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PollingFrame(android.nfc.cardemulation.PollingFrame real) {
+    private final java.lang.Object real;
+
+    private PollingFrame(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.cardemulation.PollingFrame wrap(android.nfc.cardemulation.PollingFrame real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.cardemulation.PollingFrame(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.cardemulation.PollingFrame(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.cardemulation.PollingFrame getReal() {
+        return (android.nfc.cardemulation.PollingFrame) real;
     }
 
     public android.nfc.cardemulation.PollingFrame unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.nfc.cardemulation.PollingFrame) real).describeContents();
     }
 
     public byte[] getData() {
-        return real.getData();
+        return ((android.nfc.cardemulation.PollingFrame) real).getData();
     }
 
     public long getTimestamp() {
-        return real.getTimestamp();
+        return ((android.nfc.cardemulation.PollingFrame) real).getTimestamp();
     }
 
     public boolean getTriggeredAutoTransact() {
-        return real.getTriggeredAutoTransact();
+        return ((android.nfc.cardemulation.PollingFrame) real).getTriggeredAutoTransact();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.nfc.cardemulation.PollingFrame) real).getType();
     }
 
     public int getVendorSpecificGain() {
-        return real.getVendorSpecificGain();
+        return ((android.nfc.cardemulation.PollingFrame) real).getVendorSpecificGain();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.nfc.cardemulation.PollingFrame) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.nfc.cardemulation.PollingFrame) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int POLLING_LOOP_TYPE_A = android.nfc.cardemulation.PollingFrame.POLLING_LOOP_TYPE_A;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class Movie {
-    private final android.graphics.Movie real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Movie(android.graphics.Movie real) {
+    private final java.lang.Object real;
+
+    private Movie(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Movie wrap(android.graphics.Movie real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Movie(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Movie(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.Movie getReal() {
+        return (android.graphics.Movie) real;
     }
 
     public android.graphics.Movie unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Movie decodeByteArray(byte[] arg0, int arg1, int arg2) {
@@ -29,31 +36,31 @@ public final class Movie {
     }
 
     public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, float arg1, float arg2) {
-        real.draw(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.graphics.Movie) real).draw(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, float arg1, float arg2, com.micklab.dcg.wrapper.android.graphics.Paint arg3) {
-        real.draw(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.graphics.Movie) real).draw(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public int duration() {
-        return real.duration();
+        return ((android.graphics.Movie) real).duration();
     }
 
     public int height() {
-        return real.height();
+        return ((android.graphics.Movie) real).height();
     }
 
     public boolean isOpaque() {
-        return real.isOpaque();
+        return ((android.graphics.Movie) real).isOpaque();
     }
 
     public boolean setTime(int arg0) {
-        return real.setTime(arg0);
+        return ((android.graphics.Movie) real).setTime(arg0);
     }
 
     public int width() {
-        return real.width();
+        return ((android.graphics.Movie) real).width();
     }
 
 }

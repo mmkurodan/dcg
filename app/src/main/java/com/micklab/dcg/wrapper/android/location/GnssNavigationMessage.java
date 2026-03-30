@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.location;
 
 public final class GnssNavigationMessage {
-    private final android.location.GnssNavigationMessage real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GnssNavigationMessage(android.location.GnssNavigationMessage real) {
+    private final java.lang.Object real;
+
+    private GnssNavigationMessage(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.location.GnssNavigationMessage wrap(android.location.GnssNavigationMessage real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssNavigationMessage(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssNavigationMessage(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.location.GnssNavigationMessage getReal() {
+        return (android.location.GnssNavigationMessage) real;
     }
 
     public android.location.GnssNavigationMessage unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.location.GnssNavigationMessage) real).describeContents();
     }
 
     public byte[] getData() {
-        return real.getData();
+        return ((android.location.GnssNavigationMessage) real).getData();
     }
 
     public int getMessageId() {
-        return real.getMessageId();
+        return ((android.location.GnssNavigationMessage) real).getMessageId();
     }
 
     public int getStatus() {
-        return real.getStatus();
+        return ((android.location.GnssNavigationMessage) real).getStatus();
     }
 
     public int getSubmessageId() {
-        return real.getSubmessageId();
+        return ((android.location.GnssNavigationMessage) real).getSubmessageId();
     }
 
     public int getSvid() {
-        return real.getSvid();
+        return ((android.location.GnssNavigationMessage) real).getSvid();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.location.GnssNavigationMessage) real).getType();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.location.GnssNavigationMessage) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.location.GnssNavigationMessage) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int STATUS_PARITY_PASSED = android.location.GnssNavigationMessage.STATUS_PARITY_PASSED;
@@ -74,26 +81,33 @@ public final class GnssNavigationMessage {
     public static final int TYPE_UNKNOWN = android.location.GnssNavigationMessage.TYPE_UNKNOWN;
 
     public static final class Callback {
-        private final android.location.GnssNavigationMessage.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.location.GnssNavigationMessage.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.location.GnssNavigationMessage.Callback wrap(android.location.GnssNavigationMessage.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssNavigationMessage.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssNavigationMessage.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.location.GnssNavigationMessage.Callback getReal() {
+            return (android.location.GnssNavigationMessage.Callback) real;
         }
 
         public android.location.GnssNavigationMessage.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onGnssNavigationMessageReceived(com.micklab.dcg.wrapper.android.location.GnssNavigationMessage arg0) {
-            real.onGnssNavigationMessageReceived(arg0 == null ? null : arg0.unwrap());
+            ((android.location.GnssNavigationMessage.Callback) real).onGnssNavigationMessageReceived(arg0 == null ? null : arg0.getReal());
         }
 
         public void onStatusChanged(int arg0) {
-            real.onStatusChanged(arg0);
+            ((android.location.GnssNavigationMessage.Callback) real).onStatusChanged(arg0);
         }
 
         public static final int STATUS_LOCATION_DISABLED = android.location.GnssNavigationMessage.Callback.STATUS_LOCATION_DISABLED;

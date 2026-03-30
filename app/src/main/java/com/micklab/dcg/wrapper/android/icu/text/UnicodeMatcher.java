@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class UnicodeMatcher {
-    private final android.icu.text.UnicodeMatcher real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UnicodeMatcher(android.icu.text.UnicodeMatcher real) {
+    private final java.lang.Object real;
+
+    private UnicodeMatcher(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.UnicodeMatcher wrap(android.icu.text.UnicodeMatcher real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.UnicodeMatcher(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.UnicodeMatcher(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.UnicodeMatcher getReal() {
+        return (android.icu.text.UnicodeMatcher) real;
     }
 
     public android.icu.text.UnicodeMatcher unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addMatchSetTo(com.micklab.dcg.wrapper.android.icu.text.UnicodeSet arg0) {
-        real.addMatchSetTo(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.UnicodeMatcher) real).addMatchSetTo(arg0 == null ? null : arg0.getReal());
     }
 
     public int matches(com.micklab.dcg.wrapper.android.icu.text.Replaceable arg0, int[] arg1, int arg2, boolean arg3) {
-        return real.matches(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.icu.text.UnicodeMatcher) real).matches(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public boolean matchesIndexValue(int arg0) {
-        return real.matchesIndexValue(arg0);
+        return ((android.icu.text.UnicodeMatcher) real).matchesIndexValue(arg0);
     }
 
     public java.lang.String toPattern(boolean arg0) {
-        return real.toPattern(arg0);
+        return ((android.icu.text.UnicodeMatcher) real).toPattern(arg0);
     }
 
     public static final char ETHER = android.icu.text.UnicodeMatcher.ETHER;

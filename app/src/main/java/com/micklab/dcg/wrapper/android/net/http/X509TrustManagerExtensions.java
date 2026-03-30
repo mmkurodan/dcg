@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class X509TrustManagerExtensions {
-    private final android.net.http.X509TrustManagerExtensions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public X509TrustManagerExtensions(android.net.http.X509TrustManagerExtensions real) {
+    private final java.lang.Object real;
+
+    private X509TrustManagerExtensions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.X509TrustManagerExtensions wrap(android.net.http.X509TrustManagerExtensions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.X509TrustManagerExtensions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.X509TrustManagerExtensions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.X509TrustManagerExtensions getReal() {
+        return (android.net.http.X509TrustManagerExtensions) real;
     }
 
     public android.net.http.X509TrustManagerExtensions unwrap() {
-        return real;
+        return getReal();
     }
 
     public X509TrustManagerExtensions(javax.net.ssl.X509TrustManager arg0) throws java.lang.IllegalArgumentException {

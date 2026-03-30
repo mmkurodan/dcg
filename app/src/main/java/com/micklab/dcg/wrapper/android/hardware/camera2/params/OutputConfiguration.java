@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class OutputConfiguration {
-    private final android.hardware.camera2.params.OutputConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OutputConfiguration(android.hardware.camera2.params.OutputConfiguration real) {
+    private final java.lang.Object real;
+
+    private OutputConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration wrap(android.hardware.camera2.params.OutputConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.OutputConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.OutputConfiguration getReal() {
+        return (android.hardware.camera2.params.OutputConfiguration) real;
     }
 
     public android.hardware.camera2.params.OutputConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public OutputConfiguration(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.unwrap()));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.view.Surface arg1) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(com.micklab.dcg.wrapper.android.util.Size arg0, java.lang.Class arg1) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, int arg1, com.micklab.dcg.wrapper.android.util.Size arg2) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1, long arg2) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, int arg1, com.micklab.dcg.wrapper.android.util.Size arg2, long arg3) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3));
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3), (__DcgwBridgeToken) null);
     }
 
     public void addSensorPixelModeUsed(int arg0) {
-        real.addSensorPixelModeUsed(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).addSensorPixelModeUsed(arg0);
     }
 
     public void addSurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-        real.addSurface(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.camera2.params.OutputConfiguration) real).addSurface(arg0 == null ? null : arg0.getReal());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).describeContents();
     }
 
     public void enableSurfaceSharing() {
-        real.enableSurfaceSharing();
+        ((android.hardware.camera2.params.OutputConfiguration) real).enableSurfaceSharing();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.hardware.camera2.params.OutputConfiguration) real).equals(arg0);
     }
 
     public long getDynamicRangeProfile() {
@@ -69,43 +76,43 @@ public final class OutputConfiguration {
     }
 
     public int getMaxSharedSurfaceCount() {
-        return real.getMaxSharedSurfaceCount();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getMaxSharedSurfaceCount();
     }
 
     public int getMirrorMode() {
-        return real.getMirrorMode();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getMirrorMode();
     }
 
     public long getStreamUseCase() {
-        return real.getStreamUseCase();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getStreamUseCase();
     }
 
     public com.micklab.dcg.wrapper.android.view.Surface getSurface() {
-        return com.micklab.dcg.wrapper.android.view.Surface.wrap(real.getSurface());
+        return com.micklab.dcg.wrapper.android.view.Surface.wrap(((android.hardware.camera2.params.OutputConfiguration) real).getSurface());
     }
 
     public int getSurfaceGroupId() {
-        return real.getSurfaceGroupId();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getSurfaceGroupId();
     }
 
     public int getTimestampBase() {
-        return real.getTimestampBase();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getTimestampBase();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).hashCode();
     }
 
     public boolean isReadoutTimestampEnabled() {
-        return real.isReadoutTimestampEnabled();
+        return ((android.hardware.camera2.params.OutputConfiguration) real).isReadoutTimestampEnabled();
     }
 
     public void removeSensorPixelModeUsed(int arg0) {
-        real.removeSensorPixelModeUsed(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).removeSensorPixelModeUsed(arg0);
     }
 
     public void removeSurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-        real.removeSurface(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.camera2.params.OutputConfiguration) real).removeSurface(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDynamicRangeProfile(long arg0) {
@@ -113,27 +120,27 @@ public final class OutputConfiguration {
     }
 
     public void setMirrorMode(int arg0) {
-        real.setMirrorMode(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).setMirrorMode(arg0);
     }
 
     public void setPhysicalCameraId(java.lang.String arg0) {
-        real.setPhysicalCameraId(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).setPhysicalCameraId(arg0);
     }
 
     public void setReadoutTimestampEnabled(boolean arg0) {
-        real.setReadoutTimestampEnabled(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).setReadoutTimestampEnabled(arg0);
     }
 
     public void setStreamUseCase(long arg0) {
-        real.setStreamUseCase(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).setStreamUseCase(arg0);
     }
 
     public void setTimestampBase(int arg0) {
-        real.setTimestampBase(arg0);
+        ((android.hardware.camera2.params.OutputConfiguration) real).setTimestampBase(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.camera2.params.OutputConfiguration) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int MIRROR_MODE_AUTO = android.hardware.camera2.params.OutputConfiguration.MIRROR_MODE_AUTO;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UProperty {
-    private final android.icu.lang.UProperty real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UProperty(android.icu.lang.UProperty real) {
+    private final java.lang.Object real;
+
+    private UProperty(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UProperty wrap(android.icu.lang.UProperty real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UProperty(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UProperty(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UProperty getReal() {
+        return (android.icu.lang.UProperty) real;
     }
 
     public android.icu.lang.UProperty unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int AGE = android.icu.lang.UProperty.AGE;
@@ -136,18 +143,25 @@ public final class UProperty {
     public static final int XID_START = android.icu.lang.UProperty.XID_START;
 
     public static final class NameChoice {
-        private final android.icu.lang.UProperty.NameChoice real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NameChoice(android.icu.lang.UProperty.NameChoice real) {
+        private final java.lang.Object real;
+
+        private NameChoice(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UProperty.NameChoice wrap(android.icu.lang.UProperty.NameChoice real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UProperty.NameChoice(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UProperty.NameChoice(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UProperty.NameChoice getReal() {
+            return (android.icu.lang.UProperty.NameChoice) real;
         }
 
         public android.icu.lang.UProperty.NameChoice unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int LONG = android.icu.lang.UProperty.NameChoice.LONG;

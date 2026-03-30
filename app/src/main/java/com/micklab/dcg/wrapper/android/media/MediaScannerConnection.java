@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaScannerConnection {
-    private final android.media.MediaScannerConnection real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaScannerConnection(android.media.MediaScannerConnection real) {
+    private final java.lang.Object real;
+
+    private MediaScannerConnection(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaScannerConnection wrap(android.media.MediaScannerConnection real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaScannerConnection getReal() {
+        return (android.media.MediaScannerConnection) real;
     }
 
     public android.media.MediaScannerConnection unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaScannerConnection(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.media.MediaScannerConnection.MediaScannerConnectionClient arg1) {
-        this(new android.media.MediaScannerConnection(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.media.MediaScannerConnection(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void connect() {
-        real.connect();
+        ((android.media.MediaScannerConnection) real).connect();
     }
 
     public void disconnect() {
-        real.disconnect();
+        ((android.media.MediaScannerConnection) real).disconnect();
     }
 
     public boolean isConnected() {
-        return real.isConnected();
+        return ((android.media.MediaScannerConnection) real).isConnected();
     }
 
     public void onServiceConnected(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.IBinder arg1) {
-        real.onServiceConnected(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaScannerConnection) real).onServiceConnected(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void onServiceDisconnected(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.onServiceDisconnected(arg0 == null ? null : arg0.unwrap());
+        ((android.media.MediaScannerConnection) real).onServiceDisconnected(arg0 == null ? null : arg0.getReal());
     }
 
     public void scanFile(java.lang.String arg0, java.lang.String arg1) {
@@ -49,42 +56,56 @@ public final class MediaScannerConnection {
     }
 
     public static final class MediaScannerConnectionClient {
-        private final android.media.MediaScannerConnection.MediaScannerConnectionClient real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaScannerConnectionClient(android.media.MediaScannerConnection.MediaScannerConnectionClient real) {
+        private final java.lang.Object real;
+
+        private MediaScannerConnectionClient(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaScannerConnection.MediaScannerConnectionClient wrap(android.media.MediaScannerConnection.MediaScannerConnectionClient real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection.MediaScannerConnectionClient(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection.MediaScannerConnectionClient(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaScannerConnection.MediaScannerConnectionClient getReal() {
+            return (android.media.MediaScannerConnection.MediaScannerConnectionClient) real;
         }
 
         public android.media.MediaScannerConnection.MediaScannerConnectionClient unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onMediaScannerConnected() {
-            real.onMediaScannerConnected();
+            ((android.media.MediaScannerConnection.MediaScannerConnectionClient) real).onMediaScannerConnected();
         }
 
     }
     public static final class OnScanCompletedListener {
-        private final android.media.MediaScannerConnection.OnScanCompletedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnScanCompletedListener(android.media.MediaScannerConnection.OnScanCompletedListener real) {
+        private final java.lang.Object real;
+
+        private OnScanCompletedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaScannerConnection.OnScanCompletedListener wrap(android.media.MediaScannerConnection.OnScanCompletedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection.OnScanCompletedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaScannerConnection.OnScanCompletedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaScannerConnection.OnScanCompletedListener getReal() {
+            return (android.media.MediaScannerConnection.OnScanCompletedListener) real;
         }
 
         public android.media.MediaScannerConnection.OnScanCompletedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onScanCompleted(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            real.onScanCompleted(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.media.MediaScannerConnection.OnScanCompletedListener) real).onScanCompleted(arg0, arg1 == null ? null : arg1.getReal());
         }
 
     }

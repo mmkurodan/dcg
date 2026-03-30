@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class DragAndDropPermissions {
-    private final android.view.DragAndDropPermissions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DragAndDropPermissions(android.view.DragAndDropPermissions real) {
+    private final java.lang.Object real;
+
+    private DragAndDropPermissions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.DragAndDropPermissions wrap(android.view.DragAndDropPermissions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.DragAndDropPermissions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.DragAndDropPermissions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.DragAndDropPermissions getReal() {
+        return (android.view.DragAndDropPermissions) real;
     }
 
     public android.view.DragAndDropPermissions unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.DragAndDropPermissions) real).describeContents();
     }
 
     public void release() {
-        real.release();
+        ((android.view.DragAndDropPermissions) real).release();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.DragAndDropPermissions) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

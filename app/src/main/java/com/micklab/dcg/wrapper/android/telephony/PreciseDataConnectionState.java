@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class PreciseDataConnectionState {
-    private final android.telephony.PreciseDataConnectionState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PreciseDataConnectionState(android.telephony.PreciseDataConnectionState real) {
+    private final java.lang.Object real;
+
+    private PreciseDataConnectionState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.PreciseDataConnectionState wrap(android.telephony.PreciseDataConnectionState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PreciseDataConnectionState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PreciseDataConnectionState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.PreciseDataConnectionState getReal() {
+        return (android.telephony.PreciseDataConnectionState) real;
     }
 
     public android.telephony.PreciseDataConnectionState unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ViewConfiguration {
-    private final android.view.ViewConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ViewConfiguration(android.view.ViewConfiguration real) {
+    private final java.lang.Object real;
+
+    private ViewConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ViewConfiguration wrap(android.view.ViewConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ViewConfiguration getReal() {
+        return (android.view.ViewConfiguration) real;
     }
 
     public android.view.ViewConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public ViewConfiguration() {
-        this(new android.view.ViewConfiguration());
+        this(new android.view.ViewConfiguration(), (__DcgwBridgeToken) null);
     }
 
     public static com.micklab.dcg.wrapper.android.view.ViewConfiguration get(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.view.ViewConfiguration.wrap(android.view.ViewConfiguration.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.ViewConfiguration.wrap(android.view.ViewConfiguration.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public static float getAmbiguousGestureMultiplier() {
@@ -85,87 +92,87 @@ public final class ViewConfiguration {
     }
 
     public float getScaledAmbiguousGestureMultiplier() {
-        return real.getScaledAmbiguousGestureMultiplier();
+        return ((android.view.ViewConfiguration) real).getScaledAmbiguousGestureMultiplier();
     }
 
     public int getScaledDoubleTapSlop() {
-        return real.getScaledDoubleTapSlop();
+        return ((android.view.ViewConfiguration) real).getScaledDoubleTapSlop();
     }
 
     public int getScaledEdgeSlop() {
-        return real.getScaledEdgeSlop();
+        return ((android.view.ViewConfiguration) real).getScaledEdgeSlop();
     }
 
     public int getScaledFadingEdgeLength() {
-        return real.getScaledFadingEdgeLength();
+        return ((android.view.ViewConfiguration) real).getScaledFadingEdgeLength();
     }
 
     public int getScaledHandwritingGestureLineMargin() {
-        return real.getScaledHandwritingGestureLineMargin();
+        return ((android.view.ViewConfiguration) real).getScaledHandwritingGestureLineMargin();
     }
 
     public int getScaledHandwritingSlop() {
-        return real.getScaledHandwritingSlop();
+        return ((android.view.ViewConfiguration) real).getScaledHandwritingSlop();
     }
 
     public float getScaledHorizontalScrollFactor() {
-        return real.getScaledHorizontalScrollFactor();
+        return ((android.view.ViewConfiguration) real).getScaledHorizontalScrollFactor();
     }
 
     public int getScaledHoverSlop() {
-        return real.getScaledHoverSlop();
+        return ((android.view.ViewConfiguration) real).getScaledHoverSlop();
     }
 
     public int getScaledMaximumDrawingCacheSize() {
-        return real.getScaledMaximumDrawingCacheSize();
+        return ((android.view.ViewConfiguration) real).getScaledMaximumDrawingCacheSize();
     }
 
     public int getScaledMaximumFlingVelocity() {
-        return real.getScaledMaximumFlingVelocity();
+        return ((android.view.ViewConfiguration) real).getScaledMaximumFlingVelocity();
     }
 
     public int getScaledMaximumFlingVelocity(int arg0, int arg1, int arg2) {
-        return real.getScaledMaximumFlingVelocity(arg0, arg1, arg2);
+        return ((android.view.ViewConfiguration) real).getScaledMaximumFlingVelocity(arg0, arg1, arg2);
     }
 
     public int getScaledMinimumFlingVelocity() {
-        return real.getScaledMinimumFlingVelocity();
+        return ((android.view.ViewConfiguration) real).getScaledMinimumFlingVelocity();
     }
 
     public int getScaledMinimumFlingVelocity(int arg0, int arg1, int arg2) {
-        return real.getScaledMinimumFlingVelocity(arg0, arg1, arg2);
+        return ((android.view.ViewConfiguration) real).getScaledMinimumFlingVelocity(arg0, arg1, arg2);
     }
 
     public int getScaledMinimumScalingSpan() {
-        return real.getScaledMinimumScalingSpan();
+        return ((android.view.ViewConfiguration) real).getScaledMinimumScalingSpan();
     }
 
     public int getScaledOverflingDistance() {
-        return real.getScaledOverflingDistance();
+        return ((android.view.ViewConfiguration) real).getScaledOverflingDistance();
     }
 
     public int getScaledOverscrollDistance() {
-        return real.getScaledOverscrollDistance();
+        return ((android.view.ViewConfiguration) real).getScaledOverscrollDistance();
     }
 
     public int getScaledPagingTouchSlop() {
-        return real.getScaledPagingTouchSlop();
+        return ((android.view.ViewConfiguration) real).getScaledPagingTouchSlop();
     }
 
     public int getScaledScrollBarSize() {
-        return real.getScaledScrollBarSize();
+        return ((android.view.ViewConfiguration) real).getScaledScrollBarSize();
     }
 
     public int getScaledTouchSlop() {
-        return real.getScaledTouchSlop();
+        return ((android.view.ViewConfiguration) real).getScaledTouchSlop();
     }
 
     public float getScaledVerticalScrollFactor() {
-        return real.getScaledVerticalScrollFactor();
+        return ((android.view.ViewConfiguration) real).getScaledVerticalScrollFactor();
     }
 
     public int getScaledWindowTouchSlop() {
-        return real.getScaledWindowTouchSlop();
+        return ((android.view.ViewConfiguration) real).getScaledWindowTouchSlop();
     }
 
     public static int getScrollBarFadeDuration() {
@@ -201,11 +208,11 @@ public final class ViewConfiguration {
     }
 
     public boolean hasPermanentMenuKey() {
-        return real.hasPermanentMenuKey();
+        return ((android.view.ViewConfiguration) real).hasPermanentMenuKey();
     }
 
     public boolean shouldShowMenuShortcutsWhenKeyboardPresent() {
-        return real.shouldShowMenuShortcutsWhenKeyboardPresent();
+        return ((android.view.ViewConfiguration) real).shouldShowMenuShortcutsWhenKeyboardPresent();
     }
 
 }

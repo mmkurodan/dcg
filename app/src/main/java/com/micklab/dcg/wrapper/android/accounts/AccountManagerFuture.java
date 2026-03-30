@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class AccountManagerFuture {
-    private final android.accounts.AccountManagerFuture real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccountManagerFuture(android.accounts.AccountManagerFuture real) {
+    private final java.lang.Object real;
+
+    private AccountManagerFuture(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.AccountManagerFuture wrap(android.accounts.AccountManagerFuture real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManagerFuture(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManagerFuture(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.AccountManagerFuture getReal() {
+        return (android.accounts.AccountManagerFuture) real;
     }
 
     public android.accounts.AccountManagerFuture unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean cancel(boolean arg0) {
-        return real.cancel(arg0);
+        return ((android.accounts.AccountManagerFuture) real).cancel(arg0);
     }
 
     public java.lang.Object getResult() throws android.accounts.AuthenticatorException, java.io.IOException, android.accounts.OperationCanceledException {
-        return real.getResult();
+        return ((android.accounts.AccountManagerFuture) real).getResult();
     }
 
     public java.lang.Object getResult(long arg0, java.util.concurrent.TimeUnit arg1) throws android.accounts.AuthenticatorException, java.io.IOException, android.accounts.OperationCanceledException {
-        return real.getResult(arg0, arg1);
+        return ((android.accounts.AccountManagerFuture) real).getResult(arg0, arg1);
     }
 
     public boolean isCancelled() {
-        return real.isCancelled();
+        return ((android.accounts.AccountManagerFuture) real).isCancelled();
     }
 
     public boolean isDone() {
-        return real.isDone();
+        return ((android.accounts.AccountManagerFuture) real).isDone();
     }
 
 }

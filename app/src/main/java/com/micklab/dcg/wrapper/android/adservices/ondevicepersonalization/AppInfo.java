@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class AppInfo {
-    private final android.adservices.ondevicepersonalization.AppInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppInfo(android.adservices.ondevicepersonalization.AppInfo real) {
+    private final java.lang.Object real;
+
+    private AppInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.AppInfo wrap(android.adservices.ondevicepersonalization.AppInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.AppInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.AppInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.AppInfo getReal() {
+        return (android.adservices.ondevicepersonalization.AppInfo) real;
     }
 
     public android.adservices.ondevicepersonalization.AppInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.adservices.ondevicepersonalization.AppInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.ondevicepersonalization.AppInfo) real).equals(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.ondevicepersonalization.AppInfo) real).hashCode();
     }
 
     public boolean isInstalled() {
-        return real.isInstalled();
+        return ((android.adservices.ondevicepersonalization.AppInfo) real).isInstalled();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.adservices.ondevicepersonalization.AppInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

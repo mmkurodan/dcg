@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class ConnectionMigrationOptions {
-    private final android.net.http.ConnectionMigrationOptions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConnectionMigrationOptions(android.net.http.ConnectionMigrationOptions real) {
+    private final java.lang.Object real;
+
+    private ConnectionMigrationOptions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions wrap(android.net.http.ConnectionMigrationOptions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.ConnectionMigrationOptions getReal() {
+        return (android.net.http.ConnectionMigrationOptions) real;
     }
 
     public android.net.http.ConnectionMigrationOptions unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getAllowNonDefaultNetworkUsage() {
@@ -30,18 +37,25 @@ public final class ConnectionMigrationOptions {
 
 
     public static final class Builder {
-        private final android.net.http.ConnectionMigrationOptions.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.ConnectionMigrationOptions.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions.Builder wrap(android.net.http.ConnectionMigrationOptions.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.ConnectionMigrationOptions.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.ConnectionMigrationOptions.Builder getReal() {
+            return (android.net.http.ConnectionMigrationOptions.Builder) real;
         }
 
         public android.net.http.ConnectionMigrationOptions.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

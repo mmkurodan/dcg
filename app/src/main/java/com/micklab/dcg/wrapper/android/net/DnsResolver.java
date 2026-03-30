@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class DnsResolver {
-    private final android.net.DnsResolver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DnsResolver(android.net.DnsResolver real) {
+    private final java.lang.Object real;
+
+    private DnsResolver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.DnsResolver wrap(android.net.DnsResolver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.DnsResolver getReal() {
+        return (android.net.DnsResolver) real;
     }
 
     public android.net.DnsResolver unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.net.DnsResolver getInstance() {
@@ -22,18 +29,25 @@ public final class DnsResolver {
 
 
     public static final class Callback {
-        private final android.net.DnsResolver.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.net.DnsResolver.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.DnsResolver.Callback wrap(android.net.DnsResolver.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.DnsResolver.Callback getReal() {
+            return (android.net.DnsResolver.Callback) real;
         }
 
         public android.net.DnsResolver.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAnswer(java.lang.Object arg0, int arg1) {
@@ -46,18 +60,25 @@ public final class DnsResolver {
 
     }
     public static final class DnsException {
-        private final android.net.DnsResolver.DnsException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DnsException(android.net.DnsResolver.DnsException real) {
+        private final java.lang.Object real;
+
+        private DnsException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.DnsResolver.DnsException wrap(android.net.DnsResolver.DnsException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver.DnsException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.DnsResolver.DnsException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.DnsResolver.DnsException getReal() {
+            return (android.net.DnsResolver.DnsException) real;
         }
 
         public android.net.DnsResolver.DnsException unwrap() {
-            return real;
+            return getReal();
         }
 
         public DnsException(int arg0, java.lang.Throwable arg1) {

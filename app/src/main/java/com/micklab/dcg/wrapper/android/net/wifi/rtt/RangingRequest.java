@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.rtt;
 
 public final class RangingRequest {
-    private final android.net.wifi.rtt.RangingRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RangingRequest(android.net.wifi.rtt.RangingRequest real) {
+    private final java.lang.Object real;
+
+    private RangingRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest wrap(android.net.wifi.rtt.RangingRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.rtt.RangingRequest getReal() {
+        return (android.net.wifi.rtt.RangingRequest) real;
     }
 
     public android.net.wifi.rtt.RangingRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -58,18 +65,25 @@ public final class RangingRequest {
 
 
     public static final class Builder {
-        private final android.net.wifi.rtt.RangingRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.rtt.RangingRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder wrap(android.net.wifi.rtt.RangingRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.rtt.RangingRequest.Builder getReal() {
+            return (android.net.wifi.rtt.RangingRequest.Builder) real;
         }
 
         public android.net.wifi.rtt.RangingRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

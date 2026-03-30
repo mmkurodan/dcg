@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class ClipDescription {
-    private final android.content.ClipDescription real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ClipDescription(android.content.ClipDescription real) {
+    private final java.lang.Object real;
+
+    private ClipDescription(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.ClipDescription wrap(android.content.ClipDescription real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipDescription(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipDescription(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.ClipDescription getReal() {
+        return (android.content.ClipDescription) real;
     }
 
     public android.content.ClipDescription unwrap() {
-        return real;
+        return getReal();
     }
 
     public ClipDescription(com.micklab.dcg.wrapper.android.content.ClipDescription arg0) {
-        this(new android.content.ClipDescription(arg0 == null ? null : arg0.unwrap()));
+        this(new android.content.ClipDescription(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ClipDescription(java.lang.CharSequence arg0, java.lang.String[] arg1) {
-        this(new android.content.ClipDescription(arg0, arg1));
+        this(new android.content.ClipDescription(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public static boolean compareMimeTypes(java.lang.String arg0, java.lang.String arg1) {
@@ -29,59 +36,59 @@ public final class ClipDescription {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.content.ClipDescription) real).describeContents();
     }
 
     public java.lang.String[] filterMimeTypes(java.lang.String arg0) {
-        return real.filterMimeTypes(arg0);
+        return ((android.content.ClipDescription) real).filterMimeTypes(arg0);
     }
 
     public int getClassificationStatus() {
-        return real.getClassificationStatus();
+        return ((android.content.ClipDescription) real).getClassificationStatus();
     }
 
     public float getConfidenceScore(java.lang.String arg0) {
-        return real.getConfidenceScore(arg0);
+        return ((android.content.ClipDescription) real).getConfidenceScore(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.os.PersistableBundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.content.ClipDescription) real).getExtras());
     }
 
     public java.lang.CharSequence getLabel() {
-        return real.getLabel();
+        return ((android.content.ClipDescription) real).getLabel();
     }
 
     public java.lang.String getMimeType(int arg0) {
-        return real.getMimeType(arg0);
+        return ((android.content.ClipDescription) real).getMimeType(arg0);
     }
 
     public int getMimeTypeCount() {
-        return real.getMimeTypeCount();
+        return ((android.content.ClipDescription) real).getMimeTypeCount();
     }
 
     public long getTimestamp() {
-        return real.getTimestamp();
+        return ((android.content.ClipDescription) real).getTimestamp();
     }
 
     public boolean hasMimeType(java.lang.String arg0) {
-        return real.hasMimeType(arg0);
+        return ((android.content.ClipDescription) real).hasMimeType(arg0);
     }
 
     public boolean isStyledText() {
-        return real.isStyledText();
+        return ((android.content.ClipDescription) real).isStyledText();
     }
 
     public void setExtras(com.micklab.dcg.wrapper.android.os.PersistableBundle arg0) {
-        real.setExtras(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ClipDescription) real).setExtras(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.ClipDescription) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.ClipDescription) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CLASSIFICATION_COMPLETE = android.content.ClipDescription.CLASSIFICATION_COMPLETE;

@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.speech;
 
 public final class SpeechRecognizer {
-    private final android.speech.SpeechRecognizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SpeechRecognizer(android.speech.SpeechRecognizer real) {
+    private final java.lang.Object real;
+
+    private SpeechRecognizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.speech.SpeechRecognizer wrap(android.speech.SpeechRecognizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.SpeechRecognizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.SpeechRecognizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.speech.SpeechRecognizer getReal() {
+        return (android.speech.SpeechRecognizer) real;
     }
 
     public android.speech.SpeechRecognizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {
-        real.cancel();
+        ((android.speech.SpeechRecognizer) real).cancel();
     }
 
     public void checkRecognitionSupport(com.micklab.dcg.wrapper.android.content.Intent arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.speech.RecognitionSupportCallback arg2) {
-        real.checkRecognitionSupport(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.speech.SpeechRecognizer) real).checkRecognitionSupport(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.speech.SpeechRecognizer createOnDeviceSpeechRecognizer(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createOnDeviceSpeechRecognizer(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createOnDeviceSpeechRecognizer(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.speech.SpeechRecognizer createSpeechRecognizer(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createSpeechRecognizer(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createSpeechRecognizer(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.speech.SpeechRecognizer createSpeechRecognizer(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1) {
-        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createSpeechRecognizer(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.speech.SpeechRecognizer.wrap(android.speech.SpeechRecognizer.createSpeechRecognizer(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public void destroy() {
-        real.destroy();
+        ((android.speech.SpeechRecognizer) real).destroy();
     }
 
     public static boolean isOnDeviceRecognitionAvailable(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.speech.SpeechRecognizer.isOnDeviceRecognitionAvailable(arg0 == null ? null : arg0.unwrap());
+        return android.speech.SpeechRecognizer.isOnDeviceRecognitionAvailable(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isRecognitionAvailable(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.speech.SpeechRecognizer.isRecognitionAvailable(arg0 == null ? null : arg0.unwrap());
+        return android.speech.SpeechRecognizer.isRecognitionAvailable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRecognitionListener(com.micklab.dcg.wrapper.android.speech.RecognitionListener arg0) {
-        real.setRecognitionListener(arg0 == null ? null : arg0.unwrap());
+        ((android.speech.SpeechRecognizer) real).setRecognitionListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void startListening(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.startListening(arg0 == null ? null : arg0.unwrap());
+        ((android.speech.SpeechRecognizer) real).startListening(arg0 == null ? null : arg0.getReal());
     }
 
     public void stopListening() {
-        real.stopListening();
+        ((android.speech.SpeechRecognizer) real).stopListening();
     }
 
     public void triggerModelDownload(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.triggerModelDownload(arg0 == null ? null : arg0.unwrap());
+        ((android.speech.SpeechRecognizer) real).triggerModelDownload(arg0 == null ? null : arg0.getReal());
     }
 
     public void triggerModelDownload(com.micklab.dcg.wrapper.android.content.Intent arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.speech.ModelDownloadListener arg2) {
-        real.triggerModelDownload(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.speech.SpeechRecognizer) real).triggerModelDownload(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static final java.lang.String CONFIDENCE_SCORES = android.speech.SpeechRecognizer.CONFIDENCE_SCORES;

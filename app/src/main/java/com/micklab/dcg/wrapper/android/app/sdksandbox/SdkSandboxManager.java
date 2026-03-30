@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app.sdksandbox;
 
 public final class SdkSandboxManager {
-    private final android.app.sdksandbox.SdkSandboxManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SdkSandboxManager(android.app.sdksandbox.SdkSandboxManager real) {
+    private final java.lang.Object real;
+
+    private SdkSandboxManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager wrap(android.app.sdksandbox.SdkSandboxManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.sdksandbox.SdkSandboxManager getReal() {
+        return (android.app.sdksandbox.SdkSandboxManager) real;
     }
 
     public android.app.sdksandbox.SdkSandboxManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addSdkSandboxProcessDeathCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback arg1) {
-        real.addSdkSandboxProcessDeathCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.app.sdksandbox.SdkSandboxManager) real).addSdkSandboxProcessDeathCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static int getSdkSandboxState() {
@@ -25,23 +32,23 @@ public final class SdkSandboxManager {
     }
 
     public void registerAppOwnedSdkSandboxInterface(com.micklab.dcg.wrapper.android.app.sdksandbox.AppOwnedSdkSandboxInterface arg0) {
-        real.registerAppOwnedSdkSandboxInterface(arg0 == null ? null : arg0.unwrap());
+        ((android.app.sdksandbox.SdkSandboxManager) real).registerAppOwnedSdkSandboxInterface(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeSdkSandboxProcessDeathCallback(com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback arg0) {
-        real.removeSdkSandboxProcessDeathCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.app.sdksandbox.SdkSandboxManager) real).removeSdkSandboxProcessDeathCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void startSdkSandboxActivity(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.os.IBinder arg1) {
-        real.startSdkSandboxActivity(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.app.sdksandbox.SdkSandboxManager) real).startSdkSandboxActivity(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void unloadSdk(java.lang.String arg0) {
-        real.unloadSdk(arg0);
+        ((android.app.sdksandbox.SdkSandboxManager) real).unloadSdk(arg0);
     }
 
     public void unregisterAppOwnedSdkSandboxInterface(java.lang.String arg0) {
-        real.unregisterAppOwnedSdkSandboxInterface(arg0);
+        ((android.app.sdksandbox.SdkSandboxManager) real).unregisterAppOwnedSdkSandboxInterface(arg0);
     }
 
     public static final java.lang.String EXTRA_DISPLAY_ID = android.app.sdksandbox.SdkSandboxManager.EXTRA_DISPLAY_ID;
@@ -62,22 +69,29 @@ public final class SdkSandboxManager {
     public static final int SDK_SANDBOX_STATE_ENABLED_PROCESS_ISOLATION = android.app.sdksandbox.SdkSandboxManager.SDK_SANDBOX_STATE_ENABLED_PROCESS_ISOLATION;
 
     public static final class SdkSandboxProcessDeathCallback {
-        private final android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SdkSandboxProcessDeathCallback(android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback real) {
+        private final java.lang.Object real;
+
+        private SdkSandboxProcessDeathCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback wrap(android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback getReal() {
+            return (android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback) real;
         }
 
         public android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onSdkSandboxDied() {
-            real.onSdkSandboxDied();
+            ((android.app.sdksandbox.SdkSandboxManager.SdkSandboxProcessDeathCallback) real).onSdkSandboxDied();
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class MemoryFile {
-    private final android.os.MemoryFile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MemoryFile(android.os.MemoryFile real) {
+    private final java.lang.Object real;
+
+    private MemoryFile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.MemoryFile wrap(android.os.MemoryFile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.MemoryFile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.MemoryFile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.MemoryFile getReal() {
+        return (android.os.MemoryFile) real;
     }
 
     public android.os.MemoryFile unwrap() {
-        return real;
+        return getReal();
     }
 
     public MemoryFile(java.lang.String arg0, int arg1) throws java.io.IOException {

@@ -2,133 +2,154 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class Loader {
-    private final android.content.Loader real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Loader(android.content.Loader real) {
+    private final java.lang.Object real;
+
+    private Loader(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.Loader wrap(android.content.Loader real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.Loader getReal() {
+        return (android.content.Loader) real;
     }
 
     public android.content.Loader unwrap() {
-        return real;
+        return getReal();
     }
 
     public Loader(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.content.Loader(arg0 == null ? null : arg0.unwrap()));
+        this(new android.content.Loader(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void abandon() {
-        real.abandon();
+        ((android.content.Loader) real).abandon();
     }
 
     public boolean cancelLoad() {
-        return real.cancelLoad();
+        return ((android.content.Loader) real).cancelLoad();
     }
 
     public void commitContentChanged() {
-        real.commitContentChanged();
+        ((android.content.Loader) real).commitContentChanged();
     }
 
     public java.lang.String dataToString(java.lang.Object arg0) {
-        return real.dataToString(arg0);
+        return ((android.content.Loader) real).dataToString(arg0);
     }
 
     public void deliverCancellation() {
-        real.deliverCancellation();
+        ((android.content.Loader) real).deliverCancellation();
     }
 
     public void deliverResult(java.lang.Object arg0) {
-        real.deliverResult(arg0);
+        ((android.content.Loader) real).deliverResult(arg0);
     }
 
     public void dump(java.lang.String arg0, java.io.FileDescriptor arg1, java.io.PrintWriter arg2, java.lang.String[] arg3) {
-        real.dump(arg0, arg1, arg2, arg3);
+        ((android.content.Loader) real).dump(arg0, arg1, arg2, arg3);
     }
 
     public void forceLoad() {
-        real.forceLoad();
+        ((android.content.Loader) real).forceLoad();
     }
 
     public com.micklab.dcg.wrapper.android.content.Context getContext() {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.getContext());
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Loader) real).getContext());
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.content.Loader) real).getId();
     }
 
     public boolean isAbandoned() {
-        return real.isAbandoned();
+        return ((android.content.Loader) real).isAbandoned();
     }
 
     public boolean isReset() {
-        return real.isReset();
+        return ((android.content.Loader) real).isReset();
     }
 
     public boolean isStarted() {
-        return real.isStarted();
+        return ((android.content.Loader) real).isStarted();
     }
 
     public void onContentChanged() {
-        real.onContentChanged();
+        ((android.content.Loader) real).onContentChanged();
     }
 
     public void reset() {
-        real.reset();
+        ((android.content.Loader) real).reset();
     }
 
     public void rollbackContentChanged() {
-        real.rollbackContentChanged();
+        ((android.content.Loader) real).rollbackContentChanged();
     }
 
     public void startLoading() {
-        real.startLoading();
+        ((android.content.Loader) real).startLoading();
     }
 
     public void stopLoading() {
-        real.stopLoading();
+        ((android.content.Loader) real).stopLoading();
     }
 
     public boolean takeContentChanged() {
-        return real.takeContentChanged();
+        return ((android.content.Loader) real).takeContentChanged();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.Loader) real).toString();
     }
 
     public static final class OnLoadCanceledListener {
-        private final android.content.Loader.OnLoadCanceledListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnLoadCanceledListener(android.content.Loader.OnLoadCanceledListener real) {
+        private final java.lang.Object real;
+
+        private OnLoadCanceledListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.Loader.OnLoadCanceledListener wrap(android.content.Loader.OnLoadCanceledListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader.OnLoadCanceledListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader.OnLoadCanceledListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Loader.OnLoadCanceledListener getReal() {
+            return (android.content.Loader.OnLoadCanceledListener) real;
         }
 
         public android.content.Loader.OnLoadCanceledListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class OnLoadCompleteListener {
-        private final android.content.Loader.OnLoadCompleteListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnLoadCompleteListener(android.content.Loader.OnLoadCompleteListener real) {
+        private final java.lang.Object real;
+
+        private OnLoadCompleteListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.Loader.OnLoadCompleteListener wrap(android.content.Loader.OnLoadCompleteListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader.OnLoadCompleteListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader.OnLoadCompleteListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Loader.OnLoadCompleteListener getReal() {
+            return (android.content.Loader.OnLoadCompleteListener) real;
         }
 
         public android.content.Loader.OnLoadCompleteListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }

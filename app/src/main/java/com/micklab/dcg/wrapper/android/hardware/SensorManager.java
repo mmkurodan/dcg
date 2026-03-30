@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class SensorManager {
-    private final android.hardware.SensorManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SensorManager(android.hardware.SensorManager real) {
+    private final java.lang.Object real;
+
+    private SensorManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.SensorManager wrap(android.hardware.SensorManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.SensorManager getReal() {
+        return (android.hardware.SensorManager) real;
     }
 
     public android.hardware.SensorManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean cancelTriggerSensor(com.micklab.dcg.wrapper.android.hardware.TriggerEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1) {
-        return real.cancelTriggerSensor(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.hardware.SensorManager) real).cancelTriggerSensor(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel createDirectChannel(com.micklab.dcg.wrapper.android.hardware.HardwareBuffer arg0) {
-        return com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel.wrap(real.createDirectChannel(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel.wrap(((android.hardware.SensorManager) real).createDirectChannel(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel createDirectChannel(com.micklab.dcg.wrapper.android.os.MemoryFile arg0) {
-        return com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel.wrap(real.createDirectChannel(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel.wrap(((android.hardware.SensorManager) real).createDirectChannel(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean flush(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0) {
-        return real.flush(arg0 == null ? null : arg0.unwrap());
+        return ((android.hardware.SensorManager) real).flush(arg0 == null ? null : arg0.getReal());
     }
 
     public static float getAltitude(float arg0, float arg1) {
@@ -41,11 +48,11 @@ public final class SensorManager {
     }
 
     public com.micklab.dcg.wrapper.android.hardware.Sensor getDefaultSensor(int arg0) {
-        return com.micklab.dcg.wrapper.android.hardware.Sensor.wrap(real.getDefaultSensor(arg0));
+        return com.micklab.dcg.wrapper.android.hardware.Sensor.wrap(((android.hardware.SensorManager) real).getDefaultSensor(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.hardware.Sensor getDefaultSensor(int arg0, boolean arg1) {
-        return com.micklab.dcg.wrapper.android.hardware.Sensor.wrap(real.getDefaultSensor(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.hardware.Sensor.wrap(((android.hardware.SensorManager) real).getDefaultSensor(arg0, arg1));
     }
 
     public static float getInclination(float[] arg0) {
@@ -69,43 +76,43 @@ public final class SensorManager {
     }
 
     public int getSensors() {
-        return real.getSensors();
+        return ((android.hardware.SensorManager) real).getSensors();
     }
 
     public boolean isDynamicSensorDiscoverySupported() {
-        return real.isDynamicSensorDiscoverySupported();
+        return ((android.hardware.SensorManager) real).isDynamicSensorDiscoverySupported();
     }
 
     public void registerDynamicSensorCallback(com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback arg0) {
-        real.registerDynamicSensorCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.SensorManager) real).registerDynamicSensorCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerDynamicSensorCallback(com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerDynamicSensorCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.hardware.SensorManager) real).registerDynamicSensorCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorListener arg0, int arg1) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1, int arg2) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorListener arg0, int arg1, int arg2) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1, int arg2, int arg3) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1, int arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean registerListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1, int arg2, int arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
-        return real.registerListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        return ((android.hardware.SensorManager) real).registerListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public static boolean remapCoordinateSystem(float[] arg0, int arg1, int arg2, float[] arg3) {
@@ -113,27 +120,27 @@ public final class SensorManager {
     }
 
     public boolean requestTriggerSensor(com.micklab.dcg.wrapper.android.hardware.TriggerEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1) {
-        return real.requestTriggerSensor(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.hardware.SensorManager) real).requestTriggerSensor(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterDynamicSensorCallback(com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback arg0) {
-        real.unregisterDynamicSensorCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.SensorManager) real).unregisterDynamicSensorCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0) {
-        real.unregisterListener(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.SensorManager) real).unregisterListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterListener(com.micklab.dcg.wrapper.android.hardware.SensorListener arg0) {
-        real.unregisterListener(arg0 == null ? null : arg0.unwrap());
+        ((android.hardware.SensorManager) real).unregisterListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterListener(com.micklab.dcg.wrapper.android.hardware.SensorListener arg0, int arg1) {
-        real.unregisterListener(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.SensorManager) real).unregisterListener(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void unregisterListener(com.micklab.dcg.wrapper.android.hardware.SensorEventListener arg0, com.micklab.dcg.wrapper.android.hardware.Sensor arg1) {
-        real.unregisterListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.hardware.SensorManager) real).unregisterListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static final int AXIS_MINUS_X = android.hardware.SensorManager.AXIS_MINUS_X;
@@ -196,26 +203,33 @@ public final class SensorManager {
     public static final float STANDARD_GRAVITY = android.hardware.SensorManager.STANDARD_GRAVITY;
 
     public static final class DynamicSensorCallback {
-        private final android.hardware.SensorManager.DynamicSensorCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DynamicSensorCallback(android.hardware.SensorManager.DynamicSensorCallback real) {
+        private final java.lang.Object real;
+
+        private DynamicSensorCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback wrap(android.hardware.SensorManager.DynamicSensorCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorManager.DynamicSensorCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.SensorManager.DynamicSensorCallback getReal() {
+            return (android.hardware.SensorManager.DynamicSensorCallback) real;
         }
 
         public android.hardware.SensorManager.DynamicSensorCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDynamicSensorConnected(com.micklab.dcg.wrapper.android.hardware.Sensor arg0) {
-            real.onDynamicSensorConnected(arg0 == null ? null : arg0.unwrap());
+            ((android.hardware.SensorManager.DynamicSensorCallback) real).onDynamicSensorConnected(arg0 == null ? null : arg0.getReal());
         }
 
         public void onDynamicSensorDisconnected(com.micklab.dcg.wrapper.android.hardware.Sensor arg0) {
-            real.onDynamicSensorDisconnected(arg0 == null ? null : arg0.unwrap());
+            ((android.hardware.SensorManager.DynamicSensorCallback) real).onDynamicSensorDisconnected(arg0 == null ? null : arg0.getReal());
         }
 
     }

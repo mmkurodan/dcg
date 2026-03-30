@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class LogReader {
-    private final android.adservices.ondevicepersonalization.LogReader real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LogReader(android.adservices.ondevicepersonalization.LogReader real) {
+    private final java.lang.Object real;
+
+    private LogReader(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.LogReader wrap(android.adservices.ondevicepersonalization.LogReader real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.LogReader(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.LogReader(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.LogReader getReal() {
+        return (android.adservices.ondevicepersonalization.LogReader) real;
     }
 
     public android.adservices.ondevicepersonalization.LogReader unwrap() {
-        return real;
+        return getReal();
     }
 
 }

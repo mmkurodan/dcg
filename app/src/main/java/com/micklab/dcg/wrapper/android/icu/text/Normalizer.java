@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class Normalizer {
-    private final android.icu.text.Normalizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Normalizer(android.icu.text.Normalizer real) {
+    private final java.lang.Object real;
+
+    private Normalizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Normalizer wrap(android.icu.text.Normalizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Normalizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Normalizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.Normalizer getReal() {
+        return (android.icu.text.Normalizer) real;
     }
 
     public android.icu.text.Normalizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.Normalizer) real).clone();
     }
 
     public static int compare(int arg0, int arg1, int arg2) {
@@ -50,18 +57,25 @@ public final class Normalizer {
     public static final com.micklab.dcg.wrapper.android.icu.text.Normalizer.QuickCheckResult YES = com.micklab.dcg.wrapper.android.icu.text.Normalizer.QuickCheckResult.wrap(android.icu.text.Normalizer.YES);
 
     public static final class QuickCheckResult {
-        private final android.icu.text.Normalizer.QuickCheckResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public QuickCheckResult(android.icu.text.Normalizer.QuickCheckResult real) {
+        private final java.lang.Object real;
+
+        private QuickCheckResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.Normalizer.QuickCheckResult wrap(android.icu.text.Normalizer.QuickCheckResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Normalizer.QuickCheckResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Normalizer.QuickCheckResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.Normalizer.QuickCheckResult getReal() {
+            return (android.icu.text.Normalizer.QuickCheckResult) real;
         }
 
         public android.icu.text.Normalizer.QuickCheckResult unwrap() {
-            return real;
+            return getReal();
         }
 
     }

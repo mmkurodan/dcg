@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLDebugHelper {
-    private final android.opengl.GLDebugHelper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLDebugHelper(android.opengl.GLDebugHelper real) {
+    private final java.lang.Object real;
+
+    private GLDebugHelper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLDebugHelper wrap(android.opengl.GLDebugHelper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLDebugHelper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLDebugHelper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLDebugHelper getReal() {
+        return (android.opengl.GLDebugHelper) real;
     }
 
     public android.opengl.GLDebugHelper unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLDebugHelper() {
-        this(new android.opengl.GLDebugHelper());
+        this(new android.opengl.GLDebugHelper(), (__DcgwBridgeToken) null);
     }
 
     public static javax.microedition.khronos.egl.EGL wrap(javax.microedition.khronos.egl.EGL arg0, int arg1, java.io.Writer arg2) {

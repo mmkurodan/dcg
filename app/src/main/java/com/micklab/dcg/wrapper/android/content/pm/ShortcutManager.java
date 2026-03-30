@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ShortcutManager {
-    private final android.content.pm.ShortcutManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ShortcutManager(android.content.pm.ShortcutManager real) {
+    private final java.lang.Object real;
+
+    private ShortcutManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ShortcutManager wrap(android.content.pm.ShortcutManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ShortcutManager getReal() {
+        return (android.content.pm.ShortcutManager) real;
     }
 
     public android.content.pm.ShortcutManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createShortcutResultIntent(com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo arg0) {

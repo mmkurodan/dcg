@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.security.identity;
 
 public final class AuthenticationKeyMetadata {
-    private final android.security.identity.AuthenticationKeyMetadata real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AuthenticationKeyMetadata(android.security.identity.AuthenticationKeyMetadata real) {
+    private final java.lang.Object real;
+
+    private AuthenticationKeyMetadata(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.identity.AuthenticationKeyMetadata wrap(android.security.identity.AuthenticationKeyMetadata real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.AuthenticationKeyMetadata(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.AuthenticationKeyMetadata(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.identity.AuthenticationKeyMetadata getReal() {
+        return (android.security.identity.AuthenticationKeyMetadata) real;
     }
 
     public android.security.identity.AuthenticationKeyMetadata unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.time.Instant getExpirationDate() {
-        return real.getExpirationDate();
+        return ((android.security.identity.AuthenticationKeyMetadata) real).getExpirationDate();
     }
 
     public int getUsageCount() {
-        return real.getUsageCount();
+        return ((android.security.identity.AuthenticationKeyMetadata) real).getUsageCount();
     }
 
 }

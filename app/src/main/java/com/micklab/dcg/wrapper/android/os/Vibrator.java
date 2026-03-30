@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Vibrator {
-    private final android.os.Vibrator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Vibrator(android.os.Vibrator real) {
+    private final java.lang.Object real;
+
+    private Vibrator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Vibrator wrap(android.os.Vibrator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Vibrator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Vibrator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Vibrator getReal() {
+        return (android.os.Vibrator) real;
     }
 
     public android.os.Vibrator unwrap() {
-        return real;
+        return getReal();
     }
 
     public int areAllEffectsSupported(int... arg0) {

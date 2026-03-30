@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class AbstractWindowedCursor {
-    private final android.database.AbstractWindowedCursor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AbstractWindowedCursor(android.database.AbstractWindowedCursor real) {
+    private final java.lang.Object real;
+
+    private AbstractWindowedCursor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.AbstractWindowedCursor wrap(android.database.AbstractWindowedCursor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.AbstractWindowedCursor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.AbstractWindowedCursor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.AbstractWindowedCursor getReal() {
+        return (android.database.AbstractWindowedCursor) real;
     }
 
     public android.database.AbstractWindowedCursor unwrap() {
-        return real;
+        return getReal();
     }
 
     public void copyStringToBuffer(int arg0, com.micklab.dcg.wrapper.android.database.CharArrayBuffer arg1) {

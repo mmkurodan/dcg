@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class MotionEvent {
-    private final android.view.MotionEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MotionEvent(android.view.MotionEvent real) {
+    private final java.lang.Object real;
+
+    private MotionEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.MotionEvent wrap(android.view.MotionEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.MotionEvent getReal() {
+        return (android.view.MotionEvent) real;
     }
 
     public android.view.MotionEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String actionToString(int arg0) {
@@ -21,11 +28,11 @@ public final class MotionEvent {
     }
 
     public void addBatch(long arg0, android.view.MotionEvent.PointerCoords[] arg1, int arg2) {
-        real.addBatch(arg0, arg1, arg2);
+        ((android.view.MotionEvent) real).addBatch(arg0, arg1, arg2);
     }
 
     public void addBatch(long arg0, float arg1, float arg2, float arg3, float arg4, int arg5) {
-        real.addBatch(arg0, arg1, arg2, arg3, arg4, arg5);
+        ((android.view.MotionEvent) real).addBatch(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public static int axisFromString(java.lang.String arg0) {
@@ -37,291 +44,291 @@ public final class MotionEvent {
     }
 
     public int findPointerIndex(int arg0) {
-        return real.findPointerIndex(arg0);
+        return ((android.view.MotionEvent) real).findPointerIndex(arg0);
     }
 
     public int getAction() {
-        return real.getAction();
+        return ((android.view.MotionEvent) real).getAction();
     }
 
     public int getActionButton() {
-        return real.getActionButton();
+        return ((android.view.MotionEvent) real).getActionButton();
     }
 
     public int getActionIndex() {
-        return real.getActionIndex();
+        return ((android.view.MotionEvent) real).getActionIndex();
     }
 
     public int getActionMasked() {
-        return real.getActionMasked();
+        return ((android.view.MotionEvent) real).getActionMasked();
     }
 
     public float getAxisValue(int arg0) {
-        return real.getAxisValue(arg0);
+        return ((android.view.MotionEvent) real).getAxisValue(arg0);
     }
 
     public float getAxisValue(int arg0, int arg1) {
-        return real.getAxisValue(arg0, arg1);
+        return ((android.view.MotionEvent) real).getAxisValue(arg0, arg1);
     }
 
     public int getButtonState() {
-        return real.getButtonState();
+        return ((android.view.MotionEvent) real).getButtonState();
     }
 
     public int getClassification() {
-        return real.getClassification();
+        return ((android.view.MotionEvent) real).getClassification();
     }
 
     public int getDeviceId() {
-        return real.getDeviceId();
+        return ((android.view.MotionEvent) real).getDeviceId();
     }
 
     public long getDownTime() {
-        return real.getDownTime();
+        return ((android.view.MotionEvent) real).getDownTime();
     }
 
     public int getEdgeFlags() {
-        return real.getEdgeFlags();
+        return ((android.view.MotionEvent) real).getEdgeFlags();
     }
 
     public long getEventTime() {
-        return real.getEventTime();
+        return ((android.view.MotionEvent) real).getEventTime();
     }
 
     public long getEventTimeNanos() {
-        return real.getEventTimeNanos();
+        return ((android.view.MotionEvent) real).getEventTimeNanos();
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.view.MotionEvent) real).getFlags();
     }
 
     public float getHistoricalAxisValue(int arg0, int arg1) {
-        return real.getHistoricalAxisValue(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalAxisValue(arg0, arg1);
     }
 
     public float getHistoricalAxisValue(int arg0, int arg1, int arg2) {
-        return real.getHistoricalAxisValue(arg0, arg1, arg2);
+        return ((android.view.MotionEvent) real).getHistoricalAxisValue(arg0, arg1, arg2);
     }
 
     public long getHistoricalEventTime(int arg0) {
-        return real.getHistoricalEventTime(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalEventTime(arg0);
     }
 
     public long getHistoricalEventTimeNanos(int arg0) {
-        return real.getHistoricalEventTimeNanos(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalEventTimeNanos(arg0);
     }
 
     public float getHistoricalOrientation(int arg0) {
-        return real.getHistoricalOrientation(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalOrientation(arg0);
     }
 
     public float getHistoricalOrientation(int arg0, int arg1) {
-        return real.getHistoricalOrientation(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalOrientation(arg0, arg1);
     }
 
     public void getHistoricalPointerCoords(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords arg2) {
-        real.getHistoricalPointerCoords(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.view.MotionEvent) real).getHistoricalPointerCoords(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public float getHistoricalPressure(int arg0) {
-        return real.getHistoricalPressure(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalPressure(arg0);
     }
 
     public float getHistoricalPressure(int arg0, int arg1) {
-        return real.getHistoricalPressure(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalPressure(arg0, arg1);
     }
 
     public float getHistoricalSize(int arg0) {
-        return real.getHistoricalSize(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalSize(arg0);
     }
 
     public float getHistoricalSize(int arg0, int arg1) {
-        return real.getHistoricalSize(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalSize(arg0, arg1);
     }
 
     public float getHistoricalToolMajor(int arg0) {
-        return real.getHistoricalToolMajor(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalToolMajor(arg0);
     }
 
     public float getHistoricalToolMajor(int arg0, int arg1) {
-        return real.getHistoricalToolMajor(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalToolMajor(arg0, arg1);
     }
 
     public float getHistoricalToolMinor(int arg0) {
-        return real.getHistoricalToolMinor(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalToolMinor(arg0);
     }
 
     public float getHistoricalToolMinor(int arg0, int arg1) {
-        return real.getHistoricalToolMinor(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalToolMinor(arg0, arg1);
     }
 
     public float getHistoricalTouchMajor(int arg0) {
-        return real.getHistoricalTouchMajor(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalTouchMajor(arg0);
     }
 
     public float getHistoricalTouchMajor(int arg0, int arg1) {
-        return real.getHistoricalTouchMajor(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalTouchMajor(arg0, arg1);
     }
 
     public float getHistoricalTouchMinor(int arg0) {
-        return real.getHistoricalTouchMinor(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalTouchMinor(arg0);
     }
 
     public float getHistoricalTouchMinor(int arg0, int arg1) {
-        return real.getHistoricalTouchMinor(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalTouchMinor(arg0, arg1);
     }
 
     public float getHistoricalX(int arg0) {
-        return real.getHistoricalX(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalX(arg0);
     }
 
     public float getHistoricalX(int arg0, int arg1) {
-        return real.getHistoricalX(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalX(arg0, arg1);
     }
 
     public float getHistoricalY(int arg0) {
-        return real.getHistoricalY(arg0);
+        return ((android.view.MotionEvent) real).getHistoricalY(arg0);
     }
 
     public float getHistoricalY(int arg0, int arg1) {
-        return real.getHistoricalY(arg0, arg1);
+        return ((android.view.MotionEvent) real).getHistoricalY(arg0, arg1);
     }
 
     public int getHistorySize() {
-        return real.getHistorySize();
+        return ((android.view.MotionEvent) real).getHistorySize();
     }
 
     public int getMetaState() {
-        return real.getMetaState();
+        return ((android.view.MotionEvent) real).getMetaState();
     }
 
     public float getOrientation() {
-        return real.getOrientation();
+        return ((android.view.MotionEvent) real).getOrientation();
     }
 
     public float getOrientation(int arg0) {
-        return real.getOrientation(arg0);
+        return ((android.view.MotionEvent) real).getOrientation(arg0);
     }
 
     public void getPointerCoords(int arg0, com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords arg1) {
-        real.getPointerCoords(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.MotionEvent) real).getPointerCoords(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int getPointerCount() {
-        return real.getPointerCount();
+        return ((android.view.MotionEvent) real).getPointerCount();
     }
 
     public int getPointerId(int arg0) {
-        return real.getPointerId(arg0);
+        return ((android.view.MotionEvent) real).getPointerId(arg0);
     }
 
     public void getPointerProperties(int arg0, com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties arg1) {
-        real.getPointerProperties(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.MotionEvent) real).getPointerProperties(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public float getPressure() {
-        return real.getPressure();
+        return ((android.view.MotionEvent) real).getPressure();
     }
 
     public float getPressure(int arg0) {
-        return real.getPressure(arg0);
+        return ((android.view.MotionEvent) real).getPressure(arg0);
     }
 
     public float getRawX() {
-        return real.getRawX();
+        return ((android.view.MotionEvent) real).getRawX();
     }
 
     public float getRawX(int arg0) {
-        return real.getRawX(arg0);
+        return ((android.view.MotionEvent) real).getRawX(arg0);
     }
 
     public float getRawY() {
-        return real.getRawY();
+        return ((android.view.MotionEvent) real).getRawY();
     }
 
     public float getRawY(int arg0) {
-        return real.getRawY(arg0);
+        return ((android.view.MotionEvent) real).getRawY(arg0);
     }
 
     public float getSize() {
-        return real.getSize();
+        return ((android.view.MotionEvent) real).getSize();
     }
 
     public float getSize(int arg0) {
-        return real.getSize(arg0);
+        return ((android.view.MotionEvent) real).getSize(arg0);
     }
 
     public int getSource() {
-        return real.getSource();
+        return ((android.view.MotionEvent) real).getSource();
     }
 
     public float getToolMajor() {
-        return real.getToolMajor();
+        return ((android.view.MotionEvent) real).getToolMajor();
     }
 
     public float getToolMajor(int arg0) {
-        return real.getToolMajor(arg0);
+        return ((android.view.MotionEvent) real).getToolMajor(arg0);
     }
 
     public float getToolMinor() {
-        return real.getToolMinor();
+        return ((android.view.MotionEvent) real).getToolMinor();
     }
 
     public float getToolMinor(int arg0) {
-        return real.getToolMinor(arg0);
+        return ((android.view.MotionEvent) real).getToolMinor(arg0);
     }
 
     public int getToolType(int arg0) {
-        return real.getToolType(arg0);
+        return ((android.view.MotionEvent) real).getToolType(arg0);
     }
 
     public float getTouchMajor() {
-        return real.getTouchMajor();
+        return ((android.view.MotionEvent) real).getTouchMajor();
     }
 
     public float getTouchMajor(int arg0) {
-        return real.getTouchMajor(arg0);
+        return ((android.view.MotionEvent) real).getTouchMajor(arg0);
     }
 
     public float getTouchMinor() {
-        return real.getTouchMinor();
+        return ((android.view.MotionEvent) real).getTouchMinor();
     }
 
     public float getTouchMinor(int arg0) {
-        return real.getTouchMinor(arg0);
+        return ((android.view.MotionEvent) real).getTouchMinor(arg0);
     }
 
     public float getX() {
-        return real.getX();
+        return ((android.view.MotionEvent) real).getX();
     }
 
     public float getX(int arg0) {
-        return real.getX(arg0);
+        return ((android.view.MotionEvent) real).getX(arg0);
     }
 
     public float getXPrecision() {
-        return real.getXPrecision();
+        return ((android.view.MotionEvent) real).getXPrecision();
     }
 
     public float getY() {
-        return real.getY();
+        return ((android.view.MotionEvent) real).getY();
     }
 
     public float getY(int arg0) {
-        return real.getY(arg0);
+        return ((android.view.MotionEvent) real).getY(arg0);
     }
 
     public float getYPrecision() {
-        return real.getYPrecision();
+        return ((android.view.MotionEvent) real).getYPrecision();
     }
 
     public boolean isButtonPressed(int arg0) {
-        return real.isButtonPressed(arg0);
+        return ((android.view.MotionEvent) real).isButtonPressed(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtain(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(long arg0, long arg1, int arg2, float arg3, float arg4, int arg5) {
@@ -349,43 +356,43 @@ public final class MotionEvent {
     }
 
     public static com.micklab.dcg.wrapper.android.view.MotionEvent obtainNoHistory(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtainNoHistory(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtainNoHistory(arg0 == null ? null : arg0.getReal()));
     }
 
     public void offsetLocation(float arg0, float arg1) {
-        real.offsetLocation(arg0, arg1);
+        ((android.view.MotionEvent) real).offsetLocation(arg0, arg1);
     }
 
     public void recycle() {
-        real.recycle();
+        ((android.view.MotionEvent) real).recycle();
     }
 
     public void setAction(int arg0) {
-        real.setAction(arg0);
+        ((android.view.MotionEvent) real).setAction(arg0);
     }
 
     public void setEdgeFlags(int arg0) {
-        real.setEdgeFlags(arg0);
+        ((android.view.MotionEvent) real).setEdgeFlags(arg0);
     }
 
     public void setLocation(float arg0, float arg1) {
-        real.setLocation(arg0, arg1);
+        ((android.view.MotionEvent) real).setLocation(arg0, arg1);
     }
 
     public void setSource(int arg0) {
-        real.setSource(arg0);
+        ((android.view.MotionEvent) real).setSource(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.MotionEvent) real).toString();
     }
 
     public void transform(com.micklab.dcg.wrapper.android.graphics.Matrix arg0) {
-        real.transform(arg0 == null ? null : arg0.unwrap());
+        ((android.view.MotionEvent) real).transform(arg0 == null ? null : arg0.getReal());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.MotionEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACTION_BUTTON_PRESS = android.view.MotionEvent.ACTION_BUTTON_PRESS;
@@ -489,87 +496,101 @@ public final class MotionEvent {
     public static final int TOOL_TYPE_UNKNOWN = android.view.MotionEvent.TOOL_TYPE_UNKNOWN;
 
     public static final class PointerCoords {
-        private final android.view.MotionEvent.PointerCoords real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PointerCoords(android.view.MotionEvent.PointerCoords real) {
+        private final java.lang.Object real;
+
+        private PointerCoords(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords wrap(android.view.MotionEvent.PointerCoords real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.MotionEvent.PointerCoords getReal() {
+            return (android.view.MotionEvent.PointerCoords) real;
         }
 
         public android.view.MotionEvent.PointerCoords unwrap() {
-            return real;
+            return getReal();
         }
 
         public PointerCoords() {
-            this(new android.view.MotionEvent.PointerCoords());
+            this(new android.view.MotionEvent.PointerCoords(), (__DcgwBridgeToken) null);
         }
 
         public PointerCoords(com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords arg0) {
-            this(new android.view.MotionEvent.PointerCoords(arg0 == null ? null : arg0.unwrap()));
+            this(new android.view.MotionEvent.PointerCoords(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void clear() {
-            real.clear();
+            ((android.view.MotionEvent.PointerCoords) real).clear();
         }
 
         public void copyFrom(com.micklab.dcg.wrapper.android.view.MotionEvent.PointerCoords arg0) {
-            real.copyFrom(arg0 == null ? null : arg0.unwrap());
+            ((android.view.MotionEvent.PointerCoords) real).copyFrom(arg0 == null ? null : arg0.getReal());
         }
 
         public float getAxisValue(int arg0) {
-            return real.getAxisValue(arg0);
+            return ((android.view.MotionEvent.PointerCoords) real).getAxisValue(arg0);
         }
 
         public boolean isResampled() {
-            return real.isResampled();
+            return ((android.view.MotionEvent.PointerCoords) real).isResampled();
         }
 
         public void setAxisValue(int arg0, float arg1) {
-            real.setAxisValue(arg0, arg1);
+            ((android.view.MotionEvent.PointerCoords) real).setAxisValue(arg0, arg1);
         }
 
 
     }
     public static final class PointerProperties {
-        private final android.view.MotionEvent.PointerProperties real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PointerProperties(android.view.MotionEvent.PointerProperties real) {
+        private final java.lang.Object real;
+
+        private PointerProperties(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties wrap(android.view.MotionEvent.PointerProperties real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.MotionEvent.PointerProperties getReal() {
+            return (android.view.MotionEvent.PointerProperties) real;
         }
 
         public android.view.MotionEvent.PointerProperties unwrap() {
-            return real;
+            return getReal();
         }
 
         public PointerProperties() {
-            this(new android.view.MotionEvent.PointerProperties());
+            this(new android.view.MotionEvent.PointerProperties(), (__DcgwBridgeToken) null);
         }
 
         public PointerProperties(com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties arg0) {
-            this(new android.view.MotionEvent.PointerProperties(arg0 == null ? null : arg0.unwrap()));
+            this(new android.view.MotionEvent.PointerProperties(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void clear() {
-            real.clear();
+            ((android.view.MotionEvent.PointerProperties) real).clear();
         }
 
         public void copyFrom(com.micklab.dcg.wrapper.android.view.MotionEvent.PointerProperties arg0) {
-            real.copyFrom(arg0 == null ? null : arg0.unwrap());
+            ((android.view.MotionEvent.PointerProperties) real).copyFrom(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.view.MotionEvent.PointerProperties) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.view.MotionEvent.PointerProperties) real).hashCode();
         }
 
 

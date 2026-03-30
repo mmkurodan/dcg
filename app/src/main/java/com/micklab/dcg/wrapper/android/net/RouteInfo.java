@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class RouteInfo {
-    private final android.net.RouteInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RouteInfo(android.net.RouteInfo real) {
+    private final java.lang.Object real;
+
+    private RouteInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.RouteInfo wrap(android.net.RouteInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.RouteInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.RouteInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.RouteInfo getReal() {
+        return (android.net.RouteInfo) real;
     }
 
     public android.net.RouteInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.rtt;
 
 public final class WifiRttManager {
-    private final android.net.wifi.rtt.WifiRttManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiRttManager(android.net.wifi.rtt.WifiRttManager real) {
+    private final java.lang.Object real;
+
+    private WifiRttManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.rtt.WifiRttManager wrap(android.net.wifi.rtt.WifiRttManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.WifiRttManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.rtt.WifiRttManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.rtt.WifiRttManager getReal() {
+        return (android.net.wifi.rtt.WifiRttManager) real;
     }
 
     public android.net.wifi.rtt.WifiRttManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getRttCharacteristics() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class QuicOptions {
-    private final android.net.http.QuicOptions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public QuicOptions(android.net.http.QuicOptions real) {
+    private final java.lang.Object real;
+
+    private QuicOptions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.QuicOptions wrap(android.net.http.QuicOptions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.QuicOptions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.QuicOptions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.QuicOptions getReal() {
+        return (android.net.http.QuicOptions) real;
     }
 
     public android.net.http.QuicOptions unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getHandshakeUserAgent() {
@@ -33,18 +40,25 @@ public final class QuicOptions {
     }
 
     public static final class Builder {
-        private final android.net.http.QuicOptions.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.http.QuicOptions.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.http.QuicOptions.Builder wrap(android.net.http.QuicOptions.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.QuicOptions.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.QuicOptions.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.QuicOptions.Builder getReal() {
+            return (android.net.http.QuicOptions.Builder) real;
         }
 
         public android.net.http.QuicOptions.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

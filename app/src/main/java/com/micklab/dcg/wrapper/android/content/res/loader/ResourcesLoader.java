@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.content.res.loader;
 
 public final class ResourcesLoader {
-    private final android.content.res.loader.ResourcesLoader real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ResourcesLoader(android.content.res.loader.ResourcesLoader real) {
+    private final java.lang.Object real;
+
+    private ResourcesLoader(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.res.loader.ResourcesLoader wrap(android.content.res.loader.ResourcesLoader real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.loader.ResourcesLoader(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.loader.ResourcesLoader(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.res.loader.ResourcesLoader getReal() {
+        return (android.content.res.loader.ResourcesLoader) real;
     }
 
     public android.content.res.loader.ResourcesLoader unwrap() {
-        return real;
+        return getReal();
     }
 
     public ResourcesLoader() {
-        this(new android.content.res.loader.ResourcesLoader());
+        this(new android.content.res.loader.ResourcesLoader(), (__DcgwBridgeToken) null);
     }
 
     public void addProvider(com.micklab.dcg.wrapper.android.content.res.loader.ResourcesProvider arg0) {
-        real.addProvider(arg0 == null ? null : arg0.unwrap());
+        ((android.content.res.loader.ResourcesLoader) real).addProvider(arg0 == null ? null : arg0.getReal());
     }
 
     public void clearProviders() {
-        real.clearProviders();
+        ((android.content.res.loader.ResourcesLoader) real).clearProviders();
     }
 
     public void removeProvider(com.micklab.dcg.wrapper.android.content.res.loader.ResourcesProvider arg0) {
-        real.removeProvider(arg0 == null ? null : arg0.unwrap());
+        ((android.content.res.loader.ResourcesLoader) real).removeProvider(arg0 == null ? null : arg0.getReal());
     }
 
 }

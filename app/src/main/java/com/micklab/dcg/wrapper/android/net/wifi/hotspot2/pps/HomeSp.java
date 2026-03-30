@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps;
 
 public final class HomeSp {
-    private final android.net.wifi.hotspot2.pps.HomeSp real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HomeSp(android.net.wifi.hotspot2.pps.HomeSp real) {
+    private final java.lang.Object real;
+
+    private HomeSp(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.HomeSp wrap(android.net.wifi.hotspot2.pps.HomeSp real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.HomeSp(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.HomeSp(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.hotspot2.pps.HomeSp getReal() {
+        return (android.net.wifi.hotspot2.pps.HomeSp) real;
     }
 
     public android.net.wifi.hotspot2.pps.HomeSp unwrap() {
-        return real;
+        return getReal();
     }
 
     public HomeSp() {

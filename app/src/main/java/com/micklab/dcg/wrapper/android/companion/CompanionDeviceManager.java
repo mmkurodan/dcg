@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.companion;
 
 public final class CompanionDeviceManager {
-    private final android.companion.CompanionDeviceManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CompanionDeviceManager(android.companion.CompanionDeviceManager real) {
+    private final java.lang.Object real;
+
+    private CompanionDeviceManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager wrap(android.companion.CompanionDeviceManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.companion.CompanionDeviceManager getReal() {
+        return (android.companion.CompanionDeviceManager) real;
     }
 
     public android.companion.CompanionDeviceManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void associate(com.micklab.dcg.wrapper.android.companion.AssociationRequest arg0, com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager.Callback arg1, com.micklab.dcg.wrapper.android.os.Handler arg2) {
-        real.associate(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.companion.CompanionDeviceManager) real).associate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void associate(com.micklab.dcg.wrapper.android.companion.AssociationRequest arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager.Callback arg2) {
-        real.associate(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.companion.CompanionDeviceManager) real).associate(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void attachSystemDataTransport(int arg0, java.io.InputStream arg1, java.io.OutputStream arg2) throws android.companion.DeviceNotAssociatedException {
-        real.attachSystemDataTransport(arg0, arg1, arg2);
+        ((android.companion.CompanionDeviceManager) real).attachSystemDataTransport(arg0, arg1, arg2);
     }
 
     public com.micklab.dcg.wrapper.android.content.IntentSender buildAssociationCancellationIntent() {
-        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(real.buildAssociationCancellationIntent());
+        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(((android.companion.CompanionDeviceManager) real).buildAssociationCancellationIntent());
     }
 
     public com.micklab.dcg.wrapper.android.content.IntentSender buildPermissionTransferUserConsentIntent(int arg0) throws android.companion.DeviceNotAssociatedException {
-        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(real.buildPermissionTransferUserConsentIntent(arg0));
+        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(((android.companion.CompanionDeviceManager) real).buildPermissionTransferUserConsentIntent(arg0));
     }
 
     public void detachSystemDataTransport(int arg0) throws android.companion.DeviceNotAssociatedException {
-        real.detachSystemDataTransport(arg0);
+        ((android.companion.CompanionDeviceManager) real).detachSystemDataTransport(arg0);
     }
 
     public void disableSystemDataSyncForTypes(int arg0, int arg1) {
-        real.disableSystemDataSyncForTypes(arg0, arg1);
+        ((android.companion.CompanionDeviceManager) real).disableSystemDataSyncForTypes(arg0, arg1);
     }
 
     public void disassociate(int arg0) {
-        real.disassociate(arg0);
+        ((android.companion.CompanionDeviceManager) real).disassociate(arg0);
     }
 
     public void disassociate(java.lang.String arg0) {
-        real.disassociate(arg0);
+        ((android.companion.CompanionDeviceManager) real).disassociate(arg0);
     }
 
     public void enableSystemDataSyncForTypes(int arg0, int arg1) {
-        real.enableSystemDataSyncForTypes(arg0, arg1);
+        ((android.companion.CompanionDeviceManager) real).enableSystemDataSyncForTypes(arg0, arg1);
     }
 
     public boolean hasNotificationAccess(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.hasNotificationAccess(arg0 == null ? null : arg0.unwrap());
+        return ((android.companion.CompanionDeviceManager) real).hasNotificationAccess(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isPermissionTransferUserConsented(int arg0) {
-        return real.isPermissionTransferUserConsented(arg0);
+        return ((android.companion.CompanionDeviceManager) real).isPermissionTransferUserConsented(arg0);
     }
 
     public void requestNotificationAccess(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.requestNotificationAccess(arg0 == null ? null : arg0.unwrap());
+        ((android.companion.CompanionDeviceManager) real).requestNotificationAccess(arg0 == null ? null : arg0.getReal());
     }
 
     public void startObservingDevicePresence(java.lang.String arg0) throws android.companion.DeviceNotAssociatedException {
-        real.startObservingDevicePresence(arg0);
+        ((android.companion.CompanionDeviceManager) real).startObservingDevicePresence(arg0);
     }
 
     public void stopObservingDevicePresence(java.lang.String arg0) throws android.companion.DeviceNotAssociatedException {
-        real.stopObservingDevicePresence(arg0);
+        ((android.companion.CompanionDeviceManager) real).stopObservingDevicePresence(arg0);
     }
 
     public static final java.lang.String EXTRA_ASSOCIATION = android.companion.CompanionDeviceManager.EXTRA_ASSOCIATION;
@@ -86,34 +93,41 @@ public final class CompanionDeviceManager {
     public static final int RESULT_USER_REJECTED = android.companion.CompanionDeviceManager.RESULT_USER_REJECTED;
 
     public static final class Callback {
-        private final android.companion.CompanionDeviceManager.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.companion.CompanionDeviceManager.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager.Callback wrap(android.companion.CompanionDeviceManager.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.companion.CompanionDeviceManager.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.companion.CompanionDeviceManager.Callback getReal() {
+            return (android.companion.CompanionDeviceManager.Callback) real;
         }
 
         public android.companion.CompanionDeviceManager.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAssociationCreated(com.micklab.dcg.wrapper.android.companion.AssociationInfo arg0) {
-            real.onAssociationCreated(arg0 == null ? null : arg0.unwrap());
+            ((android.companion.CompanionDeviceManager.Callback) real).onAssociationCreated(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAssociationPending(com.micklab.dcg.wrapper.android.content.IntentSender arg0) {
-            real.onAssociationPending(arg0 == null ? null : arg0.unwrap());
+            ((android.companion.CompanionDeviceManager.Callback) real).onAssociationPending(arg0 == null ? null : arg0.getReal());
         }
 
         public void onDeviceFound(com.micklab.dcg.wrapper.android.content.IntentSender arg0) {
-            real.onDeviceFound(arg0 == null ? null : arg0.unwrap());
+            ((android.companion.CompanionDeviceManager.Callback) real).onDeviceFound(arg0 == null ? null : arg0.getReal());
         }
 
         public void onFailure(java.lang.CharSequence arg0) {
-            real.onFailure(arg0);
+            ((android.companion.CompanionDeviceManager.Callback) real).onFailure(arg0);
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class CountDownTimer {
-    private final android.os.CountDownTimer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CountDownTimer(android.os.CountDownTimer real) {
+    private final java.lang.Object real;
+
+    private CountDownTimer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.CountDownTimer wrap(android.os.CountDownTimer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CountDownTimer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CountDownTimer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.CountDownTimer getReal() {
+        return (android.os.CountDownTimer) real;
     }
 
     public android.os.CountDownTimer unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {

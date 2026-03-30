@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class RelativeSizeSpan {
-    private final android.text.style.RelativeSizeSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RelativeSizeSpan(android.text.style.RelativeSizeSpan real) {
+    private final java.lang.Object real;
+
+    private RelativeSizeSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.RelativeSizeSpan wrap(android.text.style.RelativeSizeSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.RelativeSizeSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.RelativeSizeSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.RelativeSizeSpan getReal() {
+        return (android.text.style.RelativeSizeSpan) real;
     }
 
     public android.text.style.RelativeSizeSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public RelativeSizeSpan(float arg0) {
-        this(new android.text.style.RelativeSizeSpan(arg0));
+        this(new android.text.style.RelativeSizeSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public RelativeSizeSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.RelativeSizeSpan(arg0 == null ? null : arg0.unwrap()));
+        this(new android.text.style.RelativeSizeSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.text.style.RelativeSizeSpan) real).describeContents();
     }
 
     public float getSizeChange() {
-        return real.getSizeChange();
+        return ((android.text.style.RelativeSizeSpan) real).getSizeChange();
     }
 
     public int getSpanTypeId() {
-        return real.getSpanTypeId();
+        return ((android.text.style.RelativeSizeSpan) real).getSpanTypeId();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.text.style.RelativeSizeSpan) real).toString();
     }
 
     public void updateDrawState(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
-        real.updateDrawState(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.RelativeSizeSpan) real).updateDrawState(arg0 == null ? null : arg0.getReal());
     }
 
     public void updateMeasureState(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
-        real.updateMeasureState(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.RelativeSizeSpan) real).updateMeasureState(arg0 == null ? null : arg0.getReal());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.text.style.RelativeSizeSpan) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Looper {
-    private final android.os.Looper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Looper(android.os.Looper real) {
+    private final java.lang.Object real;
+
+    private Looper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Looper wrap(android.os.Looper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Looper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Looper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Looper getReal() {
+        return (android.os.Looper) real;
     }
 
     public android.os.Looper unwrap() {
-        return real;
+        return getReal();
     }
 
     public void dump(com.micklab.dcg.wrapper.android.util.Printer arg0, java.lang.String arg1) {

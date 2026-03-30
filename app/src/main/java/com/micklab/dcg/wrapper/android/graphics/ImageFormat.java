@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class ImageFormat {
-    private final android.graphics.ImageFormat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImageFormat(android.graphics.ImageFormat real) {
+    private final java.lang.Object real;
+
+    private ImageFormat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ImageFormat wrap(android.graphics.ImageFormat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ImageFormat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.ImageFormat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.ImageFormat getReal() {
+        return (android.graphics.ImageFormat) real;
     }
 
     public android.graphics.ImageFormat unwrap() {
-        return real;
+        return getReal();
     }
 
     public ImageFormat() {
-        this(new android.graphics.ImageFormat());
+        this(new android.graphics.ImageFormat(), (__DcgwBridgeToken) null);
     }
 
     public static int getBitsPerPixel(int arg0) {

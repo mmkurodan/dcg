@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class PointerIcon {
-    private final android.view.PointerIcon real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PointerIcon(android.view.PointerIcon real) {
+    private final java.lang.Object real;
+
+    private PointerIcon(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.PointerIcon wrap(android.view.PointerIcon real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.PointerIcon(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.PointerIcon(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.PointerIcon getReal() {
+        return (android.view.PointerIcon) real;
     }
 
     public android.view.PointerIcon unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.view.PointerIcon create(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, float arg1, float arg2) {
-        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.create(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.create(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.PointerIcon) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.PointerIcon) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.view.PointerIcon getSystemIcon(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.getSystemIcon(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.getSystemIcon(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.view.PointerIcon load(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.load(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(android.view.PointerIcon.load(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.PointerIcon) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.PointerIcon) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int TYPE_ALIAS = android.view.PointerIcon.TYPE_ALIAS;

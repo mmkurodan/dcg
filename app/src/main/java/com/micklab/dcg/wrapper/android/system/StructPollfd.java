@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class StructPollfd {
-    private final android.system.StructPollfd real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StructPollfd(android.system.StructPollfd real) {
+    private final java.lang.Object real;
+
+    private StructPollfd(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.StructPollfd wrap(android.system.StructPollfd real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructPollfd(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructPollfd(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.StructPollfd getReal() {
+        return (android.system.StructPollfd) real;
     }
 
     public android.system.StructPollfd unwrap() {
-        return real;
+        return getReal();
     }
 
     public StructPollfd() {

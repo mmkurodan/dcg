@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class Color {
-    private final android.graphics.Color real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Color(android.graphics.Color real) {
+    private final java.lang.Object real;
+
+    private Color(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Color wrap(android.graphics.Color real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Color(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.Color(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.Color getReal() {
+        return (android.graphics.Color) real;
     }
 
     public android.graphics.Color unwrap() {
-        return real;
+        return getReal();
     }
 
     public Color() {
-        this(new android.graphics.Color());
+        this(new android.graphics.Color(), (__DcgwBridgeToken) null);
     }
 
     public static int HSVToColor(float[] arg0) {
@@ -33,7 +40,7 @@ public final class Color {
     }
 
     public float alpha() {
-        return real.alpha();
+        return ((android.graphics.Color) real).alpha();
     }
 
     public static float alpha(long arg0) {
@@ -53,7 +60,7 @@ public final class Color {
     }
 
     public float blue() {
-        return real.blue();
+        return ((android.graphics.Color) real).blue();
     }
 
     public static float blue(long arg0) {
@@ -73,59 +80,59 @@ public final class Color {
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Color convert(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(real.convert(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(((android.graphics.Color) real).convert(arg0 == null ? null : arg0.getReal()));
     }
 
     public static long convert(long arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector arg1) {
-        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static long convert(long arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1) {
-        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static long convert(int arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1) {
-        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.graphics.Color.convert(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static long convert(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.ColorSpace.Connector arg4) {
-        return android.graphics.Color.convert(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        return android.graphics.Color.convert(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public static long convert(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg4, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg5) {
-        return android.graphics.Color.convert(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap(), arg5 == null ? null : arg5.unwrap());
+        return android.graphics.Color.convert(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5 == null ? null : arg5.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.graphics.Color) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.ColorSpace getColorSpace() {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(real.getColorSpace());
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.graphics.Color) real).getColorSpace());
     }
 
     public float getComponent(int arg0) {
-        return real.getComponent(arg0);
+        return ((android.graphics.Color) real).getComponent(arg0);
     }
 
     public int getComponentCount() {
-        return real.getComponentCount();
+        return ((android.graphics.Color) real).getComponentCount();
     }
 
     public float[] getComponents() {
-        return real.getComponents();
+        return ((android.graphics.Color) real).getComponents();
     }
 
     public float[] getComponents(float[] arg0) {
-        return real.getComponents(arg0);
+        return ((android.graphics.Color) real).getComponents(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model getModel() {
-        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model.wrap(real.getModel());
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.Model.wrap(((android.graphics.Color) real).getModel());
     }
 
     public float green() {
-        return real.green();
+        return ((android.graphics.Color) real).green();
     }
 
     public static float green(long arg0) {
@@ -137,15 +144,15 @@ public final class Color {
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.graphics.Color) real).hashCode();
     }
 
     public static boolean isInColorSpace(long arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1) {
-        return android.graphics.Color.isInColorSpace(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.graphics.Color.isInColorSpace(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean isSrgb() {
-        return real.isSrgb();
+        return ((android.graphics.Color) real).isSrgb();
     }
 
     public static boolean isSrgb(long arg0) {
@@ -153,7 +160,7 @@ public final class Color {
     }
 
     public boolean isWideGamut() {
-        return real.isWideGamut();
+        return ((android.graphics.Color) real).isWideGamut();
     }
 
     public static boolean isWideGamut(long arg0) {
@@ -161,7 +168,7 @@ public final class Color {
     }
 
     public float luminance() {
-        return real.luminance();
+        return ((android.graphics.Color) real).luminance();
     }
 
     public static float luminance(long arg0) {
@@ -173,7 +180,7 @@ public final class Color {
     }
 
     public long pack() {
-        return real.pack();
+        return ((android.graphics.Color) real).pack();
     }
 
     public static long pack(int arg0) {
@@ -189,7 +196,7 @@ public final class Color {
     }
 
     public static long pack(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg4) {
-        return android.graphics.Color.pack(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        return android.graphics.Color.pack(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public static int parseColor(java.lang.String arg0) {
@@ -197,7 +204,7 @@ public final class Color {
     }
 
     public float red() {
-        return real.red();
+        return ((android.graphics.Color) real).red();
     }
 
     public static float red(long arg0) {
@@ -208,16 +215,16 @@ public final class Color {
         return android.graphics.Color.red(arg0);
     }
 
-    public static int rgb(float arg0, float arg1, float arg2) {
-        return android.graphics.Color.rgb(arg0, arg1, arg2);
-    }
-
     public static int rgb(int arg0, int arg1, int arg2) {
         return android.graphics.Color.rgb(arg0, arg1, arg2);
     }
 
+    public static int rgb(float arg0, float arg1, float arg2) {
+        return android.graphics.Color.rgb(arg0, arg1, arg2);
+    }
+
     public int toArgb() {
-        return real.toArgb();
+        return ((android.graphics.Color) real).toArgb();
     }
 
     public static int toArgb(long arg0) {
@@ -225,7 +232,7 @@ public final class Color {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.graphics.Color) real).toString();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Color valueOf(int arg0) {
@@ -237,7 +244,7 @@ public final class Color {
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Color valueOf(float[] arg0, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(android.graphics.Color.valueOf(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(android.graphics.Color.valueOf(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Color valueOf(float arg0, float arg1, float arg2) {
@@ -249,7 +256,7 @@ public final class Color {
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Color valueOf(float arg0, float arg1, float arg2, float arg3, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg4) {
-        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(android.graphics.Color.valueOf(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Color.wrap(android.graphics.Color.valueOf(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
     }
 
     public static final int BLACK = android.graphics.Color.BLACK;

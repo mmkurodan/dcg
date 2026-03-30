@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.security.identity;
 
 public final class AccessControlProfileId {
-    private final android.security.identity.AccessControlProfileId real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccessControlProfileId(android.security.identity.AccessControlProfileId real) {
+    private final java.lang.Object real;
+
+    private AccessControlProfileId(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.identity.AccessControlProfileId wrap(android.security.identity.AccessControlProfileId real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.AccessControlProfileId(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.AccessControlProfileId(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.identity.AccessControlProfileId getReal() {
+        return (android.security.identity.AccessControlProfileId) real;
     }
 
     public android.security.identity.AccessControlProfileId unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccessControlProfileId(int arg0) {
@@ -21,7 +28,7 @@ public final class AccessControlProfileId {
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.security.identity.AccessControlProfileId) real).getId();
     }
 
 }

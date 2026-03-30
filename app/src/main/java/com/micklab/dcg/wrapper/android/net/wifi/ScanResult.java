@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class ScanResult {
-    private final android.net.wifi.ScanResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScanResult(android.net.wifi.ScanResult real) {
+    private final java.lang.Object real;
+
+    private ScanResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.ScanResult wrap(android.net.wifi.ScanResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.ScanResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.ScanResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.ScanResult getReal() {
+        return (android.net.wifi.ScanResult) real;
     }
 
     public android.net.wifi.ScanResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public ScanResult() {
@@ -82,18 +89,25 @@ public final class ScanResult {
 
 
     public static final class InformationElement {
-        private final android.net.wifi.ScanResult.InformationElement real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InformationElement(android.net.wifi.ScanResult.InformationElement real) {
+        private final java.lang.Object real;
+
+        private InformationElement(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.ScanResult.InformationElement wrap(android.net.wifi.ScanResult.InformationElement real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.ScanResult.InformationElement(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.ScanResult.InformationElement(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.ScanResult.InformationElement getReal() {
+            return (android.net.wifi.ScanResult.InformationElement) real;
         }
 
         public android.net.wifi.ScanResult.InformationElement unwrap() {
-            return real;
+            return getReal();
         }
 
         public InformationElement(com.micklab.dcg.wrapper.android.net.wifi.ScanResult.InformationElement arg0) {

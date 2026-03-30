@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class ZoomControls {
-    private final android.widget.ZoomControls real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ZoomControls(android.widget.ZoomControls real) {
+    private final java.lang.Object real;
+
+    private ZoomControls(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.ZoomControls wrap(android.widget.ZoomControls real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ZoomControls(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ZoomControls(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.ZoomControls getReal() {
+        return (android.widget.ZoomControls) real;
     }
 
     public android.widget.ZoomControls unwrap() {
-        return real;
+        return getReal();
     }
 
     public ZoomControls(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.ZoomControls(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.ZoomControls(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ZoomControls(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.ZoomControls(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.ZoomControls(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.ZoomControls) real).getAccessibilityClassName();
     }
 
     public boolean hasFocus() {
-        return real.hasFocus();
+        return ((android.widget.ZoomControls) real).hasFocus();
     }
 
     public void hide() {
-        real.hide();
+        ((android.widget.ZoomControls) real).hide();
     }
 
     public boolean onTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.ZoomControls) real).onTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIsZoomInEnabled(boolean arg0) {
-        real.setIsZoomInEnabled(arg0);
+        ((android.widget.ZoomControls) real).setIsZoomInEnabled(arg0);
     }
 
     public void setIsZoomOutEnabled(boolean arg0) {
-        real.setIsZoomOutEnabled(arg0);
+        ((android.widget.ZoomControls) real).setIsZoomOutEnabled(arg0);
     }
 
     public void setOnZoomInClickListener(com.micklab.dcg.wrapper.android.view.View.OnClickListener arg0) {
-        real.setOnZoomInClickListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ZoomControls) real).setOnZoomInClickListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnZoomOutClickListener(com.micklab.dcg.wrapper.android.view.View.OnClickListener arg0) {
-        real.setOnZoomOutClickListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.ZoomControls) real).setOnZoomOutClickListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setZoomSpeed(long arg0) {
-        real.setZoomSpeed(arg0);
+        ((android.widget.ZoomControls) real).setZoomSpeed(arg0);
     }
 
     public void show() {
-        real.show();
+        ((android.widget.ZoomControls) real).show();
     }
 
 }

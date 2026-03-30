@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class FreezePeriod {
-    private final android.app.admin.FreezePeriod real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FreezePeriod(android.app.admin.FreezePeriod real) {
+    private final java.lang.Object real;
+
+    private FreezePeriod(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.FreezePeriod wrap(android.app.admin.FreezePeriod real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.FreezePeriod(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.FreezePeriod(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.FreezePeriod getReal() {
+        return (android.app.admin.FreezePeriod) real;
     }
 
     public android.app.admin.FreezePeriod unwrap() {
-        return real;
+        return getReal();
     }
 
     public FreezePeriod(java.time.MonthDay arg0, java.time.MonthDay arg1) {
-        this(new android.app.admin.FreezePeriod(arg0, arg1));
+        this(new android.app.admin.FreezePeriod(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public java.time.MonthDay getEnd() {
-        return real.getEnd();
+        return ((android.app.admin.FreezePeriod) real).getEnd();
     }
 
     public java.time.MonthDay getStart() {
-        return real.getStart();
+        return ((android.app.admin.FreezePeriod) real).getStart();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.admin.FreezePeriod) real).toString();
     }
 
 }

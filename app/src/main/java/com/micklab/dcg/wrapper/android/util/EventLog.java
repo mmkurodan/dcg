@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class EventLog {
-    private final android.util.EventLog real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EventLog(android.util.EventLog real) {
+    private final java.lang.Object real;
+
+    private EventLog(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.EventLog wrap(android.util.EventLog real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.EventLog(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.EventLog(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.EventLog getReal() {
+        return (android.util.EventLog) real;
     }
 
     public android.util.EventLog unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int getTagCode(java.lang.String arg0) {
@@ -45,46 +52,53 @@ public final class EventLog {
     }
 
     public static final class Event {
-        private final android.util.EventLog.Event real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Event(android.util.EventLog.Event real) {
+        private final java.lang.Object real;
+
+        private Event(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.util.EventLog.Event wrap(android.util.EventLog.Event real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.util.EventLog.Event(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.util.EventLog.Event(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.util.EventLog.Event getReal() {
+            return (android.util.EventLog.Event) real;
         }
 
         public android.util.EventLog.Event unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.util.EventLog.Event) real).equals(arg0);
         }
 
         public java.lang.Object getData() {
-            return real.getData();
+            return ((android.util.EventLog.Event) real).getData();
         }
 
         public int getProcessId() {
-            return real.getProcessId();
+            return ((android.util.EventLog.Event) real).getProcessId();
         }
 
         public int getTag() {
-            return real.getTag();
+            return ((android.util.EventLog.Event) real).getTag();
         }
 
         public int getThreadId() {
-            return real.getThreadId();
+            return ((android.util.EventLog.Event) real).getThreadId();
         }
 
         public long getTimeNanos() {
-            return real.getTimeNanos();
+            return ((android.util.EventLog.Event) real).getTimeNanos();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.util.EventLog.Event) real).hashCode();
         }
 
     }

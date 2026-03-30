@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class RemoteCallbackList {
-    private final android.os.RemoteCallbackList real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RemoteCallbackList(android.os.RemoteCallbackList real) {
+    private final java.lang.Object real;
+
+    private RemoteCallbackList(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.RemoteCallbackList wrap(android.os.RemoteCallbackList real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RemoteCallbackList(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.RemoteCallbackList(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.RemoteCallbackList getReal() {
+        return (android.os.RemoteCallbackList) real;
     }
 
     public android.os.RemoteCallbackList unwrap() {
-        return real;
+        return getReal();
     }
 
     public RemoteCallbackList() {

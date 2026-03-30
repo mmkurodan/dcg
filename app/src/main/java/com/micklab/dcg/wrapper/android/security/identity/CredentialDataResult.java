@@ -2,65 +2,79 @@
 package com.micklab.dcg.wrapper.android.security.identity;
 
 public final class CredentialDataResult {
-    private final android.security.identity.CredentialDataResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CredentialDataResult(android.security.identity.CredentialDataResult real) {
+    private final java.lang.Object real;
+
+    private CredentialDataResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult wrap(android.security.identity.CredentialDataResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.identity.CredentialDataResult getReal() {
+        return (android.security.identity.CredentialDataResult) real;
     }
 
     public android.security.identity.CredentialDataResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public byte[] getDeviceMac() {
-        return real.getDeviceMac();
+        return ((android.security.identity.CredentialDataResult) real).getDeviceMac();
     }
 
     public byte[] getDeviceNameSpaces() {
-        return real.getDeviceNameSpaces();
+        return ((android.security.identity.CredentialDataResult) real).getDeviceNameSpaces();
     }
 
     public byte[] getDeviceSignature() {
-        return real.getDeviceSignature();
+        return ((android.security.identity.CredentialDataResult) real).getDeviceSignature();
     }
 
     public com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries getDeviceSignedEntries() {
-        return com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries.wrap(real.getDeviceSignedEntries());
+        return com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries.wrap(((android.security.identity.CredentialDataResult) real).getDeviceSignedEntries());
     }
 
     public com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries getIssuerSignedEntries() {
-        return com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries.wrap(real.getIssuerSignedEntries());
+        return com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries.wrap(((android.security.identity.CredentialDataResult) real).getIssuerSignedEntries());
     }
 
     public byte[] getStaticAuthenticationData() {
-        return real.getStaticAuthenticationData();
+        return ((android.security.identity.CredentialDataResult) real).getStaticAuthenticationData();
     }
 
     public static final class Entries {
-        private final android.security.identity.CredentialDataResult.Entries real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Entries(android.security.identity.CredentialDataResult.Entries real) {
+        private final java.lang.Object real;
+
+        private Entries(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries wrap(android.security.identity.CredentialDataResult.Entries real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.CredentialDataResult.Entries(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.security.identity.CredentialDataResult.Entries getReal() {
+            return (android.security.identity.CredentialDataResult.Entries) real;
         }
 
         public android.security.identity.CredentialDataResult.Entries unwrap() {
-            return real;
+            return getReal();
         }
 
         public byte[] getEntry(java.lang.String arg0, java.lang.String arg1) {
-            return real.getEntry(arg0, arg1);
+            return ((android.security.identity.CredentialDataResult.Entries) real).getEntry(arg0, arg1);
         }
 
         public int getStatus(java.lang.String arg0, java.lang.String arg1) {
-            return real.getStatus(arg0, arg1);
+            return ((android.security.identity.CredentialDataResult.Entries) real).getStatus(arg0, arg1);
         }
 
         public static final int STATUS_NOT_IN_REQUEST_MESSAGE = android.security.identity.CredentialDataResult.Entries.STATUS_NOT_IN_REQUEST_MESSAGE;

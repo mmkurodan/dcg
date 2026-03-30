@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media.metrics;
 
 public final class TranscodingSession {
-    private final android.media.metrics.TranscodingSession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TranscodingSession(android.media.metrics.TranscodingSession real) {
+    private final java.lang.Object real;
+
+    private TranscodingSession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.metrics.TranscodingSession wrap(android.media.metrics.TranscodingSession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.TranscodingSession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.TranscodingSession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.metrics.TranscodingSession getReal() {
+        return (android.media.metrics.TranscodingSession) real;
     }
 
     public android.media.metrics.TranscodingSession unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.media.metrics.TranscodingSession) real).close();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.metrics.TranscodingSession) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.metrics.LogSessionId getSessionId() {
-        return com.micklab.dcg.wrapper.android.media.metrics.LogSessionId.wrap(real.getSessionId());
+        return com.micklab.dcg.wrapper.android.media.metrics.LogSessionId.wrap(((android.media.metrics.TranscodingSession) real).getSessionId());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.metrics.TranscodingSession) real).hashCode();
     }
 
 }

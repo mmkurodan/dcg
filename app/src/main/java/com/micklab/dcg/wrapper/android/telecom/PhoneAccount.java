@@ -2,98 +2,105 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class PhoneAccount {
-    private final android.telecom.PhoneAccount real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PhoneAccount(android.telecom.PhoneAccount real) {
+    private final java.lang.Object real;
+
+    private PhoneAccount(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.PhoneAccount wrap(android.telecom.PhoneAccount real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccount(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccount(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.PhoneAccount getReal() {
+        return (android.telecom.PhoneAccount) real;
     }
 
     public android.telecom.PhoneAccount unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder builder(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, java.lang.CharSequence arg1) {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(android.telecom.PhoneAccount.builder(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(android.telecom.PhoneAccount.builder(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.PhoneAccount) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.telecom.PhoneAccount) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getAccountHandle() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getAccountHandle());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.PhoneAccount) real).getAccountHandle());
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getAddress() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getAddress());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.PhoneAccount) real).getAddress());
     }
 
     public int getCapabilities() {
-        return real.getCapabilities();
+        return ((android.telecom.PhoneAccount) real).getCapabilities();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.telecom.PhoneAccount) real).getExtras());
     }
 
     public int getHighlightColor() {
-        return real.getHighlightColor();
+        return ((android.telecom.PhoneAccount) real).getHighlightColor();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.telecom.PhoneAccount) real).getIcon());
     }
 
     public java.lang.CharSequence getLabel() {
-        return real.getLabel();
+        return ((android.telecom.PhoneAccount) real).getLabel();
     }
 
     public java.lang.CharSequence getShortDescription() {
-        return real.getShortDescription();
+        return ((android.telecom.PhoneAccount) real).getShortDescription();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getSubscriptionAddress() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getSubscriptionAddress());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.PhoneAccount) real).getSubscriptionAddress());
     }
 
     public boolean hasCapabilities(int arg0) {
-        return real.hasCapabilities(arg0);
+        return ((android.telecom.PhoneAccount) real).hasCapabilities(arg0);
     }
 
     public boolean hasSimultaneousCallingRestriction() {
-        return real.hasSimultaneousCallingRestriction();
+        return ((android.telecom.PhoneAccount) real).hasSimultaneousCallingRestriction();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.telecom.PhoneAccount) real).hashCode();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.telecom.PhoneAccount) real).isEnabled();
     }
 
     public boolean supportsUriScheme(java.lang.String arg0) {
-        return real.supportsUriScheme(arg0);
+        return ((android.telecom.PhoneAccount) real).supportsUriScheme(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder toBuilder() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.toBuilder());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount) real).toBuilder());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.telecom.PhoneAccount) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.PhoneAccount) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CAPABILITY_ADHOC_CONFERENCE_CALLING = android.telecom.PhoneAccount.CAPABILITY_ADHOC_CONFERENCE_CALLING;
@@ -126,66 +133,73 @@ public final class PhoneAccount {
     public static final java.lang.String SCHEME_VOICEMAIL = android.telecom.PhoneAccount.SCHEME_VOICEMAIL;
 
     public static final class Builder {
-        private final android.telecom.PhoneAccount.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telecom.PhoneAccount.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder wrap(android.telecom.PhoneAccount.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.PhoneAccount.Builder getReal() {
+            return (android.telecom.PhoneAccount.Builder) real;
         }
 
         public android.telecom.PhoneAccount.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.telecom.PhoneAccount arg0) {
-            this(new android.telecom.PhoneAccount.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.telecom.PhoneAccount.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, java.lang.CharSequence arg1) {
-            this(new android.telecom.PhoneAccount.Builder(arg0 == null ? null : arg0.unwrap(), arg1));
+            this(new android.telecom.PhoneAccount.Builder(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder addSupportedUriScheme(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.addSupportedUriScheme(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).addSupportedUriScheme(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount build() {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.wrap(((android.telecom.PhoneAccount.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder clearSimultaneousCallingRestriction() {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.clearSimultaneousCallingRestriction());
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).clearSimultaneousCallingRestriction());
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setAddress(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setAddress(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setAddress(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setCapabilities(int arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setCapabilities(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setCapabilities(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setExtras(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setExtras(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setHighlightColor(int arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setHighlightColor(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setHighlightColor(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setShortDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setShortDescription(arg0));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setShortDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder setSubscriptionAddress(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(real.setSubscriptionAddress(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.Builder.wrap(((android.telecom.PhoneAccount.Builder) real).setSubscriptionAddress(arg0 == null ? null : arg0.getReal()));
         }
 
     }

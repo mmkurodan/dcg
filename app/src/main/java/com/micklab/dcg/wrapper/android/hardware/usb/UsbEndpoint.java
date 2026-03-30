@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.hardware.usb;
 
 public final class UsbEndpoint {
-    private final android.hardware.usb.UsbEndpoint real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UsbEndpoint(android.hardware.usb.UsbEndpoint real) {
+    private final java.lang.Object real;
+
+    private UsbEndpoint(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.usb.UsbEndpoint wrap(android.hardware.usb.UsbEndpoint real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.usb.UsbEndpoint(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.usb.UsbEndpoint(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.usb.UsbEndpoint getReal() {
+        return (android.hardware.usb.UsbEndpoint) real;
     }
 
     public android.hardware.usb.UsbEndpoint unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.hardware.usb.UsbEndpoint) real).describeContents();
     }
 
     public int getAddress() {
-        return real.getAddress();
+        return ((android.hardware.usb.UsbEndpoint) real).getAddress();
     }
 
     public int getAttributes() {
-        return real.getAttributes();
+        return ((android.hardware.usb.UsbEndpoint) real).getAttributes();
     }
 
     public int getDirection() {
-        return real.getDirection();
+        return ((android.hardware.usb.UsbEndpoint) real).getDirection();
     }
 
     public int getEndpointNumber() {
-        return real.getEndpointNumber();
+        return ((android.hardware.usb.UsbEndpoint) real).getEndpointNumber();
     }
 
     public int getInterval() {
-        return real.getInterval();
+        return ((android.hardware.usb.UsbEndpoint) real).getInterval();
     }
 
     public int getMaxPacketSize() {
-        return real.getMaxPacketSize();
+        return ((android.hardware.usb.UsbEndpoint) real).getMaxPacketSize();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.hardware.usb.UsbEndpoint) real).getType();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.hardware.usb.UsbEndpoint) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.usb.UsbEndpoint) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

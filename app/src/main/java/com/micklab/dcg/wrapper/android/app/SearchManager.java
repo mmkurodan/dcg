@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class SearchManager {
-    private final android.app.SearchManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SearchManager(android.app.SearchManager real) {
+    private final java.lang.Object real;
+
+    private SearchManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.SearchManager wrap(android.app.SearchManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.SearchManager getReal() {
+        return (android.app.SearchManager) real;
     }
 
     public android.app.SearchManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName getGlobalSearchActivity() {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.getGlobalSearchActivity());
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.app.SearchManager) real).getGlobalSearchActivity());
     }
 
     public com.micklab.dcg.wrapper.android.app.SearchableInfo getSearchableInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return com.micklab.dcg.wrapper.android.app.SearchableInfo.wrap(real.getSearchableInfo(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.app.SearchableInfo.wrap(((android.app.SearchManager) real).getSearchableInfo(arg0 == null ? null : arg0.getReal()));
     }
 
     public void onCancel(com.micklab.dcg.wrapper.android.content.DialogInterface arg0) {
-        real.onCancel(arg0 == null ? null : arg0.unwrap());
+        ((android.app.SearchManager) real).onCancel(arg0 == null ? null : arg0.getReal());
     }
 
     public void onDismiss(com.micklab.dcg.wrapper.android.content.DialogInterface arg0) {
-        real.onDismiss(arg0 == null ? null : arg0.unwrap());
+        ((android.app.SearchManager) real).onDismiss(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnCancelListener(com.micklab.dcg.wrapper.android.app.SearchManager.OnCancelListener arg0) {
-        real.setOnCancelListener(arg0 == null ? null : arg0.unwrap());
+        ((android.app.SearchManager) real).setOnCancelListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnDismissListener(com.micklab.dcg.wrapper.android.app.SearchManager.OnDismissListener arg0) {
-        real.setOnDismissListener(arg0 == null ? null : arg0.unwrap());
+        ((android.app.SearchManager) real).setOnDismissListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void startSearch(java.lang.String arg0, boolean arg1, com.micklab.dcg.wrapper.android.content.ComponentName arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3, boolean arg4) {
-        real.startSearch(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4);
+        ((android.app.SearchManager) real).startSearch(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4);
     }
 
     public void stopSearch() {
-        real.stopSearch();
+        ((android.app.SearchManager) real).stopSearch();
     }
 
     public void triggerSearch(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.triggerSearch(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.app.SearchManager) real).triggerSearch(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static final java.lang.String ACTION_KEY = android.app.SearchManager.ACTION_KEY;
@@ -106,42 +113,56 @@ public final class SearchManager {
     public static final java.lang.String USER_QUERY = android.app.SearchManager.USER_QUERY;
 
     public static final class OnCancelListener {
-        private final android.app.SearchManager.OnCancelListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnCancelListener(android.app.SearchManager.OnCancelListener real) {
+        private final java.lang.Object real;
+
+        private OnCancelListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.SearchManager.OnCancelListener wrap(android.app.SearchManager.OnCancelListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager.OnCancelListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager.OnCancelListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.SearchManager.OnCancelListener getReal() {
+            return (android.app.SearchManager.OnCancelListener) real;
         }
 
         public android.app.SearchManager.OnCancelListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCancel() {
-            real.onCancel();
+            ((android.app.SearchManager.OnCancelListener) real).onCancel();
         }
 
     }
     public static final class OnDismissListener {
-        private final android.app.SearchManager.OnDismissListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnDismissListener(android.app.SearchManager.OnDismissListener real) {
+        private final java.lang.Object real;
+
+        private OnDismissListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.SearchManager.OnDismissListener wrap(android.app.SearchManager.OnDismissListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager.OnDismissListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchManager.OnDismissListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.SearchManager.OnDismissListener getReal() {
+            return (android.app.SearchManager.OnDismissListener) real;
         }
 
         public android.app.SearchManager.OnDismissListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onDismiss() {
-            real.onDismiss();
+            ((android.app.SearchManager.OnDismissListener) real).onDismiss();
         }
 
     }

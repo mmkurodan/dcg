@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class VoicemailContract {
-    private final android.provider.VoicemailContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VoicemailContract(android.provider.VoicemailContract real) {
+    private final java.lang.Object real;
+
+    private VoicemailContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.VoicemailContract wrap(android.provider.VoicemailContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.VoicemailContract getReal() {
+        return (android.provider.VoicemailContract) real;
     }
 
     public android.provider.VoicemailContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String ACTION_FETCH_VOICEMAIL = android.provider.VoicemailContract.ACTION_FETCH_VOICEMAIL;
@@ -25,18 +32,25 @@ public final class VoicemailContract {
     public static final java.lang.String PARAM_KEY_SOURCE_PACKAGE = android.provider.VoicemailContract.PARAM_KEY_SOURCE_PACKAGE;
 
     public static final class Status {
-        private final android.provider.VoicemailContract.Status real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Status(android.provider.VoicemailContract.Status real) {
+        private final java.lang.Object real;
+
+        private Status(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.VoicemailContract.Status wrap(android.provider.VoicemailContract.Status real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract.Status(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract.Status(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.VoicemailContract.Status getReal() {
+            return (android.provider.VoicemailContract.Status) real;
         }
 
         public android.provider.VoicemailContract.Status unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri buildSourceUri(java.lang.String arg0) {
@@ -77,18 +91,25 @@ public final class VoicemailContract {
 
     }
     public static final class Voicemails {
-        private final android.provider.VoicemailContract.Voicemails real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Voicemails(android.provider.VoicemailContract.Voicemails real) {
+        private final java.lang.Object real;
+
+        private Voicemails(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.VoicemailContract.Voicemails wrap(android.provider.VoicemailContract.Voicemails real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract.Voicemails(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.VoicemailContract.Voicemails(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.VoicemailContract.Voicemails getReal() {
+            return (android.provider.VoicemailContract.Voicemails) real;
         }
 
         public android.provider.VoicemailContract.Voicemails unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri buildSourceUri(java.lang.String arg0) {

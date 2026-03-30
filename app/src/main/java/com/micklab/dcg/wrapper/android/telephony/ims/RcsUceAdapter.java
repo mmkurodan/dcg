@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class RcsUceAdapter {
-    private final android.telephony.ims.RcsUceAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RcsUceAdapter(android.telephony.ims.RcsUceAdapter real) {
+    private final java.lang.Object real;
+
+    private RcsUceAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.RcsUceAdapter wrap(android.telephony.ims.RcsUceAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RcsUceAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RcsUceAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.RcsUceAdapter getReal() {
+        return (android.telephony.ims.RcsUceAdapter) real;
     }
 
     public android.telephony.ims.RcsUceAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean isUceSettingEnabled() throws android.telephony.ims.ImsException {

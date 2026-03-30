@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p;
 
 public final class WifiP2pConfig {
-    private final android.net.wifi.p2p.WifiP2pConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pConfig(android.net.wifi.p2p.WifiP2pConfig real) {
+    private final java.lang.Object real;
+
+    private WifiP2pConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig wrap(android.net.wifi.p2p.WifiP2pConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.WifiP2pConfig getReal() {
+        return (android.net.wifi.p2p.WifiP2pConfig) real;
     }
 
     public android.net.wifi.p2p.WifiP2pConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public WifiP2pConfig() {
@@ -58,18 +65,25 @@ public final class WifiP2pConfig {
 
 
     public static final class Builder {
-        private final android.net.wifi.p2p.WifiP2pConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.p2p.WifiP2pConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder wrap(android.net.wifi.p2p.WifiP2pConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pConfig.Builder getReal() {
+            return (android.net.wifi.p2p.WifiP2pConfig.Builder) real;
         }
 
         public android.net.wifi.p2p.WifiP2pConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

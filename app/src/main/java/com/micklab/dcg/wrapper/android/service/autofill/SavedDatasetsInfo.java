@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.service.autofill;
 
 public final class SavedDatasetsInfo {
-    private final android.service.autofill.SavedDatasetsInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SavedDatasetsInfo(android.service.autofill.SavedDatasetsInfo real) {
+    private final java.lang.Object real;
+
+    private SavedDatasetsInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.autofill.SavedDatasetsInfo wrap(android.service.autofill.SavedDatasetsInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.SavedDatasetsInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.SavedDatasetsInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.autofill.SavedDatasetsInfo getReal() {
+        return (android.service.autofill.SavedDatasetsInfo) real;
     }
 
     public android.service.autofill.SavedDatasetsInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public SavedDatasetsInfo(java.lang.String arg0, int arg1) {
-        this(new android.service.autofill.SavedDatasetsInfo(arg0, arg1));
+        this(new android.service.autofill.SavedDatasetsInfo(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.service.autofill.SavedDatasetsInfo) real).equals(arg0);
     }
 
     public int getCount() {
-        return real.getCount();
+        return ((android.service.autofill.SavedDatasetsInfo) real).getCount();
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.service.autofill.SavedDatasetsInfo) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.service.autofill.SavedDatasetsInfo) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.service.autofill.SavedDatasetsInfo) real).toString();
     }
 
     public static final java.lang.String TYPE_OTHER = android.service.autofill.SavedDatasetsInfo.TYPE_OTHER;

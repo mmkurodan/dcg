@@ -2,54 +2,68 @@
 package com.micklab.dcg.wrapper.android.health.connect.changelog;
 
 public final class ChangeLogTokenRequest {
-    private final android.health.connect.changelog.ChangeLogTokenRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ChangeLogTokenRequest(android.health.connect.changelog.ChangeLogTokenRequest real) {
+    private final java.lang.Object real;
+
+    private ChangeLogTokenRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest wrap(android.health.connect.changelog.ChangeLogTokenRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.changelog.ChangeLogTokenRequest getReal() {
+        return (android.health.connect.changelog.ChangeLogTokenRequest) real;
     }
 
     public android.health.connect.changelog.ChangeLogTokenRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.health.connect.changelog.ChangeLogTokenRequest) real).describeContents();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.health.connect.changelog.ChangeLogTokenRequest) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.health.connect.changelog.ChangeLogTokenRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.health.connect.changelog.ChangeLogTokenRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder wrap(android.health.connect.changelog.ChangeLogTokenRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.changelog.ChangeLogTokenRequest.Builder getReal() {
+            return (android.health.connect.changelog.ChangeLogTokenRequest.Builder) real;
         }
 
         public android.health.connect.changelog.ChangeLogTokenRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.health.connect.changelog.ChangeLogTokenRequest.Builder());
+            this(new android.health.connect.changelog.ChangeLogTokenRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder addDataOriginFilter(com.micklab.dcg.wrapper.android.health.connect.datatypes.DataOrigin arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder.wrap(real.addDataOriginFilter(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.Builder.wrap(((android.health.connect.changelog.ChangeLogTokenRequest.Builder) real).addDataOriginFilter(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest build() {
-            return com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.health.connect.changelog.ChangeLogTokenRequest.wrap(((android.health.connect.changelog.ChangeLogTokenRequest.Builder) real).build());
         }
 
     }

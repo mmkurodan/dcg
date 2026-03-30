@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteReadOnlyDatabaseException {
-    private final android.database.sqlite.SQLiteReadOnlyDatabaseException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteReadOnlyDatabaseException(android.database.sqlite.SQLiteReadOnlyDatabaseException real) {
+    private final java.lang.Object real;
+
+    private SQLiteReadOnlyDatabaseException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteReadOnlyDatabaseException wrap(android.database.sqlite.SQLiteReadOnlyDatabaseException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteReadOnlyDatabaseException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteReadOnlyDatabaseException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteReadOnlyDatabaseException getReal() {
+        return (android.database.sqlite.SQLiteReadOnlyDatabaseException) real;
     }
 
     public android.database.sqlite.SQLiteReadOnlyDatabaseException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteReadOnlyDatabaseException() {

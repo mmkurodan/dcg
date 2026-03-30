@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class HttpResponseCache {
-    private final android.net.http.HttpResponseCache real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HttpResponseCache(android.net.http.HttpResponseCache real) {
+    private final java.lang.Object real;
+
+    private HttpResponseCache(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.HttpResponseCache wrap(android.net.http.HttpResponseCache real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpResponseCache(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.HttpResponseCache(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.HttpResponseCache getReal() {
+        return (android.net.http.HttpResponseCache) real;
     }
 
     public android.net.http.HttpResponseCache unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() throws java.io.IOException {

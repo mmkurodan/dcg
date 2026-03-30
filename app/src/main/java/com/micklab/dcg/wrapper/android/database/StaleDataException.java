@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class StaleDataException {
-    private final android.database.StaleDataException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StaleDataException(android.database.StaleDataException real) {
+    private final java.lang.Object real;
+
+    private StaleDataException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.StaleDataException wrap(android.database.StaleDataException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.StaleDataException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.StaleDataException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.StaleDataException getReal() {
+        return (android.database.StaleDataException) real;
     }
 
     public android.database.StaleDataException unwrap() {
-        return real;
+        return getReal();
     }
 
     public StaleDataException() {

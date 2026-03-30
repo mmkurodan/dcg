@@ -2,53 +2,67 @@
 package com.micklab.dcg.wrapper.android.health.connect;
 
 public final class ReadRecordsRequestUsingFilters {
-    private final android.health.connect.ReadRecordsRequestUsingFilters real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ReadRecordsRequestUsingFilters(android.health.connect.ReadRecordsRequestUsingFilters real) {
+    private final java.lang.Object real;
+
+    private ReadRecordsRequestUsingFilters(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters wrap(android.health.connect.ReadRecordsRequestUsingFilters real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.ReadRecordsRequestUsingFilters getReal() {
+        return (android.health.connect.ReadRecordsRequestUsingFilters) real;
     }
 
     public android.health.connect.ReadRecordsRequestUsingFilters unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getPageSize() {
-        return real.getPageSize();
+        return ((android.health.connect.ReadRecordsRequestUsingFilters) real).getPageSize();
     }
 
     public long getPageToken() {
-        return real.getPageToken();
+        return ((android.health.connect.ReadRecordsRequestUsingFilters) real).getPageToken();
     }
 
     public com.micklab.dcg.wrapper.android.health.connect.TimeRangeFilter getTimeRangeFilter() {
-        return com.micklab.dcg.wrapper.android.health.connect.TimeRangeFilter.wrap(real.getTimeRangeFilter());
+        return com.micklab.dcg.wrapper.android.health.connect.TimeRangeFilter.wrap(((android.health.connect.ReadRecordsRequestUsingFilters) real).getTimeRangeFilter());
     }
 
     public boolean isAscending() {
-        return real.isAscending();
+        return ((android.health.connect.ReadRecordsRequestUsingFilters) real).isAscending();
     }
 
     public static final class Builder {
-        private final android.health.connect.ReadRecordsRequestUsingFilters.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.health.connect.ReadRecordsRequestUsingFilters.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters.Builder wrap(android.health.connect.ReadRecordsRequestUsingFilters.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.ReadRecordsRequestUsingFilters.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.ReadRecordsRequestUsingFilters.Builder getReal() {
+            return (android.health.connect.ReadRecordsRequestUsingFilters.Builder) real;
         }
 
         public android.health.connect.ReadRecordsRequestUsingFilters.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.Class arg0) {
-            this(new android.health.connect.ReadRecordsRequestUsingFilters.Builder(arg0));
+            this(new android.health.connect.ReadRecordsRequestUsingFilters.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
     }

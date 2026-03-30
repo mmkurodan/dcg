@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeTrafficSelector {
-    private final android.net.ipsec.ike.IkeTrafficSelector real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeTrafficSelector(android.net.ipsec.ike.IkeTrafficSelector real) {
+    private final java.lang.Object real;
+
+    private IkeTrafficSelector(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTrafficSelector wrap(android.net.ipsec.ike.IkeTrafficSelector real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTrafficSelector(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTrafficSelector(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeTrafficSelector getReal() {
+        return (android.net.ipsec.ike.IkeTrafficSelector) real;
     }
 
     public android.net.ipsec.ike.IkeTrafficSelector unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeTrafficSelector(int arg0, int arg1, java.net.InetAddress arg2, java.net.InetAddress arg3) {

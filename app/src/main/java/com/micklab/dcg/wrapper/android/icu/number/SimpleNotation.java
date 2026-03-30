@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class SimpleNotation {
-    private final android.icu.number.SimpleNotation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SimpleNotation(android.icu.number.SimpleNotation real) {
+    private final java.lang.Object real;
+
+    private SimpleNotation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.SimpleNotation wrap(android.icu.number.SimpleNotation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.SimpleNotation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.SimpleNotation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.SimpleNotation getReal() {
+        return (android.icu.number.SimpleNotation) real;
     }
 
     public android.icu.number.SimpleNotation unwrap() {
-        return real;
+        return getReal();
     }
 
 }

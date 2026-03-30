@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view.translation;
 
 public final class UiTranslationManager {
-    private final android.view.translation.UiTranslationManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UiTranslationManager(android.view.translation.UiTranslationManager real) {
+    private final java.lang.Object real;
+
+    private UiTranslationManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.translation.UiTranslationManager wrap(android.view.translation.UiTranslationManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.UiTranslationManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.UiTranslationManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.translation.UiTranslationManager getReal() {
+        return (android.view.translation.UiTranslationManager) real;
     }
 
     public android.view.translation.UiTranslationManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void registerUiTranslationStateCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.view.translation.UiTranslationStateCallback arg1) {
-        real.registerUiTranslationStateCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.view.translation.UiTranslationManager) real).registerUiTranslationStateCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterUiTranslationStateCallback(com.micklab.dcg.wrapper.android.view.translation.UiTranslationStateCallback arg0) {
-        real.unregisterUiTranslationStateCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.view.translation.UiTranslationManager) real).unregisterUiTranslationStateCallback(arg0 == null ? null : arg0.getReal());
     }
 
 }

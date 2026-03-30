@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class Collator {
-    private final android.icu.text.Collator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Collator(android.icu.text.Collator real) {
+    private final java.lang.Object real;
+
+    private Collator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Collator wrap(android.icu.text.Collator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Collator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Collator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.Collator getReal() {
+        return (android.icu.text.Collator) real;
     }
 
     public android.icu.text.Collator unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
-        return real.clone();
+        return ((android.icu.text.Collator) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Collator cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(((android.icu.text.Collator) real).cloneAsThawed());
     }
 
     public int compare(java.lang.Object arg0, java.lang.Object arg1) {
-        return real.compare(arg0, arg1);
+        return ((android.icu.text.Collator) real).compare(arg0, arg1);
     }
 
     public int compare(java.lang.String arg0, java.lang.String arg1) {
-        return real.compare(arg0, arg1);
+        return ((android.icu.text.Collator) real).compare(arg0, arg1);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.Collator) real).equals(arg0);
     }
 
     public boolean equals(java.lang.String arg0, java.lang.String arg1) {
-        return real.equals(arg0, arg1);
+        return ((android.icu.text.Collator) real).equals(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Collator freeze() {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(((android.icu.text.Collator) real).freeze());
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -53,11 +60,11 @@ public final class Collator {
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationKey getCollationKey(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationKey.wrap(real.getCollationKey(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.CollationKey.wrap(((android.icu.text.Collator) real).getCollationKey(arg0));
     }
 
     public int getDecomposition() {
-        return real.getDecomposition();
+        return ((android.icu.text.Collator) real).getDecomposition();
     }
 
     public static java.lang.String getDisplayName(java.util.Locale arg0) {
@@ -65,11 +72,11 @@ public final class Collator {
     }
 
     public static java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.unwrap());
+        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayName(java.util.Locale arg0, java.util.Locale arg1) {
@@ -81,11 +88,11 @@ public final class Collator {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale getFunctionalEquivalent(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.text.Collator.getFunctionalEquivalent(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.text.Collator.getFunctionalEquivalent(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale getFunctionalEquivalent(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, boolean[] arg2) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.text.Collator.getFunctionalEquivalent(arg0, arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.text.Collator.getFunctionalEquivalent(arg0, arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Collator getInstance() {
@@ -97,7 +104,7 @@ public final class Collator {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Collator getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.lang.String[] getKeywordValues(java.lang.String arg0) {
@@ -105,7 +112,7 @@ public final class Collator {
     }
 
     public static java.lang.String[] getKeywordValuesForLocale(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, boolean arg2) {
-        return android.icu.text.Collator.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.icu.text.Collator.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static java.lang.String[] getKeywords() {
@@ -113,55 +120,55 @@ public final class Collator {
     }
 
     public int getMaxVariable() {
-        return real.getMaxVariable();
+        return ((android.icu.text.Collator) real).getMaxVariable();
     }
 
     public int[] getReorderCodes() {
-        return real.getReorderCodes();
+        return ((android.icu.text.Collator) real).getReorderCodes();
     }
 
     public int getStrength() {
-        return real.getStrength();
+        return ((android.icu.text.Collator) real).getStrength();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet getTailoredSet() {
-        return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(real.getTailoredSet());
+        return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.Collator) real).getTailoredSet());
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.VersionInfo getUCAVersion() {
-        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(real.getUCAVersion());
+        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(((android.icu.text.Collator) real).getUCAVersion());
     }
 
     public int getVariableTop() {
-        return real.getVariableTop();
+        return ((android.icu.text.Collator) real).getVariableTop();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.VersionInfo getVersion() {
-        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(real.getVersion());
+        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(((android.icu.text.Collator) real).getVersion());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.Collator) real).hashCode();
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.text.Collator) real).isFrozen();
     }
 
     public void setDecomposition(int arg0) {
-        real.setDecomposition(arg0);
+        ((android.icu.text.Collator) real).setDecomposition(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Collator setMaxVariable(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(real.setMaxVariable(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(((android.icu.text.Collator) real).setMaxVariable(arg0));
     }
 
     public void setReorderCodes(int... arg0) {
-        real.setReorderCodes(arg0);
+        ((android.icu.text.Collator) real).setReorderCodes(arg0);
     }
 
     public void setStrength(int arg0) {
-        real.setStrength(arg0);
+        ((android.icu.text.Collator) real).setStrength(arg0);
     }
 
     public static final int CANONICAL_DECOMPOSITION = android.icu.text.Collator.CANONICAL_DECOMPOSITION;
@@ -174,18 +181,25 @@ public final class Collator {
     public static final int TERTIARY = android.icu.text.Collator.TERTIARY;
 
     public static final class ReorderCodes {
-        private final android.icu.text.Collator.ReorderCodes real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ReorderCodes(android.icu.text.Collator.ReorderCodes real) {
+        private final java.lang.Object real;
+
+        private ReorderCodes(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.Collator.ReorderCodes wrap(android.icu.text.Collator.ReorderCodes real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Collator.ReorderCodes(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Collator.ReorderCodes(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.Collator.ReorderCodes getReal() {
+            return (android.icu.text.Collator.ReorderCodes) real;
         }
 
         public android.icu.text.Collator.ReorderCodes unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int CURRENCY = android.icu.text.Collator.ReorderCodes.CURRENCY;

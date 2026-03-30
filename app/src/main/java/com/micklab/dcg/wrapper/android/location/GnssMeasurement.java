@@ -2,178 +2,185 @@
 package com.micklab.dcg.wrapper.android.location;
 
 public final class GnssMeasurement {
-    private final android.location.GnssMeasurement real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GnssMeasurement(android.location.GnssMeasurement real) {
+    private final java.lang.Object real;
+
+    private GnssMeasurement(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.location.GnssMeasurement wrap(android.location.GnssMeasurement real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssMeasurement(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssMeasurement(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.location.GnssMeasurement getReal() {
+        return (android.location.GnssMeasurement) real;
     }
 
     public android.location.GnssMeasurement unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.location.GnssMeasurement) real).describeContents();
     }
 
     public double getAccumulatedDeltaRangeMeters() {
-        return real.getAccumulatedDeltaRangeMeters();
+        return ((android.location.GnssMeasurement) real).getAccumulatedDeltaRangeMeters();
     }
 
     public int getAccumulatedDeltaRangeState() {
-        return real.getAccumulatedDeltaRangeState();
+        return ((android.location.GnssMeasurement) real).getAccumulatedDeltaRangeState();
     }
 
     public double getAccumulatedDeltaRangeUncertaintyMeters() {
-        return real.getAccumulatedDeltaRangeUncertaintyMeters();
+        return ((android.location.GnssMeasurement) real).getAccumulatedDeltaRangeUncertaintyMeters();
     }
 
     public double getAutomaticGainControlLevelDb() {
-        return real.getAutomaticGainControlLevelDb();
+        return ((android.location.GnssMeasurement) real).getAutomaticGainControlLevelDb();
     }
 
     public double getBasebandCn0DbHz() {
-        return real.getBasebandCn0DbHz();
+        return ((android.location.GnssMeasurement) real).getBasebandCn0DbHz();
     }
 
     public long getCarrierCycles() {
-        return real.getCarrierCycles();
+        return ((android.location.GnssMeasurement) real).getCarrierCycles();
     }
 
     public float getCarrierFrequencyHz() {
-        return real.getCarrierFrequencyHz();
+        return ((android.location.GnssMeasurement) real).getCarrierFrequencyHz();
     }
 
     public double getCarrierPhase() {
-        return real.getCarrierPhase();
+        return ((android.location.GnssMeasurement) real).getCarrierPhase();
     }
 
     public double getCarrierPhaseUncertainty() {
-        return real.getCarrierPhaseUncertainty();
+        return ((android.location.GnssMeasurement) real).getCarrierPhaseUncertainty();
     }
 
     public double getCn0DbHz() {
-        return real.getCn0DbHz();
+        return ((android.location.GnssMeasurement) real).getCn0DbHz();
     }
 
     public java.lang.String getCodeType() {
-        return real.getCodeType();
+        return ((android.location.GnssMeasurement) real).getCodeType();
     }
 
     public int getConstellationType() {
-        return real.getConstellationType();
+        return ((android.location.GnssMeasurement) real).getConstellationType();
     }
 
     public double getFullInterSignalBiasNanos() {
-        return real.getFullInterSignalBiasNanos();
+        return ((android.location.GnssMeasurement) real).getFullInterSignalBiasNanos();
     }
 
     public double getFullInterSignalBiasUncertaintyNanos() {
-        return real.getFullInterSignalBiasUncertaintyNanos();
+        return ((android.location.GnssMeasurement) real).getFullInterSignalBiasUncertaintyNanos();
     }
 
     public int getMultipathIndicator() {
-        return real.getMultipathIndicator();
+        return ((android.location.GnssMeasurement) real).getMultipathIndicator();
     }
 
     public double getPseudorangeRateMetersPerSecond() {
-        return real.getPseudorangeRateMetersPerSecond();
+        return ((android.location.GnssMeasurement) real).getPseudorangeRateMetersPerSecond();
     }
 
     public double getPseudorangeRateUncertaintyMetersPerSecond() {
-        return real.getPseudorangeRateUncertaintyMetersPerSecond();
+        return ((android.location.GnssMeasurement) real).getPseudorangeRateUncertaintyMetersPerSecond();
     }
 
     public long getReceivedSvTimeNanos() {
-        return real.getReceivedSvTimeNanos();
+        return ((android.location.GnssMeasurement) real).getReceivedSvTimeNanos();
     }
 
     public long getReceivedSvTimeUncertaintyNanos() {
-        return real.getReceivedSvTimeUncertaintyNanos();
+        return ((android.location.GnssMeasurement) real).getReceivedSvTimeUncertaintyNanos();
     }
 
     public double getSatelliteInterSignalBiasNanos() {
-        return real.getSatelliteInterSignalBiasNanos();
+        return ((android.location.GnssMeasurement) real).getSatelliteInterSignalBiasNanos();
     }
 
     public double getSatelliteInterSignalBiasUncertaintyNanos() {
-        return real.getSatelliteInterSignalBiasUncertaintyNanos();
+        return ((android.location.GnssMeasurement) real).getSatelliteInterSignalBiasUncertaintyNanos();
     }
 
     public double getSnrInDb() {
-        return real.getSnrInDb();
+        return ((android.location.GnssMeasurement) real).getSnrInDb();
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.location.GnssMeasurement) real).getState();
     }
 
     public int getSvid() {
-        return real.getSvid();
+        return ((android.location.GnssMeasurement) real).getSvid();
     }
 
     public double getTimeOffsetNanos() {
-        return real.getTimeOffsetNanos();
+        return ((android.location.GnssMeasurement) real).getTimeOffsetNanos();
     }
 
     public boolean hasAutomaticGainControlLevelDb() {
-        return real.hasAutomaticGainControlLevelDb();
+        return ((android.location.GnssMeasurement) real).hasAutomaticGainControlLevelDb();
     }
 
     public boolean hasBasebandCn0DbHz() {
-        return real.hasBasebandCn0DbHz();
+        return ((android.location.GnssMeasurement) real).hasBasebandCn0DbHz();
     }
 
     public boolean hasCarrierCycles() {
-        return real.hasCarrierCycles();
+        return ((android.location.GnssMeasurement) real).hasCarrierCycles();
     }
 
     public boolean hasCarrierFrequencyHz() {
-        return real.hasCarrierFrequencyHz();
+        return ((android.location.GnssMeasurement) real).hasCarrierFrequencyHz();
     }
 
     public boolean hasCarrierPhase() {
-        return real.hasCarrierPhase();
+        return ((android.location.GnssMeasurement) real).hasCarrierPhase();
     }
 
     public boolean hasCarrierPhaseUncertainty() {
-        return real.hasCarrierPhaseUncertainty();
+        return ((android.location.GnssMeasurement) real).hasCarrierPhaseUncertainty();
     }
 
     public boolean hasCodeType() {
-        return real.hasCodeType();
+        return ((android.location.GnssMeasurement) real).hasCodeType();
     }
 
     public boolean hasFullInterSignalBiasNanos() {
-        return real.hasFullInterSignalBiasNanos();
+        return ((android.location.GnssMeasurement) real).hasFullInterSignalBiasNanos();
     }
 
     public boolean hasFullInterSignalBiasUncertaintyNanos() {
-        return real.hasFullInterSignalBiasUncertaintyNanos();
+        return ((android.location.GnssMeasurement) real).hasFullInterSignalBiasUncertaintyNanos();
     }
 
     public boolean hasSatelliteInterSignalBiasNanos() {
-        return real.hasSatelliteInterSignalBiasNanos();
+        return ((android.location.GnssMeasurement) real).hasSatelliteInterSignalBiasNanos();
     }
 
     public boolean hasSatelliteInterSignalBiasUncertaintyNanos() {
-        return real.hasSatelliteInterSignalBiasUncertaintyNanos();
+        return ((android.location.GnssMeasurement) real).hasSatelliteInterSignalBiasUncertaintyNanos();
     }
 
     public boolean hasSnrInDb() {
-        return real.hasSnrInDb();
+        return ((android.location.GnssMeasurement) real).hasSnrInDb();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.location.GnssMeasurement) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.location.GnssMeasurement) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ADR_STATE_CYCLE_SLIP = android.location.GnssMeasurement.ADR_STATE_CYCLE_SLIP;

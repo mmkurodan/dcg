@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class FileUriExposedException {
-    private final android.os.FileUriExposedException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FileUriExposedException(android.os.FileUriExposedException real) {
+    private final java.lang.Object real;
+
+    private FileUriExposedException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.FileUriExposedException wrap(android.os.FileUriExposedException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUriExposedException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.FileUriExposedException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.FileUriExposedException getReal() {
+        return (android.os.FileUriExposedException) real;
     }
 
     public android.os.FileUriExposedException unwrap() {
-        return real;
+        return getReal();
     }
 
     public FileUriExposedException(java.lang.String arg0) {

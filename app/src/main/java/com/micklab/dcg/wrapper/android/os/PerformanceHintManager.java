@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class PerformanceHintManager {
-    private final android.os.PerformanceHintManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PerformanceHintManager(android.os.PerformanceHintManager real) {
+    private final java.lang.Object real;
+
+    private PerformanceHintManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.PerformanceHintManager wrap(android.os.PerformanceHintManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PerformanceHintManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PerformanceHintManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.PerformanceHintManager getReal() {
+        return (android.os.PerformanceHintManager) real;
     }
 
     public android.os.PerformanceHintManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.PerformanceHintManager.Session createHintSession(int[] arg0, long arg1) {
@@ -25,18 +32,25 @@ public final class PerformanceHintManager {
     }
 
     public static final class Session {
-        private final android.os.PerformanceHintManager.Session real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Session(android.os.PerformanceHintManager.Session real) {
+        private final java.lang.Object real;
+
+        private Session(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.PerformanceHintManager.Session wrap(android.os.PerformanceHintManager.Session real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PerformanceHintManager.Session(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PerformanceHintManager.Session(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.PerformanceHintManager.Session getReal() {
+            return (android.os.PerformanceHintManager.Session) real;
         }
 
         public android.os.PerformanceHintManager.Session unwrap() {
-            return real;
+            return getReal();
         }
 
         public void close() {

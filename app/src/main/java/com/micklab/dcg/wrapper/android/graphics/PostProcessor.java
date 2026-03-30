@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class PostProcessor {
-    private final android.graphics.PostProcessor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PostProcessor(android.graphics.PostProcessor real) {
+    private final java.lang.Object real;
+
+    private PostProcessor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.PostProcessor wrap(android.graphics.PostProcessor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PostProcessor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PostProcessor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.PostProcessor getReal() {
+        return (android.graphics.PostProcessor) real;
     }
 
     public android.graphics.PostProcessor unwrap() {
-        return real;
+        return getReal();
     }
 
     public int onPostProcess(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
-        return real.onPostProcess(arg0 == null ? null : arg0.unwrap());
+        return ((android.graphics.PostProcessor) real).onPostProcess(arg0 == null ? null : arg0.getReal());
     }
 
 }

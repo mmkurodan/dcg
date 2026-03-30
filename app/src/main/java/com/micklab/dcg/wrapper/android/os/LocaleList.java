@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class LocaleList {
-    private final android.os.LocaleList real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LocaleList(android.os.LocaleList real) {
+    private final java.lang.Object real;
+
+    private LocaleList(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.LocaleList wrap(android.os.LocaleList real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.LocaleList(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.LocaleList(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.LocaleList getReal() {
+        return (android.os.LocaleList) real;
     }
 
     public android.os.LocaleList unwrap() {
-        return real;
+        return getReal();
     }
 
     public LocaleList(java.util.Locale... arg0) {

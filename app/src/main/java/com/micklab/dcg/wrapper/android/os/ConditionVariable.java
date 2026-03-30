@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ConditionVariable {
-    private final android.os.ConditionVariable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConditionVariable(android.os.ConditionVariable real) {
+    private final java.lang.Object real;
+
+    private ConditionVariable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ConditionVariable wrap(android.os.ConditionVariable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ConditionVariable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ConditionVariable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ConditionVariable getReal() {
+        return (android.os.ConditionVariable) real;
     }
 
     public android.os.ConditionVariable unwrap() {
-        return real;
+        return getReal();
     }
 
     public ConditionVariable() {

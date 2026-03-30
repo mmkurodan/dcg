@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class DiscoverySessionCallback {
-    private final android.net.wifi.aware.DiscoverySessionCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DiscoverySessionCallback(android.net.wifi.aware.DiscoverySessionCallback real) {
+    private final java.lang.Object real;
+
+    private DiscoverySessionCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySessionCallback wrap(android.net.wifi.aware.DiscoverySessionCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySessionCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.DiscoverySessionCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.DiscoverySessionCallback getReal() {
+        return (android.net.wifi.aware.DiscoverySessionCallback) real;
     }
 
     public android.net.wifi.aware.DiscoverySessionCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public DiscoverySessionCallback() {

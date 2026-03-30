@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.graphics.drawable;
 
 public final class TransitionDrawable {
-    private final android.graphics.drawable.TransitionDrawable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TransitionDrawable(android.graphics.drawable.TransitionDrawable real) {
+    private final java.lang.Object real;
+
+    private TransitionDrawable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.drawable.TransitionDrawable wrap(android.graphics.drawable.TransitionDrawable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.drawable.TransitionDrawable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.drawable.TransitionDrawable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.drawable.TransitionDrawable getReal() {
+        return (android.graphics.drawable.TransitionDrawable) real;
     }
 
     public android.graphics.drawable.TransitionDrawable unwrap() {
-        return real;
+        return getReal();
     }
 
     public TransitionDrawable(android.graphics.drawable.Drawable[] arg0) {
-        this(new android.graphics.drawable.TransitionDrawable(arg0));
+        this(new android.graphics.drawable.TransitionDrawable(arg0), (__DcgwBridgeToken) null);
     }
 
     public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
-        real.draw(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.drawable.TransitionDrawable) real).draw(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isCrossFadeEnabled() {
-        return real.isCrossFadeEnabled();
+        return ((android.graphics.drawable.TransitionDrawable) real).isCrossFadeEnabled();
     }
 
     public void resetTransition() {
-        real.resetTransition();
+        ((android.graphics.drawable.TransitionDrawable) real).resetTransition();
     }
 
     public void reverseTransition(int arg0) {
-        real.reverseTransition(arg0);
+        ((android.graphics.drawable.TransitionDrawable) real).reverseTransition(arg0);
     }
 
     public void setCrossFadeEnabled(boolean arg0) {
-        real.setCrossFadeEnabled(arg0);
+        ((android.graphics.drawable.TransitionDrawable) real).setCrossFadeEnabled(arg0);
     }
 
     public void startTransition(int arg0) {
-        real.startTransition(arg0);
+        ((android.graphics.drawable.TransitionDrawable) real).startTransition(arg0);
     }
 
 }

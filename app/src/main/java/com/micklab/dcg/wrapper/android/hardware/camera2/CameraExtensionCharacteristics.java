@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2;
 
 public final class CameraExtensionCharacteristics {
-    private final android.hardware.camera2.CameraExtensionCharacteristics real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CameraExtensionCharacteristics(android.hardware.camera2.CameraExtensionCharacteristics real) {
+    private final java.lang.Object real;
+
+    private CameraExtensionCharacteristics(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionCharacteristics wrap(android.hardware.camera2.CameraExtensionCharacteristics real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionCharacteristics(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraExtensionCharacteristics(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.CameraExtensionCharacteristics getReal() {
+        return (android.hardware.camera2.CameraExtensionCharacteristics) real;
     }
 
     public android.hardware.camera2.CameraExtensionCharacteristics unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean isCaptureProcessProgressAvailable(int arg0) {
-        return real.isCaptureProcessProgressAvailable(arg0);
+        return ((android.hardware.camera2.CameraExtensionCharacteristics) real).isCaptureProcessProgressAvailable(arg0);
     }
 
     public boolean isPostviewAvailable(int arg0) {
-        return real.isPostviewAvailable(arg0);
+        return ((android.hardware.camera2.CameraExtensionCharacteristics) real).isPostviewAvailable(arg0);
     }
 
     public static final int EXTENSION_AUTOMATIC = android.hardware.camera2.CameraExtensionCharacteristics.EXTENSION_AUTOMATIC;

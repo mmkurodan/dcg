@@ -2,89 +2,110 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class BloodGlucoseRecord {
-    private final android.health.connect.datatypes.BloodGlucoseRecord real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BloodGlucoseRecord(android.health.connect.datatypes.BloodGlucoseRecord real) {
+    private final java.lang.Object real;
+
+    private BloodGlucoseRecord(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord wrap(android.health.connect.datatypes.BloodGlucoseRecord real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.BloodGlucoseRecord getReal() {
+        return (android.health.connect.datatypes.BloodGlucoseRecord) real;
     }
 
     public android.health.connect.datatypes.BloodGlucoseRecord unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.health.connect.datatypes.BloodGlucoseRecord) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.BloodGlucose getLevel() {
-        return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.BloodGlucose.wrap(real.getLevel());
+        return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.BloodGlucose.wrap(((android.health.connect.datatypes.BloodGlucoseRecord) real).getLevel());
     }
 
     public int getMealType() {
-        return real.getMealType();
+        return ((android.health.connect.datatypes.BloodGlucoseRecord) real).getMealType();
     }
 
     public int getRelationToMeal() {
-        return real.getRelationToMeal();
+        return ((android.health.connect.datatypes.BloodGlucoseRecord) real).getRelationToMeal();
     }
 
     public int getSpecimenSource() {
-        return real.getSpecimenSource();
+        return ((android.health.connect.datatypes.BloodGlucoseRecord) real).getSpecimenSource();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.health.connect.datatypes.BloodGlucoseRecord) real).hashCode();
     }
 
     public static final class Builder {
-        private final android.health.connect.datatypes.BloodGlucoseRecord.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.health.connect.datatypes.BloodGlucoseRecord.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder wrap(android.health.connect.datatypes.BloodGlucoseRecord.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.BloodGlucoseRecord.Builder getReal() {
+            return (android.health.connect.datatypes.BloodGlucoseRecord.Builder) real;
         }
 
         public android.health.connect.datatypes.BloodGlucoseRecord.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.health.connect.datatypes.Metadata arg0, java.time.Instant arg1, int arg2, com.micklab.dcg.wrapper.android.health.connect.datatypes.units.BloodGlucose arg3, int arg4, int arg5) {
-            this(new android.health.connect.datatypes.BloodGlucoseRecord.Builder(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4, arg5));
+            this(new android.health.connect.datatypes.BloodGlucoseRecord.Builder(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4, arg5), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord build() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.wrap(((android.health.connect.datatypes.BloodGlucoseRecord.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder clearZoneOffset() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder.wrap(real.clearZoneOffset());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder.wrap(((android.health.connect.datatypes.BloodGlucoseRecord.Builder) real).clearZoneOffset());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder setZoneOffset(java.time.ZoneOffset arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder.wrap(real.setZoneOffset(arg0));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.Builder.wrap(((android.health.connect.datatypes.BloodGlucoseRecord.Builder) real).setZoneOffset(arg0));
         }
 
     }
     public static final class RelationToMealType {
-        private final android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RelationToMealType(android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType real) {
+        private final java.lang.Object real;
+
+        private RelationToMealType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType wrap(android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType getReal() {
+            return (android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType) real;
         }
 
         public android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int RELATION_TO_MEAL_AFTER_MEAL = android.health.connect.datatypes.BloodGlucoseRecord.RelationToMealType.RELATION_TO_MEAL_AFTER_MEAL;
@@ -95,18 +116,25 @@ public final class BloodGlucoseRecord {
 
     }
     public static final class SpecimenSource {
-        private final android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SpecimenSource(android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource real) {
+        private final java.lang.Object real;
+
+        private SpecimenSource(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource wrap(android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource getReal() {
+            return (android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource) real;
         }
 
         public android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int SPECIMEN_SOURCE_CAPILLARY_BLOOD = android.health.connect.datatypes.BloodGlucoseRecord.SpecimenSource.SPECIMEN_SOURCE_CAPILLARY_BLOOD;

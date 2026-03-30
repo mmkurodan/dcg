@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.service.chooser;
 
 public final class ChooserTargetService {
-    private final android.service.chooser.ChooserTargetService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ChooserTargetService(android.service.chooser.ChooserTargetService real) {
+    private final java.lang.Object real;
+
+    private ChooserTargetService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.chooser.ChooserTargetService wrap(android.service.chooser.ChooserTargetService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.chooser.ChooserTargetService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.chooser.ChooserTargetService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.chooser.ChooserTargetService getReal() {
+        return (android.service.chooser.ChooserTargetService) real;
     }
 
     public android.service.chooser.ChooserTargetService unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.service.chooser.ChooserTargetService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final java.lang.String BIND_PERMISSION = android.service.chooser.ChooserTargetService.BIND_PERMISSION;

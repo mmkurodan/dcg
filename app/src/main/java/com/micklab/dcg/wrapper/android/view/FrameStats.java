@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class FrameStats {
-    private final android.view.FrameStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FrameStats(android.view.FrameStats real) {
+    private final java.lang.Object real;
+
+    private FrameStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.FrameStats wrap(android.view.FrameStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.FrameStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.FrameStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.FrameStats getReal() {
+        return (android.view.FrameStats) real;
     }
 
     public android.view.FrameStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public long getEndTimeNano() {
-        return real.getEndTimeNano();
+        return ((android.view.FrameStats) real).getEndTimeNano();
     }
 
     public int getFrameCount() {
-        return real.getFrameCount();
+        return ((android.view.FrameStats) real).getFrameCount();
     }
 
     public long getFramePresentedTimeNano(int arg0) {
-        return real.getFramePresentedTimeNano(arg0);
+        return ((android.view.FrameStats) real).getFramePresentedTimeNano(arg0);
     }
 
     public long getRefreshPeriodNano() {
-        return real.getRefreshPeriodNano();
+        return ((android.view.FrameStats) real).getRefreshPeriodNano();
     }
 
     public long getStartTimeNano() {
-        return real.getStartTimeNano();
+        return ((android.view.FrameStats) real).getStartTimeNano();
     }
 
     public static final long UNDEFINED_TIME_NANO = android.view.FrameStats.UNDEFINED_TIME_NANO;

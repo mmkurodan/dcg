@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class CornerPathEffect {
-    private final android.graphics.CornerPathEffect real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CornerPathEffect(android.graphics.CornerPathEffect real) {
+    private final java.lang.Object real;
+
+    private CornerPathEffect(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.CornerPathEffect wrap(android.graphics.CornerPathEffect real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.CornerPathEffect(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.CornerPathEffect(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.CornerPathEffect getReal() {
+        return (android.graphics.CornerPathEffect) real;
     }
 
     public android.graphics.CornerPathEffect unwrap() {
-        return real;
+        return getReal();
     }
 
     public CornerPathEffect(float arg0) {
-        this(new android.graphics.CornerPathEffect(arg0));
+        this(new android.graphics.CornerPathEffect(arg0), (__DcgwBridgeToken) null);
     }
 
 }

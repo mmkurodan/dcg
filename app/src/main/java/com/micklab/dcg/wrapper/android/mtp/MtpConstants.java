@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.mtp;
 
 public final class MtpConstants {
-    private final android.mtp.MtpConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MtpConstants(android.mtp.MtpConstants real) {
+    private final java.lang.Object real;
+
+    private MtpConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.mtp.MtpConstants wrap(android.mtp.MtpConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.mtp.MtpConstants getReal() {
+        return (android.mtp.MtpConstants) real;
     }
 
     public android.mtp.MtpConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public MtpConstants() {
-        this(new android.mtp.MtpConstants());
+        this(new android.mtp.MtpConstants(), (__DcgwBridgeToken) null);
     }
 
     public static boolean isAbstractObject(int arg0) {

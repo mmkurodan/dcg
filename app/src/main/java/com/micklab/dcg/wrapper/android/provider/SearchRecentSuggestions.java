@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class SearchRecentSuggestions {
-    private final android.provider.SearchRecentSuggestions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SearchRecentSuggestions(android.provider.SearchRecentSuggestions real) {
+    private final java.lang.Object real;
+
+    private SearchRecentSuggestions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.SearchRecentSuggestions wrap(android.provider.SearchRecentSuggestions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SearchRecentSuggestions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.SearchRecentSuggestions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.SearchRecentSuggestions getReal() {
+        return (android.provider.SearchRecentSuggestions) real;
     }
 
     public android.provider.SearchRecentSuggestions unwrap() {
-        return real;
+        return getReal();
     }
 
     public SearchRecentSuggestions(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1, int arg2) {
-        this(new android.provider.SearchRecentSuggestions(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        this(new android.provider.SearchRecentSuggestions(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public void clearHistory() {
-        real.clearHistory();
+        ((android.provider.SearchRecentSuggestions) real).clearHistory();
     }
 
     public void saveRecentQuery(java.lang.String arg0, java.lang.String arg1) {
-        real.saveRecentQuery(arg0, arg1);
+        ((android.provider.SearchRecentSuggestions) real).saveRecentQuery(arg0, arg1);
     }
 
     public static final java.lang.String[] QUERIES_PROJECTION_1LINE = android.provider.SearchRecentSuggestions.QUERIES_PROJECTION_1LINE;

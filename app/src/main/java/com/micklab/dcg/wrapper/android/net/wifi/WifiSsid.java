@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiSsid {
-    private final android.net.wifi.WifiSsid real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiSsid(android.net.wifi.WifiSsid real) {
+    private final java.lang.Object real;
+
+    private WifiSsid(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiSsid wrap(android.net.wifi.WifiSsid real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiSsid(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiSsid(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiSsid getReal() {
+        return (android.net.wifi.WifiSsid) real;
     }
 
     public android.net.wifi.WifiSsid unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

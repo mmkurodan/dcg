@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class HapticFeedbackConstants {
-    private final android.view.HapticFeedbackConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HapticFeedbackConstants(android.view.HapticFeedbackConstants real) {
+    private final java.lang.Object real;
+
+    private HapticFeedbackConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.HapticFeedbackConstants wrap(android.view.HapticFeedbackConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.HapticFeedbackConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.HapticFeedbackConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.HapticFeedbackConstants getReal() {
+        return (android.view.HapticFeedbackConstants) real;
     }
 
     public android.view.HapticFeedbackConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int CLOCK_TICK = android.view.HapticFeedbackConstants.CLOCK_TICK;

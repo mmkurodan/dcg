@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2;
 
 public final class CameraConstrainedHighSpeedCaptureSession {
-    private final android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CameraConstrainedHighSpeedCaptureSession(android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession real) {
+    private final java.lang.Object real;
+
+    private CameraConstrainedHighSpeedCaptureSession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession wrap(android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession getReal() {
+        return (android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession) real;
     }
 
     public android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession unwrap() {
-        return real;
+        return getReal();
     }
 
 }

@@ -2,166 +2,173 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioManager {
-    private final android.media.AudioManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioManager(android.media.AudioManager real) {
+    private final java.lang.Object real;
+
+    private AudioManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioManager wrap(android.media.AudioManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioManager getReal() {
+        return (android.media.AudioManager) real;
     }
 
     public android.media.AudioManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int abandonAudioFocus(com.micklab.dcg.wrapper.android.media.AudioManager.OnAudioFocusChangeListener arg0) {
-        return real.abandonAudioFocus(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).abandonAudioFocus(arg0 == null ? null : arg0.getReal());
     }
 
     public int abandonAudioFocusRequest(com.micklab.dcg.wrapper.android.media.AudioFocusRequest arg0) {
-        return real.abandonAudioFocusRequest(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).abandonAudioFocusRequest(arg0 == null ? null : arg0.getReal());
     }
 
     public void addOnCommunicationDeviceChangedListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.AudioManager.OnCommunicationDeviceChangedListener arg1) {
-        real.addOnCommunicationDeviceChangedListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).addOnCommunicationDeviceChangedListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void addOnModeChangedListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.AudioManager.OnModeChangedListener arg1) {
-        real.addOnModeChangedListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).addOnModeChangedListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void addOnPreferredMixerAttributesChangedListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.AudioManager.OnPreferredMixerAttributesChangedListener arg1) {
-        real.addOnPreferredMixerAttributesChangedListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).addOnPreferredMixerAttributesChangedListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void adjustStreamVolume(int arg0, int arg1, int arg2) {
-        real.adjustStreamVolume(arg0, arg1, arg2);
+        ((android.media.AudioManager) real).adjustStreamVolume(arg0, arg1, arg2);
     }
 
     public void adjustSuggestedStreamVolume(int arg0, int arg1, int arg2) {
-        real.adjustSuggestedStreamVolume(arg0, arg1, arg2);
+        ((android.media.AudioManager) real).adjustSuggestedStreamVolume(arg0, arg1, arg2);
     }
 
     public void adjustVolume(int arg0, int arg1) {
-        real.adjustVolume(arg0, arg1);
+        ((android.media.AudioManager) real).adjustVolume(arg0, arg1);
     }
 
     public void adjustVolumeGroupVolume(int arg0, int arg1, int arg2) {
-        real.adjustVolumeGroupVolume(arg0, arg1, arg2);
+        ((android.media.AudioManager) real).adjustVolumeGroupVolume(arg0, arg1, arg2);
     }
 
     public void clearCommunicationDevice() {
-        real.clearCommunicationDevice();
+        ((android.media.AudioManager) real).clearCommunicationDevice();
     }
 
     public boolean clearPreferredMixerAttributes(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0, com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg1) {
-        return real.clearPreferredMixerAttributes(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.media.AudioManager) real).clearPreferredMixerAttributes(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void dispatchMediaKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        real.dispatchMediaKeyEvent(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).dispatchMediaKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public int generateAudioSessionId() {
-        return real.generateAudioSessionId();
+        return ((android.media.AudioManager) real).generateAudioSessionId();
     }
 
     public int getAllowedCapturePolicy() {
-        return real.getAllowedCapturePolicy();
+        return ((android.media.AudioManager) real).getAllowedCapturePolicy();
     }
 
     public int getAudioHwSyncForSession(int arg0) {
-        return real.getAudioHwSyncForSession(arg0);
+        return ((android.media.AudioManager) real).getAudioHwSyncForSession(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioDeviceInfo getCommunicationDevice() {
-        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(real.getCommunicationDevice());
+        return com.micklab.dcg.wrapper.android.media.AudioDeviceInfo.wrap(((android.media.AudioManager) real).getCommunicationDevice());
     }
 
     public android.media.AudioDeviceInfo[] getDevices(int arg0) {
-        return real.getDevices(arg0);
+        return ((android.media.AudioManager) real).getDevices(arg0);
     }
 
     public static int getDirectPlaybackSupport(com.micklab.dcg.wrapper.android.media.AudioFormat arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-        return android.media.AudioManager.getDirectPlaybackSupport(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.media.AudioManager.getDirectPlaybackSupport(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public int getEncodedSurroundMode() {
-        return real.getEncodedSurroundMode();
+        return ((android.media.AudioManager) real).getEncodedSurroundMode();
     }
 
     public int getMode() {
-        return real.getMode();
+        return ((android.media.AudioManager) real).getMode();
     }
 
     public java.lang.String getParameters(java.lang.String arg0) {
-        return real.getParameters(arg0);
+        return ((android.media.AudioManager) real).getParameters(arg0);
     }
 
     public static int getPlaybackOffloadSupport(com.micklab.dcg.wrapper.android.media.AudioFormat arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-        return android.media.AudioManager.getPlaybackOffloadSupport(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.media.AudioManager.getPlaybackOffloadSupport(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.media.AudioMixerAttributes getPreferredMixerAttributes(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0, com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg1) {
-        return com.micklab.dcg.wrapper.android.media.AudioMixerAttributes.wrap(real.getPreferredMixerAttributes(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.media.AudioMixerAttributes.wrap(((android.media.AudioManager) real).getPreferredMixerAttributes(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public java.lang.String getProperty(java.lang.String arg0) {
-        return real.getProperty(arg0);
+        return ((android.media.AudioManager) real).getProperty(arg0);
     }
 
     public int getRingerMode() {
-        return real.getRingerMode();
+        return ((android.media.AudioManager) real).getRingerMode();
     }
 
     public int getRouting(int arg0) {
-        return real.getRouting(arg0);
+        return ((android.media.AudioManager) real).getRouting(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.Spatializer getSpatializer() {
-        return com.micklab.dcg.wrapper.android.media.Spatializer.wrap(real.getSpatializer());
+        return com.micklab.dcg.wrapper.android.media.Spatializer.wrap(((android.media.AudioManager) real).getSpatializer());
     }
 
     public int getStreamMaxVolume(int arg0) {
-        return real.getStreamMaxVolume(arg0);
+        return ((android.media.AudioManager) real).getStreamMaxVolume(arg0);
     }
 
     public int getStreamMinVolume(int arg0) {
-        return real.getStreamMinVolume(arg0);
+        return ((android.media.AudioManager) real).getStreamMinVolume(arg0);
     }
 
     public int getStreamVolume(int arg0) {
-        return real.getStreamVolume(arg0);
+        return ((android.media.AudioManager) real).getStreamVolume(arg0);
     }
 
     public float getStreamVolumeDb(int arg0, int arg1, int arg2) {
-        return real.getStreamVolumeDb(arg0, arg1, arg2);
+        return ((android.media.AudioManager) real).getStreamVolumeDb(arg0, arg1, arg2);
     }
 
     public int getVibrateSetting(int arg0) {
-        return real.getVibrateSetting(arg0);
+        return ((android.media.AudioManager) real).getVibrateSetting(arg0);
     }
 
     public int getVolumeGroupIdForAttributes(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0) {
-        return real.getVolumeGroupIdForAttributes(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).getVolumeGroupIdForAttributes(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isBluetoothA2dpOn() {
-        return real.isBluetoothA2dpOn();
+        return ((android.media.AudioManager) real).isBluetoothA2dpOn();
     }
 
     public boolean isBluetoothScoAvailableOffCall() {
-        return real.isBluetoothScoAvailableOffCall();
+        return ((android.media.AudioManager) real).isBluetoothScoAvailableOffCall();
     }
 
     public boolean isBluetoothScoOn() {
-        return real.isBluetoothScoOn();
+        return ((android.media.AudioManager) real).isBluetoothScoOn();
     }
 
     public boolean isCallScreeningModeSupported() {
-        return real.isCallScreeningModeSupported();
+        return ((android.media.AudioManager) real).isCallScreeningModeSupported();
     }
 
     public static boolean isHapticPlaybackSupported() {
@@ -169,219 +176,219 @@ public final class AudioManager {
     }
 
     public boolean isMicrophoneMute() {
-        return real.isMicrophoneMute();
+        return ((android.media.AudioManager) real).isMicrophoneMute();
     }
 
     public boolean isMusicActive() {
-        return real.isMusicActive();
+        return ((android.media.AudioManager) real).isMusicActive();
     }
 
     public static boolean isOffloadedPlaybackSupported(com.micklab.dcg.wrapper.android.media.AudioFormat arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-        return android.media.AudioManager.isOffloadedPlaybackSupported(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.media.AudioManager.isOffloadedPlaybackSupported(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean isRampingRingerEnabled() {
-        return real.isRampingRingerEnabled();
+        return ((android.media.AudioManager) real).isRampingRingerEnabled();
     }
 
     public boolean isSpeakerphoneOn() {
-        return real.isSpeakerphoneOn();
+        return ((android.media.AudioManager) real).isSpeakerphoneOn();
     }
 
     public boolean isStreamMute(int arg0) {
-        return real.isStreamMute(arg0);
+        return ((android.media.AudioManager) real).isStreamMute(arg0);
     }
 
     public boolean isSurroundFormatEnabled(int arg0) {
-        return real.isSurroundFormatEnabled(arg0);
+        return ((android.media.AudioManager) real).isSurroundFormatEnabled(arg0);
     }
 
     public boolean isVolumeFixed() {
-        return real.isVolumeFixed();
+        return ((android.media.AudioManager) real).isVolumeFixed();
     }
 
     public boolean isVolumeGroupMuted(int arg0) {
-        return real.isVolumeGroupMuted(arg0);
+        return ((android.media.AudioManager) real).isVolumeGroupMuted(arg0);
     }
 
     public boolean isWiredHeadsetOn() {
-        return real.isWiredHeadsetOn();
+        return ((android.media.AudioManager) real).isWiredHeadsetOn();
     }
 
     public void loadSoundEffects() {
-        real.loadSoundEffects();
+        ((android.media.AudioManager) real).loadSoundEffects();
     }
 
     public void playSoundEffect(int arg0) {
-        real.playSoundEffect(arg0);
+        ((android.media.AudioManager) real).playSoundEffect(arg0);
     }
 
     public void playSoundEffect(int arg0, float arg1) {
-        real.playSoundEffect(arg0, arg1);
+        ((android.media.AudioManager) real).playSoundEffect(arg0, arg1);
     }
 
     public void registerAudioDeviceCallback(com.micklab.dcg.wrapper.android.media.AudioDeviceCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerAudioDeviceCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).registerAudioDeviceCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void registerAudioPlaybackCallback(com.micklab.dcg.wrapper.android.media.AudioManager.AudioPlaybackCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerAudioPlaybackCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).registerAudioPlaybackCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void registerAudioRecordingCallback(com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerAudioRecordingCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.AudioManager) real).registerAudioRecordingCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-        real.registerMediaButtonEventReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).registerMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.registerMediaButtonEventReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).registerMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerRemoteControlClient(com.micklab.dcg.wrapper.android.media.RemoteControlClient arg0) {
-        real.registerRemoteControlClient(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).registerRemoteControlClient(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean registerRemoteController(com.micklab.dcg.wrapper.android.media.RemoteController arg0) {
-        return real.registerRemoteController(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).registerRemoteController(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnCommunicationDeviceChangedListener(com.micklab.dcg.wrapper.android.media.AudioManager.OnCommunicationDeviceChangedListener arg0) {
-        real.removeOnCommunicationDeviceChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).removeOnCommunicationDeviceChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnModeChangedListener(com.micklab.dcg.wrapper.android.media.AudioManager.OnModeChangedListener arg0) {
-        real.removeOnModeChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).removeOnModeChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnPreferredMixerAttributesChangedListener(com.micklab.dcg.wrapper.android.media.AudioManager.OnPreferredMixerAttributesChangedListener arg0) {
-        real.removeOnPreferredMixerAttributesChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).removeOnPreferredMixerAttributesChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public int requestAudioFocus(com.micklab.dcg.wrapper.android.media.AudioFocusRequest arg0) {
-        return real.requestAudioFocus(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).requestAudioFocus(arg0 == null ? null : arg0.getReal());
     }
 
     public int requestAudioFocus(com.micklab.dcg.wrapper.android.media.AudioManager.OnAudioFocusChangeListener arg0, int arg1, int arg2) {
-        return real.requestAudioFocus(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.media.AudioManager) real).requestAudioFocus(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setAllowedCapturePolicy(int arg0) {
-        real.setAllowedCapturePolicy(arg0);
+        ((android.media.AudioManager) real).setAllowedCapturePolicy(arg0);
     }
 
     public void setBluetoothA2dpOn(boolean arg0) {
-        real.setBluetoothA2dpOn(arg0);
+        ((android.media.AudioManager) real).setBluetoothA2dpOn(arg0);
     }
 
     public void setBluetoothScoOn(boolean arg0) {
-        real.setBluetoothScoOn(arg0);
+        ((android.media.AudioManager) real).setBluetoothScoOn(arg0);
     }
 
     public boolean setCommunicationDevice(com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg0) {
-        return real.setCommunicationDevice(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.AudioManager) real).setCommunicationDevice(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean setEncodedSurroundMode(int arg0) {
-        return real.setEncodedSurroundMode(arg0);
+        return ((android.media.AudioManager) real).setEncodedSurroundMode(arg0);
     }
 
     public void setMicrophoneMute(boolean arg0) {
-        real.setMicrophoneMute(arg0);
+        ((android.media.AudioManager) real).setMicrophoneMute(arg0);
     }
 
     public void setMode(int arg0) {
-        real.setMode(arg0);
+        ((android.media.AudioManager) real).setMode(arg0);
     }
 
     public void setParameters(java.lang.String arg0) {
-        real.setParameters(arg0);
+        ((android.media.AudioManager) real).setParameters(arg0);
     }
 
     public boolean setPreferredMixerAttributes(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0, com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg1, com.micklab.dcg.wrapper.android.media.AudioMixerAttributes arg2) {
-        return real.setPreferredMixerAttributes(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.media.AudioManager) real).setPreferredMixerAttributes(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void setRingerMode(int arg0) {
-        real.setRingerMode(arg0);
+        ((android.media.AudioManager) real).setRingerMode(arg0);
     }
 
     public void setRouting(int arg0, int arg1, int arg2) {
-        real.setRouting(arg0, arg1, arg2);
+        ((android.media.AudioManager) real).setRouting(arg0, arg1, arg2);
     }
 
     public void setSpeakerphoneOn(boolean arg0) {
-        real.setSpeakerphoneOn(arg0);
+        ((android.media.AudioManager) real).setSpeakerphoneOn(arg0);
     }
 
     public void setStreamMute(int arg0, boolean arg1) {
-        real.setStreamMute(arg0, arg1);
+        ((android.media.AudioManager) real).setStreamMute(arg0, arg1);
     }
 
     public void setStreamSolo(int arg0, boolean arg1) {
-        real.setStreamSolo(arg0, arg1);
+        ((android.media.AudioManager) real).setStreamSolo(arg0, arg1);
     }
 
     public void setStreamVolume(int arg0, int arg1, int arg2) {
-        real.setStreamVolume(arg0, arg1, arg2);
+        ((android.media.AudioManager) real).setStreamVolume(arg0, arg1, arg2);
     }
 
     public boolean setSurroundFormatEnabled(int arg0, boolean arg1) {
-        return real.setSurroundFormatEnabled(arg0, arg1);
+        return ((android.media.AudioManager) real).setSurroundFormatEnabled(arg0, arg1);
     }
 
     public void setVibrateSetting(int arg0, int arg1) {
-        real.setVibrateSetting(arg0, arg1);
+        ((android.media.AudioManager) real).setVibrateSetting(arg0, arg1);
     }
 
     public void setWiredHeadsetOn(boolean arg0) {
-        real.setWiredHeadsetOn(arg0);
+        ((android.media.AudioManager) real).setWiredHeadsetOn(arg0);
     }
 
     public boolean shouldVibrate(int arg0) {
-        return real.shouldVibrate(arg0);
+        return ((android.media.AudioManager) real).shouldVibrate(arg0);
     }
 
     public void startBluetoothSco() {
-        real.startBluetoothSco();
+        ((android.media.AudioManager) real).startBluetoothSco();
     }
 
     public void stopBluetoothSco() {
-        real.stopBluetoothSco();
+        ((android.media.AudioManager) real).stopBluetoothSco();
     }
 
     public void unloadSoundEffects() {
-        real.unloadSoundEffects();
+        ((android.media.AudioManager) real).unloadSoundEffects();
     }
 
     public void unregisterAudioDeviceCallback(com.micklab.dcg.wrapper.android.media.AudioDeviceCallback arg0) {
-        real.unregisterAudioDeviceCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterAudioDeviceCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterAudioPlaybackCallback(com.micklab.dcg.wrapper.android.media.AudioManager.AudioPlaybackCallback arg0) {
-        real.unregisterAudioPlaybackCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterAudioPlaybackCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterAudioRecordingCallback(com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback arg0) {
-        real.unregisterAudioRecordingCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterAudioRecordingCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        real.unregisterMediaButtonEventReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-        real.unregisterMediaButtonEventReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterRemoteControlClient(com.micklab.dcg.wrapper.android.media.RemoteControlClient arg0) {
-        real.unregisterRemoteControlClient(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterRemoteControlClient(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterRemoteController(com.micklab.dcg.wrapper.android.media.RemoteController arg0) {
-        real.unregisterRemoteController(arg0 == null ? null : arg0.unwrap());
+        ((android.media.AudioManager) real).unregisterRemoteController(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_AUDIO_BECOMING_NOISY = android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY;
@@ -497,114 +504,156 @@ public final class AudioManager {
     public static final int VIBRATE_TYPE_RINGER = android.media.AudioManager.VIBRATE_TYPE_RINGER;
 
     public static final class AudioPlaybackCallback {
-        private final android.media.AudioManager.AudioPlaybackCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AudioPlaybackCallback(android.media.AudioManager.AudioPlaybackCallback real) {
+        private final java.lang.Object real;
+
+        private AudioPlaybackCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.AudioPlaybackCallback wrap(android.media.AudioManager.AudioPlaybackCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.AudioPlaybackCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.AudioPlaybackCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.AudioPlaybackCallback getReal() {
+            return (android.media.AudioManager.AudioPlaybackCallback) real;
         }
 
         public android.media.AudioManager.AudioPlaybackCallback unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class AudioRecordingCallback {
-        private final android.media.AudioManager.AudioRecordingCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AudioRecordingCallback(android.media.AudioManager.AudioRecordingCallback real) {
+        private final java.lang.Object real;
+
+        private AudioRecordingCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback wrap(android.media.AudioManager.AudioRecordingCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.AudioRecordingCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.AudioRecordingCallback getReal() {
+            return (android.media.AudioManager.AudioRecordingCallback) real;
         }
 
         public android.media.AudioManager.AudioRecordingCallback unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class OnAudioFocusChangeListener {
-        private final android.media.AudioManager.OnAudioFocusChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnAudioFocusChangeListener(android.media.AudioManager.OnAudioFocusChangeListener real) {
+        private final java.lang.Object real;
+
+        private OnAudioFocusChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.OnAudioFocusChangeListener wrap(android.media.AudioManager.OnAudioFocusChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnAudioFocusChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnAudioFocusChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.OnAudioFocusChangeListener getReal() {
+            return (android.media.AudioManager.OnAudioFocusChangeListener) real;
         }
 
         public android.media.AudioManager.OnAudioFocusChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAudioFocusChange(int arg0) {
-            real.onAudioFocusChange(arg0);
+            ((android.media.AudioManager.OnAudioFocusChangeListener) real).onAudioFocusChange(arg0);
         }
 
     }
     public static final class OnCommunicationDeviceChangedListener {
-        private final android.media.AudioManager.OnCommunicationDeviceChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnCommunicationDeviceChangedListener(android.media.AudioManager.OnCommunicationDeviceChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnCommunicationDeviceChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.OnCommunicationDeviceChangedListener wrap(android.media.AudioManager.OnCommunicationDeviceChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnCommunicationDeviceChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnCommunicationDeviceChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.OnCommunicationDeviceChangedListener getReal() {
+            return (android.media.AudioManager.OnCommunicationDeviceChangedListener) real;
         }
 
         public android.media.AudioManager.OnCommunicationDeviceChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCommunicationDeviceChanged(com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg0) {
-            real.onCommunicationDeviceChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.media.AudioManager.OnCommunicationDeviceChangedListener) real).onCommunicationDeviceChanged(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class OnModeChangedListener {
-        private final android.media.AudioManager.OnModeChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnModeChangedListener(android.media.AudioManager.OnModeChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnModeChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.OnModeChangedListener wrap(android.media.AudioManager.OnModeChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnModeChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnModeChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.OnModeChangedListener getReal() {
+            return (android.media.AudioManager.OnModeChangedListener) real;
         }
 
         public android.media.AudioManager.OnModeChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onModeChanged(int arg0) {
-            real.onModeChanged(arg0);
+            ((android.media.AudioManager.OnModeChangedListener) real).onModeChanged(arg0);
         }
 
     }
     public static final class OnPreferredMixerAttributesChangedListener {
-        private final android.media.AudioManager.OnPreferredMixerAttributesChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnPreferredMixerAttributesChangedListener(android.media.AudioManager.OnPreferredMixerAttributesChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnPreferredMixerAttributesChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioManager.OnPreferredMixerAttributesChangedListener wrap(android.media.AudioManager.OnPreferredMixerAttributesChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnPreferredMixerAttributesChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioManager.OnPreferredMixerAttributesChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioManager.OnPreferredMixerAttributesChangedListener getReal() {
+            return (android.media.AudioManager.OnPreferredMixerAttributesChangedListener) real;
         }
 
         public android.media.AudioManager.OnPreferredMixerAttributesChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onPreferredMixerAttributesChanged(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0, com.micklab.dcg.wrapper.android.media.AudioDeviceInfo arg1, com.micklab.dcg.wrapper.android.media.AudioMixerAttributes arg2) {
-            real.onPreferredMixerAttributesChanged(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+            ((android.media.AudioManager.OnPreferredMixerAttributesChangedListener) real).onPreferredMixerAttributesChanged(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteDatabase {
-    private final android.database.sqlite.SQLiteDatabase real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteDatabase(android.database.sqlite.SQLiteDatabase real) {
+    private final java.lang.Object real;
+
+    private SQLiteDatabase(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase wrap(android.database.sqlite.SQLiteDatabase real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteDatabase getReal() {
+        return (android.database.sqlite.SQLiteDatabase) real;
     }
 
     public android.database.sqlite.SQLiteDatabase unwrap() {
-        return real;
+        return getReal();
     }
 
     public void beginTransaction() {
@@ -310,18 +317,25 @@ public final class SQLiteDatabase {
 
 
     public static final class CursorFactory {
-        private final android.database.sqlite.SQLiteDatabase.CursorFactory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CursorFactory(android.database.sqlite.SQLiteDatabase.CursorFactory real) {
+        private final java.lang.Object real;
+
+        private CursorFactory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory wrap(android.database.sqlite.SQLiteDatabase.CursorFactory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.database.sqlite.SQLiteDatabase.CursorFactory getReal() {
+            return (android.database.sqlite.SQLiteDatabase.CursorFactory) real;
         }
 
         public android.database.sqlite.SQLiteDatabase.CursorFactory unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.database.Cursor newCursor(com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase arg0, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteCursorDriver arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteQuery arg3) {
@@ -330,18 +344,25 @@ public final class SQLiteDatabase {
 
     }
     public static final class OpenParams {
-        private final android.database.sqlite.SQLiteDatabase.OpenParams real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OpenParams(android.database.sqlite.SQLiteDatabase.OpenParams real) {
+        private final java.lang.Object real;
+
+        private OpenParams(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams wrap(android.database.sqlite.SQLiteDatabase.OpenParams real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.database.sqlite.SQLiteDatabase.OpenParams getReal() {
+            return (android.database.sqlite.SQLiteDatabase.OpenParams) real;
         }
 
         public android.database.sqlite.SQLiteDatabase.OpenParams unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory getCursorFactory() {
@@ -377,18 +398,25 @@ public final class SQLiteDatabase {
         }
 
         public static final class Builder {
-            private final android.database.sqlite.SQLiteDatabase.OpenParams.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.database.sqlite.SQLiteDatabase.OpenParams.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams.Builder wrap(android.database.sqlite.SQLiteDatabase.OpenParams.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.OpenParams.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.database.sqlite.SQLiteDatabase.OpenParams.Builder getReal() {
+                return (android.database.sqlite.SQLiteDatabase.OpenParams.Builder) real;
             }
 
             public android.database.sqlite.SQLiteDatabase.OpenParams.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {

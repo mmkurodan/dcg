@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DateFormatSymbols {
-    private final android.icu.text.DateFormatSymbols real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DateFormatSymbols(android.icu.text.DateFormatSymbols real) {
+    private final java.lang.Object real;
+
+    private DateFormatSymbols(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols wrap(android.icu.text.DateFormatSymbols real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DateFormatSymbols getReal() {
+        return (android.icu.text.DateFormatSymbols) real;
     }
 
     public android.icu.text.DateFormatSymbols unwrap() {
-        return real;
+        return getReal();
     }
 
     public DateFormatSymbols() {
-        this(new android.icu.text.DateFormatSymbols());
+        this(new android.icu.text.DateFormatSymbols(), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.util.Locale arg0) {
-        this(new android.icu.text.DateFormatSymbols(arg0));
+        this(new android.icu.text.DateFormatSymbols(arg0), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.lang.Class arg0, java.util.Locale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0, arg1));
+        this(new android.icu.text.DateFormatSymbols(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.lang.Class arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.util.ResourceBundle arg0, java.util.Locale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0, arg1));
+        this(new android.icu.text.DateFormatSymbols(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.util.ResourceBundle arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, java.util.Locale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.DateFormatSymbols) real).clone();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.DateFormatSymbols) real).equals(arg0);
     }
 
     public java.lang.String[] getAmPmStrings() {
-        return real.getAmPmStrings();
+        return ((android.icu.text.DateFormatSymbols) real).getAmPmStrings();
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -69,11 +76,11 @@ public final class DateFormatSymbols {
     }
 
     public java.lang.String[] getEraNames() {
-        return real.getEraNames();
+        return ((android.icu.text.DateFormatSymbols) real).getEraNames();
     }
 
     public java.lang.String[] getEras() {
-        return real.getEras();
+        return ((android.icu.text.DateFormatSymbols) real).getEras();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols getInstance() {
@@ -85,119 +92,119 @@ public final class DateFormatSymbols {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String getLocalPatternChars() {
-        return real.getLocalPatternChars();
+        return ((android.icu.text.DateFormatSymbols) real).getLocalPatternChars();
     }
 
     public java.lang.String[] getMonths() {
-        return real.getMonths();
+        return ((android.icu.text.DateFormatSymbols) real).getMonths();
     }
 
     public java.lang.String[] getMonths(int arg0, int arg1) {
-        return real.getMonths(arg0, arg1);
+        return ((android.icu.text.DateFormatSymbols) real).getMonths(arg0, arg1);
     }
 
     public java.lang.String[] getNarrowEras() {
-        return real.getNarrowEras();
+        return ((android.icu.text.DateFormatSymbols) real).getNarrowEras();
     }
 
     public java.lang.String[] getQuarters(int arg0, int arg1) {
-        return real.getQuarters(arg0, arg1);
+        return ((android.icu.text.DateFormatSymbols) real).getQuarters(arg0, arg1);
     }
 
     public java.lang.String[] getShortMonths() {
-        return real.getShortMonths();
+        return ((android.icu.text.DateFormatSymbols) real).getShortMonths();
     }
 
     public java.lang.String[] getShortWeekdays() {
-        return real.getShortWeekdays();
+        return ((android.icu.text.DateFormatSymbols) real).getShortWeekdays();
     }
 
     public java.lang.String[] getWeekdays() {
-        return real.getWeekdays();
+        return ((android.icu.text.DateFormatSymbols) real).getWeekdays();
     }
 
     public java.lang.String[] getWeekdays(int arg0, int arg1) {
-        return real.getWeekdays(arg0, arg1);
+        return ((android.icu.text.DateFormatSymbols) real).getWeekdays(arg0, arg1);
     }
 
     public java.lang.String[] getYearNames(int arg0, int arg1) {
-        return real.getYearNames(arg0, arg1);
+        return ((android.icu.text.DateFormatSymbols) real).getYearNames(arg0, arg1);
     }
 
     public java.lang.String[] getZodiacNames(int arg0, int arg1) {
-        return real.getZodiacNames(arg0, arg1);
+        return ((android.icu.text.DateFormatSymbols) real).getZodiacNames(arg0, arg1);
     }
 
     public java.lang.String[][] getZoneStrings() {
-        return real.getZoneStrings();
+        return ((android.icu.text.DateFormatSymbols) real).getZoneStrings();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.DateFormatSymbols) real).hashCode();
     }
 
     public void setAmPmStrings(java.lang.String[] arg0) {
-        real.setAmPmStrings(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setAmPmStrings(arg0);
     }
 
     public void setEraNames(java.lang.String[] arg0) {
-        real.setEraNames(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setEraNames(arg0);
     }
 
     public void setEras(java.lang.String[] arg0) {
-        real.setEras(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setEras(arg0);
     }
 
     public void setLocalPatternChars(java.lang.String arg0) {
-        real.setLocalPatternChars(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setLocalPatternChars(arg0);
     }
 
     public void setMonths(java.lang.String[] arg0) {
-        real.setMonths(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setMonths(arg0);
     }
 
     public void setMonths(java.lang.String[] arg0, int arg1, int arg2) {
-        real.setMonths(arg0, arg1, arg2);
+        ((android.icu.text.DateFormatSymbols) real).setMonths(arg0, arg1, arg2);
     }
 
     public void setNarrowEras(java.lang.String[] arg0) {
-        real.setNarrowEras(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setNarrowEras(arg0);
     }
 
     public void setQuarters(java.lang.String[] arg0, int arg1, int arg2) {
-        real.setQuarters(arg0, arg1, arg2);
+        ((android.icu.text.DateFormatSymbols) real).setQuarters(arg0, arg1, arg2);
     }
 
     public void setShortMonths(java.lang.String[] arg0) {
-        real.setShortMonths(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setShortMonths(arg0);
     }
 
     public void setShortWeekdays(java.lang.String[] arg0) {
-        real.setShortWeekdays(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setShortWeekdays(arg0);
     }
 
     public void setWeekdays(java.lang.String[] arg0) {
-        real.setWeekdays(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setWeekdays(arg0);
     }
 
     public void setWeekdays(java.lang.String[] arg0, int arg1, int arg2) {
-        real.setWeekdays(arg0, arg1, arg2);
+        ((android.icu.text.DateFormatSymbols) real).setWeekdays(arg0, arg1, arg2);
     }
 
     public void setYearNames(java.lang.String[] arg0, int arg1, int arg2) {
-        real.setYearNames(arg0, arg1, arg2);
+        ((android.icu.text.DateFormatSymbols) real).setYearNames(arg0, arg1, arg2);
     }
 
     public void setZodiacNames(java.lang.String[] arg0, int arg1, int arg2) {
-        real.setZodiacNames(arg0, arg1, arg2);
+        ((android.icu.text.DateFormatSymbols) real).setZodiacNames(arg0, arg1, arg2);
     }
 
     public void setZoneStrings(java.lang.String[][] arg0) {
-        real.setZoneStrings(arg0);
+        ((android.icu.text.DateFormatSymbols) real).setZoneStrings(arg0);
     }
 
     public static final int ABBREVIATED = android.icu.text.DateFormatSymbols.ABBREVIATED;

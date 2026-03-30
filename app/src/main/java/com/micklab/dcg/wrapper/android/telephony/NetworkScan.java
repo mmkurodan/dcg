@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class NetworkScan {
-    private final android.telephony.NetworkScan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkScan(android.telephony.NetworkScan real) {
+    private final java.lang.Object real;
+
+    private NetworkScan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.NetworkScan wrap(android.telephony.NetworkScan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NetworkScan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.NetworkScan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.NetworkScan getReal() {
+        return (android.telephony.NetworkScan) real;
     }
 
     public android.telephony.NetworkScan unwrap() {
-        return real;
+        return getReal();
     }
 
     public void stopScan() {

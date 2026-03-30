@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.app.job;
 
 public final class JobService {
-    private final android.app.job.JobService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JobService(android.app.job.JobService real) {
+    private final java.lang.Object real;
+
+    private JobService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.job.JobService wrap(android.app.job.JobService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.job.JobService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.job.JobService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.job.JobService getReal() {
+        return (android.app.job.JobService) real;
     }
 
     public android.app.job.JobService unwrap() {
-        return real;
+        return getReal();
     }
 
     public void jobFinished(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0, boolean arg1) {
-        real.jobFinished(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.job.JobService) real).jobFinished(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.app.job.JobService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public void onNetworkChanged(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0) {
@@ -29,15 +36,15 @@ public final class JobService {
     }
 
     public boolean onStartJob(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0) {
-        return real.onStartJob(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.job.JobService) real).onStartJob(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onStopJob(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0) {
-        return real.onStopJob(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.job.JobService) real).onStopJob(arg0 == null ? null : arg0.getReal());
     }
 
     public void setNotification(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0, int arg1, com.micklab.dcg.wrapper.android.app.Notification arg2, int arg3) {
-        real.setNotification(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        ((android.app.job.JobService) real).setNotification(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public void updateEstimatedNetworkBytes(com.micklab.dcg.wrapper.android.app.job.JobParameters arg0, long arg1, long arg2) {

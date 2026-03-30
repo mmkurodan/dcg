@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaDrm {
-    private final android.media.MediaDrm real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaDrm(android.media.MediaDrm real) {
+    private final java.lang.Object real;
+
+    private MediaDrm(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaDrm wrap(android.media.MediaDrm real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaDrm getReal() {
+        return (android.media.MediaDrm) real;
     }
 
     public android.media.MediaDrm unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaDrm(java.util.UUID arg0) throws android.media.UnsupportedSchemeException {
-        this(new android.media.MediaDrm(arg0));
+        this(new android.media.MediaDrm(arg0), (__DcgwBridgeToken) null);
     }
 
     public void clearOnEventListener() {
-        real.clearOnEventListener();
+        ((android.media.MediaDrm) real).clearOnEventListener();
     }
 
     public void clearOnExpirationUpdateListener() {
-        real.clearOnExpirationUpdateListener();
+        ((android.media.MediaDrm) real).clearOnExpirationUpdateListener();
     }
 
     public void clearOnKeyStatusChangeListener() {
-        real.clearOnKeyStatusChangeListener();
+        ((android.media.MediaDrm) real).clearOnKeyStatusChangeListener();
     }
 
     public void clearOnSessionLostStateListener() {
-        real.clearOnSessionLostStateListener();
+        ((android.media.MediaDrm) real).clearOnSessionLostStateListener();
     }
 
     public void close() {
-        real.close();
+        ((android.media.MediaDrm) real).close();
     }
 
     public void closeSession(byte[] arg0) {
-        real.closeSession(arg0);
+        ((android.media.MediaDrm) real).closeSession(arg0);
     }
 
     public int getConnectedHdcpLevel() {
-        return real.getConnectedHdcpLevel();
+        return ((android.media.MediaDrm) real).getConnectedHdcpLevel();
     }
 
     public android.media.MediaDrm.CryptoSession getCryptoSession(byte[] arg0, java.lang.String arg1, java.lang.String arg2) {
-        return real.getCryptoSession(arg0, arg1, arg2);
+        return ((android.media.MediaDrm) real).getCryptoSession(arg0, arg1, arg2);
     }
 
     public int getMaxHdcpLevel() {
-        return real.getMaxHdcpLevel();
+        return ((android.media.MediaDrm) real).getMaxHdcpLevel();
     }
 
     public static int getMaxSecurityLevel() {
@@ -61,43 +68,43 @@ public final class MediaDrm {
     }
 
     public int getMaxSessionCount() {
-        return real.getMaxSessionCount();
+        return ((android.media.MediaDrm) real).getMaxSessionCount();
     }
 
     public com.micklab.dcg.wrapper.android.os.PersistableBundle getMetrics() {
-        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getMetrics());
+        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.media.MediaDrm) real).getMetrics());
     }
 
     public int getOfflineLicenseState(byte[] arg0) {
-        return real.getOfflineLicenseState(arg0);
+        return ((android.media.MediaDrm) real).getOfflineLicenseState(arg0);
     }
 
     public int getOpenSessionCount() {
-        return real.getOpenSessionCount();
+        return ((android.media.MediaDrm) real).getOpenSessionCount();
     }
 
     public android.media.MediaDrm.PlaybackComponent getPlaybackComponent(byte[] arg0) {
-        return real.getPlaybackComponent(arg0);
+        return ((android.media.MediaDrm) real).getPlaybackComponent(arg0);
     }
 
     public byte[] getPropertyByteArray(java.lang.String arg0) {
-        return real.getPropertyByteArray(arg0);
+        return ((android.media.MediaDrm) real).getPropertyByteArray(arg0);
     }
 
     public java.lang.String getPropertyString(java.lang.String arg0) {
-        return real.getPropertyString(arg0);
+        return ((android.media.MediaDrm) real).getPropertyString(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest getProvisionRequest() {
-        return com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest.wrap(real.getProvisionRequest());
+        return com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest.wrap(((android.media.MediaDrm) real).getProvisionRequest());
     }
 
     public byte[] getSecureStop(byte[] arg0) {
-        return real.getSecureStop(arg0);
+        return ((android.media.MediaDrm) real).getSecureStop(arg0);
     }
 
     public int getSecurityLevel(byte[] arg0) {
-        return real.getSecurityLevel(arg0);
+        return ((android.media.MediaDrm) real).getSecurityLevel(arg0);
     }
 
     public static boolean isCryptoSchemeSupported(java.util.UUID arg0) {
@@ -113,103 +120,103 @@ public final class MediaDrm {
     }
 
     public byte[] openSession() throws android.media.NotProvisionedException, android.media.ResourceBusyException {
-        return real.openSession();
+        return ((android.media.MediaDrm) real).openSession();
     }
 
     public byte[] openSession(int arg0) throws android.media.NotProvisionedException, android.media.ResourceBusyException {
-        return real.openSession(arg0);
+        return ((android.media.MediaDrm) real).openSession(arg0);
     }
 
     public byte[] provideKeyResponse(byte[] arg0, byte[] arg1) throws android.media.DeniedByServerException, android.media.NotProvisionedException {
-        return real.provideKeyResponse(arg0, arg1);
+        return ((android.media.MediaDrm) real).provideKeyResponse(arg0, arg1);
     }
 
     public void provideProvisionResponse(byte[] arg0) throws android.media.DeniedByServerException {
-        real.provideProvisionResponse(arg0);
+        ((android.media.MediaDrm) real).provideProvisionResponse(arg0);
     }
 
     public void release() {
-        real.release();
+        ((android.media.MediaDrm) real).release();
     }
 
     public void releaseAllSecureStops() {
-        real.releaseAllSecureStops();
+        ((android.media.MediaDrm) real).releaseAllSecureStops();
     }
 
     public void releaseSecureStops(byte[] arg0) {
-        real.releaseSecureStops(arg0);
+        ((android.media.MediaDrm) real).releaseSecureStops(arg0);
     }
 
     public void removeAllSecureStops() {
-        real.removeAllSecureStops();
+        ((android.media.MediaDrm) real).removeAllSecureStops();
     }
 
     public void removeKeys(byte[] arg0) {
-        real.removeKeys(arg0);
+        ((android.media.MediaDrm) real).removeKeys(arg0);
     }
 
     public void removeOfflineLicense(byte[] arg0) {
-        real.removeOfflineLicense(arg0);
+        ((android.media.MediaDrm) real).removeOfflineLicense(arg0);
     }
 
     public void removeSecureStop(byte[] arg0) {
-        real.removeSecureStop(arg0);
+        ((android.media.MediaDrm) real).removeSecureStop(arg0);
     }
 
     public boolean requiresSecureDecoder(java.lang.String arg0) {
-        return real.requiresSecureDecoder(arg0);
+        return ((android.media.MediaDrm) real).requiresSecureDecoder(arg0);
     }
 
     public boolean requiresSecureDecoder(java.lang.String arg0, int arg1) {
-        return real.requiresSecureDecoder(arg0, arg1);
+        return ((android.media.MediaDrm) real).requiresSecureDecoder(arg0, arg1);
     }
 
     public void restoreKeys(byte[] arg0, byte[] arg1) {
-        real.restoreKeys(arg0, arg1);
+        ((android.media.MediaDrm) real).restoreKeys(arg0, arg1);
     }
 
     public void setOnEventListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg0) {
-        real.setOnEventListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.MediaDrm) real).setOnEventListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnEventListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.setOnEventListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnEventListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnEventListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg1) {
-        real.setOnEventListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnEventListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnExpirationUpdateListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener arg1) {
-        real.setOnExpirationUpdateListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnExpirationUpdateListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnExpirationUpdateListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.setOnExpirationUpdateListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnExpirationUpdateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnKeyStatusChangeListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.setOnKeyStatusChangeListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnKeyStatusChangeListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnKeyStatusChangeListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener arg1) {
-        real.setOnKeyStatusChangeListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnKeyStatusChangeListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnSessionLostStateListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.setOnSessionLostStateListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnSessionLostStateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnSessionLostStateListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener arg1) {
-        real.setOnSessionLostStateListener(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.MediaDrm) real).setOnSessionLostStateListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setPropertyByteArray(java.lang.String arg0, byte[] arg1) {
-        real.setPropertyByteArray(arg0, arg1);
+        ((android.media.MediaDrm) real).setPropertyByteArray(arg0, arg1);
     }
 
     public void setPropertyString(java.lang.String arg0, java.lang.String arg1) {
-        real.setPropertyString(arg0, arg1);
+        ((android.media.MediaDrm) real).setPropertyString(arg0, arg1);
     }
 
     public static final int EVENT_KEY_EXPIRED = android.media.MediaDrm.EVENT_KEY_EXPIRED;
@@ -244,18 +251,25 @@ public final class MediaDrm {
     public static final int SECURITY_LEVEL_UNKNOWN = android.media.MediaDrm.SECURITY_LEVEL_UNKNOWN;
 
     public static final class ErrorCodes {
-        private final android.media.MediaDrm.ErrorCodes real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ErrorCodes(android.media.MediaDrm.ErrorCodes real) {
+        private final java.lang.Object real;
+
+        private ErrorCodes(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.ErrorCodes wrap(android.media.MediaDrm.ErrorCodes real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.ErrorCodes(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.ErrorCodes(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.ErrorCodes getReal() {
+            return (android.media.MediaDrm.ErrorCodes) real;
         }
 
         public android.media.MediaDrm.ErrorCodes unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ERROR_CERTIFICATE_MALFORMED = android.media.MediaDrm.ErrorCodes.ERROR_CERTIFICATE_MALFORMED;
@@ -295,30 +309,37 @@ public final class MediaDrm {
 
     }
     public static final class KeyRequest {
-        private final android.media.MediaDrm.KeyRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public KeyRequest(android.media.MediaDrm.KeyRequest real) {
+        private final java.lang.Object real;
+
+        private KeyRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.KeyRequest wrap(android.media.MediaDrm.KeyRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.KeyRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.KeyRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.KeyRequest getReal() {
+            return (android.media.MediaDrm.KeyRequest) real;
         }
 
         public android.media.MediaDrm.KeyRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public byte[] getData() {
-            return real.getData();
+            return ((android.media.MediaDrm.KeyRequest) real).getData();
         }
 
         public java.lang.String getDefaultUrl() {
-            return real.getDefaultUrl();
+            return ((android.media.MediaDrm.KeyRequest) real).getDefaultUrl();
         }
 
         public int getRequestType() {
-            return real.getRequestType();
+            return ((android.media.MediaDrm.KeyRequest) real).getRequestType();
         }
 
         public static final int REQUEST_TYPE_INITIAL = android.media.MediaDrm.KeyRequest.REQUEST_TYPE_INITIAL;
@@ -329,26 +350,33 @@ public final class MediaDrm {
 
     }
     public static final class KeyStatus {
-        private final android.media.MediaDrm.KeyStatus real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public KeyStatus(android.media.MediaDrm.KeyStatus real) {
+        private final java.lang.Object real;
+
+        private KeyStatus(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.KeyStatus wrap(android.media.MediaDrm.KeyStatus real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.KeyStatus(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.KeyStatus(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.KeyStatus getReal() {
+            return (android.media.MediaDrm.KeyStatus) real;
         }
 
         public android.media.MediaDrm.KeyStatus unwrap() {
-            return real;
+            return getReal();
         }
 
         public byte[] getKeyId() {
-            return real.getKeyId();
+            return ((android.media.MediaDrm.KeyStatus) real).getKeyId();
         }
 
         public int getStatusCode() {
-            return real.getStatusCode();
+            return ((android.media.MediaDrm.KeyStatus) real).getStatusCode();
         }
 
         public static final int STATUS_EXPIRED = android.media.MediaDrm.KeyStatus.STATUS_EXPIRED;
@@ -360,90 +388,111 @@ public final class MediaDrm {
 
     }
     public static final class LogMessage {
-        private final android.media.MediaDrm.LogMessage real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LogMessage(android.media.MediaDrm.LogMessage real) {
+        private final java.lang.Object real;
+
+        private LogMessage(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.LogMessage wrap(android.media.MediaDrm.LogMessage real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.LogMessage(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.LogMessage(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.LogMessage getReal() {
+            return (android.media.MediaDrm.LogMessage) real;
         }
 
         public android.media.MediaDrm.LogMessage unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getMessage() {
-            return real.getMessage();
+            return ((android.media.MediaDrm.LogMessage) real).getMessage();
         }
 
         public int getPriority() {
-            return real.getPriority();
+            return ((android.media.MediaDrm.LogMessage) real).getPriority();
         }
 
         public long getTimestampMillis() {
-            return real.getTimestampMillis();
+            return ((android.media.MediaDrm.LogMessage) real).getTimestampMillis();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.media.MediaDrm.LogMessage) real).toString();
         }
 
     }
     public static final class MediaDrmStateException {
-        private final android.media.MediaDrm.MediaDrmStateException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaDrmStateException(android.media.MediaDrm.MediaDrmStateException real) {
+        private final java.lang.Object real;
+
+        private MediaDrmStateException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.MediaDrmStateException wrap(android.media.MediaDrm.MediaDrmStateException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.MediaDrmStateException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.MediaDrmStateException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.MediaDrmStateException getReal() {
+            return (android.media.MediaDrm.MediaDrmStateException) real;
         }
 
         public android.media.MediaDrm.MediaDrmStateException unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getDiagnosticInfo() {
-            return real.getDiagnosticInfo();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).getDiagnosticInfo();
         }
 
         public int getErrorCode() {
-            return real.getErrorCode();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).getErrorCode();
         }
 
         public int getErrorContext() {
-            return real.getErrorContext();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).getErrorContext();
         }
 
         public int getOemError() {
-            return real.getOemError();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).getOemError();
         }
 
         public int getVendorError() {
-            return real.getVendorError();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).getVendorError();
         }
 
         public boolean isTransient() {
-            return real.isTransient();
+            return ((android.media.MediaDrm.MediaDrmStateException) real).isTransient();
         }
 
     }
     public static final class MetricsConstants {
-        private final android.media.MediaDrm.MetricsConstants real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MetricsConstants(android.media.MediaDrm.MetricsConstants real) {
+        private final java.lang.Object real;
+
+        private MetricsConstants(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.MetricsConstants wrap(android.media.MediaDrm.MetricsConstants real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.MetricsConstants(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.MetricsConstants(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.MetricsConstants getReal() {
+            return (android.media.MediaDrm.MetricsConstants) real;
         }
 
         public android.media.MediaDrm.MetricsConstants unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CLOSE_SESSION_ERROR_COUNT = android.media.MediaDrm.MetricsConstants.CLOSE_SESSION_ERROR_COUNT;
@@ -484,142 +533,184 @@ public final class MediaDrm {
 
     }
     public static final class OnEventListener {
-        private final android.media.MediaDrm.OnEventListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnEventListener(android.media.MediaDrm.OnEventListener real) {
+        private final java.lang.Object real;
+
+        private OnEventListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener wrap(android.media.MediaDrm.OnEventListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.OnEventListener getReal() {
+            return (android.media.MediaDrm.OnEventListener) real;
         }
 
         public android.media.MediaDrm.OnEventListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onEvent(com.micklab.dcg.wrapper.android.media.MediaDrm arg0, byte[] arg1, int arg2, int arg3, byte[] arg4) {
-            real.onEvent(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+            ((android.media.MediaDrm.OnEventListener) real).onEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
         }
 
     }
     public static final class OnExpirationUpdateListener {
-        private final android.media.MediaDrm.OnExpirationUpdateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnExpirationUpdateListener(android.media.MediaDrm.OnExpirationUpdateListener real) {
+        private final java.lang.Object real;
+
+        private OnExpirationUpdateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener wrap(android.media.MediaDrm.OnExpirationUpdateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.OnExpirationUpdateListener getReal() {
+            return (android.media.MediaDrm.OnExpirationUpdateListener) real;
         }
 
         public android.media.MediaDrm.OnExpirationUpdateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onExpirationUpdate(com.micklab.dcg.wrapper.android.media.MediaDrm arg0, byte[] arg1, long arg2) {
-            real.onExpirationUpdate(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            ((android.media.MediaDrm.OnExpirationUpdateListener) real).onExpirationUpdate(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
     }
     public static final class OnKeyStatusChangeListener {
-        private final android.media.MediaDrm.OnKeyStatusChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnKeyStatusChangeListener(android.media.MediaDrm.OnKeyStatusChangeListener real) {
+        private final java.lang.Object real;
+
+        private OnKeyStatusChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener wrap(android.media.MediaDrm.OnKeyStatusChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.OnKeyStatusChangeListener getReal() {
+            return (android.media.MediaDrm.OnKeyStatusChangeListener) real;
         }
 
         public android.media.MediaDrm.OnKeyStatusChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class OnSessionLostStateListener {
-        private final android.media.MediaDrm.OnSessionLostStateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnSessionLostStateListener(android.media.MediaDrm.OnSessionLostStateListener real) {
+        private final java.lang.Object real;
+
+        private OnSessionLostStateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener wrap(android.media.MediaDrm.OnSessionLostStateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.OnSessionLostStateListener getReal() {
+            return (android.media.MediaDrm.OnSessionLostStateListener) real;
         }
 
         public android.media.MediaDrm.OnSessionLostStateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onSessionLostState(com.micklab.dcg.wrapper.android.media.MediaDrm arg0, byte[] arg1) {
-            real.onSessionLostState(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.MediaDrm.OnSessionLostStateListener) real).onSessionLostState(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }
     public static final class ProvisionRequest {
-        private final android.media.MediaDrm.ProvisionRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProvisionRequest(android.media.MediaDrm.ProvisionRequest real) {
+        private final java.lang.Object real;
+
+        private ProvisionRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest wrap(android.media.MediaDrm.ProvisionRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.ProvisionRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.ProvisionRequest getReal() {
+            return (android.media.MediaDrm.ProvisionRequest) real;
         }
 
         public android.media.MediaDrm.ProvisionRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public byte[] getData() {
-            return real.getData();
+            return ((android.media.MediaDrm.ProvisionRequest) real).getData();
         }
 
         public java.lang.String getDefaultUrl() {
-            return real.getDefaultUrl();
+            return ((android.media.MediaDrm.ProvisionRequest) real).getDefaultUrl();
         }
 
     }
     public static final class SessionException {
-        private final android.media.MediaDrm.SessionException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SessionException(android.media.MediaDrm.SessionException real) {
+        private final java.lang.Object real;
+
+        private SessionException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MediaDrm.SessionException wrap(android.media.MediaDrm.SessionException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.SessionException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.SessionException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.SessionException getReal() {
+            return (android.media.MediaDrm.SessionException) real;
         }
 
         public android.media.MediaDrm.SessionException unwrap() {
-            return real;
+            return getReal();
         }
 
         public SessionException(int arg0, java.lang.String arg1) {
-            this(new android.media.MediaDrm.SessionException(arg0, arg1));
+            this(new android.media.MediaDrm.SessionException(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public int getErrorCode() {
-            return real.getErrorCode();
+            return ((android.media.MediaDrm.SessionException) real).getErrorCode();
         }
 
         public int getErrorContext() {
-            return real.getErrorContext();
+            return ((android.media.MediaDrm.SessionException) real).getErrorContext();
         }
 
         public int getOemError() {
-            return real.getOemError();
+            return ((android.media.MediaDrm.SessionException) real).getOemError();
         }
 
         public int getVendorError() {
-            return real.getVendorError();
+            return ((android.media.MediaDrm.SessionException) real).getVendorError();
         }
 
         public boolean isTransient() {
-            return real.isTransient();
+            return ((android.media.MediaDrm.SessionException) real).isTransient();
         }
 
         public static final int ERROR_RESOURCE_CONTENTION = android.media.MediaDrm.SessionException.ERROR_RESOURCE_CONTENTION;

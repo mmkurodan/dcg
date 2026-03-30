@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnCellUnderlyingNetworkTemplate {
-    private final android.net.vcn.VcnCellUnderlyingNetworkTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnCellUnderlyingNetworkTemplate(android.net.vcn.VcnCellUnderlyingNetworkTemplate real) {
+    private final java.lang.Object real;
+
+    private VcnCellUnderlyingNetworkTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate wrap(android.net.vcn.VcnCellUnderlyingNetworkTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnCellUnderlyingNetworkTemplate getReal() {
+        return (android.net.vcn.VcnCellUnderlyingNetworkTemplate) real;
     }
 
     public android.net.vcn.VcnCellUnderlyingNetworkTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -57,18 +64,25 @@ public final class VcnCellUnderlyingNetworkTemplate {
     }
 
     public static final class Builder {
-        private final android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder wrap(android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder getReal() {
+            return (android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder) real;
         }
 
         public android.net.vcn.VcnCellUnderlyingNetworkTemplate.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

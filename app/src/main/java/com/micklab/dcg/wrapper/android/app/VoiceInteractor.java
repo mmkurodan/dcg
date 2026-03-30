@@ -2,331 +2,394 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class VoiceInteractor {
-    private final android.app.VoiceInteractor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VoiceInteractor(android.app.VoiceInteractor real) {
+    private final java.lang.Object real;
+
+    private VoiceInteractor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.VoiceInteractor wrap(android.app.VoiceInteractor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.VoiceInteractor getReal() {
+        return (android.app.VoiceInteractor) real;
     }
 
     public android.app.VoiceInteractor unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request getActiveRequest(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request.wrap(real.getActiveRequest(arg0));
+        return com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request.wrap(((android.app.VoiceInteractor) real).getActiveRequest(arg0));
     }
 
     public android.app.VoiceInteractor.Request[] getActiveRequests() {
-        return real.getActiveRequests();
+        return ((android.app.VoiceInteractor) real).getActiveRequests();
     }
 
     public java.lang.String getPackageName() {
-        return real.getPackageName();
+        return ((android.app.VoiceInteractor) real).getPackageName();
     }
 
     public boolean isDestroyed() {
-        return real.isDestroyed();
+        return ((android.app.VoiceInteractor) real).isDestroyed();
     }
 
     public void notifyDirectActionsChanged() {
-        real.notifyDirectActionsChanged();
+        ((android.app.VoiceInteractor) real).notifyDirectActionsChanged();
     }
 
     public boolean registerOnDestroyedCallback(java.util.concurrent.Executor arg0, java.lang.Runnable arg1) {
-        return real.registerOnDestroyedCallback(arg0, arg1);
+        return ((android.app.VoiceInteractor) real).registerOnDestroyedCallback(arg0, arg1);
     }
 
     public boolean submitRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request arg0) {
-        return real.submitRequest(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.VoiceInteractor) real).submitRequest(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean submitRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request arg0, java.lang.String arg1) {
-        return real.submitRequest(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.VoiceInteractor) real).submitRequest(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean[] supportsCommands(java.lang.String[] arg0) {
-        return real.supportsCommands(arg0);
+        return ((android.app.VoiceInteractor) real).supportsCommands(arg0);
     }
 
     public boolean unregisterOnDestroyedCallback(java.lang.Runnable arg0) {
-        return real.unregisterOnDestroyedCallback(arg0);
+        return ((android.app.VoiceInteractor) real).unregisterOnDestroyedCallback(arg0);
     }
 
     public static final class AbortVoiceRequest {
-        private final android.app.VoiceInteractor.AbortVoiceRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AbortVoiceRequest(android.app.VoiceInteractor.AbortVoiceRequest real) {
+        private final java.lang.Object real;
+
+        private AbortVoiceRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.AbortVoiceRequest wrap(android.app.VoiceInteractor.AbortVoiceRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.AbortVoiceRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.AbortVoiceRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.AbortVoiceRequest getReal() {
+            return (android.app.VoiceInteractor.AbortVoiceRequest) real;
         }
 
         public android.app.VoiceInteractor.AbortVoiceRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public AbortVoiceRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            this(new android.app.VoiceInteractor.AbortVoiceRequest(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.VoiceInteractor.AbortVoiceRequest(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void onAbortResult(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            real.onAbortResult(arg0 == null ? null : arg0.unwrap());
+            ((android.app.VoiceInteractor.AbortVoiceRequest) real).onAbortResult(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class CommandRequest {
-        private final android.app.VoiceInteractor.CommandRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CommandRequest(android.app.VoiceInteractor.CommandRequest real) {
+        private final java.lang.Object real;
+
+        private CommandRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.CommandRequest wrap(android.app.VoiceInteractor.CommandRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.CommandRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.CommandRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.CommandRequest getReal() {
+            return (android.app.VoiceInteractor.CommandRequest) real;
         }
 
         public android.app.VoiceInteractor.CommandRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public CommandRequest(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            this(new android.app.VoiceInteractor.CommandRequest(arg0, arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.VoiceInteractor.CommandRequest(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void onCommandResult(boolean arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            real.onCommandResult(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.app.VoiceInteractor.CommandRequest) real).onCommandResult(arg0, arg1 == null ? null : arg1.getReal());
         }
 
     }
     public static final class CompleteVoiceRequest {
-        private final android.app.VoiceInteractor.CompleteVoiceRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CompleteVoiceRequest(android.app.VoiceInteractor.CompleteVoiceRequest real) {
+        private final java.lang.Object real;
+
+        private CompleteVoiceRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.CompleteVoiceRequest wrap(android.app.VoiceInteractor.CompleteVoiceRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.CompleteVoiceRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.CompleteVoiceRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.CompleteVoiceRequest getReal() {
+            return (android.app.VoiceInteractor.CompleteVoiceRequest) real;
         }
 
         public android.app.VoiceInteractor.CompleteVoiceRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public CompleteVoiceRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            this(new android.app.VoiceInteractor.CompleteVoiceRequest(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.VoiceInteractor.CompleteVoiceRequest(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void onCompleteResult(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            real.onCompleteResult(arg0 == null ? null : arg0.unwrap());
+            ((android.app.VoiceInteractor.CompleteVoiceRequest) real).onCompleteResult(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class ConfirmationRequest {
-        private final android.app.VoiceInteractor.ConfirmationRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConfirmationRequest(android.app.VoiceInteractor.ConfirmationRequest real) {
+        private final java.lang.Object real;
+
+        private ConfirmationRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.ConfirmationRequest wrap(android.app.VoiceInteractor.ConfirmationRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.ConfirmationRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.ConfirmationRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.ConfirmationRequest getReal() {
+            return (android.app.VoiceInteractor.ConfirmationRequest) real;
         }
 
         public android.app.VoiceInteractor.ConfirmationRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public ConfirmationRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            this(new android.app.VoiceInteractor.ConfirmationRequest(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.VoiceInteractor.ConfirmationRequest(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void onConfirmationResult(boolean arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-            real.onConfirmationResult(arg0, arg1 == null ? null : arg1.unwrap());
+            ((android.app.VoiceInteractor.ConfirmationRequest) real).onConfirmationResult(arg0, arg1 == null ? null : arg1.getReal());
         }
 
     }
     public static final class PickOptionRequest {
-        private final android.app.VoiceInteractor.PickOptionRequest real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PickOptionRequest(android.app.VoiceInteractor.PickOptionRequest real) {
+        private final java.lang.Object real;
+
+        private PickOptionRequest(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest wrap(android.app.VoiceInteractor.PickOptionRequest real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.PickOptionRequest getReal() {
+            return (android.app.VoiceInteractor.PickOptionRequest) real;
         }
 
         public android.app.VoiceInteractor.PickOptionRequest unwrap() {
-            return real;
+            return getReal();
         }
 
         public PickOptionRequest(com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt arg0, android.app.VoiceInteractor.PickOptionRequest.Option[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-            this(new android.app.VoiceInteractor.PickOptionRequest(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+            this(new android.app.VoiceInteractor.PickOptionRequest(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void onPickOptionResult(boolean arg0, android.app.VoiceInteractor.PickOptionRequest.Option[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-            real.onPickOptionResult(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+            ((android.app.VoiceInteractor.PickOptionRequest) real).onPickOptionResult(arg0, arg1, arg2 == null ? null : arg2.getReal());
         }
 
         public static final class Option {
-            private final android.app.VoiceInteractor.PickOptionRequest.Option real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Option(android.app.VoiceInteractor.PickOptionRequest.Option real) {
+            private final java.lang.Object real;
+
+            private Option(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option wrap(android.app.VoiceInteractor.PickOptionRequest.Option real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.VoiceInteractor.PickOptionRequest.Option getReal() {
+                return (android.app.VoiceInteractor.PickOptionRequest.Option) real;
             }
 
             public android.app.VoiceInteractor.PickOptionRequest.Option unwrap() {
-                return real;
+                return getReal();
             }
 
             public Option(java.lang.CharSequence arg0, int arg1) {
-                this(new android.app.VoiceInteractor.PickOptionRequest.Option(arg0, arg1));
+                this(new android.app.VoiceInteractor.PickOptionRequest.Option(arg0, arg1), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option addSynonym(java.lang.CharSequence arg0) {
-                return com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option.wrap(real.addSynonym(arg0));
+                return com.micklab.dcg.wrapper.android.app.VoiceInteractor.PickOptionRequest.Option.wrap(((android.app.VoiceInteractor.PickOptionRequest.Option) real).addSynonym(arg0));
             }
 
             public int countSynonyms() {
-                return real.countSynonyms();
+                return ((android.app.VoiceInteractor.PickOptionRequest.Option) real).countSynonyms();
             }
 
             public int describeContents() {
-                return real.describeContents();
+                return ((android.app.VoiceInteractor.PickOptionRequest.Option) real).describeContents();
             }
 
             public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.VoiceInteractor.PickOptionRequest.Option) real).getExtras());
             }
 
             public int getIndex() {
-                return real.getIndex();
+                return ((android.app.VoiceInteractor.PickOptionRequest.Option) real).getIndex();
             }
 
             public java.lang.CharSequence getLabel() {
-                return real.getLabel();
+                return ((android.app.VoiceInteractor.PickOptionRequest.Option) real).getLabel();
             }
 
             public java.lang.CharSequence getSynonymAt(int arg0) {
-                return real.getSynonymAt(arg0);
+                return ((android.app.VoiceInteractor.PickOptionRequest.Option) real).getSynonymAt(arg0);
             }
 
             public void setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-                real.setExtras(arg0 == null ? null : arg0.unwrap());
+                ((android.app.VoiceInteractor.PickOptionRequest.Option) real).setExtras(arg0 == null ? null : arg0.getReal());
             }
 
             public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-                real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+                ((android.app.VoiceInteractor.PickOptionRequest.Option) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
             }
 
 
         }
     }
     public static final class Prompt {
-        private final android.app.VoiceInteractor.Prompt real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Prompt(android.app.VoiceInteractor.Prompt real) {
+        private final java.lang.Object real;
+
+        private Prompt(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt wrap(android.app.VoiceInteractor.Prompt real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.Prompt(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.Prompt getReal() {
+            return (android.app.VoiceInteractor.Prompt) real;
         }
 
         public android.app.VoiceInteractor.Prompt unwrap() {
-            return real;
+            return getReal();
         }
 
         public Prompt(java.lang.CharSequence arg0) {
-            this(new android.app.VoiceInteractor.Prompt(arg0));
+            this(new android.app.VoiceInteractor.Prompt(arg0), (__DcgwBridgeToken) null);
         }
 
         public Prompt(java.lang.CharSequence[] arg0, java.lang.CharSequence arg1) {
-            this(new android.app.VoiceInteractor.Prompt(arg0, arg1));
+            this(new android.app.VoiceInteractor.Prompt(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public int countVoicePrompts() {
-            return real.countVoicePrompts();
+            return ((android.app.VoiceInteractor.Prompt) real).countVoicePrompts();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.VoiceInteractor.Prompt) real).describeContents();
         }
 
         public java.lang.CharSequence getVisualPrompt() {
-            return real.getVisualPrompt();
+            return ((android.app.VoiceInteractor.Prompt) real).getVisualPrompt();
         }
 
         public java.lang.CharSequence getVoicePromptAt(int arg0) {
-            return real.getVoicePromptAt(arg0);
+            return ((android.app.VoiceInteractor.Prompt) real).getVoicePromptAt(arg0);
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.VoiceInteractor.Prompt) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.VoiceInteractor.Prompt) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class Request {
-        private final android.app.VoiceInteractor.Request real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Request(android.app.VoiceInteractor.Request real) {
+        private final java.lang.Object real;
+
+        private Request(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request wrap(android.app.VoiceInteractor.Request real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.VoiceInteractor.Request(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.VoiceInteractor.Request getReal() {
+            return (android.app.VoiceInteractor.Request) real;
         }
 
         public android.app.VoiceInteractor.Request unwrap() {
-            return real;
+            return getReal();
         }
 
         public void cancel() {
-            real.cancel();
+            ((android.app.VoiceInteractor.Request) real).cancel();
         }
 
         public com.micklab.dcg.wrapper.android.app.Activity getActivity() {
-            return com.micklab.dcg.wrapper.android.app.Activity.wrap(real.getActivity());
+            return com.micklab.dcg.wrapper.android.app.Activity.wrap(((android.app.VoiceInteractor.Request) real).getActivity());
         }
 
         public com.micklab.dcg.wrapper.android.content.Context getContext() {
-            return com.micklab.dcg.wrapper.android.content.Context.wrap(real.getContext());
+            return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.app.VoiceInteractor.Request) real).getContext());
         }
 
         public java.lang.String getName() {
-            return real.getName();
+            return ((android.app.VoiceInteractor.Request) real).getName();
         }
 
         public void onAttached(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-            real.onAttached(arg0 == null ? null : arg0.unwrap());
+            ((android.app.VoiceInteractor.Request) real).onAttached(arg0 == null ? null : arg0.getReal());
         }
 
         public void onCancel() {
-            real.onCancel();
+            ((android.app.VoiceInteractor.Request) real).onCancel();
         }
 
         public void onDetached() {
-            real.onDetached();
+            ((android.app.VoiceInteractor.Request) real).onDetached();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.VoiceInteractor.Request) real).toString();
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.gesture;
 
 public final class OrientedBoundingBox {
-    private final android.gesture.OrientedBoundingBox real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OrientedBoundingBox(android.gesture.OrientedBoundingBox real) {
+    private final java.lang.Object real;
+
+    private OrientedBoundingBox(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox wrap(android.gesture.OrientedBoundingBox real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.gesture.OrientedBoundingBox getReal() {
+        return (android.gesture.OrientedBoundingBox) real;
     }
 
     public android.gesture.OrientedBoundingBox unwrap() {
-        return real;
+        return getReal();
     }
 
 

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ChangedPackages {
-    private final android.content.pm.ChangedPackages real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ChangedPackages(android.content.pm.ChangedPackages real) {
+    private final java.lang.Object real;
+
+    private ChangedPackages(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ChangedPackages wrap(android.content.pm.ChangedPackages real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ChangedPackages(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ChangedPackages(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ChangedPackages getReal() {
+        return (android.content.pm.ChangedPackages) real;
     }
 
     public android.content.pm.ChangedPackages unwrap() {
-        return real;
+        return getReal();
     }
 
     public ChangedPackages(int arg0, java.util.List arg1) {

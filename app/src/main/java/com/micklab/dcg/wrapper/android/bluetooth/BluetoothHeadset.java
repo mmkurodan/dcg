@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothHeadset {
-    private final android.bluetooth.BluetoothHeadset real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothHeadset(android.bluetooth.BluetoothHeadset real) {
+    private final java.lang.Object real;
+
+    private BluetoothHeadset(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothHeadset wrap(android.bluetooth.BluetoothHeadset real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHeadset(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHeadset(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothHeadset getReal() {
+        return (android.bluetooth.BluetoothHeadset) real;
     }
 
     public android.bluetooth.BluetoothHeadset unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isAudioConnected(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.isAudioConnected(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).isAudioConnected(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isNoiseReductionSupported(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.isNoiseReductionSupported(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).isNoiseReductionSupported(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isVoiceRecognitionSupported(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.isVoiceRecognitionSupported(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).isVoiceRecognitionSupported(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean sendVendorSpecificResultCode(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, java.lang.String arg1, java.lang.String arg2) {
-        return real.sendVendorSpecificResultCode(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.bluetooth.BluetoothHeadset) real).sendVendorSpecificResultCode(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean startVoiceRecognition(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.startVoiceRecognition(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).startVoiceRecognition(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean stopVoiceRecognition(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.stopVoiceRecognition(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHeadset) real).stopVoiceRecognition(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_AUDIO_STATE_CHANGED = android.bluetooth.BluetoothHeadset.ACTION_AUDIO_STATE_CHANGED;

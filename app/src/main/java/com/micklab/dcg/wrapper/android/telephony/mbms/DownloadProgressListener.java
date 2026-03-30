@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class DownloadProgressListener {
-    private final android.telephony.mbms.DownloadProgressListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DownloadProgressListener(android.telephony.mbms.DownloadProgressListener real) {
+    private final java.lang.Object real;
+
+    private DownloadProgressListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.DownloadProgressListener wrap(android.telephony.mbms.DownloadProgressListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadProgressListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.DownloadProgressListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.DownloadProgressListener getReal() {
+        return (android.telephony.mbms.DownloadProgressListener) real;
     }
 
     public android.telephony.mbms.DownloadProgressListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public DownloadProgressListener() {

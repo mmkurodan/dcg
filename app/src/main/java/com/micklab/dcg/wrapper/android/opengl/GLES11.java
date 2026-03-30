@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES11 {
-    private final android.opengl.GLES11 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES11(android.opengl.GLES11 real) {
+    private final java.lang.Object real;
+
+    private GLES11(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES11 wrap(android.opengl.GLES11 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES11(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES11(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES11 getReal() {
+        return (android.opengl.GLES11) real;
     }
 
     public android.opengl.GLES11 unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLES11() {
-        this(new android.opengl.GLES11());
+        this(new android.opengl.GLES11(), (__DcgwBridgeToken) null);
     }
 
     public static void glBindBuffer(int arg0, int arg1) {

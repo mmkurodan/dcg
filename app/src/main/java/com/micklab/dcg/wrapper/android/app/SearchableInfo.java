@@ -2,122 +2,129 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class SearchableInfo {
-    private final android.app.SearchableInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SearchableInfo(android.app.SearchableInfo real) {
+    private final java.lang.Object real;
+
+    private SearchableInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.SearchableInfo wrap(android.app.SearchableInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchableInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.SearchableInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.SearchableInfo getReal() {
+        return (android.app.SearchableInfo) real;
     }
 
     public android.app.SearchableInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean autoUrlDetect() {
-        return real.autoUrlDetect();
+        return ((android.app.SearchableInfo) real).autoUrlDetect();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.SearchableInfo) real).describeContents();
     }
 
     public int getHintId() {
-        return real.getHintId();
+        return ((android.app.SearchableInfo) real).getHintId();
     }
 
     public int getImeOptions() {
-        return real.getImeOptions();
+        return ((android.app.SearchableInfo) real).getImeOptions();
     }
 
     public int getInputType() {
-        return real.getInputType();
+        return ((android.app.SearchableInfo) real).getInputType();
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName getSearchActivity() {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.getSearchActivity());
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.app.SearchableInfo) real).getSearchActivity());
     }
 
     public int getSettingsDescriptionId() {
-        return real.getSettingsDescriptionId();
+        return ((android.app.SearchableInfo) real).getSettingsDescriptionId();
     }
 
     public java.lang.String getSuggestAuthority() {
-        return real.getSuggestAuthority();
+        return ((android.app.SearchableInfo) real).getSuggestAuthority();
     }
 
     public java.lang.String getSuggestIntentAction() {
-        return real.getSuggestIntentAction();
+        return ((android.app.SearchableInfo) real).getSuggestIntentAction();
     }
 
     public java.lang.String getSuggestIntentData() {
-        return real.getSuggestIntentData();
+        return ((android.app.SearchableInfo) real).getSuggestIntentData();
     }
 
     public java.lang.String getSuggestPackage() {
-        return real.getSuggestPackage();
+        return ((android.app.SearchableInfo) real).getSuggestPackage();
     }
 
     public java.lang.String getSuggestPath() {
-        return real.getSuggestPath();
+        return ((android.app.SearchableInfo) real).getSuggestPath();
     }
 
     public java.lang.String getSuggestSelection() {
-        return real.getSuggestSelection();
+        return ((android.app.SearchableInfo) real).getSuggestSelection();
     }
 
     public int getSuggestThreshold() {
-        return real.getSuggestThreshold();
+        return ((android.app.SearchableInfo) real).getSuggestThreshold();
     }
 
     public int getVoiceLanguageId() {
-        return real.getVoiceLanguageId();
+        return ((android.app.SearchableInfo) real).getVoiceLanguageId();
     }
 
     public int getVoiceLanguageModeId() {
-        return real.getVoiceLanguageModeId();
+        return ((android.app.SearchableInfo) real).getVoiceLanguageModeId();
     }
 
     public int getVoiceMaxResults() {
-        return real.getVoiceMaxResults();
+        return ((android.app.SearchableInfo) real).getVoiceMaxResults();
     }
 
     public int getVoicePromptTextId() {
-        return real.getVoicePromptTextId();
+        return ((android.app.SearchableInfo) real).getVoicePromptTextId();
     }
 
     public boolean getVoiceSearchEnabled() {
-        return real.getVoiceSearchEnabled();
+        return ((android.app.SearchableInfo) real).getVoiceSearchEnabled();
     }
 
     public boolean getVoiceSearchLaunchRecognizer() {
-        return real.getVoiceSearchLaunchRecognizer();
+        return ((android.app.SearchableInfo) real).getVoiceSearchLaunchRecognizer();
     }
 
     public boolean getVoiceSearchLaunchWebSearch() {
-        return real.getVoiceSearchLaunchWebSearch();
+        return ((android.app.SearchableInfo) real).getVoiceSearchLaunchWebSearch();
     }
 
     public boolean queryAfterZeroResults() {
-        return real.queryAfterZeroResults();
+        return ((android.app.SearchableInfo) real).queryAfterZeroResults();
     }
 
     public boolean shouldIncludeInGlobalSearch() {
-        return real.shouldIncludeInGlobalSearch();
+        return ((android.app.SearchableInfo) real).shouldIncludeInGlobalSearch();
     }
 
     public boolean shouldRewriteQueryFromData() {
-        return real.shouldRewriteQueryFromData();
+        return ((android.app.SearchableInfo) real).shouldRewriteQueryFromData();
     }
 
     public boolean shouldRewriteQueryFromText() {
-        return real.shouldRewriteQueryFromText();
+        return ((android.app.SearchableInfo) real).shouldRewriteQueryFromText();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.SearchableInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

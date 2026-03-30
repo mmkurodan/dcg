@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ProfilingResult {
-    private final android.os.ProfilingResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProfilingResult(android.os.ProfilingResult real) {
+    private final java.lang.Object real;
+
+    private ProfilingResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ProfilingResult wrap(android.os.ProfilingResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ProfilingResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ProfilingResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ProfilingResult getReal() {
+        return (android.os.ProfilingResult) real;
     }
 
     public android.os.ProfilingResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

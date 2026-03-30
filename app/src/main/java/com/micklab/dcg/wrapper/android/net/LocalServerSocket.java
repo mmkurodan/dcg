@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class LocalServerSocket {
-    private final android.net.LocalServerSocket real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LocalServerSocket(android.net.LocalServerSocket real) {
+    private final java.lang.Object real;
+
+    private LocalServerSocket(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.LocalServerSocket wrap(android.net.LocalServerSocket real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalServerSocket(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.LocalServerSocket(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.LocalServerSocket getReal() {
+        return (android.net.LocalServerSocket) real;
     }
 
     public android.net.LocalServerSocket unwrap() {
-        return real;
+        return getReal();
     }
 
     public LocalServerSocket(java.lang.String arg0) throws java.io.IOException {

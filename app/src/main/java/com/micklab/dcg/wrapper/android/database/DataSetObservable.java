@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class DataSetObservable {
-    private final android.database.DataSetObservable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DataSetObservable(android.database.DataSetObservable real) {
+    private final java.lang.Object real;
+
+    private DataSetObservable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.DataSetObservable wrap(android.database.DataSetObservable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DataSetObservable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DataSetObservable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.DataSetObservable getReal() {
+        return (android.database.DataSetObservable) real;
     }
 
     public android.database.DataSetObservable unwrap() {
-        return real;
+        return getReal();
     }
 
     public DataSetObservable() {

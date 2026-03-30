@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect;
 
 public final class HealthConnectManager {
-    private final android.health.connect.HealthConnectManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HealthConnectManager(android.health.connect.HealthConnectManager real) {
+    private final java.lang.Object real;
+
+    private HealthConnectManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.HealthConnectManager wrap(android.health.connect.HealthConnectManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthConnectManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthConnectManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.HealthConnectManager getReal() {
+        return (android.health.connect.HealthConnectManager) real;
     }
 
     public android.health.connect.HealthConnectManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String ACTION_MANAGE_HEALTH_PERMISSIONS = android.health.connect.HealthConnectManager.ACTION_MANAGE_HEALTH_PERMISSIONS;

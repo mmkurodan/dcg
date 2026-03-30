@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class FragmentContainer {
-    private final android.app.FragmentContainer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FragmentContainer(android.app.FragmentContainer real) {
+    private final java.lang.Object real;
+
+    private FragmentContainer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.FragmentContainer wrap(android.app.FragmentContainer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.FragmentContainer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.FragmentContainer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.FragmentContainer getReal() {
+        return (android.app.FragmentContainer) real;
     }
 
     public android.app.FragmentContainer unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean onHasView() {
-        return real.onHasView();
+        return ((android.app.FragmentContainer) real).onHasView();
     }
 
 }

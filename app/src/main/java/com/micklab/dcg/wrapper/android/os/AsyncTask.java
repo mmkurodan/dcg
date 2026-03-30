@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class AsyncTask {
-    private final android.os.AsyncTask real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AsyncTask(android.os.AsyncTask real) {
+    private final java.lang.Object real;
+
+    private AsyncTask(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.AsyncTask wrap(android.os.AsyncTask real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.AsyncTask(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.AsyncTask(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.AsyncTask getReal() {
+        return (android.os.AsyncTask) real;
     }
 
     public android.os.AsyncTask unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean cancel(boolean arg0) {
@@ -42,18 +49,25 @@ public final class AsyncTask {
 
 
     public static final class Status {
-        private final android.os.AsyncTask.Status real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Status(android.os.AsyncTask.Status real) {
+        private final java.lang.Object real;
+
+        private Status(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.AsyncTask.Status wrap(android.os.AsyncTask.Status real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.AsyncTask.Status(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.AsyncTask.Status(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.AsyncTask.Status getReal() {
+            return (android.os.AsyncTask.Status) real;
         }
 
         public android.os.AsyncTask.Status unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.os.AsyncTask.Status valueOf(java.lang.String arg0) {

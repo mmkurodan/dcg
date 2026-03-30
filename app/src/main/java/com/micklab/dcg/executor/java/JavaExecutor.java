@@ -78,7 +78,8 @@ public class JavaExecutor implements LanguageExecutor {
             + "(refreshable via fetch-java-rt-fallback.sh), "
             + "plus readable framework jars from /system/framework (including framework.jar), "
             + "plus generated wrapper classpath asset app/src/main/assets/java-wrapper/android-wrapper-classpath.jar, "
-            + "and the bundled D8 runtime. The executor compiles through BatchCompiler with -proc:none, "
+            + "and the bundled D8 runtime. ECJ compiles against the wrapper classpath only; framework jars stay out of ECJ classpath. "
+            + "The executor compiles through BatchCompiler with -proc:none, "
             + "so tool/apt stay bundled for compatibility while ECJ batch + the SourceVersion stub do the work.";
     private String bootJarSource = "unresolved";
     private String wrapperJarSource = "unresolved";
@@ -165,7 +166,7 @@ public class JavaExecutor implements LanguageExecutor {
             String bootClasspath = resolveBootClasspath(context);
             String wrapperClasspath = resolveWrapperClasspath(context);
             String frameworkClasspath = resolveFrameworkClasspath();
-            String compileClasspath = joinClasspaths(wrapperClasspath, frameworkClasspath);
+            String compileClasspath = wrapperClasspath;
             CompilationOutcome compilation = compileSource(
                     sourceFile,
                     classesDir,

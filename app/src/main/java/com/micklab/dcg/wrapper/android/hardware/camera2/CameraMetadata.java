@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2;
 
 public final class CameraMetadata {
-    private final android.hardware.camera2.CameraMetadata real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CameraMetadata(android.hardware.camera2.CameraMetadata real) {
+    private final java.lang.Object real;
+
+    private CameraMetadata(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.CameraMetadata wrap(android.hardware.camera2.CameraMetadata real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraMetadata(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.CameraMetadata(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.CameraMetadata getReal() {
+        return (android.hardware.camera2.CameraMetadata) real;
     }
 
     public android.hardware.camera2.CameraMetadata unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int AUTOMOTIVE_LENS_FACING_EXTERIOR_FRONT = android.hardware.camera2.CameraMetadata.AUTOMOTIVE_LENS_FACING_EXTERIOR_FRONT;

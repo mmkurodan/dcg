@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class Visibility {
-    private final android.opengl.Visibility real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Visibility(android.opengl.Visibility real) {
+    private final java.lang.Object real;
+
+    private Visibility(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.Visibility wrap(android.opengl.Visibility real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.Visibility(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.Visibility(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.Visibility getReal() {
+        return (android.opengl.Visibility) real;
     }
 
     public android.opengl.Visibility unwrap() {
-        return real;
+        return getReal();
     }
 
     public Visibility() {
-        this(new android.opengl.Visibility());
+        this(new android.opengl.Visibility(), (__DcgwBridgeToken) null);
     }
 
     public static void computeBoundingSphere(float[] arg0, int arg1, int arg2, float[] arg3, int arg4) {

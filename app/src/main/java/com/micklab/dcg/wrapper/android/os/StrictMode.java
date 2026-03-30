@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class StrictMode {
-    private final android.os.StrictMode real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StrictMode(android.os.StrictMode real) {
+    private final java.lang.Object real;
+
+    private StrictMode(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.StrictMode wrap(android.os.StrictMode real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.StrictMode getReal() {
+        return (android.os.StrictMode) real;
     }
 
     public android.os.StrictMode unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy allowThreadDiskReads() {
@@ -49,18 +56,25 @@ public final class StrictMode {
     }
 
     public static final class OnThreadViolationListener {
-        private final android.os.StrictMode.OnThreadViolationListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnThreadViolationListener(android.os.StrictMode.OnThreadViolationListener real) {
+        private final java.lang.Object real;
+
+        private OnThreadViolationListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.StrictMode.OnThreadViolationListener wrap(android.os.StrictMode.OnThreadViolationListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.OnThreadViolationListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.OnThreadViolationListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.StrictMode.OnThreadViolationListener getReal() {
+            return (android.os.StrictMode.OnThreadViolationListener) real;
         }
 
         public android.os.StrictMode.OnThreadViolationListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onThreadViolation(com.micklab.dcg.wrapper.android.os.strictmode.Violation arg0) {
@@ -69,18 +83,25 @@ public final class StrictMode {
 
     }
     public static final class OnVmViolationListener {
-        private final android.os.StrictMode.OnVmViolationListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnVmViolationListener(android.os.StrictMode.OnVmViolationListener real) {
+        private final java.lang.Object real;
+
+        private OnVmViolationListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.StrictMode.OnVmViolationListener wrap(android.os.StrictMode.OnVmViolationListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.OnVmViolationListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.OnVmViolationListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.StrictMode.OnVmViolationListener getReal() {
+            return (android.os.StrictMode.OnVmViolationListener) real;
         }
 
         public android.os.StrictMode.OnVmViolationListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onVmViolation(com.micklab.dcg.wrapper.android.os.strictmode.Violation arg0) {
@@ -89,18 +110,25 @@ public final class StrictMode {
 
     }
     public static final class ThreadPolicy {
-        private final android.os.StrictMode.ThreadPolicy real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ThreadPolicy(android.os.StrictMode.ThreadPolicy real) {
+        private final java.lang.Object real;
+
+        private ThreadPolicy(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy wrap(android.os.StrictMode.ThreadPolicy real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.StrictMode.ThreadPolicy getReal() {
+            return (android.os.StrictMode.ThreadPolicy) real;
         }
 
         public android.os.StrictMode.ThreadPolicy unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String toString() {
@@ -109,18 +137,25 @@ public final class StrictMode {
 
 
         public static final class Builder {
-            private final android.os.StrictMode.ThreadPolicy.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.os.StrictMode.ThreadPolicy.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy.Builder wrap(android.os.StrictMode.ThreadPolicy.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.ThreadPolicy.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.os.StrictMode.ThreadPolicy.Builder getReal() {
+                return (android.os.StrictMode.ThreadPolicy.Builder) real;
             }
 
             public android.os.StrictMode.ThreadPolicy.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
@@ -230,18 +265,25 @@ public final class StrictMode {
         }
     }
     public static final class VmPolicy {
-        private final android.os.StrictMode.VmPolicy real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VmPolicy(android.os.StrictMode.VmPolicy real) {
+        private final java.lang.Object real;
+
+        private VmPolicy(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy wrap(android.os.StrictMode.VmPolicy real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.StrictMode.VmPolicy getReal() {
+            return (android.os.StrictMode.VmPolicy) real;
         }
 
         public android.os.StrictMode.VmPolicy unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String toString() {
@@ -250,18 +292,25 @@ public final class StrictMode {
 
 
         public static final class Builder {
-            private final android.os.StrictMode.VmPolicy.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.os.StrictMode.VmPolicy.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder wrap(android.os.StrictMode.VmPolicy.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.os.StrictMode.VmPolicy.Builder getReal() {
+                return (android.os.StrictMode.VmPolicy.Builder) real;
             }
 
             public android.os.StrictMode.VmPolicy.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {

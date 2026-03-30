@@ -2,138 +2,145 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class MessagePattern {
-    private final android.icu.text.MessagePattern real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MessagePattern(android.icu.text.MessagePattern real) {
+    private final java.lang.Object real;
+
+    private MessagePattern(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern wrap(android.icu.text.MessagePattern real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.MessagePattern getReal() {
+        return (android.icu.text.MessagePattern) real;
     }
 
     public android.icu.text.MessagePattern unwrap() {
-        return real;
+        return getReal();
     }
 
     public MessagePattern() {
-        this(new android.icu.text.MessagePattern());
+        this(new android.icu.text.MessagePattern(), (__DcgwBridgeToken) null);
     }
 
     public MessagePattern(java.lang.String arg0) {
-        this(new android.icu.text.MessagePattern(arg0));
+        this(new android.icu.text.MessagePattern(arg0), (__DcgwBridgeToken) null);
     }
 
     public MessagePattern(com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode arg0) {
-        this(new android.icu.text.MessagePattern(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.text.MessagePattern(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public java.lang.String autoQuoteApostropheDeep() {
-        return real.autoQuoteApostropheDeep();
+        return ((android.icu.text.MessagePattern) real).autoQuoteApostropheDeep();
     }
 
     public void clear() {
-        real.clear();
+        ((android.icu.text.MessagePattern) real).clear();
     }
 
     public void clearPatternAndSetApostropheMode(com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode arg0) {
-        real.clearPatternAndSetApostropheMode(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.MessagePattern) real).clearPatternAndSetApostropheMode(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.MessagePattern) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).cloneAsThawed());
     }
 
     public int countParts() {
-        return real.countParts();
+        return ((android.icu.text.MessagePattern) real).countParts();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.MessagePattern) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern freeze() {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).freeze());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode getApostropheMode() {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode.wrap(real.getApostropheMode());
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode.wrap(((android.icu.text.MessagePattern) real).getApostropheMode());
     }
 
     public int getLimitPartIndex(int arg0) {
-        return real.getLimitPartIndex(arg0);
+        return ((android.icu.text.MessagePattern) real).getLimitPartIndex(arg0);
     }
 
     public double getNumericValue(com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part arg0) {
-        return real.getNumericValue(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.text.MessagePattern) real).getNumericValue(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part getPart(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.wrap(real.getPart(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.wrap(((android.icu.text.MessagePattern) real).getPart(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type getPartType(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type.wrap(real.getPartType(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type.wrap(((android.icu.text.MessagePattern) real).getPartType(arg0));
     }
 
     public int getPatternIndex(int arg0) {
-        return real.getPatternIndex(arg0);
+        return ((android.icu.text.MessagePattern) real).getPatternIndex(arg0);
     }
 
     public java.lang.String getPatternString() {
-        return real.getPatternString();
+        return ((android.icu.text.MessagePattern) real).getPatternString();
     }
 
     public double getPluralOffset(int arg0) {
-        return real.getPluralOffset(arg0);
+        return ((android.icu.text.MessagePattern) real).getPluralOffset(arg0);
     }
 
     public java.lang.String getSubstring(com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part arg0) {
-        return real.getSubstring(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.text.MessagePattern) real).getSubstring(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean hasNamedArguments() {
-        return real.hasNamedArguments();
+        return ((android.icu.text.MessagePattern) real).hasNamedArguments();
     }
 
     public boolean hasNumberedArguments() {
-        return real.hasNumberedArguments();
+        return ((android.icu.text.MessagePattern) real).hasNumberedArguments();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.MessagePattern) real).hashCode();
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.text.MessagePattern) real).isFrozen();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern parse(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.parse(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).parse(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern parseChoiceStyle(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.parseChoiceStyle(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).parseChoiceStyle(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern parsePluralStyle(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.parsePluralStyle(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).parsePluralStyle(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.MessagePattern parseSelectStyle(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(real.parseSelectStyle(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.wrap(((android.icu.text.MessagePattern) real).parseSelectStyle(arg0));
     }
 
     public boolean partSubstringMatches(com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part arg0, java.lang.String arg1) {
-        return real.partSubstringMatches(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.icu.text.MessagePattern) real).partSubstringMatches(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.text.MessagePattern) real).toString();
     }
 
     public static int validateArgumentName(java.lang.String arg0) {
@@ -145,18 +152,25 @@ public final class MessagePattern {
     public static final double NO_NUMERIC_VALUE = android.icu.text.MessagePattern.NO_NUMERIC_VALUE;
 
     public static final class ApostropheMode {
-        private final android.icu.text.MessagePattern.ApostropheMode real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ApostropheMode(android.icu.text.MessagePattern.ApostropheMode real) {
+        private final java.lang.Object real;
+
+        private ApostropheMode(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode wrap(android.icu.text.MessagePattern.ApostropheMode real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.MessagePattern.ApostropheMode getReal() {
+            return (android.icu.text.MessagePattern.ApostropheMode) real;
         }
 
         public android.icu.text.MessagePattern.ApostropheMode unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ApostropheMode valueOf(java.lang.String arg0) {
@@ -172,22 +186,29 @@ public final class MessagePattern {
 
     }
     public static final class ArgType {
-        private final android.icu.text.MessagePattern.ArgType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ArgType(android.icu.text.MessagePattern.ArgType real) {
+        private final java.lang.Object real;
+
+        private ArgType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType wrap(android.icu.text.MessagePattern.ArgType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.MessagePattern.ArgType getReal() {
+            return (android.icu.text.MessagePattern.ArgType) real;
         }
 
         public android.icu.text.MessagePattern.ArgType unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean hasPluralStyle() {
-            return real.hasPluralStyle();
+            return ((android.icu.text.MessagePattern.ArgType) real).hasPluralStyle();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType valueOf(java.lang.String arg0) {
@@ -207,73 +228,87 @@ public final class MessagePattern {
 
     }
     public static final class Part {
-        private final android.icu.text.MessagePattern.Part real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Part(android.icu.text.MessagePattern.Part real) {
+        private final java.lang.Object real;
+
+        private Part(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part wrap(android.icu.text.MessagePattern.Part real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.MessagePattern.Part getReal() {
+            return (android.icu.text.MessagePattern.Part) real;
         }
 
         public android.icu.text.MessagePattern.Part unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.icu.text.MessagePattern.Part) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType getArgType() {
-            return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType.wrap(real.getArgType());
+            return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.ArgType.wrap(((android.icu.text.MessagePattern.Part) real).getArgType());
         }
 
         public int getIndex() {
-            return real.getIndex();
+            return ((android.icu.text.MessagePattern.Part) real).getIndex();
         }
 
         public int getLength() {
-            return real.getLength();
+            return ((android.icu.text.MessagePattern.Part) real).getLength();
         }
 
         public int getLimit() {
-            return real.getLimit();
+            return ((android.icu.text.MessagePattern.Part) real).getLimit();
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type getType() {
-            return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type.wrap(real.getType());
+            return com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type.wrap(((android.icu.text.MessagePattern.Part) real).getType());
         }
 
         public int getValue() {
-            return real.getValue();
+            return ((android.icu.text.MessagePattern.Part) real).getValue();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.icu.text.MessagePattern.Part) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.icu.text.MessagePattern.Part) real).toString();
         }
 
         public static final class Type {
-            private final android.icu.text.MessagePattern.Part.Type real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Type(android.icu.text.MessagePattern.Part.Type real) {
+            private final java.lang.Object real;
+
+            private Type(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type wrap(android.icu.text.MessagePattern.Part.Type real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.icu.text.MessagePattern.Part.Type getReal() {
+                return (android.icu.text.MessagePattern.Part.Type) real;
             }
 
             public android.icu.text.MessagePattern.Part.Type unwrap() {
-                return real;
+                return getReal();
             }
 
             public boolean hasNumericValue() {
-                return real.hasNumericValue();
+                return ((android.icu.text.MessagePattern.Part.Type) real).hasNumericValue();
             }
 
             public static com.micklab.dcg.wrapper.android.icu.text.MessagePattern.Part.Type valueOf(java.lang.String arg0) {

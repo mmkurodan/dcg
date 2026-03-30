@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class PublishDiscoverySession {
-    private final android.net.wifi.aware.PublishDiscoverySession real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PublishDiscoverySession(android.net.wifi.aware.PublishDiscoverySession real) {
+    private final java.lang.Object real;
+
+    private PublishDiscoverySession(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.PublishDiscoverySession wrap(android.net.wifi.aware.PublishDiscoverySession real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.PublishDiscoverySession(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.PublishDiscoverySession(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.PublishDiscoverySession getReal() {
+        return (android.net.wifi.aware.PublishDiscoverySession) real;
     }
 
     public android.net.wifi.aware.PublishDiscoverySession unwrap() {
-        return real;
+        return getReal();
     }
 
     public void updatePublish(com.micklab.dcg.wrapper.android.net.wifi.aware.PublishConfig arg0) {

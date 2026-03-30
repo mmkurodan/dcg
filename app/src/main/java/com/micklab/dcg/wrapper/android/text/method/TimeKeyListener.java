@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.text.method;
 
 public final class TimeKeyListener {
-    private final android.text.method.TimeKeyListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TimeKeyListener(android.text.method.TimeKeyListener real) {
+    private final java.lang.Object real;
+
+    private TimeKeyListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.method.TimeKeyListener wrap(android.text.method.TimeKeyListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.method.TimeKeyListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.method.TimeKeyListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.method.TimeKeyListener getReal() {
+        return (android.text.method.TimeKeyListener) real;
     }
 
     public android.text.method.TimeKeyListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public TimeKeyListener() {
-        this(new android.text.method.TimeKeyListener());
+        this(new android.text.method.TimeKeyListener(), (__DcgwBridgeToken) null);
     }
 
     public TimeKeyListener(java.util.Locale arg0) {
-        this(new android.text.method.TimeKeyListener(arg0));
+        this(new android.text.method.TimeKeyListener(arg0), (__DcgwBridgeToken) null);
     }
 
     public int getInputType() {
-        return real.getInputType();
+        return ((android.text.method.TimeKeyListener) real).getInputType();
     }
 
     public static com.micklab.dcg.wrapper.android.text.method.TimeKeyListener getInstance() {

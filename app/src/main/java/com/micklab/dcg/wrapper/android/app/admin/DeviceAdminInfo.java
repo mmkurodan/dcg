@@ -2,86 +2,93 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class DeviceAdminInfo {
-    private final android.app.admin.DeviceAdminInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DeviceAdminInfo(android.app.admin.DeviceAdminInfo real) {
+    private final java.lang.Object real;
+
+    private DeviceAdminInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.DeviceAdminInfo wrap(android.app.admin.DeviceAdminInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DeviceAdminInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.DeviceAdminInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.DeviceAdminInfo getReal() {
+        return (android.app.admin.DeviceAdminInfo) real;
     }
 
     public android.app.admin.DeviceAdminInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public DeviceAdminInfo(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.pm.ResolveInfo arg1) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
-        this(new android.app.admin.DeviceAdminInfo(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.app.admin.DeviceAdminInfo(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.admin.DeviceAdminInfo) real).describeContents();
     }
 
     public void dump(com.micklab.dcg.wrapper.android.util.Printer arg0, java.lang.String arg1) {
-        real.dump(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DeviceAdminInfo) real).dump(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ActivityInfo getActivityInfo() {
-        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(real.getActivityInfo());
+        return com.micklab.dcg.wrapper.android.content.pm.ActivityInfo.wrap(((android.app.admin.DeviceAdminInfo) real).getActivityInfo());
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName getComponent() {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.getComponent());
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.app.admin.DeviceAdminInfo) real).getComponent());
     }
 
     public int getHeadlessDeviceOwnerMode() {
-        return real.getHeadlessDeviceOwnerMode();
+        return ((android.app.admin.DeviceAdminInfo) real).getHeadlessDeviceOwnerMode();
     }
 
     public java.lang.String getPackageName() {
-        return real.getPackageName();
+        return ((android.app.admin.DeviceAdminInfo) real).getPackageName();
     }
 
     public java.lang.String getReceiverName() {
-        return real.getReceiverName();
+        return ((android.app.admin.DeviceAdminInfo) real).getReceiverName();
     }
 
     public java.lang.String getTagForPolicy(int arg0) {
-        return real.getTagForPolicy(arg0);
+        return ((android.app.admin.DeviceAdminInfo) real).getTagForPolicy(arg0);
     }
 
     public boolean isVisible() {
-        return real.isVisible();
+        return ((android.app.admin.DeviceAdminInfo) real).isVisible();
     }
 
     public java.lang.CharSequence loadDescription(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) throws android.content.res.Resources.NotFoundException {
-        return real.loadDescription(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DeviceAdminInfo) real).loadDescription(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable loadIcon(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.loadIcon(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.app.admin.DeviceAdminInfo) real).loadIcon(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.CharSequence loadLabel(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return real.loadLabel(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.admin.DeviceAdminInfo) real).loadLabel(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean supportsTransferOwnership() {
-        return real.supportsTransferOwnership();
+        return ((android.app.admin.DeviceAdminInfo) real).supportsTransferOwnership();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.admin.DeviceAdminInfo) real).toString();
     }
 
     public boolean usesPolicy(int arg0) {
-        return real.usesPolicy(arg0);
+        return ((android.app.admin.DeviceAdminInfo) real).usesPolicy(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.DeviceAdminInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int HEADLESS_DEVICE_OWNER_MODE_AFFILIATED = android.app.admin.DeviceAdminInfo.HEADLESS_DEVICE_OWNER_MODE_AFFILIATED;

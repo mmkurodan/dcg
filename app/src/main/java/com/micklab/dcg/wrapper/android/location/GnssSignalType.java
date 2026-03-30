@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.location;
 
 public final class GnssSignalType {
-    private final android.location.GnssSignalType real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GnssSignalType(android.location.GnssSignalType real) {
+    private final java.lang.Object real;
+
+    private GnssSignalType(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.location.GnssSignalType wrap(android.location.GnssSignalType real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssSignalType(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.location.GnssSignalType(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.location.GnssSignalType getReal() {
+        return (android.location.GnssSignalType) real;
     }
 
     public android.location.GnssSignalType unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.location.GnssSignalType create(int arg0, double arg1, java.lang.String arg2) {
@@ -21,35 +28,35 @@ public final class GnssSignalType {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.location.GnssSignalType) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.location.GnssSignalType) real).equals(arg0);
     }
 
     public double getCarrierFrequencyHz() {
-        return real.getCarrierFrequencyHz();
+        return ((android.location.GnssSignalType) real).getCarrierFrequencyHz();
     }
 
     public java.lang.String getCodeType() {
-        return real.getCodeType();
+        return ((android.location.GnssSignalType) real).getCodeType();
     }
 
     public int getConstellationType() {
-        return real.getConstellationType();
+        return ((android.location.GnssSignalType) real).getConstellationType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.location.GnssSignalType) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.location.GnssSignalType) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.location.GnssSignalType) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

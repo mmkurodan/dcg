@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteDiskIOException {
-    private final android.database.sqlite.SQLiteDiskIOException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteDiskIOException(android.database.sqlite.SQLiteDiskIOException real) {
+    private final java.lang.Object real;
+
+    private SQLiteDiskIOException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDiskIOException wrap(android.database.sqlite.SQLiteDiskIOException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDiskIOException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDiskIOException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteDiskIOException getReal() {
+        return (android.database.sqlite.SQLiteDiskIOException) real;
     }
 
     public android.database.sqlite.SQLiteDiskIOException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteDiskIOException() {

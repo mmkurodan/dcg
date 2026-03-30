@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class CursorIndexOutOfBoundsException {
-    private final android.database.CursorIndexOutOfBoundsException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CursorIndexOutOfBoundsException(android.database.CursorIndexOutOfBoundsException real) {
+    private final java.lang.Object real;
+
+    private CursorIndexOutOfBoundsException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.CursorIndexOutOfBoundsException wrap(android.database.CursorIndexOutOfBoundsException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorIndexOutOfBoundsException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CursorIndexOutOfBoundsException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.CursorIndexOutOfBoundsException getReal() {
+        return (android.database.CursorIndexOutOfBoundsException) real;
     }
 
     public android.database.CursorIndexOutOfBoundsException unwrap() {
-        return real;
+        return getReal();
     }
 
     public CursorIndexOutOfBoundsException(java.lang.String arg0) {

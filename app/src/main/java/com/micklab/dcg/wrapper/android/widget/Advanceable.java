@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class Advanceable {
-    private final android.widget.Advanceable real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Advanceable(android.widget.Advanceable real) {
+    private final java.lang.Object real;
+
+    private Advanceable(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.Advanceable wrap(android.widget.Advanceable real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Advanceable(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Advanceable(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.Advanceable getReal() {
+        return (android.widget.Advanceable) real;
     }
 
     public android.widget.Advanceable unwrap() {
-        return real;
+        return getReal();
     }
 
     public void advance() {
-        real.advance();
+        ((android.widget.Advanceable) real).advance();
     }
 
     public void fyiWillBeAdvancedByHostKThx() {
-        real.fyiWillBeAdvancedByHostKThx();
+        ((android.widget.Advanceable) real).fyiWillBeAdvancedByHostKThx();
     }
 
 }

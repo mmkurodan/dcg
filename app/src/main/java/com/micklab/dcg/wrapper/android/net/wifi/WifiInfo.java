@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiInfo {
-    private final android.net.wifi.WifiInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiInfo(android.net.wifi.WifiInfo real) {
+    private final java.lang.Object real;
+
+    private WifiInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiInfo wrap(android.net.wifi.WifiInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiInfo getReal() {
+        return (android.net.wifi.WifiInfo) real;
     }
 
     public android.net.wifi.WifiInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -142,18 +149,25 @@ public final class WifiInfo {
 
 
     public static final class Builder {
-        private final android.net.wifi.WifiInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.WifiInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiInfo.Builder wrap(android.net.wifi.WifiInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiInfo.Builder getReal() {
+            return (android.net.wifi.WifiInfo.Builder) real;
         }
 
         public android.net.wifi.WifiInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class PatternMatcher {
-    private final android.os.PatternMatcher real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PatternMatcher(android.os.PatternMatcher real) {
+    private final java.lang.Object real;
+
+    private PatternMatcher(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.PatternMatcher wrap(android.os.PatternMatcher real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PatternMatcher(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PatternMatcher(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.PatternMatcher getReal() {
+        return (android.os.PatternMatcher) real;
     }
 
     public android.os.PatternMatcher unwrap() {
-        return real;
+        return getReal();
     }
 
     public PatternMatcher(com.micklab.dcg.wrapper.android.os.Parcel arg0) {

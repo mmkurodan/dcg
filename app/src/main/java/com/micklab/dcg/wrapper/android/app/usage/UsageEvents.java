@@ -2,86 +2,100 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class UsageEvents {
-    private final android.app.usage.UsageEvents real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UsageEvents(android.app.usage.UsageEvents real) {
+    private final java.lang.Object real;
+
+    private UsageEvents(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.UsageEvents wrap(android.app.usage.UsageEvents real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageEvents(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageEvents(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.UsageEvents getReal() {
+        return (android.app.usage.UsageEvents) real;
     }
 
     public android.app.usage.UsageEvents unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.usage.UsageEvents) real).describeContents();
     }
 
     public boolean getNextEvent(com.micklab.dcg.wrapper.android.app.usage.UsageEvents.Event arg0) {
-        return real.getNextEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.usage.UsageEvents) real).getNextEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean hasNextEvent() {
-        return real.hasNextEvent();
+        return ((android.app.usage.UsageEvents) real).hasNextEvent();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.usage.UsageEvents) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Event {
-        private final android.app.usage.UsageEvents.Event real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Event(android.app.usage.UsageEvents.Event real) {
+        private final java.lang.Object real;
+
+        private Event(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.usage.UsageEvents.Event wrap(android.app.usage.UsageEvents.Event real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageEvents.Event(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.UsageEvents.Event(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.usage.UsageEvents.Event getReal() {
+            return (android.app.usage.UsageEvents.Event) real;
         }
 
         public android.app.usage.UsageEvents.Event unwrap() {
-            return real;
+            return getReal();
         }
 
         public Event() {
-            this(new android.app.usage.UsageEvents.Event());
+            this(new android.app.usage.UsageEvents.Event(), (__DcgwBridgeToken) null);
         }
 
         public int getAppStandbyBucket() {
-            return real.getAppStandbyBucket();
+            return ((android.app.usage.UsageEvents.Event) real).getAppStandbyBucket();
         }
 
         public java.lang.String getClassName() {
-            return real.getClassName();
+            return ((android.app.usage.UsageEvents.Event) real).getClassName();
         }
 
         public com.micklab.dcg.wrapper.android.content.res.Configuration getConfiguration() {
-            return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(real.getConfiguration());
+            return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(((android.app.usage.UsageEvents.Event) real).getConfiguration());
         }
 
         public int getEventType() {
-            return real.getEventType();
+            return ((android.app.usage.UsageEvents.Event) real).getEventType();
         }
 
         public com.micklab.dcg.wrapper.android.os.PersistableBundle getExtras() {
-            return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getExtras());
+            return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.app.usage.UsageEvents.Event) real).getExtras());
         }
 
         public java.lang.String getPackageName() {
-            return real.getPackageName();
+            return ((android.app.usage.UsageEvents.Event) real).getPackageName();
         }
 
         public java.lang.String getShortcutId() {
-            return real.getShortcutId();
+            return ((android.app.usage.UsageEvents.Event) real).getShortcutId();
         }
 
         public long getTimeStamp() {
-            return real.getTimeStamp();
+            return ((android.app.usage.UsageEvents.Event) real).getTimeStamp();
         }
 
         public static final int ACTIVITY_PAUSED = android.app.usage.UsageEvents.Event.ACTIVITY_PAUSED;

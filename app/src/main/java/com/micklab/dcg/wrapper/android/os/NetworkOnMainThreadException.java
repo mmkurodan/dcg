@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class NetworkOnMainThreadException {
-    private final android.os.NetworkOnMainThreadException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkOnMainThreadException(android.os.NetworkOnMainThreadException real) {
+    private final java.lang.Object real;
+
+    private NetworkOnMainThreadException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.NetworkOnMainThreadException wrap(android.os.NetworkOnMainThreadException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.NetworkOnMainThreadException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.NetworkOnMainThreadException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.NetworkOnMainThreadException getReal() {
+        return (android.os.NetworkOnMainThreadException) real;
     }
 
     public android.os.NetworkOnMainThreadException unwrap() {
-        return real;
+        return getReal();
     }
 
     public NetworkOnMainThreadException() {

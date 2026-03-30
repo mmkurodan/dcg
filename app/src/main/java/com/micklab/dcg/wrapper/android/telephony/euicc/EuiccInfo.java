@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.euicc;
 
 public final class EuiccInfo {
-    private final android.telephony.euicc.EuiccInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EuiccInfo(android.telephony.euicc.EuiccInfo real) {
+    private final java.lang.Object real;
+
+    private EuiccInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.euicc.EuiccInfo wrap(android.telephony.euicc.EuiccInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.EuiccInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.EuiccInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.euicc.EuiccInfo getReal() {
+        return (android.telephony.euicc.EuiccInfo) real;
     }
 
     public android.telephony.euicc.EuiccInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public EuiccInfo(java.lang.String arg0) {

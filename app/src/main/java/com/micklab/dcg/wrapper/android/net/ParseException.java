@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class ParseException {
-    private final android.net.ParseException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParseException(android.net.ParseException real) {
+    private final java.lang.Object real;
+
+    private ParseException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ParseException wrap(android.net.ParseException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ParseException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ParseException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ParseException getReal() {
+        return (android.net.ParseException) real;
     }
 
     public android.net.ParseException unwrap() {
-        return real;
+        return getReal();
     }
 
     public ParseException(java.lang.String arg0) {

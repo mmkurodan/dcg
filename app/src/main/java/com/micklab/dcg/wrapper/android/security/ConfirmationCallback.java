@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.security;
 
 public final class ConfirmationCallback {
-    private final android.security.ConfirmationCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConfirmationCallback(android.security.ConfirmationCallback real) {
+    private final java.lang.Object real;
+
+    private ConfirmationCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.ConfirmationCallback wrap(android.security.ConfirmationCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.ConfirmationCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.ConfirmationCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.ConfirmationCallback getReal() {
+        return (android.security.ConfirmationCallback) real;
     }
 
     public android.security.ConfirmationCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onCanceled() {
-        real.onCanceled();
+        ((android.security.ConfirmationCallback) real).onCanceled();
     }
 
     public void onConfirmed(byte[] arg0) {
-        real.onConfirmed(arg0);
+        ((android.security.ConfirmationCallback) real).onConfirmed(arg0);
     }
 
     public void onDismissed() {
-        real.onDismissed();
+        ((android.security.ConfirmationCallback) real).onDismissed();
     }
 
     public void onError(java.lang.Throwable arg0) {
-        real.onError(arg0);
+        ((android.security.ConfirmationCallback) real).onError(arg0);
     }
 
 }

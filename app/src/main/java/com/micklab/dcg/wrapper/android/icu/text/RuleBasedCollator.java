@@ -2,202 +2,209 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class RuleBasedCollator {
-    private final android.icu.text.RuleBasedCollator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RuleBasedCollator(android.icu.text.RuleBasedCollator real) {
+    private final java.lang.Object real;
+
+    private RuleBasedCollator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator wrap(android.icu.text.RuleBasedCollator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.RuleBasedCollator getReal() {
+        return (android.icu.text.RuleBasedCollator) real;
     }
 
     public android.icu.text.RuleBasedCollator unwrap() {
-        return real;
+        return getReal();
     }
 
     public RuleBasedCollator(java.lang.String arg0) throws java.lang.Exception {
-        this(new android.icu.text.RuleBasedCollator(arg0));
+        this(new android.icu.text.RuleBasedCollator(arg0), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
-        return real.clone();
+        return ((android.icu.text.RuleBasedCollator) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator cloneAsThawed() {
-        return com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator.wrap(real.cloneAsThawed());
+        return com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator.wrap(((android.icu.text.RuleBasedCollator) real).cloneAsThawed());
     }
 
     public int compare(java.lang.String arg0, java.lang.String arg1) {
-        return real.compare(arg0, arg1);
+        return ((android.icu.text.RuleBasedCollator) real).compare(arg0, arg1);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.RuleBasedCollator) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Collator freeze() {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(real.freeze());
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(((android.icu.text.RuleBasedCollator) real).freeze());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(java.text.CharacterIterator arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(real.getCollationElementIterator(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(real.getCollationElementIterator(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(real.getCollationElementIterator(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationKey getCollationKey(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationKey.wrap(real.getCollationKey(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.CollationKey.wrap(((android.icu.text.RuleBasedCollator) real).getCollationKey(arg0));
     }
 
     public void getContractionsAndExpansions(com.micklab.dcg.wrapper.android.icu.text.UnicodeSet arg0, com.micklab.dcg.wrapper.android.icu.text.UnicodeSet arg1, boolean arg2) throws java.lang.Exception {
-        real.getContractionsAndExpansions(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.icu.text.RuleBasedCollator) real).getContractionsAndExpansions(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int getDecomposition() {
-        return real.getDecomposition();
+        return ((android.icu.text.RuleBasedCollator) real).getDecomposition();
     }
 
     public int getMaxVariable() {
-        return real.getMaxVariable();
+        return ((android.icu.text.RuleBasedCollator) real).getMaxVariable();
     }
 
     public boolean getNumericCollation() {
-        return real.getNumericCollation();
+        return ((android.icu.text.RuleBasedCollator) real).getNumericCollation();
     }
 
     public int[] getReorderCodes() {
-        return real.getReorderCodes();
+        return ((android.icu.text.RuleBasedCollator) real).getReorderCodes();
     }
 
     public java.lang.String getRules() {
-        return real.getRules();
+        return ((android.icu.text.RuleBasedCollator) real).getRules();
     }
 
     public java.lang.String getRules(boolean arg0) {
-        return real.getRules(arg0);
+        return ((android.icu.text.RuleBasedCollator) real).getRules(arg0);
     }
 
     public int getStrength() {
-        return real.getStrength();
+        return ((android.icu.text.RuleBasedCollator) real).getStrength();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet getTailoredSet() {
-        return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(real.getTailoredSet());
+        return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.RuleBasedCollator) real).getTailoredSet());
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.VersionInfo getUCAVersion() {
-        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(real.getUCAVersion());
+        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(((android.icu.text.RuleBasedCollator) real).getUCAVersion());
     }
 
     public int getVariableTop() {
-        return real.getVariableTop();
+        return ((android.icu.text.RuleBasedCollator) real).getVariableTop();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.VersionInfo getVersion() {
-        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(real.getVersion());
+        return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(((android.icu.text.RuleBasedCollator) real).getVersion());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.RuleBasedCollator) real).hashCode();
     }
 
     public boolean isAlternateHandlingShifted() {
-        return real.isAlternateHandlingShifted();
+        return ((android.icu.text.RuleBasedCollator) real).isAlternateHandlingShifted();
     }
 
     public boolean isCaseLevel() {
-        return real.isCaseLevel();
+        return ((android.icu.text.RuleBasedCollator) real).isCaseLevel();
     }
 
     public boolean isFrenchCollation() {
-        return real.isFrenchCollation();
+        return ((android.icu.text.RuleBasedCollator) real).isFrenchCollation();
     }
 
     public boolean isFrozen() {
-        return real.isFrozen();
+        return ((android.icu.text.RuleBasedCollator) real).isFrozen();
     }
 
     public boolean isLowerCaseFirst() {
-        return real.isLowerCaseFirst();
+        return ((android.icu.text.RuleBasedCollator) real).isLowerCaseFirst();
     }
 
     public boolean isUpperCaseFirst() {
-        return real.isUpperCaseFirst();
+        return ((android.icu.text.RuleBasedCollator) real).isUpperCaseFirst();
     }
 
     public void setAlternateHandlingDefault() {
-        real.setAlternateHandlingDefault();
+        ((android.icu.text.RuleBasedCollator) real).setAlternateHandlingDefault();
     }
 
     public void setAlternateHandlingShifted(boolean arg0) {
-        real.setAlternateHandlingShifted(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setAlternateHandlingShifted(arg0);
     }
 
     public void setCaseFirstDefault() {
-        real.setCaseFirstDefault();
+        ((android.icu.text.RuleBasedCollator) real).setCaseFirstDefault();
     }
 
     public void setCaseLevel(boolean arg0) {
-        real.setCaseLevel(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setCaseLevel(arg0);
     }
 
     public void setCaseLevelDefault() {
-        real.setCaseLevelDefault();
+        ((android.icu.text.RuleBasedCollator) real).setCaseLevelDefault();
     }
 
     public void setDecomposition(int arg0) {
-        real.setDecomposition(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setDecomposition(arg0);
     }
 
     public void setDecompositionDefault() {
-        real.setDecompositionDefault();
+        ((android.icu.text.RuleBasedCollator) real).setDecompositionDefault();
     }
 
     public void setFrenchCollation(boolean arg0) {
-        real.setFrenchCollation(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setFrenchCollation(arg0);
     }
 
     public void setFrenchCollationDefault() {
-        real.setFrenchCollationDefault();
+        ((android.icu.text.RuleBasedCollator) real).setFrenchCollationDefault();
     }
 
     public void setLowerCaseFirst(boolean arg0) {
-        real.setLowerCaseFirst(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setLowerCaseFirst(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator setMaxVariable(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator.wrap(real.setMaxVariable(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator.wrap(((android.icu.text.RuleBasedCollator) real).setMaxVariable(arg0));
     }
 
     public void setNumericCollation(boolean arg0) {
-        real.setNumericCollation(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setNumericCollation(arg0);
     }
 
     public void setNumericCollationDefault() {
-        real.setNumericCollationDefault();
+        ((android.icu.text.RuleBasedCollator) real).setNumericCollationDefault();
     }
 
     public void setReorderCodes(int... arg0) {
-        real.setReorderCodes(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setReorderCodes(arg0);
     }
 
     public void setStrength(int arg0) {
-        real.setStrength(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setStrength(arg0);
     }
 
     public void setStrengthDefault() {
-        real.setStrengthDefault();
+        ((android.icu.text.RuleBasedCollator) real).setStrengthDefault();
     }
 
     public void setUpperCaseFirst(boolean arg0) {
-        real.setUpperCaseFirst(arg0);
+        ((android.icu.text.RuleBasedCollator) real).setUpperCaseFirst(arg0);
     }
 
 }

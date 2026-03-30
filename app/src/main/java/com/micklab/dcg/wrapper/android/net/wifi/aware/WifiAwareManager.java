@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class WifiAwareManager {
-    private final android.net.wifi.aware.WifiAwareManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiAwareManager(android.net.wifi.aware.WifiAwareManager real) {
+    private final java.lang.Object real;
+
+    private WifiAwareManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareManager wrap(android.net.wifi.aware.WifiAwareManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.WifiAwareManager getReal() {
+        return (android.net.wifi.aware.WifiAwareManager) real;
     }
 
     public android.net.wifi.aware.WifiAwareManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void attach(com.micklab.dcg.wrapper.android.net.wifi.aware.AttachCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {

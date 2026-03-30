@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class SaProposal {
-    private final android.net.ipsec.ike.SaProposal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SaProposal(android.net.ipsec.ike.SaProposal real) {
+    private final java.lang.Object real;
+
+    private SaProposal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.SaProposal wrap(android.net.ipsec.ike.SaProposal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.SaProposal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.SaProposal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.SaProposal getReal() {
+        return (android.net.ipsec.ike.SaProposal) real;
     }
 
     public android.net.ipsec.ike.SaProposal unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

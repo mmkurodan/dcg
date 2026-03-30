@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class MimeTypeMap {
-    private final android.webkit.MimeTypeMap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MimeTypeMap(android.webkit.MimeTypeMap real) {
+    private final java.lang.Object real;
+
+    private MimeTypeMap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.MimeTypeMap wrap(android.webkit.MimeTypeMap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.MimeTypeMap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.MimeTypeMap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.MimeTypeMap getReal() {
+        return (android.webkit.MimeTypeMap) real;
     }
 
     public android.webkit.MimeTypeMap unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getExtensionFromMimeType(java.lang.String arg0) {
-        return real.getExtensionFromMimeType(arg0);
+        return ((android.webkit.MimeTypeMap) real).getExtensionFromMimeType(arg0);
     }
 
     public static java.lang.String getFileExtensionFromUrl(java.lang.String arg0) {
@@ -25,7 +32,7 @@ public final class MimeTypeMap {
     }
 
     public java.lang.String getMimeTypeFromExtension(java.lang.String arg0) {
-        return real.getMimeTypeFromExtension(arg0);
+        return ((android.webkit.MimeTypeMap) real).getMimeTypeFromExtension(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.MimeTypeMap getSingleton() {
@@ -33,11 +40,11 @@ public final class MimeTypeMap {
     }
 
     public boolean hasExtension(java.lang.String arg0) {
-        return real.hasExtension(arg0);
+        return ((android.webkit.MimeTypeMap) real).hasExtension(arg0);
     }
 
     public boolean hasMimeType(java.lang.String arg0) {
-        return real.hasMimeType(arg0);
+        return ((android.webkit.MimeTypeMap) real).hasMimeType(arg0);
     }
 
 }

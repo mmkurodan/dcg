@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiAvailableChannel {
-    private final android.net.wifi.WifiAvailableChannel real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiAvailableChannel(android.net.wifi.WifiAvailableChannel real) {
+    private final java.lang.Object real;
+
+    private WifiAvailableChannel(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiAvailableChannel wrap(android.net.wifi.WifiAvailableChannel real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiAvailableChannel(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiAvailableChannel(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiAvailableChannel getReal() {
+        return (android.net.wifi.WifiAvailableChannel) real;
     }
 
     public android.net.wifi.WifiAvailableChannel unwrap() {
-        return real;
+        return getReal();
     }
 
     public WifiAvailableChannel(int arg0, int arg1) {

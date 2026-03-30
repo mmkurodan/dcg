@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm.verify.domain;
 
 public final class DomainVerificationUserState {
-    private final android.content.pm.verify.domain.DomainVerificationUserState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DomainVerificationUserState(android.content.pm.verify.domain.DomainVerificationUserState real) {
+    private final java.lang.Object real;
+
+    private DomainVerificationUserState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationUserState wrap(android.content.pm.verify.domain.DomainVerificationUserState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationUserState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.verify.domain.DomainVerificationUserState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.verify.domain.DomainVerificationUserState getReal() {
+        return (android.content.pm.verify.domain.DomainVerificationUserState) real;
     }
 
     public android.content.pm.verify.domain.DomainVerificationUserState unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

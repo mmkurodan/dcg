@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.graphics.pdf;
 
 public final class RenderParams {
-    private final android.graphics.pdf.RenderParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RenderParams(android.graphics.pdf.RenderParams real) {
+    private final java.lang.Object real;
+
+    private RenderParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams wrap(android.graphics.pdf.RenderParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.pdf.RenderParams getReal() {
+        return (android.graphics.pdf.RenderParams) real;
     }
 
     public android.graphics.pdf.RenderParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getRenderFlags() {
-        return real.getRenderFlags();
+        return ((android.graphics.pdf.RenderParams) real).getRenderFlags();
     }
 
     public int getRenderMode() {
-        return real.getRenderMode();
+        return ((android.graphics.pdf.RenderParams) real).getRenderMode();
     }
 
     public static final int FLAG_RENDER_HIGHLIGHT_ANNOTATIONS = android.graphics.pdf.RenderParams.FLAG_RENDER_HIGHLIGHT_ANNOTATIONS;
@@ -30,34 +37,41 @@ public final class RenderParams {
     public static final int RENDER_MODE_FOR_PRINT = android.graphics.pdf.RenderParams.RENDER_MODE_FOR_PRINT;
 
     public static final class Builder {
-        private final android.graphics.pdf.RenderParams.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.graphics.pdf.RenderParams.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder wrap(android.graphics.pdf.RenderParams.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.pdf.RenderParams.Builder getReal() {
+            return (android.graphics.pdf.RenderParams.Builder) real;
         }
 
         public android.graphics.pdf.RenderParams.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {
-            this(new android.graphics.pdf.RenderParams.Builder(arg0));
+            this(new android.graphics.pdf.RenderParams.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams build() {
-            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.wrap(((android.graphics.pdf.RenderParams.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder setRenderFlags(int arg0) {
-            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder.wrap(real.setRenderFlags(arg0));
+            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder.wrap(((android.graphics.pdf.RenderParams.Builder) real).setRenderFlags(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder setRenderFlags(int arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder.wrap(real.setRenderFlags(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.graphics.pdf.RenderParams.Builder.wrap(((android.graphics.pdf.RenderParams.Builder) real).setRenderFlags(arg0, arg1));
         }
 
     }

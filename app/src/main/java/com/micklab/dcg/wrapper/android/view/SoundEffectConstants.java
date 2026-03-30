@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class SoundEffectConstants {
-    private final android.view.SoundEffectConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SoundEffectConstants(android.view.SoundEffectConstants real) {
+    private final java.lang.Object real;
+
+    private SoundEffectConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.SoundEffectConstants wrap(android.view.SoundEffectConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.SoundEffectConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.SoundEffectConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.SoundEffectConstants getReal() {
+        return (android.view.SoundEffectConstants) real;
     }
 
     public android.view.SoundEffectConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int getConstantForFocusDirection(int arg0, boolean arg1) {

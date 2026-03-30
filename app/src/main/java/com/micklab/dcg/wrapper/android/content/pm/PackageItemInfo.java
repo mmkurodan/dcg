@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PackageItemInfo {
-    private final android.content.pm.PackageItemInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PackageItemInfo(android.content.pm.PackageItemInfo real) {
+    private final java.lang.Object real;
+
+    private PackageItemInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo wrap(android.content.pm.PackageItemInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PackageItemInfo getReal() {
+        return (android.content.pm.PackageItemInfo) real;
     }
 
     public android.content.pm.PackageItemInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public PackageItemInfo() {
@@ -54,18 +61,25 @@ public final class PackageItemInfo {
 
 
     public static final class DisplayNameComparator {
-        private final android.content.pm.PackageItemInfo.DisplayNameComparator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DisplayNameComparator(android.content.pm.PackageItemInfo.DisplayNameComparator real) {
+        private final java.lang.Object real;
+
+        private DisplayNameComparator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo.DisplayNameComparator wrap(android.content.pm.PackageItemInfo.DisplayNameComparator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo.DisplayNameComparator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageItemInfo.DisplayNameComparator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageItemInfo.DisplayNameComparator getReal() {
+            return (android.content.pm.PackageItemInfo.DisplayNameComparator) real;
         }
 
         public android.content.pm.PackageItemInfo.DisplayNameComparator unwrap() {
-            return real;
+            return getReal();
         }
 
         public DisplayNameComparator(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {

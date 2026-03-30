@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class PhoneNumberFormattingTextWatcher {
-    private final android.telephony.PhoneNumberFormattingTextWatcher real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PhoneNumberFormattingTextWatcher(android.telephony.PhoneNumberFormattingTextWatcher real) {
+    private final java.lang.Object real;
+
+    private PhoneNumberFormattingTextWatcher(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.PhoneNumberFormattingTextWatcher wrap(android.telephony.PhoneNumberFormattingTextWatcher real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhoneNumberFormattingTextWatcher(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.PhoneNumberFormattingTextWatcher(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.PhoneNumberFormattingTextWatcher getReal() {
+        return (android.telephony.PhoneNumberFormattingTextWatcher) real;
     }
 
     public android.telephony.PhoneNumberFormattingTextWatcher unwrap() {
-        return real;
+        return getReal();
     }
 
     public PhoneNumberFormattingTextWatcher() {

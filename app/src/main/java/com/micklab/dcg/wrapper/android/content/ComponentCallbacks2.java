@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class ComponentCallbacks2 {
-    private final android.content.ComponentCallbacks2 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ComponentCallbacks2(android.content.ComponentCallbacks2 real) {
+    private final java.lang.Object real;
+
+    private ComponentCallbacks2(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.ComponentCallbacks2 wrap(android.content.ComponentCallbacks2 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ComponentCallbacks2(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ComponentCallbacks2(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.ComponentCallbacks2 getReal() {
+        return (android.content.ComponentCallbacks2) real;
     }
 
     public android.content.ComponentCallbacks2 unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onTrimMemory(int arg0) {
-        real.onTrimMemory(arg0);
+        ((android.content.ComponentCallbacks2) real).onTrimMemory(arg0);
     }
 
     public static final int TRIM_MEMORY_BACKGROUND = android.content.ComponentCallbacks2.TRIM_MEMORY_BACKGROUND;

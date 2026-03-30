@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class TtsSpan {
-    private final android.text.style.TtsSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TtsSpan(android.text.style.TtsSpan real) {
+    private final java.lang.Object real;
+
+    private TtsSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.TtsSpan wrap(android.text.style.TtsSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.TtsSpan getReal() {
+        return (android.text.style.TtsSpan) real;
     }
 
     public android.text.style.TtsSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public TtsSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.TtsSpan(arg0 == null ? null : arg0.unwrap()));
+        this(new android.text.style.TtsSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public TtsSpan(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.PersistableBundle arg1) {
-        this(new android.text.style.TtsSpan(arg0, arg1 == null ? null : arg1.unwrap()));
+        this(new android.text.style.TtsSpan(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.text.style.TtsSpan) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.os.PersistableBundle getArgs() {
-        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(real.getArgs());
+        return com.micklab.dcg.wrapper.android.os.PersistableBundle.wrap(((android.text.style.TtsSpan) real).getArgs());
     }
 
     public int getSpanTypeId() {
-        return real.getSpanTypeId();
+        return ((android.text.style.TtsSpan) real).getSpanTypeId();
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.text.style.TtsSpan) real).getType();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.text.style.TtsSpan) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ANIMACY_ANIMATE = android.text.style.TtsSpan.ANIMACY_ANIMATE;
@@ -126,558 +133,663 @@ public final class TtsSpan {
     public static final int WEEKDAY_WEDNESDAY = android.text.style.TtsSpan.WEEKDAY_WEDNESDAY;
 
     public static final class Builder {
-        private final android.text.style.TtsSpan.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.text.style.TtsSpan.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.Builder wrap(android.text.style.TtsSpan.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.Builder getReal() {
+            return (android.text.style.TtsSpan.Builder) real;
         }
 
         public android.text.style.TtsSpan.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.Builder(arg0));
+            this(new android.text.style.TtsSpan.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan build() {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.wrap(((android.text.style.TtsSpan.Builder) real).build());
         }
 
     }
     public static final class CardinalBuilder {
-        private final android.text.style.TtsSpan.CardinalBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CardinalBuilder(android.text.style.TtsSpan.CardinalBuilder real) {
+        private final java.lang.Object real;
+
+        private CardinalBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder wrap(android.text.style.TtsSpan.CardinalBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.CardinalBuilder getReal() {
+            return (android.text.style.TtsSpan.CardinalBuilder) real;
         }
 
         public android.text.style.TtsSpan.CardinalBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public CardinalBuilder() {
-            this(new android.text.style.TtsSpan.CardinalBuilder());
+            this(new android.text.style.TtsSpan.CardinalBuilder(), (__DcgwBridgeToken) null);
         }
 
         public CardinalBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.CardinalBuilder(arg0));
+            this(new android.text.style.TtsSpan.CardinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public CardinalBuilder(long arg0) {
-            this(new android.text.style.TtsSpan.CardinalBuilder(arg0));
+            this(new android.text.style.TtsSpan.CardinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder setNumber(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(((android.text.style.TtsSpan.CardinalBuilder) real).setNumber(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder setNumber(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(((android.text.style.TtsSpan.CardinalBuilder) real).setNumber(arg0));
         }
 
     }
     public static final class DateBuilder {
-        private final android.text.style.TtsSpan.DateBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DateBuilder(android.text.style.TtsSpan.DateBuilder real) {
+        private final java.lang.Object real;
+
+        private DateBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder wrap(android.text.style.TtsSpan.DateBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.DateBuilder getReal() {
+            return (android.text.style.TtsSpan.DateBuilder) real;
         }
 
         public android.text.style.TtsSpan.DateBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public DateBuilder() {
-            this(new android.text.style.TtsSpan.DateBuilder());
+            this(new android.text.style.TtsSpan.DateBuilder(), (__DcgwBridgeToken) null);
         }
 
         public DateBuilder(java.lang.Integer arg0, java.lang.Integer arg1, java.lang.Integer arg2, java.lang.Integer arg3) {
-            this(new android.text.style.TtsSpan.DateBuilder(arg0, arg1, arg2, arg3));
+            this(new android.text.style.TtsSpan.DateBuilder(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder setDay(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(real.setDay(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(((android.text.style.TtsSpan.DateBuilder) real).setDay(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder setMonth(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(real.setMonth(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(((android.text.style.TtsSpan.DateBuilder) real).setMonth(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder setWeekday(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(real.setWeekday(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(((android.text.style.TtsSpan.DateBuilder) real).setWeekday(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder setYear(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(real.setYear(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DateBuilder.wrap(((android.text.style.TtsSpan.DateBuilder) real).setYear(arg0));
         }
 
     }
     public static final class DecimalBuilder {
-        private final android.text.style.TtsSpan.DecimalBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DecimalBuilder(android.text.style.TtsSpan.DecimalBuilder real) {
+        private final java.lang.Object real;
+
+        private DecimalBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder wrap(android.text.style.TtsSpan.DecimalBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.DecimalBuilder getReal() {
+            return (android.text.style.TtsSpan.DecimalBuilder) real;
         }
 
         public android.text.style.TtsSpan.DecimalBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public DecimalBuilder() {
-            this(new android.text.style.TtsSpan.DecimalBuilder());
+            this(new android.text.style.TtsSpan.DecimalBuilder(), (__DcgwBridgeToken) null);
         }
 
         public DecimalBuilder(java.lang.String arg0, java.lang.String arg1) {
-            this(new android.text.style.TtsSpan.DecimalBuilder(arg0, arg1));
+            this(new android.text.style.TtsSpan.DecimalBuilder(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public DecimalBuilder(double arg0, int arg1, int arg2) {
-            this(new android.text.style.TtsSpan.DecimalBuilder(arg0, arg1, arg2));
+            this(new android.text.style.TtsSpan.DecimalBuilder(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder setArgumentsFromDouble(double arg0, int arg1, int arg2) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(real.setArgumentsFromDouble(arg0, arg1, arg2));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(((android.text.style.TtsSpan.DecimalBuilder) real).setArgumentsFromDouble(arg0, arg1, arg2));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder setFractionalPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(real.setFractionalPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(((android.text.style.TtsSpan.DecimalBuilder) real).setFractionalPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder setIntegerPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(((android.text.style.TtsSpan.DecimalBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder setIntegerPart(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DecimalBuilder.wrap(((android.text.style.TtsSpan.DecimalBuilder) real).setIntegerPart(arg0));
         }
 
     }
     public static final class DigitsBuilder {
-        private final android.text.style.TtsSpan.DigitsBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DigitsBuilder(android.text.style.TtsSpan.DigitsBuilder real) {
+        private final java.lang.Object real;
+
+        private DigitsBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder wrap(android.text.style.TtsSpan.DigitsBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.DigitsBuilder getReal() {
+            return (android.text.style.TtsSpan.DigitsBuilder) real;
         }
 
         public android.text.style.TtsSpan.DigitsBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public DigitsBuilder() {
-            this(new android.text.style.TtsSpan.DigitsBuilder());
+            this(new android.text.style.TtsSpan.DigitsBuilder(), (__DcgwBridgeToken) null);
         }
 
         public DigitsBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.DigitsBuilder(arg0));
+            this(new android.text.style.TtsSpan.DigitsBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder setDigits(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder.wrap(real.setDigits(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DigitsBuilder.wrap(((android.text.style.TtsSpan.DigitsBuilder) real).setDigits(arg0));
         }
 
     }
     public static final class ElectronicBuilder {
-        private final android.text.style.TtsSpan.ElectronicBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ElectronicBuilder(android.text.style.TtsSpan.ElectronicBuilder real) {
+        private final java.lang.Object real;
+
+        private ElectronicBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder wrap(android.text.style.TtsSpan.ElectronicBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.ElectronicBuilder getReal() {
+            return (android.text.style.TtsSpan.ElectronicBuilder) real;
         }
 
         public android.text.style.TtsSpan.ElectronicBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public ElectronicBuilder() {
-            this(new android.text.style.TtsSpan.ElectronicBuilder());
+            this(new android.text.style.TtsSpan.ElectronicBuilder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setDomain(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setDomain(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setDomain(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setEmailArguments(java.lang.String arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setEmailArguments(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setEmailArguments(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setFragmentId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setFragmentId(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setFragmentId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setPassword(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setPassword(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setPassword(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setPath(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setPath(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setPath(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setPort(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setPort(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setPort(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setProtocol(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setProtocol(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setProtocol(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setQueryString(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setQueryString(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setQueryString(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder setUsername(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(real.setUsername(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.ElectronicBuilder.wrap(((android.text.style.TtsSpan.ElectronicBuilder) real).setUsername(arg0));
         }
 
     }
     public static final class FractionBuilder {
-        private final android.text.style.TtsSpan.FractionBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FractionBuilder(android.text.style.TtsSpan.FractionBuilder real) {
+        private final java.lang.Object real;
+
+        private FractionBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder wrap(android.text.style.TtsSpan.FractionBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.FractionBuilder getReal() {
+            return (android.text.style.TtsSpan.FractionBuilder) real;
         }
 
         public android.text.style.TtsSpan.FractionBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public FractionBuilder() {
-            this(new android.text.style.TtsSpan.FractionBuilder());
+            this(new android.text.style.TtsSpan.FractionBuilder(), (__DcgwBridgeToken) null);
         }
 
         public FractionBuilder(long arg0, long arg1, long arg2) {
-            this(new android.text.style.TtsSpan.FractionBuilder(arg0, arg1, arg2));
+            this(new android.text.style.TtsSpan.FractionBuilder(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setDenominator(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setDenominator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setDenominator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setDenominator(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setDenominator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setDenominator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setIntegerPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setIntegerPart(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setNumerator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setNumerator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(real.setNumerator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setNumerator(arg0));
         }
 
     }
     public static final class MeasureBuilder {
-        private final android.text.style.TtsSpan.MeasureBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MeasureBuilder(android.text.style.TtsSpan.MeasureBuilder real) {
+        private final java.lang.Object real;
+
+        private MeasureBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder wrap(android.text.style.TtsSpan.MeasureBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.MeasureBuilder getReal() {
+            return (android.text.style.TtsSpan.MeasureBuilder) real;
         }
 
         public android.text.style.TtsSpan.MeasureBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public MeasureBuilder() {
-            this(new android.text.style.TtsSpan.MeasureBuilder());
+            this(new android.text.style.TtsSpan.MeasureBuilder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setDenominator(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setDenominator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setDenominator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setDenominator(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setDenominator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setDenominator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setFractionalPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setFractionalPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setFractionalPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setNumber(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setNumber(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setNumber(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setNumber(arg0));
-        }
-
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setNumerator(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setNumerator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setNumber(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setNumerator(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setNumerator(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setNumerator(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setNumerator(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setNumerator(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setUnit(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(real.setUnit(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setUnit(arg0));
         }
 
     }
     public static final class MoneyBuilder {
-        private final android.text.style.TtsSpan.MoneyBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MoneyBuilder(android.text.style.TtsSpan.MoneyBuilder real) {
+        private final java.lang.Object real;
+
+        private MoneyBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder wrap(android.text.style.TtsSpan.MoneyBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.MoneyBuilder getReal() {
+            return (android.text.style.TtsSpan.MoneyBuilder) real;
         }
 
         public android.text.style.TtsSpan.MoneyBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public MoneyBuilder() {
-            this(new android.text.style.TtsSpan.MoneyBuilder());
+            this(new android.text.style.TtsSpan.MoneyBuilder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder setCurrency(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(real.setCurrency(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(((android.text.style.TtsSpan.MoneyBuilder) real).setCurrency(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder setFractionalPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(real.setFractionalPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(((android.text.style.TtsSpan.MoneyBuilder) real).setFractionalPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder setIntegerPart(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(((android.text.style.TtsSpan.MoneyBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder setIntegerPart(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(real.setIntegerPart(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(((android.text.style.TtsSpan.MoneyBuilder) real).setIntegerPart(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder setQuantity(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(real.setQuantity(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MoneyBuilder.wrap(((android.text.style.TtsSpan.MoneyBuilder) real).setQuantity(arg0));
         }
 
     }
     public static final class OrdinalBuilder {
-        private final android.text.style.TtsSpan.OrdinalBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OrdinalBuilder(android.text.style.TtsSpan.OrdinalBuilder real) {
+        private final java.lang.Object real;
+
+        private OrdinalBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder wrap(android.text.style.TtsSpan.OrdinalBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.OrdinalBuilder getReal() {
+            return (android.text.style.TtsSpan.OrdinalBuilder) real;
         }
 
         public android.text.style.TtsSpan.OrdinalBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public OrdinalBuilder() {
-            this(new android.text.style.TtsSpan.OrdinalBuilder());
+            this(new android.text.style.TtsSpan.OrdinalBuilder(), (__DcgwBridgeToken) null);
         }
 
         public OrdinalBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0));
+            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public OrdinalBuilder(long arg0) {
-            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0));
+            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder setNumber(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(((android.text.style.TtsSpan.OrdinalBuilder) real).setNumber(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder setNumber(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(((android.text.style.TtsSpan.OrdinalBuilder) real).setNumber(arg0));
         }
 
     }
     public static final class SemioticClassBuilder {
-        private final android.text.style.TtsSpan.SemioticClassBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SemioticClassBuilder(android.text.style.TtsSpan.SemioticClassBuilder real) {
+        private final java.lang.Object real;
+
+        private SemioticClassBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.SemioticClassBuilder wrap(android.text.style.TtsSpan.SemioticClassBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.SemioticClassBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.SemioticClassBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.SemioticClassBuilder getReal() {
+            return (android.text.style.TtsSpan.SemioticClassBuilder) real;
         }
 
         public android.text.style.TtsSpan.SemioticClassBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public SemioticClassBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.SemioticClassBuilder(arg0));
+            this(new android.text.style.TtsSpan.SemioticClassBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class TelephoneBuilder {
-        private final android.text.style.TtsSpan.TelephoneBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TelephoneBuilder(android.text.style.TtsSpan.TelephoneBuilder real) {
+        private final java.lang.Object real;
+
+        private TelephoneBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder wrap(android.text.style.TtsSpan.TelephoneBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.TelephoneBuilder getReal() {
+            return (android.text.style.TtsSpan.TelephoneBuilder) real;
         }
 
         public android.text.style.TtsSpan.TelephoneBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public TelephoneBuilder() {
-            this(new android.text.style.TtsSpan.TelephoneBuilder());
+            this(new android.text.style.TtsSpan.TelephoneBuilder(), (__DcgwBridgeToken) null);
         }
 
         public TelephoneBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.TelephoneBuilder(arg0));
+            this(new android.text.style.TtsSpan.TelephoneBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder setCountryCode(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(real.setCountryCode(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(((android.text.style.TtsSpan.TelephoneBuilder) real).setCountryCode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder setExtension(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(real.setExtension(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(((android.text.style.TtsSpan.TelephoneBuilder) real).setExtension(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder setNumberParts(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(real.setNumberParts(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TelephoneBuilder.wrap(((android.text.style.TtsSpan.TelephoneBuilder) real).setNumberParts(arg0));
         }
 
     }
     public static final class TextBuilder {
-        private final android.text.style.TtsSpan.TextBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TextBuilder(android.text.style.TtsSpan.TextBuilder real) {
+        private final java.lang.Object real;
+
+        private TextBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder wrap(android.text.style.TtsSpan.TextBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.TextBuilder getReal() {
+            return (android.text.style.TtsSpan.TextBuilder) real;
         }
 
         public android.text.style.TtsSpan.TextBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public TextBuilder() {
-            this(new android.text.style.TtsSpan.TextBuilder());
+            this(new android.text.style.TtsSpan.TextBuilder(), (__DcgwBridgeToken) null);
         }
 
         public TextBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.TextBuilder(arg0));
+            this(new android.text.style.TtsSpan.TextBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder setText(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder.wrap(real.setText(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TextBuilder.wrap(((android.text.style.TtsSpan.TextBuilder) real).setText(arg0));
         }
 
     }
     public static final class TimeBuilder {
-        private final android.text.style.TtsSpan.TimeBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TimeBuilder(android.text.style.TtsSpan.TimeBuilder real) {
+        private final java.lang.Object real;
+
+        private TimeBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder wrap(android.text.style.TtsSpan.TimeBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.TimeBuilder getReal() {
+            return (android.text.style.TtsSpan.TimeBuilder) real;
         }
 
         public android.text.style.TtsSpan.TimeBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public TimeBuilder() {
-            this(new android.text.style.TtsSpan.TimeBuilder());
+            this(new android.text.style.TtsSpan.TimeBuilder(), (__DcgwBridgeToken) null);
         }
 
         public TimeBuilder(int arg0, int arg1) {
-            this(new android.text.style.TtsSpan.TimeBuilder(arg0, arg1));
+            this(new android.text.style.TtsSpan.TimeBuilder(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder setHours(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(real.setHours(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(((android.text.style.TtsSpan.TimeBuilder) real).setHours(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder setMinutes(int arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(real.setMinutes(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(((android.text.style.TtsSpan.TimeBuilder) real).setMinutes(arg0));
         }
 
     }
     public static final class VerbatimBuilder {
-        private final android.text.style.TtsSpan.VerbatimBuilder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VerbatimBuilder(android.text.style.TtsSpan.VerbatimBuilder real) {
+        private final java.lang.Object real;
+
+        private VerbatimBuilder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder wrap(android.text.style.TtsSpan.VerbatimBuilder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.VerbatimBuilder getReal() {
+            return (android.text.style.TtsSpan.VerbatimBuilder) real;
         }
 
         public android.text.style.TtsSpan.VerbatimBuilder unwrap() {
-            return real;
+            return getReal();
         }
 
         public VerbatimBuilder() {
-            this(new android.text.style.TtsSpan.VerbatimBuilder());
+            this(new android.text.style.TtsSpan.VerbatimBuilder(), (__DcgwBridgeToken) null);
         }
 
         public VerbatimBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.VerbatimBuilder(arg0));
+            this(new android.text.style.TtsSpan.VerbatimBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder setVerbatim(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder.wrap(real.setVerbatim(arg0));
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.VerbatimBuilder.wrap(((android.text.style.TtsSpan.VerbatimBuilder) real).setVerbatim(arg0));
         }
 
     }

@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class EventStats {
-    private final android.app.usage.EventStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EventStats(android.app.usage.EventStats real) {
+    private final java.lang.Object real;
+
+    private EventStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.EventStats wrap(android.app.usage.EventStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.EventStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.EventStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.EventStats getReal() {
+        return (android.app.usage.EventStats) real;
     }
 
     public android.app.usage.EventStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public EventStats(com.micklab.dcg.wrapper.android.app.usage.EventStats arg0) {
-        this(new android.app.usage.EventStats(arg0 == null ? null : arg0.unwrap()));
+        this(new android.app.usage.EventStats(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void add(com.micklab.dcg.wrapper.android.app.usage.EventStats arg0) {
-        real.add(arg0 == null ? null : arg0.unwrap());
+        ((android.app.usage.EventStats) real).add(arg0 == null ? null : arg0.getReal());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.usage.EventStats) real).describeContents();
     }
 
     public int getCount() {
-        return real.getCount();
+        return ((android.app.usage.EventStats) real).getCount();
     }
 
     public int getEventType() {
-        return real.getEventType();
+        return ((android.app.usage.EventStats) real).getEventType();
     }
 
     public long getFirstTimeStamp() {
-        return real.getFirstTimeStamp();
+        return ((android.app.usage.EventStats) real).getFirstTimeStamp();
     }
 
     public long getLastEventTime() {
-        return real.getLastEventTime();
+        return ((android.app.usage.EventStats) real).getLastEventTime();
     }
 
     public long getLastTimeStamp() {
-        return real.getLastTimeStamp();
+        return ((android.app.usage.EventStats) real).getLastTimeStamp();
     }
 
     public long getTotalTime() {
-        return real.getTotalTime();
+        return ((android.app.usage.EventStats) real).getTotalTime();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.usage.EventStats) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

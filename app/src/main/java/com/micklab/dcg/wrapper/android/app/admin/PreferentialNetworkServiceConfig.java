@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class PreferentialNetworkServiceConfig {
-    private final android.app.admin.PreferentialNetworkServiceConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PreferentialNetworkServiceConfig(android.app.admin.PreferentialNetworkServiceConfig real) {
+    private final java.lang.Object real;
+
+    private PreferentialNetworkServiceConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig wrap(android.app.admin.PreferentialNetworkServiceConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.PreferentialNetworkServiceConfig getReal() {
+        return (android.app.admin.PreferentialNetworkServiceConfig) real;
     }
 
     public android.app.admin.PreferentialNetworkServiceConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).equals(arg0);
     }
 
     public int[] getExcludedUids() {
-        return real.getExcludedUids();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).getExcludedUids();
     }
 
     public int[] getIncludedUids() {
-        return real.getIncludedUids();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).getIncludedUids();
     }
 
     public int getNetworkId() {
@@ -37,15 +44,15 @@ public final class PreferentialNetworkServiceConfig {
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).hashCode();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).isEnabled();
     }
 
     public boolean isFallbackToDefaultConnectionAllowed() {
-        return real.isFallbackToDefaultConnectionAllowed();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).isFallbackToDefaultConnectionAllowed();
     }
 
     public boolean shouldBlockNonMatchingNetworks() {
@@ -53,27 +60,34 @@ public final class PreferentialNetworkServiceConfig {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.admin.PreferentialNetworkServiceConfig) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.PreferentialNetworkServiceConfig) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.app.admin.PreferentialNetworkServiceConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.admin.PreferentialNetworkServiceConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder wrap(android.app.admin.PreferentialNetworkServiceConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.admin.PreferentialNetworkServiceConfig.Builder getReal() {
+            return (android.app.admin.PreferentialNetworkServiceConfig.Builder) real;
         }
 
         public android.app.admin.PreferentialNetworkServiceConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
@@ -81,23 +95,23 @@ public final class PreferentialNetworkServiceConfig {
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig build() {
-            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.wrap(((android.app.admin.PreferentialNetworkServiceConfig.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder setEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(real.setEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(((android.app.admin.PreferentialNetworkServiceConfig.Builder) real).setEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder setExcludedUids(int[] arg0) {
-            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(real.setExcludedUids(arg0));
+            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(((android.app.admin.PreferentialNetworkServiceConfig.Builder) real).setExcludedUids(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder setFallbackToDefaultConnectionAllowed(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(real.setFallbackToDefaultConnectionAllowed(arg0));
+            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(((android.app.admin.PreferentialNetworkServiceConfig.Builder) real).setFallbackToDefaultConnectionAllowed(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder setIncludedUids(int[] arg0) {
-            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(real.setIncludedUids(arg0));
+            return com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder.wrap(((android.app.admin.PreferentialNetworkServiceConfig.Builder) real).setIncludedUids(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.admin.PreferentialNetworkServiceConfig.Builder setNetworkId(int arg0) {

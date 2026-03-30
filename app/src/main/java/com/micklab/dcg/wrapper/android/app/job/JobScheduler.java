@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.app.job;
 
 public final class JobScheduler {
-    private final android.app.job.JobScheduler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JobScheduler(android.app.job.JobScheduler real) {
+    private final java.lang.Object real;
+
+    private JobScheduler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.job.JobScheduler wrap(android.app.job.JobScheduler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.job.JobScheduler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.job.JobScheduler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.job.JobScheduler getReal() {
+        return (android.app.job.JobScheduler) real;
     }
 
     public android.app.job.JobScheduler unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canRunUserInitiatedJobs() {
-        return real.canRunUserInitiatedJobs();
+        return ((android.app.job.JobScheduler) real).canRunUserInitiatedJobs();
     }
 
     public void cancel(int arg0) {
-        real.cancel(arg0);
+        ((android.app.job.JobScheduler) real).cancel(arg0);
     }
 
     public void cancelAll() {
-        real.cancelAll();
+        ((android.app.job.JobScheduler) real).cancelAll();
     }
 
     public void cancelInAllNamespaces() {
-        real.cancelInAllNamespaces();
+        ((android.app.job.JobScheduler) real).cancelInAllNamespaces();
     }
 
     public int enqueue(com.micklab.dcg.wrapper.android.app.job.JobInfo arg0, com.micklab.dcg.wrapper.android.app.job.JobWorkItem arg1) {
-        return real.enqueue(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.app.job.JobScheduler) real).enqueue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.app.job.JobScheduler forNamespace(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.app.job.JobScheduler.wrap(real.forNamespace(arg0));
+        return com.micklab.dcg.wrapper.android.app.job.JobScheduler.wrap(((android.app.job.JobScheduler) real).forNamespace(arg0));
     }
 
     public java.lang.String getNamespace() {
-        return real.getNamespace();
+        return ((android.app.job.JobScheduler) real).getNamespace();
     }
 
     public com.micklab.dcg.wrapper.android.app.job.JobInfo getPendingJob(int arg0) {
-        return com.micklab.dcg.wrapper.android.app.job.JobInfo.wrap(real.getPendingJob(arg0));
+        return com.micklab.dcg.wrapper.android.app.job.JobInfo.wrap(((android.app.job.JobScheduler) real).getPendingJob(arg0));
     }
 
     public int getPendingJobReason(int arg0) {
-        return real.getPendingJobReason(arg0);
+        return ((android.app.job.JobScheduler) real).getPendingJobReason(arg0);
     }
 
     public int schedule(com.micklab.dcg.wrapper.android.app.job.JobInfo arg0) {
-        return real.schedule(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.job.JobScheduler) real).schedule(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int PENDING_JOB_REASON_APP = android.app.job.JobScheduler.PENDING_JOB_REASON_APP;

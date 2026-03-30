@@ -2,106 +2,113 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ActionMode {
-    private final android.view.ActionMode real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ActionMode(android.view.ActionMode real) {
+    private final java.lang.Object real;
+
+    private ActionMode(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ActionMode wrap(android.view.ActionMode real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ActionMode getReal() {
+        return (android.view.ActionMode) real;
     }
 
     public android.view.ActionMode unwrap() {
-        return real;
+        return getReal();
     }
 
     public void finish() {
-        real.finish();
+        ((android.view.ActionMode) real).finish();
     }
 
     public com.micklab.dcg.wrapper.android.view.View getCustomView() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.getCustomView());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.view.ActionMode) real).getCustomView());
     }
 
     public com.micklab.dcg.wrapper.android.view.Menu getMenu() {
-        return com.micklab.dcg.wrapper.android.view.Menu.wrap(real.getMenu());
+        return com.micklab.dcg.wrapper.android.view.Menu.wrap(((android.view.ActionMode) real).getMenu());
     }
 
     public com.micklab.dcg.wrapper.android.view.MenuInflater getMenuInflater() {
-        return com.micklab.dcg.wrapper.android.view.MenuInflater.wrap(real.getMenuInflater());
+        return com.micklab.dcg.wrapper.android.view.MenuInflater.wrap(((android.view.ActionMode) real).getMenuInflater());
     }
 
     public java.lang.CharSequence getSubtitle() {
-        return real.getSubtitle();
+        return ((android.view.ActionMode) real).getSubtitle();
     }
 
     public java.lang.Object getTag() {
-        return real.getTag();
+        return ((android.view.ActionMode) real).getTag();
     }
 
     public java.lang.CharSequence getTitle() {
-        return real.getTitle();
+        return ((android.view.ActionMode) real).getTitle();
     }
 
     public boolean getTitleOptionalHint() {
-        return real.getTitleOptionalHint();
+        return ((android.view.ActionMode) real).getTitleOptionalHint();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.view.ActionMode) real).getType();
     }
 
     public void hide(long arg0) {
-        real.hide(arg0);
+        ((android.view.ActionMode) real).hide(arg0);
     }
 
     public void invalidate() {
-        real.invalidate();
+        ((android.view.ActionMode) real).invalidate();
     }
 
     public void invalidateContentRect() {
-        real.invalidateContentRect();
+        ((android.view.ActionMode) real).invalidateContentRect();
     }
 
     public boolean isTitleOptional() {
-        return real.isTitleOptional();
+        return ((android.view.ActionMode) real).isTitleOptional();
     }
 
     public void onWindowFocusChanged(boolean arg0) {
-        real.onWindowFocusChanged(arg0);
+        ((android.view.ActionMode) real).onWindowFocusChanged(arg0);
     }
 
     public void setCustomView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setCustomView(arg0 == null ? null : arg0.unwrap());
+        ((android.view.ActionMode) real).setCustomView(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSubtitle(int arg0) {
-        real.setSubtitle(arg0);
+        ((android.view.ActionMode) real).setSubtitle(arg0);
     }
 
     public void setSubtitle(java.lang.CharSequence arg0) {
-        real.setSubtitle(arg0);
+        ((android.view.ActionMode) real).setSubtitle(arg0);
     }
 
     public void setTag(java.lang.Object arg0) {
-        real.setTag(arg0);
+        ((android.view.ActionMode) real).setTag(arg0);
     }
 
     public void setTitle(java.lang.CharSequence arg0) {
-        real.setTitle(arg0);
+        ((android.view.ActionMode) real).setTitle(arg0);
     }
 
     public void setTitle(int arg0) {
-        real.setTitle(arg0);
+        ((android.view.ActionMode) real).setTitle(arg0);
     }
 
     public void setTitleOptionalHint(boolean arg0) {
-        real.setTitleOptionalHint(arg0);
+        ((android.view.ActionMode) real).setTitleOptionalHint(arg0);
     }
 
     public void setType(int arg0) {
-        real.setType(arg0);
+        ((android.view.ActionMode) real).setType(arg0);
     }
 
     public static final int DEFAULT_HIDE_DURATION = android.view.ActionMode.DEFAULT_HIDE_DURATION;
@@ -109,54 +116,68 @@ public final class ActionMode {
     public static final int TYPE_PRIMARY = android.view.ActionMode.TYPE_PRIMARY;
 
     public static final class Callback {
-        private final android.view.ActionMode.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.view.ActionMode.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ActionMode.Callback wrap(android.view.ActionMode.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ActionMode.Callback getReal() {
+            return (android.view.ActionMode.Callback) real;
         }
 
         public android.view.ActionMode.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean onActionItemClicked(com.micklab.dcg.wrapper.android.view.ActionMode arg0, com.micklab.dcg.wrapper.android.view.MenuItem arg1) {
-            return real.onActionItemClicked(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return ((android.view.ActionMode.Callback) real).onActionItemClicked(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public boolean onCreateActionMode(com.micklab.dcg.wrapper.android.view.ActionMode arg0, com.micklab.dcg.wrapper.android.view.Menu arg1) {
-            return real.onCreateActionMode(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return ((android.view.ActionMode.Callback) real).onCreateActionMode(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onDestroyActionMode(com.micklab.dcg.wrapper.android.view.ActionMode arg0) {
-            real.onDestroyActionMode(arg0 == null ? null : arg0.unwrap());
+            ((android.view.ActionMode.Callback) real).onDestroyActionMode(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean onPrepareActionMode(com.micklab.dcg.wrapper.android.view.ActionMode arg0, com.micklab.dcg.wrapper.android.view.Menu arg1) {
-            return real.onPrepareActionMode(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return ((android.view.ActionMode.Callback) real).onPrepareActionMode(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
     }
     public static final class Callback2 {
-        private final android.view.ActionMode.Callback2 real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback2(android.view.ActionMode.Callback2 real) {
+        private final java.lang.Object real;
+
+        private Callback2(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ActionMode.Callback2 wrap(android.view.ActionMode.Callback2 real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode.Callback2(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ActionMode.Callback2(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ActionMode.Callback2 getReal() {
+            return (android.view.ActionMode.Callback2) real;
         }
 
         public android.view.ActionMode.Callback2 unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onGetContentRect(com.micklab.dcg.wrapper.android.view.ActionMode arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.graphics.Rect arg2) {
-            real.onGetContentRect(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+            ((android.view.ActionMode.Callback2) real).onGetContentRect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
         }
 
     }

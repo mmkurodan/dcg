@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.strictmode;
 
 public final class InstanceCountViolation {
-    private final android.os.strictmode.InstanceCountViolation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InstanceCountViolation(android.os.strictmode.InstanceCountViolation real) {
+    private final java.lang.Object real;
+
+    private InstanceCountViolation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.strictmode.InstanceCountViolation wrap(android.os.strictmode.InstanceCountViolation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.InstanceCountViolation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.InstanceCountViolation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.strictmode.InstanceCountViolation getReal() {
+        return (android.os.strictmode.InstanceCountViolation) real;
     }
 
     public android.os.strictmode.InstanceCountViolation unwrap() {
-        return real;
+        return getReal();
     }
 
     public long getNumberOfInstances() {

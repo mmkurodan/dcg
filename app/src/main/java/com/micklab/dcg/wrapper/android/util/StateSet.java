@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class StateSet {
-    private final android.util.StateSet real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StateSet(android.util.StateSet real) {
+    private final java.lang.Object real;
+
+    private StateSet(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.StateSet wrap(android.util.StateSet real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.StateSet(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.StateSet(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.StateSet getReal() {
+        return (android.util.StateSet) real;
     }
 
     public android.util.StateSet unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String dump(int[] arg0) {

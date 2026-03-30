@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeTunnelConnectionParams {
-    private final android.net.ipsec.ike.IkeTunnelConnectionParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeTunnelConnectionParams(android.net.ipsec.ike.IkeTunnelConnectionParams real) {
+    private final java.lang.Object real;
+
+    private IkeTunnelConnectionParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTunnelConnectionParams wrap(android.net.ipsec.ike.IkeTunnelConnectionParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTunnelConnectionParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTunnelConnectionParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeTunnelConnectionParams getReal() {
+        return (android.net.ipsec.ike.IkeTunnelConnectionParams) real;
     }
 
     public android.net.ipsec.ike.IkeTunnelConnectionParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeTunnelConnectionParams(com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionParams arg0, com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams arg1) {

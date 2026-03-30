@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioDeviceInfo {
-    private final android.media.AudioDeviceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioDeviceInfo(android.media.AudioDeviceInfo real) {
+    private final java.lang.Object real;
+
+    private AudioDeviceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioDeviceInfo wrap(android.media.AudioDeviceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioDeviceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioDeviceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioDeviceInfo getReal() {
+        return (android.media.AudioDeviceInfo) real;
     }
 
     public android.media.AudioDeviceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.AudioDeviceInfo) real).equals(arg0);
     }
 
     public java.lang.String getAddress() {
-        return real.getAddress();
+        return ((android.media.AudioDeviceInfo) real).getAddress();
     }
 
     public int[] getChannelCounts() {
-        return real.getChannelCounts();
+        return ((android.media.AudioDeviceInfo) real).getChannelCounts();
     }
 
     public int[] getChannelIndexMasks() {
-        return real.getChannelIndexMasks();
+        return ((android.media.AudioDeviceInfo) real).getChannelIndexMasks();
     }
 
     public int[] getChannelMasks() {
-        return real.getChannelMasks();
+        return ((android.media.AudioDeviceInfo) real).getChannelMasks();
     }
 
     public int[] getEncapsulationMetadataTypes() {
-        return real.getEncapsulationMetadataTypes();
+        return ((android.media.AudioDeviceInfo) real).getEncapsulationMetadataTypes();
     }
 
     public int[] getEncapsulationModes() {
-        return real.getEncapsulationModes();
+        return ((android.media.AudioDeviceInfo) real).getEncapsulationModes();
     }
 
     public int[] getEncodings() {
-        return real.getEncodings();
+        return ((android.media.AudioDeviceInfo) real).getEncodings();
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.media.AudioDeviceInfo) real).getId();
     }
 
     public java.lang.CharSequence getProductName() {
-        return real.getProductName();
+        return ((android.media.AudioDeviceInfo) real).getProductName();
     }
 
     public int[] getSampleRates() {
-        return real.getSampleRates();
+        return ((android.media.AudioDeviceInfo) real).getSampleRates();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.media.AudioDeviceInfo) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.AudioDeviceInfo) real).hashCode();
     }
 
     public boolean isSink() {
-        return real.isSink();
+        return ((android.media.AudioDeviceInfo) real).isSink();
     }
 
     public boolean isSource() {
-        return real.isSource();
+        return ((android.media.AudioDeviceInfo) real).isSource();
     }
 
     public static final int TYPE_AUX_LINE = android.media.AudioDeviceInfo.TYPE_AUX_LINE;

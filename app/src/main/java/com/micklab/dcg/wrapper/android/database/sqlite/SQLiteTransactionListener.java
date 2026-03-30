@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteTransactionListener {
-    private final android.database.sqlite.SQLiteTransactionListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteTransactionListener(android.database.sqlite.SQLiteTransactionListener real) {
+    private final java.lang.Object real;
+
+    private SQLiteTransactionListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTransactionListener wrap(android.database.sqlite.SQLiteTransactionListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTransactionListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTransactionListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteTransactionListener getReal() {
+        return (android.database.sqlite.SQLiteTransactionListener) real;
     }
 
     public android.database.sqlite.SQLiteTransactionListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onBegin() {

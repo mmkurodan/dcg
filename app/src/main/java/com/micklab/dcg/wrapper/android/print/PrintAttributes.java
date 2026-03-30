@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.print;
 
 public final class PrintAttributes {
-    private final android.print.PrintAttributes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PrintAttributes(android.print.PrintAttributes real) {
+    private final java.lang.Object real;
+
+    private PrintAttributes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.print.PrintAttributes wrap(android.print.PrintAttributes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.print.PrintAttributes getReal() {
+        return (android.print.PrintAttributes) real;
     }
 
     public android.print.PrintAttributes unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.print.PrintAttributes) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.print.PrintAttributes) real).equals(arg0);
     }
 
     public int getColorMode() {
-        return real.getColorMode();
+        return ((android.print.PrintAttributes) real).getColorMode();
     }
 
     public int getDuplexMode() {
-        return real.getDuplexMode();
+        return ((android.print.PrintAttributes) real).getDuplexMode();
     }
 
     public com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize getMediaSize() {
-        return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(real.getMediaSize());
+        return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(((android.print.PrintAttributes) real).getMediaSize());
     }
 
     public com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins getMinMargins() {
-        return com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins.wrap(real.getMinMargins());
+        return com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins.wrap(((android.print.PrintAttributes) real).getMinMargins());
     }
 
     public com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution getResolution() {
-        return com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution.wrap(real.getResolution());
+        return com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution.wrap(((android.print.PrintAttributes) real).getResolution());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.print.PrintAttributes) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.print.PrintAttributes) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.print.PrintAttributes) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int COLOR_MODE_COLOR = android.print.PrintAttributes.COLOR_MODE_COLOR;
@@ -63,156 +70,177 @@ public final class PrintAttributes {
     public static final int DUPLEX_MODE_SHORT_EDGE = android.print.PrintAttributes.DUPLEX_MODE_SHORT_EDGE;
 
     public static final class Builder {
-        private final android.print.PrintAttributes.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.print.PrintAttributes.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder wrap(android.print.PrintAttributes.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.print.PrintAttributes.Builder getReal() {
+            return (android.print.PrintAttributes.Builder) real;
         }
 
         public android.print.PrintAttributes.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.print.PrintAttributes.Builder());
+            this(new android.print.PrintAttributes.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes build() {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.wrap(((android.print.PrintAttributes.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder setColorMode(int arg0) {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(real.setColorMode(arg0));
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(((android.print.PrintAttributes.Builder) real).setColorMode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder setDuplexMode(int arg0) {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(real.setDuplexMode(arg0));
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(((android.print.PrintAttributes.Builder) real).setDuplexMode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder setMediaSize(com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize arg0) {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(real.setMediaSize(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(((android.print.PrintAttributes.Builder) real).setMediaSize(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder setMinMargins(com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins arg0) {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(real.setMinMargins(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(((android.print.PrintAttributes.Builder) real).setMinMargins(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder setResolution(com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution arg0) {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(real.setResolution(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.Builder.wrap(((android.print.PrintAttributes.Builder) real).setResolution(arg0 == null ? null : arg0.getReal()));
         }
 
     }
     public static final class Margins {
-        private final android.print.PrintAttributes.Margins real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Margins(android.print.PrintAttributes.Margins real) {
+        private final java.lang.Object real;
+
+        private Margins(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins wrap(android.print.PrintAttributes.Margins real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.print.PrintAttributes.Margins getReal() {
+            return (android.print.PrintAttributes.Margins) real;
         }
 
         public android.print.PrintAttributes.Margins unwrap() {
-            return real;
+            return getReal();
         }
 
         public Margins(int arg0, int arg1, int arg2, int arg3) {
-            this(new android.print.PrintAttributes.Margins(arg0, arg1, arg2, arg3));
+            this(new android.print.PrintAttributes.Margins(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.print.PrintAttributes.Margins) real).equals(arg0);
         }
 
         public int getBottomMils() {
-            return real.getBottomMils();
+            return ((android.print.PrintAttributes.Margins) real).getBottomMils();
         }
 
         public int getLeftMils() {
-            return real.getLeftMils();
+            return ((android.print.PrintAttributes.Margins) real).getLeftMils();
         }
 
         public int getRightMils() {
-            return real.getRightMils();
+            return ((android.print.PrintAttributes.Margins) real).getRightMils();
         }
 
         public int getTopMils() {
-            return real.getTopMils();
+            return ((android.print.PrintAttributes.Margins) real).getTopMils();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.print.PrintAttributes.Margins) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.print.PrintAttributes.Margins) real).toString();
         }
 
         public static final com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins NO_MARGINS = com.micklab.dcg.wrapper.android.print.PrintAttributes.Margins.wrap(android.print.PrintAttributes.Margins.NO_MARGINS);
 
     }
     public static final class MediaSize {
-        private final android.print.PrintAttributes.MediaSize real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaSize(android.print.PrintAttributes.MediaSize real) {
+        private final java.lang.Object real;
+
+        private MediaSize(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize wrap(android.print.PrintAttributes.MediaSize real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.print.PrintAttributes.MediaSize getReal() {
+            return (android.print.PrintAttributes.MediaSize) real;
         }
 
         public android.print.PrintAttributes.MediaSize unwrap() {
-            return real;
+            return getReal();
         }
 
         public MediaSize(java.lang.String arg0, java.lang.String arg1, int arg2, int arg3) {
-            this(new android.print.PrintAttributes.MediaSize(arg0, arg1, arg2, arg3));
+            this(new android.print.PrintAttributes.MediaSize(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize asLandscape() {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(real.asLandscape());
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(((android.print.PrintAttributes.MediaSize) real).asLandscape());
         }
 
         public com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize asPortrait() {
-            return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(real.asPortrait());
+            return com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(((android.print.PrintAttributes.MediaSize) real).asPortrait());
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.print.PrintAttributes.MediaSize) real).equals(arg0);
         }
 
         public int getHeightMils() {
-            return real.getHeightMils();
+            return ((android.print.PrintAttributes.MediaSize) real).getHeightMils();
         }
 
         public java.lang.String getId() {
-            return real.getId();
+            return ((android.print.PrintAttributes.MediaSize) real).getId();
         }
 
         public java.lang.String getLabel(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-            return real.getLabel(arg0 == null ? null : arg0.unwrap());
+            return ((android.print.PrintAttributes.MediaSize) real).getLabel(arg0 == null ? null : arg0.getReal());
         }
 
         public int getWidthMils() {
-            return real.getWidthMils();
+            return ((android.print.PrintAttributes.MediaSize) real).getWidthMils();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.print.PrintAttributes.MediaSize) real).hashCode();
         }
 
         public boolean isPortrait() {
-            return real.isPortrait();
+            return ((android.print.PrintAttributes.MediaSize) real).isPortrait();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.print.PrintAttributes.MediaSize) real).toString();
         }
 
         public static final com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize ANSI_C = com.micklab.dcg.wrapper.android.print.PrintAttributes.MediaSize.wrap(android.print.PrintAttributes.MediaSize.ANSI_C);
@@ -313,50 +341,57 @@ public final class PrintAttributes {
 
     }
     public static final class Resolution {
-        private final android.print.PrintAttributes.Resolution real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Resolution(android.print.PrintAttributes.Resolution real) {
+        private final java.lang.Object real;
+
+        private Resolution(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution wrap(android.print.PrintAttributes.Resolution real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.print.PrintAttributes.Resolution(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.print.PrintAttributes.Resolution getReal() {
+            return (android.print.PrintAttributes.Resolution) real;
         }
 
         public android.print.PrintAttributes.Resolution unwrap() {
-            return real;
+            return getReal();
         }
 
         public Resolution(java.lang.String arg0, java.lang.String arg1, int arg2, int arg3) {
-            this(new android.print.PrintAttributes.Resolution(arg0, arg1, arg2, arg3));
+            this(new android.print.PrintAttributes.Resolution(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.print.PrintAttributes.Resolution) real).equals(arg0);
         }
 
         public int getHorizontalDpi() {
-            return real.getHorizontalDpi();
+            return ((android.print.PrintAttributes.Resolution) real).getHorizontalDpi();
         }
 
         public java.lang.String getId() {
-            return real.getId();
+            return ((android.print.PrintAttributes.Resolution) real).getId();
         }
 
         public java.lang.String getLabel() {
-            return real.getLabel();
+            return ((android.print.PrintAttributes.Resolution) real).getLabel();
         }
 
         public int getVerticalDpi() {
-            return real.getVerticalDpi();
+            return ((android.print.PrintAttributes.Resolution) real).getVerticalDpi();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.print.PrintAttributes.Resolution) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.print.PrintAttributes.Resolution) real).toString();
         }
 
     }

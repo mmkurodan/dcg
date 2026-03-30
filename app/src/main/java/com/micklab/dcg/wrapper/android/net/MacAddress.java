@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class MacAddress {
-    private final android.net.MacAddress real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MacAddress(android.net.MacAddress real) {
+    private final java.lang.Object real;
+
+    private MacAddress(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.MacAddress wrap(android.net.MacAddress real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.MacAddress(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.MacAddress(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.MacAddress getReal() {
+        return (android.net.MacAddress) real;
     }
 
     public android.net.MacAddress unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

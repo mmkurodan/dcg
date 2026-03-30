@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class VerifiedKeyEvent {
-    private final android.view.VerifiedKeyEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VerifiedKeyEvent(android.view.VerifiedKeyEvent real) {
+    private final java.lang.Object real;
+
+    private VerifiedKeyEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.VerifiedKeyEvent wrap(android.view.VerifiedKeyEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.VerifiedKeyEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.VerifiedKeyEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.VerifiedKeyEvent getReal() {
+        return (android.view.VerifiedKeyEvent) real;
     }
 
     public android.view.VerifiedKeyEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.VerifiedKeyEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.VerifiedKeyEvent) real).equals(arg0);
     }
 
     public int getAction() {
-        return real.getAction();
+        return ((android.view.VerifiedKeyEvent) real).getAction();
     }
 
     public long getDownTimeNanos() {
-        return real.getDownTimeNanos();
+        return ((android.view.VerifiedKeyEvent) real).getDownTimeNanos();
     }
 
     public java.lang.Boolean getFlag(int arg0) {
-        return real.getFlag(arg0);
+        return ((android.view.VerifiedKeyEvent) real).getFlag(arg0);
     }
 
     public int getKeyCode() {
-        return real.getKeyCode();
+        return ((android.view.VerifiedKeyEvent) real).getKeyCode();
     }
 
     public int getMetaState() {
-        return real.getMetaState();
+        return ((android.view.VerifiedKeyEvent) real).getMetaState();
     }
 
     public int getRepeatCount() {
-        return real.getRepeatCount();
+        return ((android.view.VerifiedKeyEvent) real).getRepeatCount();
     }
 
     public int getScanCode() {
-        return real.getScanCode();
+        return ((android.view.VerifiedKeyEvent) real).getScanCode();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.VerifiedKeyEvent) real).hashCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.VerifiedKeyEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

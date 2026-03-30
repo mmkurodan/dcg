@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class JoinSpec {
-    private final android.app.appsearch.JoinSpec real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JoinSpec(android.app.appsearch.JoinSpec real) {
+    private final java.lang.Object real;
+
+    private JoinSpec(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec wrap(android.app.appsearch.JoinSpec real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.JoinSpec getReal() {
+        return (android.app.appsearch.JoinSpec) real;
     }
 
     public android.app.appsearch.JoinSpec unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.appsearch.JoinSpec) real).describeContents();
     }
 
     public int getAggregationScoringStrategy() {
-        return real.getAggregationScoringStrategy();
+        return ((android.app.appsearch.JoinSpec) real).getAggregationScoringStrategy();
     }
 
     public java.lang.String getChildPropertyExpression() {
-        return real.getChildPropertyExpression();
+        return ((android.app.appsearch.JoinSpec) real).getChildPropertyExpression();
     }
 
     public int getMaxJoinedResultCount() {
-        return real.getMaxJoinedResultCount();
+        return ((android.app.appsearch.JoinSpec) real).getMaxJoinedResultCount();
     }
 
     public java.lang.String getNestedQuery() {
-        return real.getNestedQuery();
+        return ((android.app.appsearch.JoinSpec) real).getNestedQuery();
     }
 
     public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec getNestedSearchSpec() {
-        return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.wrap(real.getNestedSearchSpec());
+        return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.wrap(((android.app.appsearch.JoinSpec) real).getNestedSearchSpec());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.appsearch.JoinSpec) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int AGGREGATION_SCORING_AVG_RANKING_SIGNAL = android.app.appsearch.JoinSpec.AGGREGATION_SCORING_AVG_RANKING_SIGNAL;
@@ -52,38 +59,45 @@ public final class JoinSpec {
     public static final int AGGREGATION_SCORING_SUM_RANKING_SIGNAL = android.app.appsearch.JoinSpec.AGGREGATION_SCORING_SUM_RANKING_SIGNAL;
 
     public static final class Builder {
-        private final android.app.appsearch.JoinSpec.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.appsearch.JoinSpec.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder wrap(android.app.appsearch.JoinSpec.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.JoinSpec.Builder getReal() {
+            return (android.app.appsearch.JoinSpec.Builder) real;
         }
 
         public android.app.appsearch.JoinSpec.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) {
-            this(new android.app.appsearch.JoinSpec.Builder(arg0));
+            this(new android.app.appsearch.JoinSpec.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec build() {
-            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.wrap(((android.app.appsearch.JoinSpec.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setAggregationScoringStrategy(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(real.setAggregationScoringStrategy(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(((android.app.appsearch.JoinSpec.Builder) real).setAggregationScoringStrategy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setMaxJoinedResultCount(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(real.setMaxJoinedResultCount(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(((android.app.appsearch.JoinSpec.Builder) real).setMaxJoinedResultCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setNestedSearch(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec arg1) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(real.setNestedSearch(arg0, arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(((android.app.appsearch.JoinSpec.Builder) real).setNestedSearch(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
     }

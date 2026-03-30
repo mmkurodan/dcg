@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.animation;
 
 public final class PropertyValuesHolder {
-    private final android.animation.PropertyValuesHolder real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PropertyValuesHolder(android.animation.PropertyValuesHolder real) {
+    private final java.lang.Object real;
+
+    private PropertyValuesHolder(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder wrap(android.animation.PropertyValuesHolder real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.animation.PropertyValuesHolder getReal() {
+        return (android.animation.PropertyValuesHolder) real;
     }
 
     public android.animation.PropertyValuesHolder unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder clone() {
-        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(((android.animation.PropertyValuesHolder) real).clone());
     }
 
     public java.lang.String getPropertyName() {
-        return real.getPropertyName();
+        return ((android.animation.PropertyValuesHolder) real).getPropertyName();
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofFloat(java.lang.String arg0, float... arg1) {
@@ -41,11 +48,11 @@ public final class PropertyValuesHolder {
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiFloat(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
-        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiFloat(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiFloat(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiInt(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
-        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiInt(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiInt(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiInt(java.lang.String arg0, int[][] arg1) {
@@ -53,27 +60,27 @@ public final class PropertyValuesHolder {
     }
 
     public void setFloatValues(float... arg0) {
-        real.setFloatValues(arg0);
+        ((android.animation.PropertyValuesHolder) real).setFloatValues(arg0);
     }
 
     public void setIntValues(int... arg0) {
-        real.setIntValues(arg0);
+        ((android.animation.PropertyValuesHolder) real).setIntValues(arg0);
     }
 
     public void setKeyframes(android.animation.Keyframe... arg0) {
-        real.setKeyframes(arg0);
+        ((android.animation.PropertyValuesHolder) real).setKeyframes(arg0);
     }
 
     public void setObjectValues(java.lang.Object... arg0) {
-        real.setObjectValues(arg0);
+        ((android.animation.PropertyValuesHolder) real).setObjectValues(arg0);
     }
 
     public void setPropertyName(java.lang.String arg0) {
-        real.setPropertyName(arg0);
+        ((android.animation.PropertyValuesHolder) real).setPropertyName(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.animation.PropertyValuesHolder) real).toString();
     }
 
 }

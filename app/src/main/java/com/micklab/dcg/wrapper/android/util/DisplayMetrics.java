@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class DisplayMetrics {
-    private final android.util.DisplayMetrics real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisplayMetrics(android.util.DisplayMetrics real) {
+    private final java.lang.Object real;
+
+    private DisplayMetrics(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.DisplayMetrics wrap(android.util.DisplayMetrics real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.DisplayMetrics(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.DisplayMetrics(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.DisplayMetrics getReal() {
+        return (android.util.DisplayMetrics) real;
     }
 
     public android.util.DisplayMetrics unwrap() {
-        return real;
+        return getReal();
     }
 
     public DisplayMetrics() {
-        this(new android.util.DisplayMetrics());
+        this(new android.util.DisplayMetrics(), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
-        return real.equals(arg0 == null ? null : arg0.unwrap());
+        return ((android.util.DisplayMetrics) real).equals(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.util.DisplayMetrics) real).equals(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.util.DisplayMetrics) real).hashCode();
     }
 
     public void setTo(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
-        real.setTo(arg0 == null ? null : arg0.unwrap());
+        ((android.util.DisplayMetrics) real).setTo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setToDefaults() {
-        real.setToDefaults();
+        ((android.util.DisplayMetrics) real).setToDefaults();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.util.DisplayMetrics) real).toString();
     }
 
     public static final int DENSITY_140 = android.util.DisplayMetrics.DENSITY_140;

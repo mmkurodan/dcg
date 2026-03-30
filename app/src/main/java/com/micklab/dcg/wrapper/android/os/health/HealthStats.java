@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.health;
 
 public final class HealthStats {
-    private final android.os.health.HealthStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HealthStats(android.os.health.HealthStats real) {
+    private final java.lang.Object real;
+
+    private HealthStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.health.HealthStats wrap(android.os.health.HealthStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.HealthStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.health.HealthStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.health.HealthStats getReal() {
+        return (android.os.health.HealthStats) real;
     }
 
     public android.os.health.HealthStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getDataType() {

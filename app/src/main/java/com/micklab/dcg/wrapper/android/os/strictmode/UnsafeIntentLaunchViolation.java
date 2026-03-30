@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.strictmode;
 
 public final class UnsafeIntentLaunchViolation {
-    private final android.os.strictmode.UnsafeIntentLaunchViolation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UnsafeIntentLaunchViolation(android.os.strictmode.UnsafeIntentLaunchViolation real) {
+    private final java.lang.Object real;
+
+    private UnsafeIntentLaunchViolation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.strictmode.UnsafeIntentLaunchViolation wrap(android.os.strictmode.UnsafeIntentLaunchViolation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.UnsafeIntentLaunchViolation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.strictmode.UnsafeIntentLaunchViolation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.strictmode.UnsafeIntentLaunchViolation getReal() {
+        return (android.os.strictmode.UnsafeIntentLaunchViolation) real;
     }
 
     public android.os.strictmode.UnsafeIntentLaunchViolation unwrap() {
-        return real;
+        return getReal();
     }
 
     public UnsafeIntentLaunchViolation(com.micklab.dcg.wrapper.android.content.Intent arg0) {

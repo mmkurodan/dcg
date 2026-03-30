@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class RestrictionsManager {
-    private final android.content.RestrictionsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RestrictionsManager(android.content.RestrictionsManager real) {
+    private final java.lang.Object real;
+
+    private RestrictionsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.RestrictionsManager wrap(android.content.RestrictionsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.RestrictionsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.RestrictionsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.RestrictionsManager getReal() {
+        return (android.content.RestrictionsManager) real;
     }
 
     public android.content.RestrictionsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createLocalApprovalIntent() {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.createLocalApprovalIntent());
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.RestrictionsManager) real).createLocalApprovalIntent());
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getApplicationRestrictions() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getApplicationRestrictions());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.RestrictionsManager) real).getApplicationRestrictions());
     }
 
     public boolean hasRestrictionsProvider() {
-        return real.hasRestrictionsProvider();
+        return ((android.content.RestrictionsManager) real).hasRestrictionsProvider();
     }
 
     public void notifyPermissionResponse(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.PersistableBundle arg1) {
-        real.notifyPermissionResponse(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.content.RestrictionsManager) real).notifyPermissionResponse(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void requestPermission(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.PersistableBundle arg2) {
-        real.requestPermission(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.content.RestrictionsManager) real).requestPermission(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static final java.lang.String ACTION_PERMISSION_RESPONSE_RECEIVED = android.content.RestrictionsManager.ACTION_PERMISSION_RESPONSE_RECEIVED;

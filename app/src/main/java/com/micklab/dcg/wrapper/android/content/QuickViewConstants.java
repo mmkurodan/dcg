@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class QuickViewConstants {
-    private final android.content.QuickViewConstants real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public QuickViewConstants(android.content.QuickViewConstants real) {
+    private final java.lang.Object real;
+
+    private QuickViewConstants(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.QuickViewConstants wrap(android.content.QuickViewConstants real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.QuickViewConstants(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.QuickViewConstants(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.QuickViewConstants getReal() {
+        return (android.content.QuickViewConstants) real;
     }
 
     public android.content.QuickViewConstants unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String FEATURE_DELETE = android.content.QuickViewConstants.FEATURE_DELETE;

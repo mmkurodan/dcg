@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.se.omapi;
 
 public final class Channel {
-    private final android.se.omapi.Channel real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Channel(android.se.omapi.Channel real) {
+    private final java.lang.Object real;
+
+    private Channel(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.se.omapi.Channel wrap(android.se.omapi.Channel real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.se.omapi.Channel(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.se.omapi.Channel(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.se.omapi.Channel getReal() {
+        return (android.se.omapi.Channel) real;
     }
 
     public android.se.omapi.Channel unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.se.omapi.Channel) real).close();
     }
 
     public byte[] getSelectResponse() {
-        return real.getSelectResponse();
+        return ((android.se.omapi.Channel) real).getSelectResponse();
     }
 
     public com.micklab.dcg.wrapper.android.se.omapi.Session getSession() {
-        return com.micklab.dcg.wrapper.android.se.omapi.Session.wrap(real.getSession());
+        return com.micklab.dcg.wrapper.android.se.omapi.Session.wrap(((android.se.omapi.Channel) real).getSession());
     }
 
     public boolean isBasicChannel() {
-        return real.isBasicChannel();
+        return ((android.se.omapi.Channel) real).isBasicChannel();
     }
 
     public boolean isOpen() {
-        return real.isOpen();
+        return ((android.se.omapi.Channel) real).isOpen();
     }
 
     public boolean selectNext() throws java.io.IOException {
-        return real.selectNext();
+        return ((android.se.omapi.Channel) real).selectNext();
     }
 
     public byte[] transmit(byte[] arg0) throws java.io.IOException {
-        return real.transmit(arg0);
+        return ((android.se.omapi.Channel) real).transmit(arg0);
     }
 
 }

@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class SecurityLog {
-    private final android.app.admin.SecurityLog real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SecurityLog(android.app.admin.SecurityLog real) {
+    private final java.lang.Object real;
+
+    private SecurityLog(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.SecurityLog wrap(android.app.admin.SecurityLog real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SecurityLog(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SecurityLog(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.SecurityLog getReal() {
+        return (android.app.admin.SecurityLog) real;
     }
 
     public android.app.admin.SecurityLog unwrap() {
-        return real;
+        return getReal();
     }
 
     public SecurityLog() {
-        this(new android.app.admin.SecurityLog());
+        this(new android.app.admin.SecurityLog(), (__DcgwBridgeToken) null);
     }
 
     public static final int LEVEL_ERROR = android.app.admin.SecurityLog.LEVEL_ERROR;
@@ -67,54 +74,61 @@ public final class SecurityLog {
     public static final int TAG_WIPE_FAILURE = android.app.admin.SecurityLog.TAG_WIPE_FAILURE;
 
     public static final class SecurityEvent {
-        private final android.app.admin.SecurityLog.SecurityEvent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SecurityEvent(android.app.admin.SecurityLog.SecurityEvent real) {
+        private final java.lang.Object real;
+
+        private SecurityEvent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.admin.SecurityLog.SecurityEvent wrap(android.app.admin.SecurityLog.SecurityEvent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SecurityLog.SecurityEvent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SecurityLog.SecurityEvent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.admin.SecurityLog.SecurityEvent getReal() {
+            return (android.app.admin.SecurityLog.SecurityEvent) real;
         }
 
         public android.app.admin.SecurityLog.SecurityEvent unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).equals(arg0);
         }
 
         public java.lang.Object getData() {
-            return real.getData();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).getData();
         }
 
         public long getId() {
-            return real.getId();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).getId();
         }
 
         public int getLogLevel() {
-            return real.getLogLevel();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).getLogLevel();
         }
 
         public int getTag() {
-            return real.getTag();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).getTag();
         }
 
         public long getTimeNanos() {
-            return real.getTimeNanos();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).getTimeNanos();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.app.admin.SecurityLog.SecurityEvent) real).hashCode();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.admin.SecurityLog.SecurityEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

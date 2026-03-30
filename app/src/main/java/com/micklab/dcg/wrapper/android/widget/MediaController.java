@@ -2,141 +2,155 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class MediaController {
-    private final android.widget.MediaController real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaController(android.widget.MediaController real) {
+    private final java.lang.Object real;
+
+    private MediaController(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.MediaController wrap(android.widget.MediaController real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.MediaController(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.MediaController(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.MediaController getReal() {
+        return (android.widget.MediaController) real;
     }
 
     public android.widget.MediaController unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaController(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.MediaController(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.MediaController(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public MediaController(com.micklab.dcg.wrapper.android.content.Context arg0, boolean arg1) {
-        this(new android.widget.MediaController(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.widget.MediaController(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public MediaController(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.MediaController(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.MediaController(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public boolean dispatchKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        return real.dispatchKeyEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.MediaController) real).dispatchKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.MediaController) real).getAccessibilityClassName();
     }
 
     public void hide() {
-        real.hide();
+        ((android.widget.MediaController) real).hide();
     }
 
     public boolean isShowing() {
-        return real.isShowing();
+        return ((android.widget.MediaController) real).isShowing();
     }
 
     public void onFinishInflate() {
-        real.onFinishInflate();
+        ((android.widget.MediaController) real).onFinishInflate();
     }
 
     public boolean onTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.MediaController) real).onTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTrackballEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.MediaController) real).onTrackballEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void setAnchorView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.setAnchorView(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.MediaController) real).setAnchorView(arg0 == null ? null : arg0.getReal());
     }
 
     public void setEnabled(boolean arg0) {
-        real.setEnabled(arg0);
+        ((android.widget.MediaController) real).setEnabled(arg0);
     }
 
     public void setMediaPlayer(com.micklab.dcg.wrapper.android.widget.MediaController.MediaPlayerControl arg0) {
-        real.setMediaPlayer(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.MediaController) real).setMediaPlayer(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPrevNextListeners(com.micklab.dcg.wrapper.android.view.View.OnClickListener arg0, com.micklab.dcg.wrapper.android.view.View.OnClickListener arg1) {
-        real.setPrevNextListeners(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.widget.MediaController) real).setPrevNextListeners(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void show() {
-        real.show();
+        ((android.widget.MediaController) real).show();
     }
 
     public void show(int arg0) {
-        real.show(arg0);
+        ((android.widget.MediaController) real).show(arg0);
     }
 
     public static final class MediaPlayerControl {
-        private final android.widget.MediaController.MediaPlayerControl real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaPlayerControl(android.widget.MediaController.MediaPlayerControl real) {
+        private final java.lang.Object real;
+
+        private MediaPlayerControl(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.MediaController.MediaPlayerControl wrap(android.widget.MediaController.MediaPlayerControl real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.MediaController.MediaPlayerControl(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.MediaController.MediaPlayerControl(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.MediaController.MediaPlayerControl getReal() {
+            return (android.widget.MediaController.MediaPlayerControl) real;
         }
 
         public android.widget.MediaController.MediaPlayerControl unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean canPause() {
-            return real.canPause();
+            return ((android.widget.MediaController.MediaPlayerControl) real).canPause();
         }
 
         public boolean canSeekBackward() {
-            return real.canSeekBackward();
+            return ((android.widget.MediaController.MediaPlayerControl) real).canSeekBackward();
         }
 
         public boolean canSeekForward() {
-            return real.canSeekForward();
+            return ((android.widget.MediaController.MediaPlayerControl) real).canSeekForward();
         }
 
         public int getAudioSessionId() {
-            return real.getAudioSessionId();
+            return ((android.widget.MediaController.MediaPlayerControl) real).getAudioSessionId();
         }
 
         public int getBufferPercentage() {
-            return real.getBufferPercentage();
+            return ((android.widget.MediaController.MediaPlayerControl) real).getBufferPercentage();
         }
 
         public int getCurrentPosition() {
-            return real.getCurrentPosition();
+            return ((android.widget.MediaController.MediaPlayerControl) real).getCurrentPosition();
         }
 
         public int getDuration() {
-            return real.getDuration();
+            return ((android.widget.MediaController.MediaPlayerControl) real).getDuration();
         }
 
         public boolean isPlaying() {
-            return real.isPlaying();
+            return ((android.widget.MediaController.MediaPlayerControl) real).isPlaying();
         }
 
         public void pause() {
-            real.pause();
+            ((android.widget.MediaController.MediaPlayerControl) real).pause();
         }
 
         public void seekTo(int arg0) {
-            real.seekTo(arg0);
+            ((android.widget.MediaController.MediaPlayerControl) real).seekTo(arg0);
         }
 
         public void start() {
-            real.start();
+            ((android.widget.MediaController.MediaPlayerControl) real).start();
         }
 
     }

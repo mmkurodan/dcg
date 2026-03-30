@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Base64 {
-    private final android.util.Base64 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Base64(android.util.Base64 real) {
+    private final java.lang.Object real;
+
+    private Base64(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Base64 wrap(android.util.Base64 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Base64(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Base64(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Base64 getReal() {
+        return (android.util.Base64) real;
     }
 
     public android.util.Base64 unwrap() {
-        return real;
+        return getReal();
     }
 
     public static byte[] decode(byte[] arg0, int arg1) {

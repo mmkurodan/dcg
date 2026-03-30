@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteTableLockedException {
-    private final android.database.sqlite.SQLiteTableLockedException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteTableLockedException(android.database.sqlite.SQLiteTableLockedException real) {
+    private final java.lang.Object real;
+
+    private SQLiteTableLockedException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTableLockedException wrap(android.database.sqlite.SQLiteTableLockedException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTableLockedException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteTableLockedException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteTableLockedException getReal() {
+        return (android.database.sqlite.SQLiteTableLockedException) real;
     }
 
     public android.database.sqlite.SQLiteTableLockedException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteTableLockedException() {

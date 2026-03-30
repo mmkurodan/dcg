@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class UserData {
-    private final android.adservices.ondevicepersonalization.UserData real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UserData(android.adservices.ondevicepersonalization.UserData real) {
+    private final java.lang.Object real;
+
+    private UserData(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.UserData wrap(android.adservices.ondevicepersonalization.UserData real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.UserData(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.UserData(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.UserData getReal() {
+        return (android.adservices.ondevicepersonalization.UserData) real;
     }
 
     public android.adservices.ondevicepersonalization.UserData unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.adservices.ondevicepersonalization.UserData) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.ondevicepersonalization.UserData) real).equals(arg0);
     }
 
     public long getAvailableStorageBytes() {
-        return real.getAvailableStorageBytes();
+        return ((android.adservices.ondevicepersonalization.UserData) real).getAvailableStorageBytes();
     }
 
     public int getBatteryPercentage() {
-        return real.getBatteryPercentage();
+        return ((android.adservices.ondevicepersonalization.UserData) real).getBatteryPercentage();
     }
 
     public java.lang.String getCarrier() {
-        return real.getCarrier();
+        return ((android.adservices.ondevicepersonalization.UserData) real).getCarrier();
     }
 
     public int getDataNetworkType() {
@@ -45,19 +52,19 @@ public final class UserData {
     }
 
     public int getOrientation() {
-        return real.getOrientation();
+        return ((android.adservices.ondevicepersonalization.UserData) real).getOrientation();
     }
 
     public java.time.Duration getTimezoneUtcOffset() {
-        return real.getTimezoneUtcOffset();
+        return ((android.adservices.ondevicepersonalization.UserData) real).getTimezoneUtcOffset();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.ondevicepersonalization.UserData) real).hashCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.adservices.ondevicepersonalization.UserData) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

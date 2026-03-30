@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class UrspRule {
-    private final android.telephony.data.UrspRule real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UrspRule(android.telephony.data.UrspRule real) {
+    private final java.lang.Object real;
+
+    private UrspRule(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.UrspRule wrap(android.telephony.data.UrspRule real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.UrspRule(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.UrspRule(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.UrspRule getReal() {
+        return (android.telephony.data.UrspRule) real;
     }
 
     public android.telephony.data.UrspRule unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

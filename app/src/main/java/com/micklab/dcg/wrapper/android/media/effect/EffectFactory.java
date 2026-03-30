@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.media.effect;
 
 public final class EffectFactory {
-    private final android.media.effect.EffectFactory real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EffectFactory(android.media.effect.EffectFactory real) {
+    private final java.lang.Object real;
+
+    private EffectFactory(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.effect.EffectFactory wrap(android.media.effect.EffectFactory real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.effect.EffectFactory(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.effect.EffectFactory(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.effect.EffectFactory getReal() {
+        return (android.media.effect.EffectFactory) real;
     }
 
     public android.media.effect.EffectFactory unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.media.effect.Effect createEffect(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.media.effect.Effect.wrap(real.createEffect(arg0));
+        return com.micklab.dcg.wrapper.android.media.effect.Effect.wrap(((android.media.effect.EffectFactory) real).createEffect(arg0));
     }
 
     public static boolean isEffectSupported(java.lang.String arg0) {

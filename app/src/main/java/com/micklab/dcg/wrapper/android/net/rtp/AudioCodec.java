@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.rtp;
 
 public final class AudioCodec {
-    private final android.net.rtp.AudioCodec real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioCodec(android.net.rtp.AudioCodec real) {
+    private final java.lang.Object real;
+
+    private AudioCodec(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.rtp.AudioCodec wrap(android.net.rtp.AudioCodec real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.AudioCodec(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.AudioCodec(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.rtp.AudioCodec getReal() {
+        return (android.net.rtp.AudioCodec) real;
     }
 
     public android.net.rtp.AudioCodec unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.net.rtp.AudioCodec getCodec(int arg0, java.lang.String arg1, java.lang.String arg2) {

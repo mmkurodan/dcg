@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.p2p;
 
 public final class WifiP2pDiscoveryConfig {
-    private final android.net.wifi.p2p.WifiP2pDiscoveryConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiP2pDiscoveryConfig(android.net.wifi.p2p.WifiP2pDiscoveryConfig real) {
+    private final java.lang.Object real;
+
+    private WifiP2pDiscoveryConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig wrap(android.net.wifi.p2p.WifiP2pDiscoveryConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.p2p.WifiP2pDiscoveryConfig getReal() {
+        return (android.net.wifi.p2p.WifiP2pDiscoveryConfig) real;
     }
 
     public android.net.wifi.p2p.WifiP2pDiscoveryConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -38,18 +45,25 @@ public final class WifiP2pDiscoveryConfig {
 
 
     public static final class Builder {
-        private final android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder wrap(android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder getReal() {
+            return (android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder) real;
         }
 
         public android.net.wifi.p2p.WifiP2pDiscoveryConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {

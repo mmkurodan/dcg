@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Environment {
-    private final android.os.Environment real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Environment(android.os.Environment real) {
+    private final java.lang.Object real;
+
+    private Environment(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Environment wrap(android.os.Environment real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Environment(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Environment(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Environment getReal() {
+        return (android.os.Environment) real;
     }
 
     public android.os.Environment unwrap() {
-        return real;
+        return getReal();
     }
 
     public Environment() {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsMmTelManager {
-    private final android.telephony.ims.ImsMmTelManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsMmTelManager(android.telephony.ims.ImsMmTelManager real) {
+    private final java.lang.Object real;
+
+    private ImsMmTelManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager wrap(android.telephony.ims.ImsMmTelManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsMmTelManager getReal() {
+        return (android.telephony.ims.ImsMmTelManager) real;
     }
 
     public android.telephony.ims.ImsMmTelManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getVoWiFiModeSetting() {
@@ -70,18 +77,25 @@ public final class ImsMmTelManager {
 
 
     public static final class CapabilityCallback {
-        private final android.telephony.ims.ImsMmTelManager.CapabilityCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CapabilityCallback(android.telephony.ims.ImsMmTelManager.CapabilityCallback real) {
+        private final java.lang.Object real;
+
+        private CapabilityCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager.CapabilityCallback wrap(android.telephony.ims.ImsMmTelManager.CapabilityCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager.CapabilityCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager.CapabilityCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.ims.ImsMmTelManager.CapabilityCallback getReal() {
+            return (android.telephony.ims.ImsMmTelManager.CapabilityCallback) real;
         }
 
         public android.telephony.ims.ImsMmTelManager.CapabilityCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public CapabilityCallback() {

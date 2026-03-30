@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothSocketException {
-    private final android.bluetooth.BluetoothSocketException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothSocketException(android.bluetooth.BluetoothSocketException real) {
+    private final java.lang.Object real;
+
+    private BluetoothSocketException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocketException wrap(android.bluetooth.BluetoothSocketException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocketException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocketException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothSocketException getReal() {
+        return (android.bluetooth.BluetoothSocketException) real;
     }
 
     public android.bluetooth.BluetoothSocketException unwrap() {
-        return real;
+        return getReal();
     }
 
     public BluetoothSocketException(int arg0) {
@@ -25,7 +32,7 @@ public final class BluetoothSocketException {
     }
 
     public int getErrorCode() {
-        return real.getErrorCode();
+        return ((android.bluetooth.BluetoothSocketException) real).getErrorCode();
     }
 
     public static final int BLUETOOTH_OFF_FAILURE = android.bluetooth.BluetoothSocketException.BLUETOOTH_OFF_FAILURE;

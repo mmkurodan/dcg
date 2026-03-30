@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2;
 
 public final class TotalCaptureResult {
-    private final android.hardware.camera2.TotalCaptureResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TotalCaptureResult(android.hardware.camera2.TotalCaptureResult real) {
+    private final java.lang.Object real;
+
+    private TotalCaptureResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.TotalCaptureResult wrap(android.hardware.camera2.TotalCaptureResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.TotalCaptureResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.TotalCaptureResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.TotalCaptureResult getReal() {
+        return (android.hardware.camera2.TotalCaptureResult) real;
     }
 
     public android.hardware.camera2.TotalCaptureResult unwrap() {
-        return real;
+        return getReal();
     }
 
 }

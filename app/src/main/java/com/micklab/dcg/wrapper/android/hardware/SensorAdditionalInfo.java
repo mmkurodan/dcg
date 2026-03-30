@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class SensorAdditionalInfo {
-    private final android.hardware.SensorAdditionalInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SensorAdditionalInfo(android.hardware.SensorAdditionalInfo real) {
+    private final java.lang.Object real;
+
+    private SensorAdditionalInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.SensorAdditionalInfo wrap(android.hardware.SensorAdditionalInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorAdditionalInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorAdditionalInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.SensorAdditionalInfo getReal() {
+        return (android.hardware.SensorAdditionalInfo) real;
     }
 
     public android.hardware.SensorAdditionalInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int TYPE_FRAME_BEGIN = android.hardware.SensorAdditionalInfo.TYPE_FRAME_BEGIN;

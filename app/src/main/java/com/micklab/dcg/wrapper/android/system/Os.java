@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class Os {
-    private final android.system.Os real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Os(android.system.Os real) {
+    private final java.lang.Object real;
+
+    private Os(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.Os wrap(android.system.Os real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.Os(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.Os(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.Os getReal() {
+        return (android.system.Os) real;
     }
 
     public android.system.Os unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.io.FileDescriptor accept(java.io.FileDescriptor arg0, java.net.InetSocketAddress arg1) throws android.system.ErrnoException, java.net.SocketException {

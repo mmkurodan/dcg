@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.adservices.adselection;
 
 public final class GetAdSelectionDataOutcome {
-    private final android.adservices.adselection.GetAdSelectionDataOutcome real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GetAdSelectionDataOutcome(android.adservices.adselection.GetAdSelectionDataOutcome real) {
+    private final java.lang.Object real;
+
+    private GetAdSelectionDataOutcome(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataOutcome wrap(android.adservices.adselection.GetAdSelectionDataOutcome real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataOutcome(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataOutcome(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adselection.GetAdSelectionDataOutcome getReal() {
+        return (android.adservices.adselection.GetAdSelectionDataOutcome) real;
     }
 
     public android.adservices.adselection.GetAdSelectionDataOutcome unwrap() {
-        return real;
+        return getReal();
     }
 
     public byte[] getAdSelectionData() {
-        return real.getAdSelectionData();
+        return ((android.adservices.adselection.GetAdSelectionDataOutcome) real).getAdSelectionData();
     }
 
     public long getAdSelectionDataId() {
-        return real.getAdSelectionDataId();
+        return ((android.adservices.adselection.GetAdSelectionDataOutcome) real).getAdSelectionDataId();
     }
 
     public long getAdSelectionId() {
-        return real.getAdSelectionId();
+        return ((android.adservices.adselection.GetAdSelectionDataOutcome) real).getAdSelectionId();
     }
 
 }

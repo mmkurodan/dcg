@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class IDNA {
-    private final android.icu.text.IDNA real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IDNA(android.icu.text.IDNA real) {
+    private final java.lang.Object real;
+
+    private IDNA(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.IDNA wrap(android.icu.text.IDNA real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.IDNA getReal() {
+        return (android.icu.text.IDNA) real;
     }
 
     public android.icu.text.IDNA unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.IDNA getUTS46Instance(int arg0) {
@@ -21,19 +28,19 @@ public final class IDNA {
     }
 
     public java.lang.StringBuilder labelToASCII(java.lang.CharSequence arg0, java.lang.StringBuilder arg1, com.micklab.dcg.wrapper.android.icu.text.IDNA.Info arg2) {
-        return real.labelToASCII(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.text.IDNA) real).labelToASCII(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.StringBuilder labelToUnicode(java.lang.CharSequence arg0, java.lang.StringBuilder arg1, com.micklab.dcg.wrapper.android.icu.text.IDNA.Info arg2) {
-        return real.labelToUnicode(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.text.IDNA) real).labelToUnicode(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.StringBuilder nameToASCII(java.lang.CharSequence arg0, java.lang.StringBuilder arg1, com.micklab.dcg.wrapper.android.icu.text.IDNA.Info arg2) {
-        return real.nameToASCII(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.text.IDNA) real).nameToASCII(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.StringBuilder nameToUnicode(java.lang.CharSequence arg0, java.lang.StringBuilder arg1, com.micklab.dcg.wrapper.android.icu.text.IDNA.Info arg2) {
-        return real.nameToUnicode(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.icu.text.IDNA) real).nameToUnicode(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static final int CHECK_BIDI = android.icu.text.IDNA.CHECK_BIDI;
@@ -45,18 +52,25 @@ public final class IDNA {
     public static final int USE_STD3_RULES = android.icu.text.IDNA.USE_STD3_RULES;
 
     public static final class Error {
-        private final android.icu.text.IDNA.Error real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Error(android.icu.text.IDNA.Error real) {
+        private final java.lang.Object real;
+
+        private Error(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.IDNA.Error wrap(android.icu.text.IDNA.Error real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA.Error(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA.Error(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.IDNA.Error getReal() {
+            return (android.icu.text.IDNA.Error) real;
         }
 
         public android.icu.text.IDNA.Error unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.IDNA.Error valueOf(java.lang.String arg0) {
@@ -85,30 +99,37 @@ public final class IDNA {
 
     }
     public static final class Info {
-        private final android.icu.text.IDNA.Info real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Info(android.icu.text.IDNA.Info real) {
+        private final java.lang.Object real;
+
+        private Info(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.IDNA.Info wrap(android.icu.text.IDNA.Info real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA.Info(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.IDNA.Info(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.IDNA.Info getReal() {
+            return (android.icu.text.IDNA.Info) real;
         }
 
         public android.icu.text.IDNA.Info unwrap() {
-            return real;
+            return getReal();
         }
 
         public Info() {
-            this(new android.icu.text.IDNA.Info());
+            this(new android.icu.text.IDNA.Info(), (__DcgwBridgeToken) null);
         }
 
         public boolean hasErrors() {
-            return real.hasErrors();
+            return ((android.icu.text.IDNA.Info) real).hasErrors();
         }
 
         public boolean isTransitionalDifferent() {
-            return real.isTransitionalDifferent();
+            return ((android.icu.text.IDNA.Info) real).isTransitionalDifferent();
         }
 
     }

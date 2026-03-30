@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class NetworkSliceInfo {
-    private final android.telephony.data.NetworkSliceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkSliceInfo(android.telephony.data.NetworkSliceInfo real) {
+    private final java.lang.Object real;
+
+    private NetworkSliceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo wrap(android.telephony.data.NetworkSliceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.NetworkSliceInfo getReal() {
+        return (android.telephony.data.NetworkSliceInfo) real;
     }
 
     public android.telephony.data.NetworkSliceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -58,18 +65,25 @@ public final class NetworkSliceInfo {
 
 
     public static final class Builder {
-        private final android.telephony.data.NetworkSliceInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.data.NetworkSliceInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo.Builder wrap(android.telephony.data.NetworkSliceInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.NetworkSliceInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.data.NetworkSliceInfo.Builder getReal() {
+            return (android.telephony.data.NetworkSliceInfo.Builder) real;
         }
 
         public android.telephony.data.NetworkSliceInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

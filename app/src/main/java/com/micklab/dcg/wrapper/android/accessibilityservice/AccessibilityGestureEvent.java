@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.accessibilityservice;
 
 public final class AccessibilityGestureEvent {
-    private final android.accessibilityservice.AccessibilityGestureEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccessibilityGestureEvent(android.accessibilityservice.AccessibilityGestureEvent real) {
+    private final java.lang.Object real;
+
+    private AccessibilityGestureEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityGestureEvent wrap(android.accessibilityservice.AccessibilityGestureEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityGestureEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityGestureEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accessibilityservice.AccessibilityGestureEvent getReal() {
+        return (android.accessibilityservice.AccessibilityGestureEvent) real;
     }
 
     public android.accessibilityservice.AccessibilityGestureEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccessibilityGestureEvent(int arg0, int arg1, java.util.List arg2) {
-        this(new android.accessibilityservice.AccessibilityGestureEvent(arg0, arg1, arg2));
+        this(new android.accessibilityservice.AccessibilityGestureEvent(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.accessibilityservice.AccessibilityGestureEvent) real).describeContents();
     }
 
     public static java.lang.String gestureIdToString(int arg0) {
@@ -29,19 +36,19 @@ public final class AccessibilityGestureEvent {
     }
 
     public int getDisplayId() {
-        return real.getDisplayId();
+        return ((android.accessibilityservice.AccessibilityGestureEvent) real).getDisplayId();
     }
 
     public int getGestureId() {
-        return real.getGestureId();
+        return ((android.accessibilityservice.AccessibilityGestureEvent) real).getGestureId();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.accessibilityservice.AccessibilityGestureEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.accessibilityservice.AccessibilityGestureEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

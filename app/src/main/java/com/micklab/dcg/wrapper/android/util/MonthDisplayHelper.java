@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class MonthDisplayHelper {
-    private final android.util.MonthDisplayHelper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MonthDisplayHelper(android.util.MonthDisplayHelper real) {
+    private final java.lang.Object real;
+
+    private MonthDisplayHelper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.MonthDisplayHelper wrap(android.util.MonthDisplayHelper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.MonthDisplayHelper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.MonthDisplayHelper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.MonthDisplayHelper getReal() {
+        return (android.util.MonthDisplayHelper) real;
     }
 
     public android.util.MonthDisplayHelper unwrap() {
-        return real;
+        return getReal();
     }
 
     public MonthDisplayHelper(int arg0, int arg1) {
-        this(new android.util.MonthDisplayHelper(arg0, arg1));
+        this(new android.util.MonthDisplayHelper(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public MonthDisplayHelper(int arg0, int arg1, int arg2) {
-        this(new android.util.MonthDisplayHelper(arg0, arg1, arg2));
+        this(new android.util.MonthDisplayHelper(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public int getColumnOf(int arg0) {
-        return real.getColumnOf(arg0);
+        return ((android.util.MonthDisplayHelper) real).getColumnOf(arg0);
     }
 
     public int getDayAt(int arg0, int arg1) {
-        return real.getDayAt(arg0, arg1);
+        return ((android.util.MonthDisplayHelper) real).getDayAt(arg0, arg1);
     }
 
     public int[] getDigitsForRow(int arg0) {
-        return real.getDigitsForRow(arg0);
+        return ((android.util.MonthDisplayHelper) real).getDigitsForRow(arg0);
     }
 
     public int getFirstDayOfMonth() {
-        return real.getFirstDayOfMonth();
+        return ((android.util.MonthDisplayHelper) real).getFirstDayOfMonth();
     }
 
     public int getMonth() {
-        return real.getMonth();
+        return ((android.util.MonthDisplayHelper) real).getMonth();
     }
 
     public int getNumberOfDaysInMonth() {
-        return real.getNumberOfDaysInMonth();
+        return ((android.util.MonthDisplayHelper) real).getNumberOfDaysInMonth();
     }
 
     public int getOffset() {
-        return real.getOffset();
+        return ((android.util.MonthDisplayHelper) real).getOffset();
     }
 
     public int getRowOf(int arg0) {
-        return real.getRowOf(arg0);
+        return ((android.util.MonthDisplayHelper) real).getRowOf(arg0);
     }
 
     public int getWeekStartDay() {
-        return real.getWeekStartDay();
+        return ((android.util.MonthDisplayHelper) real).getWeekStartDay();
     }
 
     public int getYear() {
-        return real.getYear();
+        return ((android.util.MonthDisplayHelper) real).getYear();
     }
 
     public boolean isWithinCurrentMonth(int arg0, int arg1) {
-        return real.isWithinCurrentMonth(arg0, arg1);
+        return ((android.util.MonthDisplayHelper) real).isWithinCurrentMonth(arg0, arg1);
     }
 
     public void nextMonth() {
-        real.nextMonth();
+        ((android.util.MonthDisplayHelper) real).nextMonth();
     }
 
     public void previousMonth() {
-        real.previousMonth();
+        ((android.util.MonthDisplayHelper) real).previousMonth();
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Patterns {
-    private final android.util.Patterns real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Patterns(android.util.Patterns real) {
+    private final java.lang.Object real;
+
+    private Patterns(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Patterns wrap(android.util.Patterns real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Patterns(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Patterns(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Patterns getReal() {
+        return (android.util.Patterns) real;
     }
 
     public android.util.Patterns unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.lang.String concatGroups(java.util.regex.Matcher arg0) {

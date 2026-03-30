@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class SystemClock {
-    private final android.os.SystemClock real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SystemClock(android.os.SystemClock real) {
+    private final java.lang.Object real;
+
+    private SystemClock(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.SystemClock wrap(android.os.SystemClock real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.SystemClock(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.SystemClock(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.SystemClock getReal() {
+        return (android.os.SystemClock) real;
     }
 
     public android.os.SystemClock unwrap() {
-        return real;
+        return getReal();
     }
 
     public static java.time.Clock currentGnssTimeClock() {

@@ -2,90 +2,97 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class SearchSpec {
-    private final android.app.appsearch.SearchSpec real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SearchSpec(android.app.appsearch.SearchSpec real) {
+    private final java.lang.Object real;
+
+    private SearchSpec(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec wrap(android.app.appsearch.SearchSpec real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.SearchSpec getReal() {
+        return (android.app.appsearch.SearchSpec) real;
     }
 
     public android.app.appsearch.SearchSpec unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.appsearch.SearchSpec) real).describeContents();
     }
 
     public java.lang.String getAdvancedRankingExpression() {
-        return real.getAdvancedRankingExpression();
+        return ((android.app.appsearch.SearchSpec) real).getAdvancedRankingExpression();
     }
 
     public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec getJoinSpec() {
-        return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.wrap(real.getJoinSpec());
+        return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.wrap(((android.app.appsearch.SearchSpec) real).getJoinSpec());
     }
 
     public int getMaxSnippetSize() {
-        return real.getMaxSnippetSize();
+        return ((android.app.appsearch.SearchSpec) real).getMaxSnippetSize();
     }
 
     public int getOrder() {
-        return real.getOrder();
+        return ((android.app.appsearch.SearchSpec) real).getOrder();
     }
 
     public int getRankingStrategy() {
-        return real.getRankingStrategy();
+        return ((android.app.appsearch.SearchSpec) real).getRankingStrategy();
     }
 
     public int getResultCountPerPage() {
-        return real.getResultCountPerPage();
+        return ((android.app.appsearch.SearchSpec) real).getResultCountPerPage();
     }
 
     public int getResultGroupingLimit() {
-        return real.getResultGroupingLimit();
+        return ((android.app.appsearch.SearchSpec) real).getResultGroupingLimit();
     }
 
     public int getResultGroupingTypeFlags() {
-        return real.getResultGroupingTypeFlags();
+        return ((android.app.appsearch.SearchSpec) real).getResultGroupingTypeFlags();
     }
 
     public java.lang.String getSearchSourceLogTag() {
-        return real.getSearchSourceLogTag();
+        return ((android.app.appsearch.SearchSpec) real).getSearchSourceLogTag();
     }
 
     public int getSnippetCount() {
-        return real.getSnippetCount();
+        return ((android.app.appsearch.SearchSpec) real).getSnippetCount();
     }
 
     public int getSnippetCountPerProperty() {
-        return real.getSnippetCountPerProperty();
+        return ((android.app.appsearch.SearchSpec) real).getSnippetCountPerProperty();
     }
 
     public int getTermMatch() {
-        return real.getTermMatch();
+        return ((android.app.appsearch.SearchSpec) real).getTermMatch();
     }
 
     public boolean isListFilterHasPropertyFunctionEnabled() {
-        return real.isListFilterHasPropertyFunctionEnabled();
+        return ((android.app.appsearch.SearchSpec) real).isListFilterHasPropertyFunctionEnabled();
     }
 
     public boolean isListFilterQueryLanguageEnabled() {
-        return real.isListFilterQueryLanguageEnabled();
+        return ((android.app.appsearch.SearchSpec) real).isListFilterQueryLanguageEnabled();
     }
 
     public boolean isNumericSearchEnabled() {
-        return real.isNumericSearchEnabled();
+        return ((android.app.appsearch.SearchSpec) real).isNumericSearchEnabled();
     }
 
     public boolean isVerbatimSearchEnabled() {
-        return real.isVerbatimSearchEnabled();
+        return ((android.app.appsearch.SearchSpec) real).isVerbatimSearchEnabled();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.appsearch.SearchSpec) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int GROUPING_TYPE_PER_NAMESPACE = android.app.appsearch.SearchSpec.GROUPING_TYPE_PER_NAMESPACE;
@@ -109,98 +116,105 @@ public final class SearchSpec {
     public static final int TERM_MATCH_PREFIX = android.app.appsearch.SearchSpec.TERM_MATCH_PREFIX;
 
     public static final class Builder {
-        private final android.app.appsearch.SearchSpec.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.appsearch.SearchSpec.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder wrap(android.app.appsearch.SearchSpec.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.SearchSpec.Builder getReal() {
+            return (android.app.appsearch.SearchSpec.Builder) real;
         }
 
         public android.app.appsearch.SearchSpec.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.app.appsearch.SearchSpec.Builder());
+            this(new android.app.appsearch.SearchSpec.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addFilterNamespaces(java.lang.String... arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.addFilterNamespaces(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterNamespaces(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addFilterPackageNames(java.lang.String... arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.addFilterPackageNames(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterPackageNames(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addFilterSchemas(java.lang.String... arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.addFilterSchemas(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterSchemas(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec build() {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.wrap(((android.app.appsearch.SearchSpec.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setJoinSpec(com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setJoinSpec(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setJoinSpec(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setListFilterHasPropertyFunctionEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setListFilterHasPropertyFunctionEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setListFilterHasPropertyFunctionEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setListFilterQueryLanguageEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setListFilterQueryLanguageEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setListFilterQueryLanguageEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setMaxSnippetSize(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setMaxSnippetSize(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setMaxSnippetSize(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setNumericSearchEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setNumericSearchEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setNumericSearchEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setOrder(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setOrder(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setOrder(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setRankingStrategy(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setRankingStrategy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setRankingStrategy(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setRankingStrategy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setResultCountPerPage(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setResultCountPerPage(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setResultCountPerPage(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setResultGrouping(int arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setResultGrouping(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setResultGrouping(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setSearchSourceLogTag(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setSearchSourceLogTag(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setSearchSourceLogTag(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setSnippetCount(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setSnippetCount(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setSnippetCount(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setSnippetCountPerProperty(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setSnippetCountPerProperty(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setSnippetCountPerProperty(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setTermMatch(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setTermMatch(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setTermMatch(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setVerbatimSearchEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(real.setVerbatimSearchEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setVerbatimSearchEnabled(arg0));
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SignalThresholdInfo {
-    private final android.telephony.SignalThresholdInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SignalThresholdInfo(android.telephony.SignalThresholdInfo real) {
+    private final java.lang.Object real;
+
+    private SignalThresholdInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo wrap(android.telephony.SignalThresholdInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SignalThresholdInfo getReal() {
+        return (android.telephony.SignalThresholdInfo) real;
     }
 
     public android.telephony.SignalThresholdInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -62,18 +69,25 @@ public final class SignalThresholdInfo {
 
 
     public static final class Builder {
-        private final android.telephony.SignalThresholdInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.SignalThresholdInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo.Builder wrap(android.telephony.SignalThresholdInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalThresholdInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SignalThresholdInfo.Builder getReal() {
+            return (android.telephony.SignalThresholdInfo.Builder) real;
         }
 
         public android.telephony.SignalThresholdInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

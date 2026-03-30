@@ -2,94 +2,101 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class ScanResult {
-    private final android.bluetooth.le.ScanResult real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScanResult(android.bluetooth.le.ScanResult real) {
+    private final java.lang.Object real;
+
+    private ScanResult(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.ScanResult wrap(android.bluetooth.le.ScanResult real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanResult(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanResult(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.ScanResult getReal() {
+        return (android.bluetooth.le.ScanResult) real;
     }
 
     public android.bluetooth.le.ScanResult unwrap() {
-        return real;
+        return getReal();
     }
 
     public ScanResult(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord arg1, int arg2, long arg3) {
-        this(new android.bluetooth.le.ScanResult(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.bluetooth.le.ScanResult(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public ScanResult(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord arg8, long arg9) {
-        this(new android.bluetooth.le.ScanResult(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 == null ? null : arg8.unwrap(), arg9));
+        this(new android.bluetooth.le.ScanResult(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 == null ? null : arg8.getReal(), arg9), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.le.ScanResult) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.bluetooth.le.ScanResult) real).equals(arg0);
     }
 
     public int getAdvertisingSid() {
-        return real.getAdvertisingSid();
+        return ((android.bluetooth.le.ScanResult) real).getAdvertisingSid();
     }
 
     public int getDataStatus() {
-        return real.getDataStatus();
+        return ((android.bluetooth.le.ScanResult) real).getDataStatus();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getDevice() {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getDevice());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.le.ScanResult) real).getDevice());
     }
 
     public int getPeriodicAdvertisingInterval() {
-        return real.getPeriodicAdvertisingInterval();
+        return ((android.bluetooth.le.ScanResult) real).getPeriodicAdvertisingInterval();
     }
 
     public int getPrimaryPhy() {
-        return real.getPrimaryPhy();
+        return ((android.bluetooth.le.ScanResult) real).getPrimaryPhy();
     }
 
     public int getRssi() {
-        return real.getRssi();
+        return ((android.bluetooth.le.ScanResult) real).getRssi();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord getScanRecord() {
-        return com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord.wrap(real.getScanRecord());
+        return com.micklab.dcg.wrapper.android.bluetooth.le.ScanRecord.wrap(((android.bluetooth.le.ScanResult) real).getScanRecord());
     }
 
     public int getSecondaryPhy() {
-        return real.getSecondaryPhy();
+        return ((android.bluetooth.le.ScanResult) real).getSecondaryPhy();
     }
 
     public long getTimestampNanos() {
-        return real.getTimestampNanos();
+        return ((android.bluetooth.le.ScanResult) real).getTimestampNanos();
     }
 
     public int getTxPower() {
-        return real.getTxPower();
+        return ((android.bluetooth.le.ScanResult) real).getTxPower();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.bluetooth.le.ScanResult) real).hashCode();
     }
 
     public boolean isConnectable() {
-        return real.isConnectable();
+        return ((android.bluetooth.le.ScanResult) real).isConnectable();
     }
 
     public boolean isLegacy() {
-        return real.isLegacy();
+        return ((android.bluetooth.le.ScanResult) real).isLegacy();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.le.ScanResult) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.ScanResult) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int DATA_COMPLETE = android.bluetooth.le.ScanResult.DATA_COMPLETE;

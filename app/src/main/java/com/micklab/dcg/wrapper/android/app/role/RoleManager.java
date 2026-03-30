@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.app.role;
 
 public final class RoleManager {
-    private final android.app.role.RoleManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RoleManager(android.app.role.RoleManager real) {
+    private final java.lang.Object real;
+
+    private RoleManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.role.RoleManager wrap(android.app.role.RoleManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.role.RoleManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.role.RoleManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.role.RoleManager getReal() {
+        return (android.app.role.RoleManager) real;
     }
 
     public android.app.role.RoleManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createRequestRoleIntent(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.createRequestRoleIntent(arg0));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.app.role.RoleManager) real).createRequestRoleIntent(arg0));
     }
 
     public boolean isRoleAvailable(java.lang.String arg0) {
-        return real.isRoleAvailable(arg0);
+        return ((android.app.role.RoleManager) real).isRoleAvailable(arg0);
     }
 
     public boolean isRoleHeld(java.lang.String arg0) {
-        return real.isRoleHeld(arg0);
+        return ((android.app.role.RoleManager) real).isRoleHeld(arg0);
     }
 
     public static final java.lang.String ROLE_ASSISTANT = android.app.role.RoleManager.ROLE_ASSISTANT;

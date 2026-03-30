@@ -2,102 +2,109 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class Notification {
-    private final android.app.Notification real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Notification(android.app.Notification real) {
+    private final java.lang.Object real;
+
+    private Notification(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.Notification wrap(android.app.Notification real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.Notification getReal() {
+        return (android.app.Notification) real;
     }
 
     public android.app.Notification unwrap() {
-        return real;
+        return getReal();
     }
 
     public Notification() {
-        this(new android.app.Notification());
+        this(new android.app.Notification(), (__DcgwBridgeToken) null);
     }
 
     public Notification(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.app.Notification(arg0 == null ? null : arg0.unwrap()));
+        this(new android.app.Notification(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public Notification(int arg0, java.lang.CharSequence arg1, long arg2) {
-        this(new android.app.Notification(arg0, arg1, arg2));
+        this(new android.app.Notification(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.app.Notification clone() {
-        return com.micklab.dcg.wrapper.android.app.Notification.wrap(real.clone());
+        return com.micklab.dcg.wrapper.android.app.Notification.wrap(((android.app.Notification) real).clone());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.Notification) real).describeContents();
     }
 
     public boolean getAllowSystemGeneratedContextualActions() {
-        return real.getAllowSystemGeneratedContextualActions();
+        return ((android.app.Notification) real).getAllowSystemGeneratedContextualActions();
     }
 
     public int getBadgeIconType() {
-        return real.getBadgeIconType();
+        return ((android.app.Notification) real).getBadgeIconType();
     }
 
     public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata getBubbleMetadata() {
-        return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.wrap(real.getBubbleMetadata());
+        return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.wrap(((android.app.Notification) real).getBubbleMetadata());
     }
 
     public java.lang.String getChannelId() {
-        return real.getChannelId();
+        return ((android.app.Notification) real).getChannelId();
     }
 
     public java.lang.String getGroup() {
-        return real.getGroup();
+        return ((android.app.Notification) real).getGroup();
     }
 
     public int getGroupAlertBehavior() {
-        return real.getGroupAlertBehavior();
+        return ((android.app.Notification) real).getGroupAlertBehavior();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getLargeIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getLargeIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.Notification) real).getLargeIcon());
     }
 
     public com.micklab.dcg.wrapper.android.content.LocusId getLocusId() {
-        return com.micklab.dcg.wrapper.android.content.LocusId.wrap(real.getLocusId());
+        return com.micklab.dcg.wrapper.android.content.LocusId.wrap(((android.app.Notification) real).getLocusId());
     }
 
     public java.lang.CharSequence getSettingsText() {
-        return real.getSettingsText();
+        return ((android.app.Notification) real).getSettingsText();
     }
 
     public java.lang.String getShortcutId() {
-        return real.getShortcutId();
+        return ((android.app.Notification) real).getShortcutId();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getSmallIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getSmallIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.Notification) real).getSmallIcon());
     }
 
     public java.lang.String getSortKey() {
-        return real.getSortKey();
+        return ((android.app.Notification) real).getSortKey();
     }
 
     public long getTimeoutAfter() {
-        return real.getTimeoutAfter();
+        return ((android.app.Notification) real).getTimeoutAfter();
     }
 
     public boolean hasImage() {
-        return real.hasImage();
+        return ((android.app.Notification) real).hasImage();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.Notification) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.Notification) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final com.micklab.dcg.wrapper.android.media.AudioAttributes AUDIO_ATTRIBUTES_DEFAULT = com.micklab.dcg.wrapper.android.media.AudioAttributes.wrap(android.app.Notification.AUDIO_ATTRIBUTES_DEFAULT);
@@ -210,66 +217,73 @@ public final class Notification {
     public static final int VISIBILITY_SECRET = android.app.Notification.VISIBILITY_SECRET;
 
     public static final class Action {
-        private final android.app.Notification.Action real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Action(android.app.Notification.Action real) {
+        private final java.lang.Object real;
+
+        private Action(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.Action wrap(android.app.Notification.Action real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.Action getReal() {
+            return (android.app.Notification.Action) real;
         }
 
         public android.app.Notification.Action unwrap() {
-            return real;
+            return getReal();
         }
 
         public Action(int arg0, java.lang.CharSequence arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-            this(new android.app.Notification.Action(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            this(new android.app.Notification.Action(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Action clone() {
-            return com.micklab.dcg.wrapper.android.app.Notification.Action.wrap(real.clone());
+            return com.micklab.dcg.wrapper.android.app.Notification.Action.wrap(((android.app.Notification.Action) real).clone());
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.Notification.Action) real).describeContents();
         }
 
         public boolean getAllowGeneratedReplies() {
-            return real.getAllowGeneratedReplies();
+            return ((android.app.Notification.Action) real).getAllowGeneratedReplies();
         }
 
         public android.app.RemoteInput[] getDataOnlyRemoteInputs() {
-            return real.getDataOnlyRemoteInputs();
+            return ((android.app.Notification.Action) real).getDataOnlyRemoteInputs();
         }
 
         public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.Notification.Action) real).getExtras());
         }
 
         public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-            return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+            return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.Notification.Action) real).getIcon());
         }
 
         public android.app.RemoteInput[] getRemoteInputs() {
-            return real.getRemoteInputs();
+            return ((android.app.Notification.Action) real).getRemoteInputs();
         }
 
         public int getSemanticAction() {
-            return real.getSemanticAction();
+            return ((android.app.Notification.Action) real).getSemanticAction();
         }
 
         public boolean isAuthenticationRequired() {
-            return real.isAuthenticationRequired();
+            return ((android.app.Notification.Action) real).isAuthenticationRequired();
         }
 
         public boolean isContextual() {
-            return real.isContextual();
+            return ((android.app.Notification.Action) real).isContextual();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.Notification.Action) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int SEMANTIC_ACTION_ARCHIVE = android.app.Notification.Action.SEMANTIC_ACTION_ARCHIVE;
@@ -285,748 +299,811 @@ public final class Notification {
         public static final int SEMANTIC_ACTION_UNMUTE = android.app.Notification.Action.SEMANTIC_ACTION_UNMUTE;
 
         public static final class Builder {
-            private final android.app.Notification.Action.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.Notification.Action.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.Action.Builder wrap(android.app.Notification.Action.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.Action.Builder getReal() {
+                return (android.app.Notification.Action.Builder) real;
             }
 
             public android.app.Notification.Action.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(com.micklab.dcg.wrapper.android.app.Notification.Action arg0) {
-                this(new android.app.Notification.Action.Builder(arg0 == null ? null : arg0.unwrap()));
+                this(new android.app.Notification.Action.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
             }
 
             public Builder(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0, java.lang.CharSequence arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-                this(new android.app.Notification.Action.Builder(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+                this(new android.app.Notification.Action.Builder(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
             }
 
             public Builder(int arg0, java.lang.CharSequence arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-                this(new android.app.Notification.Action.Builder(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+                this(new android.app.Notification.Action.Builder(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder addExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.addExtras(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).addExtras(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder addRemoteInput(com.micklab.dcg.wrapper.android.app.RemoteInput arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.addRemoteInput(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).addRemoteInput(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action build() {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.wrap(((android.app.Notification.Action.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Action.Extender arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).extend(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.Notification.Action.Builder) real).getExtras());
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder setAllowGeneratedReplies(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.setAllowGeneratedReplies(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).setAllowGeneratedReplies(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder setAuthenticationRequired(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.setAuthenticationRequired(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).setAuthenticationRequired(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder setContextual(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.setContextual(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).setContextual(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder setSemanticAction(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.setSemanticAction(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Builder) real).setSemanticAction(arg0));
             }
 
         }
         public static final class Extender {
-            private final android.app.Notification.Action.Extender real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Extender(android.app.Notification.Action.Extender real) {
+            private final java.lang.Object real;
+
+            private Extender(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.Action.Extender wrap(android.app.Notification.Action.Extender real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.Extender(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.Extender(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.Action.Extender getReal() {
+                return (android.app.Notification.Action.Extender) real;
             }
 
             public android.app.Notification.Action.Extender unwrap() {
-                return real;
+                return getReal();
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Action.Builder arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.Extender) real).extend(arg0 == null ? null : arg0.getReal()));
             }
 
         }
         public static final class WearableExtender {
-            private final android.app.Notification.Action.WearableExtender real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public WearableExtender(android.app.Notification.Action.WearableExtender real) {
+            private final java.lang.Object real;
+
+            private WearableExtender(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender wrap(android.app.Notification.Action.WearableExtender real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.Action.WearableExtender getReal() {
+                return (android.app.Notification.Action.WearableExtender) real;
             }
 
             public android.app.Notification.Action.WearableExtender unwrap() {
-                return real;
+                return getReal();
             }
 
             public WearableExtender() {
-                this(new android.app.Notification.Action.WearableExtender());
+                this(new android.app.Notification.Action.WearableExtender(), (__DcgwBridgeToken) null);
             }
 
             public WearableExtender(com.micklab.dcg.wrapper.android.app.Notification.Action arg0) {
-                this(new android.app.Notification.Action.WearableExtender(arg0 == null ? null : arg0.unwrap()));
+                this(new android.app.Notification.Action.WearableExtender(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender clone() {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.clone());
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).clone());
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Action.Builder arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.Builder.wrap(((android.app.Notification.Action.WearableExtender) real).extend(arg0 == null ? null : arg0.getReal()));
             }
 
             public java.lang.CharSequence getCancelLabel() {
-                return real.getCancelLabel();
+                return ((android.app.Notification.Action.WearableExtender) real).getCancelLabel();
             }
 
             public java.lang.CharSequence getConfirmLabel() {
-                return real.getConfirmLabel();
+                return ((android.app.Notification.Action.WearableExtender) real).getConfirmLabel();
             }
 
             public boolean getHintDisplayActionInline() {
-                return real.getHintDisplayActionInline();
+                return ((android.app.Notification.Action.WearableExtender) real).getHintDisplayActionInline();
             }
 
             public boolean getHintLaunchesActivity() {
-                return real.getHintLaunchesActivity();
+                return ((android.app.Notification.Action.WearableExtender) real).getHintLaunchesActivity();
             }
 
             public java.lang.CharSequence getInProgressLabel() {
-                return real.getInProgressLabel();
+                return ((android.app.Notification.Action.WearableExtender) real).getInProgressLabel();
             }
 
             public boolean isAvailableOffline() {
-                return real.isAvailableOffline();
+                return ((android.app.Notification.Action.WearableExtender) real).isAvailableOffline();
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setAvailableOffline(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setAvailableOffline(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setAvailableOffline(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setCancelLabel(java.lang.CharSequence arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setCancelLabel(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setCancelLabel(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setConfirmLabel(java.lang.CharSequence arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setConfirmLabel(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setConfirmLabel(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setHintDisplayActionInline(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setHintDisplayActionInline(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setHintDisplayActionInline(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setHintLaunchesActivity(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setHintLaunchesActivity(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setHintLaunchesActivity(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender setInProgressLabel(java.lang.CharSequence arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(real.setInProgressLabel(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.Action.WearableExtender.wrap(((android.app.Notification.Action.WearableExtender) real).setInProgressLabel(arg0));
             }
 
         }
     }
     public static final class BigPictureStyle {
-        private final android.app.Notification.BigPictureStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BigPictureStyle(android.app.Notification.BigPictureStyle real) {
+        private final java.lang.Object real;
+
+        private BigPictureStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle wrap(android.app.Notification.BigPictureStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.BigPictureStyle getReal() {
+            return (android.app.Notification.BigPictureStyle) real;
         }
 
         public android.app.Notification.BigPictureStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public BigPictureStyle() {
-            this(new android.app.Notification.BigPictureStyle());
+            this(new android.app.Notification.BigPictureStyle(), (__DcgwBridgeToken) null);
         }
 
         public BigPictureStyle(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            this(new android.app.Notification.BigPictureStyle(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.BigPictureStyle(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle bigLargeIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.bigLargeIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).bigLargeIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle bigLargeIcon(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.bigLargeIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).bigLargeIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle bigPicture(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.bigPicture(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).bigPicture(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle bigPicture(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.bigPicture(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).bigPicture(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle setBigContentTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.setBigContentTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).setBigContentTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle setContentDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.setContentDescription(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).setContentDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle setSummaryText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.setSummaryText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).setSummaryText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle showBigPictureWhenCollapsed(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(real.showBigPictureWhenCollapsed(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigPictureStyle.wrap(((android.app.Notification.BigPictureStyle) real).showBigPictureWhenCollapsed(arg0));
         }
 
     }
     public static final class BigTextStyle {
-        private final android.app.Notification.BigTextStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BigTextStyle(android.app.Notification.BigTextStyle real) {
+        private final java.lang.Object real;
+
+        private BigTextStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle wrap(android.app.Notification.BigTextStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.BigTextStyle getReal() {
+            return (android.app.Notification.BigTextStyle) real;
         }
 
         public android.app.Notification.BigTextStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public BigTextStyle() {
-            this(new android.app.Notification.BigTextStyle());
+            this(new android.app.Notification.BigTextStyle(), (__DcgwBridgeToken) null);
         }
 
         public BigTextStyle(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            this(new android.app.Notification.BigTextStyle(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.BigTextStyle(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle bigText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(real.bigText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(((android.app.Notification.BigTextStyle) real).bigText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle setBigContentTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(real.setBigContentTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(((android.app.Notification.BigTextStyle) real).setBigContentTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle setSummaryText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(real.setSummaryText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.BigTextStyle.wrap(((android.app.Notification.BigTextStyle) real).setSummaryText(arg0));
         }
 
     }
     public static final class BubbleMetadata {
-        private final android.app.Notification.BubbleMetadata real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BubbleMetadata(android.app.Notification.BubbleMetadata real) {
+        private final java.lang.Object real;
+
+        private BubbleMetadata(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata wrap(android.app.Notification.BubbleMetadata real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.BubbleMetadata getReal() {
+            return (android.app.Notification.BubbleMetadata) real;
         }
 
         public android.app.Notification.BubbleMetadata unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.Notification.BubbleMetadata) real).describeContents();
         }
 
         public boolean getAutoExpandBubble() {
-            return real.getAutoExpandBubble();
+            return ((android.app.Notification.BubbleMetadata) real).getAutoExpandBubble();
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getDeleteIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getDeleteIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.BubbleMetadata) real).getDeleteIntent());
         }
 
         public int getDesiredHeight() {
-            return real.getDesiredHeight();
+            return ((android.app.Notification.BubbleMetadata) real).getDesiredHeight();
         }
 
         public int getDesiredHeightResId() {
-            return real.getDesiredHeightResId();
+            return ((android.app.Notification.BubbleMetadata) real).getDesiredHeightResId();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-            return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+            return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.Notification.BubbleMetadata) real).getIcon());
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.BubbleMetadata) real).getIntent());
         }
 
         public java.lang.String getShortcutId() {
-            return real.getShortcutId();
+            return ((android.app.Notification.BubbleMetadata) real).getShortcutId();
         }
 
         public boolean isBubbleSuppressable() {
-            return real.isBubbleSuppressable();
+            return ((android.app.Notification.BubbleMetadata) real).isBubbleSuppressable();
         }
 
         public boolean isBubbleSuppressed() {
-            return real.isBubbleSuppressed();
+            return ((android.app.Notification.BubbleMetadata) real).isBubbleSuppressed();
         }
 
         public boolean isNotificationSuppressed() {
-            return real.isNotificationSuppressed();
+            return ((android.app.Notification.BubbleMetadata) real).isNotificationSuppressed();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.Notification.BubbleMetadata) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
         public static final class Builder {
-            private final android.app.Notification.BubbleMetadata.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.Notification.BubbleMetadata.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder wrap(android.app.Notification.BubbleMetadata.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.BubbleMetadata.Builder getReal() {
+                return (android.app.Notification.BubbleMetadata.Builder) real;
             }
 
             public android.app.Notification.BubbleMetadata.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
-                this(new android.app.Notification.BubbleMetadata.Builder());
+                this(new android.app.Notification.BubbleMetadata.Builder(), (__DcgwBridgeToken) null);
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.Notification.BubbleMetadata.Builder(arg0));
+                this(new android.app.Notification.BubbleMetadata.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public Builder(com.micklab.dcg.wrapper.android.app.PendingIntent arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg1) {
-                this(new android.app.Notification.BubbleMetadata.Builder(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+                this(new android.app.Notification.BubbleMetadata.Builder(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata build() {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.wrap(((android.app.Notification.BubbleMetadata.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setAutoExpandBubble(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setAutoExpandBubble(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setAutoExpandBubble(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setDeleteIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setDeleteIntent(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setDeleteIntent(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setDesiredHeight(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setDesiredHeight(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setDesiredHeight(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setDesiredHeightResId(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setDesiredHeightResId(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setDesiredHeightResId(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setIcon(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setIcon(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setIntent(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setIntent(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setSuppressNotification(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setSuppressNotification(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setSuppressNotification(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder setSuppressableBubble(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(real.setSuppressableBubble(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata.Builder.wrap(((android.app.Notification.BubbleMetadata.Builder) real).setSuppressableBubble(arg0));
             }
 
         }
     }
     public static final class Builder {
-        private final android.app.Notification.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.Notification.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.Builder wrap(android.app.Notification.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.Builder getReal() {
+            return (android.app.Notification.Builder) real;
         }
 
         public android.app.Notification.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            this(new android.app.Notification.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-            this(new android.app.Notification.Builder(arg0 == null ? null : arg0.unwrap(), arg1));
+            this(new android.app.Notification.Builder(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addAction(com.micklab.dcg.wrapper.android.app.Notification.Action arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.addAction(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addAction(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addAction(int arg0, java.lang.CharSequence arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.addAction(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addAction(arg0, arg1, arg2 == null ? null : arg2.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.addExtras(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addExtras(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addPerson(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.addPerson(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addPerson(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addPerson(com.micklab.dcg.wrapper.android.app.Person arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.addPerson(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addPerson(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification build() {
-            return com.micklab.dcg.wrapper.android.app.Notification.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.Notification.wrap(((android.app.Notification.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.widget.RemoteViews createBigContentView() {
-            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(real.createBigContentView());
+            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(((android.app.Notification.Builder) real).createBigContentView());
         }
 
         public com.micklab.dcg.wrapper.android.widget.RemoteViews createContentView() {
-            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(real.createContentView());
+            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(((android.app.Notification.Builder) real).createContentView());
         }
 
         public com.micklab.dcg.wrapper.android.widget.RemoteViews createHeadsUpContentView() {
-            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(real.createHeadsUpContentView());
+            return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(((android.app.Notification.Builder) real).createHeadsUpContentView());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Extender arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).extend(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.Notification.Builder) real).getExtras());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification getNotification() {
-            return com.micklab.dcg.wrapper.android.app.Notification.wrap(real.getNotification());
+            return com.micklab.dcg.wrapper.android.app.Notification.wrap(((android.app.Notification.Builder) real).getNotification());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Style getStyle() {
-            return com.micklab.dcg.wrapper.android.app.Notification.Style.wrap(real.getStyle());
+            return com.micklab.dcg.wrapper.android.app.Notification.Style.wrap(((android.app.Notification.Builder) real).getStyle());
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.Builder recoverBuilder(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.app.Notification arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(android.app.Notification.Builder.recoverBuilder(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(android.app.Notification.Builder.recoverBuilder(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setActions(android.app.Notification.Action... arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setActions(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setActions(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setAllowSystemGeneratedContextualActions(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setAllowSystemGeneratedContextualActions(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setAllowSystemGeneratedContextualActions(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setAutoCancel(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setAutoCancel(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setAutoCancel(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setBadgeIconType(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setBadgeIconType(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setBadgeIconType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setBubbleMetadata(com.micklab.dcg.wrapper.android.app.Notification.BubbleMetadata arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setBubbleMetadata(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setBubbleMetadata(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setCategory(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setCategory(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setCategory(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setChannelId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setChannelId(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setChannelId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setChronometerCountDown(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setChronometerCountDown(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setChronometerCountDown(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setColor(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setColor(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setColor(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setColorized(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setColorized(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setColorized(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setContent(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setContent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setContent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setContentInfo(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setContentInfo(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setContentInfo(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setContentIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setContentIntent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setContentIntent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setContentText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setContentText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setContentText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setContentTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setContentTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setContentTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setCustomBigContentView(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setCustomBigContentView(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setCustomBigContentView(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setCustomContentView(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setCustomContentView(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setCustomContentView(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setCustomHeadsUpContentView(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setCustomHeadsUpContentView(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setCustomHeadsUpContentView(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setDefaults(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setDefaults(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setDefaults(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setDeleteIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setDeleteIntent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setDeleteIntent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setExtras(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setExtras(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setFlag(int arg0, boolean arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setFlag(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setFlag(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setForegroundServiceBehavior(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setForegroundServiceBehavior(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setForegroundServiceBehavior(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setFullScreenIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0, boolean arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setFullScreenIntent(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setFullScreenIntent(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setGroup(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setGroup(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setGroup(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setGroupAlertBehavior(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setGroupAlertBehavior(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setGroupAlertBehavior(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setGroupSummary(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setGroupSummary(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setGroupSummary(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setLargeIcon(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setLargeIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setLargeIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setLargeIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setLargeIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setLargeIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setLights(int arg0, int arg1, int arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setLights(arg0, arg1, arg2));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setLights(arg0, arg1, arg2));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setLocalOnly(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setLocalOnly(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setLocalOnly(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setLocusId(com.micklab.dcg.wrapper.android.content.LocusId arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setLocusId(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setLocusId(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setNumber(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setNumber(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setNumber(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setOngoing(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setOngoing(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setOngoing(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setOnlyAlertOnce(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setOnlyAlertOnce(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setOnlyAlertOnce(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setPriority(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setPriority(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setPriority(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setProgress(int arg0, int arg1, boolean arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setProgress(arg0, arg1, arg2));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setProgress(arg0, arg1, arg2));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setPublicVersion(com.micklab.dcg.wrapper.android.app.Notification arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setPublicVersion(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setPublicVersion(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setRemoteInputHistory(java.lang.CharSequence[] arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setRemoteInputHistory(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setRemoteInputHistory(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSettingsText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSettingsText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSettingsText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setShortcutId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setShortcutId(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setShortcutId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setShowWhen(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setShowWhen(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setShowWhen(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSmallIcon(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSmallIcon(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSmallIcon(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSmallIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSmallIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSmallIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSmallIcon(int arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSmallIcon(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSmallIcon(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSortKey(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSortKey(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSortKey(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSound(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSound(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSound(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setStyle(com.micklab.dcg.wrapper.android.app.Notification.Style arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setStyle(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setStyle(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSubText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setSubText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSubText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setTicker(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setTicker(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setTicker(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setTicker(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setTicker(arg0, arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setTicker(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setTimeoutAfter(long arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setTimeoutAfter(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setTimeoutAfter(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setUsesChronometer(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setUsesChronometer(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setUsesChronometer(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setVibrate(long[] arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setVibrate(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setVibrate(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setVisibility(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setVisibility(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setVisibility(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setWhen(long arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.setWhen(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setWhen(arg0));
         }
 
     }
     public static final class CallStyle {
-        private final android.app.Notification.CallStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CallStyle(android.app.Notification.CallStyle real) {
+        private final java.lang.Object real;
+
+        private CallStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.CallStyle wrap(android.app.Notification.CallStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CallStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CallStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.CallStyle getReal() {
+            return (android.app.Notification.CallStyle) real;
         }
 
         public android.app.Notification.CallStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.CallStyle forIncomingCall(com.micklab.dcg.wrapper.android.app.Person arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forIncomingCall(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forIncomingCall(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.CallStyle forOngoingCall(com.micklab.dcg.wrapper.android.app.Person arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forOngoingCall(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forOngoingCall(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.CallStyle forScreeningCall(com.micklab.dcg.wrapper.android.app.Person arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forScreeningCall(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(android.app.Notification.CallStyle.forScreeningCall(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CallStyle setAnswerButtonColorHint(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(real.setAnswerButtonColorHint(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(((android.app.Notification.CallStyle) real).setAnswerButtonColorHint(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CallStyle setDeclineButtonColorHint(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(real.setDeclineButtonColorHint(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(((android.app.Notification.CallStyle) real).setDeclineButtonColorHint(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CallStyle setIsVideo(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(real.setIsVideo(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(((android.app.Notification.CallStyle) real).setIsVideo(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CallStyle setVerificationIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(real.setVerificationIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(((android.app.Notification.CallStyle) real).setVerificationIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CallStyle setVerificationText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(real.setVerificationText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.CallStyle.wrap(((android.app.Notification.CallStyle) real).setVerificationText(arg0));
         }
 
         public static final int CALL_TYPE_INCOMING = android.app.Notification.CallStyle.CALL_TYPE_INCOMING;
@@ -1036,665 +1113,756 @@ public final class Notification {
 
     }
     public static final class CarExtender {
-        private final android.app.Notification.CarExtender real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CarExtender(android.app.Notification.CarExtender real) {
+        private final java.lang.Object real;
+
+        private CarExtender(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.CarExtender wrap(android.app.Notification.CarExtender real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.CarExtender getReal() {
+            return (android.app.Notification.CarExtender) real;
         }
 
         public android.app.Notification.CarExtender unwrap() {
-            return real;
+            return getReal();
         }
 
         public CarExtender() {
-            this(new android.app.Notification.CarExtender());
+            this(new android.app.Notification.CarExtender(), (__DcgwBridgeToken) null);
         }
 
         public CarExtender(com.micklab.dcg.wrapper.android.app.Notification arg0) {
-            this(new android.app.Notification.CarExtender(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.CarExtender(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.CarExtender) real).extend(arg0 == null ? null : arg0.getReal()));
         }
 
         public int getColor() {
-            return real.getColor();
+            return ((android.app.Notification.CarExtender) real).getColor();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Bitmap getLargeIcon() {
-            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getLargeIcon());
+            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.app.Notification.CarExtender) real).getLargeIcon());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation getUnreadConversation() {
-            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation.wrap(real.getUnreadConversation());
+            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation.wrap(((android.app.Notification.CarExtender) real).getUnreadConversation());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CarExtender setColor(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(real.setColor(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(((android.app.Notification.CarExtender) real).setColor(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CarExtender setLargeIcon(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(real.setLargeIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(((android.app.Notification.CarExtender) real).setLargeIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.CarExtender setUnreadConversation(com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(real.setUnreadConversation(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.wrap(((android.app.Notification.CarExtender) real).setUnreadConversation(arg0 == null ? null : arg0.getReal()));
         }
 
         public static final class Builder {
-            private final android.app.Notification.CarExtender.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.Notification.CarExtender.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder wrap(android.app.Notification.CarExtender.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.CarExtender.Builder getReal() {
+                return (android.app.Notification.CarExtender.Builder) real;
             }
 
             public android.app.Notification.CarExtender.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.Notification.CarExtender.Builder(arg0));
+                this(new android.app.Notification.CarExtender.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder addMessage(java.lang.String arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(real.addMessage(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(((android.app.Notification.CarExtender.Builder) real).addMessage(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation build() {
-                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation.wrap(((android.app.Notification.CarExtender.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder setLatestTimestamp(long arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(real.setLatestTimestamp(arg0));
+                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(((android.app.Notification.CarExtender.Builder) real).setLatestTimestamp(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder setReadPendingIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(real.setReadPendingIntent(arg0 == null ? null : arg0.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(((android.app.Notification.CarExtender.Builder) real).setReadPendingIntent(arg0 == null ? null : arg0.getReal()));
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder setReplyAction(com.micklab.dcg.wrapper.android.app.PendingIntent arg0, com.micklab.dcg.wrapper.android.app.RemoteInput arg1) {
-                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(real.setReplyAction(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.CarExtender.Builder.wrap(((android.app.Notification.CarExtender.Builder) real).setReplyAction(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
             }
 
         }
         public static final class UnreadConversation {
-            private final android.app.Notification.CarExtender.UnreadConversation real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public UnreadConversation(android.app.Notification.CarExtender.UnreadConversation real) {
+            private final java.lang.Object real;
+
+            private UnreadConversation(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation wrap(android.app.Notification.CarExtender.UnreadConversation real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.CarExtender.UnreadConversation(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.CarExtender.UnreadConversation getReal() {
+                return (android.app.Notification.CarExtender.UnreadConversation) real;
             }
 
             public android.app.Notification.CarExtender.UnreadConversation unwrap() {
-                return real;
+                return getReal();
             }
 
             public long getLatestTimestamp() {
-                return real.getLatestTimestamp();
+                return ((android.app.Notification.CarExtender.UnreadConversation) real).getLatestTimestamp();
             }
 
             public java.lang.String[] getMessages() {
-                return real.getMessages();
+                return ((android.app.Notification.CarExtender.UnreadConversation) real).getMessages();
             }
 
             public java.lang.String getParticipant() {
-                return real.getParticipant();
+                return ((android.app.Notification.CarExtender.UnreadConversation) real).getParticipant();
             }
 
             public java.lang.String[] getParticipants() {
-                return real.getParticipants();
+                return ((android.app.Notification.CarExtender.UnreadConversation) real).getParticipants();
             }
 
             public com.micklab.dcg.wrapper.android.app.PendingIntent getReadPendingIntent() {
-                return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getReadPendingIntent());
+                return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.CarExtender.UnreadConversation) real).getReadPendingIntent());
             }
 
             public com.micklab.dcg.wrapper.android.app.RemoteInput getRemoteInput() {
-                return com.micklab.dcg.wrapper.android.app.RemoteInput.wrap(real.getRemoteInput());
+                return com.micklab.dcg.wrapper.android.app.RemoteInput.wrap(((android.app.Notification.CarExtender.UnreadConversation) real).getRemoteInput());
             }
 
             public com.micklab.dcg.wrapper.android.app.PendingIntent getReplyPendingIntent() {
-                return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getReplyPendingIntent());
+                return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.CarExtender.UnreadConversation) real).getReplyPendingIntent());
             }
 
         }
     }
     public static final class DecoratedCustomViewStyle {
-        private final android.app.Notification.DecoratedCustomViewStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DecoratedCustomViewStyle(android.app.Notification.DecoratedCustomViewStyle real) {
+        private final java.lang.Object real;
+
+        private DecoratedCustomViewStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.DecoratedCustomViewStyle wrap(android.app.Notification.DecoratedCustomViewStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.DecoratedCustomViewStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.DecoratedCustomViewStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.DecoratedCustomViewStyle getReal() {
+            return (android.app.Notification.DecoratedCustomViewStyle) real;
         }
 
         public android.app.Notification.DecoratedCustomViewStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public DecoratedCustomViewStyle() {
-            this(new android.app.Notification.DecoratedCustomViewStyle());
+            this(new android.app.Notification.DecoratedCustomViewStyle(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class DecoratedMediaCustomViewStyle {
-        private final android.app.Notification.DecoratedMediaCustomViewStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DecoratedMediaCustomViewStyle(android.app.Notification.DecoratedMediaCustomViewStyle real) {
+        private final java.lang.Object real;
+
+        private DecoratedMediaCustomViewStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.DecoratedMediaCustomViewStyle wrap(android.app.Notification.DecoratedMediaCustomViewStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.DecoratedMediaCustomViewStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.DecoratedMediaCustomViewStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.DecoratedMediaCustomViewStyle getReal() {
+            return (android.app.Notification.DecoratedMediaCustomViewStyle) real;
         }
 
         public android.app.Notification.DecoratedMediaCustomViewStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public DecoratedMediaCustomViewStyle() {
-            this(new android.app.Notification.DecoratedMediaCustomViewStyle());
+            this(new android.app.Notification.DecoratedMediaCustomViewStyle(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class Extender {
-        private final android.app.Notification.Extender real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Extender(android.app.Notification.Extender real) {
+        private final java.lang.Object real;
+
+        private Extender(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.Extender wrap(android.app.Notification.Extender real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Extender(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Extender(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.Extender getReal() {
+            return (android.app.Notification.Extender) real;
         }
 
         public android.app.Notification.Extender unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Extender) real).extend(arg0 == null ? null : arg0.getReal()));
         }
 
     }
     public static final class InboxStyle {
-        private final android.app.Notification.InboxStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InboxStyle(android.app.Notification.InboxStyle real) {
+        private final java.lang.Object real;
+
+        private InboxStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.InboxStyle wrap(android.app.Notification.InboxStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.InboxStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.InboxStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.InboxStyle getReal() {
+            return (android.app.Notification.InboxStyle) real;
         }
 
         public android.app.Notification.InboxStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public InboxStyle() {
-            this(new android.app.Notification.InboxStyle());
+            this(new android.app.Notification.InboxStyle(), (__DcgwBridgeToken) null);
         }
 
         public InboxStyle(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            this(new android.app.Notification.InboxStyle(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.InboxStyle(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.InboxStyle addLine(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(real.addLine(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(((android.app.Notification.InboxStyle) real).addLine(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.InboxStyle setBigContentTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(real.setBigContentTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(((android.app.Notification.InboxStyle) real).setBigContentTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.InboxStyle setSummaryText(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(real.setSummaryText(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.InboxStyle.wrap(((android.app.Notification.InboxStyle) real).setSummaryText(arg0));
         }
 
     }
     public static final class MediaStyle {
-        private final android.app.Notification.MediaStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaStyle(android.app.Notification.MediaStyle real) {
+        private final java.lang.Object real;
+
+        private MediaStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.MediaStyle wrap(android.app.Notification.MediaStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MediaStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MediaStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.MediaStyle getReal() {
+            return (android.app.Notification.MediaStyle) real;
         }
 
         public android.app.Notification.MediaStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public MediaStyle() {
-            this(new android.app.Notification.MediaStyle());
+            this(new android.app.Notification.MediaStyle(), (__DcgwBridgeToken) null);
         }
 
         public MediaStyle(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            this(new android.app.Notification.MediaStyle(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.MediaStyle(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MediaStyle setMediaSession(com.micklab.dcg.wrapper.android.media.session.MediaSession.Token arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(real.setMediaSession(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(((android.app.Notification.MediaStyle) real).setMediaSession(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MediaStyle setRemotePlaybackInfo(java.lang.CharSequence arg0, int arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(real.setRemotePlaybackInfo(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(((android.app.Notification.MediaStyle) real).setRemotePlaybackInfo(arg0, arg1, arg2 == null ? null : arg2.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MediaStyle setShowActionsInCompactView(int... arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(real.setShowActionsInCompactView(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.MediaStyle.wrap(((android.app.Notification.MediaStyle) real).setShowActionsInCompactView(arg0));
         }
 
     }
     public static final class MessagingStyle {
-        private final android.app.Notification.MessagingStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MessagingStyle(android.app.Notification.MessagingStyle real) {
+        private final java.lang.Object real;
+
+        private MessagingStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle wrap(android.app.Notification.MessagingStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.MessagingStyle getReal() {
+            return (android.app.Notification.MessagingStyle) real;
         }
 
         public android.app.Notification.MessagingStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public MessagingStyle(java.lang.CharSequence arg0) {
-            this(new android.app.Notification.MessagingStyle(arg0));
+            this(new android.app.Notification.MessagingStyle(arg0), (__DcgwBridgeToken) null);
         }
 
         public MessagingStyle(com.micklab.dcg.wrapper.android.app.Person arg0) {
-            this(new android.app.Notification.MessagingStyle(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.MessagingStyle(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle addHistoricMessage(com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.addHistoricMessage(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).addHistoricMessage(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle addMessage(com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.addMessage(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).addMessage(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle addMessage(java.lang.CharSequence arg0, long arg1, com.micklab.dcg.wrapper.android.app.Person arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.addMessage(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).addMessage(arg0, arg1, arg2 == null ? null : arg2.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle addMessage(java.lang.CharSequence arg0, long arg1, java.lang.CharSequence arg2) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.addMessage(arg0, arg1, arg2));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).addMessage(arg0, arg1, arg2));
         }
 
         public java.lang.CharSequence getConversationTitle() {
-            return real.getConversationTitle();
+            return ((android.app.Notification.MessagingStyle) real).getConversationTitle();
         }
 
         public com.micklab.dcg.wrapper.android.app.Person getUser() {
-            return com.micklab.dcg.wrapper.android.app.Person.wrap(real.getUser());
+            return com.micklab.dcg.wrapper.android.app.Person.wrap(((android.app.Notification.MessagingStyle) real).getUser());
         }
 
         public java.lang.CharSequence getUserDisplayName() {
-            return real.getUserDisplayName();
+            return ((android.app.Notification.MessagingStyle) real).getUserDisplayName();
         }
 
         public boolean isGroupConversation() {
-            return real.isGroupConversation();
+            return ((android.app.Notification.MessagingStyle) real).isGroupConversation();
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle setConversationTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.setConversationTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).setConversationTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle setGroupConversation(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(real.setGroupConversation(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.wrap(((android.app.Notification.MessagingStyle) real).setGroupConversation(arg0));
         }
 
         public static final int MAXIMUM_RETAINED_MESSAGES = android.app.Notification.MessagingStyle.MAXIMUM_RETAINED_MESSAGES;
 
         public static final class Message {
-            private final android.app.Notification.MessagingStyle.Message real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Message(android.app.Notification.MessagingStyle.Message real) {
+            private final java.lang.Object real;
+
+            private Message(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message wrap(android.app.Notification.MessagingStyle.Message real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.Notification.MessagingStyle.Message getReal() {
+                return (android.app.Notification.MessagingStyle.Message) real;
             }
 
             public android.app.Notification.MessagingStyle.Message unwrap() {
-                return real;
+                return getReal();
             }
 
             public Message(java.lang.CharSequence arg0, long arg1, java.lang.CharSequence arg2) {
-                this(new android.app.Notification.MessagingStyle.Message(arg0, arg1, arg2));
+                this(new android.app.Notification.MessagingStyle.Message(arg0, arg1, arg2), (__DcgwBridgeToken) null);
             }
 
             public Message(java.lang.CharSequence arg0, long arg1, com.micklab.dcg.wrapper.android.app.Person arg2) {
-                this(new android.app.Notification.MessagingStyle.Message(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+                this(new android.app.Notification.MessagingStyle.Message(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
             }
 
             public java.lang.String getDataMimeType() {
-                return real.getDataMimeType();
+                return ((android.app.Notification.MessagingStyle.Message) real).getDataMimeType();
             }
 
             public com.micklab.dcg.wrapper.android.net.Uri getDataUri() {
-                return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getDataUri());
+                return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.app.Notification.MessagingStyle.Message) real).getDataUri());
             }
 
             public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+                return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.Notification.MessagingStyle.Message) real).getExtras());
             }
 
             public java.lang.CharSequence getSender() {
-                return real.getSender();
+                return ((android.app.Notification.MessagingStyle.Message) real).getSender();
             }
 
             public com.micklab.dcg.wrapper.android.app.Person getSenderPerson() {
-                return com.micklab.dcg.wrapper.android.app.Person.wrap(real.getSenderPerson());
+                return com.micklab.dcg.wrapper.android.app.Person.wrap(((android.app.Notification.MessagingStyle.Message) real).getSenderPerson());
             }
 
             public java.lang.CharSequence getText() {
-                return real.getText();
+                return ((android.app.Notification.MessagingStyle.Message) real).getText();
             }
 
             public long getTimestamp() {
-                return real.getTimestamp();
+                return ((android.app.Notification.MessagingStyle.Message) real).getTimestamp();
             }
 
             public com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message setData(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-                return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message.wrap(real.setData(arg0, arg1 == null ? null : arg1.unwrap()));
+                return com.micklab.dcg.wrapper.android.app.Notification.MessagingStyle.Message.wrap(((android.app.Notification.MessagingStyle.Message) real).setData(arg0, arg1 == null ? null : arg1.getReal()));
             }
 
         }
     }
     public static final class Style {
-        private final android.app.Notification.Style real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Style(android.app.Notification.Style real) {
+        private final java.lang.Object real;
+
+        private Style(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.Style wrap(android.app.Notification.Style real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Style(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.Style(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.Style getReal() {
+            return (android.app.Notification.Style) real;
         }
 
         public android.app.Notification.Style unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification build() {
-            return com.micklab.dcg.wrapper.android.app.Notification.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.Notification.wrap(((android.app.Notification.Style) real).build());
         }
 
         public void setBuilder(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            real.setBuilder(arg0 == null ? null : arg0.unwrap());
+            ((android.app.Notification.Style) real).setBuilder(arg0 == null ? null : arg0.getReal());
         }
 
 
     }
     public static final class TvExtender {
-        private final android.app.Notification.TvExtender real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TvExtender(android.app.Notification.TvExtender real) {
+        private final java.lang.Object real;
+
+        private TvExtender(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.TvExtender wrap(android.app.Notification.TvExtender real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.TvExtender(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.TvExtender(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.TvExtender getReal() {
+            return (android.app.Notification.TvExtender) real;
         }
 
         public android.app.Notification.TvExtender unwrap() {
-            return real;
+            return getReal();
         }
 
         public TvExtender() {
-            this(new android.app.Notification.TvExtender());
+            this(new android.app.Notification.TvExtender(), (__DcgwBridgeToken) null);
         }
 
         public TvExtender(com.micklab.dcg.wrapper.android.app.Notification arg0) {
-            this(new android.app.Notification.TvExtender(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.TvExtender(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.TvExtender) real).extend(arg0 == null ? null : arg0.getReal()));
         }
 
         public java.lang.String getChannelId() {
-            return real.getChannelId();
+            return ((android.app.Notification.TvExtender) real).getChannelId();
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getContentIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getContentIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.TvExtender) real).getContentIntent());
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getDeleteIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getDeleteIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.TvExtender) real).getDeleteIntent());
         }
 
         public boolean isAvailableOnTv() {
-            return real.isAvailableOnTv();
+            return ((android.app.Notification.TvExtender) real).isAvailableOnTv();
         }
 
         public boolean isSuppressShowOverApps() {
-            return real.isSuppressShowOverApps();
+            return ((android.app.Notification.TvExtender) real).isSuppressShowOverApps();
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.TvExtender setChannelId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(real.setChannelId(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(((android.app.Notification.TvExtender) real).setChannelId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.TvExtender setContentIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(real.setContentIntent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(((android.app.Notification.TvExtender) real).setContentIntent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.TvExtender setDeleteIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(real.setDeleteIntent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(((android.app.Notification.TvExtender) real).setDeleteIntent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.TvExtender setSuppressShowOverApps(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(real.setSuppressShowOverApps(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.TvExtender.wrap(((android.app.Notification.TvExtender) real).setSuppressShowOverApps(arg0));
         }
 
     }
     public static final class WearableExtender {
-        private final android.app.Notification.WearableExtender real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WearableExtender(android.app.Notification.WearableExtender real) {
+        private final java.lang.Object real;
+
+        private WearableExtender(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Notification.WearableExtender wrap(android.app.Notification.WearableExtender real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.WearableExtender(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Notification.WearableExtender(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Notification.WearableExtender getReal() {
+            return (android.app.Notification.WearableExtender) real;
         }
 
         public android.app.Notification.WearableExtender unwrap() {
-            return real;
+            return getReal();
         }
 
         public WearableExtender() {
-            this(new android.app.Notification.WearableExtender());
+            this(new android.app.Notification.WearableExtender(), (__DcgwBridgeToken) null);
         }
 
         public WearableExtender(com.micklab.dcg.wrapper.android.app.Notification arg0) {
-            this(new android.app.Notification.WearableExtender(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.Notification.WearableExtender(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender addAction(com.micklab.dcg.wrapper.android.app.Notification.Action arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.addAction(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).addAction(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender addPage(com.micklab.dcg.wrapper.android.app.Notification arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.addPage(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).addPage(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender clearActions() {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.clearActions());
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).clearActions());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender clearPages() {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.clearPages());
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).clearPages());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender clone() {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.clone());
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).clone());
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder extend(com.micklab.dcg.wrapper.android.app.Notification.Builder arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(real.extend(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.WearableExtender) real).extend(arg0 == null ? null : arg0.getReal()));
         }
 
         public java.lang.String getBridgeTag() {
-            return real.getBridgeTag();
+            return ((android.app.Notification.WearableExtender) real).getBridgeTag();
         }
 
         public int getContentAction() {
-            return real.getContentAction();
+            return ((android.app.Notification.WearableExtender) real).getContentAction();
         }
 
         public int getContentIcon() {
-            return real.getContentIcon();
+            return ((android.app.Notification.WearableExtender) real).getContentIcon();
         }
 
         public int getContentIconGravity() {
-            return real.getContentIconGravity();
+            return ((android.app.Notification.WearableExtender) real).getContentIconGravity();
         }
 
         public boolean getContentIntentAvailableOffline() {
-            return real.getContentIntentAvailableOffline();
+            return ((android.app.Notification.WearableExtender) real).getContentIntentAvailableOffline();
         }
 
         public int getCustomContentHeight() {
-            return real.getCustomContentHeight();
+            return ((android.app.Notification.WearableExtender) real).getCustomContentHeight();
         }
 
         public int getCustomSizePreset() {
-            return real.getCustomSizePreset();
+            return ((android.app.Notification.WearableExtender) real).getCustomSizePreset();
         }
 
         public java.lang.String getDismissalId() {
-            return real.getDismissalId();
+            return ((android.app.Notification.WearableExtender) real).getDismissalId();
         }
 
         public com.micklab.dcg.wrapper.android.app.PendingIntent getDisplayIntent() {
-            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getDisplayIntent());
+            return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.Notification.WearableExtender) real).getDisplayIntent());
         }
 
         public int getGravity() {
-            return real.getGravity();
+            return ((android.app.Notification.WearableExtender) real).getGravity();
         }
 
         public boolean getHintAmbientBigPicture() {
-            return real.getHintAmbientBigPicture();
+            return ((android.app.Notification.WearableExtender) real).getHintAmbientBigPicture();
         }
 
         public boolean getHintAvoidBackgroundClipping() {
-            return real.getHintAvoidBackgroundClipping();
+            return ((android.app.Notification.WearableExtender) real).getHintAvoidBackgroundClipping();
         }
 
         public boolean getHintContentIntentLaunchesActivity() {
-            return real.getHintContentIntentLaunchesActivity();
+            return ((android.app.Notification.WearableExtender) real).getHintContentIntentLaunchesActivity();
         }
 
         public boolean getHintHideIcon() {
-            return real.getHintHideIcon();
+            return ((android.app.Notification.WearableExtender) real).getHintHideIcon();
         }
 
         public int getHintScreenTimeout() {
-            return real.getHintScreenTimeout();
+            return ((android.app.Notification.WearableExtender) real).getHintScreenTimeout();
         }
 
         public boolean getHintShowBackgroundOnly() {
-            return real.getHintShowBackgroundOnly();
+            return ((android.app.Notification.WearableExtender) real).getHintShowBackgroundOnly();
         }
 
         public boolean getStartScrollBottom() {
-            return real.getStartScrollBottom();
+            return ((android.app.Notification.WearableExtender) real).getStartScrollBottom();
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setBridgeTag(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setBridgeTag(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setBridgeTag(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setContentAction(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setContentAction(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setContentAction(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setContentIcon(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setContentIcon(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setContentIcon(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setContentIconGravity(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setContentIconGravity(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setContentIconGravity(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setContentIntentAvailableOffline(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setContentIntentAvailableOffline(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setContentIntentAvailableOffline(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setCustomContentHeight(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setCustomContentHeight(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setCustomContentHeight(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setCustomSizePreset(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setCustomSizePreset(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setCustomSizePreset(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setDismissalId(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setDismissalId(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setDismissalId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setDisplayIntent(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setDisplayIntent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setDisplayIntent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setGravity(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setGravity(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setGravity(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintAmbientBigPicture(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintAmbientBigPicture(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintAmbientBigPicture(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintAvoidBackgroundClipping(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintAvoidBackgroundClipping(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintAvoidBackgroundClipping(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintContentIntentLaunchesActivity(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintContentIntentLaunchesActivity(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintContentIntentLaunchesActivity(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintHideIcon(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintHideIcon(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintHideIcon(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintScreenTimeout(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintScreenTimeout(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintScreenTimeout(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setHintShowBackgroundOnly(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setHintShowBackgroundOnly(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setHintShowBackgroundOnly(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.WearableExtender setStartScrollBottom(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(real.setStartScrollBottom(arg0));
+            return com.micklab.dcg.wrapper.android.app.Notification.WearableExtender.wrap(((android.app.Notification.WearableExtender) real).setStartScrollBottom(arg0));
         }
 
         public static final int SCREEN_TIMEOUT_LONG = android.app.Notification.WearableExtender.SCREEN_TIMEOUT_LONG;

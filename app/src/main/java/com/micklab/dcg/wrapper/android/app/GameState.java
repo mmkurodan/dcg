@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class GameState {
-    private final android.app.GameState real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GameState(android.app.GameState real) {
+    private final java.lang.Object real;
+
+    private GameState(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.GameState wrap(android.app.GameState real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.GameState(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.GameState(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.GameState getReal() {
+        return (android.app.GameState) real;
     }
 
     public android.app.GameState unwrap() {
-        return real;
+        return getReal();
     }
 
     public GameState(boolean arg0, int arg1) {
-        this(new android.app.GameState(arg0, arg1));
+        this(new android.app.GameState(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public GameState(boolean arg0, int arg1, int arg2, int arg3) {
-        this(new android.app.GameState(arg0, arg1, arg2, arg3));
+        this(new android.app.GameState(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.GameState) real).describeContents();
     }
 
     public int getLabel() {
-        return real.getLabel();
+        return ((android.app.GameState) real).getLabel();
     }
 
     public int getMode() {
-        return real.getMode();
+        return ((android.app.GameState) real).getMode();
     }
 
     public int getQuality() {
-        return real.getQuality();
+        return ((android.app.GameState) real).getQuality();
     }
 
     public boolean isLoading() {
-        return real.isLoading();
+        return ((android.app.GameState) real).isLoading();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.GameState) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int MODE_CONTENT = android.app.GameState.MODE_CONTENT;

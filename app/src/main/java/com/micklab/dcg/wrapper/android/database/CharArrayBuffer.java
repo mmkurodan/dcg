@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class CharArrayBuffer {
-    private final android.database.CharArrayBuffer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CharArrayBuffer(android.database.CharArrayBuffer real) {
+    private final java.lang.Object real;
+
+    private CharArrayBuffer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.CharArrayBuffer wrap(android.database.CharArrayBuffer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CharArrayBuffer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CharArrayBuffer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.CharArrayBuffer getReal() {
+        return (android.database.CharArrayBuffer) real;
     }
 
     public android.database.CharArrayBuffer unwrap() {
-        return real;
+        return getReal();
     }
 
     public CharArrayBuffer(int arg0) {

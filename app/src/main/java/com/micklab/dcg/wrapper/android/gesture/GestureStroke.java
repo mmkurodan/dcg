@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.gesture;
 
 public final class GestureStroke {
-    private final android.gesture.GestureStroke real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GestureStroke(android.gesture.GestureStroke real) {
+    private final java.lang.Object real;
+
+    private GestureStroke(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GestureStroke wrap(android.gesture.GestureStroke real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GestureStroke(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.gesture.GestureStroke(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.gesture.GestureStroke getReal() {
+        return (android.gesture.GestureStroke) real;
     }
 
     public android.gesture.GestureStroke unwrap() {
-        return real;
+        return getReal();
     }
 
     public GestureStroke(java.util.ArrayList arg0) {
-        this(new android.gesture.GestureStroke(arg0));
+        this(new android.gesture.GestureStroke(arg0), (__DcgwBridgeToken) null);
     }
 
     public void clearPath() {
-        real.clearPath();
+        ((android.gesture.GestureStroke) real).clearPath();
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.gesture.GestureStroke) real).clone();
     }
 
     public com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox computeOrientedBoundingBox() {
-        return com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox.wrap(real.computeOrientedBoundingBox());
+        return com.micklab.dcg.wrapper.android.gesture.OrientedBoundingBox.wrap(((android.gesture.GestureStroke) real).computeOrientedBoundingBox());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Path getPath() {
-        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(real.getPath());
+        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(((android.gesture.GestureStroke) real).getPath());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Path toPath(float arg0, float arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(real.toPath(arg0, arg1, arg2));
+        return com.micklab.dcg.wrapper.android.graphics.Path.wrap(((android.gesture.GestureStroke) real).toPath(arg0, arg1, arg2));
     }
 
 

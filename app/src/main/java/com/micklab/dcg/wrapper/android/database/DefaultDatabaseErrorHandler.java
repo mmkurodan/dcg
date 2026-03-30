@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class DefaultDatabaseErrorHandler {
-    private final android.database.DefaultDatabaseErrorHandler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DefaultDatabaseErrorHandler(android.database.DefaultDatabaseErrorHandler real) {
+    private final java.lang.Object real;
+
+    private DefaultDatabaseErrorHandler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.DefaultDatabaseErrorHandler wrap(android.database.DefaultDatabaseErrorHandler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DefaultDatabaseErrorHandler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DefaultDatabaseErrorHandler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.DefaultDatabaseErrorHandler getReal() {
+        return (android.database.DefaultDatabaseErrorHandler) real;
     }
 
     public android.database.DefaultDatabaseErrorHandler unwrap() {
-        return real;
+        return getReal();
     }
 
     public DefaultDatabaseErrorHandler() {

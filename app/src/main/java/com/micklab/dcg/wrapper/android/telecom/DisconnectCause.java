@@ -2,74 +2,81 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class DisconnectCause {
-    private final android.telecom.DisconnectCause real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisconnectCause(android.telecom.DisconnectCause real) {
+    private final java.lang.Object real;
+
+    private DisconnectCause(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.DisconnectCause wrap(android.telecom.DisconnectCause real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.DisconnectCause(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.DisconnectCause(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.DisconnectCause getReal() {
+        return (android.telecom.DisconnectCause) real;
     }
 
     public android.telecom.DisconnectCause unwrap() {
-        return real;
+        return getReal();
     }
 
     public DisconnectCause(int arg0) {
-        this(new android.telecom.DisconnectCause(arg0));
+        this(new android.telecom.DisconnectCause(arg0), (__DcgwBridgeToken) null);
     }
 
     public DisconnectCause(int arg0, java.lang.String arg1) {
-        this(new android.telecom.DisconnectCause(arg0, arg1));
+        this(new android.telecom.DisconnectCause(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public DisconnectCause(int arg0, java.lang.CharSequence arg1, java.lang.CharSequence arg2, java.lang.String arg3) {
-        this(new android.telecom.DisconnectCause(arg0, arg1, arg2, arg3));
+        this(new android.telecom.DisconnectCause(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public DisconnectCause(int arg0, java.lang.CharSequence arg1, java.lang.CharSequence arg2, java.lang.String arg3, int arg4) {
-        this(new android.telecom.DisconnectCause(arg0, arg1, arg2, arg3, arg4));
+        this(new android.telecom.DisconnectCause(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.telecom.DisconnectCause) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.telecom.DisconnectCause) real).equals(arg0);
     }
 
     public int getCode() {
-        return real.getCode();
+        return ((android.telecom.DisconnectCause) real).getCode();
     }
 
     public java.lang.CharSequence getDescription() {
-        return real.getDescription();
+        return ((android.telecom.DisconnectCause) real).getDescription();
     }
 
     public java.lang.CharSequence getLabel() {
-        return real.getLabel();
+        return ((android.telecom.DisconnectCause) real).getLabel();
     }
 
     public java.lang.String getReason() {
-        return real.getReason();
+        return ((android.telecom.DisconnectCause) real).getReason();
     }
 
     public int getTone() {
-        return real.getTone();
+        return ((android.telecom.DisconnectCause) real).getTone();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.telecom.DisconnectCause) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.telecom.DisconnectCause) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.DisconnectCause) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ANSWERED_ELSEWHERE = android.telecom.DisconnectCause.ANSWERED_ELSEWHERE;

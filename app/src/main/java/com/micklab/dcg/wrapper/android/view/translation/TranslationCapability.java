@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.view.translation;
 
 public final class TranslationCapability {
-    private final android.view.translation.TranslationCapability real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TranslationCapability(android.view.translation.TranslationCapability real) {
+    private final java.lang.Object real;
+
+    private TranslationCapability(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.translation.TranslationCapability wrap(android.view.translation.TranslationCapability real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.TranslationCapability(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.TranslationCapability(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.translation.TranslationCapability getReal() {
+        return (android.view.translation.TranslationCapability) real;
     }
 
     public android.view.translation.TranslationCapability unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.translation.TranslationCapability) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.view.translation.TranslationSpec getSourceSpec() {
-        return com.micklab.dcg.wrapper.android.view.translation.TranslationSpec.wrap(real.getSourceSpec());
+        return com.micklab.dcg.wrapper.android.view.translation.TranslationSpec.wrap(((android.view.translation.TranslationCapability) real).getSourceSpec());
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.view.translation.TranslationCapability) real).getState();
     }
 
     public int getSupportedTranslationFlags() {
-        return real.getSupportedTranslationFlags();
+        return ((android.view.translation.TranslationCapability) real).getSupportedTranslationFlags();
     }
 
     public com.micklab.dcg.wrapper.android.view.translation.TranslationSpec getTargetSpec() {
-        return com.micklab.dcg.wrapper.android.view.translation.TranslationSpec.wrap(real.getTargetSpec());
+        return com.micklab.dcg.wrapper.android.view.translation.TranslationSpec.wrap(((android.view.translation.TranslationCapability) real).getTargetSpec());
     }
 
     public boolean isUiTranslationEnabled() {
-        return real.isUiTranslationEnabled();
+        return ((android.view.translation.TranslationCapability) real).isUiTranslationEnabled();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.translation.TranslationCapability) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.translation.TranslationCapability) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int STATE_AVAILABLE_TO_DOWNLOAD = android.view.translation.TranslationCapability.STATE_AVAILABLE_TO_DOWNLOAD;

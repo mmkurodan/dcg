@@ -2,77 +2,91 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class ClipboardManager {
-    private final android.content.ClipboardManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ClipboardManager(android.content.ClipboardManager real) {
+    private final java.lang.Object real;
+
+    private ClipboardManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.ClipboardManager wrap(android.content.ClipboardManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipboardManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipboardManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.ClipboardManager getReal() {
+        return (android.content.ClipboardManager) real;
     }
 
     public android.content.ClipboardManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addPrimaryClipChangedListener(com.micklab.dcg.wrapper.android.content.ClipboardManager.OnPrimaryClipChangedListener arg0) {
-        real.addPrimaryClipChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ClipboardManager) real).addPrimaryClipChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void clearPrimaryClip() {
-        real.clearPrimaryClip();
+        ((android.content.ClipboardManager) real).clearPrimaryClip();
     }
 
     public com.micklab.dcg.wrapper.android.content.ClipData getPrimaryClip() {
-        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(real.getPrimaryClip());
+        return com.micklab.dcg.wrapper.android.content.ClipData.wrap(((android.content.ClipboardManager) real).getPrimaryClip());
     }
 
     public com.micklab.dcg.wrapper.android.content.ClipDescription getPrimaryClipDescription() {
-        return com.micklab.dcg.wrapper.android.content.ClipDescription.wrap(real.getPrimaryClipDescription());
+        return com.micklab.dcg.wrapper.android.content.ClipDescription.wrap(((android.content.ClipboardManager) real).getPrimaryClipDescription());
     }
 
     public java.lang.CharSequence getText() {
-        return real.getText();
+        return ((android.content.ClipboardManager) real).getText();
     }
 
     public boolean hasPrimaryClip() {
-        return real.hasPrimaryClip();
+        return ((android.content.ClipboardManager) real).hasPrimaryClip();
     }
 
     public boolean hasText() {
-        return real.hasText();
+        return ((android.content.ClipboardManager) real).hasText();
     }
 
     public void removePrimaryClipChangedListener(com.micklab.dcg.wrapper.android.content.ClipboardManager.OnPrimaryClipChangedListener arg0) {
-        real.removePrimaryClipChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ClipboardManager) real).removePrimaryClipChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPrimaryClip(com.micklab.dcg.wrapper.android.content.ClipData arg0) {
-        real.setPrimaryClip(arg0 == null ? null : arg0.unwrap());
+        ((android.content.ClipboardManager) real).setPrimaryClip(arg0 == null ? null : arg0.getReal());
     }
 
     public void setText(java.lang.CharSequence arg0) {
-        real.setText(arg0);
+        ((android.content.ClipboardManager) real).setText(arg0);
     }
 
     public static final class OnPrimaryClipChangedListener {
-        private final android.content.ClipboardManager.OnPrimaryClipChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnPrimaryClipChangedListener(android.content.ClipboardManager.OnPrimaryClipChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnPrimaryClipChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.ClipboardManager.OnPrimaryClipChangedListener wrap(android.content.ClipboardManager.OnPrimaryClipChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipboardManager.OnPrimaryClipChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.ClipboardManager.OnPrimaryClipChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.ClipboardManager.OnPrimaryClipChangedListener getReal() {
+            return (android.content.ClipboardManager.OnPrimaryClipChangedListener) real;
         }
 
         public android.content.ClipboardManager.OnPrimaryClipChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onPrimaryClipChanged() {
-            real.onPrimaryClipChanged();
+            ((android.content.ClipboardManager.OnPrimaryClipChangedListener) real).onPrimaryClipChanged();
         }
 
     }

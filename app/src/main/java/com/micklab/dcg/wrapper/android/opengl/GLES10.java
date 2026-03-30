@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES10 {
-    private final android.opengl.GLES10 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES10(android.opengl.GLES10 real) {
+    private final java.lang.Object real;
+
+    private GLES10(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES10 wrap(android.opengl.GLES10 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES10(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES10(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES10 getReal() {
+        return (android.opengl.GLES10) real;
     }
 
     public android.opengl.GLES10 unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLES10() {
-        this(new android.opengl.GLES10());
+        this(new android.opengl.GLES10(), (__DcgwBridgeToken) null);
     }
 
     public static void glActiveTexture(int arg0) {

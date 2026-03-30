@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class BadParcelableException {
-    private final android.os.BadParcelableException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BadParcelableException(android.os.BadParcelableException real) {
+    private final java.lang.Object real;
+
+    private BadParcelableException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.BadParcelableException wrap(android.os.BadParcelableException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BadParcelableException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.BadParcelableException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.BadParcelableException getReal() {
+        return (android.os.BadParcelableException) real;
     }
 
     public android.os.BadParcelableException unwrap() {
-        return real;
+        return getReal();
     }
 
     public BadParcelableException(java.lang.String arg0) {

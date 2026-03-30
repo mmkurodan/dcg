@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PackageStats {
-    private final android.content.pm.PackageStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PackageStats(android.content.pm.PackageStats real) {
+    private final java.lang.Object real;
+
+    private PackageStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PackageStats wrap(android.content.pm.PackageStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PackageStats getReal() {
+        return (android.content.pm.PackageStats) real;
     }
 
     public android.content.pm.PackageStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public PackageStats(com.micklab.dcg.wrapper.android.content.pm.PackageStats arg0) {

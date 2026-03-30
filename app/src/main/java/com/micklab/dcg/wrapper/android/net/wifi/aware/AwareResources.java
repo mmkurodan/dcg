@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class AwareResources {
-    private final android.net.wifi.aware.AwareResources real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AwareResources(android.net.wifi.aware.AwareResources real) {
+    private final java.lang.Object real;
+
+    private AwareResources(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.AwareResources wrap(android.net.wifi.aware.AwareResources real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.AwareResources(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.AwareResources(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.AwareResources getReal() {
+        return (android.net.wifi.aware.AwareResources) real;
     }
 
     public android.net.wifi.aware.AwareResources unwrap() {
-        return real;
+        return getReal();
     }
 
     public AwareResources(int arg0, int arg1, int arg2) {

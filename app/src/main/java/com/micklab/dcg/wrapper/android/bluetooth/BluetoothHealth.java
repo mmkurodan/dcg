@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothHealth {
-    private final android.bluetooth.BluetoothHealth real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothHealth(android.bluetooth.BluetoothHealth real) {
+    private final java.lang.Object real;
+
+    private BluetoothHealth(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealth wrap(android.bluetooth.BluetoothHealth real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealth(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealth(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothHealth getReal() {
+        return (android.bluetooth.BluetoothHealth) real;
     }
 
     public android.bluetooth.BluetoothHealth unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean connectChannelToSource(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealthAppConfiguration arg1) {
-        return real.connectChannelToSource(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.bluetooth.BluetoothHealth) real).connectChannelToSource(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean disconnectChannel(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealthAppConfiguration arg1, int arg2) {
-        return real.disconnectChannel(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.bluetooth.BluetoothHealth) real).disconnectChannel(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHealth) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor getMainChannelFd(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealthAppConfiguration arg1) {
-        return com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.wrap(real.getMainChannelFd(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.wrap(((android.bluetooth.BluetoothHealth) real).getMainChannelFd(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public boolean registerSinkAppConfiguration(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealthCallback arg2) {
-        return real.registerSinkAppConfiguration(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.bluetooth.BluetoothHealth) real).registerSinkAppConfiguration(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean unregisterAppConfiguration(com.micklab.dcg.wrapper.android.bluetooth.BluetoothHealthAppConfiguration arg0) {
-        return real.unregisterAppConfiguration(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothHealth) real).unregisterAppConfiguration(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int APP_CONFIG_REGISTRATION_FAILURE = android.bluetooth.BluetoothHealth.APP_CONFIG_REGISTRATION_FAILURE;

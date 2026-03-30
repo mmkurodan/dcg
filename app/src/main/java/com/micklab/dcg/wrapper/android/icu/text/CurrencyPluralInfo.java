@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class CurrencyPluralInfo {
-    private final android.icu.text.CurrencyPluralInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CurrencyPluralInfo(android.icu.text.CurrencyPluralInfo real) {
+    private final java.lang.Object real;
+
+    private CurrencyPluralInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo wrap(android.icu.text.CurrencyPluralInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.CurrencyPluralInfo getReal() {
+        return (android.icu.text.CurrencyPluralInfo) real;
     }
 
     public android.icu.text.CurrencyPluralInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public CurrencyPluralInfo() {
-        this(new android.icu.text.CurrencyPluralInfo());
+        this(new android.icu.text.CurrencyPluralInfo(), (__DcgwBridgeToken) null);
     }
 
     public CurrencyPluralInfo(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.CurrencyPluralInfo(arg0 == null ? null : arg0.unwrap()));
+        this(new android.icu.text.CurrencyPluralInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public CurrencyPluralInfo(java.util.Locale arg0) {
-        this(new android.icu.text.CurrencyPluralInfo(arg0));
+        this(new android.icu.text.CurrencyPluralInfo(arg0), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.text.CurrencyPluralInfo) real).clone();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.text.CurrencyPluralInfo) real).equals(arg0);
     }
 
     public java.lang.String getCurrencyPluralPattern(java.lang.String arg0) {
-        return real.getCurrencyPluralPattern(arg0);
+        return ((android.icu.text.CurrencyPluralInfo) real).getCurrencyPluralPattern(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo getInstance() {
@@ -49,31 +56,31 @@ public final class CurrencyPluralInfo {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getLocale() {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.getLocale());
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.icu.text.CurrencyPluralInfo) real).getLocale());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.PluralRules getPluralRules() {
-        return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(real.getPluralRules());
+        return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(((android.icu.text.CurrencyPluralInfo) real).getPluralRules());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.text.CurrencyPluralInfo) real).hashCode();
     }
 
     public void setCurrencyPluralPattern(java.lang.String arg0, java.lang.String arg1) {
-        real.setCurrencyPluralPattern(arg0, arg1);
+        ((android.icu.text.CurrencyPluralInfo) real).setCurrencyPluralPattern(arg0, arg1);
     }
 
     public void setLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        real.setLocale(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.CurrencyPluralInfo) real).setLocale(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPluralRules(java.lang.String arg0) {
-        real.setPluralRules(arg0);
+        ((android.icu.text.CurrencyPluralInfo) real).setPluralRules(arg0);
     }
 
 }

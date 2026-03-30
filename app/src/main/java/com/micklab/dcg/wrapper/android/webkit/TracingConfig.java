@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class TracingConfig {
-    private final android.webkit.TracingConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TracingConfig(android.webkit.TracingConfig real) {
+    private final java.lang.Object real;
+
+    private TracingConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.TracingConfig wrap(android.webkit.TracingConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.TracingConfig getReal() {
+        return (android.webkit.TracingConfig) real;
     }
 
     public android.webkit.TracingConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getPredefinedCategories() {
-        return real.getPredefinedCategories();
+        return ((android.webkit.TracingConfig) real).getPredefinedCategories();
     }
 
     public int getTracingMode() {
-        return real.getTracingMode();
+        return ((android.webkit.TracingConfig) real).getTracingMode();
     }
 
     public static final int CATEGORIES_ALL = android.webkit.TracingConfig.CATEGORIES_ALL;
@@ -36,38 +43,45 @@ public final class TracingConfig {
     public static final int RECORD_UNTIL_FULL = android.webkit.TracingConfig.RECORD_UNTIL_FULL;
 
     public static final class Builder {
-        private final android.webkit.TracingConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.webkit.TracingConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder wrap(android.webkit.TracingConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.TracingConfig.Builder getReal() {
+            return (android.webkit.TracingConfig.Builder) real;
         }
 
         public android.webkit.TracingConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.webkit.TracingConfig.Builder());
+            this(new android.webkit.TracingConfig.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder addCategories(java.lang.String... arg0) {
-            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(real.addCategories(arg0));
+            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(((android.webkit.TracingConfig.Builder) real).addCategories(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder addCategories(int... arg0) {
-            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(real.addCategories(arg0));
+            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(((android.webkit.TracingConfig.Builder) real).addCategories(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.webkit.TracingConfig build() {
-            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.wrap(((android.webkit.TracingConfig.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder setTracingMode(int arg0) {
-            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(real.setTracingMode(arg0));
+            return com.micklab.dcg.wrapper.android.webkit.TracingConfig.Builder.wrap(((android.webkit.TracingConfig.Builder) real).setTracingMode(arg0));
         }
 
     }

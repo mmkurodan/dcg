@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class GroupCallCallback {
-    private final android.telephony.mbms.GroupCallCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GroupCallCallback(android.telephony.mbms.GroupCallCallback real) {
+    private final java.lang.Object real;
+
+    private GroupCallCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.GroupCallCallback wrap(android.telephony.mbms.GroupCallCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.GroupCallCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.GroupCallCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.GroupCallCallback getReal() {
+        return (android.telephony.mbms.GroupCallCallback) real;
     }
 
     public android.telephony.mbms.GroupCallCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onBroadcastSignalStrengthUpdated(int arg0) {

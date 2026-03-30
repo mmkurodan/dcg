@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.media.tv;
 
 public final class TvContract {
-    private final android.media.tv.TvContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TvContract(android.media.tv.TvContract real) {
+    private final java.lang.Object real;
+
+    private TvContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.TvContract wrap(android.media.tv.TvContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.tv.TvContract getReal() {
+        return (android.media.tv.TvContract) real;
     }
 
     public android.media.tv.TvContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildChannelLogoUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildChannelLogoUri(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildChannelLogoUri(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildChannelLogoUri(long arg0) {
@@ -37,7 +44,7 @@ public final class TvContract {
     }
 
     public static java.lang.String buildInputId(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return android.media.tv.TvContract.buildInputId(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.buildInputId(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildPreviewProgramUri(long arg0) {
@@ -49,7 +56,7 @@ public final class TvContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildPreviewProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildPreviewProgramsUriForChannel(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildPreviewProgramsUriForChannel(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramUri(long arg0) {
@@ -57,7 +64,7 @@ public final class TvContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(long arg0) {
@@ -65,7 +72,7 @@ public final class TvContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0, long arg1, long arg2) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(long arg0, long arg1, long arg2) {
@@ -81,27 +88,27 @@ public final class TvContract {
     }
 
     public static boolean isChannelUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.media.tv.TvContract.isChannelUri(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.isChannelUri(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isChannelUriForPassthroughInput(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.media.tv.TvContract.isChannelUriForPassthroughInput(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.isChannelUriForPassthroughInput(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isChannelUriForTunerInput(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.media.tv.TvContract.isChannelUriForTunerInput(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.isChannelUriForTunerInput(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isProgramUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.media.tv.TvContract.isProgramUri(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.isProgramUri(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isRecordedProgramUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.media.tv.TvContract.isRecordedProgramUri(arg0 == null ? null : arg0.unwrap());
+        return android.media.tv.TvContract.isRecordedProgramUri(arg0 == null ? null : arg0.getReal());
     }
 
     public static void requestChannelBrowsable(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1) {
-        android.media.tv.TvContract.requestChannelBrowsable(arg0 == null ? null : arg0.unwrap(), arg1);
+        android.media.tv.TvContract.requestChannelBrowsable(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ACTION_INITIALIZE_PROGRAMS = android.media.tv.TvContract.ACTION_INITIALIZE_PROGRAMS;
@@ -115,36 +122,50 @@ public final class TvContract {
     public static final java.lang.String EXTRA_WATCH_NEXT_PROGRAM_ID = android.media.tv.TvContract.EXTRA_WATCH_NEXT_PROGRAM_ID;
 
     public static final class BaseTvColumns {
-        private final android.media.tv.TvContract.BaseTvColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BaseTvColumns(android.media.tv.TvContract.BaseTvColumns real) {
+        private final java.lang.Object real;
+
+        private BaseTvColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.BaseTvColumns wrap(android.media.tv.TvContract.BaseTvColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.BaseTvColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.BaseTvColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.BaseTvColumns getReal() {
+            return (android.media.tv.TvContract.BaseTvColumns) real;
         }
 
         public android.media.tv.TvContract.BaseTvColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COLUMN_PACKAGE_NAME = android.media.tv.TvContract.BaseTvColumns.COLUMN_PACKAGE_NAME;
 
     }
     public static final class Channels {
-        private final android.media.tv.TvContract.Channels real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Channels(android.media.tv.TvContract.Channels real) {
+        private final java.lang.Object real;
+
+        private Channels(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels wrap(android.media.tv.TvContract.Channels real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.Channels getReal() {
+            return (android.media.tv.TvContract.Channels) real;
         }
 
         public android.media.tv.TvContract.Channels unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.String getVideoResolution(java.lang.String arg0) {
@@ -233,18 +254,25 @@ public final class TvContract {
         public static final java.lang.String VIDEO_RESOLUTION_UHD = android.media.tv.TvContract.Channels.VIDEO_RESOLUTION_UHD;
 
         public static final class Logo {
-            private final android.media.tv.TvContract.Channels.Logo real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Logo(android.media.tv.TvContract.Channels.Logo real) {
+            private final java.lang.Object real;
+
+            private Logo(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels.Logo wrap(android.media.tv.TvContract.Channels.Logo real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels.Logo(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Channels.Logo(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.media.tv.TvContract.Channels.Logo getReal() {
+                return (android.media.tv.TvContract.Channels.Logo) real;
             }
 
             public android.media.tv.TvContract.Channels.Logo unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.media.tv.TvContract.Channels.Logo.CONTENT_DIRECTORY;
@@ -252,18 +280,25 @@ public final class TvContract {
         }
     }
     public static final class PreviewPrograms {
-        private final android.media.tv.TvContract.PreviewPrograms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PreviewPrograms(android.media.tv.TvContract.PreviewPrograms real) {
+        private final java.lang.Object real;
+
+        private PreviewPrograms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.PreviewPrograms wrap(android.media.tv.TvContract.PreviewPrograms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.PreviewPrograms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.PreviewPrograms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.PreviewPrograms getReal() {
+            return (android.media.tv.TvContract.PreviewPrograms) real;
         }
 
         public android.media.tv.TvContract.PreviewPrograms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ASPECT_RATIO_16_9 = android.media.tv.TvContract.PreviewPrograms.ASPECT_RATIO_16_9;
@@ -352,18 +387,25 @@ public final class TvContract {
 
     }
     public static final class Programs {
-        private final android.media.tv.TvContract.Programs real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Programs(android.media.tv.TvContract.Programs real) {
+        private final java.lang.Object real;
+
+        private Programs(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs wrap(android.media.tv.TvContract.Programs real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.Programs getReal() {
+            return (android.media.tv.TvContract.Programs) real;
         }
 
         public android.media.tv.TvContract.Programs unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COLUMN_AUDIO_LANGUAGE = android.media.tv.TvContract.Programs.COLUMN_AUDIO_LANGUAGE;
@@ -411,18 +453,25 @@ public final class TvContract {
         public static final int REVIEW_RATING_STYLE_THUMBS_UP_DOWN = android.media.tv.TvContract.Programs.REVIEW_RATING_STYLE_THUMBS_UP_DOWN;
 
         public static final class Genres {
-            private final android.media.tv.TvContract.Programs.Genres real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Genres(android.media.tv.TvContract.Programs.Genres real) {
+            private final java.lang.Object real;
+
+            private Genres(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs.Genres wrap(android.media.tv.TvContract.Programs.Genres real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs.Genres(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.Programs.Genres(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.media.tv.TvContract.Programs.Genres getReal() {
+                return (android.media.tv.TvContract.Programs.Genres) real;
             }
 
             public android.media.tv.TvContract.Programs.Genres unwrap() {
-                return real;
+                return getReal();
             }
 
             public static java.lang.String[] decode(java.lang.String arg0) {
@@ -458,18 +507,25 @@ public final class TvContract {
         }
     }
     public static final class RecordedPrograms {
-        private final android.media.tv.TvContract.RecordedPrograms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RecordedPrograms(android.media.tv.TvContract.RecordedPrograms real) {
+        private final java.lang.Object real;
+
+        private RecordedPrograms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.RecordedPrograms wrap(android.media.tv.TvContract.RecordedPrograms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.RecordedPrograms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.RecordedPrograms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.RecordedPrograms getReal() {
+            return (android.media.tv.TvContract.RecordedPrograms) real;
         }
 
         public android.media.tv.TvContract.RecordedPrograms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COLUMN_AUDIO_LANGUAGE = android.media.tv.TvContract.RecordedPrograms.COLUMN_AUDIO_LANGUAGE;
@@ -517,18 +573,25 @@ public final class TvContract {
 
     }
     public static final class WatchNextPrograms {
-        private final android.media.tv.TvContract.WatchNextPrograms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WatchNextPrograms(android.media.tv.TvContract.WatchNextPrograms real) {
+        private final java.lang.Object real;
+
+        private WatchNextPrograms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvContract.WatchNextPrograms wrap(android.media.tv.TvContract.WatchNextPrograms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.WatchNextPrograms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvContract.WatchNextPrograms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvContract.WatchNextPrograms getReal() {
+            return (android.media.tv.TvContract.WatchNextPrograms) real;
         }
 
         public android.media.tv.TvContract.WatchNextPrograms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ASPECT_RATIO_16_9 = android.media.tv.TvContract.WatchNextPrograms.ASPECT_RATIO_16_9;

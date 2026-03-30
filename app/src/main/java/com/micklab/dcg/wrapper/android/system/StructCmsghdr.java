@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class StructCmsghdr {
-    private final android.system.StructCmsghdr real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StructCmsghdr(android.system.StructCmsghdr real) {
+    private final java.lang.Object real;
+
+    private StructCmsghdr(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.StructCmsghdr wrap(android.system.StructCmsghdr real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructCmsghdr(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.StructCmsghdr(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.StructCmsghdr getReal() {
+        return (android.system.StructCmsghdr) real;
     }
 
     public android.system.StructCmsghdr unwrap() {
-        return real;
+        return getReal();
     }
 
     public StructCmsghdr(int arg0, int arg1, short arg2) {

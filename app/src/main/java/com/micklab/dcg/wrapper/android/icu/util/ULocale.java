@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class ULocale {
-    private final android.icu.util.ULocale real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ULocale(android.icu.util.ULocale real) {
+    private final java.lang.Object real;
+
+    private ULocale(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale wrap(android.icu.util.ULocale real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.ULocale getReal() {
+        return (android.icu.util.ULocale) real;
     }
 
     public android.icu.util.ULocale unwrap() {
-        return real;
+        return getReal();
     }
 
     public ULocale(java.lang.String arg0) {
-        this(new android.icu.util.ULocale(arg0));
+        this(new android.icu.util.ULocale(arg0), (__DcgwBridgeToken) null);
     }
 
     public ULocale(java.lang.String arg0, java.lang.String arg1) {
-        this(new android.icu.util.ULocale(arg0, arg1));
+        this(new android.icu.util.ULocale(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public ULocale(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
-        this(new android.icu.util.ULocale(arg0, arg1, arg2));
+        this(new android.icu.util.ULocale(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(java.lang.String arg0, boolean[] arg1) {
@@ -45,7 +52,7 @@ public final class ULocale {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale addLikelySubtags(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.addLikelySubtags(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.addLikelySubtags(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.lang.String canonicalize(java.lang.String arg0) {
@@ -53,15 +60,15 @@ public final class ULocale {
     }
 
     public java.lang.Object clone() {
-        return real.clone();
+        return ((android.icu.util.ULocale) real).clone();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale createCanonical(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.createCanonical(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.createCanonical(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale createCanonical(java.lang.String arg0) {
@@ -69,7 +76,7 @@ public final class ULocale {
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.util.ULocale) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale forLanguageTag(java.lang.String arg0) {
@@ -85,7 +92,7 @@ public final class ULocale {
     }
 
     public java.lang.String getBaseName() {
-        return real.getBaseName();
+        return ((android.icu.util.ULocale) real).getBaseName();
     }
 
     public static java.lang.String getBaseName(java.lang.String arg0) {
@@ -93,11 +100,11 @@ public final class ULocale {
     }
 
     public java.lang.String getCharacterOrientation() {
-        return real.getCharacterOrientation();
+        return ((android.icu.util.ULocale) real).getCharacterOrientation();
     }
 
     public java.lang.String getCountry() {
-        return real.getCountry();
+        return ((android.icu.util.ULocale) real).getCountry();
     }
 
     public static java.lang.String getCountry(java.lang.String arg0) {
@@ -109,19 +116,19 @@ public final class ULocale {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale getDefault(com.micklab.dcg.wrapper.android.icu.util.ULocale.Category arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.getDefault(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.getDefault(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String getDisplayCountry() {
-        return real.getDisplayCountry();
+        return ((android.icu.util.ULocale) real).getDisplayCountry();
     }
 
     public java.lang.String getDisplayCountry(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayCountry(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayCountry(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayCountry(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayCountry(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayCountry(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayCountry(java.lang.String arg0, java.lang.String arg1) {
@@ -133,7 +140,7 @@ public final class ULocale {
     }
 
     public static java.lang.String getDisplayKeyword(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayKeyword(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayKeyword(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayKeyword(java.lang.String arg0, java.lang.String arg1) {
@@ -141,15 +148,15 @@ public final class ULocale {
     }
 
     public java.lang.String getDisplayKeywordValue(java.lang.String arg0) {
-        return real.getDisplayKeywordValue(arg0);
+        return ((android.icu.util.ULocale) real).getDisplayKeywordValue(arg0);
     }
 
     public java.lang.String getDisplayKeywordValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return real.getDisplayKeywordValue(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayKeywordValue(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayKeywordValue(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return android.icu.util.ULocale.getDisplayKeywordValue(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.icu.util.ULocale.getDisplayKeywordValue(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static java.lang.String getDisplayKeywordValue(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
@@ -157,11 +164,11 @@ public final class ULocale {
     }
 
     public java.lang.String getDisplayLanguage() {
-        return real.getDisplayLanguage();
+        return ((android.icu.util.ULocale) real).getDisplayLanguage();
     }
 
     public java.lang.String getDisplayLanguage(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayLanguage(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayLanguage(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayLanguage(java.lang.String arg0, java.lang.String arg1) {
@@ -169,15 +176,15 @@ public final class ULocale {
     }
 
     public static java.lang.String getDisplayLanguage(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayLanguage(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayLanguage(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayLanguageWithDialect() {
-        return real.getDisplayLanguageWithDialect();
+        return ((android.icu.util.ULocale) real).getDisplayLanguageWithDialect();
     }
 
     public java.lang.String getDisplayLanguageWithDialect(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayLanguageWithDialect(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayLanguageWithDialect(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayLanguageWithDialect(java.lang.String arg0, java.lang.String arg1) {
@@ -185,15 +192,15 @@ public final class ULocale {
     }
 
     public static java.lang.String getDisplayLanguageWithDialect(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayLanguageWithDialect(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayLanguageWithDialect(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayName() {
-        return real.getDisplayName();
+        return ((android.icu.util.ULocale) real).getDisplayName();
     }
 
     public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayName(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayName(java.lang.String arg0, java.lang.String arg1) {
@@ -201,15 +208,15 @@ public final class ULocale {
     }
 
     public static java.lang.String getDisplayName(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayName(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayName(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayNameWithDialect() {
-        return real.getDisplayNameWithDialect();
+        return ((android.icu.util.ULocale) real).getDisplayNameWithDialect();
     }
 
     public java.lang.String getDisplayNameWithDialect(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayNameWithDialect(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayNameWithDialect(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayNameWithDialect(java.lang.String arg0, java.lang.String arg1) {
@@ -217,19 +224,19 @@ public final class ULocale {
     }
 
     public static java.lang.String getDisplayNameWithDialect(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayNameWithDialect(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayNameWithDialect(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayScript() {
-        return real.getDisplayScript();
+        return ((android.icu.util.ULocale) real).getDisplayScript();
     }
 
     public java.lang.String getDisplayScript(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayScript(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayScript(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayScript(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayScript(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayScript(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayScript(java.lang.String arg0, java.lang.String arg1) {
@@ -237,15 +244,15 @@ public final class ULocale {
     }
 
     public java.lang.String getDisplayVariant() {
-        return real.getDisplayVariant();
+        return ((android.icu.util.ULocale) real).getDisplayVariant();
     }
 
     public java.lang.String getDisplayVariant(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getDisplayVariant(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.ULocale) real).getDisplayVariant(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getDisplayVariant(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayVariant(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.util.ULocale.getDisplayVariant(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayVariant(java.lang.String arg0, java.lang.String arg1) {
@@ -253,11 +260,11 @@ public final class ULocale {
     }
 
     public java.lang.String getExtension(char arg0) {
-        return real.getExtension(arg0);
+        return ((android.icu.util.ULocale) real).getExtension(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getFallback() {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.getFallback());
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.icu.util.ULocale) real).getFallback());
     }
 
     public static java.lang.String getFallback(java.lang.String arg0) {
@@ -265,7 +272,7 @@ public final class ULocale {
     }
 
     public java.lang.String getISO3Country() {
-        return real.getISO3Country();
+        return ((android.icu.util.ULocale) real).getISO3Country();
     }
 
     public static java.lang.String getISO3Country(java.lang.String arg0) {
@@ -273,7 +280,7 @@ public final class ULocale {
     }
 
     public java.lang.String getISO3Language() {
-        return real.getISO3Language();
+        return ((android.icu.util.ULocale) real).getISO3Language();
     }
 
     public static java.lang.String getISO3Language(java.lang.String arg0) {
@@ -289,7 +296,7 @@ public final class ULocale {
     }
 
     public java.lang.String getKeywordValue(java.lang.String arg0) {
-        return real.getKeywordValue(arg0);
+        return ((android.icu.util.ULocale) real).getKeywordValue(arg0);
     }
 
     public static java.lang.String getKeywordValue(java.lang.String arg0, java.lang.String arg1) {
@@ -297,7 +304,7 @@ public final class ULocale {
     }
 
     public java.lang.String getLanguage() {
-        return real.getLanguage();
+        return ((android.icu.util.ULocale) real).getLanguage();
     }
 
     public static java.lang.String getLanguage(java.lang.String arg0) {
@@ -305,11 +312,11 @@ public final class ULocale {
     }
 
     public java.lang.String getLineOrientation() {
-        return real.getLineOrientation();
+        return ((android.icu.util.ULocale) real).getLineOrientation();
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.icu.util.ULocale) real).getName();
     }
 
     public static java.lang.String getName(java.lang.String arg0) {
@@ -317,7 +324,7 @@ public final class ULocale {
     }
 
     public java.lang.String getScript() {
-        return real.getScript();
+        return ((android.icu.util.ULocale) real).getScript();
     }
 
     public static java.lang.String getScript(java.lang.String arg0) {
@@ -325,11 +332,11 @@ public final class ULocale {
     }
 
     public java.lang.String getUnicodeLocaleType(java.lang.String arg0) {
-        return real.getUnicodeLocaleType(arg0);
+        return ((android.icu.util.ULocale) real).getUnicodeLocaleType(arg0);
     }
 
     public java.lang.String getVariant() {
-        return real.getVariant();
+        return ((android.icu.util.ULocale) real).getVariant();
     }
 
     public static java.lang.String getVariant(java.lang.String arg0) {
@@ -337,19 +344,19 @@ public final class ULocale {
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.util.ULocale) real).hashCode();
     }
 
     public boolean isRightToLeft() {
-        return real.isRightToLeft();
+        return ((android.icu.util.ULocale) real).isRightToLeft();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale minimizeSubtags(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.minimizeSubtags(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.minimizeSubtags(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale setKeywordValue(java.lang.String arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.setKeywordValue(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.icu.util.ULocale) real).setKeywordValue(arg0, arg1));
     }
 
     public static java.lang.String setKeywordValue(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
@@ -357,7 +364,7 @@ public final class ULocale {
     }
 
     public java.lang.String toLanguageTag() {
-        return real.toLanguageTag();
+        return ((android.icu.util.ULocale) real).toLanguageTag();
     }
 
     public static java.lang.String toLegacyKey(java.lang.String arg0) {
@@ -369,11 +376,11 @@ public final class ULocale {
     }
 
     public java.util.Locale toLocale() {
-        return real.toLocale();
+        return ((android.icu.util.ULocale) real).toLocale();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.util.ULocale) real).toString();
     }
 
     public static java.lang.String toUnicodeLocaleKey(java.lang.String arg0) {
@@ -410,18 +417,25 @@ public final class ULocale {
     public static final com.micklab.dcg.wrapper.android.icu.util.ULocale US = com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.US);
 
     public static final class AvailableType {
-        private final android.icu.util.ULocale.AvailableType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AvailableType(android.icu.util.ULocale.AvailableType real) {
+        private final java.lang.Object real;
+
+        private AvailableType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.ULocale.AvailableType wrap(android.icu.util.ULocale.AvailableType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.AvailableType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.AvailableType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.ULocale.AvailableType getReal() {
+            return (android.icu.util.ULocale.AvailableType) real;
         }
 
         public android.icu.util.ULocale.AvailableType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.ULocale.AvailableType valueOf(java.lang.String arg0) {
@@ -438,90 +452,104 @@ public final class ULocale {
 
     }
     public static final class Builder {
-        private final android.icu.util.ULocale.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.icu.util.ULocale.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder wrap(android.icu.util.ULocale.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.ULocale.Builder getReal() {
+            return (android.icu.util.ULocale.Builder) real;
         }
 
         public android.icu.util.ULocale.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.icu.util.ULocale.Builder());
+            this(new android.icu.util.ULocale.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder addUnicodeLocaleAttribute(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.addUnicodeLocaleAttribute(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).addUnicodeLocaleAttribute(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale build() {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.icu.util.ULocale.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder clear() {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.clear());
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).clear());
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder clearExtensions() {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.clearExtensions());
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).clearExtensions());
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder removeUnicodeLocaleAttribute(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.removeUnicodeLocaleAttribute(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).removeUnicodeLocaleAttribute(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setExtension(char arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setExtension(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setExtension(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setLanguage(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setLanguage(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setLanguage(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setLanguageTag(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setLanguageTag(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setLanguageTag(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setLocale(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setLocale(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setRegion(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setRegion(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setRegion(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setScript(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setScript(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setScript(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setUnicodeLocaleKeyword(java.lang.String arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setUnicodeLocaleKeyword(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setUnicodeLocaleKeyword(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder setVariant(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(real.setVariant(arg0));
+            return com.micklab.dcg.wrapper.android.icu.util.ULocale.Builder.wrap(((android.icu.util.ULocale.Builder) real).setVariant(arg0));
         }
 
     }
     public static final class Category {
-        private final android.icu.util.ULocale.Category real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Category(android.icu.util.ULocale.Category real) {
+        private final java.lang.Object real;
+
+        private Category(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.ULocale.Category wrap(android.icu.util.ULocale.Category real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.Category(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.ULocale.Category(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.ULocale.Category getReal() {
+            return (android.icu.util.ULocale.Category) real;
         }
 
         public android.icu.util.ULocale.Category unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.ULocale.Category valueOf(java.lang.String arg0) {

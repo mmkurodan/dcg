@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class PersistableBundle {
-    private final android.os.PersistableBundle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PersistableBundle(android.os.PersistableBundle real) {
+    private final java.lang.Object real;
+
+    private PersistableBundle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.PersistableBundle wrap(android.os.PersistableBundle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PersistableBundle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PersistableBundle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.PersistableBundle getReal() {
+        return (android.os.PersistableBundle) real;
     }
 
     public android.os.PersistableBundle unwrap() {
-        return real;
+        return getReal();
     }
 
     public PersistableBundle() {

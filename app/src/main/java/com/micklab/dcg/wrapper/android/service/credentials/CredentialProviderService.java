@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.service.credentials;
 
 public final class CredentialProviderService {
-    private final android.service.credentials.CredentialProviderService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CredentialProviderService(android.service.credentials.CredentialProviderService real) {
+    private final java.lang.Object real;
+
+    private CredentialProviderService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.credentials.CredentialProviderService wrap(android.service.credentials.CredentialProviderService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.credentials.CredentialProviderService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.credentials.CredentialProviderService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.credentials.CredentialProviderService getReal() {
+        return (android.service.credentials.CredentialProviderService) real;
     }
 
     public android.service.credentials.CredentialProviderService unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.service.credentials.CredentialProviderService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public void onCreate() {
-        real.onCreate();
+        ((android.service.credentials.CredentialProviderService) real).onCreate();
     }
 
     public static final java.lang.String EXTRA_BEGIN_GET_CREDENTIAL_REQUEST = android.service.credentials.CredentialProviderService.EXTRA_BEGIN_GET_CREDENTIAL_REQUEST;

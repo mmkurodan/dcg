@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.app.slice;
 
 public final class SliceMetrics {
-    private final android.app.slice.SliceMetrics real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SliceMetrics(android.app.slice.SliceMetrics real) {
+    private final java.lang.Object real;
+
+    private SliceMetrics(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.slice.SliceMetrics wrap(android.app.slice.SliceMetrics real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.SliceMetrics(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.SliceMetrics(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.slice.SliceMetrics getReal() {
+        return (android.app.slice.SliceMetrics) real;
     }
 
     public android.app.slice.SliceMetrics unwrap() {
-        return real;
+        return getReal();
     }
 
     public SliceMetrics(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        this(new android.app.slice.SliceMetrics(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.app.slice.SliceMetrics(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void logHidden() {
-        real.logHidden();
+        ((android.app.slice.SliceMetrics) real).logHidden();
     }
 
     public void logTouch(int arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        real.logTouch(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.app.slice.SliceMetrics) real).logTouch(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void logVisible() {
-        real.logVisible();
+        ((android.app.slice.SliceMetrics) real).logVisible();
     }
 
 }

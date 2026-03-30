@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class CameraProfile {
-    private final android.media.CameraProfile real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CameraProfile(android.media.CameraProfile real) {
+    private final java.lang.Object real;
+
+    private CameraProfile(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.CameraProfile wrap(android.media.CameraProfile real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.CameraProfile(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.CameraProfile(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.CameraProfile getReal() {
+        return (android.media.CameraProfile) real;
     }
 
     public android.media.CameraProfile unwrap() {
-        return real;
+        return getReal();
     }
 
     public CameraProfile() {

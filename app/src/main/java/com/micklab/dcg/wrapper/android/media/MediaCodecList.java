@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaCodecList {
-    private final android.media.MediaCodecList real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaCodecList(android.media.MediaCodecList real) {
+    private final java.lang.Object real;
+
+    private MediaCodecList(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaCodecList wrap(android.media.MediaCodecList real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecList(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodecList(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaCodecList getReal() {
+        return (android.media.MediaCodecList) real;
     }
 
     public android.media.MediaCodecList unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaCodecList(int arg0) {
-        this(new android.media.MediaCodecList(arg0));
+        this(new android.media.MediaCodecList(arg0), (__DcgwBridgeToken) null);
     }
 
     public java.lang.String findDecoderForFormat(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
-        return real.findDecoderForFormat(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.MediaCodecList) real).findDecoderForFormat(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String findEncoderForFormat(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
-        return real.findEncoderForFormat(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.MediaCodecList) real).findEncoderForFormat(arg0 == null ? null : arg0.getReal());
     }
 
     public static int getCodecCount() {
@@ -37,7 +44,7 @@ public final class MediaCodecList {
     }
 
     public android.media.MediaCodecInfo[] getCodecInfos() {
-        return real.getCodecInfos();
+        return ((android.media.MediaCodecList) real).getCodecInfos();
     }
 
     public static final int ALL_CODECS = android.media.MediaCodecList.ALL_CODECS;

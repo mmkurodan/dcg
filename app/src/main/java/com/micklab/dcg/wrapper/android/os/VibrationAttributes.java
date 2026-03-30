@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class VibrationAttributes {
-    private final android.os.VibrationAttributes real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VibrationAttributes(android.os.VibrationAttributes real) {
+    private final java.lang.Object real;
+
+    private VibrationAttributes(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.VibrationAttributes wrap(android.os.VibrationAttributes real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationAttributes(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationAttributes(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.VibrationAttributes getReal() {
+        return (android.os.VibrationAttributes) real;
     }
 
     public android.os.VibrationAttributes unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.os.VibrationAttributes createForUsage(int arg0) {
@@ -58,18 +65,25 @@ public final class VibrationAttributes {
 
 
     public static final class Builder {
-        private final android.os.VibrationAttributes.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.os.VibrationAttributes.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.VibrationAttributes.Builder wrap(android.os.VibrationAttributes.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationAttributes.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationAttributes.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.VibrationAttributes.Builder getReal() {
+            return (android.os.VibrationAttributes.Builder) real;
         }
 
         public android.os.VibrationAttributes.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

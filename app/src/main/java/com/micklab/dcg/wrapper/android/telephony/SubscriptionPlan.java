@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SubscriptionPlan {
-    private final android.telephony.SubscriptionPlan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SubscriptionPlan(android.telephony.SubscriptionPlan real) {
+    private final java.lang.Object real;
+
+    private SubscriptionPlan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan wrap(android.telephony.SubscriptionPlan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SubscriptionPlan getReal() {
+        return (android.telephony.SubscriptionPlan) real;
     }
 
     public android.telephony.SubscriptionPlan unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -66,18 +73,25 @@ public final class SubscriptionPlan {
 
 
     public static final class Builder {
-        private final android.telephony.SubscriptionPlan.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.SubscriptionPlan.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder wrap(android.telephony.SubscriptionPlan.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SubscriptionPlan.Builder getReal() {
+            return (android.telephony.SubscriptionPlan.Builder) real;
         }
 
         public android.telephony.SubscriptionPlan.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan build() {

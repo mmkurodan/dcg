@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class StreamingServiceInfo {
-    private final android.telephony.mbms.StreamingServiceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StreamingServiceInfo(android.telephony.mbms.StreamingServiceInfo real) {
+    private final java.lang.Object real;
+
+    private StreamingServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceInfo wrap(android.telephony.mbms.StreamingServiceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.StreamingServiceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.StreamingServiceInfo getReal() {
+        return (android.telephony.mbms.StreamingServiceInfo) real;
     }
 
     public android.telephony.mbms.StreamingServiceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

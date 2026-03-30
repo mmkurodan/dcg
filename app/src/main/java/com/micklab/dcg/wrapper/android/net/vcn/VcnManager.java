@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnManager {
-    private final android.net.vcn.VcnManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnManager(android.net.vcn.VcnManager real) {
+    private final java.lang.Object real;
+
+    private VcnManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnManager wrap(android.net.vcn.VcnManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnManager getReal() {
+        return (android.net.vcn.VcnManager) real;
     }
 
     public android.net.vcn.VcnManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void clearVcnConfig(com.micklab.dcg.wrapper.android.os.ParcelUuid arg0) throws java.io.IOException {
@@ -34,18 +41,25 @@ public final class VcnManager {
 
 
     public static final class VcnStatusCallback {
-        private final android.net.vcn.VcnManager.VcnStatusCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VcnStatusCallback(android.net.vcn.VcnManager.VcnStatusCallback real) {
+        private final java.lang.Object real;
+
+        private VcnStatusCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.vcn.VcnManager.VcnStatusCallback wrap(android.net.vcn.VcnManager.VcnStatusCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnManager.VcnStatusCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnManager.VcnStatusCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.vcn.VcnManager.VcnStatusCallback getReal() {
+            return (android.net.vcn.VcnManager.VcnStatusCallback) real;
         }
 
         public android.net.vcn.VcnManager.VcnStatusCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onGatewayConnectionError(java.lang.String arg0, int arg1, java.lang.Throwable arg2) {

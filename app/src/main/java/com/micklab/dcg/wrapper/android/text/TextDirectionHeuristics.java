@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class TextDirectionHeuristics {
-    private final android.text.TextDirectionHeuristics real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextDirectionHeuristics(android.text.TextDirectionHeuristics real) {
+    private final java.lang.Object real;
+
+    private TextDirectionHeuristics(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.TextDirectionHeuristics wrap(android.text.TextDirectionHeuristics real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.TextDirectionHeuristics(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.TextDirectionHeuristics(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.TextDirectionHeuristics getReal() {
+        return (android.text.TextDirectionHeuristics) real;
     }
 
     public android.text.TextDirectionHeuristics unwrap() {
-        return real;
+        return getReal();
     }
 
     public TextDirectionHeuristics() {
-        this(new android.text.TextDirectionHeuristics());
+        this(new android.text.TextDirectionHeuristics(), (__DcgwBridgeToken) null);
     }
 
     public static final com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic ANYRTL_LTR = com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic.wrap(android.text.TextDirectionHeuristics.ANYRTL_LTR);

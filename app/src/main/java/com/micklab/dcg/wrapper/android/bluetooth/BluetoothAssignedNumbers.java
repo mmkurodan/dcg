@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothAssignedNumbers {
-    private final android.bluetooth.BluetoothAssignedNumbers real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothAssignedNumbers(android.bluetooth.BluetoothAssignedNumbers real) {
+    private final java.lang.Object real;
+
+    private BluetoothAssignedNumbers(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothAssignedNumbers wrap(android.bluetooth.BluetoothAssignedNumbers real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAssignedNumbers(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAssignedNumbers(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothAssignedNumbers getReal() {
+        return (android.bluetooth.BluetoothAssignedNumbers) real;
     }
 
     public android.bluetooth.BluetoothAssignedNumbers unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int AAMP_OF_AMERICA = android.bluetooth.BluetoothAssignedNumbers.AAMP_OF_AMERICA;

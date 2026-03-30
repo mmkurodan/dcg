@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class NetworkErrorException {
-    private final android.accounts.NetworkErrorException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkErrorException(android.accounts.NetworkErrorException real) {
+    private final java.lang.Object real;
+
+    private NetworkErrorException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.NetworkErrorException wrap(android.accounts.NetworkErrorException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.NetworkErrorException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.NetworkErrorException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.NetworkErrorException getReal() {
+        return (android.accounts.NetworkErrorException) real;
     }
 
     public android.accounts.NetworkErrorException unwrap() {
-        return real;
+        return getReal();
     }
 
     public NetworkErrorException() {

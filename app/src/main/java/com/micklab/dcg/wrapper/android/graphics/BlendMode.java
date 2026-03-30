@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class BlendMode {
-    private final android.graphics.BlendMode real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BlendMode(android.graphics.BlendMode real) {
+    private final java.lang.Object real;
+
+    private BlendMode(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.BlendMode wrap(android.graphics.BlendMode real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlendMode(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.BlendMode(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.BlendMode getReal() {
+        return (android.graphics.BlendMode) real;
     }
 
     public android.graphics.BlendMode unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.BlendMode valueOf(java.lang.String arg0) {

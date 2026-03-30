@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class AndroidCharacter {
-    private final android.text.AndroidCharacter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AndroidCharacter(android.text.AndroidCharacter real) {
+    private final java.lang.Object real;
+
+    private AndroidCharacter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.AndroidCharacter wrap(android.text.AndroidCharacter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.AndroidCharacter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.AndroidCharacter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.AndroidCharacter getReal() {
+        return (android.text.AndroidCharacter) real;
     }
 
     public android.text.AndroidCharacter unwrap() {
-        return real;
+        return getReal();
     }
 
     public AndroidCharacter() {
-        this(new android.text.AndroidCharacter());
+        this(new android.text.AndroidCharacter(), (__DcgwBridgeToken) null);
     }
 
     public static void getDirectionalities(char[] arg0, byte[] arg1, int arg2) {

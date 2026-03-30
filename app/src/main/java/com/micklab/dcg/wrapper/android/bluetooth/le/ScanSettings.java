@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class ScanSettings {
-    private final android.bluetooth.le.ScanSettings real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ScanSettings(android.bluetooth.le.ScanSettings real) {
+    private final java.lang.Object real;
+
+    private ScanSettings(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings wrap(android.bluetooth.le.ScanSettings real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.ScanSettings getReal() {
+        return (android.bluetooth.le.ScanSettings) real;
     }
 
     public android.bluetooth.le.ScanSettings unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.le.ScanSettings) real).describeContents();
     }
 
     public int getCallbackType() {
-        return real.getCallbackType();
+        return ((android.bluetooth.le.ScanSettings) real).getCallbackType();
     }
 
     public boolean getLegacy() {
-        return real.getLegacy();
+        return ((android.bluetooth.le.ScanSettings) real).getLegacy();
     }
 
     public int getPhy() {
-        return real.getPhy();
+        return ((android.bluetooth.le.ScanSettings) real).getPhy();
     }
 
     public long getReportDelayMillis() {
-        return real.getReportDelayMillis();
+        return ((android.bluetooth.le.ScanSettings) real).getReportDelayMillis();
     }
 
     public int getScanMode() {
-        return real.getScanMode();
+        return ((android.bluetooth.le.ScanSettings) real).getScanMode();
     }
 
     public int getScanResultType() {
-        return real.getScanResultType();
+        return ((android.bluetooth.le.ScanSettings) real).getScanResultType();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.ScanSettings) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final long AUTO_BATCH_MIN_REPORT_DELAY_MILLIS = android.bluetooth.le.ScanSettings.AUTO_BATCH_MIN_REPORT_DELAY_MILLIS;
@@ -65,54 +72,61 @@ public final class ScanSettings {
     public static final int SCAN_MODE_OPPORTUNISTIC = android.bluetooth.le.ScanSettings.SCAN_MODE_OPPORTUNISTIC;
 
     public static final class Builder {
-        private final android.bluetooth.le.ScanSettings.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.bluetooth.le.ScanSettings.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder wrap(android.bluetooth.le.ScanSettings.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.le.ScanSettings.Builder getReal() {
+            return (android.bluetooth.le.ScanSettings.Builder) real;
         }
 
         public android.bluetooth.le.ScanSettings.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.bluetooth.le.ScanSettings.Builder());
+            this(new android.bluetooth.le.ScanSettings.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings build() {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.wrap(((android.bluetooth.le.ScanSettings.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setCallbackType(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setCallbackType(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setCallbackType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setLegacy(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setLegacy(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setLegacy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setMatchMode(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setMatchMode(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setMatchMode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setNumOfMatches(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setNumOfMatches(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setNumOfMatches(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setPhy(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setPhy(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setPhy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setReportDelay(long arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setReportDelay(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setReportDelay(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder setScanMode(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(real.setScanMode(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.ScanSettings.Builder.wrap(((android.bluetooth.le.ScanSettings.Builder) real).setScanMode(arg0));
         }
 
     }

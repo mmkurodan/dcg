@@ -2,262 +2,269 @@
 package com.micklab.dcg.wrapper.android.icu.math;
 
 public final class BigDecimal {
-    private final android.icu.math.BigDecimal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BigDecimal(android.icu.math.BigDecimal real) {
+    private final java.lang.Object real;
+
+    private BigDecimal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal wrap(android.icu.math.BigDecimal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.math.BigDecimal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.math.BigDecimal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.math.BigDecimal getReal() {
+        return (android.icu.math.BigDecimal) real;
     }
 
     public android.icu.math.BigDecimal unwrap() {
-        return real;
+        return getReal();
     }
 
     public BigDecimal(double arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(int arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(long arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(java.lang.String arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(java.math.BigDecimal arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(java.math.BigInteger arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(char[] arg0) {
-        this(new android.icu.math.BigDecimal(arg0));
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(java.math.BigInteger arg0, int arg1) {
-        this(new android.icu.math.BigDecimal(arg0, arg1));
+        this(new android.icu.math.BigDecimal(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public BigDecimal(char[] arg0, int arg1, int arg2) {
-        this(new android.icu.math.BigDecimal(arg0, arg1, arg2));
+        this(new android.icu.math.BigDecimal(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal abs() {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.abs());
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).abs());
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal abs(com.micklab.dcg.wrapper.android.icu.math.MathContext arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.abs(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).abs(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal add(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.add(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).add(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal add(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.add(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).add(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public byte byteValueExact() {
-        return real.byteValueExact();
+        return ((android.icu.math.BigDecimal) real).byteValueExact();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.math.BigDecimal) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.icu.math.BigDecimal) real).compareTo(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divide(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divide(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divide(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divide(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divide(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divide(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divide(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divide(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divide(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divide(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divide(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divide(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divideInteger(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divideInteger(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divideInteger(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal divideInteger(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.divideInteger(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).divideInteger(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public double doubleValue() {
-        return real.doubleValue();
+        return ((android.icu.math.BigDecimal) real).doubleValue();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.math.BigDecimal) real).equals(arg0);
     }
 
     public float floatValue() {
-        return real.floatValue();
+        return ((android.icu.math.BigDecimal) real).floatValue();
     }
 
     public java.lang.String format(int arg0, int arg1) {
-        return real.format(arg0, arg1);
+        return ((android.icu.math.BigDecimal) real).format(arg0, arg1);
     }
 
     public java.lang.String format(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-        return real.format(arg0, arg1, arg2, arg3, arg4, arg5);
+        return ((android.icu.math.BigDecimal) real).format(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.math.BigDecimal) real).hashCode();
     }
 
     public int intValue() {
-        return real.intValue();
+        return ((android.icu.math.BigDecimal) real).intValue();
     }
 
     public int intValueExact() {
-        return real.intValueExact();
+        return ((android.icu.math.BigDecimal) real).intValueExact();
     }
 
     public long longValue() {
-        return real.longValue();
+        return ((android.icu.math.BigDecimal) real).longValue();
     }
 
     public long longValueExact() {
-        return real.longValueExact();
+        return ((android.icu.math.BigDecimal) real).longValueExact();
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal max(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.max(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).max(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal max(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.max(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).max(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal min(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.min(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).min(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal min(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.min(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).min(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal movePointLeft(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.movePointLeft(arg0));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).movePointLeft(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal movePointRight(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.movePointRight(arg0));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).movePointRight(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal multiply(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.multiply(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).multiply(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal multiply(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.multiply(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).multiply(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal negate() {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.negate());
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).negate());
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal negate(com.micklab.dcg.wrapper.android.icu.math.MathContext arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.negate(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).negate(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal plus() {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.plus());
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).plus());
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal plus(com.micklab.dcg.wrapper.android.icu.math.MathContext arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.plus(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).plus(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal pow(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.pow(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).pow(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal pow(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.pow(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).pow(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal remainder(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.remainder(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).remainder(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal remainder(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.remainder(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).remainder(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public int scale() {
-        return real.scale();
+        return ((android.icu.math.BigDecimal) real).scale();
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal setScale(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.setScale(arg0));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).setScale(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal setScale(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.setScale(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).setScale(arg0, arg1));
     }
 
     public short shortValueExact() {
-        return real.shortValueExact();
+        return ((android.icu.math.BigDecimal) real).shortValueExact();
     }
 
     public int signum() {
-        return real.signum();
+        return ((android.icu.math.BigDecimal) real).signum();
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal subtract(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.subtract(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).subtract(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.math.BigDecimal subtract(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, com.micklab.dcg.wrapper.android.icu.math.MathContext arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(real.subtract(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(((android.icu.math.BigDecimal) real).subtract(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public java.math.BigDecimal toBigDecimal() {
-        return real.toBigDecimal();
+        return ((android.icu.math.BigDecimal) real).toBigDecimal();
     }
 
     public java.math.BigInteger toBigInteger() {
-        return real.toBigInteger();
+        return ((android.icu.math.BigDecimal) real).toBigInteger();
     }
 
     public java.math.BigInteger toBigIntegerExact() {
-        return real.toBigIntegerExact();
+        return ((android.icu.math.BigDecimal) real).toBigIntegerExact();
     }
 
     public char[] toCharArray() {
-        return real.toCharArray();
+        return ((android.icu.math.BigDecimal) real).toCharArray();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.math.BigDecimal) real).toString();
     }
 
     public java.math.BigInteger unscaledValue() {
-        return real.unscaledValue();
+        return ((android.icu.math.BigDecimal) real).unscaledValue();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal valueOf(long arg0) {

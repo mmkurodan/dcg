@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class Bidi {
-    private final android.icu.text.Bidi real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Bidi(android.icu.text.Bidi real) {
+    private final java.lang.Object real;
+
+    private Bidi(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Bidi wrap(android.icu.text.Bidi real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Bidi(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Bidi(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.Bidi getReal() {
+        return (android.icu.text.Bidi) real;
     }
 
     public android.icu.text.Bidi unwrap() {
-        return real;
+        return getReal();
     }
 
     public Bidi() {
-        this(new android.icu.text.Bidi());
+        this(new android.icu.text.Bidi(), (__DcgwBridgeToken) null);
     }
 
     public Bidi(java.text.AttributedCharacterIterator arg0) {
-        this(new android.icu.text.Bidi(arg0));
+        this(new android.icu.text.Bidi(arg0), (__DcgwBridgeToken) null);
     }
 
     public Bidi(java.lang.String arg0, int arg1) {
-        this(new android.icu.text.Bidi(arg0, arg1));
+        this(new android.icu.text.Bidi(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public Bidi(int arg0, int arg1) {
-        this(new android.icu.text.Bidi(arg0, arg1));
+        this(new android.icu.text.Bidi(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public Bidi(char[] arg0, int arg1, byte[] arg2, int arg3, int arg4, int arg5) {
-        this(new android.icu.text.Bidi(arg0, arg1, arg2, arg3, arg4, arg5));
+        this(new android.icu.text.Bidi(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
     public boolean baseIsLeftToRight() {
-        return real.baseIsLeftToRight();
+        return ((android.icu.text.Bidi) real).baseIsLeftToRight();
     }
 
     public int countParagraphs() {
-        return real.countParagraphs();
+        return ((android.icu.text.Bidi) real).countParagraphs();
     }
 
     public int countRuns() {
-        return real.countRuns();
+        return ((android.icu.text.Bidi) real).countRuns();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Bidi createLineBidi(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.Bidi.wrap(real.createLineBidi(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.text.Bidi.wrap(((android.icu.text.Bidi) real).createLineBidi(arg0, arg1));
     }
 
     public static byte getBaseDirection(java.lang.CharSequence arg0) {
@@ -57,111 +64,111 @@ public final class Bidi {
     }
 
     public int getBaseLevel() {
-        return real.getBaseLevel();
+        return ((android.icu.text.Bidi) real).getBaseLevel();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.BidiClassifier getCustomClassifier() {
-        return com.micklab.dcg.wrapper.android.icu.text.BidiClassifier.wrap(real.getCustomClassifier());
+        return com.micklab.dcg.wrapper.android.icu.text.BidiClassifier.wrap(((android.icu.text.Bidi) real).getCustomClassifier());
     }
 
     public int getCustomizedClass(int arg0) {
-        return real.getCustomizedClass(arg0);
+        return ((android.icu.text.Bidi) real).getCustomizedClass(arg0);
     }
 
     public byte getDirection() {
-        return real.getDirection();
+        return ((android.icu.text.Bidi) real).getDirection();
     }
 
     public int getLength() {
-        return real.getLength();
+        return ((android.icu.text.Bidi) real).getLength();
     }
 
     public byte getLevelAt(int arg0) {
-        return real.getLevelAt(arg0);
+        return ((android.icu.text.Bidi) real).getLevelAt(arg0);
     }
 
     public byte[] getLevels() {
-        return real.getLevels();
+        return ((android.icu.text.Bidi) real).getLevels();
     }
 
     public int getLogicalIndex(int arg0) {
-        return real.getLogicalIndex(arg0);
+        return ((android.icu.text.Bidi) real).getLogicalIndex(arg0);
     }
 
     public int[] getLogicalMap() {
-        return real.getLogicalMap();
+        return ((android.icu.text.Bidi) real).getLogicalMap();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.BidiRun getLogicalRun(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(real.getLogicalRun(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(((android.icu.text.Bidi) real).getLogicalRun(arg0));
     }
 
     public byte getParaLevel() {
-        return real.getParaLevel();
+        return ((android.icu.text.Bidi) real).getParaLevel();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.BidiRun getParagraph(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(real.getParagraph(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(((android.icu.text.Bidi) real).getParagraph(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.BidiRun getParagraphByIndex(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(real.getParagraphByIndex(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(((android.icu.text.Bidi) real).getParagraphByIndex(arg0));
     }
 
     public int getParagraphIndex(int arg0) {
-        return real.getParagraphIndex(arg0);
+        return ((android.icu.text.Bidi) real).getParagraphIndex(arg0);
     }
 
     public int getProcessedLength() {
-        return real.getProcessedLength();
+        return ((android.icu.text.Bidi) real).getProcessedLength();
     }
 
     public int getReorderingMode() {
-        return real.getReorderingMode();
+        return ((android.icu.text.Bidi) real).getReorderingMode();
     }
 
     public int getReorderingOptions() {
-        return real.getReorderingOptions();
+        return ((android.icu.text.Bidi) real).getReorderingOptions();
     }
 
     public int getResultLength() {
-        return real.getResultLength();
+        return ((android.icu.text.Bidi) real).getResultLength();
     }
 
     public int getRunCount() {
-        return real.getRunCount();
+        return ((android.icu.text.Bidi) real).getRunCount();
     }
 
     public int getRunLevel(int arg0) {
-        return real.getRunLevel(arg0);
+        return ((android.icu.text.Bidi) real).getRunLevel(arg0);
     }
 
     public int getRunLimit(int arg0) {
-        return real.getRunLimit(arg0);
+        return ((android.icu.text.Bidi) real).getRunLimit(arg0);
     }
 
     public int getRunStart(int arg0) {
-        return real.getRunStart(arg0);
+        return ((android.icu.text.Bidi) real).getRunStart(arg0);
     }
 
     public char[] getText() {
-        return real.getText();
+        return ((android.icu.text.Bidi) real).getText();
     }
 
     public java.lang.String getTextAsString() {
-        return real.getTextAsString();
+        return ((android.icu.text.Bidi) real).getTextAsString();
     }
 
     public int getVisualIndex(int arg0) {
-        return real.getVisualIndex(arg0);
+        return ((android.icu.text.Bidi) real).getVisualIndex(arg0);
     }
 
     public int[] getVisualMap() {
-        return real.getVisualMap();
+        return ((android.icu.text.Bidi) real).getVisualMap();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.BidiRun getVisualRun(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(real.getVisualRun(arg0));
+        return com.micklab.dcg.wrapper.android.icu.text.BidiRun.wrap(((android.icu.text.Bidi) real).getVisualRun(arg0));
     }
 
     public static int[] invertMap(int[] arg0) {
@@ -169,27 +176,27 @@ public final class Bidi {
     }
 
     public boolean isInverse() {
-        return real.isInverse();
+        return ((android.icu.text.Bidi) real).isInverse();
     }
 
     public boolean isLeftToRight() {
-        return real.isLeftToRight();
+        return ((android.icu.text.Bidi) real).isLeftToRight();
     }
 
     public boolean isMixed() {
-        return real.isMixed();
+        return ((android.icu.text.Bidi) real).isMixed();
     }
 
     public boolean isOrderParagraphsLTR() {
-        return real.isOrderParagraphsLTR();
+        return ((android.icu.text.Bidi) real).isOrderParagraphsLTR();
     }
 
     public boolean isRightToLeft() {
-        return real.isRightToLeft();
+        return ((android.icu.text.Bidi) real).isRightToLeft();
     }
 
     public void orderParagraphsLTR(boolean arg0) {
-        real.orderParagraphsLTR(arg0);
+        ((android.icu.text.Bidi) real).orderParagraphsLTR(arg0);
     }
 
     public static int[] reorderLogical(byte[] arg0) {
@@ -209,43 +216,43 @@ public final class Bidi {
     }
 
     public void setContext(java.lang.String arg0, java.lang.String arg1) {
-        real.setContext(arg0, arg1);
+        ((android.icu.text.Bidi) real).setContext(arg0, arg1);
     }
 
     public void setCustomClassifier(com.micklab.dcg.wrapper.android.icu.text.BidiClassifier arg0) {
-        real.setCustomClassifier(arg0 == null ? null : arg0.unwrap());
+        ((android.icu.text.Bidi) real).setCustomClassifier(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInverse(boolean arg0) {
-        real.setInverse(arg0);
+        ((android.icu.text.Bidi) real).setInverse(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Bidi setLine(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.Bidi.wrap(real.setLine(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.icu.text.Bidi.wrap(((android.icu.text.Bidi) real).setLine(arg0, arg1));
     }
 
     public void setPara(java.text.AttributedCharacterIterator arg0) {
-        real.setPara(arg0);
+        ((android.icu.text.Bidi) real).setPara(arg0);
     }
 
     public void setPara(java.lang.String arg0, byte arg1, byte[] arg2) {
-        real.setPara(arg0, arg1, arg2);
+        ((android.icu.text.Bidi) real).setPara(arg0, arg1, arg2);
     }
 
     public void setPara(char[] arg0, byte arg1, byte[] arg2) {
-        real.setPara(arg0, arg1, arg2);
+        ((android.icu.text.Bidi) real).setPara(arg0, arg1, arg2);
     }
 
     public void setReorderingMode(int arg0) {
-        real.setReorderingMode(arg0);
+        ((android.icu.text.Bidi) real).setReorderingMode(arg0);
     }
 
     public void setReorderingOptions(int arg0) {
-        real.setReorderingOptions(arg0);
+        ((android.icu.text.Bidi) real).setReorderingOptions(arg0);
     }
 
     public java.lang.String writeReordered(int arg0) {
-        return real.writeReordered(arg0);
+        return ((android.icu.text.Bidi) real).writeReordered(arg0);
     }
 
     public static java.lang.String writeReverse(java.lang.String arg0, int arg1) {

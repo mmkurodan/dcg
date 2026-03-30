@@ -2,49 +2,63 @@
 package com.micklab.dcg.wrapper.android.service.autofill;
 
 public final class FieldClassification {
-    private final android.service.autofill.FieldClassification real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FieldClassification(android.service.autofill.FieldClassification real) {
+    private final java.lang.Object real;
+
+    private FieldClassification(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.autofill.FieldClassification wrap(android.service.autofill.FieldClassification real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FieldClassification(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FieldClassification(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.autofill.FieldClassification getReal() {
+        return (android.service.autofill.FieldClassification) real;
     }
 
     public android.service.autofill.FieldClassification unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.service.autofill.FieldClassification) real).toString();
     }
 
     public static final class Match {
-        private final android.service.autofill.FieldClassification.Match real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Match(android.service.autofill.FieldClassification.Match real) {
+        private final java.lang.Object real;
+
+        private Match(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.service.autofill.FieldClassification.Match wrap(android.service.autofill.FieldClassification.Match real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FieldClassification.Match(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FieldClassification.Match(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.autofill.FieldClassification.Match getReal() {
+            return (android.service.autofill.FieldClassification.Match) real;
         }
 
         public android.service.autofill.FieldClassification.Match unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getCategoryId() {
-            return real.getCategoryId();
+            return ((android.service.autofill.FieldClassification.Match) real).getCategoryId();
         }
 
         public float getScore() {
-            return real.getScore();
+            return ((android.service.autofill.FieldClassification.Match) real).getScore();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.service.autofill.FieldClassification.Match) real).toString();
         }
 
     }

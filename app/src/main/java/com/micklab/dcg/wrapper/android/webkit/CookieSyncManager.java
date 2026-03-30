@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class CookieSyncManager {
-    private final android.webkit.CookieSyncManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CookieSyncManager(android.webkit.CookieSyncManager real) {
+    private final java.lang.Object real;
+
+    private CookieSyncManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.CookieSyncManager wrap(android.webkit.CookieSyncManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.CookieSyncManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.CookieSyncManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.CookieSyncManager getReal() {
+        return (android.webkit.CookieSyncManager) real;
     }
 
     public android.webkit.CookieSyncManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.CookieSyncManager createInstance(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.webkit.CookieSyncManager.wrap(android.webkit.CookieSyncManager.createInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.webkit.CookieSyncManager.wrap(android.webkit.CookieSyncManager.createInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.CookieSyncManager getInstance() {
@@ -25,23 +32,23 @@ public final class CookieSyncManager {
     }
 
     public void resetSync() {
-        real.resetSync();
+        ((android.webkit.CookieSyncManager) real).resetSync();
     }
 
     public void run() {
-        real.run();
+        ((android.webkit.CookieSyncManager) real).run();
     }
 
     public void startSync() {
-        real.startSync();
+        ((android.webkit.CookieSyncManager) real).startSync();
     }
 
     public void stopSync() {
-        real.stopSync();
+        ((android.webkit.CookieSyncManager) real).stopSync();
     }
 
     public void sync() {
-        real.sync();
+        ((android.webkit.CookieSyncManager) real).sync();
     }
 
 }

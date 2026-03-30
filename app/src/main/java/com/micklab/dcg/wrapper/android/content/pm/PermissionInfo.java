@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PermissionInfo {
-    private final android.content.pm.PermissionInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PermissionInfo(android.content.pm.PermissionInfo real) {
+    private final java.lang.Object real;
+
+    private PermissionInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PermissionInfo wrap(android.content.pm.PermissionInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PermissionInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PermissionInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PermissionInfo getReal() {
+        return (android.content.pm.PermissionInfo) real;
     }
 
     public android.content.pm.PermissionInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public PermissionInfo() {

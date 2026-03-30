@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class JsonToken {
-    private final android.util.JsonToken real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JsonToken(android.util.JsonToken real) {
+    private final java.lang.Object real;
+
+    private JsonToken(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.JsonToken wrap(android.util.JsonToken real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.JsonToken(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.JsonToken(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.JsonToken getReal() {
+        return (android.util.JsonToken) real;
     }
 
     public android.util.JsonToken unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.util.JsonToken valueOf(java.lang.String arg0) {

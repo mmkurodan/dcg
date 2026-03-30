@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UCharacter {
-    private final android.icu.lang.UCharacter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UCharacter(android.icu.lang.UCharacter real) {
+    private final java.lang.Object real;
+
+    private UCharacter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter wrap(android.icu.lang.UCharacter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UCharacter getReal() {
+        return (android.icu.lang.UCharacter) real;
     }
 
     public android.icu.lang.UCharacter unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int charCount(int arg0) {
@@ -385,7 +392,7 @@ public final class UCharacter {
     }
 
     public static java.lang.String toLowerCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1) {
-        return android.icu.lang.UCharacter.toLowerCase(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.icu.lang.UCharacter.toLowerCase(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static java.lang.String toString(int arg0) {
@@ -397,23 +404,23 @@ public final class UCharacter {
     }
 
     public static java.lang.String toTitleCase(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg1) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String toTitleCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static java.lang.String toTitleCase(java.util.Locale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static java.lang.String toTitleCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2, int arg3) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public static java.lang.String toTitleCase(java.util.Locale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2, int arg3) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public static int toUpperCase(int arg0) {
@@ -429,7 +436,7 @@ public final class UCharacter {
     }
 
     public static java.lang.String toUpperCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1) {
-        return android.icu.lang.UCharacter.toUpperCase(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.icu.lang.UCharacter.toUpperCase(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int FOLD_CASE_DEFAULT = android.icu.lang.UCharacter.FOLD_CASE_DEFAULT;
@@ -454,18 +461,25 @@ public final class UCharacter {
     public static final int TITLECASE_NO_LOWERCASE = android.icu.lang.UCharacter.TITLECASE_NO_LOWERCASE;
 
     public static final class BidiPairedBracketType {
-        private final android.icu.lang.UCharacter.BidiPairedBracketType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BidiPairedBracketType(android.icu.lang.UCharacter.BidiPairedBracketType real) {
+        private final java.lang.Object real;
+
+        private BidiPairedBracketType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.BidiPairedBracketType wrap(android.icu.lang.UCharacter.BidiPairedBracketType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.BidiPairedBracketType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.BidiPairedBracketType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.BidiPairedBracketType getReal() {
+            return (android.icu.lang.UCharacter.BidiPairedBracketType) real;
         }
 
         public android.icu.lang.UCharacter.BidiPairedBracketType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int CLOSE = android.icu.lang.UCharacter.BidiPairedBracketType.CLOSE;
@@ -474,18 +488,25 @@ public final class UCharacter {
 
     }
     public static final class DecompositionType {
-        private final android.icu.lang.UCharacter.DecompositionType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DecompositionType(android.icu.lang.UCharacter.DecompositionType real) {
+        private final java.lang.Object real;
+
+        private DecompositionType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.DecompositionType wrap(android.icu.lang.UCharacter.DecompositionType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.DecompositionType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.DecompositionType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.DecompositionType getReal() {
+            return (android.icu.lang.UCharacter.DecompositionType) real;
         }
 
         public android.icu.lang.UCharacter.DecompositionType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int CANONICAL = android.icu.lang.UCharacter.DecompositionType.CANONICAL;
@@ -509,18 +530,25 @@ public final class UCharacter {
 
     }
     public static final class EastAsianWidth {
-        private final android.icu.lang.UCharacter.EastAsianWidth real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EastAsianWidth(android.icu.lang.UCharacter.EastAsianWidth real) {
+        private final java.lang.Object real;
+
+        private EastAsianWidth(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.EastAsianWidth wrap(android.icu.lang.UCharacter.EastAsianWidth real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.EastAsianWidth(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.EastAsianWidth(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.EastAsianWidth getReal() {
+            return (android.icu.lang.UCharacter.EastAsianWidth) real;
         }
 
         public android.icu.lang.UCharacter.EastAsianWidth unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int AMBIGUOUS = android.icu.lang.UCharacter.EastAsianWidth.AMBIGUOUS;
@@ -532,18 +560,25 @@ public final class UCharacter {
 
     }
     public static final class GraphemeClusterBreak {
-        private final android.icu.lang.UCharacter.GraphemeClusterBreak real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GraphemeClusterBreak(android.icu.lang.UCharacter.GraphemeClusterBreak real) {
+        private final java.lang.Object real;
+
+        private GraphemeClusterBreak(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.GraphemeClusterBreak wrap(android.icu.lang.UCharacter.GraphemeClusterBreak real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.GraphemeClusterBreak(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.GraphemeClusterBreak(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.GraphemeClusterBreak getReal() {
+            return (android.icu.lang.UCharacter.GraphemeClusterBreak) real;
         }
 
         public android.icu.lang.UCharacter.GraphemeClusterBreak unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int CONTROL = android.icu.lang.UCharacter.GraphemeClusterBreak.CONTROL;
@@ -567,18 +602,25 @@ public final class UCharacter {
 
     }
     public static final class HangulSyllableType {
-        private final android.icu.lang.UCharacter.HangulSyllableType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public HangulSyllableType(android.icu.lang.UCharacter.HangulSyllableType real) {
+        private final java.lang.Object real;
+
+        private HangulSyllableType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.HangulSyllableType wrap(android.icu.lang.UCharacter.HangulSyllableType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.HangulSyllableType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.HangulSyllableType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.HangulSyllableType getReal() {
+            return (android.icu.lang.UCharacter.HangulSyllableType) real;
         }
 
         public android.icu.lang.UCharacter.HangulSyllableType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int LEADING_JAMO = android.icu.lang.UCharacter.HangulSyllableType.LEADING_JAMO;
@@ -590,18 +632,25 @@ public final class UCharacter {
 
     }
     public static final class IndicPositionalCategory {
-        private final android.icu.lang.UCharacter.IndicPositionalCategory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IndicPositionalCategory(android.icu.lang.UCharacter.IndicPositionalCategory real) {
+        private final java.lang.Object real;
+
+        private IndicPositionalCategory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicPositionalCategory wrap(android.icu.lang.UCharacter.IndicPositionalCategory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicPositionalCategory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicPositionalCategory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.IndicPositionalCategory getReal() {
+            return (android.icu.lang.UCharacter.IndicPositionalCategory) real;
         }
 
         public android.icu.lang.UCharacter.IndicPositionalCategory unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int BOTTOM = android.icu.lang.UCharacter.IndicPositionalCategory.BOTTOM;
@@ -623,18 +672,25 @@ public final class UCharacter {
 
     }
     public static final class IndicSyllabicCategory {
-        private final android.icu.lang.UCharacter.IndicSyllabicCategory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IndicSyllabicCategory(android.icu.lang.UCharacter.IndicSyllabicCategory real) {
+        private final java.lang.Object real;
+
+        private IndicSyllabicCategory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicSyllabicCategory wrap(android.icu.lang.UCharacter.IndicSyllabicCategory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicSyllabicCategory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.IndicSyllabicCategory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.IndicSyllabicCategory getReal() {
+            return (android.icu.lang.UCharacter.IndicSyllabicCategory) real;
         }
 
         public android.icu.lang.UCharacter.IndicSyllabicCategory unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int AVAGRAHA = android.icu.lang.UCharacter.IndicSyllabicCategory.AVAGRAHA;
@@ -676,18 +732,25 @@ public final class UCharacter {
 
     }
     public static final class JoiningGroup {
-        private final android.icu.lang.UCharacter.JoiningGroup real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public JoiningGroup(android.icu.lang.UCharacter.JoiningGroup real) {
+        private final java.lang.Object real;
+
+        private JoiningGroup(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningGroup wrap(android.icu.lang.UCharacter.JoiningGroup real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningGroup(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningGroup(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.JoiningGroup getReal() {
+            return (android.icu.lang.UCharacter.JoiningGroup) real;
         }
 
         public android.icu.lang.UCharacter.JoiningGroup unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int AFRICAN_FEH = android.icu.lang.UCharacter.JoiningGroup.AFRICAN_FEH;
@@ -798,18 +861,25 @@ public final class UCharacter {
 
     }
     public static final class JoiningType {
-        private final android.icu.lang.UCharacter.JoiningType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public JoiningType(android.icu.lang.UCharacter.JoiningType real) {
+        private final java.lang.Object real;
+
+        private JoiningType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningType wrap(android.icu.lang.UCharacter.JoiningType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.JoiningType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.JoiningType getReal() {
+            return (android.icu.lang.UCharacter.JoiningType) real;
         }
 
         public android.icu.lang.UCharacter.JoiningType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int DUAL_JOINING = android.icu.lang.UCharacter.JoiningType.DUAL_JOINING;
@@ -821,18 +891,25 @@ public final class UCharacter {
 
     }
     public static final class LineBreak {
-        private final android.icu.lang.UCharacter.LineBreak real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LineBreak(android.icu.lang.UCharacter.LineBreak real) {
+        private final java.lang.Object real;
+
+        private LineBreak(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.LineBreak wrap(android.icu.lang.UCharacter.LineBreak real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.LineBreak(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.LineBreak(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.LineBreak getReal() {
+            return (android.icu.lang.UCharacter.LineBreak) real;
         }
 
         public android.icu.lang.UCharacter.LineBreak unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int AKSARA = android.icu.lang.UCharacter.LineBreak.AKSARA;
@@ -887,18 +964,25 @@ public final class UCharacter {
 
     }
     public static final class NumericType {
-        private final android.icu.lang.UCharacter.NumericType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NumericType(android.icu.lang.UCharacter.NumericType real) {
+        private final java.lang.Object real;
+
+        private NumericType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.NumericType wrap(android.icu.lang.UCharacter.NumericType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.NumericType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.NumericType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.NumericType getReal() {
+            return (android.icu.lang.UCharacter.NumericType) real;
         }
 
         public android.icu.lang.UCharacter.NumericType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int DECIMAL = android.icu.lang.UCharacter.NumericType.DECIMAL;
@@ -908,18 +992,25 @@ public final class UCharacter {
 
     }
     public static final class SentenceBreak {
-        private final android.icu.lang.UCharacter.SentenceBreak real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SentenceBreak(android.icu.lang.UCharacter.SentenceBreak real) {
+        private final java.lang.Object real;
+
+        private SentenceBreak(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.SentenceBreak wrap(android.icu.lang.UCharacter.SentenceBreak real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.SentenceBreak(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.SentenceBreak(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.SentenceBreak getReal() {
+            return (android.icu.lang.UCharacter.SentenceBreak) real;
         }
 
         public android.icu.lang.UCharacter.SentenceBreak unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ATERM = android.icu.lang.UCharacter.SentenceBreak.ATERM;
@@ -940,18 +1031,25 @@ public final class UCharacter {
 
     }
     public static final class UnicodeBlock {
-        private final android.icu.lang.UCharacter.UnicodeBlock real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UnicodeBlock(android.icu.lang.UCharacter.UnicodeBlock real) {
+        private final java.lang.Object real;
+
+        private UnicodeBlock(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock wrap(android.icu.lang.UCharacter.UnicodeBlock real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.UnicodeBlock getReal() {
+            return (android.icu.lang.UCharacter.UnicodeBlock) real;
         }
 
         public android.icu.lang.UCharacter.UnicodeBlock unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock forName(java.lang.String arg0) {
@@ -959,7 +1057,7 @@ public final class UCharacter {
         }
 
         public int getID() {
-            return real.getID();
+            return ((android.icu.lang.UCharacter.UnicodeBlock) real).getID();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock getInstance(int arg0) {
@@ -1636,18 +1734,25 @@ public final class UCharacter {
 
     }
     public static final class VerticalOrientation {
-        private final android.icu.lang.UCharacter.VerticalOrientation real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VerticalOrientation(android.icu.lang.UCharacter.VerticalOrientation real) {
+        private final java.lang.Object real;
+
+        private VerticalOrientation(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.VerticalOrientation wrap(android.icu.lang.UCharacter.VerticalOrientation real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.VerticalOrientation(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.VerticalOrientation(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.VerticalOrientation getReal() {
+            return (android.icu.lang.UCharacter.VerticalOrientation) real;
         }
 
         public android.icu.lang.UCharacter.VerticalOrientation unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ROTATED = android.icu.lang.UCharacter.VerticalOrientation.ROTATED;
@@ -1657,18 +1762,25 @@ public final class UCharacter {
 
     }
     public static final class WordBreak {
-        private final android.icu.lang.UCharacter.WordBreak real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WordBreak(android.icu.lang.UCharacter.WordBreak real) {
+        private final java.lang.Object real;
+
+        private WordBreak(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacter.WordBreak wrap(android.icu.lang.UCharacter.WordBreak real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.WordBreak(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacter.WordBreak(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacter.WordBreak getReal() {
+            return (android.icu.lang.UCharacter.WordBreak) real;
         }
 
         public android.icu.lang.UCharacter.WordBreak unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ALETTER = android.icu.lang.UCharacter.WordBreak.ALETTER;

@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class ApplicationStartInfo {
-    private final android.app.ApplicationStartInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ApplicationStartInfo(android.app.ApplicationStartInfo real) {
+    private final java.lang.Object real;
+
+    private ApplicationStartInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.ApplicationStartInfo wrap(android.app.ApplicationStartInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ApplicationStartInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ApplicationStartInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.ApplicationStartInfo getReal() {
+        return (android.app.ApplicationStartInfo) real;
     }
 
     public android.app.ApplicationStartInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.ApplicationStartInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.ApplicationStartInfo) real).equals(arg0);
     }
 
     public int getDefiningUid() {
-        return real.getDefiningUid();
+        return ((android.app.ApplicationStartInfo) real).getDefiningUid();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent getIntent() {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.getIntent());
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.app.ApplicationStartInfo) real).getIntent());
     }
 
     public int getLaunchMode() {
-        return real.getLaunchMode();
+        return ((android.app.ApplicationStartInfo) real).getLaunchMode();
     }
 
     public int getPackageUid() {
-        return real.getPackageUid();
+        return ((android.app.ApplicationStartInfo) real).getPackageUid();
     }
 
     public int getPid() {
-        return real.getPid();
+        return ((android.app.ApplicationStartInfo) real).getPid();
     }
 
     public java.lang.String getProcessName() {
-        return real.getProcessName();
+        return ((android.app.ApplicationStartInfo) real).getProcessName();
     }
 
     public int getRealUid() {
-        return real.getRealUid();
+        return ((android.app.ApplicationStartInfo) real).getRealUid();
     }
 
     public int getReason() {
-        return real.getReason();
+        return ((android.app.ApplicationStartInfo) real).getReason();
     }
 
     public int getStartType() {
-        return real.getStartType();
+        return ((android.app.ApplicationStartInfo) real).getStartType();
     }
 
     public int getStartupState() {
-        return real.getStartupState();
+        return ((android.app.ApplicationStartInfo) real).getStartupState();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.ApplicationStartInfo) real).hashCode();
     }
 
     public boolean wasForceStopped() {
-        return real.wasForceStopped();
+        return ((android.app.ApplicationStartInfo) real).wasForceStopped();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.ApplicationStartInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int LAUNCH_MODE_SINGLE_INSTANCE = android.app.ApplicationStartInfo.LAUNCH_MODE_SINGLE_INSTANCE;

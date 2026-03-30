@@ -2,78 +2,85 @@
 package com.micklab.dcg.wrapper.android.media.audiofx;
 
 public final class Equalizer {
-    private final android.media.audiofx.Equalizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Equalizer(android.media.audiofx.Equalizer real) {
+    private final java.lang.Object real;
+
+    private Equalizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.audiofx.Equalizer wrap(android.media.audiofx.Equalizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.audiofx.Equalizer getReal() {
+        return (android.media.audiofx.Equalizer) real;
     }
 
     public android.media.audiofx.Equalizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public Equalizer(int arg0, int arg1) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.RuntimeException, java.lang.UnsupportedOperationException {
-        this(new android.media.audiofx.Equalizer(arg0, arg1));
+        this(new android.media.audiofx.Equalizer(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public short getBand(int arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getBand(arg0);
+        return ((android.media.audiofx.Equalizer) real).getBand(arg0);
     }
 
     public int[] getBandFreqRange(short arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getBandFreqRange(arg0);
+        return ((android.media.audiofx.Equalizer) real).getBandFreqRange(arg0);
     }
 
     public short getBandLevel(short arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getBandLevel(arg0);
+        return ((android.media.audiofx.Equalizer) real).getBandLevel(arg0);
     }
 
     public short[] getBandLevelRange() throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getBandLevelRange();
+        return ((android.media.audiofx.Equalizer) real).getBandLevelRange();
     }
 
     public int getCenterFreq(short arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getCenterFreq(arg0);
+        return ((android.media.audiofx.Equalizer) real).getCenterFreq(arg0);
     }
 
     public short getCurrentPreset() throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getCurrentPreset();
+        return ((android.media.audiofx.Equalizer) real).getCurrentPreset();
     }
 
     public short getNumberOfBands() throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getNumberOfBands();
+        return ((android.media.audiofx.Equalizer) real).getNumberOfBands();
     }
 
     public short getNumberOfPresets() throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return real.getNumberOfPresets();
+        return ((android.media.audiofx.Equalizer) real).getNumberOfPresets();
     }
 
     public java.lang.String getPresetName(short arg0) {
-        return real.getPresetName(arg0);
+        return ((android.media.audiofx.Equalizer) real).getPresetName(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings getProperties() throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        return com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings.wrap(real.getProperties());
+        return com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings.wrap(((android.media.audiofx.Equalizer) real).getProperties());
     }
 
     public void setBandLevel(short arg0, short arg1) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        real.setBandLevel(arg0, arg1);
+        ((android.media.audiofx.Equalizer) real).setBandLevel(arg0, arg1);
     }
 
     public void setParameterListener(com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.OnParameterChangeListener arg0) {
-        real.setParameterListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.audiofx.Equalizer) real).setParameterListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setProperties(com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        real.setProperties(arg0 == null ? null : arg0.unwrap());
+        ((android.media.audiofx.Equalizer) real).setProperties(arg0 == null ? null : arg0.getReal());
     }
 
     public void usePreset(short arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException, java.lang.UnsupportedOperationException {
-        real.usePreset(arg0);
+        ((android.media.audiofx.Equalizer) real).usePreset(arg0);
     }
 
     public static final int PARAM_BAND_FREQ_RANGE = android.media.audiofx.Equalizer.PARAM_BAND_FREQ_RANGE;
@@ -88,50 +95,64 @@ public final class Equalizer {
     public static final int PARAM_STRING_SIZE_MAX = android.media.audiofx.Equalizer.PARAM_STRING_SIZE_MAX;
 
     public static final class OnParameterChangeListener {
-        private final android.media.audiofx.Equalizer.OnParameterChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnParameterChangeListener(android.media.audiofx.Equalizer.OnParameterChangeListener real) {
+        private final java.lang.Object real;
+
+        private OnParameterChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.OnParameterChangeListener wrap(android.media.audiofx.Equalizer.OnParameterChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.OnParameterChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.OnParameterChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.Equalizer.OnParameterChangeListener getReal() {
+            return (android.media.audiofx.Equalizer.OnParameterChangeListener) real;
         }
 
         public android.media.audiofx.Equalizer.OnParameterChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onParameterChange(com.micklab.dcg.wrapper.android.media.audiofx.Equalizer arg0, int arg1, int arg2, int arg3, int arg4) {
-            real.onParameterChange(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+            ((android.media.audiofx.Equalizer.OnParameterChangeListener) real).onParameterChange(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
         }
 
     }
     public static final class Settings {
-        private final android.media.audiofx.Equalizer.Settings real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Settings(android.media.audiofx.Equalizer.Settings real) {
+        private final java.lang.Object real;
+
+        private Settings(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings wrap(android.media.audiofx.Equalizer.Settings real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Equalizer.Settings(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.Equalizer.Settings getReal() {
+            return (android.media.audiofx.Equalizer.Settings) real;
         }
 
         public android.media.audiofx.Equalizer.Settings unwrap() {
-            return real;
+            return getReal();
         }
 
         public Settings() {
-            this(new android.media.audiofx.Equalizer.Settings());
+            this(new android.media.audiofx.Equalizer.Settings(), (__DcgwBridgeToken) null);
         }
 
         public Settings(java.lang.String arg0) {
-            this(new android.media.audiofx.Equalizer.Settings(arg0));
+            this(new android.media.audiofx.Equalizer.Settings(arg0), (__DcgwBridgeToken) null);
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.media.audiofx.Equalizer.Settings) real).toString();
         }
 
 

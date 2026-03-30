@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.view.textclassifier;
 
 public final class SelectionEvent {
-    private final android.view.textclassifier.SelectionEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SelectionEvent(android.view.textclassifier.SelectionEvent real) {
+    private final java.lang.Object real;
+
+    private SelectionEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent wrap(android.view.textclassifier.SelectionEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.textclassifier.SelectionEvent getReal() {
+        return (android.view.textclassifier.SelectionEvent) real;
     }
 
     public android.view.textclassifier.SelectionEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionActionEvent(int arg0, int arg1, int arg2) {
@@ -21,7 +28,7 @@ public final class SelectionEvent {
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionActionEvent(int arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.view.textclassifier.TextClassification arg3) {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionActionEvent(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionActionEvent(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1) {
@@ -29,11 +36,11 @@ public final class SelectionEvent {
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextSelection arg2) {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextClassification arg2) {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionStartedEvent(int arg0, int arg1) {
@@ -41,79 +48,79 @@ public final class SelectionEvent {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.textclassifier.SelectionEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.textclassifier.SelectionEvent) real).equals(arg0);
     }
 
     public long getDurationSincePreviousEvent() {
-        return real.getDurationSincePreviousEvent();
+        return ((android.view.textclassifier.SelectionEvent) real).getDurationSincePreviousEvent();
     }
 
     public long getDurationSinceSessionStart() {
-        return real.getDurationSinceSessionStart();
+        return ((android.view.textclassifier.SelectionEvent) real).getDurationSinceSessionStart();
     }
 
     public int getEnd() {
-        return real.getEnd();
+        return ((android.view.textclassifier.SelectionEvent) real).getEnd();
     }
 
     public java.lang.String getEntityType() {
-        return real.getEntityType();
+        return ((android.view.textclassifier.SelectionEvent) real).getEntityType();
     }
 
     public int getEventIndex() {
-        return real.getEventIndex();
+        return ((android.view.textclassifier.SelectionEvent) real).getEventIndex();
     }
 
     public long getEventTime() {
-        return real.getEventTime();
+        return ((android.view.textclassifier.SelectionEvent) real).getEventTime();
     }
 
     public int getEventType() {
-        return real.getEventType();
+        return ((android.view.textclassifier.SelectionEvent) real).getEventType();
     }
 
     public int getInvocationMethod() {
-        return real.getInvocationMethod();
+        return ((android.view.textclassifier.SelectionEvent) real).getInvocationMethod();
     }
 
     public java.lang.String getPackageName() {
-        return real.getPackageName();
+        return ((android.view.textclassifier.SelectionEvent) real).getPackageName();
     }
 
     public java.lang.String getResultId() {
-        return real.getResultId();
+        return ((android.view.textclassifier.SelectionEvent) real).getResultId();
     }
 
     public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId getSessionId() {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId.wrap(real.getSessionId());
+        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId.wrap(((android.view.textclassifier.SelectionEvent) real).getSessionId());
     }
 
     public int getSmartEnd() {
-        return real.getSmartEnd();
+        return ((android.view.textclassifier.SelectionEvent) real).getSmartEnd();
     }
 
     public int getSmartStart() {
-        return real.getSmartStart();
+        return ((android.view.textclassifier.SelectionEvent) real).getSmartStart();
     }
 
     public int getStart() {
-        return real.getStart();
+        return ((android.view.textclassifier.SelectionEvent) real).getStart();
     }
 
     public java.lang.String getWidgetType() {
-        return real.getWidgetType();
+        return ((android.view.textclassifier.SelectionEvent) real).getWidgetType();
     }
 
     public java.lang.String getWidgetVersion() {
-        return real.getWidgetVersion();
+        return ((android.view.textclassifier.SelectionEvent) real).getWidgetVersion();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.textclassifier.SelectionEvent) real).hashCode();
     }
 
     public static boolean isTerminal(int arg0) {
@@ -121,11 +128,11 @@ public final class SelectionEvent {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.textclassifier.SelectionEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.textclassifier.SelectionEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACTION_ABANDON = android.view.textclassifier.SelectionEvent.ACTION_ABANDON;

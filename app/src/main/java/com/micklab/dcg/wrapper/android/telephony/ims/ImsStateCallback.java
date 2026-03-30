@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsStateCallback {
-    private final android.telephony.ims.ImsStateCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsStateCallback(android.telephony.ims.ImsStateCallback real) {
+    private final java.lang.Object real;
+
+    private ImsStateCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsStateCallback wrap(android.telephony.ims.ImsStateCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsStateCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsStateCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsStateCallback getReal() {
+        return (android.telephony.ims.ImsStateCallback) real;
     }
 
     public android.telephony.ims.ImsStateCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onAvailable() {

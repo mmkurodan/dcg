@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class TransactionTooLargeException {
-    private final android.os.TransactionTooLargeException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TransactionTooLargeException(android.os.TransactionTooLargeException real) {
+    private final java.lang.Object real;
+
+    private TransactionTooLargeException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.TransactionTooLargeException wrap(android.os.TransactionTooLargeException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TransactionTooLargeException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.TransactionTooLargeException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.TransactionTooLargeException getReal() {
+        return (android.os.TransactionTooLargeException) real;
     }
 
     public android.os.TransactionTooLargeException unwrap() {
-        return real;
+        return getReal();
     }
 
     public TransactionTooLargeException() {

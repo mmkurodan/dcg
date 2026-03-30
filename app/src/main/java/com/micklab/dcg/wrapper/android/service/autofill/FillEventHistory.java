@@ -2,74 +2,88 @@
 package com.micklab.dcg.wrapper.android.service.autofill;
 
 public final class FillEventHistory {
-    private final android.service.autofill.FillEventHistory real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FillEventHistory(android.service.autofill.FillEventHistory real) {
+    private final java.lang.Object real;
+
+    private FillEventHistory(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory wrap(android.service.autofill.FillEventHistory real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.autofill.FillEventHistory getReal() {
+        return (android.service.autofill.FillEventHistory) real;
     }
 
     public android.service.autofill.FillEventHistory unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.service.autofill.FillEventHistory) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getClientState() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getClientState());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.service.autofill.FillEventHistory) real).getClientState());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.service.autofill.FillEventHistory) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.service.autofill.FillEventHistory) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Event {
-        private final android.service.autofill.FillEventHistory.Event real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Event(android.service.autofill.FillEventHistory.Event real) {
+        private final java.lang.Object real;
+
+        private Event(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory.Event wrap(android.service.autofill.FillEventHistory.Event real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory.Event(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory.Event(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.autofill.FillEventHistory.Event getReal() {
+            return (android.service.autofill.FillEventHistory.Event) real;
         }
 
         public android.service.autofill.FillEventHistory.Event unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.os.Bundle getClientState() {
-            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getClientState());
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.service.autofill.FillEventHistory.Event) real).getClientState());
         }
 
         public java.lang.String getDatasetId() {
-            return real.getDatasetId();
+            return ((android.service.autofill.FillEventHistory.Event) real).getDatasetId();
         }
 
         public int getNoSaveUiReason() {
-            return real.getNoSaveUiReason();
+            return ((android.service.autofill.FillEventHistory.Event) real).getNoSaveUiReason();
         }
 
         public int getType() {
-            return real.getType();
+            return ((android.service.autofill.FillEventHistory.Event) real).getType();
         }
 
         public int getUiType() {
-            return real.getUiType();
+            return ((android.service.autofill.FillEventHistory.Event) real).getUiType();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.service.autofill.FillEventHistory.Event) real).toString();
         }
 
         public static final int NO_SAVE_UI_REASON_DATASET_MATCH = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_DATASET_MATCH;

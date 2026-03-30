@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.view.inputmethod;
 
 public final class InlineSuggestionInfo {
-    private final android.view.inputmethod.InlineSuggestionInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InlineSuggestionInfo(android.view.inputmethod.InlineSuggestionInfo real) {
+    private final java.lang.Object real;
+
+    private InlineSuggestionInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.inputmethod.InlineSuggestionInfo wrap(android.view.inputmethod.InlineSuggestionInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.InlineSuggestionInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.InlineSuggestionInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.inputmethod.InlineSuggestionInfo getReal() {
+        return (android.view.inputmethod.InlineSuggestionInfo) real;
     }
 
     public android.view.inputmethod.InlineSuggestionInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).equals(arg0);
     }
 
     public java.lang.String[] getAutofillHints() {
-        return real.getAutofillHints();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).getAutofillHints();
     }
 
     public com.micklab.dcg.wrapper.android.widget.inline.InlinePresentationSpec getInlinePresentationSpec() {
-        return com.micklab.dcg.wrapper.android.widget.inline.InlinePresentationSpec.wrap(real.getInlinePresentationSpec());
+        return com.micklab.dcg.wrapper.android.widget.inline.InlinePresentationSpec.wrap(((android.view.inputmethod.InlineSuggestionInfo) real).getInlinePresentationSpec());
     }
 
     public java.lang.String getSource() {
-        return real.getSource();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).getSource();
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).hashCode();
     }
 
     public boolean isPinned() {
-        return real.isPinned();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).isPinned();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.inputmethod.InlineSuggestionInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.inputmethod.InlineSuggestionInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String SOURCE_AUTOFILL = android.view.inputmethod.InlineSuggestionInfo.SOURCE_AUTOFILL;

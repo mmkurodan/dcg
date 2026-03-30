@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class ClickableSpan {
-    private final android.text.style.ClickableSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ClickableSpan(android.text.style.ClickableSpan real) {
+    private final java.lang.Object real;
+
+    private ClickableSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.ClickableSpan wrap(android.text.style.ClickableSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.ClickableSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.ClickableSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.ClickableSpan getReal() {
+        return (android.text.style.ClickableSpan) real;
     }
 
     public android.text.style.ClickableSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onClick(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.onClick(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.ClickableSpan) real).onClick(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.text.style.ClickableSpan) real).toString();
     }
 
     public void updateDrawState(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
-        real.updateDrawState(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.ClickableSpan) real).updateDrawState(arg0 == null ? null : arg0.getReal());
     }
 
 }

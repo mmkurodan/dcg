@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class SyncStatusObserver {
-    private final android.content.SyncStatusObserver real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SyncStatusObserver(android.content.SyncStatusObserver real) {
+    private final java.lang.Object real;
+
+    private SyncStatusObserver(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.SyncStatusObserver wrap(android.content.SyncStatusObserver real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.SyncStatusObserver(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.SyncStatusObserver(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.SyncStatusObserver getReal() {
+        return (android.content.SyncStatusObserver) real;
     }
 
     public android.content.SyncStatusObserver unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onStatusChanged(int arg0) {
-        real.onStatusChanged(arg0);
+        ((android.content.SyncStatusObserver) real).onStatusChanged(arg0);
     }
 
 }

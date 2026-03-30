@@ -2,74 +2,81 @@
 package com.micklab.dcg.wrapper.android.inputmethodservice;
 
 public final class ExtractEditText {
-    private final android.inputmethodservice.ExtractEditText real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExtractEditText(android.inputmethodservice.ExtractEditText real) {
+    private final java.lang.Object real;
+
+    private ExtractEditText(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.inputmethodservice.ExtractEditText wrap(android.inputmethodservice.ExtractEditText real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.ExtractEditText(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.ExtractEditText(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.inputmethodservice.ExtractEditText getReal() {
+        return (android.inputmethodservice.ExtractEditText) real;
     }
 
     public android.inputmethodservice.ExtractEditText unwrap() {
-        return real;
+        return getReal();
     }
 
     public ExtractEditText(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.unwrap()));
+        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ExtractEditText(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ExtractEditText(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public ExtractEditText(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.inputmethodservice.ExtractEditText(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void finishInternalChanges() {
-        real.finishInternalChanges();
+        ((android.inputmethodservice.ExtractEditText) real).finishInternalChanges();
     }
 
     public boolean hasFocus() {
-        return real.hasFocus();
+        return ((android.inputmethodservice.ExtractEditText) real).hasFocus();
     }
 
     public boolean hasVerticalScrollBar() {
-        return real.hasVerticalScrollBar();
+        return ((android.inputmethodservice.ExtractEditText) real).hasVerticalScrollBar();
     }
 
     public boolean hasWindowFocus() {
-        return real.hasWindowFocus();
+        return ((android.inputmethodservice.ExtractEditText) real).hasWindowFocus();
     }
 
     public boolean isFocused() {
-        return real.isFocused();
+        return ((android.inputmethodservice.ExtractEditText) real).isFocused();
     }
 
     public boolean isInputMethodTarget() {
-        return real.isInputMethodTarget();
+        return ((android.inputmethodservice.ExtractEditText) real).isInputMethodTarget();
     }
 
     public boolean onTextContextMenuItem(int arg0) {
-        return real.onTextContextMenuItem(arg0);
+        return ((android.inputmethodservice.ExtractEditText) real).onTextContextMenuItem(arg0);
     }
 
     public boolean performClick() {
-        return real.performClick();
+        return ((android.inputmethodservice.ExtractEditText) real).performClick();
     }
 
     public void setExtractedText(com.micklab.dcg.wrapper.android.view.inputmethod.ExtractedText arg0) {
-        real.setExtractedText(arg0 == null ? null : arg0.unwrap());
+        ((android.inputmethodservice.ExtractEditText) real).setExtractedText(arg0 == null ? null : arg0.getReal());
     }
 
     public void startInternalChanges() {
-        real.startInternalChanges();
+        ((android.inputmethodservice.ExtractEditText) real).startInternalChanges();
     }
 
 }

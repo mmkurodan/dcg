@@ -2,98 +2,105 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class ActivityManager {
-    private final android.app.ActivityManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ActivityManager(android.app.ActivityManager real) {
+    private final java.lang.Object real;
+
+    private ActivityManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.ActivityManager wrap(android.app.ActivityManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.ActivityManager getReal() {
+        return (android.app.ActivityManager) real;
     }
 
     public android.app.ActivityManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int addAppTask(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription arg2, com.micklab.dcg.wrapper.android.graphics.Bitmap arg3) {
-        return real.addAppTask(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        return ((android.app.ActivityManager) real).addAppTask(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public void addStartInfoTimestamp(int arg0, long arg1) {
-        real.addStartInfoTimestamp(arg0, arg1);
+        ((android.app.ActivityManager) real).addStartInfoTimestamp(arg0, arg1);
     }
 
     public void appNotResponding(java.lang.String arg0) {
-        real.appNotResponding(arg0);
+        ((android.app.ActivityManager) real).appNotResponding(arg0);
     }
 
     public boolean clearApplicationUserData() {
-        return real.clearApplicationUserData();
+        return ((android.app.ActivityManager) real).clearApplicationUserData();
     }
 
     public void clearWatchHeapLimit() {
-        real.clearWatchHeapLimit();
+        ((android.app.ActivityManager) real).clearWatchHeapLimit();
     }
 
     public void dumpPackageState(java.io.FileDescriptor arg0, java.lang.String arg1) {
-        real.dumpPackageState(arg0, arg1);
+        ((android.app.ActivityManager) real).dumpPackageState(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.util.Size getAppTaskThumbnailSize() {
-        return com.micklab.dcg.wrapper.android.util.Size.wrap(real.getAppTaskThumbnailSize());
+        return com.micklab.dcg.wrapper.android.util.Size.wrap(((android.app.ActivityManager) real).getAppTaskThumbnailSize());
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ConfigurationInfo getDeviceConfigurationInfo() {
-        return com.micklab.dcg.wrapper.android.content.pm.ConfigurationInfo.wrap(real.getDeviceConfigurationInfo());
+        return com.micklab.dcg.wrapper.android.content.pm.ConfigurationInfo.wrap(((android.app.ActivityManager) real).getDeviceConfigurationInfo());
     }
 
     public int getLargeMemoryClass() {
-        return real.getLargeMemoryClass();
+        return ((android.app.ActivityManager) real).getLargeMemoryClass();
     }
 
     public int getLauncherLargeIconDensity() {
-        return real.getLauncherLargeIconDensity();
+        return ((android.app.ActivityManager) real).getLauncherLargeIconDensity();
     }
 
     public int getLauncherLargeIconSize() {
-        return real.getLauncherLargeIconSize();
+        return ((android.app.ActivityManager) real).getLauncherLargeIconSize();
     }
 
     public int getLockTaskModeState() {
-        return real.getLockTaskModeState();
+        return ((android.app.ActivityManager) real).getLockTaskModeState();
     }
 
     public int getMemoryClass() {
-        return real.getMemoryClass();
+        return ((android.app.ActivityManager) real).getMemoryClass();
     }
 
     public void getMemoryInfo(com.micklab.dcg.wrapper.android.app.ActivityManager.MemoryInfo arg0) {
-        real.getMemoryInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.app.ActivityManager) real).getMemoryInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public static void getMyMemoryState(com.micklab.dcg.wrapper.android.app.ActivityManager.RunningAppProcessInfo arg0) {
-        android.app.ActivityManager.getMyMemoryState(arg0 == null ? null : arg0.unwrap());
+        android.app.ActivityManager.getMyMemoryState(arg0 == null ? null : arg0.getReal());
     }
 
     public android.os.Debug.MemoryInfo[] getProcessMemoryInfo(int[] arg0) {
-        return real.getProcessMemoryInfo(arg0);
+        return ((android.app.ActivityManager) real).getProcessMemoryInfo(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.app.PendingIntent getRunningServiceControlPanel(com.micklab.dcg.wrapper.android.content.ComponentName arg0) throws java.lang.SecurityException {
-        return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(real.getRunningServiceControlPanel(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.app.ActivityManager) real).getRunningServiceControlPanel(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean isActivityStartAllowedOnDisplay(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, com.micklab.dcg.wrapper.android.content.Intent arg2) {
-        return real.isActivityStartAllowedOnDisplay(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.app.ActivityManager) real).isActivityStartAllowedOnDisplay(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean isBackgroundRestricted() {
-        return real.isBackgroundRestricted();
+        return ((android.app.ActivityManager) real).isBackgroundRestricted();
     }
 
     public boolean isInLockTaskMode() {
-        return real.isInLockTaskMode();
+        return ((android.app.ActivityManager) real).isInLockTaskMode();
     }
 
     public static boolean isLowMemoryKillReportSupported() {
@@ -101,7 +108,7 @@ public final class ActivityManager {
     }
 
     public boolean isLowRamDevice() {
-        return real.isLowRamDevice();
+        return ((android.app.ActivityManager) real).isLowRamDevice();
     }
 
     public static boolean isRunningInTestHarness() {
@@ -117,23 +124,23 @@ public final class ActivityManager {
     }
 
     public void killBackgroundProcesses(java.lang.String arg0) {
-        real.killBackgroundProcesses(arg0);
+        ((android.app.ActivityManager) real).killBackgroundProcesses(arg0);
     }
 
     public void moveTaskToFront(int arg0, int arg1) {
-        real.moveTaskToFront(arg0, arg1);
+        ((android.app.ActivityManager) real).moveTaskToFront(arg0, arg1);
     }
 
     public void moveTaskToFront(int arg0, int arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.moveTaskToFront(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.ActivityManager) real).moveTaskToFront(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void restartPackage(java.lang.String arg0) {
-        real.restartPackage(arg0);
+        ((android.app.ActivityManager) real).restartPackage(arg0);
     }
 
     public void setProcessStateSummary(byte[] arg0) {
-        real.setProcessStateSummary(arg0);
+        ((android.app.ActivityManager) real).setProcessStateSummary(arg0);
     }
 
     public static void setVrThread(int arg0) {
@@ -141,7 +148,7 @@ public final class ActivityManager {
     }
 
     public void setWatchHeapLimit(long arg0) {
-        real.setWatchHeapLimit(arg0);
+        ((android.app.ActivityManager) real).setWatchHeapLimit(arg0);
     }
 
     public static final java.lang.String ACTION_REPORT_HEAP_LIMIT = android.app.ActivityManager.ACTION_REPORT_HEAP_LIMIT;
@@ -155,103 +162,124 @@ public final class ActivityManager {
     public static final int RECENT_WITH_EXCLUDED = android.app.ActivityManager.RECENT_WITH_EXCLUDED;
 
     public static final class AppTask {
-        private final android.app.ActivityManager.AppTask real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AppTask(android.app.ActivityManager.AppTask real) {
+        private final java.lang.Object real;
+
+        private AppTask(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.AppTask wrap(android.app.ActivityManager.AppTask real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.AppTask(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.AppTask(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.AppTask getReal() {
+            return (android.app.ActivityManager.AppTask) real;
         }
 
         public android.app.ActivityManager.AppTask unwrap() {
-            return real;
+            return getReal();
         }
 
         public void finishAndRemoveTask() {
-            real.finishAndRemoveTask();
+            ((android.app.ActivityManager.AppTask) real).finishAndRemoveTask();
         }
 
         public com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo getTaskInfo() {
-            return com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo.wrap(real.getTaskInfo());
+            return com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo.wrap(((android.app.ActivityManager.AppTask) real).getTaskInfo());
         }
 
         public void moveToFront() {
-            real.moveToFront();
+            ((android.app.ActivityManager.AppTask) real).moveToFront();
         }
 
         public void setExcludeFromRecents(boolean arg0) {
-            real.setExcludeFromRecents(arg0);
+            ((android.app.ActivityManager.AppTask) real).setExcludeFromRecents(arg0);
         }
 
         public void startActivity(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-            real.startActivity(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+            ((android.app.ActivityManager.AppTask) real).startActivity(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
         }
 
     }
     public static final class MemoryInfo {
-        private final android.app.ActivityManager.MemoryInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MemoryInfo(android.app.ActivityManager.MemoryInfo real) {
+        private final java.lang.Object real;
+
+        private MemoryInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.MemoryInfo wrap(android.app.ActivityManager.MemoryInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.MemoryInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.MemoryInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.MemoryInfo getReal() {
+            return (android.app.ActivityManager.MemoryInfo) real;
         }
 
         public android.app.ActivityManager.MemoryInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public MemoryInfo() {
-            this(new android.app.ActivityManager.MemoryInfo());
+            this(new android.app.ActivityManager.MemoryInfo(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.MemoryInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.MemoryInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.MemoryInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class ProcessErrorStateInfo {
-        private final android.app.ActivityManager.ProcessErrorStateInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ProcessErrorStateInfo(android.app.ActivityManager.ProcessErrorStateInfo real) {
+        private final java.lang.Object real;
+
+        private ProcessErrorStateInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.ProcessErrorStateInfo wrap(android.app.ActivityManager.ProcessErrorStateInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.ProcessErrorStateInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.ProcessErrorStateInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.ProcessErrorStateInfo getReal() {
+            return (android.app.ActivityManager.ProcessErrorStateInfo) real;
         }
 
         public android.app.ActivityManager.ProcessErrorStateInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public ProcessErrorStateInfo() {
-            this(new android.app.ActivityManager.ProcessErrorStateInfo());
+            this(new android.app.ActivityManager.ProcessErrorStateInfo(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.ProcessErrorStateInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.ProcessErrorStateInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.ProcessErrorStateInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int CRASHED = android.app.ActivityManager.ProcessErrorStateInfo.CRASHED;
@@ -260,71 +288,85 @@ public final class ActivityManager {
 
     }
     public static final class RecentTaskInfo {
-        private final android.app.ActivityManager.RecentTaskInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RecentTaskInfo(android.app.ActivityManager.RecentTaskInfo real) {
+        private final java.lang.Object real;
+
+        private RecentTaskInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo wrap(android.app.ActivityManager.RecentTaskInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RecentTaskInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.RecentTaskInfo getReal() {
+            return (android.app.ActivityManager.RecentTaskInfo) real;
         }
 
         public android.app.ActivityManager.RecentTaskInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public RecentTaskInfo() {
-            this(new android.app.ActivityManager.RecentTaskInfo());
+            this(new android.app.ActivityManager.RecentTaskInfo(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.RecentTaskInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.RecentTaskInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.RecentTaskInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class RunningAppProcessInfo {
-        private final android.app.ActivityManager.RunningAppProcessInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RunningAppProcessInfo(android.app.ActivityManager.RunningAppProcessInfo real) {
+        private final java.lang.Object real;
+
+        private RunningAppProcessInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.RunningAppProcessInfo wrap(android.app.ActivityManager.RunningAppProcessInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningAppProcessInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningAppProcessInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.RunningAppProcessInfo getReal() {
+            return (android.app.ActivityManager.RunningAppProcessInfo) real;
         }
 
         public android.app.ActivityManager.RunningAppProcessInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public RunningAppProcessInfo() {
-            this(new android.app.ActivityManager.RunningAppProcessInfo());
+            this(new android.app.ActivityManager.RunningAppProcessInfo(), (__DcgwBridgeToken) null);
         }
 
         public RunningAppProcessInfo(java.lang.String arg0, int arg1, java.lang.String[] arg2) {
-            this(new android.app.ActivityManager.RunningAppProcessInfo(arg0, arg1, arg2));
+            this(new android.app.ActivityManager.RunningAppProcessInfo(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.RunningAppProcessInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.RunningAppProcessInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.RunningAppProcessInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int IMPORTANCE_BACKGROUND = android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND;
@@ -346,34 +388,41 @@ public final class ActivityManager {
 
     }
     public static final class RunningServiceInfo {
-        private final android.app.ActivityManager.RunningServiceInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RunningServiceInfo(android.app.ActivityManager.RunningServiceInfo real) {
+        private final java.lang.Object real;
+
+        private RunningServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.RunningServiceInfo wrap(android.app.ActivityManager.RunningServiceInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningServiceInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningServiceInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.RunningServiceInfo getReal() {
+            return (android.app.ActivityManager.RunningServiceInfo) real;
         }
 
         public android.app.ActivityManager.RunningServiceInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public RunningServiceInfo() {
-            this(new android.app.ActivityManager.RunningServiceInfo());
+            this(new android.app.ActivityManager.RunningServiceInfo(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.RunningServiceInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.RunningServiceInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.RunningServiceInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int FLAG_FOREGROUND = android.app.ActivityManager.RunningServiceInfo.FLAG_FOREGROUND;
@@ -383,175 +432,196 @@ public final class ActivityManager {
 
     }
     public static final class RunningTaskInfo {
-        private final android.app.ActivityManager.RunningTaskInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RunningTaskInfo(android.app.ActivityManager.RunningTaskInfo real) {
+        private final java.lang.Object real;
+
+        private RunningTaskInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.RunningTaskInfo wrap(android.app.ActivityManager.RunningTaskInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningTaskInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.RunningTaskInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.RunningTaskInfo getReal() {
+            return (android.app.ActivityManager.RunningTaskInfo) real;
         }
 
         public android.app.ActivityManager.RunningTaskInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public RunningTaskInfo() {
-            this(new android.app.ActivityManager.RunningTaskInfo());
+            this(new android.app.ActivityManager.RunningTaskInfo(), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.RunningTaskInfo) real).describeContents();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.RunningTaskInfo) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.RunningTaskInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class TaskDescription {
-        private final android.app.ActivityManager.TaskDescription real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TaskDescription(android.app.ActivityManager.TaskDescription real) {
+        private final java.lang.Object real;
+
+        private TaskDescription(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription wrap(android.app.ActivityManager.TaskDescription real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.ActivityManager.TaskDescription getReal() {
+            return (android.app.ActivityManager.TaskDescription) real;
         }
 
         public android.app.ActivityManager.TaskDescription unwrap() {
-            return real;
+            return getReal();
         }
 
         public TaskDescription() {
-            this(new android.app.ActivityManager.TaskDescription());
+            this(new android.app.ActivityManager.TaskDescription(), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription arg0) {
-            this(new android.app.ActivityManager.TaskDescription(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.ActivityManager.TaskDescription(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(java.lang.String arg0) {
-            this(new android.app.ActivityManager.TaskDescription(arg0));
+            this(new android.app.ActivityManager.TaskDescription(arg0), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
-            this(new android.app.ActivityManager.TaskDescription(arg0, arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.ActivityManager.TaskDescription(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(java.lang.String arg0, int arg1) {
-            this(new android.app.ActivityManager.TaskDescription(arg0, arg1));
+            this(new android.app.ActivityManager.TaskDescription(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, int arg2) {
-            this(new android.app.ActivityManager.TaskDescription(arg0, arg1 == null ? null : arg1.unwrap(), arg2));
+            this(new android.app.ActivityManager.TaskDescription(arg0, arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
         }
 
         public TaskDescription(java.lang.String arg0, int arg1, int arg2) {
-            this(new android.app.ActivityManager.TaskDescription(arg0, arg1, arg2));
+            this(new android.app.ActivityManager.TaskDescription(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.ActivityManager.TaskDescription) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.app.ActivityManager.TaskDescription) real).equals(arg0);
         }
 
         public int getBackgroundColor() {
-            return real.getBackgroundColor();
+            return ((android.app.ActivityManager.TaskDescription) real).getBackgroundColor();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Bitmap getIcon() {
-            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getIcon());
+            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.app.ActivityManager.TaskDescription) real).getIcon());
         }
 
         public java.lang.String getLabel() {
-            return real.getLabel();
+            return ((android.app.ActivityManager.TaskDescription) real).getLabel();
         }
 
         public int getNavigationBarColor() {
-            return real.getNavigationBarColor();
+            return ((android.app.ActivityManager.TaskDescription) real).getNavigationBarColor();
         }
 
         public int getPrimaryColor() {
-            return real.getPrimaryColor();
+            return ((android.app.ActivityManager.TaskDescription) real).getPrimaryColor();
         }
 
         public int getStatusBarColor() {
-            return real.getStatusBarColor();
+            return ((android.app.ActivityManager.TaskDescription) real).getStatusBarColor();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.app.ActivityManager.TaskDescription) real).hashCode();
         }
 
         public void readFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            real.readFromParcel(arg0 == null ? null : arg0.unwrap());
+            ((android.app.ActivityManager.TaskDescription) real).readFromParcel(arg0 == null ? null : arg0.getReal());
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.ActivityManager.TaskDescription) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.ActivityManager.TaskDescription) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
         public static final class Builder {
-            private final android.app.ActivityManager.TaskDescription.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.ActivityManager.TaskDescription.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder wrap(android.app.ActivityManager.TaskDescription.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.ActivityManager.TaskDescription.Builder getReal() {
+                return (android.app.ActivityManager.TaskDescription.Builder) real;
             }
 
             public android.app.ActivityManager.TaskDescription.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
-                this(new android.app.ActivityManager.TaskDescription.Builder());
+                this(new android.app.ActivityManager.TaskDescription.Builder(), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription build() {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setBackgroundColor(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setBackgroundColor(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setBackgroundColor(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setIcon(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setIcon(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setIcon(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setLabel(java.lang.String arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setLabel(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setLabel(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setNavigationBarColor(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setNavigationBarColor(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setNavigationBarColor(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setPrimaryColor(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setPrimaryColor(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setPrimaryColor(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder setStatusBarColor(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(real.setStatusBarColor(arg0));
+                return com.micklab.dcg.wrapper.android.app.ActivityManager.TaskDescription.Builder.wrap(((android.app.ActivityManager.TaskDescription.Builder) real).setStatusBarColor(arg0));
             }
 
         }

@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.drm;
 
 public final class DrmConvertedStatus {
-    private final android.drm.DrmConvertedStatus real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DrmConvertedStatus(android.drm.DrmConvertedStatus real) {
+    private final java.lang.Object real;
+
+    private DrmConvertedStatus(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.drm.DrmConvertedStatus wrap(android.drm.DrmConvertedStatus real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmConvertedStatus(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.drm.DrmConvertedStatus(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.drm.DrmConvertedStatus getReal() {
+        return (android.drm.DrmConvertedStatus) real;
     }
 
     public android.drm.DrmConvertedStatus unwrap() {
-        return real;
+        return getReal();
     }
 
     public DrmConvertedStatus(int arg0, byte[] arg1, int arg2) {
-        this(new android.drm.DrmConvertedStatus(arg0, arg1, arg2));
+        this(new android.drm.DrmConvertedStatus(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public static final int STATUS_ERROR = android.drm.DrmConvertedStatus.STATUS_ERROR;

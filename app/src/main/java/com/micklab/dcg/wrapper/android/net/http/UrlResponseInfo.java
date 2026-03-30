@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class UrlResponseInfo {
-    private final android.net.http.UrlResponseInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UrlResponseInfo(android.net.http.UrlResponseInfo real) {
+    private final java.lang.Object real;
+
+    private UrlResponseInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.UrlResponseInfo wrap(android.net.http.UrlResponseInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlResponseInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UrlResponseInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.UrlResponseInfo getReal() {
+        return (android.net.http.UrlResponseInfo) real;
     }
 
     public android.net.http.UrlResponseInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.net.http.HeaderBlock getHeaders() {

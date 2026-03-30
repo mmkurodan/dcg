@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions;
 
 public final class IkeIOException {
-    private final android.net.ipsec.ike.exceptions.IkeIOException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeIOException(android.net.ipsec.ike.exceptions.IkeIOException real) {
+    private final java.lang.Object real;
+
+    private IkeIOException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeIOException wrap(android.net.ipsec.ike.exceptions.IkeIOException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeIOException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.exceptions.IkeIOException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.exceptions.IkeIOException getReal() {
+        return (android.net.ipsec.ike.exceptions.IkeIOException) real;
     }
 
     public android.net.ipsec.ike.exceptions.IkeIOException unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeIOException(java.io.IOException arg0) {

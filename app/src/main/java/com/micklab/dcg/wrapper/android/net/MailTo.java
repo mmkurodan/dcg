@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class MailTo {
-    private final android.net.MailTo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MailTo(android.net.MailTo real) {
+    private final java.lang.Object real;
+
+    private MailTo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.MailTo wrap(android.net.MailTo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.MailTo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.MailTo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.MailTo getReal() {
+        return (android.net.MailTo) real;
     }
 
     public android.net.MailTo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getBody() {

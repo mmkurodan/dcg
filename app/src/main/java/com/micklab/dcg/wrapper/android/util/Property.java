@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Property {
-    private final android.util.Property real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Property(android.util.Property real) {
+    private final java.lang.Object real;
+
+    private Property(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Property wrap(android.util.Property real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Property(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Property(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Property getReal() {
+        return (android.util.Property) real;
     }
 
     public android.util.Property unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.Object get(java.lang.Object arg0) {
-        return real.get(arg0);
+        return ((android.util.Property) real).get(arg0);
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.util.Property) real).getName();
     }
 
     public boolean isReadOnly() {
-        return real.isReadOnly();
+        return ((android.util.Property) real).isReadOnly();
     }
 
     public void set(java.lang.Object arg0, java.lang.Object arg1) {
-        real.set(arg0, arg1);
+        ((android.util.Property) real).set(arg0, arg1);
     }
 
 }

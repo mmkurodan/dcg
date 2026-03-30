@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class DiscretePathEffect {
-    private final android.graphics.DiscretePathEffect real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DiscretePathEffect(android.graphics.DiscretePathEffect real) {
+    private final java.lang.Object real;
+
+    private DiscretePathEffect(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.DiscretePathEffect wrap(android.graphics.DiscretePathEffect real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.DiscretePathEffect(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.DiscretePathEffect(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.DiscretePathEffect getReal() {
+        return (android.graphics.DiscretePathEffect) real;
     }
 
     public android.graphics.DiscretePathEffect unwrap() {
-        return real;
+        return getReal();
     }
 
     public DiscretePathEffect(float arg0, float arg1) {
-        this(new android.graphics.DiscretePathEffect(arg0, arg1));
+        this(new android.graphics.DiscretePathEffect(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.gsm;
 
 public final class SmsManager {
-    private final android.telephony.gsm.SmsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SmsManager(android.telephony.gsm.SmsManager real) {
+    private final java.lang.Object real;
+
+    private SmsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsManager wrap(android.telephony.gsm.SmsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.SmsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.gsm.SmsManager getReal() {
+        return (android.telephony.gsm.SmsManager) real;
     }
 
     public android.telephony.gsm.SmsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsManager getDefault() {

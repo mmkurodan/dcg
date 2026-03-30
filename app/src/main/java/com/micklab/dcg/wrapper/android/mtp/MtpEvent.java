@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.mtp;
 
 public final class MtpEvent {
-    private final android.mtp.MtpEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MtpEvent(android.mtp.MtpEvent real) {
+    private final java.lang.Object real;
+
+    private MtpEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.mtp.MtpEvent wrap(android.mtp.MtpEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.mtp.MtpEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.mtp.MtpEvent getReal() {
+        return (android.mtp.MtpEvent) real;
     }
 
     public android.mtp.MtpEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getDevicePropCode() {
-        return real.getDevicePropCode();
+        return ((android.mtp.MtpEvent) real).getDevicePropCode();
     }
 
     public int getEventCode() {
-        return real.getEventCode();
+        return ((android.mtp.MtpEvent) real).getEventCode();
     }
 
     public int getObjectFormatCode() {
-        return real.getObjectFormatCode();
+        return ((android.mtp.MtpEvent) real).getObjectFormatCode();
     }
 
     public int getObjectHandle() {
-        return real.getObjectHandle();
+        return ((android.mtp.MtpEvent) real).getObjectHandle();
     }
 
     public int getObjectPropCode() {
-        return real.getObjectPropCode();
+        return ((android.mtp.MtpEvent) real).getObjectPropCode();
     }
 
     public int getParameter1() {
-        return real.getParameter1();
+        return ((android.mtp.MtpEvent) real).getParameter1();
     }
 
     public int getParameter2() {
-        return real.getParameter2();
+        return ((android.mtp.MtpEvent) real).getParameter2();
     }
 
     public int getParameter3() {
-        return real.getParameter3();
+        return ((android.mtp.MtpEvent) real).getParameter3();
     }
 
     public int getStorageId() {
-        return real.getStorageId();
+        return ((android.mtp.MtpEvent) real).getStorageId();
     }
 
     public int getTransactionId() {
-        return real.getTransactionId();
+        return ((android.mtp.MtpEvent) real).getTransactionId();
     }
 
     public static final int EVENT_CANCEL_TRANSACTION = android.mtp.MtpEvent.EVENT_CANCEL_TRANSACTION;

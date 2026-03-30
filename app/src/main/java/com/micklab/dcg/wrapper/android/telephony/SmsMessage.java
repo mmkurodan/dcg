@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SmsMessage {
-    private final android.telephony.SmsMessage real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SmsMessage(android.telephony.SmsMessage real) {
+    private final java.lang.Object real;
+
+    private SmsMessage(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SmsMessage wrap(android.telephony.SmsMessage real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SmsMessage getReal() {
+        return (android.telephony.SmsMessage) real;
     }
 
     public android.telephony.SmsMessage unwrap() {
-        return real;
+        return getReal();
     }
 
     public static int[] calculateLength(java.lang.String arg0, boolean arg1) {
@@ -150,18 +157,25 @@ public final class SmsMessage {
 
 
     public static final class MessageClass {
-        private final android.telephony.SmsMessage.MessageClass real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MessageClass(android.telephony.SmsMessage.MessageClass real) {
+        private final java.lang.Object real;
+
+        private MessageClass(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SmsMessage.MessageClass wrap(android.telephony.SmsMessage.MessageClass real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage.MessageClass(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage.MessageClass(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SmsMessage.MessageClass getReal() {
+            return (android.telephony.SmsMessage.MessageClass) real;
         }
 
         public android.telephony.SmsMessage.MessageClass unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SmsMessage.MessageClass valueOf(java.lang.String arg0) {
@@ -175,18 +189,25 @@ public final class SmsMessage {
 
     }
     public static final class SubmitPdu {
-        private final android.telephony.SmsMessage.SubmitPdu real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SubmitPdu(android.telephony.SmsMessage.SubmitPdu real) {
+        private final java.lang.Object real;
+
+        private SubmitPdu(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SmsMessage.SubmitPdu wrap(android.telephony.SmsMessage.SubmitPdu real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage.SubmitPdu(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsMessage.SubmitPdu(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SmsMessage.SubmitPdu getReal() {
+            return (android.telephony.SmsMessage.SubmitPdu) real;
         }
 
         public android.telephony.SmsMessage.SubmitPdu unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String toString() {

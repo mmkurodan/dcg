@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os.storage;
 
 public final class StorageVolume {
-    private final android.os.storage.StorageVolume real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StorageVolume(android.os.storage.StorageVolume real) {
+    private final java.lang.Object real;
+
+    private StorageVolume(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.storage.StorageVolume wrap(android.os.storage.StorageVolume real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageVolume(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.storage.StorageVolume(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.storage.StorageVolume getReal() {
+        return (android.os.storage.StorageVolume) real;
     }
 
     public android.os.storage.StorageVolume unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createAccessIntent(java.lang.String arg0) {

@@ -2,57 +2,71 @@
 package com.micklab.dcg.wrapper.android.adservices.customaudience;
 
 public final class JoinCustomAudienceRequest {
-    private final android.adservices.customaudience.JoinCustomAudienceRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public JoinCustomAudienceRequest(android.adservices.customaudience.JoinCustomAudienceRequest real) {
+    private final java.lang.Object real;
+
+    private JoinCustomAudienceRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest wrap(android.adservices.customaudience.JoinCustomAudienceRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.customaudience.JoinCustomAudienceRequest getReal() {
+        return (android.adservices.customaudience.JoinCustomAudienceRequest) real;
     }
 
     public android.adservices.customaudience.JoinCustomAudienceRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.customaudience.JoinCustomAudienceRequest) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience getCustomAudience() {
-        return com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.wrap(real.getCustomAudience());
+        return com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.wrap(((android.adservices.customaudience.JoinCustomAudienceRequest) real).getCustomAudience());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.customaudience.JoinCustomAudienceRequest) real).hashCode();
     }
 
     public static final class Builder {
-        private final android.adservices.customaudience.JoinCustomAudienceRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.customaudience.JoinCustomAudienceRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder wrap(android.adservices.customaudience.JoinCustomAudienceRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.customaudience.JoinCustomAudienceRequest.Builder getReal() {
+            return (android.adservices.customaudience.JoinCustomAudienceRequest.Builder) real;
         }
 
         public android.adservices.customaudience.JoinCustomAudienceRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.adservices.customaudience.JoinCustomAudienceRequest.Builder());
+            this(new android.adservices.customaudience.JoinCustomAudienceRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest build() {
-            return com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.wrap(((android.adservices.customaudience.JoinCustomAudienceRequest.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder setCustomAudience(com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder.wrap(real.setCustomAudience(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.JoinCustomAudienceRequest.Builder.wrap(((android.adservices.customaudience.JoinCustomAudienceRequest.Builder) real).setCustomAudience(arg0 == null ? null : arg0.getReal()));
         }
 
     }

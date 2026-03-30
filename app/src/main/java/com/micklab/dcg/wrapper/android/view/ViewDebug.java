@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ViewDebug {
-    private final android.view.ViewDebug real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ViewDebug(android.view.ViewDebug real) {
+    private final java.lang.Object real;
+
+    private ViewDebug(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ViewDebug wrap(android.view.ViewDebug real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ViewDebug getReal() {
+        return (android.view.ViewDebug) real;
     }
 
     public android.view.ViewDebug unwrap() {
-        return real;
+        return getReal();
     }
 
     public ViewDebug() {
-        this(new android.view.ViewDebug());
+        this(new android.view.ViewDebug(), (__DcgwBridgeToken) null);
     }
 
     public static void dumpCapturedView(java.lang.String arg0, java.lang.Object arg1) {
@@ -25,11 +32,11 @@ public final class ViewDebug {
     }
 
     public static void startHierarchyTracing(java.lang.String arg0, com.micklab.dcg.wrapper.android.view.View arg1) {
-        android.view.ViewDebug.startHierarchyTracing(arg0, arg1 == null ? null : arg1.unwrap());
+        android.view.ViewDebug.startHierarchyTracing(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static void startRecyclerTracing(java.lang.String arg0, com.micklab.dcg.wrapper.android.view.View arg1) {
-        android.view.ViewDebug.startRecyclerTracing(arg0, arg1 == null ? null : arg1.unwrap());
+        android.view.ViewDebug.startRecyclerTracing(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static void stopHierarchyTracing() {
@@ -41,133 +48,161 @@ public final class ViewDebug {
     }
 
     public static void trace(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewDebug.HierarchyTraceType arg1) {
-        android.view.ViewDebug.trace(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        android.view.ViewDebug.trace(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static void trace(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewDebug.RecyclerTraceType arg1, int... arg2) {
-        android.view.ViewDebug.trace(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        android.view.ViewDebug.trace(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static final boolean TRACE_HIERARCHY = android.view.ViewDebug.TRACE_HIERARCHY;
     public static final boolean TRACE_RECYCLER = android.view.ViewDebug.TRACE_RECYCLER;
 
     public static final class CapturedViewProperty {
-        private final android.view.ViewDebug.CapturedViewProperty real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CapturedViewProperty(android.view.ViewDebug.CapturedViewProperty real) {
+        private final java.lang.Object real;
+
+        private CapturedViewProperty(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.CapturedViewProperty wrap(android.view.ViewDebug.CapturedViewProperty real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.CapturedViewProperty(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.CapturedViewProperty(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.CapturedViewProperty getReal() {
+            return (android.view.ViewDebug.CapturedViewProperty) real;
         }
 
         public android.view.ViewDebug.CapturedViewProperty unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean retrieveReturn() {
-            return real.retrieveReturn();
+            return ((android.view.ViewDebug.CapturedViewProperty) real).retrieveReturn();
         }
 
     }
     public static final class ExportedProperty {
-        private final android.view.ViewDebug.ExportedProperty real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExportedProperty(android.view.ViewDebug.ExportedProperty real) {
+        private final java.lang.Object real;
+
+        private ExportedProperty(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.ExportedProperty wrap(android.view.ViewDebug.ExportedProperty real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.ExportedProperty(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.ExportedProperty(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.ExportedProperty getReal() {
+            return (android.view.ViewDebug.ExportedProperty) real;
         }
 
         public android.view.ViewDebug.ExportedProperty unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String category() {
-            return real.category();
+            return ((android.view.ViewDebug.ExportedProperty) real).category();
         }
 
         public boolean deepExport() {
-            return real.deepExport();
+            return ((android.view.ViewDebug.ExportedProperty) real).deepExport();
         }
 
         public android.view.ViewDebug.FlagToString[] flagMapping() {
-            return real.flagMapping();
+            return ((android.view.ViewDebug.ExportedProperty) real).flagMapping();
         }
 
         public boolean formatToHexString() {
-            return real.formatToHexString();
+            return ((android.view.ViewDebug.ExportedProperty) real).formatToHexString();
         }
 
         public boolean hasAdjacentMapping() {
-            return real.hasAdjacentMapping();
+            return ((android.view.ViewDebug.ExportedProperty) real).hasAdjacentMapping();
         }
 
         public android.view.ViewDebug.IntToString[] indexMapping() {
-            return real.indexMapping();
+            return ((android.view.ViewDebug.ExportedProperty) real).indexMapping();
         }
 
         public android.view.ViewDebug.IntToString[] mapping() {
-            return real.mapping();
+            return ((android.view.ViewDebug.ExportedProperty) real).mapping();
         }
 
         public java.lang.String prefix() {
-            return real.prefix();
+            return ((android.view.ViewDebug.ExportedProperty) real).prefix();
         }
 
         public boolean resolveId() {
-            return real.resolveId();
+            return ((android.view.ViewDebug.ExportedProperty) real).resolveId();
         }
 
     }
     public static final class FlagToString {
-        private final android.view.ViewDebug.FlagToString real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FlagToString(android.view.ViewDebug.FlagToString real) {
+        private final java.lang.Object real;
+
+        private FlagToString(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.FlagToString wrap(android.view.ViewDebug.FlagToString real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.FlagToString(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.FlagToString(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.FlagToString getReal() {
+            return (android.view.ViewDebug.FlagToString) real;
         }
 
         public android.view.ViewDebug.FlagToString unwrap() {
-            return real;
+            return getReal();
         }
 
         public int equals() {
-            return real.equals();
+            return ((android.view.ViewDebug.FlagToString) real).equals();
         }
 
         public int mask() {
-            return real.mask();
+            return ((android.view.ViewDebug.FlagToString) real).mask();
         }
 
         public java.lang.String name() {
-            return real.name();
+            return ((android.view.ViewDebug.FlagToString) real).name();
         }
 
         public boolean outputIf() {
-            return real.outputIf();
+            return ((android.view.ViewDebug.FlagToString) real).outputIf();
         }
 
     }
     public static final class HierarchyTraceType {
-        private final android.view.ViewDebug.HierarchyTraceType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public HierarchyTraceType(android.view.ViewDebug.HierarchyTraceType real) {
+        private final java.lang.Object real;
+
+        private HierarchyTraceType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.HierarchyTraceType wrap(android.view.ViewDebug.HierarchyTraceType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.HierarchyTraceType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.HierarchyTraceType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.HierarchyTraceType getReal() {
+            return (android.view.ViewDebug.HierarchyTraceType) real;
         }
 
         public android.view.ViewDebug.HierarchyTraceType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.HierarchyTraceType valueOf(java.lang.String arg0) {
@@ -189,42 +224,56 @@ public final class ViewDebug {
 
     }
     public static final class IntToString {
-        private final android.view.ViewDebug.IntToString real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public IntToString(android.view.ViewDebug.IntToString real) {
+        private final java.lang.Object real;
+
+        private IntToString(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.IntToString wrap(android.view.ViewDebug.IntToString real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.IntToString(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.IntToString(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.IntToString getReal() {
+            return (android.view.ViewDebug.IntToString) real;
         }
 
         public android.view.ViewDebug.IntToString unwrap() {
-            return real;
+            return getReal();
         }
 
         public int from() {
-            return real.from();
+            return ((android.view.ViewDebug.IntToString) real).from();
         }
 
         public java.lang.String to() {
-            return real.to();
+            return ((android.view.ViewDebug.IntToString) real).to();
         }
 
     }
     public static final class RecyclerTraceType {
-        private final android.view.ViewDebug.RecyclerTraceType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RecyclerTraceType(android.view.ViewDebug.RecyclerTraceType real) {
+        private final java.lang.Object real;
+
+        private RecyclerTraceType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.RecyclerTraceType wrap(android.view.ViewDebug.RecyclerTraceType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.RecyclerTraceType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ViewDebug.RecyclerTraceType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ViewDebug.RecyclerTraceType getReal() {
+            return (android.view.ViewDebug.RecyclerTraceType) real;
         }
 
         public android.view.ViewDebug.RecyclerTraceType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.view.ViewDebug.RecyclerTraceType valueOf(java.lang.String arg0) {

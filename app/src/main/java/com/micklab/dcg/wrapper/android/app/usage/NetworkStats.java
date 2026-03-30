@@ -2,45 +2,59 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class NetworkStats {
-    private final android.app.usage.NetworkStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NetworkStats(android.app.usage.NetworkStats real) {
+    private final java.lang.Object real;
+
+    private NetworkStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.NetworkStats wrap(android.app.usage.NetworkStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.NetworkStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.NetworkStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.NetworkStats getReal() {
+        return (android.app.usage.NetworkStats) real;
     }
 
     public android.app.usage.NetworkStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.app.usage.NetworkStats) real).close();
     }
 
     public boolean getNextBucket(com.micklab.dcg.wrapper.android.app.usage.NetworkStats.Bucket arg0) {
-        return real.getNextBucket(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.usage.NetworkStats) real).getNextBucket(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean hasNextBucket() {
-        return real.hasNextBucket();
+        return ((android.app.usage.NetworkStats) real).hasNextBucket();
     }
 
     public static final class Bucket {
-        private final android.app.usage.NetworkStats.Bucket real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Bucket(android.app.usage.NetworkStats.Bucket real) {
+        private final java.lang.Object real;
+
+        private Bucket(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.usage.NetworkStats.Bucket wrap(android.app.usage.NetworkStats.Bucket real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.NetworkStats.Bucket(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.NetworkStats.Bucket(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.usage.NetworkStats.Bucket getReal() {
+            return (android.app.usage.NetworkStats.Bucket) real;
         }
 
         public android.app.usage.NetworkStats.Bucket unwrap() {
-            return real;
+            return getReal();
         }
 
         public Bucket() {
@@ -52,47 +66,47 @@ public final class NetworkStats {
         }
 
         public long getEndTimeStamp() {
-            return real.getEndTimeStamp();
+            return ((android.app.usage.NetworkStats.Bucket) real).getEndTimeStamp();
         }
 
         public int getMetered() {
-            return real.getMetered();
+            return ((android.app.usage.NetworkStats.Bucket) real).getMetered();
         }
 
         public int getRoaming() {
-            return real.getRoaming();
+            return ((android.app.usage.NetworkStats.Bucket) real).getRoaming();
         }
 
         public long getRxBytes() {
-            return real.getRxBytes();
+            return ((android.app.usage.NetworkStats.Bucket) real).getRxBytes();
         }
 
         public long getRxPackets() {
-            return real.getRxPackets();
+            return ((android.app.usage.NetworkStats.Bucket) real).getRxPackets();
         }
 
         public long getStartTimeStamp() {
-            return real.getStartTimeStamp();
+            return ((android.app.usage.NetworkStats.Bucket) real).getStartTimeStamp();
         }
 
         public int getState() {
-            return real.getState();
+            return ((android.app.usage.NetworkStats.Bucket) real).getState();
         }
 
         public int getTag() {
-            return real.getTag();
+            return ((android.app.usage.NetworkStats.Bucket) real).getTag();
         }
 
         public long getTxBytes() {
-            return real.getTxBytes();
+            return ((android.app.usage.NetworkStats.Bucket) real).getTxBytes();
         }
 
         public long getTxPackets() {
-            return real.getTxPackets();
+            return ((android.app.usage.NetworkStats.Bucket) real).getTxPackets();
         }
 
         public int getUid() {
-            return real.getUid();
+            return ((android.app.usage.NetworkStats.Bucket) real).getUid();
         }
 
         public static final int METERED_ALL = android.app.usage.NetworkStats.Bucket.METERED_ALL;

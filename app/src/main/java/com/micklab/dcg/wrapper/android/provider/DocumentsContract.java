@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class DocumentsContract {
-    private final android.provider.DocumentsContract real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DocumentsContract(android.provider.DocumentsContract real) {
+    private final java.lang.Object real;
+
+    private DocumentsContract(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.DocumentsContract wrap(android.provider.DocumentsContract real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.DocumentsContract getReal() {
+        return (android.provider.DocumentsContract) real;
     }
 
     public android.provider.DocumentsContract unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildChildDocumentsUri(java.lang.String arg0, java.lang.String arg1) {
@@ -21,7 +28,7 @@ public final class DocumentsContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildChildDocumentsUriUsingTree(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.buildChildDocumentsUriUsingTree(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.buildChildDocumentsUriUsingTree(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildDocumentUri(java.lang.String arg0, java.lang.String arg1) {
@@ -29,7 +36,7 @@ public final class DocumentsContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildDocumentUriUsingTree(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.buildDocumentUriUsingTree(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.buildDocumentUriUsingTree(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildRecentDocumentsUri(java.lang.String arg0, java.lang.String arg1) {
@@ -53,83 +60,83 @@ public final class DocumentsContract {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri copyDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.net.Uri arg2) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.copyDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.copyDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri createDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String arg2, java.lang.String arg3) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.createDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.createDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3));
     }
 
     public static com.micklab.dcg.wrapper.android.content.IntentSender createWebLinkIntent(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(android.provider.DocumentsContract.createWebLinkIntent(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.IntentSender.wrap(android.provider.DocumentsContract.createWebLinkIntent(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public static boolean deleteDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) throws java.io.FileNotFoundException {
-        return android.provider.DocumentsContract.deleteDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.provider.DocumentsContract.deleteDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static void ejectRoot(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        android.provider.DocumentsContract.ejectRoot(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        android.provider.DocumentsContract.ejectRoot(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path findDocumentPath(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path.wrap(android.provider.DocumentsContract.findDocumentPath(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path.wrap(android.provider.DocumentsContract.findDocumentPath(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static java.lang.String getDocumentId(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.DocumentsContract.getDocumentId(arg0 == null ? null : arg0.unwrap());
+        return android.provider.DocumentsContract.getDocumentId(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.os.Bundle getDocumentMetadata(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(android.provider.DocumentsContract.getDocumentMetadata(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(android.provider.DocumentsContract.getDocumentMetadata(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Bitmap getDocumentThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.graphics.Point arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.DocumentsContract.getDocumentThumbnail(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.DocumentsContract.getDocumentThumbnail(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public static java.lang.String getRootId(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.DocumentsContract.getRootId(arg0 == null ? null : arg0.unwrap());
+        return android.provider.DocumentsContract.getRootId(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getSearchDocumentsQuery(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.DocumentsContract.getSearchDocumentsQuery(arg0 == null ? null : arg0.unwrap());
+        return android.provider.DocumentsContract.getSearchDocumentsQuery(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getTreeDocumentId(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.DocumentsContract.getTreeDocumentId(arg0 == null ? null : arg0.unwrap());
+        return android.provider.DocumentsContract.getTreeDocumentId(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isChildDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.net.Uri arg2) throws java.io.FileNotFoundException {
-        return android.provider.DocumentsContract.isChildDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return android.provider.DocumentsContract.isChildDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static boolean isDocumentUri(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return android.provider.DocumentsContract.isDocumentUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.provider.DocumentsContract.isDocumentUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean isRootUri(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return android.provider.DocumentsContract.isRootUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.provider.DocumentsContract.isRootUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean isRootsUri(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return android.provider.DocumentsContract.isRootsUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return android.provider.DocumentsContract.isRootsUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static boolean isTreeUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.DocumentsContract.isTreeUri(arg0 == null ? null : arg0.unwrap());
+        return android.provider.DocumentsContract.isTreeUri(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri moveDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, com.micklab.dcg.wrapper.android.net.Uri arg3) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.moveDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.moveDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public static boolean removeDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.net.Uri arg2) throws java.io.FileNotFoundException {
-        return android.provider.DocumentsContract.removeDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return android.provider.DocumentsContract.removeDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri renameDocument(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String arg2) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.renameDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.DocumentsContract.renameDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public static final java.lang.String ACTION_DOCUMENT_SETTINGS = android.provider.DocumentsContract.ACTION_DOCUMENT_SETTINGS;
@@ -151,18 +158,25 @@ public final class DocumentsContract {
     public static final java.lang.String QUERY_ARG_MIME_TYPES = android.provider.DocumentsContract.QUERY_ARG_MIME_TYPES;
 
     public static final class Document {
-        private final android.provider.DocumentsContract.Document real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Document(android.provider.DocumentsContract.Document real) {
+        private final java.lang.Object real;
+
+        private Document(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.DocumentsContract.Document wrap(android.provider.DocumentsContract.Document real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Document(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Document(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.DocumentsContract.Document getReal() {
+            return (android.provider.DocumentsContract.Document) real;
         }
 
         public android.provider.DocumentsContract.Document unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COLUMN_DISPLAY_NAME = android.provider.DocumentsContract.Document.COLUMN_DISPLAY_NAME;
@@ -193,63 +207,77 @@ public final class DocumentsContract {
 
     }
     public static final class Path {
-        private final android.provider.DocumentsContract.Path real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Path(android.provider.DocumentsContract.Path real) {
+        private final java.lang.Object real;
+
+        private Path(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path wrap(android.provider.DocumentsContract.Path real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Path(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.DocumentsContract.Path getReal() {
+            return (android.provider.DocumentsContract.Path) real;
         }
 
         public android.provider.DocumentsContract.Path unwrap() {
-            return real;
+            return getReal();
         }
 
         public Path(java.lang.String arg0, java.util.List arg1) {
-            this(new android.provider.DocumentsContract.Path(arg0, arg1));
+            this(new android.provider.DocumentsContract.Path(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.provider.DocumentsContract.Path) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.provider.DocumentsContract.Path) real).equals(arg0);
         }
 
         public java.lang.String getRootId() {
-            return real.getRootId();
+            return ((android.provider.DocumentsContract.Path) real).getRootId();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.provider.DocumentsContract.Path) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.provider.DocumentsContract.Path) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.provider.DocumentsContract.Path) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
     }
     public static final class Root {
-        private final android.provider.DocumentsContract.Root real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Root(android.provider.DocumentsContract.Root real) {
+        private final java.lang.Object real;
+
+        private Root(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.DocumentsContract.Root wrap(android.provider.DocumentsContract.Root real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Root(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.DocumentsContract.Root(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.DocumentsContract.Root getReal() {
+            return (android.provider.DocumentsContract.Root) real;
         }
 
         public android.provider.DocumentsContract.Root unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COLUMN_AVAILABLE_BYTES = android.provider.DocumentsContract.Root.COLUMN_AVAILABLE_BYTES;

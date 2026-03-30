@@ -301,16 +301,21 @@ final class AndroidWrapperGenerator {
 
             String innerIndent = indent(indentLevel + 1);
             source.append(innerIndent)
+                    .append("private static final class __DcgwBridgeToken {\n")
+                    .append(innerIndent)
+                    .append("}\n\n");
+
+            source.append(innerIndent)
                     .append("private final ")
-                    .append(readableTypeName(clazz))
+                    .append("java.lang.Object")
                     .append(" real;\n\n");
 
             source.append(innerIndent)
-                    .append("public ")
+                    .append("private ")
                     .append(simpleName(clazz))
                     .append('(')
-                    .append(readableTypeName(clazz))
-                    .append(" real) {\n")
+                    .append("java.lang.Object")
+                    .append(" real, __DcgwBridgeToken token) {\n")
                     .append(indent(indentLevel + 2))
                     .append("this.real = real;\n")
                     .append(innerIndent)
@@ -325,7 +330,18 @@ final class AndroidWrapperGenerator {
                     .append(indent(indentLevel + 2))
                     .append("return real == null ? null : new ")
                     .append(mappedTypeName(clazz))
-                    .append("(real);\n")
+                    .append("(real, (__DcgwBridgeToken) null);\n")
+                    .append(innerIndent)
+                    .append("}\n\n");
+
+            source.append(innerIndent)
+                    .append("public ")
+                    .append(readableTypeName(clazz))
+                    .append(" getReal() {\n")
+                    .append(indent(indentLevel + 2))
+                    .append("return (")
+                    .append(readableTypeName(clazz))
+                    .append(") real;\n")
                     .append(innerIndent)
                     .append("}\n\n");
 
@@ -334,7 +350,7 @@ final class AndroidWrapperGenerator {
                     .append(readableTypeName(clazz))
                     .append(" unwrap() {\n")
                     .append(indent(indentLevel + 2))
-                    .append("return real;\n")
+                    .append("return getReal();\n")
                     .append(innerIndent)
                     .append("}\n\n");
 
@@ -389,7 +405,7 @@ final class AndroidWrapperGenerator {
                     .append(readableTypeName(owner))
                     .append('(')
                     .append(argumentUnwrapList(parameterTypes))
-                    .append("));\n")
+                    .append("), (__DcgwBridgeToken) null);\n")
                     .append(indent)
                     .append("}\n\n");
         }
@@ -464,7 +480,7 @@ final class AndroidWrapperGenerator {
 
             String target = Modifier.isStatic(method.getModifiers())
                     ? readableTypeName(method.getDeclaringClass())
-                    : "real";
+                    : "((" + readableTypeName(method.getDeclaringClass()) + ") real)";
             String invocation = target + "." + method.getName() + "(" + argumentUnwrapList(parameterTypes) + ")";
 
             if (method.getReturnType() == Void.TYPE) {
@@ -616,7 +632,7 @@ final class AndroidWrapperGenerator {
             for (int i = 0; i < parameterTypes.length; i++) {
                 Class<?> type = parameterTypes[i];
                 if (isWrappableType(type)) {
-                    args.add("arg" + i + " == null ? null : arg" + i + ".unwrap()");
+                    args.add("arg" + i + " == null ? null : arg" + i + ".getReal()");
                 } else {
                     args.add("arg" + i);
                 }

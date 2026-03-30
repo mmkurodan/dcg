@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ShortcutInfo {
-    private final android.content.pm.ShortcutInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ShortcutInfo(android.content.pm.ShortcutInfo real) {
+    private final java.lang.Object real;
+
+    private ShortcutInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo wrap(android.content.pm.ShortcutInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ShortcutInfo getReal() {
+        return (android.content.pm.ShortcutInfo) real;
     }
 
     public android.content.pm.ShortcutInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo createFromGenericDocument(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.app.appsearch.GenericDocument arg1) {
@@ -126,18 +133,25 @@ public final class ShortcutInfo {
 
 
     public static final class Builder {
-        private final android.content.pm.ShortcutInfo.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.content.pm.ShortcutInfo.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo.Builder wrap(android.content.pm.ShortcutInfo.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.ShortcutInfo.Builder getReal() {
+            return (android.content.pm.ShortcutInfo.Builder) real;
         }
 
         public android.content.pm.ShortcutInfo.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {

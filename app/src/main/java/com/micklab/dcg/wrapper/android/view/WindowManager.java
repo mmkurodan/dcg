@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class WindowManager {
-    private final android.view.WindowManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WindowManager(android.view.WindowManager real) {
+    private final java.lang.Object real;
+
+    private WindowManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.WindowManager wrap(android.view.WindowManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.WindowManager getReal() {
+        return (android.view.WindowManager) real;
     }
 
     public android.view.WindowManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addProposedRotationListener(java.util.concurrent.Executor arg0, java.util.function.IntConsumer arg1) {
-        real.addProposedRotationListener(arg0, arg1);
+        ((android.view.WindowManager) real).addProposedRotationListener(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowMetrics getCurrentWindowMetrics() {
-        return com.micklab.dcg.wrapper.android.view.WindowMetrics.wrap(real.getCurrentWindowMetrics());
+        return com.micklab.dcg.wrapper.android.view.WindowMetrics.wrap(((android.view.WindowManager) real).getCurrentWindowMetrics());
     }
 
     public com.micklab.dcg.wrapper.android.view.Display getDefaultDisplay() {
-        return com.micklab.dcg.wrapper.android.view.Display.wrap(real.getDefaultDisplay());
+        return com.micklab.dcg.wrapper.android.view.Display.wrap(((android.view.WindowManager) real).getDefaultDisplay());
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowMetrics getMaximumWindowMetrics() {
-        return com.micklab.dcg.wrapper.android.view.WindowMetrics.wrap(real.getMaximumWindowMetrics());
+        return com.micklab.dcg.wrapper.android.view.WindowMetrics.wrap(((android.view.WindowManager) real).getMaximumWindowMetrics());
     }
 
     public boolean isCrossWindowBlurEnabled() {
-        return real.isCrossWindowBlurEnabled();
+        return ((android.view.WindowManager) real).isCrossWindowBlurEnabled();
     }
 
     public com.micklab.dcg.wrapper.android.window.InputTransferToken registerBatchedSurfaceControlInputReceiver(com.micklab.dcg.wrapper.android.window.InputTransferToken arg0, com.micklab.dcg.wrapper.android.view.SurfaceControl arg1, com.micklab.dcg.wrapper.android.view.Choreographer arg2, com.micklab.dcg.wrapper.android.view.SurfaceControlInputReceiver arg3) {
-        return com.micklab.dcg.wrapper.android.window.InputTransferToken.wrap(real.registerBatchedSurfaceControlInputReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.window.InputTransferToken.wrap(((android.view.WindowManager) real).registerBatchedSurfaceControlInputReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.window.InputTransferToken registerUnbatchedSurfaceControlInputReceiver(com.micklab.dcg.wrapper.android.window.InputTransferToken arg0, com.micklab.dcg.wrapper.android.view.SurfaceControl arg1, com.micklab.dcg.wrapper.android.os.Looper arg2, com.micklab.dcg.wrapper.android.view.SurfaceControlInputReceiver arg3) {
-        return com.micklab.dcg.wrapper.android.window.InputTransferToken.wrap(real.registerUnbatchedSurfaceControlInputReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.window.InputTransferToken.wrap(((android.view.WindowManager) real).registerUnbatchedSurfaceControlInputReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public void removeProposedRotationListener(java.util.function.IntConsumer arg0) {
-        real.removeProposedRotationListener(arg0);
+        ((android.view.WindowManager) real).removeProposedRotationListener(arg0);
     }
 
     public void removeViewImmediate(com.micklab.dcg.wrapper.android.view.View arg0) {
-        real.removeViewImmediate(arg0 == null ? null : arg0.unwrap());
+        ((android.view.WindowManager) real).removeViewImmediate(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean transferTouchGesture(com.micklab.dcg.wrapper.android.window.InputTransferToken arg0, com.micklab.dcg.wrapper.android.window.InputTransferToken arg1) {
-        return real.transferTouchGesture(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.view.WindowManager) real).transferTouchGesture(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterSurfaceControlInputReceiver(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0) {
-        real.unregisterSurfaceControlInputReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.view.WindowManager) real).unregisterSurfaceControlInputReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int COMPAT_SMALL_COVER_SCREEN_OPT_IN = android.view.WindowManager.COMPAT_SMALL_COVER_SCREEN_OPT_IN;
@@ -82,154 +89,175 @@ public final class WindowManager {
     public static final int SCREEN_RECORDING_STATE_VISIBLE = android.view.WindowManager.SCREEN_RECORDING_STATE_VISIBLE;
 
     public static final class BadTokenException {
-        private final android.view.WindowManager.BadTokenException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BadTokenException(android.view.WindowManager.BadTokenException real) {
+        private final java.lang.Object real;
+
+        private BadTokenException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowManager.BadTokenException wrap(android.view.WindowManager.BadTokenException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.BadTokenException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.BadTokenException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowManager.BadTokenException getReal() {
+            return (android.view.WindowManager.BadTokenException) real;
         }
 
         public android.view.WindowManager.BadTokenException unwrap() {
-            return real;
+            return getReal();
         }
 
         public BadTokenException() {
-            this(new android.view.WindowManager.BadTokenException());
+            this(new android.view.WindowManager.BadTokenException(), (__DcgwBridgeToken) null);
         }
 
         public BadTokenException(java.lang.String arg0) {
-            this(new android.view.WindowManager.BadTokenException(arg0));
+            this(new android.view.WindowManager.BadTokenException(arg0), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class InvalidDisplayException {
-        private final android.view.WindowManager.InvalidDisplayException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InvalidDisplayException(android.view.WindowManager.InvalidDisplayException real) {
+        private final java.lang.Object real;
+
+        private InvalidDisplayException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowManager.InvalidDisplayException wrap(android.view.WindowManager.InvalidDisplayException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.InvalidDisplayException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.InvalidDisplayException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowManager.InvalidDisplayException getReal() {
+            return (android.view.WindowManager.InvalidDisplayException) real;
         }
 
         public android.view.WindowManager.InvalidDisplayException unwrap() {
-            return real;
+            return getReal();
         }
 
         public InvalidDisplayException() {
-            this(new android.view.WindowManager.InvalidDisplayException());
+            this(new android.view.WindowManager.InvalidDisplayException(), (__DcgwBridgeToken) null);
         }
 
         public InvalidDisplayException(java.lang.String arg0) {
-            this(new android.view.WindowManager.InvalidDisplayException(arg0));
+            this(new android.view.WindowManager.InvalidDisplayException(arg0), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class LayoutParams {
-        private final android.view.WindowManager.LayoutParams real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LayoutParams(android.view.WindowManager.LayoutParams real) {
+        private final java.lang.Object real;
+
+        private LayoutParams(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams wrap(android.view.WindowManager.LayoutParams real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.WindowManager.LayoutParams getReal() {
+            return (android.view.WindowManager.LayoutParams) real;
         }
 
         public android.view.WindowManager.LayoutParams unwrap() {
-            return real;
+            return getReal();
         }
 
         public LayoutParams() {
-            this(new android.view.WindowManager.LayoutParams());
+            this(new android.view.WindowManager.LayoutParams(), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            this(new android.view.WindowManager.LayoutParams(arg0 == null ? null : arg0.unwrap()));
+            this(new android.view.WindowManager.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0) {
-            this(new android.view.WindowManager.LayoutParams(arg0));
+            this(new android.view.WindowManager.LayoutParams(arg0), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1) {
-            this(new android.view.WindowManager.LayoutParams(arg0, arg1));
+            this(new android.view.WindowManager.LayoutParams(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, int arg2) {
-            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2));
+            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, int arg2, int arg3, int arg4) {
-            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2, arg3, arg4));
+            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2, arg3, arg4, arg5, arg6));
+            this(new android.view.WindowManager.LayoutParams(arg0, arg1, arg2, arg3, arg4, arg5, arg6), (__DcgwBridgeToken) null);
         }
 
         public boolean areWallpaperTouchEventsEnabled() {
-            return real.areWallpaperTouchEventsEnabled();
+            return ((android.view.WindowManager.LayoutParams) real).areWallpaperTouchEventsEnabled();
         }
 
         public boolean canPlayMoveAnimation() {
-            return real.canPlayMoveAnimation();
+            return ((android.view.WindowManager.LayoutParams) real).canPlayMoveAnimation();
         }
 
         public int copyFrom(com.micklab.dcg.wrapper.android.view.WindowManager.LayoutParams arg0) {
-            return real.copyFrom(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.WindowManager.LayoutParams) real).copyFrom(arg0 == null ? null : arg0.getReal());
         }
 
         public java.lang.String debug(java.lang.String arg0) {
-            return real.debug(arg0);
+            return ((android.view.WindowManager.LayoutParams) real).debug(arg0);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.view.WindowManager.LayoutParams) real).describeContents();
         }
 
         public int getBlurBehindRadius() {
-            return real.getBlurBehindRadius();
+            return ((android.view.WindowManager.LayoutParams) real).getBlurBehindRadius();
         }
 
         public int getColorMode() {
-            return real.getColorMode();
+            return ((android.view.WindowManager.LayoutParams) real).getColorMode();
         }
 
         public float getDesiredHdrHeadroom() {
-            return real.getDesiredHdrHeadroom();
+            return ((android.view.WindowManager.LayoutParams) real).getDesiredHdrHeadroom();
         }
 
         public int getFitInsetsSides() {
-            return real.getFitInsetsSides();
+            return ((android.view.WindowManager.LayoutParams) real).getFitInsetsSides();
         }
 
         public int getFitInsetsTypes() {
-            return real.getFitInsetsTypes();
+            return ((android.view.WindowManager.LayoutParams) real).getFitInsetsTypes();
         }
 
         public boolean getFrameRateBoostOnTouchEnabled() {
-            return real.getFrameRateBoostOnTouchEnabled();
+            return ((android.view.WindowManager.LayoutParams) real).getFrameRateBoostOnTouchEnabled();
         }
 
         public java.lang.CharSequence getTitle() {
-            return real.getTitle();
+            return ((android.view.WindowManager.LayoutParams) real).getTitle();
         }
 
         public boolean isFitInsetsIgnoringVisibility() {
-            return real.isFitInsetsIgnoringVisibility();
+            return ((android.view.WindowManager.LayoutParams) real).isFitInsetsIgnoringVisibility();
         }
 
         public boolean isFrameRatePowerSavingsBalanced() {
-            return real.isFrameRatePowerSavingsBalanced();
+            return ((android.view.WindowManager.LayoutParams) real).isFrameRatePowerSavingsBalanced();
         }
 
         public boolean isHdrConversionEnabled() {
-            return real.isHdrConversionEnabled();
+            return ((android.view.WindowManager.LayoutParams) real).isHdrConversionEnabled();
         }
 
         public static boolean mayUseInputMethod(int arg0) {
@@ -237,59 +265,59 @@ public final class WindowManager {
         }
 
         public void setBlurBehindRadius(int arg0) {
-            real.setBlurBehindRadius(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setBlurBehindRadius(arg0);
         }
 
         public void setCanPlayMoveAnimation(boolean arg0) {
-            real.setCanPlayMoveAnimation(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setCanPlayMoveAnimation(arg0);
         }
 
         public void setColorMode(int arg0) {
-            real.setColorMode(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setColorMode(arg0);
         }
 
         public void setDesiredHdrHeadroom(float arg0) {
-            real.setDesiredHdrHeadroom(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setDesiredHdrHeadroom(arg0);
         }
 
         public void setFitInsetsIgnoringVisibility(boolean arg0) {
-            real.setFitInsetsIgnoringVisibility(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setFitInsetsIgnoringVisibility(arg0);
         }
 
         public void setFitInsetsSides(int arg0) {
-            real.setFitInsetsSides(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setFitInsetsSides(arg0);
         }
 
         public void setFitInsetsTypes(int arg0) {
-            real.setFitInsetsTypes(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setFitInsetsTypes(arg0);
         }
 
         public void setFrameRateBoostOnTouchEnabled(boolean arg0) {
-            real.setFrameRateBoostOnTouchEnabled(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setFrameRateBoostOnTouchEnabled(arg0);
         }
 
         public void setFrameRatePowerSavingsBalanced(boolean arg0) {
-            real.setFrameRatePowerSavingsBalanced(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setFrameRatePowerSavingsBalanced(arg0);
         }
 
         public void setHdrConversionEnabled(boolean arg0) {
-            real.setHdrConversionEnabled(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setHdrConversionEnabled(arg0);
         }
 
         public void setTitle(java.lang.CharSequence arg0) {
-            real.setTitle(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setTitle(arg0);
         }
 
         public void setWallpaperTouchEventsEnabled(boolean arg0) {
-            real.setWallpaperTouchEventsEnabled(arg0);
+            ((android.view.WindowManager.LayoutParams) real).setWallpaperTouchEventsEnabled(arg0);
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.view.WindowManager.LayoutParams) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.WindowManager.LayoutParams) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int ALPHA_CHANGED = android.view.WindowManager.LayoutParams.ALPHA_CHANGED;

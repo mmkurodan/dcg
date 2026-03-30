@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.app.slice;
 
 public final class Slice {
-    private final android.app.slice.Slice real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Slice(android.app.slice.Slice real) {
+    private final java.lang.Object real;
+
+    private Slice(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.slice.Slice wrap(android.app.slice.Slice real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.Slice(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.Slice(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.slice.Slice getReal() {
+        return (android.app.slice.Slice) real;
     }
 
     public android.app.slice.Slice unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.slice.Slice) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.app.slice.SliceSpec getSpec() {
-        return com.micklab.dcg.wrapper.android.app.slice.SliceSpec.wrap(real.getSpec());
+        return com.micklab.dcg.wrapper.android.app.slice.SliceSpec.wrap(((android.app.slice.Slice) real).getSpec());
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getUri() {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getUri());
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.app.slice.Slice) real).getUri());
     }
 
     public boolean isCallerNeeded() {
-        return real.isCallerNeeded();
+        return ((android.app.slice.Slice) real).isCallerNeeded();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.slice.Slice) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.slice.Slice) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String EXTRA_RANGE_VALUE = android.app.slice.Slice.EXTRA_RANGE_VALUE;
@@ -72,42 +79,49 @@ public final class Slice {
     public static final java.lang.String SUBTYPE_VALUE = android.app.slice.Slice.SUBTYPE_VALUE;
 
     public static final class Builder {
-        private final android.app.slice.Slice.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.slice.Slice.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.slice.Slice.Builder wrap(android.app.slice.Slice.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.Slice.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.slice.Slice.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.slice.Slice.Builder getReal() {
+            return (android.app.slice.Slice.Builder) real;
         }
 
         public android.app.slice.Slice.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.app.slice.Slice.Builder arg0) {
-            this(new android.app.slice.Slice.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.slice.Slice.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.app.slice.SliceSpec arg1) {
-            this(new android.app.slice.Slice.Builder(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            this(new android.app.slice.Slice.Builder(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.slice.Slice.Builder addAction(com.micklab.dcg.wrapper.android.app.PendingIntent arg0, com.micklab.dcg.wrapper.android.app.slice.Slice arg1, java.lang.String arg2) {
-            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(real.addAction(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(((android.app.slice.Slice.Builder) real).addAction(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
         }
 
         public com.micklab.dcg.wrapper.android.app.slice.Slice.Builder addSubSlice(com.micklab.dcg.wrapper.android.app.slice.Slice arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(real.addSubSlice(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(((android.app.slice.Slice.Builder) real).addSubSlice(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.slice.Slice build() {
-            return com.micklab.dcg.wrapper.android.app.slice.Slice.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.slice.Slice.wrap(((android.app.slice.Slice.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.slice.Slice.Builder setCallerNeeded(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(real.setCallerNeeded(arg0));
+            return com.micklab.dcg.wrapper.android.app.slice.Slice.Builder.wrap(((android.app.slice.Slice.Builder) real).setCallerNeeded(arg0));
         }
 
     }

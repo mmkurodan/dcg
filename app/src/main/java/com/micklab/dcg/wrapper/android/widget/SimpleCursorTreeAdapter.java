@@ -2,49 +2,63 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class SimpleCursorTreeAdapter {
-    private final android.widget.SimpleCursorTreeAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SimpleCursorTreeAdapter(android.widget.SimpleCursorTreeAdapter real) {
+    private final java.lang.Object real;
+
+    private SimpleCursorTreeAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter wrap(android.widget.SimpleCursorTreeAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.SimpleCursorTreeAdapter getReal() {
+        return (android.widget.SimpleCursorTreeAdapter) real;
     }
 
     public android.widget.SimpleCursorTreeAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder getViewBinder() {
-        return com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder.wrap(real.getViewBinder());
+        return com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder.wrap(((android.widget.SimpleCursorTreeAdapter) real).getViewBinder());
     }
 
     public void setViewBinder(com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder arg0) {
-        real.setViewBinder(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.SimpleCursorTreeAdapter) real).setViewBinder(arg0 == null ? null : arg0.getReal());
     }
 
     public void setViewText(com.micklab.dcg.wrapper.android.widget.TextView arg0, java.lang.String arg1) {
-        real.setViewText(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.widget.SimpleCursorTreeAdapter) real).setViewText(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final class ViewBinder {
-        private final android.widget.SimpleCursorTreeAdapter.ViewBinder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ViewBinder(android.widget.SimpleCursorTreeAdapter.ViewBinder real) {
+        private final java.lang.Object real;
+
+        private ViewBinder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder wrap(android.widget.SimpleCursorTreeAdapter.ViewBinder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.SimpleCursorTreeAdapter.ViewBinder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.SimpleCursorTreeAdapter.ViewBinder getReal() {
+            return (android.widget.SimpleCursorTreeAdapter.ViewBinder) real;
         }
 
         public android.widget.SimpleCursorTreeAdapter.ViewBinder unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean setViewValue(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.database.Cursor arg1, int arg2) {
-            return real.setViewValue(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            return ((android.widget.SimpleCursorTreeAdapter.ViewBinder) real).setViewValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
     }

@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class Precision {
-    private final android.icu.number.Precision real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Precision(android.icu.number.Precision real) {
+    private final java.lang.Object real;
+
+    private Precision(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.Precision wrap(android.icu.number.Precision real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Precision(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Precision(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.Precision getReal() {
+        return (android.icu.number.Precision) real;
     }
 
     public android.icu.number.Precision unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision currency(com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision.wrap(android.icu.number.Precision.currency(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.CurrencyPrecision.wrap(android.icu.number.Precision.currency(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.FractionPrecision fixedFraction(int arg0) {
@@ -61,7 +68,7 @@ public final class Precision {
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.Precision trailingZeroDisplay(com.micklab.dcg.wrapper.android.icu.number.NumberFormatter.TrailingZeroDisplay arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.Precision.wrap(real.trailingZeroDisplay(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.Precision.wrap(((android.icu.number.Precision) real).trailingZeroDisplay(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.Precision unlimited() {

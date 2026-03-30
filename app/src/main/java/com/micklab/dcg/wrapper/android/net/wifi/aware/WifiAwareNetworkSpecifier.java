@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class WifiAwareNetworkSpecifier {
-    private final android.net.wifi.aware.WifiAwareNetworkSpecifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiAwareNetworkSpecifier(android.net.wifi.aware.WifiAwareNetworkSpecifier real) {
+    private final java.lang.Object real;
+
+    private WifiAwareNetworkSpecifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier wrap(android.net.wifi.aware.WifiAwareNetworkSpecifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.WifiAwareNetworkSpecifier getReal() {
+        return (android.net.wifi.aware.WifiAwareNetworkSpecifier) real;
     }
 
     public android.net.wifi.aware.WifiAwareNetworkSpecifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canBeSatisfiedBy(com.micklab.dcg.wrapper.android.net.NetworkSpecifier arg0) {
@@ -54,18 +61,25 @@ public final class WifiAwareNetworkSpecifier {
 
 
     public static final class Builder {
-        private final android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder wrap(android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder getReal() {
+            return (android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder) real;
         }
 
         public android.net.wifi.aware.WifiAwareNetworkSpecifier.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.net.wifi.aware.PublishDiscoverySession arg0) {

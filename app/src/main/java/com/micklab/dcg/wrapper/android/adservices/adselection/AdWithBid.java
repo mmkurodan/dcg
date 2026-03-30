@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.adservices.adselection;
 
 public final class AdWithBid {
-    private final android.adservices.adselection.AdWithBid real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdWithBid(android.adservices.adselection.AdWithBid real) {
+    private final java.lang.Object real;
+
+    private AdWithBid(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adselection.AdWithBid wrap(android.adservices.adselection.AdWithBid real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.AdWithBid(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.AdWithBid(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adselection.AdWithBid getReal() {
+        return (android.adservices.adselection.AdWithBid) real;
     }
 
     public android.adservices.adselection.AdWithBid unwrap() {
-        return real;
+        return getReal();
     }
 
     public AdWithBid(com.micklab.dcg.wrapper.android.adservices.common.AdData arg0, double arg1) {
-        this(new android.adservices.adselection.AdWithBid(arg0 == null ? null : arg0.unwrap(), arg1));
+        this(new android.adservices.adselection.AdWithBid(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.adservices.adselection.AdWithBid) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.adselection.AdWithBid) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.adservices.common.AdData getAdData() {
-        return com.micklab.dcg.wrapper.android.adservices.common.AdData.wrap(real.getAdData());
+        return com.micklab.dcg.wrapper.android.adservices.common.AdData.wrap(((android.adservices.adselection.AdWithBid) real).getAdData());
     }
 
     public double getBid() {
-        return real.getBid();
+        return ((android.adservices.adselection.AdWithBid) real).getBid();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.adselection.AdWithBid) real).hashCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.adservices.adselection.AdWithBid) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

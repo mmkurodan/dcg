@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class UiccCardInfo {
-    private final android.telephony.UiccCardInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UiccCardInfo(android.telephony.UiccCardInfo real) {
+    private final java.lang.Object real;
+
+    private UiccCardInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.UiccCardInfo wrap(android.telephony.UiccCardInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.UiccCardInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.UiccCardInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.UiccCardInfo getReal() {
+        return (android.telephony.UiccCardInfo) real;
     }
 
     public android.telephony.UiccCardInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

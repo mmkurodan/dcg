@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Xml {
-    private final android.util.Xml real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Xml(android.util.Xml real) {
+    private final java.lang.Object real;
+
+    private Xml(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Xml wrap(android.util.Xml real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Xml(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Xml(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Xml getReal() {
+        return (android.util.Xml) real;
     }
 
     public android.util.Xml unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.util.AttributeSet asAttributeSet(org.xmlpull.v1.XmlPullParser arg0) {
@@ -41,24 +48,31 @@ public final class Xml {
     }
 
     public static void parse(java.io.InputStream arg0, com.micklab.dcg.wrapper.android.util.Xml.Encoding arg1, org.xml.sax.ContentHandler arg2) throws java.io.IOException, org.xml.sax.SAXException {
-        android.util.Xml.parse(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        android.util.Xml.parse(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static final java.lang.String FEATURE_RELAXED = android.util.Xml.FEATURE_RELAXED;
 
     public static final class Encoding {
-        private final android.util.Xml.Encoding real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Encoding(android.util.Xml.Encoding real) {
+        private final java.lang.Object real;
+
+        private Encoding(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.util.Xml.Encoding wrap(android.util.Xml.Encoding real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.util.Xml.Encoding(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.util.Xml.Encoding(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.util.Xml.Encoding getReal() {
+            return (android.util.Xml.Encoding) real;
         }
 
         public android.util.Xml.Encoding unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.util.Xml.Encoding valueOf(java.lang.String arg0) {

@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class InputEvent {
-    private final android.view.InputEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InputEvent(android.view.InputEvent real) {
+    private final java.lang.Object real;
+
+    private InputEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.InputEvent wrap(android.view.InputEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.InputEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.InputEvent getReal() {
+        return (android.view.InputEvent) real;
     }
 
     public android.view.InputEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.InputEvent) real).describeContents();
     }
 
     public com.micklab.dcg.wrapper.android.view.InputDevice getDevice() {
-        return com.micklab.dcg.wrapper.android.view.InputDevice.wrap(real.getDevice());
+        return com.micklab.dcg.wrapper.android.view.InputDevice.wrap(((android.view.InputEvent) real).getDevice());
     }
 
     public int getDeviceId() {
-        return real.getDeviceId();
+        return ((android.view.InputEvent) real).getDeviceId();
     }
 
     public long getEventTime() {
-        return real.getEventTime();
+        return ((android.view.InputEvent) real).getEventTime();
     }
 
     public int getSource() {
-        return real.getSource();
+        return ((android.view.InputEvent) real).getSource();
     }
 
     public boolean isFromSource(int arg0) {
-        return real.isFromSource(arg0);
+        return ((android.view.InputEvent) real).isFromSource(arg0);
     }
 
 

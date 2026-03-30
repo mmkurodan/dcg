@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class Half {
-    private final android.util.Half real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Half(android.util.Half real) {
+    private final java.lang.Object real;
+
+    private Half(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.Half wrap(android.util.Half real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Half(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.Half(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.Half getReal() {
+        return (android.util.Half) real;
     }
 
     public android.util.Half unwrap() {
-        return real;
+        return getReal();
     }
 
     public Half(java.lang.String arg0) throws java.lang.NumberFormatException {
-        this(new android.util.Half(arg0));
+        this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
     public Half(double arg0) {
-        this(new android.util.Half(arg0));
+        this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
     public Half(float arg0) {
-        this(new android.util.Half(arg0));
+        this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
     public Half(short arg0) {
-        this(new android.util.Half(arg0));
+        this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
     public static short abs(short arg0) {
@@ -37,7 +44,7 @@ public final class Half {
     }
 
     public byte byteValue() {
-        return real.byteValue();
+        return ((android.util.Half) real).byteValue();
     }
 
     public static short ceil(short arg0) {
@@ -49,7 +56,7 @@ public final class Half {
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.util.Half arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.util.Half) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public static short copySign(short arg0, short arg1) {
@@ -57,11 +64,11 @@ public final class Half {
     }
 
     public double doubleValue() {
-        return real.doubleValue();
+        return ((android.util.Half) real).doubleValue();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.util.Half) real).equals(arg0);
     }
 
     public static boolean equals(short arg0, short arg1) {
@@ -69,7 +76,7 @@ public final class Half {
     }
 
     public float floatValue() {
-        return real.floatValue();
+        return ((android.util.Half) real).floatValue();
     }
 
     public static short floor(short arg0) {
@@ -109,11 +116,11 @@ public final class Half {
     }
 
     public short halfValue() {
-        return real.halfValue();
+        return ((android.util.Half) real).halfValue();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.util.Half) real).hashCode();
     }
 
     public static int hashCode(short arg0) {
@@ -125,7 +132,7 @@ public final class Half {
     }
 
     public int intValue() {
-        return real.intValue();
+        return ((android.util.Half) real).intValue();
     }
 
     public static boolean isInfinite(short arg0) {
@@ -133,7 +140,7 @@ public final class Half {
     }
 
     public boolean isNaN() {
-        return real.isNaN();
+        return ((android.util.Half) real).isNaN();
     }
 
     public static boolean isNaN(short arg0) {
@@ -153,7 +160,7 @@ public final class Half {
     }
 
     public long longValue() {
-        return real.longValue();
+        return ((android.util.Half) real).longValue();
     }
 
     public static short max(short arg0, short arg1) {
@@ -173,7 +180,7 @@ public final class Half {
     }
 
     public short shortValue() {
-        return real.shortValue();
+        return ((android.util.Half) real).shortValue();
     }
 
     public static float toFloat(short arg0) {
@@ -189,7 +196,7 @@ public final class Half {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.util.Half) real).toString();
     }
 
     public static java.lang.String toString(short arg0) {

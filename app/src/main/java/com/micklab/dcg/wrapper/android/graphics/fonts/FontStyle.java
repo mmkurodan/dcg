@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.graphics.fonts;
 
 public final class FontStyle {
-    private final android.graphics.fonts.FontStyle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FontStyle(android.graphics.fonts.FontStyle real) {
+    private final java.lang.Object real;
+
+    private FontStyle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.fonts.FontStyle wrap(android.graphics.fonts.FontStyle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.fonts.FontStyle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.fonts.FontStyle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.fonts.FontStyle getReal() {
+        return (android.graphics.fonts.FontStyle) real;
     }
 
     public android.graphics.fonts.FontStyle unwrap() {
-        return real;
+        return getReal();
     }
 
     public FontStyle() {
-        this(new android.graphics.fonts.FontStyle());
+        this(new android.graphics.fonts.FontStyle(), (__DcgwBridgeToken) null);
     }
 
     public FontStyle(int arg0, int arg1) {
-        this(new android.graphics.fonts.FontStyle(arg0, arg1));
+        this(new android.graphics.fonts.FontStyle(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.graphics.fonts.FontStyle) real).equals(arg0);
     }
 
     public int getSlant() {
-        return real.getSlant();
+        return ((android.graphics.fonts.FontStyle) real).getSlant();
     }
 
     public int getWeight() {
-        return real.getWeight();
+        return ((android.graphics.fonts.FontStyle) real).getWeight();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.graphics.fonts.FontStyle) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.graphics.fonts.FontStyle) real).toString();
     }
 
     public static final int FONT_SLANT_ITALIC = android.graphics.fonts.FontStyle.FONT_SLANT_ITALIC;

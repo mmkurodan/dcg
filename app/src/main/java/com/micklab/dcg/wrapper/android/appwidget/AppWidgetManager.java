@@ -2,102 +2,109 @@
 package com.micklab.dcg.wrapper.android.appwidget;
 
 public final class AppWidgetManager {
-    private final android.appwidget.AppWidgetManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppWidgetManager(android.appwidget.AppWidgetManager real) {
+    private final java.lang.Object real;
+
+    private AppWidgetManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager wrap(android.appwidget.AppWidgetManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.appwidget.AppWidgetManager getReal() {
+        return (android.appwidget.AppWidgetManager) real;
     }
 
     public android.appwidget.AppWidgetManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean bindAppWidgetIdIfAllowed(int arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1) {
-        return real.bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean bindAppWidgetIdIfAllowed(int arg0, com.micklab.dcg.wrapper.android.content.ComponentName arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        return real.bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public boolean bindAppWidgetIdIfAllowed(int arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, com.micklab.dcg.wrapper.android.content.ComponentName arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3) {
-        return real.bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).bindAppWidgetIdIfAllowed(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public int[] getAppWidgetIds(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.getAppWidgetIds(arg0 == null ? null : arg0.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).getAppWidgetIds(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo getAppWidgetInfo(int arg0) {
-        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo.wrap(real.getAppWidgetInfo(arg0));
+        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetProviderInfo.wrap(((android.appwidget.AppWidgetManager) real).getAppWidgetInfo(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getAppWidgetOptions(int arg0) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getAppWidgetOptions(arg0));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.appwidget.AppWidgetManager) real).getAppWidgetOptions(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager getInstance(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager.wrap(android.appwidget.AppWidgetManager.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.appwidget.AppWidgetManager.wrap(android.appwidget.AppWidgetManager.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.widget.RemoteViews getWidgetPreview(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(real.getWidgetPreview(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.widget.RemoteViews.wrap(((android.appwidget.AppWidgetManager) real).getWidgetPreview(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public boolean isRequestPinAppWidgetSupported() {
-        return real.isRequestPinAppWidgetSupported();
+        return ((android.appwidget.AppWidgetManager) real).isRequestPinAppWidgetSupported();
     }
 
     public void notifyAppWidgetViewDataChanged(int arg0, int arg1) {
-        real.notifyAppWidgetViewDataChanged(arg0, arg1);
+        ((android.appwidget.AppWidgetManager) real).notifyAppWidgetViewDataChanged(arg0, arg1);
     }
 
     public void notifyAppWidgetViewDataChanged(int[] arg0, int arg1) {
-        real.notifyAppWidgetViewDataChanged(arg0, arg1);
+        ((android.appwidget.AppWidgetManager) real).notifyAppWidgetViewDataChanged(arg0, arg1);
     }
 
     public void partiallyUpdateAppWidget(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        real.partiallyUpdateAppWidget(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).partiallyUpdateAppWidget(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void partiallyUpdateAppWidget(int[] arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        real.partiallyUpdateAppWidget(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).partiallyUpdateAppWidget(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void removeWidgetPreview(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) {
-        real.removeWidgetPreview(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.appwidget.AppWidgetManager) real).removeWidgetPreview(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean requestPinAppWidget(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.app.PendingIntent arg2) {
-        return real.requestPinAppWidget(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).requestPinAppWidget(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public boolean setWidgetPreview(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1, com.micklab.dcg.wrapper.android.widget.RemoteViews arg2) {
-        return real.setWidgetPreview(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.appwidget.AppWidgetManager) real).setWidgetPreview(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void updateAppWidget(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        real.updateAppWidget(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void updateAppWidget(int[] arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        real.updateAppWidget(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void updateAppWidget(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        real.updateAppWidget(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void updateAppWidgetOptions(int arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.updateAppWidgetOptions(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.appwidget.AppWidgetManager) real).updateAppWidgetOptions(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void updateAppWidgetProviderInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
-        real.updateAppWidgetProviderInfo(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.appwidget.AppWidgetManager) real).updateAppWidgetProviderInfo(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ACTION_APPWIDGET_BIND = android.appwidget.AppWidgetManager.ACTION_APPWIDGET_BIND;

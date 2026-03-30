@@ -2,118 +2,125 @@
 package com.micklab.dcg.wrapper.android.service.notification;
 
 public final class ZenPolicy {
-    private final android.service.notification.ZenPolicy real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ZenPolicy(android.service.notification.ZenPolicy real) {
+    private final java.lang.Object real;
+
+    private ZenPolicy(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.notification.ZenPolicy wrap(android.service.notification.ZenPolicy real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ZenPolicy(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ZenPolicy(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.notification.ZenPolicy getReal() {
+        return (android.service.notification.ZenPolicy) real;
     }
 
     public android.service.notification.ZenPolicy unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.service.notification.ZenPolicy) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.service.notification.ZenPolicy) real).equals(arg0);
     }
 
     public int getPriorityCallSenders() {
-        return real.getPriorityCallSenders();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCallSenders();
     }
 
     public int getPriorityCategoryAlarms() {
-        return real.getPriorityCategoryAlarms();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryAlarms();
     }
 
     public int getPriorityCategoryCalls() {
-        return real.getPriorityCategoryCalls();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryCalls();
     }
 
     public int getPriorityCategoryConversations() {
-        return real.getPriorityCategoryConversations();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryConversations();
     }
 
     public int getPriorityCategoryEvents() {
-        return real.getPriorityCategoryEvents();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryEvents();
     }
 
     public int getPriorityCategoryMedia() {
-        return real.getPriorityCategoryMedia();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryMedia();
     }
 
     public int getPriorityCategoryMessages() {
-        return real.getPriorityCategoryMessages();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryMessages();
     }
 
     public int getPriorityCategoryReminders() {
-        return real.getPriorityCategoryReminders();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryReminders();
     }
 
     public int getPriorityCategoryRepeatCallers() {
-        return real.getPriorityCategoryRepeatCallers();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategoryRepeatCallers();
     }
 
     public int getPriorityCategorySystem() {
-        return real.getPriorityCategorySystem();
+        return ((android.service.notification.ZenPolicy) real).getPriorityCategorySystem();
     }
 
     public int getPriorityChannelsAllowed() {
-        return real.getPriorityChannelsAllowed();
+        return ((android.service.notification.ZenPolicy) real).getPriorityChannelsAllowed();
     }
 
     public int getPriorityConversationSenders() {
-        return real.getPriorityConversationSenders();
+        return ((android.service.notification.ZenPolicy) real).getPriorityConversationSenders();
     }
 
     public int getPriorityMessageSenders() {
-        return real.getPriorityMessageSenders();
+        return ((android.service.notification.ZenPolicy) real).getPriorityMessageSenders();
     }
 
     public int getVisualEffectAmbient() {
-        return real.getVisualEffectAmbient();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectAmbient();
     }
 
     public int getVisualEffectBadge() {
-        return real.getVisualEffectBadge();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectBadge();
     }
 
     public int getVisualEffectFullScreenIntent() {
-        return real.getVisualEffectFullScreenIntent();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectFullScreenIntent();
     }
 
     public int getVisualEffectLights() {
-        return real.getVisualEffectLights();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectLights();
     }
 
     public int getVisualEffectNotificationList() {
-        return real.getVisualEffectNotificationList();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectNotificationList();
     }
 
     public int getVisualEffectPeek() {
-        return real.getVisualEffectPeek();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectPeek();
     }
 
     public int getVisualEffectStatusBar() {
-        return real.getVisualEffectStatusBar();
+        return ((android.service.notification.ZenPolicy) real).getVisualEffectStatusBar();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.service.notification.ZenPolicy) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.service.notification.ZenPolicy) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.service.notification.ZenPolicy) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CONVERSATION_SENDERS_ANYONE = android.service.notification.ZenPolicy.CONVERSATION_SENDERS_ANYONE;
@@ -130,110 +137,117 @@ public final class ZenPolicy {
     public static final int STATE_UNSET = android.service.notification.ZenPolicy.STATE_UNSET;
 
     public static final class Builder {
-        private final android.service.notification.ZenPolicy.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.service.notification.ZenPolicy.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder wrap(android.service.notification.ZenPolicy.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.notification.ZenPolicy.Builder getReal() {
+            return (android.service.notification.ZenPolicy.Builder) real;
         }
 
         public android.service.notification.ZenPolicy.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.service.notification.ZenPolicy.Builder());
+            this(new android.service.notification.ZenPolicy.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowAlarms(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowAlarms(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowAlarms(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowAllSounds() {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowAllSounds());
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowAllSounds());
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowCalls(int arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowCalls(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowCalls(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowConversations(int arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowConversations(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowConversations(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowEvents(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowEvents(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowEvents(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowMedia(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowMedia(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowMedia(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowMessages(int arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowMessages(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowMessages(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowPriorityChannels(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowPriorityChannels(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowPriorityChannels(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowReminders(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowReminders(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowReminders(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowRepeatCallers(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowRepeatCallers(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowRepeatCallers(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder allowSystem(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.allowSystem(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).allowSystem(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy build() {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.wrap(((android.service.notification.ZenPolicy.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder disallowAllSounds() {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.disallowAllSounds());
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).disallowAllSounds());
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder hideAllVisualEffects() {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.hideAllVisualEffects());
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).hideAllVisualEffects());
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showAllVisualEffects() {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showAllVisualEffects());
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showAllVisualEffects());
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showBadges(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showBadges(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showBadges(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showFullScreenIntent(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showFullScreenIntent(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showFullScreenIntent(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showInAmbientDisplay(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showInAmbientDisplay(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showInAmbientDisplay(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showInNotificationList(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showInNotificationList(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showInNotificationList(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showLights(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showLights(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showLights(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showPeeking(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showPeeking(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showPeeking(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder showStatusBarIcons(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(real.showStatusBarIcons(arg0));
+            return com.micklab.dcg.wrapper.android.service.notification.ZenPolicy.Builder.wrap(((android.service.notification.ZenPolicy.Builder) real).showStatusBarIcons(arg0));
         }
 
     }

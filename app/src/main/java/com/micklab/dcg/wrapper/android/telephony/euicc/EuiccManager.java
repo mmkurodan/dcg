@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.euicc;
 
 public final class EuiccManager {
-    private final android.telephony.euicc.EuiccManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EuiccManager(android.telephony.euicc.EuiccManager real) {
+    private final java.lang.Object real;
+
+    private EuiccManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.euicc.EuiccManager wrap(android.telephony.euicc.EuiccManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.EuiccManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.euicc.EuiccManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.euicc.EuiccManager getReal() {
+        return (android.telephony.euicc.EuiccManager) real;
     }
 
     public android.telephony.euicc.EuiccManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.telephony.euicc.EuiccManager createForCardId(int arg0) {

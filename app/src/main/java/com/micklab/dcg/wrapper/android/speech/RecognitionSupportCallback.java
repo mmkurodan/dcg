@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.speech;
 
 public final class RecognitionSupportCallback {
-    private final android.speech.RecognitionSupportCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RecognitionSupportCallback(android.speech.RecognitionSupportCallback real) {
+    private final java.lang.Object real;
+
+    private RecognitionSupportCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.speech.RecognitionSupportCallback wrap(android.speech.RecognitionSupportCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognitionSupportCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognitionSupportCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.speech.RecognitionSupportCallback getReal() {
+        return (android.speech.RecognitionSupportCallback) real;
     }
 
     public android.speech.RecognitionSupportCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onError(int arg0) {
-        real.onError(arg0);
+        ((android.speech.RecognitionSupportCallback) real).onError(arg0);
     }
 
     public void onSupportResult(com.micklab.dcg.wrapper.android.speech.RecognitionSupport arg0) {
-        real.onSupportResult(arg0 == null ? null : arg0.unwrap());
+        ((android.speech.RecognitionSupportCallback) real).onSupportResult(arg0 == null ? null : arg0.getReal());
     }
 
 }

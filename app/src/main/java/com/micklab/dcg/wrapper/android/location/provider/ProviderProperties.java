@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.location.provider;
 
 public final class ProviderProperties {
-    private final android.location.provider.ProviderProperties real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProviderProperties(android.location.provider.ProviderProperties real) {
+    private final java.lang.Object real;
+
+    private ProviderProperties(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.location.provider.ProviderProperties wrap(android.location.provider.ProviderProperties real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.location.provider.ProviderProperties(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.location.provider.ProviderProperties(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.location.provider.ProviderProperties getReal() {
+        return (android.location.provider.ProviderProperties) real;
     }
 
     public android.location.provider.ProviderProperties unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.location.provider.ProviderProperties) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.location.provider.ProviderProperties) real).equals(arg0);
     }
 
     public int getAccuracy() {
-        return real.getAccuracy();
+        return ((android.location.provider.ProviderProperties) real).getAccuracy();
     }
 
     public int getPowerUsage() {
-        return real.getPowerUsage();
+        return ((android.location.provider.ProviderProperties) real).getPowerUsage();
     }
 
     public boolean hasAltitudeSupport() {
-        return real.hasAltitudeSupport();
+        return ((android.location.provider.ProviderProperties) real).hasAltitudeSupport();
     }
 
     public boolean hasBearingSupport() {
-        return real.hasBearingSupport();
+        return ((android.location.provider.ProviderProperties) real).hasBearingSupport();
     }
 
     public boolean hasCellRequirement() {
-        return real.hasCellRequirement();
+        return ((android.location.provider.ProviderProperties) real).hasCellRequirement();
     }
 
     public boolean hasMonetaryCost() {
-        return real.hasMonetaryCost();
+        return ((android.location.provider.ProviderProperties) real).hasMonetaryCost();
     }
 
     public boolean hasNetworkRequirement() {
@@ -53,23 +60,23 @@ public final class ProviderProperties {
     }
 
     public boolean hasSatelliteRequirement() {
-        return real.hasSatelliteRequirement();
+        return ((android.location.provider.ProviderProperties) real).hasSatelliteRequirement();
     }
 
     public boolean hasSpeedSupport() {
-        return real.hasSpeedSupport();
+        return ((android.location.provider.ProviderProperties) real).hasSpeedSupport();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.location.provider.ProviderProperties) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.location.provider.ProviderProperties) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.location.provider.ProviderProperties) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACCURACY_COARSE = android.location.provider.ProviderProperties.ACCURACY_COARSE;
@@ -79,50 +86,57 @@ public final class ProviderProperties {
     public static final int POWER_USAGE_MEDIUM = android.location.provider.ProviderProperties.POWER_USAGE_MEDIUM;
 
     public static final class Builder {
-        private final android.location.provider.ProviderProperties.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.location.provider.ProviderProperties.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder wrap(android.location.provider.ProviderProperties.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.location.provider.ProviderProperties.Builder getReal() {
+            return (android.location.provider.ProviderProperties.Builder) real;
         }
 
         public android.location.provider.ProviderProperties.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.location.provider.ProviderProperties.Builder());
+            this(new android.location.provider.ProviderProperties.Builder(), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.location.provider.ProviderProperties arg0) {
-            this(new android.location.provider.ProviderProperties.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.location.provider.ProviderProperties.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties build() {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.wrap(((android.location.provider.ProviderProperties.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setAccuracy(int arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setAccuracy(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setAccuracy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasAltitudeSupport(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasAltitudeSupport(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasAltitudeSupport(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasBearingSupport(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasBearingSupport(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasBearingSupport(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasCellRequirement(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasCellRequirement(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasCellRequirement(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasMonetaryCost(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasMonetaryCost(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasMonetaryCost(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasNetworkRequirement(boolean arg0) {
@@ -130,15 +144,15 @@ public final class ProviderProperties {
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasSatelliteRequirement(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasSatelliteRequirement(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasSatelliteRequirement(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setHasSpeedSupport(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setHasSpeedSupport(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setHasSpeedSupport(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder setPowerUsage(int arg0) {
-            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(real.setPowerUsage(arg0));
+            return com.micklab.dcg.wrapper.android.location.provider.ProviderProperties.Builder.wrap(((android.location.provider.ProviderProperties.Builder) real).setPowerUsage(arg0));
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class UpdateAppearance {
-    private final android.text.style.UpdateAppearance real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UpdateAppearance(android.text.style.UpdateAppearance real) {
+    private final java.lang.Object real;
+
+    private UpdateAppearance(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.UpdateAppearance wrap(android.text.style.UpdateAppearance real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.UpdateAppearance(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.UpdateAppearance(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.UpdateAppearance getReal() {
+        return (android.text.style.UpdateAppearance) real;
     }
 
     public android.text.style.UpdateAppearance unwrap() {
-        return real;
+        return getReal();
     }
 
 }

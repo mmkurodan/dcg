@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class PowerManager {
-    private final android.os.PowerManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PowerManager(android.os.PowerManager real) {
+    private final java.lang.Object real;
+
+    private PowerManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.PowerManager wrap(android.os.PowerManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.PowerManager getReal() {
+        return (android.os.PowerManager) real;
     }
 
     public android.os.PowerManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addThermalStatusListener(com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener arg0) {
@@ -110,18 +117,25 @@ public final class PowerManager {
 
 
     public static final class OnThermalStatusChangedListener {
-        private final android.os.PowerManager.OnThermalStatusChangedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnThermalStatusChangedListener(android.os.PowerManager.OnThermalStatusChangedListener real) {
+        private final java.lang.Object real;
+
+        private OnThermalStatusChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener wrap(android.os.PowerManager.OnThermalStatusChangedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.PowerManager.OnThermalStatusChangedListener getReal() {
+            return (android.os.PowerManager.OnThermalStatusChangedListener) real;
         }
 
         public android.os.PowerManager.OnThermalStatusChangedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onThermalStatusChanged(int arg0) {
@@ -130,18 +144,25 @@ public final class PowerManager {
 
     }
     public static final class WakeLockStateListener {
-        private final android.os.PowerManager.WakeLockStateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WakeLockStateListener(android.os.PowerManager.WakeLockStateListener real) {
+        private final java.lang.Object real;
+
+        private WakeLockStateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.PowerManager.WakeLockStateListener wrap(android.os.PowerManager.WakeLockStateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.WakeLockStateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.WakeLockStateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.PowerManager.WakeLockStateListener getReal() {
+            return (android.os.PowerManager.WakeLockStateListener) real;
         }
 
         public android.os.PowerManager.WakeLockStateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onStateChanged(boolean arg0) {

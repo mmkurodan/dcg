@@ -2,82 +2,89 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class SuggestionSpan {
-    private final android.text.style.SuggestionSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SuggestionSpan(android.text.style.SuggestionSpan real) {
+    private final java.lang.Object real;
+
+    private SuggestionSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.SuggestionSpan wrap(android.text.style.SuggestionSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.SuggestionSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.SuggestionSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.SuggestionSpan getReal() {
+        return (android.text.style.SuggestionSpan) real;
     }
 
     public android.text.style.SuggestionSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public SuggestionSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.unwrap()));
+        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public SuggestionSpan(java.util.Locale arg0, java.lang.String[] arg1, int arg2) {
-        this(new android.text.style.SuggestionSpan(arg0, arg1, arg2));
+        this(new android.text.style.SuggestionSpan(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public SuggestionSpan(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String[] arg1, int arg2) {
-        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public SuggestionSpan(com.micklab.dcg.wrapper.android.content.Context arg0, java.util.Locale arg1, java.lang.String[] arg2, int arg3, java.lang.Class arg4) {
-        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4));
+        this(new android.text.style.SuggestionSpan(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.text.style.SuggestionSpan) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.text.style.SuggestionSpan) real).equals(arg0);
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.text.style.SuggestionSpan) real).getFlags();
     }
 
     public java.lang.String getLocale() {
-        return real.getLocale();
+        return ((android.text.style.SuggestionSpan) real).getLocale();
     }
 
     public java.util.Locale getLocaleObject() {
-        return real.getLocaleObject();
+        return ((android.text.style.SuggestionSpan) real).getLocaleObject();
     }
 
     public int getSpanTypeId() {
-        return real.getSpanTypeId();
+        return ((android.text.style.SuggestionSpan) real).getSpanTypeId();
     }
 
     public java.lang.String[] getSuggestions() {
-        return real.getSuggestions();
+        return ((android.text.style.SuggestionSpan) real).getSuggestions();
     }
 
     public int getUnderlineColor() {
-        return real.getUnderlineColor();
+        return ((android.text.style.SuggestionSpan) real).getUnderlineColor();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.text.style.SuggestionSpan) real).hashCode();
     }
 
     public void setFlags(int arg0) {
-        real.setFlags(arg0);
+        ((android.text.style.SuggestionSpan) real).setFlags(arg0);
     }
 
     public void updateDrawState(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
-        real.updateDrawState(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.SuggestionSpan) real).updateDrawState(arg0 == null ? null : arg0.getReal());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.text.style.SuggestionSpan) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final java.lang.String ACTION_SUGGESTION_PICKED = android.text.style.SuggestionSpan.ACTION_SUGGESTION_PICKED;

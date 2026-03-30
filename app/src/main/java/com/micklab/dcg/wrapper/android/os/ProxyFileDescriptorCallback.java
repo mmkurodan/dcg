@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ProxyFileDescriptorCallback {
-    private final android.os.ProxyFileDescriptorCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProxyFileDescriptorCallback(android.os.ProxyFileDescriptorCallback real) {
+    private final java.lang.Object real;
+
+    private ProxyFileDescriptorCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ProxyFileDescriptorCallback wrap(android.os.ProxyFileDescriptorCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ProxyFileDescriptorCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ProxyFileDescriptorCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ProxyFileDescriptorCallback getReal() {
+        return (android.os.ProxyFileDescriptorCallback) real;
     }
 
     public android.os.ProxyFileDescriptorCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onFsync() throws android.system.ErrnoException {

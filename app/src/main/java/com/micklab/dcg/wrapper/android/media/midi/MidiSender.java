@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media.midi;
 
 public final class MidiSender {
-    private final android.media.midi.MidiSender real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MidiSender(android.media.midi.MidiSender real) {
+    private final java.lang.Object real;
+
+    private MidiSender(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.midi.MidiSender wrap(android.media.midi.MidiSender real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.midi.MidiSender(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.midi.MidiSender(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.midi.MidiSender getReal() {
+        return (android.media.midi.MidiSender) real;
     }
 
     public android.media.midi.MidiSender unwrap() {
-        return real;
+        return getReal();
     }
 
     public void connect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.connect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiSender) real).connect(arg0 == null ? null : arg0.getReal());
     }
 
     public void disconnect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.disconnect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiSender) real).disconnect(arg0 == null ? null : arg0.getReal());
     }
 
     public void onConnect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.onConnect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiSender) real).onConnect(arg0 == null ? null : arg0.getReal());
     }
 
     public void onDisconnect(com.micklab.dcg.wrapper.android.media.midi.MidiReceiver arg0) {
-        real.onDisconnect(arg0 == null ? null : arg0.unwrap());
+        ((android.media.midi.MidiSender) real).onDisconnect(arg0 == null ? null : arg0.getReal());
     }
 
 }

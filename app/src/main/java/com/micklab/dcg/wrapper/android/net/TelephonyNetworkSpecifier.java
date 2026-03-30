@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class TelephonyNetworkSpecifier {
-    private final android.net.TelephonyNetworkSpecifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TelephonyNetworkSpecifier(android.net.TelephonyNetworkSpecifier real) {
+    private final java.lang.Object real;
+
+    private TelephonyNetworkSpecifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier wrap(android.net.TelephonyNetworkSpecifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.TelephonyNetworkSpecifier getReal() {
+        return (android.net.TelephonyNetworkSpecifier) real;
     }
 
     public android.net.TelephonyNetworkSpecifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -42,18 +49,25 @@ public final class TelephonyNetworkSpecifier {
 
 
     public static final class Builder {
-        private final android.net.TelephonyNetworkSpecifier.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.TelephonyNetworkSpecifier.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier.Builder wrap(android.net.TelephonyNetworkSpecifier.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.TelephonyNetworkSpecifier.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.TelephonyNetworkSpecifier.Builder getReal() {
+            return (android.net.TelephonyNetworkSpecifier.Builder) real;
         }
 
         public android.net.TelephonyNetworkSpecifier.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

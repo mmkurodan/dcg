@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeSessionConnectionInfo {
-    private final android.net.ipsec.ike.IkeSessionConnectionInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeSessionConnectionInfo(android.net.ipsec.ike.IkeSessionConnectionInfo real) {
+    private final java.lang.Object real;
+
+    private IkeSessionConnectionInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConnectionInfo wrap(android.net.ipsec.ike.IkeSessionConnectionInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConnectionInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConnectionInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeSessionConnectionInfo getReal() {
+        return (android.net.ipsec.ike.IkeSessionConnectionInfo) real;
     }
 
     public android.net.ipsec.ike.IkeSessionConnectionInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeSessionConnectionInfo(java.net.InetAddress arg0, java.net.InetAddress arg1, com.micklab.dcg.wrapper.android.net.Network arg2) {

@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class GeolocationPermissions {
-    private final android.webkit.GeolocationPermissions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GeolocationPermissions(android.webkit.GeolocationPermissions real) {
+    private final java.lang.Object real;
+
+    private GeolocationPermissions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions wrap(android.webkit.GeolocationPermissions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.GeolocationPermissions getReal() {
+        return (android.webkit.GeolocationPermissions) real;
     }
 
     public android.webkit.GeolocationPermissions unwrap() {
-        return real;
+        return getReal();
     }
 
     public void allow(java.lang.String arg0) {
-        real.allow(arg0);
+        ((android.webkit.GeolocationPermissions) real).allow(arg0);
     }
 
     public void clear(java.lang.String arg0) {
-        real.clear(arg0);
+        ((android.webkit.GeolocationPermissions) real).clear(arg0);
     }
 
     public void clearAll() {
-        real.clearAll();
+        ((android.webkit.GeolocationPermissions) real).clearAll();
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions getInstance() {
@@ -33,22 +40,29 @@ public final class GeolocationPermissions {
     }
 
     public static final class Callback {
-        private final android.webkit.GeolocationPermissions.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.webkit.GeolocationPermissions.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions.Callback wrap(android.webkit.GeolocationPermissions.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.GeolocationPermissions.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.GeolocationPermissions.Callback getReal() {
+            return (android.webkit.GeolocationPermissions.Callback) real;
         }
 
         public android.webkit.GeolocationPermissions.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void invoke(java.lang.String arg0, boolean arg1, boolean arg2) {
-            real.invoke(arg0, arg1, arg2);
+            ((android.webkit.GeolocationPermissions.Callback) real).invoke(arg0, arg1, arg2);
         }
 
     }

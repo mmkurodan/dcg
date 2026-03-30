@@ -2,84 +2,98 @@
 package com.micklab.dcg.wrapper.android.adservices.adselection;
 
 public final class ReportEventRequest {
-    private final android.adservices.adselection.ReportEventRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ReportEventRequest(android.adservices.adselection.ReportEventRequest real) {
+    private final java.lang.Object real;
+
+    private ReportEventRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest wrap(android.adservices.adselection.ReportEventRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adselection.ReportEventRequest getReal() {
+        return (android.adservices.adselection.ReportEventRequest) real;
     }
 
     public android.adservices.adselection.ReportEventRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public long getAdSelectionId() {
-        return real.getAdSelectionId();
+        return ((android.adservices.adselection.ReportEventRequest) real).getAdSelectionId();
     }
 
     public java.lang.String getData() {
-        return real.getData();
+        return ((android.adservices.adselection.ReportEventRequest) real).getData();
     }
 
     public com.micklab.dcg.wrapper.android.view.InputEvent getInputEvent() {
-        return com.micklab.dcg.wrapper.android.view.InputEvent.wrap(real.getInputEvent());
+        return com.micklab.dcg.wrapper.android.view.InputEvent.wrap(((android.adservices.adselection.ReportEventRequest) real).getInputEvent());
     }
 
     public java.lang.String getKey() {
-        return real.getKey();
+        return ((android.adservices.adselection.ReportEventRequest) real).getKey();
     }
 
     public int getReportingDestinations() {
-        return real.getReportingDestinations();
+        return ((android.adservices.adselection.ReportEventRequest) real).getReportingDestinations();
     }
 
     public static final int FLAG_REPORTING_DESTINATION_BUYER = android.adservices.adselection.ReportEventRequest.FLAG_REPORTING_DESTINATION_BUYER;
     public static final int FLAG_REPORTING_DESTINATION_SELLER = android.adservices.adselection.ReportEventRequest.FLAG_REPORTING_DESTINATION_SELLER;
 
     public static final class Builder {
-        private final android.adservices.adselection.ReportEventRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.adselection.ReportEventRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder wrap(android.adservices.adselection.ReportEventRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.adselection.ReportEventRequest.Builder getReal() {
+            return (android.adservices.adselection.ReportEventRequest.Builder) real;
         }
 
         public android.adservices.adselection.ReportEventRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(long arg0, java.lang.String arg1, java.lang.String arg2, int arg3) {
-            this(new android.adservices.adselection.ReportEventRequest.Builder(arg0, arg1, arg2, arg3));
+            this(new android.adservices.adselection.ReportEventRequest.Builder(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest build() {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder setAdSelectionId(long arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(real.setAdSelectionId(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).setAdSelectionId(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder setData(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(real.setData(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).setData(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder setInputEvent(com.micklab.dcg.wrapper.android.view.InputEvent arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(real.setInputEvent(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).setInputEvent(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder setKey(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(real.setKey(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).setKey(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder setReportingDestinations(int arg0) {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(real.setReportingDestinations(arg0));
+            return com.micklab.dcg.wrapper.android.adservices.adselection.ReportEventRequest.Builder.wrap(((android.adservices.adselection.ReportEventRequest.Builder) real).setReportingDestinations(arg0));
         }
 
     }

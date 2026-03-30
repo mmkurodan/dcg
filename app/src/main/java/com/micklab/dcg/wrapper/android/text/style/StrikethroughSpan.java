@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.text.style;
 
 public final class StrikethroughSpan {
-    private final android.text.style.StrikethroughSpan real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StrikethroughSpan(android.text.style.StrikethroughSpan real) {
+    private final java.lang.Object real;
+
+    private StrikethroughSpan(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.style.StrikethroughSpan wrap(android.text.style.StrikethroughSpan real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.StrikethroughSpan(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.StrikethroughSpan(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.style.StrikethroughSpan getReal() {
+        return (android.text.style.StrikethroughSpan) real;
     }
 
     public android.text.style.StrikethroughSpan unwrap() {
-        return real;
+        return getReal();
     }
 
     public StrikethroughSpan() {
-        this(new android.text.style.StrikethroughSpan());
+        this(new android.text.style.StrikethroughSpan(), (__DcgwBridgeToken) null);
     }
 
     public StrikethroughSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.StrikethroughSpan(arg0 == null ? null : arg0.unwrap()));
+        this(new android.text.style.StrikethroughSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.text.style.StrikethroughSpan) real).describeContents();
     }
 
     public int getSpanTypeId() {
-        return real.getSpanTypeId();
+        return ((android.text.style.StrikethroughSpan) real).getSpanTypeId();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.text.style.StrikethroughSpan) real).toString();
     }
 
     public void updateDrawState(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
-        real.updateDrawState(arg0 == null ? null : arg0.unwrap());
+        ((android.text.style.StrikethroughSpan) real).updateDrawState(arg0 == null ? null : arg0.getReal());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.text.style.StrikethroughSpan) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 }

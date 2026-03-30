@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class Matrix {
-    private final android.opengl.Matrix real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Matrix(android.opengl.Matrix real) {
+    private final java.lang.Object real;
+
+    private Matrix(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.Matrix wrap(android.opengl.Matrix real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.Matrix(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.Matrix(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.Matrix getReal() {
+        return (android.opengl.Matrix) real;
     }
 
     public android.opengl.Matrix unwrap() {
-        return real;
+        return getReal();
     }
 
     public Matrix() {
-        this(new android.opengl.Matrix());
+        this(new android.opengl.Matrix(), (__DcgwBridgeToken) null);
     }
 
     public static void frustumM(float[] arg0, int arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7) {

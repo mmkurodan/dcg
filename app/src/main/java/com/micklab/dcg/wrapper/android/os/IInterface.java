@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class IInterface {
-    private final android.os.IInterface real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IInterface(android.os.IInterface real) {
+    private final java.lang.Object real;
+
+    private IInterface(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.IInterface wrap(android.os.IInterface real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.IInterface(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.IInterface(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.IInterface getReal() {
+        return (android.os.IInterface) real;
     }
 
     public android.os.IInterface unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder asBinder() {

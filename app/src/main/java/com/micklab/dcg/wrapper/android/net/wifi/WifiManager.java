@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiManager {
-    private final android.net.wifi.WifiManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiManager(android.net.wifi.WifiManager real) {
+    private final java.lang.Object real;
+
+    private WifiManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager wrap(android.net.wifi.WifiManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiManager getReal() {
+        return (android.net.wifi.WifiManager) real;
     }
 
     public android.net.wifi.WifiManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addLocalOnlyConnectionFailureListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener arg1) {
@@ -394,18 +401,25 @@ public final class WifiManager {
 
 
     public static final class AddNetworkResult {
-        private final android.net.wifi.WifiManager.AddNetworkResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AddNetworkResult(android.net.wifi.WifiManager.AddNetworkResult real) {
+        private final java.lang.Object real;
+
+        private AddNetworkResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.AddNetworkResult wrap(android.net.wifi.WifiManager.AddNetworkResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.AddNetworkResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.AddNetworkResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.AddNetworkResult getReal() {
+            return (android.net.wifi.WifiManager.AddNetworkResult) real;
         }
 
         public android.net.wifi.WifiManager.AddNetworkResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public AddNetworkResult(int arg0, int arg1) {
@@ -423,18 +437,25 @@ public final class WifiManager {
 
     }
     public static final class InterfaceCreationImpact {
-        private final android.net.wifi.WifiManager.InterfaceCreationImpact real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InterfaceCreationImpact(android.net.wifi.WifiManager.InterfaceCreationImpact real) {
+        private final java.lang.Object real;
+
+        private InterfaceCreationImpact(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.InterfaceCreationImpact wrap(android.net.wifi.WifiManager.InterfaceCreationImpact real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.InterfaceCreationImpact(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.InterfaceCreationImpact(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.InterfaceCreationImpact getReal() {
+            return (android.net.wifi.WifiManager.InterfaceCreationImpact) real;
         }
 
         public android.net.wifi.WifiManager.InterfaceCreationImpact unwrap() {
-            return real;
+            return getReal();
         }
 
         public InterfaceCreationImpact(int arg0, java.util.Set arg1) {
@@ -455,18 +476,25 @@ public final class WifiManager {
 
     }
     public static final class LocalOnlyConnectionFailureListener {
-        private final android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LocalOnlyConnectionFailureListener(android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener real) {
+        private final java.lang.Object real;
+
+        private LocalOnlyConnectionFailureListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener wrap(android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener getReal() {
+            return (android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener) real;
         }
 
         public android.net.wifi.WifiManager.LocalOnlyConnectionFailureListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onConnectionFailed(com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier arg0, int arg1) {
@@ -475,18 +503,25 @@ public final class WifiManager {
 
     }
     public static final class LocalOnlyHotspotCallback {
-        private final android.net.wifi.WifiManager.LocalOnlyHotspotCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LocalOnlyHotspotCallback(android.net.wifi.WifiManager.LocalOnlyHotspotCallback real) {
+        private final java.lang.Object real;
+
+        private LocalOnlyHotspotCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyHotspotCallback wrap(android.net.wifi.WifiManager.LocalOnlyHotspotCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyHotspotCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyHotspotCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.LocalOnlyHotspotCallback getReal() {
+            return (android.net.wifi.WifiManager.LocalOnlyHotspotCallback) real;
         }
 
         public android.net.wifi.WifiManager.LocalOnlyHotspotCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public LocalOnlyHotspotCallback() {
@@ -508,18 +543,25 @@ public final class WifiManager {
 
     }
     public static final class ScanResultsCallback {
-        private final android.net.wifi.WifiManager.ScanResultsCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ScanResultsCallback(android.net.wifi.WifiManager.ScanResultsCallback real) {
+        private final java.lang.Object real;
+
+        private ScanResultsCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.ScanResultsCallback wrap(android.net.wifi.WifiManager.ScanResultsCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.ScanResultsCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.ScanResultsCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.ScanResultsCallback getReal() {
+            return (android.net.wifi.WifiManager.ScanResultsCallback) real;
         }
 
         public android.net.wifi.WifiManager.ScanResultsCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onScanResultsAvailable() {
@@ -528,18 +570,25 @@ public final class WifiManager {
 
     }
     public static final class SubsystemRestartTrackingCallback {
-        private final android.net.wifi.WifiManager.SubsystemRestartTrackingCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SubsystemRestartTrackingCallback(android.net.wifi.WifiManager.SubsystemRestartTrackingCallback real) {
+        private final java.lang.Object real;
+
+        private SubsystemRestartTrackingCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SubsystemRestartTrackingCallback wrap(android.net.wifi.WifiManager.SubsystemRestartTrackingCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SubsystemRestartTrackingCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SubsystemRestartTrackingCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.SubsystemRestartTrackingCallback getReal() {
+            return (android.net.wifi.WifiManager.SubsystemRestartTrackingCallback) real;
         }
 
         public android.net.wifi.WifiManager.SubsystemRestartTrackingCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onSubsystemRestarted() {
@@ -552,18 +601,25 @@ public final class WifiManager {
 
     }
     public static final class SuggestionConnectionStatusListener {
-        private final android.net.wifi.WifiManager.SuggestionConnectionStatusListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SuggestionConnectionStatusListener(android.net.wifi.WifiManager.SuggestionConnectionStatusListener real) {
+        private final java.lang.Object real;
+
+        private SuggestionConnectionStatusListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionConnectionStatusListener wrap(android.net.wifi.WifiManager.SuggestionConnectionStatusListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionConnectionStatusListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionConnectionStatusListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.SuggestionConnectionStatusListener getReal() {
+            return (android.net.wifi.WifiManager.SuggestionConnectionStatusListener) real;
         }
 
         public android.net.wifi.WifiManager.SuggestionConnectionStatusListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onConnectionStatus(com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion arg0, int arg1) {
@@ -572,18 +628,25 @@ public final class WifiManager {
 
     }
     public static final class SuggestionUserApprovalStatusListener {
-        private final android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SuggestionUserApprovalStatusListener(android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener real) {
+        private final java.lang.Object real;
+
+        private SuggestionUserApprovalStatusListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener wrap(android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener getReal() {
+            return (android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener) real;
         }
 
         public android.net.wifi.WifiManager.SuggestionUserApprovalStatusListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onUserApprovalStatusChange(int arg0) {
@@ -592,18 +655,25 @@ public final class WifiManager {
 
     }
     public static final class WpsCallback {
-        private final android.net.wifi.WifiManager.WpsCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public WpsCallback(android.net.wifi.WifiManager.WpsCallback real) {
+        private final java.lang.Object real;
+
+        private WpsCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WpsCallback wrap(android.net.wifi.WifiManager.WpsCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WpsCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WpsCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.WpsCallback getReal() {
+            return (android.net.wifi.WifiManager.WpsCallback) real;
         }
 
         public android.net.wifi.WifiManager.WpsCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFailed(int arg0) {

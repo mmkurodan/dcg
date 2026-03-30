@@ -2,41 +2,55 @@
 package com.micklab.dcg.wrapper.android;
 
 public final class R {
-    private final android.R real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public R(android.R real) {
+    private final java.lang.Object real;
+
+    private R(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.R wrap(android.R real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.R(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.R(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.R getReal() {
+        return (android.R) real;
     }
 
     public android.R unwrap() {
-        return real;
+        return getReal();
     }
 
     public R() {
-        this(new android.R());
+        this(new android.R(), (__DcgwBridgeToken) null);
     }
 
     public static final class anim {
-        private final android.R.anim real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public anim(android.R.anim real) {
+        private final java.lang.Object real;
+
+        private anim(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.anim wrap(android.R.anim real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.anim(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.anim(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.anim getReal() {
+            return (android.R.anim) real;
         }
 
         public android.R.anim unwrap() {
-            return real;
+            return getReal();
         }
 
         public anim() {
-            this(new android.R.anim());
+            this(new android.R.anim(), (__DcgwBridgeToken) null);
         }
 
         public static final int accelerate_decelerate_interpolator = android.R.anim.accelerate_decelerate_interpolator;
@@ -55,22 +69,29 @@ public final class R {
 
     }
     public static final class animator {
-        private final android.R.animator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public animator(android.R.animator real) {
+        private final java.lang.Object real;
+
+        private animator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.animator wrap(android.R.animator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.animator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.animator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.animator getReal() {
+            return (android.R.animator) real;
         }
 
         public android.R.animator unwrap() {
-            return real;
+            return getReal();
         }
 
         public animator() {
-            this(new android.R.animator());
+            this(new android.R.animator(), (__DcgwBridgeToken) null);
         }
 
         public static final int fade_in = android.R.animator.fade_in;
@@ -78,22 +99,29 @@ public final class R {
 
     }
     public static final class array {
-        private final android.R.array real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public array(android.R.array real) {
+        private final java.lang.Object real;
+
+        private array(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.array wrap(android.R.array real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.array(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.array(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.array getReal() {
+            return (android.R.array) real;
         }
 
         public android.R.array unwrap() {
-            return real;
+            return getReal();
         }
 
         public array() {
-            this(new android.R.array());
+            this(new android.R.array(), (__DcgwBridgeToken) null);
         }
 
         public static final int emailAddressTypes = android.R.array.emailAddressTypes;
@@ -104,22 +132,29 @@ public final class R {
 
     }
     public static final class attr {
-        private final android.R.attr real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public attr(android.R.attr real) {
+        private final java.lang.Object real;
+
+        private attr(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.attr wrap(android.R.attr real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.attr(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.attr(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.attr getReal() {
+            return (android.R.attr) real;
         }
 
         public android.R.attr unwrap() {
-            return real;
+            return getReal();
         }
 
         public attr() {
-            this(new android.R.attr());
+            this(new android.R.attr(), (__DcgwBridgeToken) null);
         }
 
         public static final int absListViewStyle = android.R.attr.absListViewStyle;
@@ -1666,42 +1701,56 @@ public final class R {
 
     }
     public static final class bool {
-        private final android.R.bool real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public bool(android.R.bool real) {
+        private final java.lang.Object real;
+
+        private bool(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.bool wrap(android.R.bool real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.bool(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.bool(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.bool getReal() {
+            return (android.R.bool) real;
         }
 
         public android.R.bool unwrap() {
-            return real;
+            return getReal();
         }
 
         public bool() {
-            this(new android.R.bool());
+            this(new android.R.bool(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class color {
-        private final android.R.color real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public color(android.R.color real) {
+        private final java.lang.Object real;
+
+        private color(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.color wrap(android.R.color real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.color(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.color(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.color getReal() {
+            return (android.R.color) real;
         }
 
         public android.R.color unwrap() {
-            return real;
+            return getReal();
         }
 
         public color() {
-            this(new android.R.color());
+            this(new android.R.color(), (__DcgwBridgeToken) null);
         }
 
         public static final int background_dark = android.R.color.background_dark;
@@ -1916,22 +1965,29 @@ public final class R {
 
     }
     public static final class dimen {
-        private final android.R.dimen real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public dimen(android.R.dimen real) {
+        private final java.lang.Object real;
+
+        private dimen(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.dimen wrap(android.R.dimen real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.dimen(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.dimen(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.dimen getReal() {
+            return (android.R.dimen) real;
         }
 
         public android.R.dimen unwrap() {
-            return real;
+            return getReal();
         }
 
         public dimen() {
-            this(new android.R.dimen());
+            this(new android.R.dimen(), (__DcgwBridgeToken) null);
         }
 
         public static final int app_icon_size = android.R.dimen.app_icon_size;
@@ -1946,22 +2002,29 @@ public final class R {
 
     }
     public static final class drawable {
-        private final android.R.drawable real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public drawable(android.R.drawable real) {
+        private final java.lang.Object real;
+
+        private drawable(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.drawable wrap(android.R.drawable real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.drawable(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.drawable(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.drawable getReal() {
+            return (android.R.drawable) real;
         }
 
         public android.R.drawable unwrap() {
-            return real;
+            return getReal();
         }
 
         public drawable() {
-            this(new android.R.drawable());
+            this(new android.R.drawable(), (__DcgwBridgeToken) null);
         }
 
         public static final int alert_dark_frame = android.R.drawable.alert_dark_frame;
@@ -2141,42 +2204,56 @@ public final class R {
 
     }
     public static final class fraction {
-        private final android.R.fraction real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public fraction(android.R.fraction real) {
+        private final java.lang.Object real;
+
+        private fraction(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.fraction wrap(android.R.fraction real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.fraction(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.fraction(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.fraction getReal() {
+            return (android.R.fraction) real;
         }
 
         public android.R.fraction unwrap() {
-            return real;
+            return getReal();
         }
 
         public fraction() {
-            this(new android.R.fraction());
+            this(new android.R.fraction(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class id {
-        private final android.R.id real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public id(android.R.id real) {
+        private final java.lang.Object real;
+
+        private id(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.id wrap(android.R.id real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.id(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.id(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.id getReal() {
+            return (android.R.id) real;
         }
 
         public android.R.id unwrap() {
-            return real;
+            return getReal();
         }
 
         public id() {
-            this(new android.R.id());
+            this(new android.R.id(), (__DcgwBridgeToken) null);
         }
 
         public static final int accessibilityActionContextClick = android.R.id.accessibilityActionContextClick;
@@ -2277,22 +2354,29 @@ public final class R {
 
     }
     public static final class integer {
-        private final android.R.integer real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public integer(android.R.integer real) {
+        private final java.lang.Object real;
+
+        private integer(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.integer wrap(android.R.integer real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.integer(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.integer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.integer getReal() {
+            return (android.R.integer) real;
         }
 
         public android.R.integer unwrap() {
-            return real;
+            return getReal();
         }
 
         public integer() {
-            this(new android.R.integer());
+            this(new android.R.integer(), (__DcgwBridgeToken) null);
         }
 
         public static final int config_longAnimTime = android.R.integer.config_longAnimTime;
@@ -2302,22 +2386,29 @@ public final class R {
 
     }
     public static final class interpolator {
-        private final android.R.interpolator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public interpolator(android.R.interpolator real) {
+        private final java.lang.Object real;
+
+        private interpolator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.interpolator wrap(android.R.interpolator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.interpolator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.interpolator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.interpolator getReal() {
+            return (android.R.interpolator) real;
         }
 
         public android.R.interpolator unwrap() {
-            return real;
+            return getReal();
         }
 
         public interpolator() {
-            this(new android.R.interpolator());
+            this(new android.R.interpolator(), (__DcgwBridgeToken) null);
         }
 
         public static final int accelerate_cubic = android.R.interpolator.accelerate_cubic;
@@ -2340,22 +2431,29 @@ public final class R {
 
     }
     public static final class layout {
-        private final android.R.layout real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public layout(android.R.layout real) {
+        private final java.lang.Object real;
+
+        private layout(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.layout wrap(android.R.layout real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.layout(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.layout(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.layout getReal() {
+            return (android.R.layout) real;
         }
 
         public android.R.layout unwrap() {
-            return real;
+            return getReal();
         }
 
         public layout() {
-            this(new android.R.layout());
+            this(new android.R.layout(), (__DcgwBridgeToken) null);
         }
 
         public static final int activity_list_item = android.R.layout.activity_list_item;
@@ -2385,104 +2483,139 @@ public final class R {
 
     }
     public static final class menu {
-        private final android.R.menu real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public menu(android.R.menu real) {
+        private final java.lang.Object real;
+
+        private menu(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.menu wrap(android.R.menu real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.menu(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.menu(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.menu getReal() {
+            return (android.R.menu) real;
         }
 
         public android.R.menu unwrap() {
-            return real;
+            return getReal();
         }
 
         public menu() {
-            this(new android.R.menu());
+            this(new android.R.menu(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class mipmap {
-        private final android.R.mipmap real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public mipmap(android.R.mipmap real) {
+        private final java.lang.Object real;
+
+        private mipmap(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.mipmap wrap(android.R.mipmap real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.mipmap(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.mipmap(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.mipmap getReal() {
+            return (android.R.mipmap) real;
         }
 
         public android.R.mipmap unwrap() {
-            return real;
+            return getReal();
         }
 
         public mipmap() {
-            this(new android.R.mipmap());
+            this(new android.R.mipmap(), (__DcgwBridgeToken) null);
         }
 
         public static final int sym_def_app_icon = android.R.mipmap.sym_def_app_icon;
 
     }
     public static final class plurals {
-        private final android.R.plurals real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public plurals(android.R.plurals real) {
+        private final java.lang.Object real;
+
+        private plurals(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.plurals wrap(android.R.plurals real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.plurals(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.plurals(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.plurals getReal() {
+            return (android.R.plurals) real;
         }
 
         public android.R.plurals unwrap() {
-            return real;
+            return getReal();
         }
 
         public plurals() {
-            this(new android.R.plurals());
+            this(new android.R.plurals(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class raw {
-        private final android.R.raw real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public raw(android.R.raw real) {
+        private final java.lang.Object real;
+
+        private raw(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.raw wrap(android.R.raw real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.raw(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.raw(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.raw getReal() {
+            return (android.R.raw) real;
         }
 
         public android.R.raw unwrap() {
-            return real;
+            return getReal();
         }
 
         public raw() {
-            this(new android.R.raw());
+            this(new android.R.raw(), (__DcgwBridgeToken) null);
         }
 
     }
     public static final class string {
-        private final android.R.string real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public string(android.R.string real) {
+        private final java.lang.Object real;
+
+        private string(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.string wrap(android.R.string real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.string(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.string(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.string getReal() {
+            return (android.R.string) real;
         }
 
         public android.R.string unwrap() {
-            return real;
+            return getReal();
         }
 
         public string() {
-            this(new android.R.string());
+            this(new android.R.string(), (__DcgwBridgeToken) null);
         }
 
         public static final int VideoView_error_button = android.R.string.VideoView_error_button;
@@ -2515,22 +2648,29 @@ public final class R {
 
     }
     public static final class style {
-        private final android.R.style real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public style(android.R.style real) {
+        private final java.lang.Object real;
+
+        private style(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.style wrap(android.R.style real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.style(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.style(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.style getReal() {
+            return (android.R.style) real;
         }
 
         public android.R.style unwrap() {
-            return real;
+            return getReal();
         }
 
         public style() {
-            this(new android.R.style());
+            this(new android.R.style(), (__DcgwBridgeToken) null);
         }
 
         public static final int Animation = android.R.style.Animation;
@@ -3273,22 +3413,29 @@ public final class R {
 
     }
     public static final class transition {
-        private final android.R.transition real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public transition(android.R.transition real) {
+        private final java.lang.Object real;
+
+        private transition(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.transition wrap(android.R.transition real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.transition(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.transition(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.transition getReal() {
+            return (android.R.transition) real;
         }
 
         public android.R.transition unwrap() {
-            return real;
+            return getReal();
         }
 
         public transition() {
-            this(new android.R.transition());
+            this(new android.R.transition(), (__DcgwBridgeToken) null);
         }
 
         public static final int explode = android.R.transition.explode;
@@ -3302,22 +3449,29 @@ public final class R {
 
     }
     public static final class xml {
-        private final android.R.xml real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public xml(android.R.xml real) {
+        private final java.lang.Object real;
+
+        private xml(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.R.xml wrap(android.R.xml real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.R.xml(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.R.xml(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.R.xml getReal() {
+            return (android.R.xml) real;
         }
 
         public android.R.xml unwrap() {
-            return real;
+            return getReal();
         }
 
         public xml() {
-            this(new android.R.xml());
+            this(new android.R.xml(), (__DcgwBridgeToken) null);
         }
 
     }

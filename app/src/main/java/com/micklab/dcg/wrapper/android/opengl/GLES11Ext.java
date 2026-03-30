@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES11Ext {
-    private final android.opengl.GLES11Ext real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES11Ext(android.opengl.GLES11Ext real) {
+    private final java.lang.Object real;
+
+    private GLES11Ext(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES11Ext wrap(android.opengl.GLES11Ext real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES11Ext(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES11Ext(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES11Ext getReal() {
+        return (android.opengl.GLES11Ext) real;
     }
 
     public android.opengl.GLES11Ext unwrap() {
-        return real;
+        return getReal();
     }
 
     public GLES11Ext() {
-        this(new android.opengl.GLES11Ext());
+        this(new android.opengl.GLES11Ext(), (__DcgwBridgeToken) null);
     }
 
     public static void glAlphaFuncxOES(int arg0, int arg1) {

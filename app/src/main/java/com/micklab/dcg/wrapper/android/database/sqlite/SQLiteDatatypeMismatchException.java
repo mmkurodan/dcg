@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteDatatypeMismatchException {
-    private final android.database.sqlite.SQLiteDatatypeMismatchException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteDatatypeMismatchException(android.database.sqlite.SQLiteDatatypeMismatchException real) {
+    private final java.lang.Object real;
+
+    private SQLiteDatatypeMismatchException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatatypeMismatchException wrap(android.database.sqlite.SQLiteDatatypeMismatchException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatatypeMismatchException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatatypeMismatchException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteDatatypeMismatchException getReal() {
+        return (android.database.sqlite.SQLiteDatatypeMismatchException) real;
     }
 
     public android.database.sqlite.SQLiteDatatypeMismatchException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteDatatypeMismatchException() {

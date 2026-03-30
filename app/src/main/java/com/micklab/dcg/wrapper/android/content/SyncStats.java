@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class SyncStats {
-    private final android.content.SyncStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SyncStats(android.content.SyncStats real) {
+    private final java.lang.Object real;
+
+    private SyncStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.SyncStats wrap(android.content.SyncStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.SyncStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.SyncStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.SyncStats getReal() {
+        return (android.content.SyncStats) real;
     }
 
     public android.content.SyncStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public SyncStats() {
-        this(new android.content.SyncStats());
+        this(new android.content.SyncStats(), (__DcgwBridgeToken) null);
     }
 
     public SyncStats(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.content.SyncStats(arg0 == null ? null : arg0.unwrap()));
+        this(new android.content.SyncStats(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void clear() {
-        real.clear();
+        ((android.content.SyncStats) real).clear();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.content.SyncStats) real).describeContents();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.content.SyncStats) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.SyncStats) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

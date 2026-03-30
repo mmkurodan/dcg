@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.content.res;
 
 public final class XmlResourceParser {
-    private final android.content.res.XmlResourceParser real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public XmlResourceParser(android.content.res.XmlResourceParser real) {
+    private final java.lang.Object real;
+
+    private XmlResourceParser(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.res.XmlResourceParser wrap(android.content.res.XmlResourceParser real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.XmlResourceParser(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.XmlResourceParser(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.res.XmlResourceParser getReal() {
+        return (android.content.res.XmlResourceParser) real;
     }
 
     public android.content.res.XmlResourceParser unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.content.res.XmlResourceParser) real).close();
     }
 
     public java.lang.String getAttributeNamespace(int arg0) {
-        return real.getAttributeNamespace(arg0);
+        return ((android.content.res.XmlResourceParser) real).getAttributeNamespace(arg0);
     }
 
 }

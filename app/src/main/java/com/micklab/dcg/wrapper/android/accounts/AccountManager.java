@@ -2,110 +2,117 @@
 package com.micklab.dcg.wrapper.android.accounts;
 
 public final class AccountManager {
-    private final android.accounts.AccountManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccountManager(android.accounts.AccountManager real) {
+    private final java.lang.Object real;
+
+    private AccountManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.AccountManager wrap(android.accounts.AccountManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accounts.AccountManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accounts.AccountManager getReal() {
+        return (android.accounts.AccountManager) real;
     }
 
     public android.accounts.AccountManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean addAccountExplicitly(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        return real.addAccountExplicitly(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.accounts.AccountManager) real).addAccountExplicitly(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void addOnAccountsUpdatedListener(com.micklab.dcg.wrapper.android.accounts.OnAccountsUpdateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1, boolean arg2) {
-        real.addOnAccountsUpdatedListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.accounts.AccountManager) real).addOnAccountsUpdatedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void addOnAccountsUpdatedListener(com.micklab.dcg.wrapper.android.accounts.OnAccountsUpdateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1, boolean arg2, java.lang.String[] arg3) {
-        real.addOnAccountsUpdatedListener(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        ((android.accounts.AccountManager) real).addOnAccountsUpdatedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public java.lang.String blockingGetAuthToken(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, boolean arg2) throws android.accounts.AuthenticatorException, java.io.IOException, android.accounts.OperationCanceledException {
-        return real.blockingGetAuthToken(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.accounts.AccountManager) real).blockingGetAuthToken(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void clearPassword(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
-        real.clearPassword(arg0 == null ? null : arg0.unwrap());
+        ((android.accounts.AccountManager) real).clearPassword(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.accounts.AccountManager get(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.accounts.AccountManager.wrap(android.accounts.AccountManager.get(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.accounts.AccountManager.wrap(android.accounts.AccountManager.get(arg0 == null ? null : arg0.getReal()));
     }
 
     public int getAccountVisibility(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1) {
-        return real.getAccountVisibility(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.accounts.AccountManager) real).getAccountVisibility(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public android.accounts.Account[] getAccounts() {
-        return real.getAccounts();
+        return ((android.accounts.AccountManager) real).getAccounts();
     }
 
     public android.accounts.Account[] getAccountsByType(java.lang.String arg0) {
-        return real.getAccountsByType(arg0);
+        return ((android.accounts.AccountManager) real).getAccountsByType(arg0);
     }
 
     public android.accounts.Account[] getAccountsByTypeForPackage(java.lang.String arg0, java.lang.String arg1) {
-        return real.getAccountsByTypeForPackage(arg0, arg1);
+        return ((android.accounts.AccountManager) real).getAccountsByTypeForPackage(arg0, arg1);
     }
 
     public android.accounts.AuthenticatorDescription[] getAuthenticatorTypes() {
-        return real.getAuthenticatorTypes();
+        return ((android.accounts.AccountManager) real).getAuthenticatorTypes();
     }
 
     public java.lang.String getPassword(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
-        return real.getPassword(arg0 == null ? null : arg0.unwrap());
+        return ((android.accounts.AccountManager) real).getPassword(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getPreviousName(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
-        return real.getPreviousName(arg0 == null ? null : arg0.unwrap());
+        return ((android.accounts.AccountManager) real).getPreviousName(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getUserData(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1) {
-        return real.getUserData(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.accounts.AccountManager) real).getUserData(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void invalidateAuthToken(java.lang.String arg0, java.lang.String arg1) {
-        real.invalidateAuthToken(arg0, arg1);
+        ((android.accounts.AccountManager) real).invalidateAuthToken(arg0, arg1);
     }
 
     public boolean notifyAccountAuthenticated(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
-        return real.notifyAccountAuthenticated(arg0 == null ? null : arg0.unwrap());
+        return ((android.accounts.AccountManager) real).notifyAccountAuthenticated(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String peekAuthToken(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1) {
-        return real.peekAuthToken(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.accounts.AccountManager) real).peekAuthToken(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean removeAccountExplicitly(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
-        return real.removeAccountExplicitly(arg0 == null ? null : arg0.unwrap());
+        return ((android.accounts.AccountManager) real).removeAccountExplicitly(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeOnAccountsUpdatedListener(com.micklab.dcg.wrapper.android.accounts.OnAccountsUpdateListener arg0) {
-        real.removeOnAccountsUpdatedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.accounts.AccountManager) real).removeOnAccountsUpdatedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean setAccountVisibility(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, int arg2) {
-        return real.setAccountVisibility(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.accounts.AccountManager) real).setAccountVisibility(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setAuthToken(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.setAuthToken(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.accounts.AccountManager) real).setAuthToken(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void setPassword(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1) {
-        real.setPassword(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.accounts.AccountManager) real).setPassword(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setUserData(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.setUserData(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.accounts.AccountManager) real).setUserData(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static final java.lang.String ACTION_ACCOUNT_REMOVED = android.accounts.AccountManager.ACTION_ACCOUNT_REMOVED;

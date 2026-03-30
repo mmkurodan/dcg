@@ -2,74 +2,81 @@
 package com.micklab.dcg.wrapper.android.media.metrics;
 
 public final class EditingEndedEvent {
-    private final android.media.metrics.EditingEndedEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EditingEndedEvent(android.media.metrics.EditingEndedEvent real) {
+    private final java.lang.Object real;
+
+    private EditingEndedEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent wrap(android.media.metrics.EditingEndedEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.metrics.EditingEndedEvent getReal() {
+        return (android.media.metrics.EditingEndedEvent) real;
     }
 
     public android.media.metrics.EditingEndedEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.metrics.EditingEndedEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.metrics.EditingEndedEvent) real).equals(arg0);
     }
 
     public int getErrorCode() {
-        return real.getErrorCode();
+        return ((android.media.metrics.EditingEndedEvent) real).getErrorCode();
     }
 
     public java.lang.String getExporterName() {
-        return real.getExporterName();
+        return ((android.media.metrics.EditingEndedEvent) real).getExporterName();
     }
 
     public float getFinalProgressPercent() {
-        return real.getFinalProgressPercent();
+        return ((android.media.metrics.EditingEndedEvent) real).getFinalProgressPercent();
     }
 
     public int getFinalState() {
-        return real.getFinalState();
+        return ((android.media.metrics.EditingEndedEvent) real).getFinalState();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getMetricsBundle() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getMetricsBundle());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.media.metrics.EditingEndedEvent) real).getMetricsBundle());
     }
 
     public java.lang.String getMuxerName() {
-        return real.getMuxerName();
+        return ((android.media.metrics.EditingEndedEvent) real).getMuxerName();
     }
 
     public long getOperationTypes() {
-        return real.getOperationTypes();
+        return ((android.media.metrics.EditingEndedEvent) real).getOperationTypes();
     }
 
     public com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo getOutputMediaItemInfo() {
-        return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.wrap(real.getOutputMediaItemInfo());
+        return com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo.wrap(((android.media.metrics.EditingEndedEvent) real).getOutputMediaItemInfo());
     }
 
     public long getTimeSinceCreatedMillis() {
-        return real.getTimeSinceCreatedMillis();
+        return ((android.media.metrics.EditingEndedEvent) real).getTimeSinceCreatedMillis();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.metrics.EditingEndedEvent) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.metrics.EditingEndedEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.metrics.EditingEndedEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ERROR_CODE_AUDIO_PROCESSING_FAILED = android.media.metrics.EditingEndedEvent.ERROR_CODE_AUDIO_PROCESSING_FAILED;
@@ -103,62 +110,69 @@ public final class EditingEndedEvent {
     public static final int TIME_SINCE_CREATED_UNKNOWN = android.media.metrics.EditingEndedEvent.TIME_SINCE_CREATED_UNKNOWN;
 
     public static final class Builder {
-        private final android.media.metrics.EditingEndedEvent.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.metrics.EditingEndedEvent.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder wrap(android.media.metrics.EditingEndedEvent.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.metrics.EditingEndedEvent.Builder getReal() {
+            return (android.media.metrics.EditingEndedEvent.Builder) real;
         }
 
         public android.media.metrics.EditingEndedEvent.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {
-            this(new android.media.metrics.EditingEndedEvent.Builder(arg0));
+            this(new android.media.metrics.EditingEndedEvent.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder addInputMediaItemInfo(com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.addInputMediaItemInfo(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).addInputMediaItemInfo(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder addOperationType(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.addOperationType(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).addOperationType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent build() {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setErrorCode(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setErrorCode(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setErrorCode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setExporterName(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setExporterName(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setExporterName(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setFinalProgressPercent(float arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setFinalProgressPercent(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setFinalProgressPercent(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setMetricsBundle(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setMetricsBundle(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setMetricsBundle(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setMuxerName(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setMuxerName(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setMuxerName(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setOutputMediaItemInfo(com.micklab.dcg.wrapper.android.media.metrics.MediaItemInfo arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setOutputMediaItemInfo(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setOutputMediaItemInfo(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder setTimeSinceCreatedMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(real.setTimeSinceCreatedMillis(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.EditingEndedEvent.Builder.wrap(((android.media.metrics.EditingEndedEvent.Builder) real).setTimeSinceCreatedMillis(arg0));
         }
 
     }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class CrossProcessCursorWrapper {
-    private final android.database.CrossProcessCursorWrapper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CrossProcessCursorWrapper(android.database.CrossProcessCursorWrapper real) {
+    private final java.lang.Object real;
+
+    private CrossProcessCursorWrapper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.CrossProcessCursorWrapper wrap(android.database.CrossProcessCursorWrapper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CrossProcessCursorWrapper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.CrossProcessCursorWrapper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.CrossProcessCursorWrapper getReal() {
+        return (android.database.CrossProcessCursorWrapper) real;
     }
 
     public android.database.CrossProcessCursorWrapper unwrap() {
-        return real;
+        return getReal();
     }
 
     public CrossProcessCursorWrapper(com.micklab.dcg.wrapper.android.database.Cursor arg0) {

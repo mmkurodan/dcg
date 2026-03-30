@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class NumberRangeFormatter {
-    private final android.icu.number.NumberRangeFormatter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NumberRangeFormatter(android.icu.number.NumberRangeFormatter real) {
+    private final java.lang.Object real;
+
+    private NumberRangeFormatter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter wrap(android.icu.number.NumberRangeFormatter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.NumberRangeFormatter getReal() {
+        return (android.icu.number.NumberRangeFormatter) real;
     }
 
     public android.icu.number.NumberRangeFormatter unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberRangeFormatter with() {
@@ -21,7 +28,7 @@ public final class NumberRangeFormatter {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.withLocale(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter withLocale(java.util.Locale arg0) {
@@ -29,18 +36,25 @@ public final class NumberRangeFormatter {
     }
 
     public static final class RangeCollapse {
-        private final android.icu.number.NumberRangeFormatter.RangeCollapse real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RangeCollapse(android.icu.number.NumberRangeFormatter.RangeCollapse real) {
+        private final java.lang.Object real;
+
+        private RangeCollapse(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeCollapse wrap(android.icu.number.NumberRangeFormatter.RangeCollapse real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeCollapse(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeCollapse(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberRangeFormatter.RangeCollapse getReal() {
+            return (android.icu.number.NumberRangeFormatter.RangeCollapse) real;
         }
 
         public android.icu.number.NumberRangeFormatter.RangeCollapse unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeCollapse valueOf(java.lang.String arg0) {
@@ -58,18 +72,25 @@ public final class NumberRangeFormatter {
 
     }
     public static final class RangeIdentityFallback {
-        private final android.icu.number.NumberRangeFormatter.RangeIdentityFallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RangeIdentityFallback(android.icu.number.NumberRangeFormatter.RangeIdentityFallback real) {
+        private final java.lang.Object real;
+
+        private RangeIdentityFallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityFallback wrap(android.icu.number.NumberRangeFormatter.RangeIdentityFallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityFallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityFallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberRangeFormatter.RangeIdentityFallback getReal() {
+            return (android.icu.number.NumberRangeFormatter.RangeIdentityFallback) real;
         }
 
         public android.icu.number.NumberRangeFormatter.RangeIdentityFallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityFallback valueOf(java.lang.String arg0) {
@@ -87,18 +108,25 @@ public final class NumberRangeFormatter {
 
     }
     public static final class RangeIdentityResult {
-        private final android.icu.number.NumberRangeFormatter.RangeIdentityResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RangeIdentityResult(android.icu.number.NumberRangeFormatter.RangeIdentityResult real) {
+        private final java.lang.Object real;
+
+        private RangeIdentityResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityResult wrap(android.icu.number.NumberRangeFormatter.RangeIdentityResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.number.NumberRangeFormatter.RangeIdentityResult getReal() {
+            return (android.icu.number.NumberRangeFormatter.RangeIdentityResult) real;
         }
 
         public android.icu.number.NumberRangeFormatter.RangeIdentityResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.number.NumberRangeFormatter.RangeIdentityResult valueOf(java.lang.String arg0) {

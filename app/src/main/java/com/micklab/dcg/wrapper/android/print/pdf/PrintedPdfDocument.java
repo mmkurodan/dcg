@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.print.pdf;
 
 public final class PrintedPdfDocument {
-    private final android.print.pdf.PrintedPdfDocument real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PrintedPdfDocument(android.print.pdf.PrintedPdfDocument real) {
+    private final java.lang.Object real;
+
+    private PrintedPdfDocument(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.print.pdf.PrintedPdfDocument wrap(android.print.pdf.PrintedPdfDocument real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.print.pdf.PrintedPdfDocument(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.print.pdf.PrintedPdfDocument(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.print.pdf.PrintedPdfDocument getReal() {
+        return (android.print.pdf.PrintedPdfDocument) real;
     }
 
     public android.print.pdf.PrintedPdfDocument unwrap() {
-        return real;
+        return getReal();
     }
 
     public PrintedPdfDocument(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.print.PrintAttributes arg1) {
-        this(new android.print.pdf.PrintedPdfDocument(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.print.pdf.PrintedPdfDocument(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Rect getPageContentRect() {
-        return com.micklab.dcg.wrapper.android.graphics.Rect.wrap(real.getPageContentRect());
+        return com.micklab.dcg.wrapper.android.graphics.Rect.wrap(((android.print.pdf.PrintedPdfDocument) real).getPageContentRect());
     }
 
     public int getPageHeight() {
-        return real.getPageHeight();
+        return ((android.print.pdf.PrintedPdfDocument) real).getPageHeight();
     }
 
     public int getPageWidth() {
-        return real.getPageWidth();
+        return ((android.print.pdf.PrintedPdfDocument) real).getPageWidth();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.pdf.PdfDocument.Page startPage(int arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.pdf.PdfDocument.Page.wrap(real.startPage(arg0));
+        return com.micklab.dcg.wrapper.android.graphics.pdf.PdfDocument.Page.wrap(((android.print.pdf.PrintedPdfDocument) real).startPage(arg0));
     }
 
 }

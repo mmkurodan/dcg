@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class Scale {
-    private final android.icu.number.Scale real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Scale(android.icu.number.Scale real) {
+    private final java.lang.Object real;
+
+    private Scale(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.Scale wrap(android.icu.number.Scale real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Scale(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Scale(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.Scale getReal() {
+        return (android.icu.number.Scale) real;
     }
 
     public android.icu.number.Scale unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.Scale byBigDecimal(java.math.BigDecimal arg0) {

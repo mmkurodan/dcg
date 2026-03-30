@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class SensorDirectChannel {
-    private final android.hardware.SensorDirectChannel real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SensorDirectChannel(android.hardware.SensorDirectChannel real) {
+    private final java.lang.Object real;
+
+    private SensorDirectChannel(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel wrap(android.hardware.SensorDirectChannel real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.SensorDirectChannel(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.SensorDirectChannel getReal() {
+        return (android.hardware.SensorDirectChannel) real;
     }
 
     public android.hardware.SensorDirectChannel unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {
-        real.close();
+        ((android.hardware.SensorDirectChannel) real).close();
     }
 
     public int configure(com.micklab.dcg.wrapper.android.hardware.Sensor arg0, int arg1) {
-        return real.configure(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.hardware.SensorDirectChannel) real).configure(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean isOpen() {
-        return real.isOpen();
+        return ((android.hardware.SensorDirectChannel) real).isOpen();
     }
 
     public static final int RATE_FAST = android.hardware.SensorDirectChannel.RATE_FAST;

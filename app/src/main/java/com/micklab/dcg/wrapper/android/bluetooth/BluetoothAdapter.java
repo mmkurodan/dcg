@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothAdapter {
-    private final android.bluetooth.BluetoothAdapter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothAdapter(android.bluetooth.BluetoothAdapter real) {
+    private final java.lang.Object real;
+
+    private BluetoothAdapter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter wrap(android.bluetooth.BluetoothAdapter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothAdapter getReal() {
+        return (android.bluetooth.BluetoothAdapter) real;
     }
 
     public android.bluetooth.BluetoothAdapter unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean cancelDiscovery() {
-        return real.cancelDiscovery();
+        return ((android.bluetooth.BluetoothAdapter) real).cancelDiscovery();
     }
 
     public static boolean checkBluetoothAddress(java.lang.String arg0) {
@@ -29,23 +36,23 @@ public final class BluetoothAdapter {
     }
 
     public boolean disable() {
-        return real.disable();
+        return ((android.bluetooth.BluetoothAdapter) real).disable();
     }
 
     public boolean enable() {
-        return real.enable();
+        return ((android.bluetooth.BluetoothAdapter) real).enable();
     }
 
     public java.lang.String getAddress() {
-        return real.getAddress();
+        return ((android.bluetooth.BluetoothAdapter) real).getAddress();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeAdvertiser getBluetoothLeAdvertiser() {
-        return com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeAdvertiser.wrap(real.getBluetoothLeAdvertiser());
+        return com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeAdvertiser.wrap(((android.bluetooth.BluetoothAdapter) real).getBluetoothLeAdvertiser());
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeScanner getBluetoothLeScanner() {
-        return com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeScanner.wrap(real.getBluetoothLeScanner());
+        return com.micklab.dcg.wrapper.android.bluetooth.le.BluetoothLeScanner.wrap(((android.bluetooth.BluetoothAdapter) real).getBluetoothLeScanner());
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter getDefaultAdapter() {
@@ -53,19 +60,19 @@ public final class BluetoothAdapter {
     }
 
     public java.time.Duration getDiscoverableTimeout() {
-        return real.getDiscoverableTimeout();
+        return ((android.bluetooth.BluetoothAdapter) real).getDiscoverableTimeout();
     }
 
     public int getLeMaximumAdvertisingDataLength() {
-        return real.getLeMaximumAdvertisingDataLength();
+        return ((android.bluetooth.BluetoothAdapter) real).getLeMaximumAdvertisingDataLength();
     }
 
     public int getMaxConnectedAudioDevices() {
-        return real.getMaxConnectedAudioDevices();
+        return ((android.bluetooth.BluetoothAdapter) real).getMaxConnectedAudioDevices();
     }
 
     public java.lang.String getName() {
-        return real.getName();
+        return ((android.bluetooth.BluetoothAdapter) real).getName();
     }
 
     public int getProfileConnectionState(int arg0) {
@@ -77,107 +84,107 @@ public final class BluetoothAdapter {
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getRemoteDevice(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothAdapter) real).getRemoteDevice(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(byte[] arg0) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getRemoteDevice(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothAdapter) real).getRemoteDevice(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteLeDevice(java.lang.String arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getRemoteLeDevice(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothAdapter) real).getRemoteLeDevice(arg0, arg1));
     }
 
     public int getScanMode() {
-        return real.getScanMode();
+        return ((android.bluetooth.BluetoothAdapter) real).getScanMode();
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.bluetooth.BluetoothAdapter) real).getState();
     }
 
     public boolean isDiscovering() {
-        return real.isDiscovering();
+        return ((android.bluetooth.BluetoothAdapter) real).isDiscovering();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.bluetooth.BluetoothAdapter) real).isEnabled();
     }
 
     public boolean isLe2MPhySupported() {
-        return real.isLe2MPhySupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLe2MPhySupported();
     }
 
     public int isLeAudioBroadcastAssistantSupported() {
-        return real.isLeAudioBroadcastAssistantSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLeAudioBroadcastAssistantSupported();
     }
 
     public int isLeAudioBroadcastSourceSupported() {
-        return real.isLeAudioBroadcastSourceSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLeAudioBroadcastSourceSupported();
     }
 
     public int isLeAudioSupported() {
-        return real.isLeAudioSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLeAudioSupported();
     }
 
     public boolean isLeCodedPhySupported() {
-        return real.isLeCodedPhySupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLeCodedPhySupported();
     }
 
     public boolean isLeExtendedAdvertisingSupported() {
-        return real.isLeExtendedAdvertisingSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLeExtendedAdvertisingSupported();
     }
 
     public boolean isLePeriodicAdvertisingSupported() {
-        return real.isLePeriodicAdvertisingSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isLePeriodicAdvertisingSupported();
     }
 
     public boolean isMultipleAdvertisementSupported() {
-        return real.isMultipleAdvertisementSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isMultipleAdvertisementSupported();
     }
 
     public boolean isOffloadedFilteringSupported() {
-        return real.isOffloadedFilteringSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isOffloadedFilteringSupported();
     }
 
     public boolean isOffloadedScanBatchingSupported() {
-        return real.isOffloadedScanBatchingSupported();
+        return ((android.bluetooth.BluetoothAdapter) real).isOffloadedScanBatchingSupported();
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingInsecureL2capChannel() throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(real.listenUsingInsecureL2capChannel());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(((android.bluetooth.BluetoothAdapter) real).listenUsingInsecureL2capChannel());
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(java.lang.String arg0, java.util.UUID arg1) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(real.listenUsingInsecureRfcommWithServiceRecord(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(((android.bluetooth.BluetoothAdapter) real).listenUsingInsecureRfcommWithServiceRecord(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingL2capChannel() throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(real.listenUsingL2capChannel());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(((android.bluetooth.BluetoothAdapter) real).listenUsingL2capChannel());
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingRfcommWithServiceRecord(java.lang.String arg0, java.util.UUID arg1) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(real.listenUsingRfcommWithServiceRecord(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(((android.bluetooth.BluetoothAdapter) real).listenUsingRfcommWithServiceRecord(arg0, arg1));
     }
 
     public boolean setName(java.lang.String arg0) {
-        return real.setName(arg0);
+        return ((android.bluetooth.BluetoothAdapter) real).setName(arg0);
     }
 
     public boolean startDiscovery() {
-        return real.startDiscovery();
+        return ((android.bluetooth.BluetoothAdapter) real).startDiscovery();
     }
 
     public boolean startLeScan(com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback arg0) {
-        return real.startLeScan(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothAdapter) real).startLeScan(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean startLeScan(java.util.UUID[] arg0, com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback arg1) {
-        return real.startLeScan(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.bluetooth.BluetoothAdapter) real).startLeScan(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void stopLeScan(com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback arg0) {
-        real.stopLeScan(arg0 == null ? null : arg0.unwrap());
+        ((android.bluetooth.BluetoothAdapter) real).stopLeScan(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_CONNECTION_STATE_CHANGED = android.bluetooth.BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED;
@@ -210,22 +217,29 @@ public final class BluetoothAdapter {
     public static final int STATE_TURNING_ON = android.bluetooth.BluetoothAdapter.STATE_TURNING_ON;
 
     public static final class LeScanCallback {
-        private final android.bluetooth.BluetoothAdapter.LeScanCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LeScanCallback(android.bluetooth.BluetoothAdapter.LeScanCallback real) {
+        private final java.lang.Object real;
+
+        private LeScanCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback wrap(android.bluetooth.BluetoothAdapter.LeScanCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothAdapter.LeScanCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothAdapter.LeScanCallback getReal() {
+            return (android.bluetooth.BluetoothAdapter.LeScanCallback) real;
         }
 
         public android.bluetooth.BluetoothAdapter.LeScanCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onLeScan(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, int arg1, byte[] arg2) {
-            real.onLeScan(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            ((android.bluetooth.BluetoothAdapter.LeScanCallback) real).onLeScan(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
     }

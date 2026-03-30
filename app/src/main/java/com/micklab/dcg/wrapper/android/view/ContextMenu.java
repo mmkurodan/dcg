@@ -2,57 +2,71 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class ContextMenu {
-    private final android.view.ContextMenu real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ContextMenu(android.view.ContextMenu real) {
+    private final java.lang.Object real;
+
+    private ContextMenu(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.ContextMenu wrap(android.view.ContextMenu real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContextMenu(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContextMenu(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.ContextMenu getReal() {
+        return (android.view.ContextMenu) real;
     }
 
     public android.view.ContextMenu unwrap() {
-        return real;
+        return getReal();
     }
 
     public void clearHeader() {
-        real.clearHeader();
+        ((android.view.ContextMenu) real).clearHeader();
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(real.setHeaderIcon(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderIcon(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderIcon(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(real.setHeaderIcon(arg0));
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderIcon(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderTitle(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(real.setHeaderTitle(arg0));
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderTitle(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderTitle(java.lang.CharSequence arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(real.setHeaderTitle(arg0));
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderTitle(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(real.setHeaderView(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderView(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final class ContextMenuInfo {
-        private final android.view.ContextMenu.ContextMenuInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ContextMenuInfo(android.view.ContextMenu.ContextMenuInfo real) {
+        private final java.lang.Object real;
+
+        private ContextMenuInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.ContextMenu.ContextMenuInfo wrap(android.view.ContextMenu.ContextMenuInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContextMenu.ContextMenuInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.ContextMenu.ContextMenuInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.ContextMenu.ContextMenuInfo getReal() {
+            return (android.view.ContextMenu.ContextMenuInfo) real;
         }
 
         public android.view.ContextMenu.ContextMenuInfo unwrap() {
-            return real;
+            return getReal();
         }
 
     }

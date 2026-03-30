@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnConfig {
-    private final android.net.vcn.VcnConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnConfig(android.net.vcn.VcnConfig real) {
+    private final java.lang.Object real;
+
+    private VcnConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnConfig wrap(android.net.vcn.VcnConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnConfig getReal() {
+        return (android.net.vcn.VcnConfig) real;
     }
 
     public android.net.vcn.VcnConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -34,18 +41,25 @@ public final class VcnConfig {
 
 
     public static final class Builder {
-        private final android.net.vcn.VcnConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.vcn.VcnConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.vcn.VcnConfig.Builder wrap(android.net.vcn.VcnConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.vcn.VcnConfig.Builder getReal() {
+            return (android.net.vcn.VcnConfig.Builder) real;
         }
 
         public android.net.vcn.VcnConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.content.Context arg0) {

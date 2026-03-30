@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class InputType {
-    private final android.text.InputType real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InputType(android.text.InputType real) {
+    private final java.lang.Object real;
+
+    private InputType(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.InputType wrap(android.text.InputType real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.InputType(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.InputType(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.InputType getReal() {
+        return (android.text.InputType) real;
     }
 
     public android.text.InputType unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int TYPE_CLASS_DATETIME = android.text.InputType.TYPE_CLASS_DATETIME;

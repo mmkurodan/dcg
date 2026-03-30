@@ -2,82 +2,89 @@
 package com.micklab.dcg.wrapper.android.speech.tts;
 
 public final class TextToSpeech {
-    private final android.speech.tts.TextToSpeech real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextToSpeech(android.speech.tts.TextToSpeech real) {
+    private final java.lang.Object real;
+
+    private TextToSpeech(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech wrap(android.speech.tts.TextToSpeech real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.speech.tts.TextToSpeech getReal() {
+        return (android.speech.tts.TextToSpeech) real;
     }
 
     public android.speech.tts.TextToSpeech unwrap() {
-        return real;
+        return getReal();
     }
 
     public TextToSpeech(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnInitListener arg1) {
-        this(new android.speech.tts.TextToSpeech(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.speech.tts.TextToSpeech(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public TextToSpeech(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnInitListener arg1, java.lang.String arg2) {
-        this(new android.speech.tts.TextToSpeech(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.speech.tts.TextToSpeech(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public int addEarcon(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return real.addEarcon(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int addEarcon(java.lang.String arg0, java.lang.String arg1) {
-        return real.addEarcon(arg0, arg1);
+        return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1);
     }
 
     public int addEarcon(java.lang.String arg0, java.io.File arg1) {
-        return real.addEarcon(arg0, arg1);
+        return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1);
     }
 
     public int addEarcon(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        return real.addEarcon(arg0, arg1, arg2);
+        return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1, arg2);
     }
 
     public int addSpeech(java.lang.CharSequence arg0, java.io.File arg1) {
-        return real.addSpeech(arg0, arg1);
+        return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1);
     }
 
     public int addSpeech(java.lang.String arg0, java.lang.String arg1) {
-        return real.addSpeech(arg0, arg1);
+        return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1);
     }
 
     public int addSpeech(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return real.addSpeech(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int addSpeech(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        return real.addSpeech(arg0, arg1, arg2);
+        return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1, arg2);
     }
 
     public int addSpeech(java.lang.CharSequence arg0, java.lang.String arg1, int arg2) {
-        return real.addSpeech(arg0, arg1, arg2);
+        return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1, arg2);
     }
 
     public boolean areDefaultsEnforced() {
-        return real.areDefaultsEnforced();
+        return ((android.speech.tts.TextToSpeech) real).areDefaultsEnforced();
     }
 
     public java.lang.String getDefaultEngine() {
-        return real.getDefaultEngine();
+        return ((android.speech.tts.TextToSpeech) real).getDefaultEngine();
     }
 
     public java.util.Locale getDefaultLanguage() {
-        return real.getDefaultLanguage();
+        return ((android.speech.tts.TextToSpeech) real).getDefaultLanguage();
     }
 
     public com.micklab.dcg.wrapper.android.speech.tts.Voice getDefaultVoice() {
-        return com.micklab.dcg.wrapper.android.speech.tts.Voice.wrap(real.getDefaultVoice());
+        return com.micklab.dcg.wrapper.android.speech.tts.Voice.wrap(((android.speech.tts.TextToSpeech) real).getDefaultVoice());
     }
 
     public java.util.Locale getLanguage() {
-        return real.getLanguage();
+        return ((android.speech.tts.TextToSpeech) real).getLanguage();
     }
 
     public static int getMaxSpeechInputLength() {
@@ -85,67 +92,67 @@ public final class TextToSpeech {
     }
 
     public com.micklab.dcg.wrapper.android.speech.tts.Voice getVoice() {
-        return com.micklab.dcg.wrapper.android.speech.tts.Voice.wrap(real.getVoice());
+        return com.micklab.dcg.wrapper.android.speech.tts.Voice.wrap(((android.speech.tts.TextToSpeech) real).getVoice());
     }
 
     public int isLanguageAvailable(java.util.Locale arg0) {
-        return real.isLanguageAvailable(arg0);
+        return ((android.speech.tts.TextToSpeech) real).isLanguageAvailable(arg0);
     }
 
     public boolean isSpeaking() {
-        return real.isSpeaking();
+        return ((android.speech.tts.TextToSpeech) real).isSpeaking();
     }
 
     public int playEarcon(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, java.lang.String arg3) {
-        return real.playEarcon(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        return ((android.speech.tts.TextToSpeech) real).playEarcon(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public int playSilentUtterance(long arg0, int arg1, java.lang.String arg2) {
-        return real.playSilentUtterance(arg0, arg1, arg2);
+        return ((android.speech.tts.TextToSpeech) real).playSilentUtterance(arg0, arg1, arg2);
     }
 
     public int setAudioAttributes(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0) {
-        return real.setAudioAttributes(arg0 == null ? null : arg0.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).setAudioAttributes(arg0 == null ? null : arg0.getReal());
     }
 
     public int setEngineByPackageName(java.lang.String arg0) {
-        return real.setEngineByPackageName(arg0);
+        return ((android.speech.tts.TextToSpeech) real).setEngineByPackageName(arg0);
     }
 
     public int setLanguage(java.util.Locale arg0) {
-        return real.setLanguage(arg0);
+        return ((android.speech.tts.TextToSpeech) real).setLanguage(arg0);
     }
 
     public int setOnUtteranceCompletedListener(com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnUtteranceCompletedListener arg0) {
-        return real.setOnUtteranceCompletedListener(arg0 == null ? null : arg0.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).setOnUtteranceCompletedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public int setOnUtteranceProgressListener(com.micklab.dcg.wrapper.android.speech.tts.UtteranceProgressListener arg0) {
-        return real.setOnUtteranceProgressListener(arg0 == null ? null : arg0.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).setOnUtteranceProgressListener(arg0 == null ? null : arg0.getReal());
     }
 
     public int setPitch(float arg0) {
-        return real.setPitch(arg0);
+        return ((android.speech.tts.TextToSpeech) real).setPitch(arg0);
     }
 
     public int setSpeechRate(float arg0) {
-        return real.setSpeechRate(arg0);
+        return ((android.speech.tts.TextToSpeech) real).setSpeechRate(arg0);
     }
 
     public int setVoice(com.micklab.dcg.wrapper.android.speech.tts.Voice arg0) {
-        return real.setVoice(arg0 == null ? null : arg0.unwrap());
+        return ((android.speech.tts.TextToSpeech) real).setVoice(arg0 == null ? null : arg0.getReal());
     }
 
     public void shutdown() {
-        real.shutdown();
+        ((android.speech.tts.TextToSpeech) real).shutdown();
     }
 
     public int speak(java.lang.CharSequence arg0, int arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, java.lang.String arg3) {
-        return real.speak(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3);
+        return ((android.speech.tts.TextToSpeech) real).speak(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public int stop() {
-        return real.stop();
+        return ((android.speech.tts.TextToSpeech) real).stop();
     }
 
     public int synthesizeToFile(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, java.io.File arg2, java.lang.String arg3) {
@@ -174,67 +181,88 @@ public final class TextToSpeech {
     public static final int SUCCESS = android.speech.tts.TextToSpeech.SUCCESS;
 
     public static final class EngineInfo {
-        private final android.speech.tts.TextToSpeech.EngineInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public EngineInfo(android.speech.tts.TextToSpeech.EngineInfo real) {
+        private final java.lang.Object real;
+
+        private EngineInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.EngineInfo wrap(android.speech.tts.TextToSpeech.EngineInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.EngineInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.EngineInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.speech.tts.TextToSpeech.EngineInfo getReal() {
+            return (android.speech.tts.TextToSpeech.EngineInfo) real;
         }
 
         public android.speech.tts.TextToSpeech.EngineInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public EngineInfo() {
-            this(new android.speech.tts.TextToSpeech.EngineInfo());
+            this(new android.speech.tts.TextToSpeech.EngineInfo(), (__DcgwBridgeToken) null);
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.speech.tts.TextToSpeech.EngineInfo) real).toString();
         }
 
 
     }
     public static final class OnInitListener {
-        private final android.speech.tts.TextToSpeech.OnInitListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnInitListener(android.speech.tts.TextToSpeech.OnInitListener real) {
+        private final java.lang.Object real;
+
+        private OnInitListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnInitListener wrap(android.speech.tts.TextToSpeech.OnInitListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnInitListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnInitListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.speech.tts.TextToSpeech.OnInitListener getReal() {
+            return (android.speech.tts.TextToSpeech.OnInitListener) real;
         }
 
         public android.speech.tts.TextToSpeech.OnInitListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onInit(int arg0) {
-            real.onInit(arg0);
+            ((android.speech.tts.TextToSpeech.OnInitListener) real).onInit(arg0);
         }
 
     }
     public static final class OnUtteranceCompletedListener {
-        private final android.speech.tts.TextToSpeech.OnUtteranceCompletedListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnUtteranceCompletedListener(android.speech.tts.TextToSpeech.OnUtteranceCompletedListener real) {
+        private final java.lang.Object real;
+
+        private OnUtteranceCompletedListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnUtteranceCompletedListener wrap(android.speech.tts.TextToSpeech.OnUtteranceCompletedListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnUtteranceCompletedListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.OnUtteranceCompletedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.speech.tts.TextToSpeech.OnUtteranceCompletedListener getReal() {
+            return (android.speech.tts.TextToSpeech.OnUtteranceCompletedListener) real;
         }
 
         public android.speech.tts.TextToSpeech.OnUtteranceCompletedListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onUtteranceCompleted(java.lang.String arg0) {
-            real.onUtteranceCompleted(arg0);
+            ((android.speech.tts.TextToSpeech.OnUtteranceCompletedListener) real).onUtteranceCompleted(arg0);
         }
 
     }

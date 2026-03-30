@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class VibrationEffect {
-    private final android.os.VibrationEffect real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VibrationEffect(android.os.VibrationEffect real) {
+    private final java.lang.Object real;
+
+    private VibrationEffect(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.VibrationEffect wrap(android.os.VibrationEffect real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationEffect(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationEffect(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.VibrationEffect getReal() {
+        return (android.os.VibrationEffect) real;
     }
 
     public android.os.VibrationEffect unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.os.VibrationEffect createOneShot(long arg0, int arg1) {
@@ -42,18 +49,25 @@ public final class VibrationEffect {
 
 
     public static final class Composition {
-        private final android.os.VibrationEffect.Composition real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Composition(android.os.VibrationEffect.Composition real) {
+        private final java.lang.Object real;
+
+        private Composition(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.VibrationEffect.Composition wrap(android.os.VibrationEffect.Composition real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationEffect.Composition(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.VibrationEffect.Composition(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.VibrationEffect.Composition getReal() {
+            return (android.os.VibrationEffect.Composition) real;
         }
 
         public android.os.VibrationEffect.Composition unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.os.VibrationEffect.Composition addPrimitive(int arg0) {

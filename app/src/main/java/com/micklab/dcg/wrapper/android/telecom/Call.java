@@ -2,158 +2,165 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class Call {
-    private final android.telecom.Call real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Call(android.telecom.Call real) {
+    private final java.lang.Object real;
+
+    private Call(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.Call wrap(android.telecom.Call real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.Call getReal() {
+        return (android.telecom.Call) real;
     }
 
     public android.telecom.Call unwrap() {
-        return real;
+        return getReal();
     }
 
     public void answer(int arg0) {
-        real.answer(arg0);
+        ((android.telecom.Call) real).answer(arg0);
     }
 
     public void conference(com.micklab.dcg.wrapper.android.telecom.Call arg0) {
-        real.conference(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Call) real).conference(arg0 == null ? null : arg0.getReal());
     }
 
     public void deflect(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        real.deflect(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Call) real).deflect(arg0 == null ? null : arg0.getReal());
     }
 
     public void disconnect() {
-        real.disconnect();
+        ((android.telecom.Call) real).disconnect();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Call.Details getDetails() {
-        return com.micklab.dcg.wrapper.android.telecom.Call.Details.wrap(real.getDetails());
+        return com.micklab.dcg.wrapper.android.telecom.Call.Details.wrap(((android.telecom.Call) real).getDetails());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Call getGenericConferenceActiveChildCall() {
-        return com.micklab.dcg.wrapper.android.telecom.Call.wrap(real.getGenericConferenceActiveChildCall());
+        return com.micklab.dcg.wrapper.android.telecom.Call.wrap(((android.telecom.Call) real).getGenericConferenceActiveChildCall());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Call getParent() {
-        return com.micklab.dcg.wrapper.android.telecom.Call.wrap(real.getParent());
+        return com.micklab.dcg.wrapper.android.telecom.Call.wrap(((android.telecom.Call) real).getParent());
     }
 
     public java.lang.String getRemainingPostDialSequence() {
-        return real.getRemainingPostDialSequence();
+        return ((android.telecom.Call) real).getRemainingPostDialSequence();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.Call.RttCall getRttCall() {
-        return com.micklab.dcg.wrapper.android.telecom.Call.RttCall.wrap(real.getRttCall());
+        return com.micklab.dcg.wrapper.android.telecom.Call.RttCall.wrap(((android.telecom.Call) real).getRttCall());
     }
 
     public int getState() {
-        return real.getState();
+        return ((android.telecom.Call) real).getState();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.InCallService.VideoCall getVideoCall() {
-        return com.micklab.dcg.wrapper.android.telecom.InCallService.VideoCall.wrap(real.getVideoCall());
+        return com.micklab.dcg.wrapper.android.telecom.InCallService.VideoCall.wrap(((android.telecom.Call) real).getVideoCall());
     }
 
     public void handoverTo(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, int arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.handoverTo(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.telecom.Call) real).handoverTo(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void hold() {
-        real.hold();
+        ((android.telecom.Call) real).hold();
     }
 
     public boolean isRttActive() {
-        return real.isRttActive();
+        return ((android.telecom.Call) real).isRttActive();
     }
 
     public void mergeConference() {
-        real.mergeConference();
+        ((android.telecom.Call) real).mergeConference();
     }
 
     public void phoneAccountSelected(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, boolean arg1) {
-        real.phoneAccountSelected(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.telecom.Call) real).phoneAccountSelected(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void playDtmfTone(char arg0) {
-        real.playDtmfTone(arg0);
+        ((android.telecom.Call) real).playDtmfTone(arg0);
     }
 
     public void postDialContinue(boolean arg0) {
-        real.postDialContinue(arg0);
+        ((android.telecom.Call) real).postDialContinue(arg0);
     }
 
     public void pullExternalCall() {
-        real.pullExternalCall();
+        ((android.telecom.Call) real).pullExternalCall();
     }
 
     public void putExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        real.putExtras(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Call) real).putExtras(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerCallback(com.micklab.dcg.wrapper.android.telecom.Call.Callback arg0) {
-        real.registerCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Call) real).registerCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerCallback(com.micklab.dcg.wrapper.android.telecom.Call.Callback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.Call) real).registerCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void reject(int arg0) {
-        real.reject(arg0);
+        ((android.telecom.Call) real).reject(arg0);
     }
 
     public void reject(boolean arg0, java.lang.String arg1) {
-        real.reject(arg0, arg1);
+        ((android.telecom.Call) real).reject(arg0, arg1);
     }
 
     public void removeExtras(java.lang.String... arg0) {
-        real.removeExtras(arg0);
+        ((android.telecom.Call) real).removeExtras(arg0);
     }
 
     public void respondToRttRequest(int arg0, boolean arg1) {
-        real.respondToRttRequest(arg0, arg1);
+        ((android.telecom.Call) real).respondToRttRequest(arg0, arg1);
     }
 
     public void sendCallEvent(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.sendCallEvent(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.Call) real).sendCallEvent(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void sendRttRequest() {
-        real.sendRttRequest();
+        ((android.telecom.Call) real).sendRttRequest();
     }
 
     public void splitFromConference() {
-        real.splitFromConference();
+        ((android.telecom.Call) real).splitFromConference();
     }
 
     public void stopDtmfTone() {
-        real.stopDtmfTone();
+        ((android.telecom.Call) real).stopDtmfTone();
     }
 
     public void stopRtt() {
-        real.stopRtt();
+        ((android.telecom.Call) real).stopRtt();
     }
 
     public void swapConference() {
-        real.swapConference();
+        ((android.telecom.Call) real).swapConference();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.telecom.Call) real).toString();
     }
 
     public void unhold() {
-        real.unhold();
+        ((android.telecom.Call) real).unhold();
     }
 
     public void unregisterCallback(com.micklab.dcg.wrapper.android.telecom.Call.Callback arg0) {
-        real.unregisterCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.Call) real).unregisterCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String AVAILABLE_PHONE_ACCOUNTS = android.telecom.Call.AVAILABLE_PHONE_ACCOUNTS;
@@ -183,70 +190,77 @@ public final class Call {
     public static final int STATE_SIMULATED_RINGING = android.telecom.Call.STATE_SIMULATED_RINGING;
 
     public static final class Callback {
-        private final android.telecom.Call.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.telecom.Call.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Call.Callback wrap(android.telecom.Call.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Call.Callback getReal() {
+            return (android.telecom.Call.Callback) real;
         }
 
         public android.telecom.Call.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCallDestroyed(com.micklab.dcg.wrapper.android.telecom.Call arg0) {
-            real.onCallDestroyed(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Call.Callback) real).onCallDestroyed(arg0 == null ? null : arg0.getReal());
         }
 
         public void onConnectionEvent(com.micklab.dcg.wrapper.android.telecom.Call arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-            real.onConnectionEvent(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+            ((android.telecom.Call.Callback) real).onConnectionEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
         }
 
         public void onDetailsChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, com.micklab.dcg.wrapper.android.telecom.Call.Details arg1) {
-            real.onDetailsChanged(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            ((android.telecom.Call.Callback) real).onDetailsChanged(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onHandoverComplete(com.micklab.dcg.wrapper.android.telecom.Call arg0) {
-            real.onHandoverComplete(arg0 == null ? null : arg0.unwrap());
+            ((android.telecom.Call.Callback) real).onHandoverComplete(arg0 == null ? null : arg0.getReal());
         }
 
         public void onHandoverFailed(com.micklab.dcg.wrapper.android.telecom.Call arg0, int arg1) {
-            real.onHandoverFailed(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onHandoverFailed(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onParentChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, com.micklab.dcg.wrapper.android.telecom.Call arg1) {
-            real.onParentChanged(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            ((android.telecom.Call.Callback) real).onParentChanged(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onPostDialWait(com.micklab.dcg.wrapper.android.telecom.Call arg0, java.lang.String arg1) {
-            real.onPostDialWait(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onPostDialWait(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onRttInitiationFailure(com.micklab.dcg.wrapper.android.telecom.Call arg0, int arg1) {
-            real.onRttInitiationFailure(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onRttInitiationFailure(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onRttModeChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, int arg1) {
-            real.onRttModeChanged(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onRttModeChanged(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onRttRequest(com.micklab.dcg.wrapper.android.telecom.Call arg0, int arg1) {
-            real.onRttRequest(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onRttRequest(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onRttStatusChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, boolean arg1, com.micklab.dcg.wrapper.android.telecom.Call.RttCall arg2) {
-            real.onRttStatusChanged(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+            ((android.telecom.Call.Callback) real).onRttStatusChanged(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
         }
 
         public void onStateChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, int arg1) {
-            real.onStateChanged(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.telecom.Call.Callback) real).onStateChanged(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public void onVideoCallChanged(com.micklab.dcg.wrapper.android.telecom.Call arg0, com.micklab.dcg.wrapper.android.telecom.InCallService.VideoCall arg1) {
-            real.onVideoCallChanged(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            ((android.telecom.Call.Callback) real).onVideoCallChanged(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static final int HANDOVER_FAILURE_DEST_APP_REJECTED = android.telecom.Call.Callback.HANDOVER_FAILURE_DEST_APP_REJECTED;
@@ -257,22 +271,29 @@ public final class Call {
 
     }
     public static final class Details {
-        private final android.telecom.Call.Details real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Details(android.telecom.Call.Details real) {
+        private final java.lang.Object real;
+
+        private Details(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Call.Details wrap(android.telecom.Call.Details real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.Details(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.Details(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Call.Details getReal() {
+            return (android.telecom.Call.Details) real;
         }
 
         public android.telecom.Call.Details unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean can(int arg0) {
-            return real.can(arg0);
+            return ((android.telecom.Call.Details) real).can(arg0);
         }
 
         public static boolean can(int arg0, int arg1) {
@@ -284,95 +305,95 @@ public final class Call {
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.telecom.Call.Details) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getAccountHandle() {
-            return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getAccountHandle());
+            return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.Call.Details) real).getAccountHandle());
         }
 
         public int getCallCapabilities() {
-            return real.getCallCapabilities();
+            return ((android.telecom.Call.Details) real).getCallCapabilities();
         }
 
         public int getCallDirection() {
-            return real.getCallDirection();
+            return ((android.telecom.Call.Details) real).getCallDirection();
         }
 
         public int getCallProperties() {
-            return real.getCallProperties();
+            return ((android.telecom.Call.Details) real).getCallProperties();
         }
 
         public java.lang.String getCallerDisplayName() {
-            return real.getCallerDisplayName();
+            return ((android.telecom.Call.Details) real).getCallerDisplayName();
         }
 
         public int getCallerDisplayNamePresentation() {
-            return real.getCallerDisplayNamePresentation();
+            return ((android.telecom.Call.Details) real).getCallerDisplayNamePresentation();
         }
 
         public int getCallerNumberVerificationStatus() {
-            return real.getCallerNumberVerificationStatus();
+            return ((android.telecom.Call.Details) real).getCallerNumberVerificationStatus();
         }
 
         public long getConnectTimeMillis() {
-            return real.getConnectTimeMillis();
+            return ((android.telecom.Call.Details) real).getConnectTimeMillis();
         }
 
         public java.lang.String getContactDisplayName() {
-            return real.getContactDisplayName();
+            return ((android.telecom.Call.Details) real).getContactDisplayName();
         }
 
         public com.micklab.dcg.wrapper.android.net.Uri getContactPhotoUri() {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getContactPhotoUri());
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.Call.Details) real).getContactPhotoUri());
         }
 
         public long getCreationTimeMillis() {
-            return real.getCreationTimeMillis();
+            return ((android.telecom.Call.Details) real).getCreationTimeMillis();
         }
 
         public com.micklab.dcg.wrapper.android.telecom.DisconnectCause getDisconnectCause() {
-            return com.micklab.dcg.wrapper.android.telecom.DisconnectCause.wrap(real.getDisconnectCause());
+            return com.micklab.dcg.wrapper.android.telecom.DisconnectCause.wrap(((android.telecom.Call.Details) real).getDisconnectCause());
         }
 
         public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.telecom.Call.Details) real).getExtras());
         }
 
         public com.micklab.dcg.wrapper.android.telecom.GatewayInfo getGatewayInfo() {
-            return com.micklab.dcg.wrapper.android.telecom.GatewayInfo.wrap(real.getGatewayInfo());
+            return com.micklab.dcg.wrapper.android.telecom.GatewayInfo.wrap(((android.telecom.Call.Details) real).getGatewayInfo());
         }
 
         public com.micklab.dcg.wrapper.android.net.Uri getHandle() {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getHandle());
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.Call.Details) real).getHandle());
         }
 
         public int getHandlePresentation() {
-            return real.getHandlePresentation();
+            return ((android.telecom.Call.Details) real).getHandlePresentation();
         }
 
         public java.lang.String getId() {
-            return real.getId();
+            return ((android.telecom.Call.Details) real).getId();
         }
 
         public com.micklab.dcg.wrapper.android.os.Bundle getIntentExtras() {
-            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getIntentExtras());
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.telecom.Call.Details) real).getIntentExtras());
         }
 
         public int getState() {
-            return real.getState();
+            return ((android.telecom.Call.Details) real).getState();
         }
 
         public com.micklab.dcg.wrapper.android.telecom.StatusHints getStatusHints() {
-            return com.micklab.dcg.wrapper.android.telecom.StatusHints.wrap(real.getStatusHints());
+            return com.micklab.dcg.wrapper.android.telecom.StatusHints.wrap(((android.telecom.Call.Details) real).getStatusHints());
         }
 
         public int getVideoState() {
-            return real.getVideoState();
+            return ((android.telecom.Call.Details) real).getVideoState();
         }
 
         public boolean hasProperty(int arg0) {
-            return real.hasProperty(arg0);
+            return ((android.telecom.Call.Details) real).hasProperty(arg0);
         }
 
         public static boolean hasProperty(int arg0, int arg1) {
@@ -380,7 +401,7 @@ public final class Call {
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.telecom.Call.Details) real).hashCode();
         }
 
         public static java.lang.String propertiesToString(int arg0) {
@@ -388,7 +409,7 @@ public final class Call {
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.telecom.Call.Details) real).toString();
         }
 
         public static final int CAPABILITY_ADD_PARTICIPANT = android.telecom.Call.Details.CAPABILITY_ADD_PARTICIPANT;
@@ -433,38 +454,45 @@ public final class Call {
 
     }
     public static final class RttCall {
-        private final android.telecom.Call.RttCall real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RttCall(android.telecom.Call.RttCall real) {
+        private final java.lang.Object real;
+
+        private RttCall(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telecom.Call.RttCall wrap(android.telecom.Call.RttCall real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.RttCall(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.Call.RttCall(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telecom.Call.RttCall getReal() {
+            return (android.telecom.Call.RttCall) real;
         }
 
         public android.telecom.Call.RttCall unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getRttAudioMode() {
-            return real.getRttAudioMode();
+            return ((android.telecom.Call.RttCall) real).getRttAudioMode();
         }
 
         public java.lang.String read() {
-            return real.read();
+            return ((android.telecom.Call.RttCall) real).read();
         }
 
         public java.lang.String readImmediately() throws java.io.IOException {
-            return real.readImmediately();
+            return ((android.telecom.Call.RttCall) real).readImmediately();
         }
 
         public void setRttMode(int arg0) {
-            real.setRttMode(arg0);
+            ((android.telecom.Call.RttCall) real).setRttMode(arg0);
         }
 
         public void write(java.lang.String arg0) throws java.io.IOException {
-            real.write(arg0);
+            ((android.telecom.Call.RttCall) real).write(arg0);
         }
 
         public static final int RTT_MODE_FULL = android.telecom.Call.RttCall.RTT_MODE_FULL;

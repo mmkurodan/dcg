@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database.sqlite;
 
 public final class SQLiteOutOfMemoryException {
-    private final android.database.sqlite.SQLiteOutOfMemoryException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SQLiteOutOfMemoryException(android.database.sqlite.SQLiteOutOfMemoryException real) {
+    private final java.lang.Object real;
+
+    private SQLiteOutOfMemoryException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOutOfMemoryException wrap(android.database.sqlite.SQLiteOutOfMemoryException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOutOfMemoryException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.sqlite.SQLiteOutOfMemoryException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.sqlite.SQLiteOutOfMemoryException getReal() {
+        return (android.database.sqlite.SQLiteOutOfMemoryException) real;
     }
 
     public android.database.sqlite.SQLiteOutOfMemoryException unwrap() {
-        return real;
+        return getReal();
     }
 
     public SQLiteOutOfMemoryException() {

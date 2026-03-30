@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class RecommendedStreamConfigurationMap {
-    private final android.hardware.camera2.params.RecommendedStreamConfigurationMap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RecommendedStreamConfigurationMap(android.hardware.camera2.params.RecommendedStreamConfigurationMap real) {
+    private final java.lang.Object real;
+
+    private RecommendedStreamConfigurationMap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.RecommendedStreamConfigurationMap wrap(android.hardware.camera2.params.RecommendedStreamConfigurationMap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.RecommendedStreamConfigurationMap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.RecommendedStreamConfigurationMap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.RecommendedStreamConfigurationMap getReal() {
+        return (android.hardware.camera2.params.RecommendedStreamConfigurationMap) real;
     }
 
     public android.hardware.camera2.params.RecommendedStreamConfigurationMap unwrap() {
-        return real;
+        return getReal();
     }
 
     public long getOutputMinFrameDuration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1) {
-        return real.getOutputMinFrameDuration(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.hardware.camera2.params.RecommendedStreamConfigurationMap) real).getOutputMinFrameDuration(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public long getOutputStallDuration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1) {
-        return real.getOutputStallDuration(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.hardware.camera2.params.RecommendedStreamConfigurationMap) real).getOutputStallDuration(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int getRecommendedUseCase() {
-        return real.getRecommendedUseCase();
+        return ((android.hardware.camera2.params.RecommendedStreamConfigurationMap) real).getRecommendedUseCase();
     }
 
     public boolean isOutputSupportedFor(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-        return real.isOutputSupportedFor(arg0 == null ? null : arg0.unwrap());
+        return ((android.hardware.camera2.params.RecommendedStreamConfigurationMap) real).isOutputSupportedFor(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isOutputSupportedFor(int arg0) {
-        return real.isOutputSupportedFor(arg0);
+        return ((android.hardware.camera2.params.RecommendedStreamConfigurationMap) real).isOutputSupportedFor(arg0);
     }
 
     public static final int USECASE_10BIT_OUTPUT = android.hardware.camera2.params.RecommendedStreamConfigurationMap.USECASE_10BIT_OUTPUT;

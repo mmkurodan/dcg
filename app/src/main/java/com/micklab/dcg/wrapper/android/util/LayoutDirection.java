@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class LayoutDirection {
-    private final android.util.LayoutDirection real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LayoutDirection(android.util.LayoutDirection real) {
+    private final java.lang.Object real;
+
+    private LayoutDirection(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.LayoutDirection wrap(android.util.LayoutDirection real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.LayoutDirection(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.LayoutDirection(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.LayoutDirection getReal() {
+        return (android.util.LayoutDirection) real;
     }
 
     public android.util.LayoutDirection unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final int INHERIT = android.util.LayoutDirection.INHERIT;

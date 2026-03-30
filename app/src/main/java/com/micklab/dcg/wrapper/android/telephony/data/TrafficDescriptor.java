@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.data;
 
 public final class TrafficDescriptor {
-    private final android.telephony.data.TrafficDescriptor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TrafficDescriptor(android.telephony.data.TrafficDescriptor real) {
+    private final java.lang.Object real;
+
+    private TrafficDescriptor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor wrap(android.telephony.data.TrafficDescriptor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.data.TrafficDescriptor getReal() {
+        return (android.telephony.data.TrafficDescriptor) real;
     }
 
     public android.telephony.data.TrafficDescriptor unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -46,18 +53,25 @@ public final class TrafficDescriptor {
 
 
     public static final class Builder {
-        private final android.telephony.data.TrafficDescriptor.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.data.TrafficDescriptor.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor.Builder wrap(android.telephony.data.TrafficDescriptor.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.data.TrafficDescriptor.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.data.TrafficDescriptor.Builder getReal() {
+            return (android.telephony.data.TrafficDescriptor.Builder) real;
         }
 
         public android.telephony.data.TrafficDescriptor.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

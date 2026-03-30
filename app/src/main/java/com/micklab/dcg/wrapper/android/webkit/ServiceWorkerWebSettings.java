@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class ServiceWorkerWebSettings {
-    private final android.webkit.ServiceWorkerWebSettings real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceWorkerWebSettings(android.webkit.ServiceWorkerWebSettings real) {
+    private final java.lang.Object real;
+
+    private ServiceWorkerWebSettings(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.ServiceWorkerWebSettings wrap(android.webkit.ServiceWorkerWebSettings real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ServiceWorkerWebSettings(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ServiceWorkerWebSettings(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.ServiceWorkerWebSettings getReal() {
+        return (android.webkit.ServiceWorkerWebSettings) real;
     }
 
     public android.webkit.ServiceWorkerWebSettings unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean getAllowContentAccess() {
-        return real.getAllowContentAccess();
+        return ((android.webkit.ServiceWorkerWebSettings) real).getAllowContentAccess();
     }
 
     public boolean getAllowFileAccess() {
@@ -29,11 +36,11 @@ public final class ServiceWorkerWebSettings {
     }
 
     public int getCacheMode() {
-        return real.getCacheMode();
+        return ((android.webkit.ServiceWorkerWebSettings) real).getCacheMode();
     }
 
     public void setAllowContentAccess(boolean arg0) {
-        real.setAllowContentAccess(arg0);
+        ((android.webkit.ServiceWorkerWebSettings) real).setAllowContentAccess(arg0);
     }
 
     public void setAllowFileAccess(boolean arg0) {
@@ -45,7 +52,7 @@ public final class ServiceWorkerWebSettings {
     }
 
     public void setCacheMode(int arg0) {
-        real.setCacheMode(arg0);
+        ((android.webkit.ServiceWorkerWebSettings) real).setCacheMode(arg0);
     }
 
 }

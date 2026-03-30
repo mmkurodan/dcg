@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class MediaStore {
-    private final android.provider.MediaStore real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaStore(android.provider.MediaStore real) {
+    private final java.lang.Object real;
+
+    private MediaStore(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.MediaStore wrap(android.provider.MediaStore real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.MediaStore getReal() {
+        return (android.provider.MediaStore) real;
     }
 
     public android.provider.MediaStore unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaStore() {
-        this(new android.provider.MediaStore());
+        this(new android.provider.MediaStore(), (__DcgwBridgeToken) null);
     }
 
     public static boolean canManageMedia(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.provider.MediaStore.canManageMedia(arg0 == null ? null : arg0.unwrap());
+        return android.provider.MediaStore.canManageMedia(arg0 == null ? null : arg0.getReal());
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri getDocumentUri(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getDocumentUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getDocumentUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static long getGeneration(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-        return android.provider.MediaStore.getGeneration(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.provider.MediaStore.getGeneration(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri getMediaScannerUri() {
@@ -37,7 +44,7 @@ public final class MediaStore {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri getMediaUri(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getMediaUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getMediaUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor getOriginalMediaFormatFileDescriptor(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg1) throws java.io.IOException {
@@ -49,47 +56,47 @@ public final class MediaStore {
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri getRedactedUri(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getRedactedUri(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.getRedactedUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static boolean getRequireOriginal(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.MediaStore.getRequireOriginal(arg0 == null ? null : arg0.unwrap());
+        return android.provider.MediaStore.getRequireOriginal(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getVersion(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.provider.MediaStore.getVersion(arg0 == null ? null : arg0.unwrap());
+        return android.provider.MediaStore.getVersion(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.String getVersion(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-        return android.provider.MediaStore.getVersion(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.provider.MediaStore.getVersion(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static java.lang.String getVolumeName(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return android.provider.MediaStore.getVolumeName(arg0 == null ? null : arg0.unwrap());
+        return android.provider.MediaStore.getVolumeName(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isCurrentCloudMediaProviderAuthority(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-        return android.provider.MediaStore.isCurrentCloudMediaProviderAuthority(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.provider.MediaStore.isCurrentCloudMediaProviderAuthority(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static boolean isCurrentSystemGallery(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, int arg1, java.lang.String arg2) {
-        return android.provider.MediaStore.isCurrentSystemGallery(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return android.provider.MediaStore.isCurrentSystemGallery(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static boolean isSupportedCloudMediaProviderAuthority(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1) {
-        return android.provider.MediaStore.isSupportedCloudMediaProviderAuthority(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.provider.MediaStore.isSupportedCloudMediaProviderAuthority(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static void notifyCloudMediaChangedEvent(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2) throws java.lang.SecurityException {
-        android.provider.MediaStore.notifyCloudMediaChangedEvent(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        android.provider.MediaStore.notifyCloudMediaChangedEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri setIncludePending(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.setIncludePending(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.setIncludePending(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri setRequireOriginal(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.setRequireOriginal(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.setRequireOriginal(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final java.lang.String ACCESS_MEDIA_OWNER_PACKAGE_NAME_PERMISSION = android.provider.MediaStore.ACCESS_MEDIA_OWNER_PACKAGE_NAME_PERMISSION;
@@ -154,22 +161,29 @@ public final class MediaStore {
     public static final java.lang.String VOLUME_INTERNAL = android.provider.MediaStore.VOLUME_INTERNAL;
 
     public static final class Audio {
-        private final android.provider.MediaStore.Audio real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Audio(android.provider.MediaStore.Audio real) {
+        private final java.lang.Object real;
+
+        private Audio(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio wrap(android.provider.MediaStore.Audio real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.Audio getReal() {
+            return (android.provider.MediaStore.Audio) real;
         }
 
         public android.provider.MediaStore.Audio unwrap() {
-            return real;
+            return getReal();
         }
 
         public Audio() {
-            this(new android.provider.MediaStore.Audio());
+            this(new android.provider.MediaStore.Audio(), (__DcgwBridgeToken) null);
         }
 
         public static java.lang.String keyFor(java.lang.String arg0) {
@@ -177,18 +191,25 @@ public final class MediaStore {
         }
 
         public static final class AlbumColumns {
-            private final android.provider.MediaStore.Audio.AlbumColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public AlbumColumns(android.provider.MediaStore.Audio.AlbumColumns real) {
+            private final java.lang.Object real;
+
+            private AlbumColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AlbumColumns wrap(android.provider.MediaStore.Audio.AlbumColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AlbumColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AlbumColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.AlbumColumns getReal() {
+                return (android.provider.MediaStore.Audio.AlbumColumns) real;
             }
 
             public android.provider.MediaStore.Audio.AlbumColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String ALBUM = android.provider.MediaStore.Audio.AlbumColumns.ALBUM;
@@ -205,22 +226,29 @@ public final class MediaStore {
 
         }
         public static final class Albums {
-            private final android.provider.MediaStore.Audio.Albums real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Albums(android.provider.MediaStore.Audio.Albums real) {
+            private final java.lang.Object real;
+
+            private Albums(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Albums wrap(android.provider.MediaStore.Audio.Albums real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Albums(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Albums(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Albums getReal() {
+                return (android.provider.MediaStore.Audio.Albums) real;
             }
 
             public android.provider.MediaStore.Audio.Albums unwrap() {
-                return real;
+                return getReal();
             }
 
             public Albums() {
-                this(new android.provider.MediaStore.Audio.Albums());
+                this(new android.provider.MediaStore.Audio.Albums(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -235,18 +263,25 @@ public final class MediaStore {
 
         }
         public static final class ArtistColumns {
-            private final android.provider.MediaStore.Audio.ArtistColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public ArtistColumns(android.provider.MediaStore.Audio.ArtistColumns real) {
+            private final java.lang.Object real;
+
+            private ArtistColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.ArtistColumns wrap(android.provider.MediaStore.Audio.ArtistColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.ArtistColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.ArtistColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.ArtistColumns getReal() {
+                return (android.provider.MediaStore.Audio.ArtistColumns) real;
             }
 
             public android.provider.MediaStore.Audio.ArtistColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String ARTIST = android.provider.MediaStore.Audio.ArtistColumns.ARTIST;
@@ -256,22 +291,29 @@ public final class MediaStore {
 
         }
         public static final class Artists {
-            private final android.provider.MediaStore.Audio.Artists real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Artists(android.provider.MediaStore.Audio.Artists real) {
+            private final java.lang.Object real;
+
+            private Artists(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists wrap(android.provider.MediaStore.Audio.Artists real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Artists getReal() {
+                return (android.provider.MediaStore.Audio.Artists) real;
             }
 
             public android.provider.MediaStore.Audio.Artists unwrap() {
-                return real;
+                return getReal();
             }
 
             public Artists() {
-                this(new android.provider.MediaStore.Audio.Artists());
+                this(new android.provider.MediaStore.Audio.Artists(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -285,22 +327,29 @@ public final class MediaStore {
             public static final com.micklab.dcg.wrapper.android.net.Uri INTERNAL_CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.Audio.Artists.INTERNAL_CONTENT_URI);
 
             public static final class Albums {
-                private final android.provider.MediaStore.Audio.Artists.Albums real;
+                private static final class __DcgwBridgeToken {
+                }
 
-                public Albums(android.provider.MediaStore.Audio.Artists.Albums real) {
+                private final java.lang.Object real;
+
+                private Albums(java.lang.Object real, __DcgwBridgeToken token) {
                     this.real = real;
                 }
 
                 public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists.Albums wrap(android.provider.MediaStore.Audio.Artists.Albums real) {
-                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists.Albums(real);
+                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Artists.Albums(real, (__DcgwBridgeToken) null);
+                }
+
+                public android.provider.MediaStore.Audio.Artists.Albums getReal() {
+                    return (android.provider.MediaStore.Audio.Artists.Albums) real;
                 }
 
                 public android.provider.MediaStore.Audio.Artists.Albums unwrap() {
-                    return real;
+                    return getReal();
                 }
 
                 public Albums() {
-                    this(new android.provider.MediaStore.Audio.Artists.Albums());
+                    this(new android.provider.MediaStore.Audio.Artists.Albums(), (__DcgwBridgeToken) null);
                 }
 
                 public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0, long arg1) {
@@ -310,18 +359,25 @@ public final class MediaStore {
             }
         }
         public static final class AudioColumns {
-            private final android.provider.MediaStore.Audio.AudioColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public AudioColumns(android.provider.MediaStore.Audio.AudioColumns real) {
+            private final java.lang.Object real;
+
+            private AudioColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AudioColumns wrap(android.provider.MediaStore.Audio.AudioColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AudioColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.AudioColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.AudioColumns getReal() {
+                return (android.provider.MediaStore.Audio.AudioColumns) real;
             }
 
             public android.provider.MediaStore.Audio.AudioColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String ALBUM_ID = android.provider.MediaStore.Audio.AudioColumns.ALBUM_ID;
@@ -346,22 +402,29 @@ public final class MediaStore {
 
         }
         public static final class Genres {
-            private final android.provider.MediaStore.Audio.Genres real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Genres(android.provider.MediaStore.Audio.Genres real) {
+            private final java.lang.Object real;
+
+            private Genres(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres wrap(android.provider.MediaStore.Audio.Genres real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Genres getReal() {
+                return (android.provider.MediaStore.Audio.Genres) real;
             }
 
             public android.provider.MediaStore.Audio.Genres unwrap() {
-                return real;
+                return getReal();
             }
 
             public Genres() {
-                this(new android.provider.MediaStore.Audio.Genres());
+                this(new android.provider.MediaStore.Audio.Genres(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -379,22 +442,29 @@ public final class MediaStore {
             public static final com.micklab.dcg.wrapper.android.net.Uri INTERNAL_CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.Audio.Genres.INTERNAL_CONTENT_URI);
 
             public static final class Members {
-                private final android.provider.MediaStore.Audio.Genres.Members real;
+                private static final class __DcgwBridgeToken {
+                }
 
-                public Members(android.provider.MediaStore.Audio.Genres.Members real) {
+                private final java.lang.Object real;
+
+                private Members(java.lang.Object real, __DcgwBridgeToken token) {
                     this.real = real;
                 }
 
                 public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres.Members wrap(android.provider.MediaStore.Audio.Genres.Members real) {
-                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres.Members(real);
+                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Genres.Members(real, (__DcgwBridgeToken) null);
+                }
+
+                public android.provider.MediaStore.Audio.Genres.Members getReal() {
+                    return (android.provider.MediaStore.Audio.Genres.Members) real;
                 }
 
                 public android.provider.MediaStore.Audio.Genres.Members unwrap() {
-                    return real;
+                    return getReal();
                 }
 
                 public Members() {
-                    this(new android.provider.MediaStore.Audio.Genres.Members());
+                    this(new android.provider.MediaStore.Audio.Genres.Members(), (__DcgwBridgeToken) null);
                 }
 
                 public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0, long arg1) {
@@ -409,40 +479,54 @@ public final class MediaStore {
             }
         }
         public static final class GenresColumns {
-            private final android.provider.MediaStore.Audio.GenresColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public GenresColumns(android.provider.MediaStore.Audio.GenresColumns real) {
+            private final java.lang.Object real;
+
+            private GenresColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.GenresColumns wrap(android.provider.MediaStore.Audio.GenresColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.GenresColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.GenresColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.GenresColumns getReal() {
+                return (android.provider.MediaStore.Audio.GenresColumns) real;
             }
 
             public android.provider.MediaStore.Audio.GenresColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String NAME = android.provider.MediaStore.Audio.GenresColumns.NAME;
 
         }
         public static final class Media {
-            private final android.provider.MediaStore.Audio.Media real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Media(android.provider.MediaStore.Audio.Media real) {
+            private final java.lang.Object real;
+
+            private Media(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Media wrap(android.provider.MediaStore.Audio.Media real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Media(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Media(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Media getReal() {
+                return (android.provider.MediaStore.Audio.Media) real;
             }
 
             public android.provider.MediaStore.Audio.Media unwrap() {
-                return real;
+                return getReal();
             }
 
             public Media() {
-                this(new android.provider.MediaStore.Audio.Media());
+                this(new android.provider.MediaStore.Audio.Media(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -467,22 +551,29 @@ public final class MediaStore {
 
         }
         public static final class Playlists {
-            private final android.provider.MediaStore.Audio.Playlists real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Playlists(android.provider.MediaStore.Audio.Playlists real) {
+            private final java.lang.Object real;
+
+            private Playlists(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists wrap(android.provider.MediaStore.Audio.Playlists real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Playlists getReal() {
+                return (android.provider.MediaStore.Audio.Playlists) real;
             }
 
             public android.provider.MediaStore.Audio.Playlists unwrap() {
-                return real;
+                return getReal();
             }
 
             public Playlists() {
-                this(new android.provider.MediaStore.Audio.Playlists());
+                this(new android.provider.MediaStore.Audio.Playlists(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -496,22 +587,29 @@ public final class MediaStore {
             public static final com.micklab.dcg.wrapper.android.net.Uri INTERNAL_CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.Audio.Playlists.INTERNAL_CONTENT_URI);
 
             public static final class Members {
-                private final android.provider.MediaStore.Audio.Playlists.Members real;
+                private static final class __DcgwBridgeToken {
+                }
 
-                public Members(android.provider.MediaStore.Audio.Playlists.Members real) {
+                private final java.lang.Object real;
+
+                private Members(java.lang.Object real, __DcgwBridgeToken token) {
                     this.real = real;
                 }
 
                 public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists.Members wrap(android.provider.MediaStore.Audio.Playlists.Members real) {
-                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists.Members(real);
+                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Playlists.Members(real, (__DcgwBridgeToken) null);
+                }
+
+                public android.provider.MediaStore.Audio.Playlists.Members getReal() {
+                    return (android.provider.MediaStore.Audio.Playlists.Members) real;
                 }
 
                 public android.provider.MediaStore.Audio.Playlists.Members unwrap() {
-                    return real;
+                    return getReal();
                 }
 
                 public Members() {
-                    this(new android.provider.MediaStore.Audio.Playlists.Members());
+                    this(new android.provider.MediaStore.Audio.Playlists.Members(), (__DcgwBridgeToken) null);
                 }
 
                 public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0, long arg1) {
@@ -519,7 +617,7 @@ public final class MediaStore {
                 }
 
                 public static boolean moveItem(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, int arg2, int arg3) {
-                    return android.provider.MediaStore.Audio.Playlists.Members.moveItem(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+                    return android.provider.MediaStore.Audio.Playlists.Members.moveItem(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
                 }
 
                 public static final java.lang.String AUDIO_ID = android.provider.MediaStore.Audio.Playlists.Members.AUDIO_ID;
@@ -532,18 +630,25 @@ public final class MediaStore {
             }
         }
         public static final class PlaylistsColumns {
-            private final android.provider.MediaStore.Audio.PlaylistsColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public PlaylistsColumns(android.provider.MediaStore.Audio.PlaylistsColumns real) {
+            private final java.lang.Object real;
+
+            private PlaylistsColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.PlaylistsColumns wrap(android.provider.MediaStore.Audio.PlaylistsColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.PlaylistsColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.PlaylistsColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.PlaylistsColumns getReal() {
+                return (android.provider.MediaStore.Audio.PlaylistsColumns) real;
             }
 
             public android.provider.MediaStore.Audio.PlaylistsColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String DATA = android.provider.MediaStore.Audio.PlaylistsColumns.DATA;
@@ -553,18 +658,25 @@ public final class MediaStore {
 
         }
         public static final class Radio {
-            private final android.provider.MediaStore.Audio.Radio real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Radio(android.provider.MediaStore.Audio.Radio real) {
+            private final java.lang.Object real;
+
+            private Radio(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Radio wrap(android.provider.MediaStore.Audio.Radio real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Radio(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Audio.Radio(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Audio.Radio getReal() {
+                return (android.provider.MediaStore.Audio.Radio) real;
             }
 
             public android.provider.MediaStore.Audio.Radio unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String ENTRY_CONTENT_TYPE = android.provider.MediaStore.Audio.Radio.ENTRY_CONTENT_TYPE;
@@ -572,18 +684,25 @@ public final class MediaStore {
         }
     }
     public static final class DownloadColumns {
-        private final android.provider.MediaStore.DownloadColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DownloadColumns(android.provider.MediaStore.DownloadColumns real) {
+        private final java.lang.Object real;
+
+        private DownloadColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.DownloadColumns wrap(android.provider.MediaStore.DownloadColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.DownloadColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.DownloadColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.DownloadColumns getReal() {
+            return (android.provider.MediaStore.DownloadColumns) real;
         }
 
         public android.provider.MediaStore.DownloadColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String DOWNLOAD_URI = android.provider.MediaStore.DownloadColumns.DOWNLOAD_URI;
@@ -591,18 +710,25 @@ public final class MediaStore {
 
     }
     public static final class Downloads {
-        private final android.provider.MediaStore.Downloads real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Downloads(android.provider.MediaStore.Downloads real) {
+        private final java.lang.Object real;
+
+        private Downloads(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.Downloads wrap(android.provider.MediaStore.Downloads real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Downloads(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Downloads(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.Downloads getReal() {
+            return (android.provider.MediaStore.Downloads) real;
         }
 
         public android.provider.MediaStore.Downloads unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -619,18 +745,25 @@ public final class MediaStore {
 
     }
     public static final class Files {
-        private final android.provider.MediaStore.Files real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Files(android.provider.MediaStore.Files real) {
+        private final java.lang.Object real;
+
+        private Files(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.Files wrap(android.provider.MediaStore.Files real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Files(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Files(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.Files getReal() {
+            return (android.provider.MediaStore.Files) real;
         }
 
         public android.provider.MediaStore.Files unwrap() {
-            return real;
+            return getReal();
         }
 
         public Files() {
@@ -646,18 +779,25 @@ public final class MediaStore {
         }
 
         public static final class FileColumns {
-            private final android.provider.MediaStore.Files.FileColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public FileColumns(android.provider.MediaStore.Files.FileColumns real) {
+            private final java.lang.Object real;
+
+            private FileColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Files.FileColumns wrap(android.provider.MediaStore.Files.FileColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Files.FileColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Files.FileColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Files.FileColumns getReal() {
+                return (android.provider.MediaStore.Files.FileColumns) real;
             }
 
             public android.provider.MediaStore.Files.FileColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String MEDIA_TYPE = android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE;
@@ -674,37 +814,51 @@ public final class MediaStore {
         }
     }
     public static final class Images {
-        private final android.provider.MediaStore.Images real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Images(android.provider.MediaStore.Images real) {
+        private final java.lang.Object real;
+
+        private Images(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.Images wrap(android.provider.MediaStore.Images real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.Images getReal() {
+            return (android.provider.MediaStore.Images) real;
         }
 
         public android.provider.MediaStore.Images unwrap() {
-            return real;
+            return getReal();
         }
 
         public Images() {
-            this(new android.provider.MediaStore.Images());
+            this(new android.provider.MediaStore.Images(), (__DcgwBridgeToken) null);
         }
 
         public static final class ImageColumns {
-            private final android.provider.MediaStore.Images.ImageColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public ImageColumns(android.provider.MediaStore.Images.ImageColumns real) {
+            private final java.lang.Object real;
+
+            private ImageColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Images.ImageColumns wrap(android.provider.MediaStore.Images.ImageColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.ImageColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.ImageColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Images.ImageColumns getReal() {
+                return (android.provider.MediaStore.Images.ImageColumns) real;
             }
 
             public android.provider.MediaStore.Images.ImageColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String DESCRIPTION = android.provider.MediaStore.Images.ImageColumns.DESCRIPTION;
@@ -720,26 +874,33 @@ public final class MediaStore {
 
         }
         public static final class Media {
-            private final android.provider.MediaStore.Images.Media real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Media(android.provider.MediaStore.Images.Media real) {
+            private final java.lang.Object real;
+
+            private Media(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Media wrap(android.provider.MediaStore.Images.Media real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Media(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Media(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Images.Media getReal() {
+                return (android.provider.MediaStore.Images.Media) real;
             }
 
             public android.provider.MediaStore.Images.Media unwrap() {
-                return real;
+                return getReal();
             }
 
             public Media() {
-                this(new android.provider.MediaStore.Images.Media());
+                this(new android.provider.MediaStore.Images.Media(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.Bitmap getBitmap(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) throws java.io.FileNotFoundException, java.io.IOException {
-                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Media.getBitmap(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Media.getBitmap(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -751,23 +912,23 @@ public final class MediaStore {
             }
 
             public static java.lang.String insertImage(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3) throws java.io.FileNotFoundException {
-                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
             }
 
             public static java.lang.String insertImage(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, java.lang.String arg2, java.lang.String arg3) {
-                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2, java.lang.String arg3, java.lang.String arg4) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4));
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2, java.lang.String arg3, java.lang.String[] arg4, java.lang.String arg5) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4, arg5));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Media.query(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5));
             }
 
             public static final java.lang.String CONTENT_TYPE = android.provider.MediaStore.Images.Media.CONTENT_TYPE;
@@ -777,30 +938,37 @@ public final class MediaStore {
 
         }
         public static final class Thumbnails {
-            private final android.provider.MediaStore.Images.Thumbnails real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Thumbnails(android.provider.MediaStore.Images.Thumbnails real) {
+            private final java.lang.Object real;
+
+            private Thumbnails(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Thumbnails wrap(android.provider.MediaStore.Images.Thumbnails real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Thumbnails(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Images.Thumbnails(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Images.Thumbnails getReal() {
+                return (android.provider.MediaStore.Images.Thumbnails) real;
             }
 
             public android.provider.MediaStore.Images.Thumbnails unwrap() {
-                return real;
+                return getReal();
             }
 
             public Thumbnails() {
-                this(new android.provider.MediaStore.Images.Thumbnails());
+                this(new android.provider.MediaStore.Images.Thumbnails(), (__DcgwBridgeToken) null);
             }
 
             public static void cancelThumbnailRequest(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-                android.provider.MediaStore.Images.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.unwrap(), arg1);
+                android.provider.MediaStore.Images.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.getReal(), arg1);
             }
 
             public static void cancelThumbnailRequest(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, long arg2) {
-                android.provider.MediaStore.Images.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                android.provider.MediaStore.Images.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -812,23 +980,23 @@ public final class MediaStore {
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.Bitmap getThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.BitmapFactory.Options arg3) {
-                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Thumbnails.getThumbnail(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Thumbnails.getThumbnail(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.Bitmap getThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, long arg2, int arg3, com.micklab.dcg.wrapper.android.graphics.BitmapFactory.Options arg4) {
-                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Thumbnails.getThumbnail(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap()));
+                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Images.Thumbnails.getThumbnail(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.query(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.query(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor queryMiniThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, int arg2, java.lang.String[] arg3) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.queryMiniThumbnail(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.queryMiniThumbnail(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor queryMiniThumbnails(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2, java.lang.String[] arg3) {
-                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.queryMiniThumbnails(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+                return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Images.Thumbnails.queryMiniThumbnails(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3));
             }
 
             public static final java.lang.String DATA = android.provider.MediaStore.Images.Thumbnails.DATA;
@@ -847,18 +1015,25 @@ public final class MediaStore {
         }
     }
     public static final class MediaColumns {
-        private final android.provider.MediaStore.MediaColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MediaColumns(android.provider.MediaStore.MediaColumns real) {
+        private final java.lang.Object real;
+
+        private MediaColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.MediaColumns wrap(android.provider.MediaStore.MediaColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.MediaColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.MediaColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.MediaColumns getReal() {
+            return (android.provider.MediaStore.MediaColumns) real;
         }
 
         public android.provider.MediaStore.MediaColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ALBUM = android.provider.MediaStore.MediaColumns.ALBUM;
@@ -908,18 +1083,25 @@ public final class MediaStore {
 
     }
     public static final class PickerMediaColumns {
-        private final android.provider.MediaStore.PickerMediaColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PickerMediaColumns(android.provider.MediaStore.PickerMediaColumns real) {
+        private final java.lang.Object real;
+
+        private PickerMediaColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.PickerMediaColumns wrap(android.provider.MediaStore.PickerMediaColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.PickerMediaColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.PickerMediaColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.PickerMediaColumns getReal() {
+            return (android.provider.MediaStore.PickerMediaColumns) real;
         }
 
         public android.provider.MediaStore.PickerMediaColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String DATA = android.provider.MediaStore.PickerMediaColumns.DATA;
@@ -934,47 +1116,61 @@ public final class MediaStore {
 
     }
     public static final class Video {
-        private final android.provider.MediaStore.Video real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Video(android.provider.MediaStore.Video real) {
+        private final java.lang.Object real;
+
+        private Video(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.MediaStore.Video wrap(android.provider.MediaStore.Video real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.MediaStore.Video getReal() {
+            return (android.provider.MediaStore.Video) real;
         }
 
         public android.provider.MediaStore.Video unwrap() {
-            return real;
+            return getReal();
         }
 
         public Video() {
-            this(new android.provider.MediaStore.Video());
+            this(new android.provider.MediaStore.Video(), (__DcgwBridgeToken) null);
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Video.query(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.MediaStore.Video.query(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
         }
 
         public static final java.lang.String DEFAULT_SORT_ORDER = android.provider.MediaStore.Video.DEFAULT_SORT_ORDER;
 
         public static final class Media {
-            private final android.provider.MediaStore.Video.Media real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Media(android.provider.MediaStore.Video.Media real) {
+            private final java.lang.Object real;
+
+            private Media(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Media wrap(android.provider.MediaStore.Video.Media real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Media(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Media(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Video.Media getReal() {
+                return (android.provider.MediaStore.Video.Media) real;
             }
 
             public android.provider.MediaStore.Video.Media unwrap() {
-                return real;
+                return getReal();
             }
 
             public Media() {
-                this(new android.provider.MediaStore.Video.Media());
+                this(new android.provider.MediaStore.Video.Media(), (__DcgwBridgeToken) null);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -992,30 +1188,37 @@ public final class MediaStore {
 
         }
         public static final class Thumbnails {
-            private final android.provider.MediaStore.Video.Thumbnails real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Thumbnails(android.provider.MediaStore.Video.Thumbnails real) {
+            private final java.lang.Object real;
+
+            private Thumbnails(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Thumbnails wrap(android.provider.MediaStore.Video.Thumbnails real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Thumbnails(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.Thumbnails(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Video.Thumbnails getReal() {
+                return (android.provider.MediaStore.Video.Thumbnails) real;
             }
 
             public android.provider.MediaStore.Video.Thumbnails unwrap() {
-                return real;
+                return getReal();
             }
 
             public Thumbnails() {
-                this(new android.provider.MediaStore.Video.Thumbnails());
+                this(new android.provider.MediaStore.Video.Thumbnails(), (__DcgwBridgeToken) null);
             }
 
             public static void cancelThumbnailRequest(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-                android.provider.MediaStore.Video.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.unwrap(), arg1);
+                android.provider.MediaStore.Video.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.getReal(), arg1);
             }
 
             public static void cancelThumbnailRequest(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, long arg2) {
-                android.provider.MediaStore.Video.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+                android.provider.MediaStore.Video.Thumbnails.cancelThumbnailRequest(arg0 == null ? null : arg0.getReal(), arg1, arg2);
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getContentUri(java.lang.String arg0) {
@@ -1027,11 +1230,11 @@ public final class MediaStore {
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.Bitmap getThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.BitmapFactory.Options arg3) {
-                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Video.Thumbnails.getThumbnail(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Video.Thumbnails.getThumbnail(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
             }
 
             public static com.micklab.dcg.wrapper.android.graphics.Bitmap getThumbnail(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, long arg2, int arg3, com.micklab.dcg.wrapper.android.graphics.BitmapFactory.Options arg4) {
-                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Video.Thumbnails.getThumbnail(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap()));
+                return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.MediaStore.Video.Thumbnails.getThumbnail(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
             }
 
             public static final java.lang.String DATA = android.provider.MediaStore.Video.Thumbnails.DATA;
@@ -1048,18 +1251,25 @@ public final class MediaStore {
 
         }
         public static final class VideoColumns {
-            private final android.provider.MediaStore.Video.VideoColumns real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public VideoColumns(android.provider.MediaStore.Video.VideoColumns real) {
+            private final java.lang.Object real;
+
+            private VideoColumns(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.MediaStore.Video.VideoColumns wrap(android.provider.MediaStore.Video.VideoColumns real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.VideoColumns(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.MediaStore.Video.VideoColumns(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.MediaStore.Video.VideoColumns getReal() {
+                return (android.provider.MediaStore.Video.VideoColumns) real;
             }
 
             public android.provider.MediaStore.Video.VideoColumns unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String BOOKMARK = android.provider.MediaStore.Video.VideoColumns.BOOKMARK;

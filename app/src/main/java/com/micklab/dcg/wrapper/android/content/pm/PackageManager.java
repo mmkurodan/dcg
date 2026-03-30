@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class PackageManager {
-    private final android.content.pm.PackageManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PackageManager(android.content.pm.PackageManager real) {
+    private final java.lang.Object real;
+
+    private PackageManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PackageManager wrap(android.content.pm.PackageManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.PackageManager getReal() {
+        return (android.content.pm.PackageManager) real;
     }
 
     public android.content.pm.PackageManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addPackageToPreferred(java.lang.String arg0) {
@@ -498,18 +505,25 @@ public final class PackageManager {
 
 
     public static final class ApplicationInfoFlags {
-        private final android.content.pm.PackageManager.ApplicationInfoFlags real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ApplicationInfoFlags(android.content.pm.PackageManager.ApplicationInfoFlags real) {
+        private final java.lang.Object real;
+
+        private ApplicationInfoFlags(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.ApplicationInfoFlags wrap(android.content.pm.PackageManager.ApplicationInfoFlags real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ApplicationInfoFlags(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ApplicationInfoFlags(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.ApplicationInfoFlags getReal() {
+            return (android.content.pm.PackageManager.ApplicationInfoFlags) real;
         }
 
         public android.content.pm.PackageManager.ApplicationInfoFlags unwrap() {
-            return real;
+            return getReal();
         }
 
         public long getValue() {
@@ -522,18 +536,25 @@ public final class PackageManager {
 
     }
     public static final class ComponentEnabledSetting {
-        private final android.content.pm.PackageManager.ComponentEnabledSetting real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ComponentEnabledSetting(android.content.pm.PackageManager.ComponentEnabledSetting real) {
+        private final java.lang.Object real;
+
+        private ComponentEnabledSetting(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentEnabledSetting wrap(android.content.pm.PackageManager.ComponentEnabledSetting real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentEnabledSetting(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentEnabledSetting(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.ComponentEnabledSetting getReal() {
+            return (android.content.pm.PackageManager.ComponentEnabledSetting) real;
         }
 
         public android.content.pm.PackageManager.ComponentEnabledSetting unwrap() {
-            return real;
+            return getReal();
         }
 
         public ComponentEnabledSetting(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1, int arg2) {
@@ -563,18 +584,25 @@ public final class PackageManager {
 
     }
     public static final class ComponentInfoFlags {
-        private final android.content.pm.PackageManager.ComponentInfoFlags real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ComponentInfoFlags(android.content.pm.PackageManager.ComponentInfoFlags real) {
+        private final java.lang.Object real;
+
+        private ComponentInfoFlags(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags wrap(android.content.pm.PackageManager.ComponentInfoFlags real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.ComponentInfoFlags getReal() {
+            return (android.content.pm.PackageManager.ComponentInfoFlags) real;
         }
 
         public android.content.pm.PackageManager.ComponentInfoFlags unwrap() {
-            return real;
+            return getReal();
         }
 
         public long getValue() {
@@ -587,18 +615,25 @@ public final class PackageManager {
 
     }
     public static final class NameNotFoundException {
-        private final android.content.pm.PackageManager.NameNotFoundException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NameNotFoundException(android.content.pm.PackageManager.NameNotFoundException real) {
+        private final java.lang.Object real;
+
+        private NameNotFoundException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.NameNotFoundException wrap(android.content.pm.PackageManager.NameNotFoundException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.NameNotFoundException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.NameNotFoundException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.NameNotFoundException getReal() {
+            return (android.content.pm.PackageManager.NameNotFoundException) real;
         }
 
         public android.content.pm.PackageManager.NameNotFoundException unwrap() {
-            return real;
+            return getReal();
         }
 
         public NameNotFoundException() {
@@ -611,34 +646,48 @@ public final class PackageManager {
 
     }
     public static final class OnChecksumsReadyListener {
-        private final android.content.pm.PackageManager.OnChecksumsReadyListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnChecksumsReadyListener(android.content.pm.PackageManager.OnChecksumsReadyListener real) {
+        private final java.lang.Object real;
+
+        private OnChecksumsReadyListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.OnChecksumsReadyListener wrap(android.content.pm.PackageManager.OnChecksumsReadyListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.OnChecksumsReadyListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.OnChecksumsReadyListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.OnChecksumsReadyListener getReal() {
+            return (android.content.pm.PackageManager.OnChecksumsReadyListener) real;
         }
 
         public android.content.pm.PackageManager.OnChecksumsReadyListener unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class PackageInfoFlags {
-        private final android.content.pm.PackageManager.PackageInfoFlags real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PackageInfoFlags(android.content.pm.PackageManager.PackageInfoFlags real) {
+        private final java.lang.Object real;
+
+        private PackageInfoFlags(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags wrap(android.content.pm.PackageManager.PackageInfoFlags real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.PackageInfoFlags getReal() {
+            return (android.content.pm.PackageManager.PackageInfoFlags) real;
         }
 
         public android.content.pm.PackageManager.PackageInfoFlags unwrap() {
-            return real;
+            return getReal();
         }
 
         public long getValue() {
@@ -651,18 +700,25 @@ public final class PackageManager {
 
     }
     public static final class Property {
-        private final android.content.pm.PackageManager.Property real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Property(android.content.pm.PackageManager.Property real) {
+        private final java.lang.Object real;
+
+        private Property(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.Property wrap(android.content.pm.PackageManager.Property real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.Property(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.Property(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.Property getReal() {
+            return (android.content.pm.PackageManager.Property) real;
         }
 
         public android.content.pm.PackageManager.Property unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
@@ -728,18 +784,25 @@ public final class PackageManager {
 
     }
     public static final class ResolveInfoFlags {
-        private final android.content.pm.PackageManager.ResolveInfoFlags real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ResolveInfoFlags(android.content.pm.PackageManager.ResolveInfoFlags real) {
+        private final java.lang.Object real;
+
+        private ResolveInfoFlags(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.pm.PackageManager.ResolveInfoFlags wrap(android.content.pm.PackageManager.ResolveInfoFlags real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ResolveInfoFlags(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.PackageManager.ResolveInfoFlags(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.pm.PackageManager.ResolveInfoFlags getReal() {
+            return (android.content.pm.PackageManager.ResolveInfoFlags) real;
         }
 
         public android.content.pm.PackageManager.ResolveInfoFlags unwrap() {
-            return real;
+            return getReal();
         }
 
         public long getValue() {

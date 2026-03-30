@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MediaActionSound {
-    private final android.media.MediaActionSound real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MediaActionSound(android.media.MediaActionSound real) {
+    private final java.lang.Object real;
+
+    private MediaActionSound(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaActionSound wrap(android.media.MediaActionSound real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaActionSound(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaActionSound(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MediaActionSound getReal() {
+        return (android.media.MediaActionSound) real;
     }
 
     public android.media.MediaActionSound unwrap() {
-        return real;
+        return getReal();
     }
 
     public MediaActionSound() {
-        this(new android.media.MediaActionSound());
+        this(new android.media.MediaActionSound(), (__DcgwBridgeToken) null);
     }
 
     public void load(int arg0) {
-        real.load(arg0);
+        ((android.media.MediaActionSound) real).load(arg0);
     }
 
     public static boolean mustPlayShutterSound() {
@@ -29,11 +36,11 @@ public final class MediaActionSound {
     }
 
     public void play(int arg0) {
-        real.play(arg0);
+        ((android.media.MediaActionSound) real).play(arg0);
     }
 
     public void release() {
-        real.release();
+        ((android.media.MediaActionSound) real).release();
     }
 
     public static final int FOCUS_COMPLETE = android.media.MediaActionSound.FOCUS_COMPLETE;

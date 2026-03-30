@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class ComponentCaller {
-    private final android.app.ComponentCaller real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ComponentCaller(android.app.ComponentCaller real) {
+    private final java.lang.Object real;
+
+    private ComponentCaller(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.ComponentCaller wrap(android.app.ComponentCaller real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ComponentCaller(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.ComponentCaller(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.ComponentCaller getReal() {
+        return (android.app.ComponentCaller) real;
     }
 
     public android.app.ComponentCaller unwrap() {
-        return real;
+        return getReal();
     }
 
     public int checkContentUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        return real.checkContentUriPermission(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.app.ComponentCaller) real).checkContentUriPermission(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.ComponentCaller) real).equals(arg0);
     }
 
     public java.lang.String getPackage() {
-        return real.getPackage();
+        return ((android.app.ComponentCaller) real).getPackage();
     }
 
     public int getUid() {
-        return real.getUid();
+        return ((android.app.ComponentCaller) real).getUid();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.ComponentCaller) real).hashCode();
     }
 
 }

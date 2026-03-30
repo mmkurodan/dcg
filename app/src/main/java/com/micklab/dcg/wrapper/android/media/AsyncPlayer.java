@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AsyncPlayer {
-    private final android.media.AsyncPlayer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AsyncPlayer(android.media.AsyncPlayer real) {
+    private final java.lang.Object real;
+
+    private AsyncPlayer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AsyncPlayer wrap(android.media.AsyncPlayer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AsyncPlayer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AsyncPlayer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AsyncPlayer getReal() {
+        return (android.media.AsyncPlayer) real;
     }
 
     public android.media.AsyncPlayer unwrap() {
-        return real;
+        return getReal();
     }
 
     public AsyncPlayer(java.lang.String arg0) {
-        this(new android.media.AsyncPlayer(arg0));
+        this(new android.media.AsyncPlayer(arg0), (__DcgwBridgeToken) null);
     }
 
     public void play(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2, int arg3) {
-        real.play(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3);
+        ((android.media.AsyncPlayer) real).play(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public void play(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2, com.micklab.dcg.wrapper.android.media.AudioAttributes arg3) throws java.lang.IllegalArgumentException {
-        real.play(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.media.AsyncPlayer) real).play(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public void stop() {
-        real.stop();
+        ((android.media.AsyncPlayer) real).stop();
     }
 
 }

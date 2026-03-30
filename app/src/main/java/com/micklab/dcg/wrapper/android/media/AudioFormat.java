@@ -2,62 +2,69 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioFormat {
-    private final android.media.AudioFormat real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioFormat(android.media.AudioFormat real) {
+    private final java.lang.Object real;
+
+    private AudioFormat(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioFormat wrap(android.media.AudioFormat real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioFormat(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioFormat(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioFormat getReal() {
+        return (android.media.AudioFormat) real;
     }
 
     public android.media.AudioFormat unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.AudioFormat) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.AudioFormat) real).equals(arg0);
     }
 
     public int getChannelCount() {
-        return real.getChannelCount();
+        return ((android.media.AudioFormat) real).getChannelCount();
     }
 
     public int getChannelIndexMask() {
-        return real.getChannelIndexMask();
+        return ((android.media.AudioFormat) real).getChannelIndexMask();
     }
 
     public int getChannelMask() {
-        return real.getChannelMask();
+        return ((android.media.AudioFormat) real).getChannelMask();
     }
 
     public int getEncoding() {
-        return real.getEncoding();
+        return ((android.media.AudioFormat) real).getEncoding();
     }
 
     public int getFrameSizeInBytes() {
-        return real.getFrameSizeInBytes();
+        return ((android.media.AudioFormat) real).getFrameSizeInBytes();
     }
 
     public int getSampleRate() {
-        return real.getSampleRate();
+        return ((android.media.AudioFormat) real).getSampleRate();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.AudioFormat) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.AudioFormat) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.AudioFormat) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CHANNEL_CONFIGURATION_DEFAULT = android.media.AudioFormat.CHANNEL_CONFIGURATION_DEFAULT;
@@ -159,46 +166,53 @@ public final class AudioFormat {
     public static final int SAMPLE_RATE_UNSPECIFIED = android.media.AudioFormat.SAMPLE_RATE_UNSPECIFIED;
 
     public static final class Builder {
-        private final android.media.AudioFormat.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.AudioFormat.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioFormat.Builder wrap(android.media.AudioFormat.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioFormat.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioFormat.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioFormat.Builder getReal() {
+            return (android.media.AudioFormat.Builder) real;
         }
 
         public android.media.AudioFormat.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.AudioFormat.Builder());
+            this(new android.media.AudioFormat.Builder(), (__DcgwBridgeToken) null);
         }
 
         public Builder(com.micklab.dcg.wrapper.android.media.AudioFormat arg0) {
-            this(new android.media.AudioFormat.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.media.AudioFormat.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioFormat build() {
-            return com.micklab.dcg.wrapper.android.media.AudioFormat.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.AudioFormat.wrap(((android.media.AudioFormat.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioFormat.Builder setChannelIndexMask(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(real.setChannelIndexMask(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(((android.media.AudioFormat.Builder) real).setChannelIndexMask(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioFormat.Builder setChannelMask(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(real.setChannelMask(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(((android.media.AudioFormat.Builder) real).setChannelMask(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioFormat.Builder setEncoding(int arg0) throws java.lang.IllegalArgumentException {
-            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(real.setEncoding(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(((android.media.AudioFormat.Builder) real).setEncoding(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioFormat.Builder setSampleRate(int arg0) throws java.lang.IllegalArgumentException {
-            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(real.setSampleRate(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioFormat.Builder.wrap(((android.media.AudioFormat.Builder) real).setSampleRate(arg0));
         }
 
     }

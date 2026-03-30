@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.accessibilityservice;
 
 public final class AccessibilityServiceInfo {
-    private final android.accessibilityservice.AccessibilityServiceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccessibilityServiceInfo(android.accessibilityservice.AccessibilityServiceInfo real) {
+    private final java.lang.Object real;
+
+    private AccessibilityServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityServiceInfo wrap(android.accessibilityservice.AccessibilityServiceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityServiceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.accessibilityservice.AccessibilityServiceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.accessibilityservice.AccessibilityServiceInfo getReal() {
+        return (android.accessibilityservice.AccessibilityServiceInfo) real;
     }
 
     public android.accessibilityservice.AccessibilityServiceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccessibilityServiceInfo() {
-        this(new android.accessibilityservice.AccessibilityServiceInfo());
+        this(new android.accessibilityservice.AccessibilityServiceInfo(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String capabilityToString(int arg0) {
@@ -25,11 +32,11 @@ public final class AccessibilityServiceInfo {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).equals(arg0);
     }
 
     public static java.lang.String feedbackTypeToString(int arg0) {
@@ -41,83 +48,83 @@ public final class AccessibilityServiceInfo {
     }
 
     public boolean getCanRetrieveWindowContent() {
-        return real.getCanRetrieveWindowContent();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getCanRetrieveWindowContent();
     }
 
     public int getCapabilities() {
-        return real.getCapabilities();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getCapabilities();
     }
 
     public java.lang.String getDescription() {
-        return real.getDescription();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getDescription();
     }
 
     public java.lang.String getId() {
-        return real.getId();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getId();
     }
 
     public int getInteractiveUiTimeoutMillis() {
-        return real.getInteractiveUiTimeoutMillis();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getInteractiveUiTimeoutMillis();
     }
 
     public int getMotionEventSources() {
-        return real.getMotionEventSources();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getMotionEventSources();
     }
 
     public int getNonInteractiveUiTimeoutMillis() {
-        return real.getNonInteractiveUiTimeoutMillis();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getNonInteractiveUiTimeoutMillis();
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ResolveInfo getResolveInfo() {
-        return com.micklab.dcg.wrapper.android.content.pm.ResolveInfo.wrap(real.getResolveInfo());
+        return com.micklab.dcg.wrapper.android.content.pm.ResolveInfo.wrap(((android.accessibilityservice.AccessibilityServiceInfo) real).getResolveInfo());
     }
 
     public java.lang.String getSettingsActivityName() {
-        return real.getSettingsActivityName();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getSettingsActivityName();
     }
 
     public java.lang.String getTileServiceName() {
-        return real.getTileServiceName();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).getTileServiceName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).hashCode();
     }
 
     public boolean isAccessibilityTool() {
-        return real.isAccessibilityTool();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).isAccessibilityTool();
     }
 
     public java.lang.String loadDescription(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return real.loadDescription(arg0 == null ? null : arg0.unwrap());
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).loadDescription(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence loadIntro(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return real.loadIntro(arg0 == null ? null : arg0.unwrap());
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).loadIntro(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.CharSequence loadSummary(com.micklab.dcg.wrapper.android.content.pm.PackageManager arg0) {
-        return real.loadSummary(arg0 == null ? null : arg0.unwrap());
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).loadSummary(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInteractiveUiTimeoutMillis(int arg0) {
-        real.setInteractiveUiTimeoutMillis(arg0);
+        ((android.accessibilityservice.AccessibilityServiceInfo) real).setInteractiveUiTimeoutMillis(arg0);
     }
 
     public void setMotionEventSources(int arg0) {
-        real.setMotionEventSources(arg0);
+        ((android.accessibilityservice.AccessibilityServiceInfo) real).setMotionEventSources(arg0);
     }
 
     public void setNonInteractiveUiTimeoutMillis(int arg0) {
-        real.setNonInteractiveUiTimeoutMillis(arg0);
+        ((android.accessibilityservice.AccessibilityServiceInfo) real).setNonInteractiveUiTimeoutMillis(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.accessibilityservice.AccessibilityServiceInfo) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.accessibilityservice.AccessibilityServiceInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CAPABILITY_CAN_CONTROL_MAGNIFICATION = android.accessibilityservice.AccessibilityServiceInfo.CAPABILITY_CAN_CONTROL_MAGNIFICATION;

@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class LightingColorFilter {
-    private final android.graphics.LightingColorFilter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public LightingColorFilter(android.graphics.LightingColorFilter real) {
+    private final java.lang.Object real;
+
+    private LightingColorFilter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.LightingColorFilter wrap(android.graphics.LightingColorFilter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.LightingColorFilter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.LightingColorFilter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.LightingColorFilter getReal() {
+        return (android.graphics.LightingColorFilter) real;
     }
 
     public android.graphics.LightingColorFilter unwrap() {
-        return real;
+        return getReal();
     }
 
     public LightingColorFilter(int arg0, int arg1) {
-        this(new android.graphics.LightingColorFilter(arg0, arg1));
+        this(new android.graphics.LightingColorFilter(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int getColorAdd() {
-        return real.getColorAdd();
+        return ((android.graphics.LightingColorFilter) real).getColorAdd();
     }
 
     public int getColorMultiply() {
-        return real.getColorMultiply();
+        return ((android.graphics.LightingColorFilter) real).getColorMultiply();
     }
 
 }

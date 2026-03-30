@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SubscriptionInfo {
-    private final android.telephony.SubscriptionInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SubscriptionInfo(android.telephony.SubscriptionInfo real) {
+    private final java.lang.Object real;
+
+    private SubscriptionInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SubscriptionInfo wrap(android.telephony.SubscriptionInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SubscriptionInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SubscriptionInfo getReal() {
+        return (android.telephony.SubscriptionInfo) real;
     }
 
     public android.telephony.SubscriptionInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap createIconBitmap(com.micklab.dcg.wrapper.android.content.Context arg0) {

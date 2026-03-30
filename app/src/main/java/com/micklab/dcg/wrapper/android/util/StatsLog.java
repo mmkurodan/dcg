@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class StatsLog {
-    private final android.util.StatsLog real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StatsLog(android.util.StatsLog real) {
+    private final java.lang.Object real;
+
+    private StatsLog(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.StatsLog wrap(android.util.StatsLog real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.StatsLog(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.StatsLog(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.StatsLog getReal() {
+        return (android.util.StatsLog) real;
     }
 
     public android.util.StatsLog unwrap() {
-        return real;
+        return getReal();
     }
 
     public static boolean logBinaryPushStateChanged(java.lang.String arg0, long arg1, int arg2, int arg3, long[] arg4) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnWifiUnderlyingNetworkTemplate {
-    private final android.net.vcn.VcnWifiUnderlyingNetworkTemplate real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnWifiUnderlyingNetworkTemplate(android.net.vcn.VcnWifiUnderlyingNetworkTemplate real) {
+    private final java.lang.Object real;
+
+    private VcnWifiUnderlyingNetworkTemplate(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate wrap(android.net.vcn.VcnWifiUnderlyingNetworkTemplate real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnWifiUnderlyingNetworkTemplate getReal() {
+        return (android.net.vcn.VcnWifiUnderlyingNetworkTemplate) real;
     }
 
     public android.net.vcn.VcnWifiUnderlyingNetworkTemplate unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -25,18 +32,25 @@ public final class VcnWifiUnderlyingNetworkTemplate {
     }
 
     public static final class Builder {
-        private final android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder wrap(android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder getReal() {
+            return (android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder) real;
         }
 
         public android.net.vcn.VcnWifiUnderlyingNetworkTemplate.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

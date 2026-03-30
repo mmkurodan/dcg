@@ -2,33 +2,47 @@
 package com.micklab.dcg.wrapper.android.icu.lang;
 
 public final class UCharacterEnums {
-    private final android.icu.lang.UCharacterEnums real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UCharacterEnums(android.icu.lang.UCharacterEnums real) {
+    private final java.lang.Object real;
+
+    private UCharacterEnums(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums wrap(android.icu.lang.UCharacterEnums real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.lang.UCharacterEnums getReal() {
+        return (android.icu.lang.UCharacterEnums) real;
     }
 
     public android.icu.lang.UCharacterEnums unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class ECharacterCategory {
-        private final android.icu.lang.UCharacterEnums.ECharacterCategory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ECharacterCategory(android.icu.lang.UCharacterEnums.ECharacterCategory real) {
+        private final java.lang.Object real;
+
+        private ECharacterCategory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterCategory wrap(android.icu.lang.UCharacterEnums.ECharacterCategory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterCategory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterCategory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacterEnums.ECharacterCategory getReal() {
+            return (android.icu.lang.UCharacterEnums.ECharacterCategory) real;
         }
 
         public android.icu.lang.UCharacterEnums.ECharacterCategory unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final byte COMBINING_SPACING_MARK = android.icu.lang.UCharacterEnums.ECharacterCategory.COMBINING_SPACING_MARK;
@@ -67,18 +81,25 @@ public final class UCharacterEnums {
 
     }
     public static final class ECharacterDirection {
-        private final android.icu.lang.UCharacterEnums.ECharacterDirection real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ECharacterDirection(android.icu.lang.UCharacterEnums.ECharacterDirection real) {
+        private final java.lang.Object real;
+
+        private ECharacterDirection(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterDirection wrap(android.icu.lang.UCharacterEnums.ECharacterDirection real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterDirection(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.lang.UCharacterEnums.ECharacterDirection(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.lang.UCharacterEnums.ECharacterDirection getReal() {
+            return (android.icu.lang.UCharacterEnums.ECharacterDirection) real;
         }
 
         public android.icu.lang.UCharacterEnums.ECharacterDirection unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int ARABIC_NUMBER = android.icu.lang.UCharacterEnums.ECharacterDirection.ARABIC_NUMBER;

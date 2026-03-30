@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class VpnManager {
-    private final android.net.VpnManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VpnManager(android.net.VpnManager real) {
+    private final java.lang.Object real;
+
+    private VpnManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.VpnManager wrap(android.net.VpnManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.VpnManager getReal() {
+        return (android.net.VpnManager) real;
     }
 
     public android.net.VpnManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void deleteProvisionedVpnProfile() {

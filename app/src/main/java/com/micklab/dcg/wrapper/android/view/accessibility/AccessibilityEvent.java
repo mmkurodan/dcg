@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.view.accessibility;
 
 public final class AccessibilityEvent {
-    private final android.view.accessibility.AccessibilityEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AccessibilityEvent(android.view.accessibility.AccessibilityEvent real) {
+    private final java.lang.Object real;
+
+    private AccessibilityEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent wrap(android.view.accessibility.AccessibilityEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.accessibility.AccessibilityEvent getReal() {
+        return (android.view.accessibility.AccessibilityEvent) real;
     }
 
     public android.view.accessibility.AccessibilityEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public AccessibilityEvent() {
-        this(new android.view.accessibility.AccessibilityEvent());
+        this(new android.view.accessibility.AccessibilityEvent(), (__DcgwBridgeToken) null);
     }
 
     public AccessibilityEvent(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
-        this(new android.view.accessibility.AccessibilityEvent(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.accessibility.AccessibilityEvent(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AccessibilityEvent(int arg0) {
-        this(new android.view.accessibility.AccessibilityEvent(arg0));
+        this(new android.view.accessibility.AccessibilityEvent(arg0), (__DcgwBridgeToken) null);
     }
 
     public void appendRecord(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityRecord arg0) {
-        real.appendRecord(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityEvent) real).appendRecord(arg0 == null ? null : arg0.getReal());
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.accessibility.AccessibilityEvent) real).describeContents();
     }
 
     public static java.lang.String eventTypeToString(int arg0) {
@@ -41,51 +48,51 @@ public final class AccessibilityEvent {
     }
 
     public int getAction() {
-        return real.getAction();
+        return ((android.view.accessibility.AccessibilityEvent) real).getAction();
     }
 
     public int getContentChangeTypes() {
-        return real.getContentChangeTypes();
+        return ((android.view.accessibility.AccessibilityEvent) real).getContentChangeTypes();
     }
 
     public long getEventTime() {
-        return real.getEventTime();
+        return ((android.view.accessibility.AccessibilityEvent) real).getEventTime();
     }
 
     public int getEventType() {
-        return real.getEventType();
+        return ((android.view.accessibility.AccessibilityEvent) real).getEventType();
     }
 
     public int getMovementGranularity() {
-        return real.getMovementGranularity();
+        return ((android.view.accessibility.AccessibilityEvent) real).getMovementGranularity();
     }
 
     public java.lang.CharSequence getPackageName() {
-        return real.getPackageName();
+        return ((android.view.accessibility.AccessibilityEvent) real).getPackageName();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityRecord getRecord(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityRecord.wrap(real.getRecord(arg0));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityRecord.wrap(((android.view.accessibility.AccessibilityEvent) real).getRecord(arg0));
     }
 
     public int getRecordCount() {
-        return real.getRecordCount();
+        return ((android.view.accessibility.AccessibilityEvent) real).getRecordCount();
     }
 
     public int getSpeechStateChangeTypes() {
-        return real.getSpeechStateChangeTypes();
+        return ((android.view.accessibility.AccessibilityEvent) real).getSpeechStateChangeTypes();
     }
 
     public int getWindowChanges() {
-        return real.getWindowChanges();
+        return ((android.view.accessibility.AccessibilityEvent) real).getWindowChanges();
     }
 
     public void initFromParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        real.initFromParcel(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.AccessibilityEvent) real).initFromParcel(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isAccessibilityDataSensitive() {
-        return real.isAccessibilityDataSensitive();
+        return ((android.view.accessibility.AccessibilityEvent) real).isAccessibilityDataSensitive();
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent obtain() {
@@ -93,7 +100,7 @@ public final class AccessibilityEvent {
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent.wrap(android.view.accessibility.AccessibilityEvent.obtain(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent.wrap(android.view.accessibility.AccessibilityEvent.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent obtain(int arg0) {
@@ -101,47 +108,47 @@ public final class AccessibilityEvent {
     }
 
     public void recycle() {
-        real.recycle();
+        ((android.view.accessibility.AccessibilityEvent) real).recycle();
     }
 
     public void setAccessibilityDataSensitive(boolean arg0) {
-        real.setAccessibilityDataSensitive(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setAccessibilityDataSensitive(arg0);
     }
 
     public void setAction(int arg0) {
-        real.setAction(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setAction(arg0);
     }
 
     public void setContentChangeTypes(int arg0) {
-        real.setContentChangeTypes(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setContentChangeTypes(arg0);
     }
 
     public void setEventTime(long arg0) {
-        real.setEventTime(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setEventTime(arg0);
     }
 
     public void setEventType(int arg0) {
-        real.setEventType(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setEventType(arg0);
     }
 
     public void setMovementGranularity(int arg0) {
-        real.setMovementGranularity(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setMovementGranularity(arg0);
     }
 
     public void setPackageName(java.lang.CharSequence arg0) {
-        real.setPackageName(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setPackageName(arg0);
     }
 
     public void setSpeechStateChangeTypes(int arg0) {
-        real.setSpeechStateChangeTypes(arg0);
+        ((android.view.accessibility.AccessibilityEvent) real).setSpeechStateChangeTypes(arg0);
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.accessibility.AccessibilityEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.accessibility.AccessibilityEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION;

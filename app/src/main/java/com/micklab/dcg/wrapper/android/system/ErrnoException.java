@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.system;
 
 public final class ErrnoException {
-    private final android.system.ErrnoException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ErrnoException(android.system.ErrnoException real) {
+    private final java.lang.Object real;
+
+    private ErrnoException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.system.ErrnoException wrap(android.system.ErrnoException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.system.ErrnoException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.system.ErrnoException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.system.ErrnoException getReal() {
+        return (android.system.ErrnoException) real;
     }
 
     public android.system.ErrnoException unwrap() {
-        return real;
+        return getReal();
     }
 
     public ErrnoException(java.lang.String arg0, int arg1) {

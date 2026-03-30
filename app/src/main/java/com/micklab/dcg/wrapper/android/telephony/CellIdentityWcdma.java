@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class CellIdentityWcdma {
-    private final android.telephony.CellIdentityWcdma real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CellIdentityWcdma(android.telephony.CellIdentityWcdma real) {
+    private final java.lang.Object real;
+
+    private CellIdentityWcdma(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellIdentityWcdma wrap(android.telephony.CellIdentityWcdma real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellIdentityWcdma(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellIdentityWcdma(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.CellIdentityWcdma getReal() {
+        return (android.telephony.CellIdentityWcdma) real;
     }
 
     public android.telephony.CellIdentityWcdma unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

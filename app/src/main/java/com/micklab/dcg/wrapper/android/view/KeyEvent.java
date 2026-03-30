@@ -2,86 +2,93 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class KeyEvent {
-    private final android.view.KeyEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyEvent(android.view.KeyEvent real) {
+    private final java.lang.Object real;
+
+    private KeyEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyEvent wrap(android.view.KeyEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.KeyEvent getReal() {
+        return (android.view.KeyEvent) real;
     }
 
     public android.view.KeyEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public KeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        this(new android.view.KeyEvent(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.KeyEvent(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(int arg0, int arg1) {
-        this(new android.view.KeyEvent(arg0, arg1));
+        this(new android.view.KeyEvent(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, long arg1, int arg2) {
-        this(new android.view.KeyEvent(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        this(new android.view.KeyEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, java.lang.String arg1, int arg2, int arg3) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, long arg1, int arg2, int arg3, int arg4) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, long arg1, int arg2, int arg3, int arg4, int arg5) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, long arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, long arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8), (__DcgwBridgeToken) null);
     }
 
     public KeyEvent(long arg0, long arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
-        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9));
+        this(new android.view.KeyEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9), (__DcgwBridgeToken) null);
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyEvent changeAction(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeAction(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeAction(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyEvent changeFlags(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeFlags(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeFlags(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyEvent changeTimeRepeat(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, long arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeTimeRepeat(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeTimeRepeat(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.view.KeyEvent changeTimeRepeat(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, long arg1, int arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeTimeRepeat(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+        return com.micklab.dcg.wrapper.android.view.KeyEvent.wrap(android.view.KeyEvent.changeTimeRepeat(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
     }
 
     public boolean dispatch(com.micklab.dcg.wrapper.android.view.KeyEvent.Callback arg0) {
-        return real.dispatch(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.KeyEvent) real).dispatch(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean dispatch(com.micklab.dcg.wrapper.android.view.KeyEvent.Callback arg0, com.micklab.dcg.wrapper.android.view.KeyEvent.DispatcherState arg1, java.lang.Object arg2) {
-        return real.dispatch(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.view.KeyEvent) real).dispatch(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int getAction() {
-        return real.getAction();
+        return ((android.view.KeyEvent) real).getAction();
     }
 
     public java.lang.String getCharacters() {
-        return real.getCharacters();
+        return ((android.view.KeyEvent) real).getCharacters();
     }
 
     public static int getDeadChar(int arg0, int arg1) {
@@ -89,43 +96,43 @@ public final class KeyEvent {
     }
 
     public int getDeviceId() {
-        return real.getDeviceId();
+        return ((android.view.KeyEvent) real).getDeviceId();
     }
 
     public char getDisplayLabel() {
-        return real.getDisplayLabel();
+        return ((android.view.KeyEvent) real).getDisplayLabel();
     }
 
     public long getDownTime() {
-        return real.getDownTime();
+        return ((android.view.KeyEvent) real).getDownTime();
     }
 
     public long getEventTime() {
-        return real.getEventTime();
+        return ((android.view.KeyEvent) real).getEventTime();
     }
 
     public int getFlags() {
-        return real.getFlags();
+        return ((android.view.KeyEvent) real).getFlags();
     }
 
     public com.micklab.dcg.wrapper.android.view.KeyCharacterMap getKeyCharacterMap() {
-        return com.micklab.dcg.wrapper.android.view.KeyCharacterMap.wrap(real.getKeyCharacterMap());
+        return com.micklab.dcg.wrapper.android.view.KeyCharacterMap.wrap(((android.view.KeyEvent) real).getKeyCharacterMap());
     }
 
     public int getKeyCode() {
-        return real.getKeyCode();
+        return ((android.view.KeyEvent) real).getKeyCode();
     }
 
     public boolean getKeyData(com.micklab.dcg.wrapper.android.view.KeyCharacterMap.KeyData arg0) {
-        return real.getKeyData(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.KeyEvent) real).getKeyData(arg0 == null ? null : arg0.getReal());
     }
 
     public char getMatch(char[] arg0) {
-        return real.getMatch(arg0);
+        return ((android.view.KeyEvent) real).getMatch(arg0);
     }
 
     public char getMatch(char[] arg0, int arg1) {
-        return real.getMatch(arg0, arg1);
+        return ((android.view.KeyEvent) real).getMatch(arg0, arg1);
     }
 
     public static int getMaxKeyCode() {
@@ -133,7 +140,7 @@ public final class KeyEvent {
     }
 
     public int getMetaState() {
-        return real.getMetaState();
+        return ((android.view.KeyEvent) real).getMetaState();
     }
 
     public static int getModifierMetaStateMask() {
@@ -141,59 +148,59 @@ public final class KeyEvent {
     }
 
     public int getModifiers() {
-        return real.getModifiers();
+        return ((android.view.KeyEvent) real).getModifiers();
     }
 
     public char getNumber() {
-        return real.getNumber();
+        return ((android.view.KeyEvent) real).getNumber();
     }
 
     public int getRepeatCount() {
-        return real.getRepeatCount();
+        return ((android.view.KeyEvent) real).getRepeatCount();
     }
 
     public int getScanCode() {
-        return real.getScanCode();
+        return ((android.view.KeyEvent) real).getScanCode();
     }
 
     public int getSource() {
-        return real.getSource();
+        return ((android.view.KeyEvent) real).getSource();
     }
 
     public int getUnicodeChar() {
-        return real.getUnicodeChar();
+        return ((android.view.KeyEvent) real).getUnicodeChar();
     }
 
     public int getUnicodeChar(int arg0) {
-        return real.getUnicodeChar(arg0);
+        return ((android.view.KeyEvent) real).getUnicodeChar(arg0);
     }
 
     public boolean hasModifiers(int arg0) {
-        return real.hasModifiers(arg0);
+        return ((android.view.KeyEvent) real).hasModifiers(arg0);
     }
 
     public boolean hasNoModifiers() {
-        return real.hasNoModifiers();
+        return ((android.view.KeyEvent) real).hasNoModifiers();
     }
 
     public boolean isAltPressed() {
-        return real.isAltPressed();
+        return ((android.view.KeyEvent) real).isAltPressed();
     }
 
     public boolean isCanceled() {
-        return real.isCanceled();
+        return ((android.view.KeyEvent) real).isCanceled();
     }
 
     public boolean isCapsLockOn() {
-        return real.isCapsLockOn();
+        return ((android.view.KeyEvent) real).isCapsLockOn();
     }
 
     public boolean isCtrlPressed() {
-        return real.isCtrlPressed();
+        return ((android.view.KeyEvent) real).isCtrlPressed();
     }
 
     public boolean isFunctionPressed() {
-        return real.isFunctionPressed();
+        return ((android.view.KeyEvent) real).isFunctionPressed();
     }
 
     public static boolean isGamepadButton(int arg0) {
@@ -201,7 +208,7 @@ public final class KeyEvent {
     }
 
     public boolean isLongPress() {
-        return real.isLongPress();
+        return ((android.view.KeyEvent) real).isLongPress();
     }
 
     public static boolean isMediaSessionKey(int arg0) {
@@ -209,7 +216,7 @@ public final class KeyEvent {
     }
 
     public boolean isMetaPressed() {
-        return real.isMetaPressed();
+        return ((android.view.KeyEvent) real).isMetaPressed();
     }
 
     public static boolean isModifierKey(int arg0) {
@@ -217,31 +224,31 @@ public final class KeyEvent {
     }
 
     public boolean isNumLockOn() {
-        return real.isNumLockOn();
+        return ((android.view.KeyEvent) real).isNumLockOn();
     }
 
     public boolean isPrintingKey() {
-        return real.isPrintingKey();
+        return ((android.view.KeyEvent) real).isPrintingKey();
     }
 
     public boolean isScrollLockOn() {
-        return real.isScrollLockOn();
+        return ((android.view.KeyEvent) real).isScrollLockOn();
     }
 
     public boolean isShiftPressed() {
-        return real.isShiftPressed();
+        return ((android.view.KeyEvent) real).isShiftPressed();
     }
 
     public boolean isSymPressed() {
-        return real.isSymPressed();
+        return ((android.view.KeyEvent) real).isSymPressed();
     }
 
     public boolean isSystem() {
-        return real.isSystem();
+        return ((android.view.KeyEvent) real).isSystem();
     }
 
     public boolean isTracking() {
-        return real.isTracking();
+        return ((android.view.KeyEvent) real).isTracking();
     }
 
     public static int keyCodeFromString(java.lang.String arg0) {
@@ -265,19 +272,19 @@ public final class KeyEvent {
     }
 
     public void setSource(int arg0) {
-        real.setSource(arg0);
+        ((android.view.KeyEvent) real).setSource(arg0);
     }
 
     public void startTracking() {
-        real.startTracking();
+        ((android.view.KeyEvent) real).startTracking();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.KeyEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.KeyEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ACTION_DOWN = android.view.KeyEvent.ACTION_DOWN;
@@ -635,78 +642,92 @@ public final class KeyEvent {
     public static final int META_SYM_ON = android.view.KeyEvent.META_SYM_ON;
 
     public static final class Callback {
-        private final android.view.KeyEvent.Callback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Callback(android.view.KeyEvent.Callback real) {
+        private final java.lang.Object real;
+
+        private Callback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.KeyEvent.Callback wrap(android.view.KeyEvent.Callback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent.Callback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent.Callback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.KeyEvent.Callback getReal() {
+            return (android.view.KeyEvent.Callback) real;
         }
 
         public android.view.KeyEvent.Callback unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-            return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.KeyEvent.Callback) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public boolean onKeyLongPress(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-            return real.onKeyLongPress(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.KeyEvent.Callback) real).onKeyLongPress(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public boolean onKeyMultiple(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-            return real.onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+            return ((android.view.KeyEvent.Callback) real).onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.getReal());
         }
 
         public boolean onKeyUp(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-            return real.onKeyUp(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.view.KeyEvent.Callback) real).onKeyUp(arg0, arg1 == null ? null : arg1.getReal());
         }
 
     }
     public static final class DispatcherState {
-        private final android.view.KeyEvent.DispatcherState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DispatcherState(android.view.KeyEvent.DispatcherState real) {
+        private final java.lang.Object real;
+
+        private DispatcherState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.KeyEvent.DispatcherState wrap(android.view.KeyEvent.DispatcherState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent.DispatcherState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.KeyEvent.DispatcherState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.KeyEvent.DispatcherState getReal() {
+            return (android.view.KeyEvent.DispatcherState) real;
         }
 
         public android.view.KeyEvent.DispatcherState unwrap() {
-            return real;
+            return getReal();
         }
 
         public DispatcherState() {
-            this(new android.view.KeyEvent.DispatcherState());
+            this(new android.view.KeyEvent.DispatcherState(), (__DcgwBridgeToken) null);
         }
 
         public void handleUpEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-            real.handleUpEvent(arg0 == null ? null : arg0.unwrap());
+            ((android.view.KeyEvent.DispatcherState) real).handleUpEvent(arg0 == null ? null : arg0.getReal());
         }
 
         public boolean isTracking(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-            return real.isTracking(arg0 == null ? null : arg0.unwrap());
+            return ((android.view.KeyEvent.DispatcherState) real).isTracking(arg0 == null ? null : arg0.getReal());
         }
 
         public void performedLongPress(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-            real.performedLongPress(arg0 == null ? null : arg0.unwrap());
+            ((android.view.KeyEvent.DispatcherState) real).performedLongPress(arg0 == null ? null : arg0.getReal());
         }
 
         public void reset() {
-            real.reset();
+            ((android.view.KeyEvent.DispatcherState) real).reset();
         }
 
         public void reset(java.lang.Object arg0) {
-            real.reset(arg0);
+            ((android.view.KeyEvent.DispatcherState) real).reset(arg0);
         }
 
         public void startTracking(com.micklab.dcg.wrapper.android.view.KeyEvent arg0, java.lang.Object arg1) {
-            real.startTracking(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.KeyEvent.DispatcherState) real).startTracking(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }

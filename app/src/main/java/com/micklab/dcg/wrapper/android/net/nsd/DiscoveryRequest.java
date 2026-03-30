@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.nsd;
 
 public final class DiscoveryRequest {
-    private final android.net.nsd.DiscoveryRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DiscoveryRequest(android.net.nsd.DiscoveryRequest real) {
+    private final java.lang.Object real;
+
+    private DiscoveryRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest wrap(android.net.nsd.DiscoveryRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.nsd.DiscoveryRequest getReal() {
+        return (android.net.nsd.DiscoveryRequest) real;
     }
 
     public android.net.nsd.DiscoveryRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -50,18 +57,25 @@ public final class DiscoveryRequest {
 
 
     public static final class Builder {
-        private final android.net.nsd.DiscoveryRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.nsd.DiscoveryRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest.Builder wrap(android.net.nsd.DiscoveryRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.nsd.DiscoveryRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.nsd.DiscoveryRequest.Builder getReal() {
+            return (android.net.nsd.DiscoveryRequest.Builder) real;
         }
 
         public android.net.nsd.DiscoveryRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) {

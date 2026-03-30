@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SmsManager {
-    private final android.telephony.SmsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SmsManager(android.telephony.SmsManager real) {
+    private final java.lang.Object real;
+
+    private SmsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SmsManager wrap(android.telephony.SmsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SmsManager getReal() {
+        return (android.telephony.SmsManager) real;
     }
 
     public android.telephony.SmsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String createAppSpecificSmsToken(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
@@ -102,18 +109,25 @@ public final class SmsManager {
 
 
     public static final class FinancialSmsCallback {
-        private final android.telephony.SmsManager.FinancialSmsCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FinancialSmsCallback(android.telephony.SmsManager.FinancialSmsCallback real) {
+        private final java.lang.Object real;
+
+        private FinancialSmsCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SmsManager.FinancialSmsCallback wrap(android.telephony.SmsManager.FinancialSmsCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsManager.FinancialSmsCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SmsManager.FinancialSmsCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SmsManager.FinancialSmsCallback getReal() {
+            return (android.telephony.SmsManager.FinancialSmsCallback) real;
         }
 
         public android.telephony.SmsManager.FinancialSmsCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFinancialSmsMessages(com.micklab.dcg.wrapper.android.database.CursorWindow arg0) {

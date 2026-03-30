@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.media.tv;
 
 public final class TvInputManager {
-    private final android.media.tv.TvInputManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TvInputManager(android.media.tv.TvInputManager real) {
+    private final java.lang.Object real;
+
+    private TvInputManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.TvInputManager wrap(android.media.tv.TvInputManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvInputManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvInputManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.tv.TvInputManager getReal() {
+        return (android.media.tv.TvInputManager) real;
     }
 
     public android.media.tv.TvInputManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getInputState(java.lang.String arg0) {
-        return real.getInputState(arg0);
+        return ((android.media.tv.TvInputManager) real).getInputState(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.tv.TvInputInfo getTvInputInfo(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.media.tv.TvInputInfo.wrap(real.getTvInputInfo(arg0));
+        return com.micklab.dcg.wrapper.android.media.tv.TvInputInfo.wrap(((android.media.tv.TvInputManager) real).getTvInputInfo(arg0));
     }
 
     public boolean isParentalControlsEnabled() {
-        return real.isParentalControlsEnabled();
+        return ((android.media.tv.TvInputManager) real).isParentalControlsEnabled();
     }
 
     public boolean isRatingBlocked(com.micklab.dcg.wrapper.android.media.tv.TvContentRating arg0) {
-        return real.isRatingBlocked(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.tv.TvInputManager) real).isRatingBlocked(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerCallback(com.micklab.dcg.wrapper.android.media.tv.TvInputManager.TvInputCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        real.registerCallback(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.media.tv.TvInputManager) real).registerCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterCallback(com.micklab.dcg.wrapper.android.media.tv.TvInputManager.TvInputCallback arg0) {
-        real.unregisterCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.tv.TvInputManager) real).unregisterCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void updateTvInputInfo(com.micklab.dcg.wrapper.android.media.tv.TvInputInfo arg0) {
-        real.updateTvInputInfo(arg0 == null ? null : arg0.unwrap());
+        ((android.media.tv.TvInputManager) real).updateTvInputInfo(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_BLOCKED_RATINGS_CHANGED = android.media.tv.TvInputManager.ACTION_BLOCKED_RATINGS_CHANGED;
@@ -105,38 +112,45 @@ public final class TvInputManager {
     public static final int VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL = android.media.tv.TvInputManager.VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL;
 
     public static final class TvInputCallback {
-        private final android.media.tv.TvInputManager.TvInputCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TvInputCallback(android.media.tv.TvInputManager.TvInputCallback real) {
+        private final java.lang.Object real;
+
+        private TvInputCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.TvInputManager.TvInputCallback wrap(android.media.tv.TvInputManager.TvInputCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvInputManager.TvInputCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.TvInputManager.TvInputCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.TvInputManager.TvInputCallback getReal() {
+            return (android.media.tv.TvInputManager.TvInputCallback) real;
         }
 
         public android.media.tv.TvInputManager.TvInputCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onInputAdded(java.lang.String arg0) {
-            real.onInputAdded(arg0);
+            ((android.media.tv.TvInputManager.TvInputCallback) real).onInputAdded(arg0);
         }
 
         public void onInputRemoved(java.lang.String arg0) {
-            real.onInputRemoved(arg0);
+            ((android.media.tv.TvInputManager.TvInputCallback) real).onInputRemoved(arg0);
         }
 
         public void onInputStateChanged(java.lang.String arg0, int arg1) {
-            real.onInputStateChanged(arg0, arg1);
+            ((android.media.tv.TvInputManager.TvInputCallback) real).onInputStateChanged(arg0, arg1);
         }
 
         public void onInputUpdated(java.lang.String arg0) {
-            real.onInputUpdated(arg0);
+            ((android.media.tv.TvInputManager.TvInputCallback) real).onInputUpdated(arg0);
         }
 
         public void onTvInputInfoUpdated(com.micklab.dcg.wrapper.android.media.tv.TvInputInfo arg0) {
-            real.onTvInputInfoUpdated(arg0 == null ? null : arg0.unwrap());
+            ((android.media.tv.TvInputManager.TvInputCallback) real).onTvInputInfoUpdated(arg0 == null ? null : arg0.getReal());
         }
 
     }

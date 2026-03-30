@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class FrameMetrics {
-    private final android.view.FrameMetrics real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public FrameMetrics(android.view.FrameMetrics real) {
+    private final java.lang.Object real;
+
+    private FrameMetrics(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.FrameMetrics wrap(android.view.FrameMetrics real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.FrameMetrics(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.FrameMetrics(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.FrameMetrics getReal() {
+        return (android.view.FrameMetrics) real;
     }
 
     public android.view.FrameMetrics unwrap() {
-        return real;
+        return getReal();
     }
 
     public FrameMetrics(com.micklab.dcg.wrapper.android.view.FrameMetrics arg0) {
-        this(new android.view.FrameMetrics(arg0 == null ? null : arg0.unwrap()));
+        this(new android.view.FrameMetrics(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public long getMetric(int arg0) {
-        return real.getMetric(arg0);
+        return ((android.view.FrameMetrics) real).getMetric(arg0);
     }
 
     public static final int ANIMATION_DURATION = android.view.FrameMetrics.ANIMATION_DURATION;

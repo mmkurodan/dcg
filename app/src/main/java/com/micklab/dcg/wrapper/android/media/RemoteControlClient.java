@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class RemoteControlClient {
-    private final android.media.RemoteControlClient real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RemoteControlClient(android.media.RemoteControlClient real) {
+    private final java.lang.Object real;
+
+    private RemoteControlClient(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.RemoteControlClient wrap(android.media.RemoteControlClient real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.RemoteControlClient getReal() {
+        return (android.media.RemoteControlClient) real;
     }
 
     public android.media.RemoteControlClient unwrap() {
-        return real;
+        return getReal();
     }
 
     public RemoteControlClient(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-        this(new android.media.RemoteControlClient(arg0 == null ? null : arg0.unwrap()));
+        this(new android.media.RemoteControlClient(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public RemoteControlClient(com.micklab.dcg.wrapper.android.app.PendingIntent arg0, com.micklab.dcg.wrapper.android.os.Looper arg1) {
-        this(new android.media.RemoteControlClient(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.media.RemoteControlClient(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public android.media.RemoteControlClient.MetadataEditor editMetadata(boolean arg0) {
-        return real.editMetadata(arg0);
+        return ((android.media.RemoteControlClient) real).editMetadata(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.media.session.MediaSession getMediaSession() {
-        return com.micklab.dcg.wrapper.android.media.session.MediaSession.wrap(real.getMediaSession());
+        return com.micklab.dcg.wrapper.android.media.session.MediaSession.wrap(((android.media.RemoteControlClient) real).getMediaSession());
     }
 
     public void setMetadataUpdateListener(com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnMetadataUpdateListener arg0) {
-        real.setMetadataUpdateListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.RemoteControlClient) real).setMetadataUpdateListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnGetPlaybackPositionListener(com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnGetPlaybackPositionListener arg0) {
-        real.setOnGetPlaybackPositionListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.RemoteControlClient) real).setOnGetPlaybackPositionListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPlaybackPositionUpdateListener(com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnPlaybackPositionUpdateListener arg0) {
-        real.setPlaybackPositionUpdateListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.RemoteControlClient) real).setPlaybackPositionUpdateListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPlaybackState(int arg0) {
-        real.setPlaybackState(arg0);
+        ((android.media.RemoteControlClient) real).setPlaybackState(arg0);
     }
 
     public void setPlaybackState(int arg0, long arg1, float arg2) {
-        real.setPlaybackState(arg0, arg1, arg2);
+        ((android.media.RemoteControlClient) real).setPlaybackState(arg0, arg1, arg2);
     }
 
     public void setTransportControlFlags(int arg0) {
-        real.setTransportControlFlags(arg0);
+        ((android.media.RemoteControlClient) real).setTransportControlFlags(arg0);
     }
 
     public static final int FLAG_KEY_MEDIA_FAST_FORWARD = android.media.RemoteControlClient.FLAG_KEY_MEDIA_FAST_FORWARD;
@@ -77,62 +84,83 @@ public final class RemoteControlClient {
     public static final int PLAYSTATE_STOPPED = android.media.RemoteControlClient.PLAYSTATE_STOPPED;
 
     public static final class OnGetPlaybackPositionListener {
-        private final android.media.RemoteControlClient.OnGetPlaybackPositionListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnGetPlaybackPositionListener(android.media.RemoteControlClient.OnGetPlaybackPositionListener real) {
+        private final java.lang.Object real;
+
+        private OnGetPlaybackPositionListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnGetPlaybackPositionListener wrap(android.media.RemoteControlClient.OnGetPlaybackPositionListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnGetPlaybackPositionListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnGetPlaybackPositionListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.RemoteControlClient.OnGetPlaybackPositionListener getReal() {
+            return (android.media.RemoteControlClient.OnGetPlaybackPositionListener) real;
         }
 
         public android.media.RemoteControlClient.OnGetPlaybackPositionListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public long onGetPlaybackPosition() {
-            return real.onGetPlaybackPosition();
+            return ((android.media.RemoteControlClient.OnGetPlaybackPositionListener) real).onGetPlaybackPosition();
         }
 
     }
     public static final class OnMetadataUpdateListener {
-        private final android.media.RemoteControlClient.OnMetadataUpdateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnMetadataUpdateListener(android.media.RemoteControlClient.OnMetadataUpdateListener real) {
+        private final java.lang.Object real;
+
+        private OnMetadataUpdateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnMetadataUpdateListener wrap(android.media.RemoteControlClient.OnMetadataUpdateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnMetadataUpdateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnMetadataUpdateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.RemoteControlClient.OnMetadataUpdateListener getReal() {
+            return (android.media.RemoteControlClient.OnMetadataUpdateListener) real;
         }
 
         public android.media.RemoteControlClient.OnMetadataUpdateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onMetadataUpdate(int arg0, java.lang.Object arg1) {
-            real.onMetadataUpdate(arg0, arg1);
+            ((android.media.RemoteControlClient.OnMetadataUpdateListener) real).onMetadataUpdate(arg0, arg1);
         }
 
     }
     public static final class OnPlaybackPositionUpdateListener {
-        private final android.media.RemoteControlClient.OnPlaybackPositionUpdateListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnPlaybackPositionUpdateListener(android.media.RemoteControlClient.OnPlaybackPositionUpdateListener real) {
+        private final java.lang.Object real;
+
+        private OnPlaybackPositionUpdateListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnPlaybackPositionUpdateListener wrap(android.media.RemoteControlClient.OnPlaybackPositionUpdateListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnPlaybackPositionUpdateListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.OnPlaybackPositionUpdateListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.RemoteControlClient.OnPlaybackPositionUpdateListener getReal() {
+            return (android.media.RemoteControlClient.OnPlaybackPositionUpdateListener) real;
         }
 
         public android.media.RemoteControlClient.OnPlaybackPositionUpdateListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onPlaybackPositionUpdate(long arg0) {
-            real.onPlaybackPositionUpdate(arg0);
+            ((android.media.RemoteControlClient.OnPlaybackPositionUpdateListener) real).onPlaybackPositionUpdate(arg0);
         }
 
     }

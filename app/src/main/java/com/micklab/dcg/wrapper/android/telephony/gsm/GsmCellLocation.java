@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.gsm;
 
 public final class GsmCellLocation {
-    private final android.telephony.gsm.GsmCellLocation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GsmCellLocation(android.telephony.gsm.GsmCellLocation real) {
+    private final java.lang.Object real;
+
+    private GsmCellLocation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.gsm.GsmCellLocation wrap(android.telephony.gsm.GsmCellLocation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.GsmCellLocation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.gsm.GsmCellLocation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.gsm.GsmCellLocation getReal() {
+        return (android.telephony.gsm.GsmCellLocation) real;
     }
 
     public android.telephony.gsm.GsmCellLocation unwrap() {
-        return real;
+        return getReal();
     }
 
     public GsmCellLocation() {

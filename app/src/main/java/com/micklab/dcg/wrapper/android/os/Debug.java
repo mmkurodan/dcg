@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Debug {
-    private final android.os.Debug real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Debug(android.os.Debug real) {
+    private final java.lang.Object real;
+
+    private Debug(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.Debug wrap(android.os.Debug real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.Debug getReal() {
+        return (android.os.Debug) real;
     }
 
     public android.os.Debug unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void attachJvmtiAgent(java.lang.String arg0, java.lang.String arg1, java.lang.ClassLoader arg2) throws java.io.IOException {
@@ -290,18 +297,25 @@ public final class Debug {
 
 
     public static final class InstructionCount {
-        private final android.os.Debug.InstructionCount real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InstructionCount(android.os.Debug.InstructionCount real) {
+        private final java.lang.Object real;
+
+        private InstructionCount(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Debug.InstructionCount wrap(android.os.Debug.InstructionCount real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug.InstructionCount(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug.InstructionCount(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Debug.InstructionCount getReal() {
+            return (android.os.Debug.InstructionCount) real;
         }
 
         public android.os.Debug.InstructionCount unwrap() {
-            return real;
+            return getReal();
         }
 
         public InstructionCount() {
@@ -326,18 +340,25 @@ public final class Debug {
 
     }
     public static final class MemoryInfo {
-        private final android.os.Debug.MemoryInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MemoryInfo(android.os.Debug.MemoryInfo real) {
+        private final java.lang.Object real;
+
+        private MemoryInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.Debug.MemoryInfo wrap(android.os.Debug.MemoryInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug.MemoryInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Debug.MemoryInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Debug.MemoryInfo getReal() {
+            return (android.os.Debug.MemoryInfo) real;
         }
 
         public android.os.Debug.MemoryInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public MemoryInfo() {

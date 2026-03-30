@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class CellInfoNr {
-    private final android.telephony.CellInfoNr real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CellInfoNr(android.telephony.CellInfoNr real) {
+    private final java.lang.Object real;
+
+    private CellInfoNr(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.CellInfoNr wrap(android.telephony.CellInfoNr real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellInfoNr(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.CellInfoNr(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.CellInfoNr getReal() {
+        return (android.telephony.CellInfoNr) real;
     }
 
     public android.telephony.CellInfoNr unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

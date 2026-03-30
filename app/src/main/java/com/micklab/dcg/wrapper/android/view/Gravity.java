@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class Gravity {
-    private final android.view.Gravity real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Gravity(android.view.Gravity real) {
+    private final java.lang.Object real;
+
+    private Gravity(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.Gravity wrap(android.view.Gravity real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Gravity(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.Gravity(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.Gravity getReal() {
+        return (android.view.Gravity) real;
     }
 
     public android.view.Gravity unwrap() {
-        return real;
+        return getReal();
     }
 
     public Gravity() {
-        this(new android.view.Gravity());
+        this(new android.view.Gravity(), (__DcgwBridgeToken) null);
     }
 
     public static void apply(int arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3, com.micklab.dcg.wrapper.android.graphics.Rect arg4) {
-        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap());
+        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public static void apply(int arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3, com.micklab.dcg.wrapper.android.graphics.Rect arg4, int arg5) {
-        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap(), arg5);
+        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5);
     }
 
     public static void apply(int arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3, int arg4, int arg5, com.micklab.dcg.wrapper.android.graphics.Rect arg6) {
-        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4, arg5, arg6 == null ? null : arg6.unwrap());
+        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
     public static void apply(int arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3, int arg4, int arg5, com.micklab.dcg.wrapper.android.graphics.Rect arg6, int arg7) {
-        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4, arg5, arg6 == null ? null : arg6.unwrap(), arg7);
+        android.view.Gravity.apply(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal(), arg7);
     }
 
     public static void applyDisplay(int arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Rect arg2) {
-        android.view.Gravity.applyDisplay(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        android.view.Gravity.applyDisplay(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static void applyDisplay(int arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Rect arg2, int arg3) {
-        android.view.Gravity.applyDisplay(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3);
+        android.view.Gravity.applyDisplay(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public static int getAbsoluteGravity(int arg0, int arg1) {

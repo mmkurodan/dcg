@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class DropBoxManager {
-    private final android.os.DropBoxManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DropBoxManager(android.os.DropBoxManager real) {
+    private final java.lang.Object real;
+
+    private DropBoxManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.DropBoxManager wrap(android.os.DropBoxManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.DropBoxManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.DropBoxManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.DropBoxManager getReal() {
+        return (android.os.DropBoxManager) real;
     }
 
     public android.os.DropBoxManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addData(java.lang.String arg0, byte[] arg1, int arg2) {
@@ -38,18 +45,25 @@ public final class DropBoxManager {
 
 
     public static final class Entry {
-        private final android.os.DropBoxManager.Entry real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Entry(android.os.DropBoxManager.Entry real) {
+        private final java.lang.Object real;
+
+        private Entry(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.DropBoxManager.Entry wrap(android.os.DropBoxManager.Entry real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.DropBoxManager.Entry(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.DropBoxManager.Entry(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.DropBoxManager.Entry getReal() {
+            return (android.os.DropBoxManager.Entry) real;
         }
 
         public android.os.DropBoxManager.Entry unwrap() {
-            return real;
+            return getReal();
         }
 
         public Entry(java.lang.String arg0, long arg1) {

@@ -2,146 +2,153 @@
 package com.micklab.dcg.wrapper.android.telecom;
 
 public final class TelecomManager {
-    private final android.telecom.TelecomManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TelecomManager(android.telecom.TelecomManager real) {
+    private final java.lang.Object real;
+
+    private TelecomManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telecom.TelecomManager wrap(android.telecom.TelecomManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.TelecomManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telecom.TelecomManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telecom.TelecomManager getReal() {
+        return (android.telecom.TelecomManager) real;
     }
 
     public android.telecom.TelecomManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void acceptHandover(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg2) {
-        real.acceptHandover(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.telecom.TelecomManager) real).acceptHandover(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void acceptRingingCall() {
-        real.acceptRingingCall();
+        ((android.telecom.TelecomManager) real).acceptRingingCall();
     }
 
     public void acceptRingingCall(int arg0) {
-        real.acceptRingingCall(arg0);
+        ((android.telecom.TelecomManager) real).acceptRingingCall(arg0);
     }
 
     public void addNewIncomingCall(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.addNewIncomingCall(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.TelecomManager) real).addNewIncomingCall(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addNewIncomingConference(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.addNewIncomingConference(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.TelecomManager) real).addNewIncomingConference(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void cancelMissedCallsNotification() {
-        real.cancelMissedCallsNotification();
+        ((android.telecom.TelecomManager) real).cancelMissedCallsNotification();
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent createManageBlockedNumbersIntent() {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.createManageBlockedNumbersIntent());
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.telecom.TelecomManager) real).createManageBlockedNumbersIntent());
     }
 
     public boolean endCall() {
-        return real.endCall();
+        return ((android.telecom.TelecomManager) real).endCall();
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getAdnUriForPhoneAccount(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(real.getAdnUriForPhoneAccount(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.telecom.TelecomManager) real).getAdnUriForPhoneAccount(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.lang.String getDefaultDialerPackage() {
-        return real.getDefaultDialerPackage();
+        return ((android.telecom.TelecomManager) real).getDefaultDialerPackage();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getDefaultOutgoingPhoneAccount(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getDefaultOutgoingPhoneAccount(arg0));
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.TelecomManager) real).getDefaultOutgoingPhoneAccount(arg0));
     }
 
     public java.lang.String getLine1Number(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return real.getLine1Number(arg0 == null ? null : arg0.unwrap());
+        return ((android.telecom.TelecomManager) real).getLine1Number(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccount getPhoneAccount(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.wrap(real.getPhoneAccount(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccount.wrap(((android.telecom.TelecomManager) real).getPhoneAccount(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getSimCallManager() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getSimCallManager());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.TelecomManager) real).getSimCallManager());
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getSimCallManagerForSubscription(int arg0) {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getSimCallManagerForSubscription(arg0));
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.TelecomManager) real).getSimCallManagerForSubscription(arg0));
     }
 
     public java.lang.String getSystemDialerPackage() {
-        return real.getSystemDialerPackage();
+        return ((android.telecom.TelecomManager) real).getSystemDialerPackage();
     }
 
     public com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle getUserSelectedOutgoingPhoneAccount() {
-        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(real.getUserSelectedOutgoingPhoneAccount());
+        return com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle.wrap(((android.telecom.TelecomManager) real).getUserSelectedOutgoingPhoneAccount());
     }
 
     public java.lang.String getVoiceMailNumber(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return real.getVoiceMailNumber(arg0 == null ? null : arg0.unwrap());
+        return ((android.telecom.TelecomManager) real).getVoiceMailNumber(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean handleMmi(java.lang.String arg0) {
-        return real.handleMmi(arg0);
+        return ((android.telecom.TelecomManager) real).handleMmi(arg0);
     }
 
     public boolean handleMmi(java.lang.String arg0, com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg1) {
-        return real.handleMmi(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.telecom.TelecomManager) real).handleMmi(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean hasManageOngoingCallsPermission() {
-        return real.hasManageOngoingCallsPermission();
+        return ((android.telecom.TelecomManager) real).hasManageOngoingCallsPermission();
     }
 
     public boolean isInCall() {
-        return real.isInCall();
+        return ((android.telecom.TelecomManager) real).isInCall();
     }
 
     public boolean isInManagedCall() {
-        return real.isInManagedCall();
+        return ((android.telecom.TelecomManager) real).isInManagedCall();
     }
 
     public boolean isIncomingCallPermitted(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return real.isIncomingCallPermitted(arg0 == null ? null : arg0.unwrap());
+        return ((android.telecom.TelecomManager) real).isIncomingCallPermitted(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isOutgoingCallPermitted(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        return real.isOutgoingCallPermitted(arg0 == null ? null : arg0.unwrap());
+        return ((android.telecom.TelecomManager) real).isOutgoingCallPermitted(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isTtySupported() {
-        return real.isTtySupported();
+        return ((android.telecom.TelecomManager) real).isTtySupported();
     }
 
     public boolean isVoiceMailNumber(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0, java.lang.String arg1) {
-        return real.isVoiceMailNumber(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.telecom.TelecomManager) real).isVoiceMailNumber(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void placeCall(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.placeCall(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.telecom.TelecomManager) real).placeCall(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void registerPhoneAccount(com.micklab.dcg.wrapper.android.telecom.PhoneAccount arg0) {
-        real.registerPhoneAccount(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.TelecomManager) real).registerPhoneAccount(arg0 == null ? null : arg0.getReal());
     }
 
     public void showInCallScreen(boolean arg0) {
-        real.showInCallScreen(arg0);
+        ((android.telecom.TelecomManager) real).showInCallScreen(arg0);
     }
 
     public void silenceRinger() {
-        real.silenceRinger();
+        ((android.telecom.TelecomManager) real).silenceRinger();
     }
 
     public void unregisterPhoneAccount(com.micklab.dcg.wrapper.android.telecom.PhoneAccountHandle arg0) {
-        real.unregisterPhoneAccount(arg0 == null ? null : arg0.unwrap());
+        ((android.telecom.TelecomManager) real).unregisterPhoneAccount(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_CHANGE_DEFAULT_DIALER = android.telecom.TelecomManager.ACTION_CHANGE_DEFAULT_DIALER;

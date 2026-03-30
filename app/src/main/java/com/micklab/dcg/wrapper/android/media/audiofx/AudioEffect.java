@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.media.audiofx;
 
 public final class AudioEffect {
-    private final android.media.audiofx.AudioEffect real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioEffect(android.media.audiofx.AudioEffect real) {
+    private final java.lang.Object real;
+
+    private AudioEffect(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect wrap(android.media.audiofx.AudioEffect real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.audiofx.AudioEffect getReal() {
+        return (android.media.audiofx.AudioEffect) real;
     }
 
     public android.media.audiofx.AudioEffect unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor getDescriptor() throws java.lang.IllegalStateException {
-        return com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor.wrap(real.getDescriptor());
+        return com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor.wrap(((android.media.audiofx.AudioEffect) real).getDescriptor());
     }
 
     public boolean getEnabled() throws java.lang.IllegalStateException {
-        return real.getEnabled();
+        return ((android.media.audiofx.AudioEffect) real).getEnabled();
     }
 
     public int getId() throws java.lang.IllegalStateException {
-        return real.getId();
+        return ((android.media.audiofx.AudioEffect) real).getId();
     }
 
     public boolean hasControl() throws java.lang.IllegalStateException {
-        return real.hasControl();
+        return ((android.media.audiofx.AudioEffect) real).hasControl();
     }
 
     public static android.media.audiofx.AudioEffect.Descriptor[] queryEffects() {
@@ -37,19 +44,19 @@ public final class AudioEffect {
     }
 
     public void release() {
-        real.release();
+        ((android.media.audiofx.AudioEffect) real).release();
     }
 
     public void setControlStatusListener(com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnControlStatusChangeListener arg0) {
-        real.setControlStatusListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.audiofx.AudioEffect) real).setControlStatusListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setEnableStatusListener(com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnEnableStatusChangeListener arg0) {
-        real.setEnableStatusListener(arg0 == null ? null : arg0.unwrap());
+        ((android.media.audiofx.AudioEffect) real).setEnableStatusListener(arg0 == null ? null : arg0.getReal());
     }
 
     public int setEnabled(boolean arg0) throws java.lang.IllegalStateException {
-        return real.setEnabled(arg0);
+        return ((android.media.audiofx.AudioEffect) real).setEnabled(arg0);
     }
 
     public static final java.lang.String ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION = android.media.audiofx.AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION;
@@ -87,75 +94,96 @@ public final class AudioEffect {
     public static final int SUCCESS = android.media.audiofx.AudioEffect.SUCCESS;
 
     public static final class Descriptor {
-        private final android.media.audiofx.AudioEffect.Descriptor real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Descriptor(android.media.audiofx.AudioEffect.Descriptor real) {
+        private final java.lang.Object real;
+
+        private Descriptor(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor wrap(android.media.audiofx.AudioEffect.Descriptor real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.Descriptor(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.AudioEffect.Descriptor getReal() {
+            return (android.media.audiofx.AudioEffect.Descriptor) real;
         }
 
         public android.media.audiofx.AudioEffect.Descriptor unwrap() {
-            return real;
+            return getReal();
         }
 
         public Descriptor() {
-            this(new android.media.audiofx.AudioEffect.Descriptor());
+            this(new android.media.audiofx.AudioEffect.Descriptor(), (__DcgwBridgeToken) null);
         }
 
         public Descriptor(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-            this(new android.media.audiofx.AudioEffect.Descriptor(arg0, arg1, arg2, arg3, arg4));
+            this(new android.media.audiofx.AudioEffect.Descriptor(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.media.audiofx.AudioEffect.Descriptor) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.media.audiofx.AudioEffect.Descriptor) real).hashCode();
         }
 
 
     }
     public static final class OnControlStatusChangeListener {
-        private final android.media.audiofx.AudioEffect.OnControlStatusChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnControlStatusChangeListener(android.media.audiofx.AudioEffect.OnControlStatusChangeListener real) {
+        private final java.lang.Object real;
+
+        private OnControlStatusChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnControlStatusChangeListener wrap(android.media.audiofx.AudioEffect.OnControlStatusChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnControlStatusChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnControlStatusChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.AudioEffect.OnControlStatusChangeListener getReal() {
+            return (android.media.audiofx.AudioEffect.OnControlStatusChangeListener) real;
         }
 
         public android.media.audiofx.AudioEffect.OnControlStatusChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onControlStatusChange(com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect arg0, boolean arg1) {
-            real.onControlStatusChange(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.audiofx.AudioEffect.OnControlStatusChangeListener) real).onControlStatusChange(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }
     public static final class OnEnableStatusChangeListener {
-        private final android.media.audiofx.AudioEffect.OnEnableStatusChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnEnableStatusChangeListener(android.media.audiofx.AudioEffect.OnEnableStatusChangeListener real) {
+        private final java.lang.Object real;
+
+        private OnEnableStatusChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnEnableStatusChangeListener wrap(android.media.audiofx.AudioEffect.OnEnableStatusChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnEnableStatusChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect.OnEnableStatusChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.AudioEffect.OnEnableStatusChangeListener getReal() {
+            return (android.media.audiofx.AudioEffect.OnEnableStatusChangeListener) real;
         }
 
         public android.media.audiofx.AudioEffect.OnEnableStatusChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onEnableStatusChange(com.micklab.dcg.wrapper.android.media.audiofx.AudioEffect arg0, boolean arg1) {
-            real.onEnableStatusChange(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.audiofx.AudioEffect.OnEnableStatusChangeListener) real).onEnableStatusChange(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
     }

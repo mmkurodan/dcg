@@ -2,152 +2,166 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class Magnifier {
-    private final android.widget.Magnifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Magnifier(android.widget.Magnifier real) {
+    private final java.lang.Object real;
+
+    private Magnifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.Magnifier wrap(android.widget.Magnifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Magnifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Magnifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.Magnifier getReal() {
+        return (android.widget.Magnifier) real;
     }
 
     public android.widget.Magnifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public Magnifier(com.micklab.dcg.wrapper.android.view.View arg0) {
-        this(new android.widget.Magnifier(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.Magnifier(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void dismiss() {
-        real.dismiss();
+        ((android.widget.Magnifier) real).dismiss();
     }
 
     public float getCornerRadius() {
-        return real.getCornerRadius();
+        return ((android.widget.Magnifier) real).getCornerRadius();
     }
 
     public int getDefaultHorizontalSourceToMagnifierOffset() {
-        return real.getDefaultHorizontalSourceToMagnifierOffset();
+        return ((android.widget.Magnifier) real).getDefaultHorizontalSourceToMagnifierOffset();
     }
 
     public int getDefaultVerticalSourceToMagnifierOffset() {
-        return real.getDefaultVerticalSourceToMagnifierOffset();
+        return ((android.widget.Magnifier) real).getDefaultVerticalSourceToMagnifierOffset();
     }
 
     public float getElevation() {
-        return real.getElevation();
+        return ((android.widget.Magnifier) real).getElevation();
     }
 
     public int getHeight() {
-        return real.getHeight();
+        return ((android.widget.Magnifier) real).getHeight();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getOverlay() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getOverlay());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.Magnifier) real).getOverlay());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Point getPosition() {
-        return com.micklab.dcg.wrapper.android.graphics.Point.wrap(real.getPosition());
+        return com.micklab.dcg.wrapper.android.graphics.Point.wrap(((android.widget.Magnifier) real).getPosition());
     }
 
     public int getSourceHeight() {
-        return real.getSourceHeight();
+        return ((android.widget.Magnifier) real).getSourceHeight();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Point getSourcePosition() {
-        return com.micklab.dcg.wrapper.android.graphics.Point.wrap(real.getSourcePosition());
+        return com.micklab.dcg.wrapper.android.graphics.Point.wrap(((android.widget.Magnifier) real).getSourcePosition());
     }
 
     public int getSourceWidth() {
-        return real.getSourceWidth();
+        return ((android.widget.Magnifier) real).getSourceWidth();
     }
 
     public int getWidth() {
-        return real.getWidth();
+        return ((android.widget.Magnifier) real).getWidth();
     }
 
     public float getZoom() {
-        return real.getZoom();
+        return ((android.widget.Magnifier) real).getZoom();
     }
 
     public boolean isClippingEnabled() {
-        return real.isClippingEnabled();
+        return ((android.widget.Magnifier) real).isClippingEnabled();
     }
 
     public void setZoom(float arg0) {
-        real.setZoom(arg0);
+        ((android.widget.Magnifier) real).setZoom(arg0);
     }
 
     public void show(float arg0, float arg1) {
-        real.show(arg0, arg1);
+        ((android.widget.Magnifier) real).show(arg0, arg1);
     }
 
     public void show(float arg0, float arg1, float arg2, float arg3) {
-        real.show(arg0, arg1, arg2, arg3);
+        ((android.widget.Magnifier) real).show(arg0, arg1, arg2, arg3);
     }
 
     public void update() {
-        real.update();
+        ((android.widget.Magnifier) real).update();
     }
 
     public static final int SOURCE_BOUND_MAX_IN_SURFACE = android.widget.Magnifier.SOURCE_BOUND_MAX_IN_SURFACE;
     public static final int SOURCE_BOUND_MAX_VISIBLE = android.widget.Magnifier.SOURCE_BOUND_MAX_VISIBLE;
 
     public static final class Builder {
-        private final android.widget.Magnifier.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.widget.Magnifier.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.Magnifier.Builder wrap(android.widget.Magnifier.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Magnifier.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.Magnifier.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.Magnifier.Builder getReal() {
+            return (android.widget.Magnifier.Builder) real;
         }
 
         public android.widget.Magnifier.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.view.View arg0) {
-            this(new android.widget.Magnifier.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.widget.Magnifier.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier build() {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.wrap(((android.widget.Magnifier.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setClippingEnabled(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setClippingEnabled(arg0));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setClippingEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setCornerRadius(float arg0) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setCornerRadius(arg0));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setCornerRadius(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setDefaultSourceToMagnifierOffset(int arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setDefaultSourceToMagnifierOffset(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setDefaultSourceToMagnifierOffset(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setElevation(float arg0) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setElevation(arg0));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setElevation(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setInitialZoom(float arg0) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setInitialZoom(arg0));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setInitialZoom(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setOverlay(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setOverlay(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setOverlay(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setSize(int arg0, int arg1) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setSize(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setSize(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.widget.Magnifier.Builder setSourceBounds(int arg0, int arg1, int arg2, int arg3) {
-            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(real.setSourceBounds(arg0, arg1, arg2, arg3));
+            return com.micklab.dcg.wrapper.android.widget.Magnifier.Builder.wrap(((android.widget.Magnifier.Builder) real).setSourceBounds(arg0, arg1, arg2, arg3));
         }
 
     }

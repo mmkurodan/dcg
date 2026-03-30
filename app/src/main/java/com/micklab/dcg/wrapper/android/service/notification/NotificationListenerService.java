@@ -2,154 +2,161 @@
 package com.micklab.dcg.wrapper.android.service.notification;
 
 public final class NotificationListenerService {
-    private final android.service.notification.NotificationListenerService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NotificationListenerService(android.service.notification.NotificationListenerService real) {
+    private final java.lang.Object real;
+
+    private NotificationListenerService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService wrap(android.service.notification.NotificationListenerService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.service.notification.NotificationListenerService getReal() {
+        return (android.service.notification.NotificationListenerService) real;
     }
 
     public android.service.notification.NotificationListenerService unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancelAllNotifications() {
-        real.cancelAllNotifications();
+        ((android.service.notification.NotificationListenerService) real).cancelAllNotifications();
     }
 
     public void cancelNotification(java.lang.String arg0) {
-        real.cancelNotification(arg0);
+        ((android.service.notification.NotificationListenerService) real).cancelNotification(arg0);
     }
 
     public void cancelNotification(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        real.cancelNotification(arg0, arg1, arg2);
+        ((android.service.notification.NotificationListenerService) real).cancelNotification(arg0, arg1, arg2);
     }
 
     public void cancelNotifications(java.lang.String[] arg0) {
-        real.cancelNotifications(arg0);
+        ((android.service.notification.NotificationListenerService) real).cancelNotifications(arg0);
     }
 
     public void clearRequestedListenerHints() {
-        real.clearRequestedListenerHints();
+        ((android.service.notification.NotificationListenerService) real).clearRequestedListenerHints();
     }
 
     public android.service.notification.StatusBarNotification[] getActiveNotifications() {
-        return real.getActiveNotifications();
+        return ((android.service.notification.NotificationListenerService) real).getActiveNotifications();
     }
 
     public android.service.notification.StatusBarNotification[] getActiveNotifications(java.lang.String[] arg0) {
-        return real.getActiveNotifications(arg0);
+        return ((android.service.notification.NotificationListenerService) real).getActiveNotifications(arg0);
     }
 
     public int getCurrentInterruptionFilter() {
-        return real.getCurrentInterruptionFilter();
+        return ((android.service.notification.NotificationListenerService) real).getCurrentInterruptionFilter();
     }
 
     public int getCurrentListenerHints() {
-        return real.getCurrentListenerHints();
+        return ((android.service.notification.NotificationListenerService) real).getCurrentListenerHints();
     }
 
     public com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap getCurrentRanking() {
-        return com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap.wrap(real.getCurrentRanking());
+        return com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap.wrap(((android.service.notification.NotificationListenerService) real).getCurrentRanking());
     }
 
     public android.service.notification.StatusBarNotification[] getSnoozedNotifications() {
-        return real.getSnoozedNotifications();
+        return ((android.service.notification.NotificationListenerService) real).getSnoozedNotifications();
     }
 
     public com.micklab.dcg.wrapper.android.os.IBinder onBind(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(real.onBind(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.service.notification.NotificationListenerService) real).onBind(arg0 == null ? null : arg0.getReal()));
     }
 
     public void onDestroy() {
-        real.onDestroy();
+        ((android.service.notification.NotificationListenerService) real).onDestroy();
     }
 
     public void onInterruptionFilterChanged(int arg0) {
-        real.onInterruptionFilterChanged(arg0);
+        ((android.service.notification.NotificationListenerService) real).onInterruptionFilterChanged(arg0);
     }
 
     public void onListenerConnected() {
-        real.onListenerConnected();
+        ((android.service.notification.NotificationListenerService) real).onListenerConnected();
     }
 
     public void onListenerDisconnected() {
-        real.onListenerDisconnected();
+        ((android.service.notification.NotificationListenerService) real).onListenerDisconnected();
     }
 
     public void onListenerHintsChanged(int arg0) {
-        real.onListenerHintsChanged(arg0);
+        ((android.service.notification.NotificationListenerService) real).onListenerHintsChanged(arg0);
     }
 
     public void onNotificationChannelGroupModified(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, com.micklab.dcg.wrapper.android.app.NotificationChannelGroup arg2, int arg3) {
-        real.onNotificationChannelGroupModified(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3);
+        ((android.service.notification.NotificationListenerService) real).onNotificationChannelGroupModified(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public void onNotificationChannelModified(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, com.micklab.dcg.wrapper.android.app.NotificationChannel arg2, int arg3) {
-        real.onNotificationChannelModified(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3);
+        ((android.service.notification.NotificationListenerService) real).onNotificationChannelModified(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public void onNotificationPosted(com.micklab.dcg.wrapper.android.service.notification.StatusBarNotification arg0) {
-        real.onNotificationPosted(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.NotificationListenerService) real).onNotificationPosted(arg0 == null ? null : arg0.getReal());
     }
 
     public void onNotificationPosted(com.micklab.dcg.wrapper.android.service.notification.StatusBarNotification arg0, com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap arg1) {
-        real.onNotificationPosted(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.service.notification.NotificationListenerService) real).onNotificationPosted(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void onNotificationRankingUpdate(com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap arg0) {
-        real.onNotificationRankingUpdate(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.NotificationListenerService) real).onNotificationRankingUpdate(arg0 == null ? null : arg0.getReal());
     }
 
     public void onNotificationRemoved(com.micklab.dcg.wrapper.android.service.notification.StatusBarNotification arg0) {
-        real.onNotificationRemoved(arg0 == null ? null : arg0.unwrap());
+        ((android.service.notification.NotificationListenerService) real).onNotificationRemoved(arg0 == null ? null : arg0.getReal());
     }
 
     public void onNotificationRemoved(com.micklab.dcg.wrapper.android.service.notification.StatusBarNotification arg0, com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap arg1) {
-        real.onNotificationRemoved(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.service.notification.NotificationListenerService) real).onNotificationRemoved(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void onNotificationRemoved(com.micklab.dcg.wrapper.android.service.notification.StatusBarNotification arg0, com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap arg1, int arg2) {
-        real.onNotificationRemoved(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.service.notification.NotificationListenerService) real).onNotificationRemoved(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void onSilentStatusBarIconsVisibilityChanged(boolean arg0) {
-        real.onSilentStatusBarIconsVisibilityChanged(arg0);
+        ((android.service.notification.NotificationListenerService) real).onSilentStatusBarIconsVisibilityChanged(arg0);
     }
 
     public void requestInterruptionFilter(int arg0) {
-        real.requestInterruptionFilter(arg0);
+        ((android.service.notification.NotificationListenerService) real).requestInterruptionFilter(arg0);
     }
 
     public void requestListenerHints(int arg0) {
-        real.requestListenerHints(arg0);
+        ((android.service.notification.NotificationListenerService) real).requestListenerHints(arg0);
     }
 
     public static void requestRebind(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        android.service.notification.NotificationListenerService.requestRebind(arg0 == null ? null : arg0.unwrap());
+        android.service.notification.NotificationListenerService.requestRebind(arg0 == null ? null : arg0.getReal());
     }
 
     public void requestUnbind() {
-        real.requestUnbind();
+        ((android.service.notification.NotificationListenerService) real).requestUnbind();
     }
 
     public static void requestUnbind(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        android.service.notification.NotificationListenerService.requestUnbind(arg0 == null ? null : arg0.unwrap());
+        android.service.notification.NotificationListenerService.requestUnbind(arg0 == null ? null : arg0.getReal());
     }
 
     public void setNotificationsShown(java.lang.String[] arg0) {
-        real.setNotificationsShown(arg0);
+        ((android.service.notification.NotificationListenerService) real).setNotificationsShown(arg0);
     }
 
     public void snoozeNotification(java.lang.String arg0, long arg1) {
-        real.snoozeNotification(arg0, arg1);
+        ((android.service.notification.NotificationListenerService) real).snoozeNotification(arg0, arg1);
     }
 
     public void updateNotificationChannel(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, com.micklab.dcg.wrapper.android.app.NotificationChannel arg2) {
-        real.updateNotificationChannel(arg0, arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        ((android.service.notification.NotificationListenerService) real).updateNotificationChannel(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public static final java.lang.String ACTION_SETTINGS_HOME = android.service.notification.NotificationListenerService.ACTION_SETTINGS_HOME;
@@ -198,94 +205,101 @@ public final class NotificationListenerService {
     public static final int SUPPRESSED_EFFECT_SCREEN_ON = android.service.notification.NotificationListenerService.SUPPRESSED_EFFECT_SCREEN_ON;
 
     public static final class Ranking {
-        private final android.service.notification.NotificationListenerService.Ranking real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Ranking(android.service.notification.NotificationListenerService.Ranking real) {
+        private final java.lang.Object real;
+
+        private Ranking(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.Ranking wrap(android.service.notification.NotificationListenerService.Ranking real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.Ranking(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.Ranking(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.notification.NotificationListenerService.Ranking getReal() {
+            return (android.service.notification.NotificationListenerService.Ranking) real;
         }
 
         public android.service.notification.NotificationListenerService.Ranking unwrap() {
-            return real;
+            return getReal();
         }
 
         public Ranking() {
-            this(new android.service.notification.NotificationListenerService.Ranking());
+            this(new android.service.notification.NotificationListenerService.Ranking(), (__DcgwBridgeToken) null);
         }
 
         public boolean canBubble() {
-            return real.canBubble();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).canBubble();
         }
 
         public boolean canShowBadge() {
-            return real.canShowBadge();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).canShowBadge();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.service.notification.NotificationListenerService.Ranking) real).equals(arg0);
         }
 
         public com.micklab.dcg.wrapper.android.app.NotificationChannel getChannel() {
-            return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(real.getChannel());
+            return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(((android.service.notification.NotificationListenerService.Ranking) real).getChannel());
         }
 
         public com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo getConversationShortcutInfo() {
-            return com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo.wrap(real.getConversationShortcutInfo());
+            return com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo.wrap(((android.service.notification.NotificationListenerService.Ranking) real).getConversationShortcutInfo());
         }
 
         public int getImportance() {
-            return real.getImportance();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getImportance();
         }
 
         public java.lang.CharSequence getImportanceExplanation() {
-            return real.getImportanceExplanation();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getImportanceExplanation();
         }
 
         public java.lang.String getKey() {
-            return real.getKey();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getKey();
         }
 
         public long getLastAudiblyAlertedMillis() {
-            return real.getLastAudiblyAlertedMillis();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getLastAudiblyAlertedMillis();
         }
 
         public int getLockscreenVisibilityOverride() {
-            return real.getLockscreenVisibilityOverride();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getLockscreenVisibilityOverride();
         }
 
         public java.lang.String getOverrideGroupKey() {
-            return real.getOverrideGroupKey();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getOverrideGroupKey();
         }
 
         public int getRank() {
-            return real.getRank();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getRank();
         }
 
         public int getSuppressedVisualEffects() {
-            return real.getSuppressedVisualEffects();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getSuppressedVisualEffects();
         }
 
         public int getUserSentiment() {
-            return real.getUserSentiment();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).getUserSentiment();
         }
 
         public boolean isAmbient() {
-            return real.isAmbient();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).isAmbient();
         }
 
         public boolean isConversation() {
-            return real.isConversation();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).isConversation();
         }
 
         public boolean isSuspended() {
-            return real.isSuspended();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).isSuspended();
         }
 
         public boolean matchesInterruptionFilter() {
-            return real.matchesInterruptionFilter();
+            return ((android.service.notification.NotificationListenerService.Ranking) real).matchesInterruptionFilter();
         }
 
         public static final int USER_SENTIMENT_NEGATIVE = android.service.notification.NotificationListenerService.Ranking.USER_SENTIMENT_NEGATIVE;
@@ -295,38 +309,45 @@ public final class NotificationListenerService {
 
     }
     public static final class RankingMap {
-        private final android.service.notification.NotificationListenerService.RankingMap real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RankingMap(android.service.notification.NotificationListenerService.RankingMap real) {
+        private final java.lang.Object real;
+
+        private RankingMap(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap wrap(android.service.notification.NotificationListenerService.RankingMap real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.RankingMap(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.notification.NotificationListenerService.RankingMap getReal() {
+            return (android.service.notification.NotificationListenerService.RankingMap) real;
         }
 
         public android.service.notification.NotificationListenerService.RankingMap unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.service.notification.NotificationListenerService.RankingMap) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.service.notification.NotificationListenerService.RankingMap) real).equals(arg0);
         }
 
         public java.lang.String[] getOrderedKeys() {
-            return real.getOrderedKeys();
+            return ((android.service.notification.NotificationListenerService.RankingMap) real).getOrderedKeys();
         }
 
         public boolean getRanking(java.lang.String arg0, com.micklab.dcg.wrapper.android.service.notification.NotificationListenerService.Ranking arg1) {
-            return real.getRanking(arg0, arg1 == null ? null : arg1.unwrap());
+            return ((android.service.notification.NotificationListenerService.RankingMap) real).getRanking(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.service.notification.NotificationListenerService.RankingMap) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ProviderInfo {
-    private final android.content.pm.ProviderInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ProviderInfo(android.content.pm.ProviderInfo real) {
+    private final java.lang.Object real;
+
+    private ProviderInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ProviderInfo wrap(android.content.pm.ProviderInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ProviderInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ProviderInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ProviderInfo getReal() {
+        return (android.content.pm.ProviderInfo) real;
     }
 
     public android.content.pm.ProviderInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public ProviderInfo() {

@@ -2,74 +2,88 @@
 package com.micklab.dcg.wrapper.android.view.inputmethod;
 
 public final class RemoveSpaceGesture {
-    private final android.view.inputmethod.RemoveSpaceGesture real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RemoveSpaceGesture(android.view.inputmethod.RemoveSpaceGesture real) {
+    private final java.lang.Object real;
+
+    private RemoveSpaceGesture(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture wrap(android.view.inputmethod.RemoveSpaceGesture real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.inputmethod.RemoveSpaceGesture getReal() {
+        return (android.view.inputmethod.RemoveSpaceGesture) real;
     }
 
     public android.view.inputmethod.RemoveSpaceGesture unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.inputmethod.RemoveSpaceGesture) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.inputmethod.RemoveSpaceGesture) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PointF getEndPoint() {
-        return com.micklab.dcg.wrapper.android.graphics.PointF.wrap(real.getEndPoint());
+        return com.micklab.dcg.wrapper.android.graphics.PointF.wrap(((android.view.inputmethod.RemoveSpaceGesture) real).getEndPoint());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PointF getStartPoint() {
-        return com.micklab.dcg.wrapper.android.graphics.PointF.wrap(real.getStartPoint());
+        return com.micklab.dcg.wrapper.android.graphics.PointF.wrap(((android.view.inputmethod.RemoveSpaceGesture) real).getStartPoint());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.inputmethod.RemoveSpaceGesture) real).hashCode();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.inputmethod.RemoveSpaceGesture) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.view.inputmethod.RemoveSpaceGesture.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.view.inputmethod.RemoveSpaceGesture.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder wrap(android.view.inputmethod.RemoveSpaceGesture.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.inputmethod.RemoveSpaceGesture.Builder getReal() {
+            return (android.view.inputmethod.RemoveSpaceGesture.Builder) real;
         }
 
         public android.view.inputmethod.RemoveSpaceGesture.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.view.inputmethod.RemoveSpaceGesture.Builder());
+            this(new android.view.inputmethod.RemoveSpaceGesture.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture build() {
-            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.wrap(((android.view.inputmethod.RemoveSpaceGesture.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder setFallbackText(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder.wrap(real.setFallbackText(arg0));
+            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder.wrap(((android.view.inputmethod.RemoveSpaceGesture.Builder) real).setFallbackText(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder setPoints(com.micklab.dcg.wrapper.android.graphics.PointF arg0, com.micklab.dcg.wrapper.android.graphics.PointF arg1) {
-            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder.wrap(real.setPoints(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.view.inputmethod.RemoveSpaceGesture.Builder.wrap(((android.view.inputmethod.RemoveSpaceGesture.Builder) real).setPoints(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
     }

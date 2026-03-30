@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class InstallSourceInfo {
-    private final android.content.pm.InstallSourceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InstallSourceInfo(android.content.pm.InstallSourceInfo real) {
+    private final java.lang.Object real;
+
+    private InstallSourceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.InstallSourceInfo wrap(android.content.pm.InstallSourceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.InstallSourceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.InstallSourceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.InstallSourceInfo getReal() {
+        return (android.content.pm.InstallSourceInfo) real;
     }
 
     public android.content.pm.InstallSourceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

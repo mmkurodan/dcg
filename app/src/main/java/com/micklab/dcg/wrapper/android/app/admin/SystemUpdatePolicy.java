@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class SystemUpdatePolicy {
-    private final android.app.admin.SystemUpdatePolicy real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SystemUpdatePolicy(android.app.admin.SystemUpdatePolicy real) {
+    private final java.lang.Object real;
+
+    private SystemUpdatePolicy(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy wrap(android.app.admin.SystemUpdatePolicy real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.SystemUpdatePolicy getReal() {
+        return (android.app.admin.SystemUpdatePolicy) real;
     }
 
     public android.app.admin.SystemUpdatePolicy unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy createAutomaticInstallPolicy() {
@@ -29,27 +36,27 @@ public final class SystemUpdatePolicy {
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.admin.SystemUpdatePolicy) real).describeContents();
     }
 
     public int getInstallWindowEnd() {
-        return real.getInstallWindowEnd();
+        return ((android.app.admin.SystemUpdatePolicy) real).getInstallWindowEnd();
     }
 
     public int getInstallWindowStart() {
-        return real.getInstallWindowStart();
+        return ((android.app.admin.SystemUpdatePolicy) real).getInstallWindowStart();
     }
 
     public int getPolicyType() {
-        return real.getPolicyType();
+        return ((android.app.admin.SystemUpdatePolicy) real).getPolicyType();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.admin.SystemUpdatePolicy) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.admin.SystemUpdatePolicy) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int TYPE_INSTALL_AUTOMATIC = android.app.admin.SystemUpdatePolicy.TYPE_INSTALL_AUTOMATIC;
@@ -57,30 +64,37 @@ public final class SystemUpdatePolicy {
     public static final int TYPE_POSTPONE = android.app.admin.SystemUpdatePolicy.TYPE_POSTPONE;
 
     public static final class ValidationFailedException {
-        private final android.app.admin.SystemUpdatePolicy.ValidationFailedException real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ValidationFailedException(android.app.admin.SystemUpdatePolicy.ValidationFailedException real) {
+        private final java.lang.Object real;
+
+        private ValidationFailedException(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy.ValidationFailedException wrap(android.app.admin.SystemUpdatePolicy.ValidationFailedException real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy.ValidationFailedException(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.SystemUpdatePolicy.ValidationFailedException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.admin.SystemUpdatePolicy.ValidationFailedException getReal() {
+            return (android.app.admin.SystemUpdatePolicy.ValidationFailedException) real;
         }
 
         public android.app.admin.SystemUpdatePolicy.ValidationFailedException unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.admin.SystemUpdatePolicy.ValidationFailedException) real).describeContents();
         }
 
         public int getErrorCode() {
-            return real.getErrorCode();
+            return ((android.app.admin.SystemUpdatePolicy.ValidationFailedException) real).getErrorCode();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.admin.SystemUpdatePolicy.ValidationFailedException) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE = android.app.admin.SystemUpdatePolicy.ValidationFailedException.ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE;

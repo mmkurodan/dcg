@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class HardwareRenderer {
-    private final android.graphics.HardwareRenderer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HardwareRenderer(android.graphics.HardwareRenderer real) {
+    private final java.lang.Object real;
+
+    private HardwareRenderer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.HardwareRenderer wrap(android.graphics.HardwareRenderer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareRenderer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareRenderer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.HardwareRenderer getReal() {
+        return (android.graphics.HardwareRenderer) real;
     }
 
     public android.graphics.HardwareRenderer unwrap() {
-        return real;
+        return getReal();
     }
 
     public HardwareRenderer() {
-        this(new android.graphics.HardwareRenderer());
+        this(new android.graphics.HardwareRenderer(), (__DcgwBridgeToken) null);
     }
 
     public void clearContent() {
-        real.clearContent();
+        ((android.graphics.HardwareRenderer) real).clearContent();
     }
 
     public android.graphics.HardwareRenderer.FrameRenderRequest createRenderRequest() {
-        return real.createRenderRequest();
+        return ((android.graphics.HardwareRenderer) real).createRenderRequest();
     }
 
     public void destroy() {
-        real.destroy();
+        ((android.graphics.HardwareRenderer) real).destroy();
     }
 
     public static boolean isDrawingEnabled() {
@@ -37,15 +44,15 @@ public final class HardwareRenderer {
     }
 
     public boolean isOpaque() {
-        return real.isOpaque();
+        return ((android.graphics.HardwareRenderer) real).isOpaque();
     }
 
     public void notifyFramePending() {
-        real.notifyFramePending();
+        ((android.graphics.HardwareRenderer) real).notifyFramePending();
     }
 
     public void setContentRoot(com.micklab.dcg.wrapper.android.graphics.RenderNode arg0) {
-        real.setContentRoot(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.HardwareRenderer) real).setContentRoot(arg0 == null ? null : arg0.getReal());
     }
 
     public static void setDrawingEnabled(boolean arg0) {
@@ -53,31 +60,31 @@ public final class HardwareRenderer {
     }
 
     public void setLightSourceAlpha(float arg0, float arg1) {
-        real.setLightSourceAlpha(arg0, arg1);
+        ((android.graphics.HardwareRenderer) real).setLightSourceAlpha(arg0, arg1);
     }
 
     public void setLightSourceGeometry(float arg0, float arg1, float arg2, float arg3) {
-        real.setLightSourceGeometry(arg0, arg1, arg2, arg3);
+        ((android.graphics.HardwareRenderer) real).setLightSourceGeometry(arg0, arg1, arg2, arg3);
     }
 
     public void setName(java.lang.String arg0) {
-        real.setName(arg0);
+        ((android.graphics.HardwareRenderer) real).setName(arg0);
     }
 
     public void setOpaque(boolean arg0) {
-        real.setOpaque(arg0);
+        ((android.graphics.HardwareRenderer) real).setOpaque(arg0);
     }
 
     public void setSurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
-        real.setSurface(arg0 == null ? null : arg0.unwrap());
+        ((android.graphics.HardwareRenderer) real).setSurface(arg0 == null ? null : arg0.getReal());
     }
 
     public void start() {
-        real.start();
+        ((android.graphics.HardwareRenderer) real).start();
     }
 
     public void stop() {
-        real.stop();
+        ((android.graphics.HardwareRenderer) real).stop();
     }
 
     public static final int SYNC_CONTEXT_IS_STOPPED = android.graphics.HardwareRenderer.SYNC_CONTEXT_IS_STOPPED;

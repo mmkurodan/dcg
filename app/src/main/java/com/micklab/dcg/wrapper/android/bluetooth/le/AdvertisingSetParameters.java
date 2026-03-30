@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.bluetooth.le;
 
 public final class AdvertisingSetParameters {
-    private final android.bluetooth.le.AdvertisingSetParameters real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AdvertisingSetParameters(android.bluetooth.le.AdvertisingSetParameters real) {
+    private final java.lang.Object real;
+
+    private AdvertisingSetParameters(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters wrap(android.bluetooth.le.AdvertisingSetParameters real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.le.AdvertisingSetParameters getReal() {
+        return (android.bluetooth.le.AdvertisingSetParameters) real;
     }
 
     public android.bluetooth.le.AdvertisingSetParameters unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).describeContents();
     }
 
     public int getInterval() {
-        return real.getInterval();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).getInterval();
     }
 
     public int getPrimaryPhy() {
-        return real.getPrimaryPhy();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).getPrimaryPhy();
     }
 
     public int getSecondaryPhy() {
-        return real.getSecondaryPhy();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).getSecondaryPhy();
     }
 
     public int getTxPowerLevel() {
-        return real.getTxPowerLevel();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).getTxPowerLevel();
     }
 
     public boolean includeTxPower() {
-        return real.includeTxPower();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).includeTxPower();
     }
 
     public boolean isAnonymous() {
-        return real.isAnonymous();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).isAnonymous();
     }
 
     public boolean isConnectable() {
-        return real.isConnectable();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).isConnectable();
     }
 
     public boolean isDiscoverable() {
-        return real.isDiscoverable();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).isDiscoverable();
     }
 
     public boolean isLegacy() {
-        return real.isLegacy();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).isLegacy();
     }
 
     public boolean isScannable() {
-        return real.isScannable();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).isScannable();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.bluetooth.le.AdvertisingSetParameters) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.bluetooth.le.AdvertisingSetParameters) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int INTERVAL_HIGH = android.bluetooth.le.AdvertisingSetParameters.INTERVAL_HIGH;
@@ -81,66 +88,73 @@ public final class AdvertisingSetParameters {
     public static final int TX_POWER_ULTRA_LOW = android.bluetooth.le.AdvertisingSetParameters.TX_POWER_ULTRA_LOW;
 
     public static final class Builder {
-        private final android.bluetooth.le.AdvertisingSetParameters.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.bluetooth.le.AdvertisingSetParameters.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder wrap(android.bluetooth.le.AdvertisingSetParameters.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.le.AdvertisingSetParameters.Builder getReal() {
+            return (android.bluetooth.le.AdvertisingSetParameters.Builder) real;
         }
 
         public android.bluetooth.le.AdvertisingSetParameters.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.bluetooth.le.AdvertisingSetParameters.Builder());
+            this(new android.bluetooth.le.AdvertisingSetParameters.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters build() {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setAnonymous(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setAnonymous(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setAnonymous(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setConnectable(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setConnectable(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setConnectable(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setDiscoverable(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setDiscoverable(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setDiscoverable(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setIncludeTxPower(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setIncludeTxPower(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setIncludeTxPower(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setInterval(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setInterval(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setInterval(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setLegacyMode(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setLegacyMode(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setLegacyMode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setPrimaryPhy(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setPrimaryPhy(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setPrimaryPhy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setScannable(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setScannable(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setScannable(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setSecondaryPhy(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setSecondaryPhy(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setSecondaryPhy(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder setTxPowerLevel(int arg0) {
-            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(real.setTxPowerLevel(arg0));
+            return com.micklab.dcg.wrapper.android.bluetooth.le.AdvertisingSetParameters.Builder.wrap(((android.bluetooth.le.AdvertisingSetParameters.Builder) real).setTxPowerLevel(arg0));
         }
 
     }

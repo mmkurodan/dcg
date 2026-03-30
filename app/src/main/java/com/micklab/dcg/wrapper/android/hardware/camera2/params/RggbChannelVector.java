@@ -2,58 +2,65 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class RggbChannelVector {
-    private final android.hardware.camera2.params.RggbChannelVector real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RggbChannelVector(android.hardware.camera2.params.RggbChannelVector real) {
+    private final java.lang.Object real;
+
+    private RggbChannelVector(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.RggbChannelVector wrap(android.hardware.camera2.params.RggbChannelVector real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.RggbChannelVector(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.RggbChannelVector(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.RggbChannelVector getReal() {
+        return (android.hardware.camera2.params.RggbChannelVector) real;
     }
 
     public android.hardware.camera2.params.RggbChannelVector unwrap() {
-        return real;
+        return getReal();
     }
 
     public RggbChannelVector(float arg0, float arg1, float arg2, float arg3) {
-        this(new android.hardware.camera2.params.RggbChannelVector(arg0, arg1, arg2, arg3));
+        this(new android.hardware.camera2.params.RggbChannelVector(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void copyTo(float[] arg0, int arg1) {
-        real.copyTo(arg0, arg1);
+        ((android.hardware.camera2.params.RggbChannelVector) real).copyTo(arg0, arg1);
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.hardware.camera2.params.RggbChannelVector) real).equals(arg0);
     }
 
     public float getBlue() {
-        return real.getBlue();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).getBlue();
     }
 
     public float getComponent(int arg0) {
-        return real.getComponent(arg0);
+        return ((android.hardware.camera2.params.RggbChannelVector) real).getComponent(arg0);
     }
 
     public float getGreenEven() {
-        return real.getGreenEven();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).getGreenEven();
     }
 
     public float getGreenOdd() {
-        return real.getGreenOdd();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).getGreenOdd();
     }
 
     public float getRed() {
-        return real.getRed();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).getRed();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.hardware.camera2.params.RggbChannelVector) real).toString();
     }
 
     public static final int BLUE = android.hardware.camera2.params.RggbChannelVector.BLUE;

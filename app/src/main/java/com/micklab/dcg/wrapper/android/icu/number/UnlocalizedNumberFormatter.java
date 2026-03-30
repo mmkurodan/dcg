@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class UnlocalizedNumberFormatter {
-    private final android.icu.number.UnlocalizedNumberFormatter real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UnlocalizedNumberFormatter(android.icu.number.UnlocalizedNumberFormatter real) {
+    private final java.lang.Object real;
+
+    private UnlocalizedNumberFormatter(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter wrap(android.icu.number.UnlocalizedNumberFormatter real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.UnlocalizedNumberFormatter getReal() {
+        return (android.icu.number.UnlocalizedNumberFormatter) real;
     }
 
     public android.icu.number.UnlocalizedNumberFormatter unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter locale(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(real.locale(arg0));
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(((android.icu.number.UnlocalizedNumberFormatter) real).locale(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter locale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(real.locale(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(((android.icu.number.UnlocalizedNumberFormatter) real).locale(arg0 == null ? null : arg0.getReal()));
     }
 
 }

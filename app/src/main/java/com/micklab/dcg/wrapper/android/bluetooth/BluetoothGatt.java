@@ -2,110 +2,117 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothGatt {
-    private final android.bluetooth.BluetoothGatt real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothGatt(android.bluetooth.BluetoothGatt real) {
+    private final java.lang.Object real;
+
+    private BluetoothGatt(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt wrap(android.bluetooth.BluetoothGatt real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothGatt(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothGatt getReal() {
+        return (android.bluetooth.BluetoothGatt) real;
     }
 
     public android.bluetooth.BluetoothGatt unwrap() {
-        return real;
+        return getReal();
     }
 
     public void abortReliableWrite() {
-        real.abortReliableWrite();
+        ((android.bluetooth.BluetoothGatt) real).abortReliableWrite();
     }
 
     public void abortReliableWrite(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        real.abortReliableWrite(arg0 == null ? null : arg0.unwrap());
+        ((android.bluetooth.BluetoothGatt) real).abortReliableWrite(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean beginReliableWrite() {
-        return real.beginReliableWrite();
+        return ((android.bluetooth.BluetoothGatt) real).beginReliableWrite();
     }
 
     public void close() {
-        real.close();
+        ((android.bluetooth.BluetoothGatt) real).close();
     }
 
     public boolean connect() {
-        return real.connect();
+        return ((android.bluetooth.BluetoothGatt) real).connect();
     }
 
     public void disconnect() {
-        real.disconnect();
+        ((android.bluetooth.BluetoothGatt) real).disconnect();
     }
 
     public boolean discoverServices() {
-        return real.discoverServices();
+        return ((android.bluetooth.BluetoothGatt) real).discoverServices();
     }
 
     public boolean executeReliableWrite() {
-        return real.executeReliableWrite();
+        return ((android.bluetooth.BluetoothGatt) real).executeReliableWrite();
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothGatt) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getDevice() {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(real.getDevice());
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothGatt) real).getDevice());
     }
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattService getService(java.util.UUID arg0) {
-        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattService.wrap(real.getService(arg0));
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattService.wrap(((android.bluetooth.BluetoothGatt) real).getService(arg0));
     }
 
     public boolean readCharacteristic(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic arg0) {
-        return real.readCharacteristic(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothGatt) real).readCharacteristic(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean readDescriptor(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor arg0) {
-        return real.readDescriptor(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothGatt) real).readDescriptor(arg0 == null ? null : arg0.getReal());
     }
 
     public void readPhy() {
-        real.readPhy();
+        ((android.bluetooth.BluetoothGatt) real).readPhy();
     }
 
     public boolean readRemoteRssi() {
-        return real.readRemoteRssi();
+        return ((android.bluetooth.BluetoothGatt) real).readRemoteRssi();
     }
 
     public boolean requestConnectionPriority(int arg0) {
-        return real.requestConnectionPriority(arg0);
+        return ((android.bluetooth.BluetoothGatt) real).requestConnectionPriority(arg0);
     }
 
     public boolean requestMtu(int arg0) {
-        return real.requestMtu(arg0);
+        return ((android.bluetooth.BluetoothGatt) real).requestMtu(arg0);
     }
 
     public boolean setCharacteristicNotification(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic arg0, boolean arg1) {
-        return real.setCharacteristicNotification(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.bluetooth.BluetoothGatt) real).setCharacteristicNotification(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPreferredPhy(int arg0, int arg1, int arg2) {
-        real.setPreferredPhy(arg0, arg1, arg2);
+        ((android.bluetooth.BluetoothGatt) real).setPreferredPhy(arg0, arg1, arg2);
     }
 
     public boolean writeCharacteristic(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic arg0) {
-        return real.writeCharacteristic(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothGatt) real).writeCharacteristic(arg0 == null ? null : arg0.getReal());
     }
 
     public int writeCharacteristic(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattCharacteristic arg0, byte[] arg1, int arg2) {
-        return real.writeCharacteristic(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.bluetooth.BluetoothGatt) real).writeCharacteristic(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public boolean writeDescriptor(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor arg0) {
-        return real.writeDescriptor(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothGatt) real).writeDescriptor(arg0 == null ? null : arg0.getReal());
     }
 
     public int writeDescriptor(com.micklab.dcg.wrapper.android.bluetooth.BluetoothGattDescriptor arg0, byte[] arg1) {
-        return real.writeDescriptor(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.bluetooth.BluetoothGatt) real).writeDescriptor(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CONNECTION_PRIORITY_BALANCED = android.bluetooth.BluetoothGatt.CONNECTION_PRIORITY_BALANCED;

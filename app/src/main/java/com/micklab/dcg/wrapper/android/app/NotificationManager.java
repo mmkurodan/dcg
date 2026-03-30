@@ -2,182 +2,189 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class NotificationManager {
-    private final android.app.NotificationManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public NotificationManager(android.app.NotificationManager real) {
+    private final java.lang.Object real;
+
+    private NotificationManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.NotificationManager wrap(android.app.NotificationManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.NotificationManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.NotificationManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.NotificationManager getReal() {
+        return (android.app.NotificationManager) real;
     }
 
     public android.app.NotificationManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String addAutomaticZenRule(com.micklab.dcg.wrapper.android.app.AutomaticZenRule arg0) {
-        return real.addAutomaticZenRule(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.NotificationManager) real).addAutomaticZenRule(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean areAutomaticZenRulesUserManaged() {
-        return real.areAutomaticZenRulesUserManaged();
+        return ((android.app.NotificationManager) real).areAutomaticZenRulesUserManaged();
     }
 
     public boolean areBubblesAllowed() {
-        return real.areBubblesAllowed();
+        return ((android.app.NotificationManager) real).areBubblesAllowed();
     }
 
     public boolean areBubblesEnabled() {
-        return real.areBubblesEnabled();
+        return ((android.app.NotificationManager) real).areBubblesEnabled();
     }
 
     public boolean areNotificationsEnabled() {
-        return real.areNotificationsEnabled();
+        return ((android.app.NotificationManager) real).areNotificationsEnabled();
     }
 
     public boolean areNotificationsPaused() {
-        return real.areNotificationsPaused();
+        return ((android.app.NotificationManager) real).areNotificationsPaused();
     }
 
     public boolean canNotifyAsPackage(java.lang.String arg0) {
-        return real.canNotifyAsPackage(arg0);
+        return ((android.app.NotificationManager) real).canNotifyAsPackage(arg0);
     }
 
     public boolean canUseFullScreenIntent() {
-        return real.canUseFullScreenIntent();
+        return ((android.app.NotificationManager) real).canUseFullScreenIntent();
     }
 
     public void cancel(int arg0) {
-        real.cancel(arg0);
+        ((android.app.NotificationManager) real).cancel(arg0);
     }
 
     public void cancel(java.lang.String arg0, int arg1) {
-        real.cancel(arg0, arg1);
+        ((android.app.NotificationManager) real).cancel(arg0, arg1);
     }
 
     public void cancelAll() {
-        real.cancelAll();
+        ((android.app.NotificationManager) real).cancelAll();
     }
 
     public void cancelAsPackage(java.lang.String arg0, java.lang.String arg1, int arg2) {
-        real.cancelAsPackage(arg0, arg1, arg2);
+        ((android.app.NotificationManager) real).cancelAsPackage(arg0, arg1, arg2);
     }
 
     public void createNotificationChannel(com.micklab.dcg.wrapper.android.app.NotificationChannel arg0) {
-        real.createNotificationChannel(arg0 == null ? null : arg0.unwrap());
+        ((android.app.NotificationManager) real).createNotificationChannel(arg0 == null ? null : arg0.getReal());
     }
 
     public void createNotificationChannelGroup(com.micklab.dcg.wrapper.android.app.NotificationChannelGroup arg0) {
-        real.createNotificationChannelGroup(arg0 == null ? null : arg0.unwrap());
+        ((android.app.NotificationManager) real).createNotificationChannelGroup(arg0 == null ? null : arg0.getReal());
     }
 
     public void deleteNotificationChannel(java.lang.String arg0) {
-        real.deleteNotificationChannel(arg0);
+        ((android.app.NotificationManager) real).deleteNotificationChannel(arg0);
     }
 
     public void deleteNotificationChannelGroup(java.lang.String arg0) {
-        real.deleteNotificationChannelGroup(arg0);
+        ((android.app.NotificationManager) real).deleteNotificationChannelGroup(arg0);
     }
 
     public android.service.notification.StatusBarNotification[] getActiveNotifications() {
-        return real.getActiveNotifications();
+        return ((android.app.NotificationManager) real).getActiveNotifications();
     }
 
     public com.micklab.dcg.wrapper.android.app.AutomaticZenRule getAutomaticZenRule(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.app.AutomaticZenRule.wrap(real.getAutomaticZenRule(arg0));
+        return com.micklab.dcg.wrapper.android.app.AutomaticZenRule.wrap(((android.app.NotificationManager) real).getAutomaticZenRule(arg0));
     }
 
     public int getAutomaticZenRuleState(java.lang.String arg0) {
-        return real.getAutomaticZenRuleState(arg0);
+        return ((android.app.NotificationManager) real).getAutomaticZenRuleState(arg0);
     }
 
     public int getBubblePreference() {
-        return real.getBubblePreference();
+        return ((android.app.NotificationManager) real).getBubblePreference();
     }
 
     public com.micklab.dcg.wrapper.android.app.NotificationManager.Policy getConsolidatedNotificationPolicy() {
-        return com.micklab.dcg.wrapper.android.app.NotificationManager.Policy.wrap(real.getConsolidatedNotificationPolicy());
+        return com.micklab.dcg.wrapper.android.app.NotificationManager.Policy.wrap(((android.app.NotificationManager) real).getConsolidatedNotificationPolicy());
     }
 
     public int getCurrentInterruptionFilter() {
-        return real.getCurrentInterruptionFilter();
+        return ((android.app.NotificationManager) real).getCurrentInterruptionFilter();
     }
 
     public int getImportance() {
-        return real.getImportance();
+        return ((android.app.NotificationManager) real).getImportance();
     }
 
     public com.micklab.dcg.wrapper.android.app.NotificationChannel getNotificationChannel(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(real.getNotificationChannel(arg0));
+        return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(((android.app.NotificationManager) real).getNotificationChannel(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.app.NotificationChannel getNotificationChannel(java.lang.String arg0, java.lang.String arg1) {
-        return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(real.getNotificationChannel(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(((android.app.NotificationManager) real).getNotificationChannel(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.app.NotificationChannelGroup getNotificationChannelGroup(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.app.NotificationChannelGroup.wrap(real.getNotificationChannelGroup(arg0));
+        return com.micklab.dcg.wrapper.android.app.NotificationChannelGroup.wrap(((android.app.NotificationManager) real).getNotificationChannelGroup(arg0));
     }
 
     public java.lang.String getNotificationDelegate() {
-        return real.getNotificationDelegate();
+        return ((android.app.NotificationManager) real).getNotificationDelegate();
     }
 
     public com.micklab.dcg.wrapper.android.app.NotificationManager.Policy getNotificationPolicy() {
-        return com.micklab.dcg.wrapper.android.app.NotificationManager.Policy.wrap(real.getNotificationPolicy());
+        return com.micklab.dcg.wrapper.android.app.NotificationManager.Policy.wrap(((android.app.NotificationManager) real).getNotificationPolicy());
     }
 
     public boolean isNotificationListenerAccessGranted(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
-        return real.isNotificationListenerAccessGranted(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.NotificationManager) real).isNotificationListenerAccessGranted(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isNotificationPolicyAccessGranted() {
-        return real.isNotificationPolicyAccessGranted();
+        return ((android.app.NotificationManager) real).isNotificationPolicyAccessGranted();
     }
 
     public boolean matchesCallFilter(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return real.matchesCallFilter(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.NotificationManager) real).matchesCallFilter(arg0 == null ? null : arg0.getReal());
     }
 
     public void notify(int arg0, com.micklab.dcg.wrapper.android.app.Notification arg1) {
-        real.notify(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.app.NotificationManager) real).notify(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void notify(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.app.Notification arg2) {
-        real.notify(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.app.NotificationManager) real).notify(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void notifyAsPackage(java.lang.String arg0, java.lang.String arg1, int arg2, com.micklab.dcg.wrapper.android.app.Notification arg3) {
-        real.notifyAsPackage(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        ((android.app.NotificationManager) real).notifyAsPackage(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean removeAutomaticZenRule(java.lang.String arg0) {
-        return real.removeAutomaticZenRule(arg0);
+        return ((android.app.NotificationManager) real).removeAutomaticZenRule(arg0);
     }
 
     public void setAutomaticZenRuleState(java.lang.String arg0, com.micklab.dcg.wrapper.android.service.notification.Condition arg1) {
-        real.setAutomaticZenRuleState(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.app.NotificationManager) real).setAutomaticZenRuleState(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setInterruptionFilter(int arg0) {
-        real.setInterruptionFilter(arg0);
+        ((android.app.NotificationManager) real).setInterruptionFilter(arg0);
     }
 
     public void setNotificationDelegate(java.lang.String arg0) {
-        real.setNotificationDelegate(arg0);
+        ((android.app.NotificationManager) real).setNotificationDelegate(arg0);
     }
 
     public void setNotificationPolicy(com.micklab.dcg.wrapper.android.app.NotificationManager.Policy arg0) {
-        real.setNotificationPolicy(arg0 == null ? null : arg0.unwrap());
+        ((android.app.NotificationManager) real).setNotificationPolicy(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean shouldHideSilentStatusBarIcons() {
-        return real.shouldHideSilentStatusBarIcons();
+        return ((android.app.NotificationManager) real).shouldHideSilentStatusBarIcons();
     }
 
     public boolean updateAutomaticZenRule(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.AutomaticZenRule arg1) {
-        return real.updateAutomaticZenRule(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.app.NotificationManager) real).updateAutomaticZenRule(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static final java.lang.String ACTION_APP_BLOCK_STATE_CHANGED = android.app.NotificationManager.ACTION_APP_BLOCK_STATE_CHANGED;
@@ -221,42 +228,49 @@ public final class NotificationManager {
     public static final java.lang.String META_DATA_RULE_INSTANCE_LIMIT = android.app.NotificationManager.META_DATA_RULE_INSTANCE_LIMIT;
 
     public static final class Policy {
-        private final android.app.NotificationManager.Policy real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Policy(android.app.NotificationManager.Policy real) {
+        private final java.lang.Object real;
+
+        private Policy(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.NotificationManager.Policy wrap(android.app.NotificationManager.Policy real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.NotificationManager.Policy(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.NotificationManager.Policy(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.NotificationManager.Policy getReal() {
+            return (android.app.NotificationManager.Policy) real;
         }
 
         public android.app.NotificationManager.Policy unwrap() {
-            return real;
+            return getReal();
         }
 
         public Policy(int arg0, int arg1, int arg2) {
-            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2));
+            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2), (__DcgwBridgeToken) null);
         }
 
         public Policy(int arg0, int arg1, int arg2, int arg3) {
-            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2, arg3));
+            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
         }
 
         public Policy(int arg0, int arg1, int arg2, int arg3, int arg4) {
-            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2, arg3, arg4));
+            this(new android.app.NotificationManager.Policy(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.app.NotificationManager.Policy) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.app.NotificationManager.Policy) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.app.NotificationManager.Policy) real).hashCode();
         }
 
         public static java.lang.String priorityCategoriesToString(int arg0) {
@@ -272,11 +286,11 @@ public final class NotificationManager {
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.NotificationManager.Policy) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.app.NotificationManager.Policy) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int CONVERSATION_SENDERS_ANYONE = android.app.NotificationManager.Policy.CONVERSATION_SENDERS_ANYONE;

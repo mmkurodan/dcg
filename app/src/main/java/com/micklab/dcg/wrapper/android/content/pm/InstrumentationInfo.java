@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class InstrumentationInfo {
-    private final android.content.pm.InstrumentationInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public InstrumentationInfo(android.content.pm.InstrumentationInfo real) {
+    private final java.lang.Object real;
+
+    private InstrumentationInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.InstrumentationInfo wrap(android.content.pm.InstrumentationInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.InstrumentationInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.InstrumentationInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.InstrumentationInfo getReal() {
+        return (android.content.pm.InstrumentationInfo) real;
     }
 
     public android.content.pm.InstrumentationInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public InstrumentationInfo() {

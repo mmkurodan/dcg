@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiConfiguration {
-    private final android.net.wifi.WifiConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiConfiguration(android.net.wifi.WifiConfiguration real) {
+    private final java.lang.Object real;
+
+    private WifiConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration wrap(android.net.wifi.WifiConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiConfiguration getReal() {
+        return (android.net.wifi.WifiConfiguration) real;
     }
 
     public android.net.wifi.WifiConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public WifiConfiguration() {
@@ -78,120 +85,169 @@ public final class WifiConfiguration {
 
 
     public static final class AuthAlgorithm {
-        private final android.net.wifi.WifiConfiguration.AuthAlgorithm real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AuthAlgorithm(android.net.wifi.WifiConfiguration.AuthAlgorithm real) {
+        private final java.lang.Object real;
+
+        private AuthAlgorithm(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.AuthAlgorithm wrap(android.net.wifi.WifiConfiguration.AuthAlgorithm real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.AuthAlgorithm(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.AuthAlgorithm(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.AuthAlgorithm getReal() {
+            return (android.net.wifi.WifiConfiguration.AuthAlgorithm) real;
         }
 
         public android.net.wifi.WifiConfiguration.AuthAlgorithm unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class GroupCipher {
-        private final android.net.wifi.WifiConfiguration.GroupCipher real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupCipher(android.net.wifi.WifiConfiguration.GroupCipher real) {
+        private final java.lang.Object real;
+
+        private GroupCipher(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupCipher wrap(android.net.wifi.WifiConfiguration.GroupCipher real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupCipher(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupCipher(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.GroupCipher getReal() {
+            return (android.net.wifi.WifiConfiguration.GroupCipher) real;
         }
 
         public android.net.wifi.WifiConfiguration.GroupCipher unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class GroupMgmtCipher {
-        private final android.net.wifi.WifiConfiguration.GroupMgmtCipher real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupMgmtCipher(android.net.wifi.WifiConfiguration.GroupMgmtCipher real) {
+        private final java.lang.Object real;
+
+        private GroupMgmtCipher(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupMgmtCipher wrap(android.net.wifi.WifiConfiguration.GroupMgmtCipher real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupMgmtCipher(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.GroupMgmtCipher(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.GroupMgmtCipher getReal() {
+            return (android.net.wifi.WifiConfiguration.GroupMgmtCipher) real;
         }
 
         public android.net.wifi.WifiConfiguration.GroupMgmtCipher unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class KeyMgmt {
-        private final android.net.wifi.WifiConfiguration.KeyMgmt real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public KeyMgmt(android.net.wifi.WifiConfiguration.KeyMgmt real) {
+        private final java.lang.Object real;
+
+        private KeyMgmt(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.KeyMgmt wrap(android.net.wifi.WifiConfiguration.KeyMgmt real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.KeyMgmt(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.KeyMgmt(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.KeyMgmt getReal() {
+            return (android.net.wifi.WifiConfiguration.KeyMgmt) real;
         }
 
         public android.net.wifi.WifiConfiguration.KeyMgmt unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class PairwiseCipher {
-        private final android.net.wifi.WifiConfiguration.PairwiseCipher real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PairwiseCipher(android.net.wifi.WifiConfiguration.PairwiseCipher real) {
+        private final java.lang.Object real;
+
+        private PairwiseCipher(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.PairwiseCipher wrap(android.net.wifi.WifiConfiguration.PairwiseCipher real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.PairwiseCipher(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.PairwiseCipher(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.PairwiseCipher getReal() {
+            return (android.net.wifi.WifiConfiguration.PairwiseCipher) real;
         }
 
         public android.net.wifi.WifiConfiguration.PairwiseCipher unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class Protocol {
-        private final android.net.wifi.WifiConfiguration.Protocol real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Protocol(android.net.wifi.WifiConfiguration.Protocol real) {
+        private final java.lang.Object real;
+
+        private Protocol(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Protocol wrap(android.net.wifi.WifiConfiguration.Protocol real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Protocol(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Protocol(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.Protocol getReal() {
+            return (android.net.wifi.WifiConfiguration.Protocol) real;
         }
 
         public android.net.wifi.WifiConfiguration.Protocol unwrap() {
-            return real;
+            return getReal();
         }
 
 
     }
     public static final class Status {
-        private final android.net.wifi.WifiConfiguration.Status real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Status(android.net.wifi.WifiConfiguration.Status real) {
+        private final java.lang.Object real;
+
+        private Status(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Status wrap(android.net.wifi.WifiConfiguration.Status real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Status(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiConfiguration.Status(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiConfiguration.Status getReal() {
+            return (android.net.wifi.WifiConfiguration.Status) real;
         }
 
         public android.net.wifi.WifiConfiguration.Status unwrap() {
-            return real;
+            return getReal();
         }
 
 

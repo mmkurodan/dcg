@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class WifiAwareDataPathSecurityConfig {
-    private final android.net.wifi.aware.WifiAwareDataPathSecurityConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiAwareDataPathSecurityConfig(android.net.wifi.aware.WifiAwareDataPathSecurityConfig real) {
+    private final java.lang.Object real;
+
+    private WifiAwareDataPathSecurityConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig wrap(android.net.wifi.aware.WifiAwareDataPathSecurityConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.WifiAwareDataPathSecurityConfig getReal() {
+        return (android.net.wifi.aware.WifiAwareDataPathSecurityConfig) real;
     }
 
     public android.net.wifi.aware.WifiAwareDataPathSecurityConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -54,18 +61,25 @@ public final class WifiAwareDataPathSecurityConfig {
 
 
     public static final class Builder {
-        private final android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder wrap(android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder getReal() {
+            return (android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder) real;
         }
 
         public android.net.wifi.aware.WifiAwareDataPathSecurityConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {

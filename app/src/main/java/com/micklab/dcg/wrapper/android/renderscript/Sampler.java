@@ -2,133 +2,154 @@
 package com.micklab.dcg.wrapper.android.renderscript;
 
 public final class Sampler {
-    private final android.renderscript.Sampler real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Sampler(android.renderscript.Sampler real) {
+    private final java.lang.Object real;
+
+    private Sampler(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler wrap(android.renderscript.Sampler real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.renderscript.Sampler getReal() {
+        return (android.renderscript.Sampler) real;
     }
 
     public android.renderscript.Sampler unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler CLAMP_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler CLAMP_LINEAR_MIP_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler CLAMP_NEAREST(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_NEAREST(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.CLAMP_NEAREST(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler MIRRORED_REPEAT_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler MIRRORED_REPEAT_LINEAR_MIP_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler MIRRORED_REPEAT_NEAREST(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_NEAREST(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.MIRRORED_REPEAT_NEAREST(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler WRAP_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler WRAP_LINEAR_MIP_LINEAR(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_LINEAR_MIP_LINEAR(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.renderscript.Sampler WRAP_NEAREST(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_NEAREST(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(android.renderscript.Sampler.WRAP_NEAREST(arg0 == null ? null : arg0.getReal()));
     }
 
     public float getAnisotropy() {
-        return real.getAnisotropy();
+        return ((android.renderscript.Sampler) real).getAnisotropy();
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.Sampler.Value getMagnification() {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(real.getMagnification());
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(((android.renderscript.Sampler) real).getMagnification());
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.Sampler.Value getMinification() {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(real.getMinification());
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(((android.renderscript.Sampler) real).getMinification());
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.Sampler.Value getWrapS() {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(real.getWrapS());
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(((android.renderscript.Sampler) real).getWrapS());
     }
 
     public com.micklab.dcg.wrapper.android.renderscript.Sampler.Value getWrapT() {
-        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(real.getWrapT());
+        return com.micklab.dcg.wrapper.android.renderscript.Sampler.Value.wrap(((android.renderscript.Sampler) real).getWrapT());
     }
 
     public static final class Builder {
-        private final android.renderscript.Sampler.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.renderscript.Sampler.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.Sampler.Builder wrap(android.renderscript.Sampler.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.Sampler.Builder getReal() {
+            return (android.renderscript.Sampler.Builder) real;
         }
 
         public android.renderscript.Sampler.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.renderscript.RenderScript arg0) {
-            this(new android.renderscript.Sampler.Builder(arg0 == null ? null : arg0.unwrap()));
+            this(new android.renderscript.Sampler.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.renderscript.Sampler create() {
-            return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(real.create());
+            return com.micklab.dcg.wrapper.android.renderscript.Sampler.wrap(((android.renderscript.Sampler.Builder) real).create());
         }
 
         public void setAnisotropy(float arg0) {
-            real.setAnisotropy(arg0);
+            ((android.renderscript.Sampler.Builder) real).setAnisotropy(arg0);
         }
 
         public void setMagnification(com.micklab.dcg.wrapper.android.renderscript.Sampler.Value arg0) {
-            real.setMagnification(arg0 == null ? null : arg0.unwrap());
+            ((android.renderscript.Sampler.Builder) real).setMagnification(arg0 == null ? null : arg0.getReal());
         }
 
         public void setMinification(com.micklab.dcg.wrapper.android.renderscript.Sampler.Value arg0) {
-            real.setMinification(arg0 == null ? null : arg0.unwrap());
+            ((android.renderscript.Sampler.Builder) real).setMinification(arg0 == null ? null : arg0.getReal());
         }
 
         public void setWrapS(com.micklab.dcg.wrapper.android.renderscript.Sampler.Value arg0) {
-            real.setWrapS(arg0 == null ? null : arg0.unwrap());
+            ((android.renderscript.Sampler.Builder) real).setWrapS(arg0 == null ? null : arg0.getReal());
         }
 
         public void setWrapT(com.micklab.dcg.wrapper.android.renderscript.Sampler.Value arg0) {
-            real.setWrapT(arg0 == null ? null : arg0.unwrap());
+            ((android.renderscript.Sampler.Builder) real).setWrapT(arg0 == null ? null : arg0.getReal());
         }
 
     }
     public static final class Value {
-        private final android.renderscript.Sampler.Value real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Value(android.renderscript.Sampler.Value real) {
+        private final java.lang.Object real;
+
+        private Value(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.Sampler.Value wrap(android.renderscript.Sampler.Value real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler.Value(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.renderscript.Sampler.Value(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.renderscript.Sampler.Value getReal() {
+            return (android.renderscript.Sampler.Value) real;
         }
 
         public android.renderscript.Sampler.Value unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.renderscript.Sampler.Value valueOf(java.lang.String arg0) {

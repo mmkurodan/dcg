@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class TelephonyDisplayInfo {
-    private final android.telephony.TelephonyDisplayInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TelephonyDisplayInfo(android.telephony.TelephonyDisplayInfo real) {
+    private final java.lang.Object real;
+
+    private TelephonyDisplayInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.TelephonyDisplayInfo wrap(android.telephony.TelephonyDisplayInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyDisplayInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyDisplayInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.TelephonyDisplayInfo getReal() {
+        return (android.telephony.TelephonyDisplayInfo) real;
     }
 
     public android.telephony.TelephonyDisplayInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

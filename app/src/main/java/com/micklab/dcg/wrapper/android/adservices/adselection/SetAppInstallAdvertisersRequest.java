@@ -2,41 +2,55 @@
 package com.micklab.dcg.wrapper.android.adservices.adselection;
 
 public final class SetAppInstallAdvertisersRequest {
-    private final android.adservices.adselection.SetAppInstallAdvertisersRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SetAppInstallAdvertisersRequest(android.adservices.adselection.SetAppInstallAdvertisersRequest real) {
+    private final java.lang.Object real;
+
+    private SetAppInstallAdvertisersRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest wrap(android.adservices.adselection.SetAppInstallAdvertisersRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.adselection.SetAppInstallAdvertisersRequest getReal() {
+        return (android.adservices.adselection.SetAppInstallAdvertisersRequest) real;
     }
 
     public android.adservices.adselection.SetAppInstallAdvertisersRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class Builder {
-        private final android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder wrap(android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder getReal() {
+            return (android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder) real;
         }
 
         public android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder());
+            this(new android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest build() {
-            return com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.adservices.adselection.SetAppInstallAdvertisersRequest.wrap(((android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder) real).build());
         }
 
     }

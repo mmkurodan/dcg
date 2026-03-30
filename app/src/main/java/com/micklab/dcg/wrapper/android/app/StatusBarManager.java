@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class StatusBarManager {
-    private final android.app.StatusBarManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public StatusBarManager(android.app.StatusBarManager real) {
+    private final java.lang.Object real;
+
+    private StatusBarManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.StatusBarManager wrap(android.app.StatusBarManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.StatusBarManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.StatusBarManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.StatusBarManager getReal() {
+        return (android.app.StatusBarManager) real;
     }
 
     public android.app.StatusBarManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canLaunchCaptureContentActivityForNote(com.micklab.dcg.wrapper.android.app.Activity arg0) {
-        return real.canLaunchCaptureContentActivityForNote(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.StatusBarManager) real).canLaunchCaptureContentActivityForNote(arg0 == null ? null : arg0.getReal());
     }
 
     public static final int TILE_ADD_REQUEST_ERROR_APP_NOT_IN_FOREGROUND = android.app.StatusBarManager.TILE_ADD_REQUEST_ERROR_APP_NOT_IN_FOREGROUND;

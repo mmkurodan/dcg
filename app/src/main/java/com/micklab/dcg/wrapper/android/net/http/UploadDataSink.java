@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.http;
 
 public final class UploadDataSink {
-    private final android.net.http.UploadDataSink real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UploadDataSink(android.net.http.UploadDataSink real) {
+    private final java.lang.Object real;
+
+    private UploadDataSink(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.http.UploadDataSink wrap(android.net.http.UploadDataSink real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UploadDataSink(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.UploadDataSink(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.http.UploadDataSink getReal() {
+        return (android.net.http.UploadDataSink) real;
     }
 
     public android.net.http.UploadDataSink unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onReadError(java.lang.Exception arg0) {

@@ -2,53 +2,67 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class ConsoleMessage {
-    private final android.webkit.ConsoleMessage real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConsoleMessage(android.webkit.ConsoleMessage real) {
+    private final java.lang.Object real;
+
+    private ConsoleMessage(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.ConsoleMessage wrap(android.webkit.ConsoleMessage real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ConsoleMessage(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ConsoleMessage(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.ConsoleMessage getReal() {
+        return (android.webkit.ConsoleMessage) real;
     }
 
     public android.webkit.ConsoleMessage unwrap() {
-        return real;
+        return getReal();
     }
 
     public ConsoleMessage(java.lang.String arg0, java.lang.String arg1, int arg2, com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel arg3) {
-        this(new android.webkit.ConsoleMessage(arg0, arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+        this(new android.webkit.ConsoleMessage(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int lineNumber() {
-        return real.lineNumber();
+        return ((android.webkit.ConsoleMessage) real).lineNumber();
     }
 
     public java.lang.String message() {
-        return real.message();
+        return ((android.webkit.ConsoleMessage) real).message();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel messageLevel() {
-        return com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel.wrap(real.messageLevel());
+        return com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel.wrap(((android.webkit.ConsoleMessage) real).messageLevel());
     }
 
     public java.lang.String sourceId() {
-        return real.sourceId();
+        return ((android.webkit.ConsoleMessage) real).sourceId();
     }
 
     public static final class MessageLevel {
-        private final android.webkit.ConsoleMessage.MessageLevel real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MessageLevel(android.webkit.ConsoleMessage.MessageLevel real) {
+        private final java.lang.Object real;
+
+        private MessageLevel(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel wrap(android.webkit.ConsoleMessage.MessageLevel real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.ConsoleMessage.MessageLevel getReal() {
+            return (android.webkit.ConsoleMessage.MessageLevel) real;
         }
 
         public android.webkit.ConsoleMessage.MessageLevel unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.ConsoleMessage.MessageLevel valueOf(java.lang.String arg0) {

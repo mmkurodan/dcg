@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.content.pm;
 
 public final class ApkChecksum {
-    private final android.content.pm.ApkChecksum real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ApkChecksum(android.content.pm.ApkChecksum real) {
+    private final java.lang.Object real;
+
+    private ApkChecksum(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.ApkChecksum wrap(android.content.pm.ApkChecksum real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ApkChecksum(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.pm.ApkChecksum(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.pm.ApkChecksum getReal() {
+        return (android.content.pm.ApkChecksum) real;
     }
 
     public android.content.pm.ApkChecksum unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

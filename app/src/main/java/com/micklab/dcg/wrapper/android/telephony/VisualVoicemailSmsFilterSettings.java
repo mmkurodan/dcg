@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class VisualVoicemailSmsFilterSettings {
-    private final android.telephony.VisualVoicemailSmsFilterSettings real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VisualVoicemailSmsFilterSettings(android.telephony.VisualVoicemailSmsFilterSettings real) {
+    private final java.lang.Object real;
+
+    private VisualVoicemailSmsFilterSettings(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings wrap(android.telephony.VisualVoicemailSmsFilterSettings real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.VisualVoicemailSmsFilterSettings getReal() {
+        return (android.telephony.VisualVoicemailSmsFilterSettings) real;
     }
 
     public android.telephony.VisualVoicemailSmsFilterSettings unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -30,18 +37,25 @@ public final class VisualVoicemailSmsFilterSettings {
 
 
     public static final class Builder {
-        private final android.telephony.VisualVoicemailSmsFilterSettings.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.VisualVoicemailSmsFilterSettings.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings.Builder wrap(android.telephony.VisualVoicemailSmsFilterSettings.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.VisualVoicemailSmsFilterSettings.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.VisualVoicemailSmsFilterSettings.Builder getReal() {
+            return (android.telephony.VisualVoicemailSmsFilterSettings.Builder) real;
         }
 
         public android.telephony.VisualVoicemailSmsFilterSettings.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

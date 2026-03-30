@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class EncoderProfiles {
-    private final android.media.EncoderProfiles real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EncoderProfiles(android.media.EncoderProfiles real) {
+    private final java.lang.Object real;
+
+    private EncoderProfiles(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.EncoderProfiles wrap(android.media.EncoderProfiles real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.EncoderProfiles getReal() {
+        return (android.media.EncoderProfiles) real;
     }
 
     public android.media.EncoderProfiles unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getDefaultDurationSeconds() {
-        return real.getDefaultDurationSeconds();
+        return ((android.media.EncoderProfiles) real).getDefaultDurationSeconds();
     }
 
     public int getRecommendedFileFormat() {
@@ -25,34 +32,41 @@ public final class EncoderProfiles {
     }
 
     public static final class AudioProfile {
-        private final android.media.EncoderProfiles.AudioProfile real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AudioProfile(android.media.EncoderProfiles.AudioProfile real) {
+        private final java.lang.Object real;
+
+        private AudioProfile(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.EncoderProfiles.AudioProfile wrap(android.media.EncoderProfiles.AudioProfile real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles.AudioProfile(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles.AudioProfile(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.EncoderProfiles.AudioProfile getReal() {
+            return (android.media.EncoderProfiles.AudioProfile) real;
         }
 
         public android.media.EncoderProfiles.AudioProfile unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getBitrate() {
-            return real.getBitrate();
+            return ((android.media.EncoderProfiles.AudioProfile) real).getBitrate();
         }
 
         public int getChannels() {
-            return real.getChannels();
+            return ((android.media.EncoderProfiles.AudioProfile) real).getChannels();
         }
 
         public int getCodec() {
-            return real.getCodec();
+            return ((android.media.EncoderProfiles.AudioProfile) real).getCodec();
         }
 
         public java.lang.String getMediaType() {
-            return real.getMediaType();
+            return ((android.media.EncoderProfiles.AudioProfile) real).getMediaType();
         }
 
         public int getProfile() {
@@ -60,55 +74,62 @@ public final class EncoderProfiles {
         }
 
         public int getSampleRate() {
-            return real.getSampleRate();
+            return ((android.media.EncoderProfiles.AudioProfile) real).getSampleRate();
         }
 
     }
     public static final class VideoProfile {
-        private final android.media.EncoderProfiles.VideoProfile real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VideoProfile(android.media.EncoderProfiles.VideoProfile real) {
+        private final java.lang.Object real;
+
+        private VideoProfile(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.EncoderProfiles.VideoProfile wrap(android.media.EncoderProfiles.VideoProfile real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles.VideoProfile(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.EncoderProfiles.VideoProfile(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.EncoderProfiles.VideoProfile getReal() {
+            return (android.media.EncoderProfiles.VideoProfile) real;
         }
 
         public android.media.EncoderProfiles.VideoProfile unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getBitDepth() {
-            return real.getBitDepth();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getBitDepth();
         }
 
         public int getBitrate() {
-            return real.getBitrate();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getBitrate();
         }
 
         public int getChromaSubsampling() {
-            return real.getChromaSubsampling();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getChromaSubsampling();
         }
 
         public int getCodec() {
-            return real.getCodec();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getCodec();
         }
 
         public int getFrameRate() {
-            return real.getFrameRate();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getFrameRate();
         }
 
         public int getHdrFormat() {
-            return real.getHdrFormat();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getHdrFormat();
         }
 
         public int getHeight() {
-            return real.getHeight();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getHeight();
         }
 
         public java.lang.String getMediaType() {
-            return real.getMediaType();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getMediaType();
         }
 
         public int getProfile() {
@@ -116,7 +137,7 @@ public final class EncoderProfiles {
         }
 
         public int getWidth() {
-            return real.getWidth();
+            return ((android.media.EncoderProfiles.VideoProfile) real).getWidth();
         }
 
         public static final int HDR_DOLBY_VISION = android.media.EncoderProfiles.VideoProfile.HDR_DOLBY_VISION;

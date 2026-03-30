@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.hardware;
 
 public final class OverlayProperties {
-    private final android.hardware.OverlayProperties real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OverlayProperties(android.hardware.OverlayProperties real) {
+    private final java.lang.Object real;
+
+    private OverlayProperties(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.OverlayProperties wrap(android.hardware.OverlayProperties real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.OverlayProperties(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.OverlayProperties(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.OverlayProperties getReal() {
+        return (android.hardware.OverlayProperties) real;
     }
 
     public android.hardware.OverlayProperties unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.hardware.OverlayProperties) real).describeContents();
     }
 
     public boolean isCombinationSupported(int arg0, int arg1) {
-        return real.isCombinationSupported(arg0, arg1);
+        return ((android.hardware.OverlayProperties) real).isCombinationSupported(arg0, arg1);
     }
 
     public boolean isMixedColorSpacesSupported() {
-        return real.isMixedColorSpacesSupported();
+        return ((android.hardware.OverlayProperties) real).isMixedColorSpacesSupported();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.OverlayProperties) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

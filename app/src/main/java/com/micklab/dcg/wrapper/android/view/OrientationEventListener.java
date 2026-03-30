@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.view;
 
 public final class OrientationEventListener {
-    private final android.view.OrientationEventListener real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OrientationEventListener(android.view.OrientationEventListener real) {
+    private final java.lang.Object real;
+
+    private OrientationEventListener(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.OrientationEventListener wrap(android.view.OrientationEventListener real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.OrientationEventListener(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.OrientationEventListener(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.OrientationEventListener getReal() {
+        return (android.view.OrientationEventListener) real;
     }
 
     public android.view.OrientationEventListener unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canDetectOrientation() {
-        return real.canDetectOrientation();
+        return ((android.view.OrientationEventListener) real).canDetectOrientation();
     }
 
     public void disable() {
-        real.disable();
+        ((android.view.OrientationEventListener) real).disable();
     }
 
     public void enable() {
-        real.enable();
+        ((android.view.OrientationEventListener) real).enable();
     }
 
     public void onOrientationChanged(int arg0) {
-        real.onOrientationChanged(arg0);
+        ((android.view.OrientationEventListener) real).onOrientationChanged(arg0);
     }
 
     public static final int ORIENTATION_UNKNOWN = android.view.OrientationEventListener.ORIENTATION_UNKNOWN;

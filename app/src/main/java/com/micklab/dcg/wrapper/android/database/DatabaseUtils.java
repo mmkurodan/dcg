@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class DatabaseUtils {
-    private final android.database.DatabaseUtils real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DatabaseUtils(android.database.DatabaseUtils real) {
+    private final java.lang.Object real;
+
+    private DatabaseUtils(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.DatabaseUtils wrap(android.database.DatabaseUtils real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseUtils(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseUtils(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.DatabaseUtils getReal() {
+        return (android.database.DatabaseUtils) real;
     }
 
     public android.database.DatabaseUtils unwrap() {
-        return real;
+        return getReal();
     }
 
     public DatabaseUtils() {
@@ -210,18 +217,25 @@ public final class DatabaseUtils {
 
 
     public static final class InsertHelper {
-        private final android.database.DatabaseUtils.InsertHelper real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public InsertHelper(android.database.DatabaseUtils.InsertHelper real) {
+        private final java.lang.Object real;
+
+        private InsertHelper(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.database.DatabaseUtils.InsertHelper wrap(android.database.DatabaseUtils.InsertHelper real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseUtils.InsertHelper(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.database.DatabaseUtils.InsertHelper(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.database.DatabaseUtils.InsertHelper getReal() {
+            return (android.database.DatabaseUtils.InsertHelper) real;
         }
 
         public android.database.DatabaseUtils.InsertHelper unwrap() {
-            return real;
+            return getReal();
         }
 
         public InsertHelper(com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase arg0, java.lang.String arg1) {

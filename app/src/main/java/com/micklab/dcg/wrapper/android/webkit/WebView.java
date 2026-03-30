@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class WebView {
-    private final android.webkit.WebView real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WebView(android.webkit.WebView real) {
+    private final java.lang.Object real;
+
+    private WebView(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.WebView wrap(android.webkit.WebView real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.WebView getReal() {
+        return (android.webkit.WebView) real;
     }
 
     public android.webkit.WebView unwrap() {
-        return real;
+        return getReal();
     }
 
     public WebView(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.webkit.WebView(arg0 == null ? null : arg0.unwrap()));
+        this(new android.webkit.WebView(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public WebView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.webkit.WebView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.webkit.WebView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public WebView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.webkit.WebView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.webkit.WebView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public WebView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, boolean arg3) {
-        this(new android.webkit.WebView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.webkit.WebView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public WebView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.webkit.WebView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.webkit.WebView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void addJavascriptInterface(java.lang.Object arg0, java.lang.String arg1) {
-        real.addJavascriptInterface(arg0, arg1);
+        ((android.webkit.WebView) real).addJavascriptInterface(arg0, arg1);
     }
 
     public boolean canGoBack() {
-        return real.canGoBack();
+        return ((android.webkit.WebView) real).canGoBack();
     }
 
     public boolean canGoBackOrForward(int arg0) {
-        return real.canGoBackOrForward(arg0);
+        return ((android.webkit.WebView) real).canGoBackOrForward(arg0);
     }
 
     public boolean canGoForward() {
-        return real.canGoForward();
+        return ((android.webkit.WebView) real).canGoForward();
     }
 
     public boolean canZoomIn() {
-        return real.canZoomIn();
+        return ((android.webkit.WebView) real).canZoomIn();
     }
 
     public boolean canZoomOut() {
-        return real.canZoomOut();
+        return ((android.webkit.WebView) real).canZoomOut();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Picture capturePicture() {
-        return com.micklab.dcg.wrapper.android.graphics.Picture.wrap(real.capturePicture());
+        return com.micklab.dcg.wrapper.android.graphics.Picture.wrap(((android.webkit.WebView) real).capturePicture());
     }
 
     public void clearCache(boolean arg0) {
-        real.clearCache(arg0);
+        ((android.webkit.WebView) real).clearCache(arg0);
     }
 
     public static void clearClientCertPreferences(java.lang.Runnable arg0) {
@@ -73,47 +80,47 @@ public final class WebView {
     }
 
     public void clearFormData() {
-        real.clearFormData();
+        ((android.webkit.WebView) real).clearFormData();
     }
 
     public void clearHistory() {
-        real.clearHistory();
+        ((android.webkit.WebView) real).clearHistory();
     }
 
     public void clearMatches() {
-        real.clearMatches();
+        ((android.webkit.WebView) real).clearMatches();
     }
 
     public void clearSslPreferences() {
-        real.clearSslPreferences();
+        ((android.webkit.WebView) real).clearSslPreferences();
     }
 
     public void clearView() {
-        real.clearView();
+        ((android.webkit.WebView) real).clearView();
     }
 
     public void computeScroll() {
-        real.computeScroll();
+        ((android.webkit.WebView) real).computeScroll();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebBackForwardList copyBackForwardList() {
-        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(real.copyBackForwardList());
+        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(((android.webkit.WebView) real).copyBackForwardList());
     }
 
     public com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter createPrintDocumentAdapter() {
-        return com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter.wrap(real.createPrintDocumentAdapter());
+        return com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter.wrap(((android.webkit.WebView) real).createPrintDocumentAdapter());
     }
 
     public com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter createPrintDocumentAdapter(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter.wrap(real.createPrintDocumentAdapter(arg0));
+        return com.micklab.dcg.wrapper.android.print.PrintDocumentAdapter.wrap(((android.webkit.WebView) real).createPrintDocumentAdapter(arg0));
     }
 
     public android.webkit.WebMessagePort[] createWebMessageChannel() {
-        return real.createWebMessageChannel();
+        return ((android.webkit.WebView) real).createWebMessageChannel();
     }
 
     public void destroy() {
-        real.destroy();
+        ((android.webkit.WebView) real).destroy();
     }
 
     public static void disableWebView() {
@@ -121,11 +128,11 @@ public final class WebView {
     }
 
     public boolean dispatchKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
-        return real.dispatchKeyEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).dispatchKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void documentHasImages(com.micklab.dcg.wrapper.android.os.Message arg0) {
-        real.documentHasImages(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).documentHasImages(arg0 == null ? null : arg0.getReal());
     }
 
     public static void enableSlowWholeDocumentDraw() {
@@ -137,43 +144,43 @@ public final class WebView {
     }
 
     public int findAll(java.lang.String arg0) {
-        return real.findAll(arg0);
+        return ((android.webkit.WebView) real).findAll(arg0);
     }
 
     public void findAllAsync(java.lang.String arg0) {
-        real.findAllAsync(arg0);
+        ((android.webkit.WebView) real).findAllAsync(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.view.View findFocus() {
-        return com.micklab.dcg.wrapper.android.view.View.wrap(real.findFocus());
+        return com.micklab.dcg.wrapper.android.view.View.wrap(((android.webkit.WebView) real).findFocus());
     }
 
     public void findNext(boolean arg0) {
-        real.findNext(arg0);
+        ((android.webkit.WebView) real).findNext(arg0);
     }
 
     public void flingScroll(int arg0, int arg1) {
-        real.flingScroll(arg0, arg1);
+        ((android.webkit.WebView) real).flingScroll(arg0, arg1);
     }
 
     public void freeMemory() {
-        real.freeMemory();
+        ((android.webkit.WebView) real).freeMemory();
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.webkit.WebView) real).getAccessibilityClassName();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeProvider.wrap(real.getAccessibilityNodeProvider());
+        return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeProvider.wrap(((android.webkit.WebView) real).getAccessibilityNodeProvider());
     }
 
     public com.micklab.dcg.wrapper.android.net.http.SslCertificate getCertificate() {
-        return com.micklab.dcg.wrapper.android.net.http.SslCertificate.wrap(real.getCertificate());
+        return com.micklab.dcg.wrapper.android.net.http.SslCertificate.wrap(((android.webkit.WebView) real).getCertificate());
     }
 
     public int getContentHeight() {
-        return real.getContentHeight();
+        return ((android.webkit.WebView) real).getContentHeight();
     }
 
     public static com.micklab.dcg.wrapper.android.content.pm.PackageInfo getCurrentWebViewPackage() {
@@ -181,35 +188,35 @@ public final class WebView {
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getFavicon() {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(real.getFavicon());
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.webkit.WebView) real).getFavicon());
     }
 
     public com.micklab.dcg.wrapper.android.os.Handler getHandler() {
-        return com.micklab.dcg.wrapper.android.os.Handler.wrap(real.getHandler());
+        return com.micklab.dcg.wrapper.android.os.Handler.wrap(((android.webkit.WebView) real).getHandler());
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult getHitTestResult() {
-        return com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult.wrap(real.getHitTestResult());
+        return com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult.wrap(((android.webkit.WebView) real).getHitTestResult());
     }
 
     public java.lang.String[] getHttpAuthUsernamePassword(java.lang.String arg0, java.lang.String arg1) {
-        return real.getHttpAuthUsernamePassword(arg0, arg1);
+        return ((android.webkit.WebView) real).getHttpAuthUsernamePassword(arg0, arg1);
     }
 
     public java.lang.String getOriginalUrl() {
-        return real.getOriginalUrl();
+        return ((android.webkit.WebView) real).getOriginalUrl();
     }
 
     public int getProgress() {
-        return real.getProgress();
+        return ((android.webkit.WebView) real).getProgress();
     }
 
     public boolean getRendererPriorityWaivedWhenNotVisible() {
-        return real.getRendererPriorityWaivedWhenNotVisible();
+        return ((android.webkit.WebView) real).getRendererPriorityWaivedWhenNotVisible();
     }
 
     public int getRendererRequestedPriority() {
-        return real.getRendererRequestedPriority();
+        return ((android.webkit.WebView) real).getRendererRequestedPriority();
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri getSafeBrowsingPrivacyPolicyUrl() {
@@ -217,27 +224,27 @@ public final class WebView {
     }
 
     public float getScale() {
-        return real.getScale();
+        return ((android.webkit.WebView) real).getScale();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebSettings getSettings() {
-        return com.micklab.dcg.wrapper.android.webkit.WebSettings.wrap(real.getSettings());
+        return com.micklab.dcg.wrapper.android.webkit.WebSettings.wrap(((android.webkit.WebView) real).getSettings());
     }
 
     public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier getTextClassifier() {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier.wrap(real.getTextClassifier());
+        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier.wrap(((android.webkit.WebView) real).getTextClassifier());
     }
 
     public java.lang.String getTitle() {
-        return real.getTitle();
+        return ((android.webkit.WebView) real).getTitle();
     }
 
     public java.lang.String getUrl() {
-        return real.getUrl();
+        return ((android.webkit.WebView) real).getUrl();
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebChromeClient getWebChromeClient() {
-        return com.micklab.dcg.wrapper.android.webkit.WebChromeClient.wrap(real.getWebChromeClient());
+        return com.micklab.dcg.wrapper.android.webkit.WebChromeClient.wrap(((android.webkit.WebView) real).getWebChromeClient());
     }
 
     public static java.lang.ClassLoader getWebViewClassLoader() {
@@ -245,235 +252,235 @@ public final class WebView {
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebViewClient getWebViewClient() {
-        return com.micklab.dcg.wrapper.android.webkit.WebViewClient.wrap(real.getWebViewClient());
+        return com.micklab.dcg.wrapper.android.webkit.WebViewClient.wrap(((android.webkit.WebView) real).getWebViewClient());
     }
 
     public com.micklab.dcg.wrapper.android.os.Looper getWebViewLooper() {
-        return com.micklab.dcg.wrapper.android.os.Looper.wrap(real.getWebViewLooper());
+        return com.micklab.dcg.wrapper.android.os.Looper.wrap(((android.webkit.WebView) real).getWebViewLooper());
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcess getWebViewRenderProcess() {
-        return com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcess.wrap(real.getWebViewRenderProcess());
+        return com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcess.wrap(((android.webkit.WebView) real).getWebViewRenderProcess());
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcessClient getWebViewRenderProcessClient() {
-        return com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcessClient.wrap(real.getWebViewRenderProcessClient());
+        return com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcessClient.wrap(((android.webkit.WebView) real).getWebViewRenderProcessClient());
     }
 
     public void goBack() {
-        real.goBack();
+        ((android.webkit.WebView) real).goBack();
     }
 
     public void goBackOrForward(int arg0) {
-        real.goBackOrForward(arg0);
+        ((android.webkit.WebView) real).goBackOrForward(arg0);
     }
 
     public void goForward() {
-        real.goForward();
+        ((android.webkit.WebView) real).goForward();
     }
 
     public void invokeZoomPicker() {
-        real.invokeZoomPicker();
+        ((android.webkit.WebView) real).invokeZoomPicker();
     }
 
     public boolean isPrivateBrowsingEnabled() {
-        return real.isPrivateBrowsingEnabled();
+        return ((android.webkit.WebView) real).isPrivateBrowsingEnabled();
     }
 
     public boolean isVisibleToUserForAutofill(int arg0) {
-        return real.isVisibleToUserForAutofill(arg0);
+        return ((android.webkit.WebView) real).isVisibleToUserForAutofill(arg0);
     }
 
     public void loadData(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.loadData(arg0, arg1, arg2);
+        ((android.webkit.WebView) real).loadData(arg0, arg1, arg2);
     }
 
     public void loadDataWithBaseURL(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
-        real.loadDataWithBaseURL(arg0, arg1, arg2, arg3, arg4);
+        ((android.webkit.WebView) real).loadDataWithBaseURL(arg0, arg1, arg2, arg3, arg4);
     }
 
     public void loadUrl(java.lang.String arg0) {
-        real.loadUrl(arg0);
+        ((android.webkit.WebView) real).loadUrl(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.view.WindowInsets onApplyWindowInsets(com.micklab.dcg.wrapper.android.view.WindowInsets arg0) {
-        return com.micklab.dcg.wrapper.android.view.WindowInsets.wrap(real.onApplyWindowInsets(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.WindowInsets.wrap(((android.webkit.WebView) real).onApplyWindowInsets(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean onCheckIsTextEditor() {
-        return real.onCheckIsTextEditor();
+        return ((android.webkit.WebView) real).onCheckIsTextEditor();
     }
 
     public void onChildViewAdded(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.View arg1) {
-        real.onChildViewAdded(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).onChildViewAdded(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void onChildViewRemoved(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.View arg1) {
-        real.onChildViewRemoved(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).onChildViewRemoved(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection onCreateInputConnection(com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo arg0) {
-        return com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection.wrap(real.onCreateInputConnection(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection.wrap(((android.webkit.WebView) real).onCreateInputConnection(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean onDragEvent(com.micklab.dcg.wrapper.android.view.DragEvent arg0) {
-        return real.onDragEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).onDragEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void onFinishTemporaryDetach() {
-        real.onFinishTemporaryDetach();
+        ((android.webkit.WebView) real).onFinishTemporaryDetach();
     }
 
     public boolean onGenericMotionEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onGenericMotionEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).onGenericMotionEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void onGlobalFocusChanged(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.View arg1) {
-        real.onGlobalFocusChanged(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).onGlobalFocusChanged(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onHoverEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onHoverEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).onHoverEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.webkit.WebView) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyMultiple(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-        return real.onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.webkit.WebView) real).onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyUp(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyUp(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.webkit.WebView) real).onKeyUp(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void onPause() {
-        real.onPause();
+        ((android.webkit.WebView) real).onPause();
     }
 
     public void onProvideAutofillVirtualStructure(com.micklab.dcg.wrapper.android.view.ViewStructure arg0, int arg1) {
-        real.onProvideAutofillVirtualStructure(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.webkit.WebView) real).onProvideAutofillVirtualStructure(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void onProvideContentCaptureStructure(com.micklab.dcg.wrapper.android.view.ViewStructure arg0, int arg1) {
-        real.onProvideContentCaptureStructure(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.webkit.WebView) real).onProvideContentCaptureStructure(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void onProvideVirtualStructure(com.micklab.dcg.wrapper.android.view.ViewStructure arg0) {
-        real.onProvideVirtualStructure(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).onProvideVirtualStructure(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.PointerIcon onResolvePointerIcon(com.micklab.dcg.wrapper.android.view.MotionEvent arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(real.onResolvePointerIcon(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(((android.webkit.WebView) real).onResolvePointerIcon(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public void onResume() {
-        real.onResume();
+        ((android.webkit.WebView) real).onResume();
     }
 
     public void onStartTemporaryDetach() {
-        real.onStartTemporaryDetach();
+        ((android.webkit.WebView) real).onStartTemporaryDetach();
     }
 
     public boolean onTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).onTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTrackballEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.webkit.WebView) real).onTrackballEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void onWindowFocusChanged(boolean arg0) {
-        real.onWindowFocusChanged(arg0);
+        ((android.webkit.WebView) real).onWindowFocusChanged(arg0);
     }
 
     public boolean overlayHorizontalScrollbar() {
-        return real.overlayHorizontalScrollbar();
+        return ((android.webkit.WebView) real).overlayHorizontalScrollbar();
     }
 
     public boolean overlayVerticalScrollbar() {
-        return real.overlayVerticalScrollbar();
+        return ((android.webkit.WebView) real).overlayVerticalScrollbar();
     }
 
     public boolean pageDown(boolean arg0) {
-        return real.pageDown(arg0);
+        return ((android.webkit.WebView) real).pageDown(arg0);
     }
 
     public boolean pageUp(boolean arg0) {
-        return real.pageUp(arg0);
+        return ((android.webkit.WebView) real).pageUp(arg0);
     }
 
     public void pauseTimers() {
-        real.pauseTimers();
+        ((android.webkit.WebView) real).pauseTimers();
     }
 
     public boolean performLongClick() {
-        return real.performLongClick();
+        return ((android.webkit.WebView) real).performLongClick();
     }
 
     public void postUrl(java.lang.String arg0, byte[] arg1) {
-        real.postUrl(arg0, arg1);
+        ((android.webkit.WebView) real).postUrl(arg0, arg1);
     }
 
     public void postVisualStateCallback(long arg0, com.micklab.dcg.wrapper.android.webkit.WebView.VisualStateCallback arg1) {
-        real.postVisualStateCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).postVisualStateCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void postWebMessage(com.micklab.dcg.wrapper.android.webkit.WebMessage arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-        real.postWebMessage(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).postWebMessage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void reload() {
-        real.reload();
+        ((android.webkit.WebView) real).reload();
     }
 
     public void removeJavascriptInterface(java.lang.String arg0) {
-        real.removeJavascriptInterface(arg0);
+        ((android.webkit.WebView) real).removeJavascriptInterface(arg0);
     }
 
     public boolean requestChildRectangleOnScreen(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, boolean arg2) {
-        return real.requestChildRectangleOnScreen(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.webkit.WebView) real).requestChildRectangleOnScreen(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean requestFocus(int arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1) {
-        return real.requestFocus(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.webkit.WebView) real).requestFocus(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void requestFocusNodeHref(com.micklab.dcg.wrapper.android.os.Message arg0) {
-        real.requestFocusNodeHref(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).requestFocusNodeHref(arg0 == null ? null : arg0.getReal());
     }
 
     public void requestImageRef(com.micklab.dcg.wrapper.android.os.Message arg0) {
-        real.requestImageRef(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).requestImageRef(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebBackForwardList restoreState(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(real.restoreState(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(((android.webkit.WebView) real).restoreState(arg0 == null ? null : arg0.getReal()));
     }
 
     public void resumeTimers() {
-        real.resumeTimers();
+        ((android.webkit.WebView) real).resumeTimers();
     }
 
     public void savePassword(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
-        real.savePassword(arg0, arg1, arg2);
+        ((android.webkit.WebView) real).savePassword(arg0, arg1, arg2);
     }
 
     public com.micklab.dcg.wrapper.android.webkit.WebBackForwardList saveState(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(real.saveState(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.webkit.WebBackForwardList.wrap(((android.webkit.WebView) real).saveState(arg0 == null ? null : arg0.getReal()));
     }
 
     public void saveWebArchive(java.lang.String arg0) {
-        real.saveWebArchive(arg0);
+        ((android.webkit.WebView) real).saveWebArchive(arg0);
     }
 
     public void setBackgroundColor(int arg0) {
-        real.setBackgroundColor(arg0);
+        ((android.webkit.WebView) real).setBackgroundColor(arg0);
     }
 
     public void setCertificate(com.micklab.dcg.wrapper.android.net.http.SslCertificate arg0) {
-        real.setCertificate(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setCertificate(arg0 == null ? null : arg0.getReal());
     }
 
     public static void setDataDirectorySuffix(java.lang.String arg0) {
@@ -481,35 +488,35 @@ public final class WebView {
     }
 
     public void setDownloadListener(com.micklab.dcg.wrapper.android.webkit.DownloadListener arg0) {
-        real.setDownloadListener(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setDownloadListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setFindListener(com.micklab.dcg.wrapper.android.webkit.WebView.FindListener arg0) {
-        real.setFindListener(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setFindListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setHorizontalScrollbarOverlay(boolean arg0) {
-        real.setHorizontalScrollbarOverlay(arg0);
+        ((android.webkit.WebView) real).setHorizontalScrollbarOverlay(arg0);
     }
 
     public void setHttpAuthUsernamePassword(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3) {
-        real.setHttpAuthUsernamePassword(arg0, arg1, arg2, arg3);
+        ((android.webkit.WebView) real).setHttpAuthUsernamePassword(arg0, arg1, arg2, arg3);
     }
 
     public void setInitialScale(int arg0) {
-        real.setInitialScale(arg0);
+        ((android.webkit.WebView) real).setInitialScale(arg0);
     }
 
     public void setLayerType(int arg0, com.micklab.dcg.wrapper.android.graphics.Paint arg1) {
-        real.setLayerType(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).setLayerType(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setLayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg0) {
-        real.setLayoutParams(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setLayoutParams(arg0 == null ? null : arg0.getReal());
     }
 
     public void setMapTrackballToArrowKeys(boolean arg0) {
-        real.setMapTrackballToArrowKeys(arg0);
+        ((android.webkit.WebView) real).setMapTrackballToArrowKeys(arg0);
     }
 
     public void setNetworkAvailable(boolean arg0) {
@@ -517,31 +524,31 @@ public final class WebView {
     }
 
     public void setOverScrollMode(int arg0) {
-        real.setOverScrollMode(arg0);
+        ((android.webkit.WebView) real).setOverScrollMode(arg0);
     }
 
     public void setPictureListener(com.micklab.dcg.wrapper.android.webkit.WebView.PictureListener arg0) {
-        real.setPictureListener(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setPictureListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setRendererPriorityPolicy(int arg0, boolean arg1) {
-        real.setRendererPriorityPolicy(arg0, arg1);
+        ((android.webkit.WebView) real).setRendererPriorityPolicy(arg0, arg1);
     }
 
     public void setScrollBarStyle(int arg0) {
-        real.setScrollBarStyle(arg0);
+        ((android.webkit.WebView) real).setScrollBarStyle(arg0);
     }
 
     public void setTextClassifier(com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier arg0) {
-        real.setTextClassifier(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setTextClassifier(arg0 == null ? null : arg0.getReal());
     }
 
     public void setVerticalScrollbarOverlay(boolean arg0) {
-        real.setVerticalScrollbarOverlay(arg0);
+        ((android.webkit.WebView) real).setVerticalScrollbarOverlay(arg0);
     }
 
     public void setWebChromeClient(com.micklab.dcg.wrapper.android.webkit.WebChromeClient arg0) {
-        real.setWebChromeClient(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setWebChromeClient(arg0 == null ? null : arg0.getReal());
     }
 
     public static void setWebContentsDebuggingEnabled(boolean arg0) {
@@ -549,39 +556,39 @@ public final class WebView {
     }
 
     public void setWebViewClient(com.micklab.dcg.wrapper.android.webkit.WebViewClient arg0) {
-        real.setWebViewClient(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setWebViewClient(arg0 == null ? null : arg0.getReal());
     }
 
     public void setWebViewRenderProcessClient(com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcessClient arg0) {
-        real.setWebViewRenderProcessClient(arg0 == null ? null : arg0.unwrap());
+        ((android.webkit.WebView) real).setWebViewRenderProcessClient(arg0 == null ? null : arg0.getReal());
     }
 
     public void setWebViewRenderProcessClient(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.webkit.WebViewRenderProcessClient arg1) {
-        real.setWebViewRenderProcessClient(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.webkit.WebView) real).setWebViewRenderProcessClient(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean shouldDelayChildPressedState() {
-        return real.shouldDelayChildPressedState();
+        return ((android.webkit.WebView) real).shouldDelayChildPressedState();
     }
 
     public boolean showFindDialog(java.lang.String arg0, boolean arg1) {
-        return real.showFindDialog(arg0, arg1);
+        return ((android.webkit.WebView) real).showFindDialog(arg0, arg1);
     }
 
     public void stopLoading() {
-        real.stopLoading();
+        ((android.webkit.WebView) real).stopLoading();
     }
 
     public void zoomBy(float arg0) {
-        real.zoomBy(arg0);
+        ((android.webkit.WebView) real).zoomBy(arg0);
     }
 
     public boolean zoomIn() {
-        return real.zoomIn();
+        return ((android.webkit.WebView) real).zoomIn();
     }
 
     public boolean zoomOut() {
-        return real.zoomOut();
+        return ((android.webkit.WebView) real).zoomOut();
     }
 
     public static final int RENDERER_PRIORITY_BOUND = android.webkit.WebView.RENDERER_PRIORITY_BOUND;
@@ -592,46 +599,60 @@ public final class WebView {
     public static final java.lang.String SCHEME_TEL = android.webkit.WebView.SCHEME_TEL;
 
     public static final class FindListener {
-        private final android.webkit.WebView.FindListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public FindListener(android.webkit.WebView.FindListener real) {
+        private final java.lang.Object real;
+
+        private FindListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebView.FindListener wrap(android.webkit.WebView.FindListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.FindListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.FindListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebView.FindListener getReal() {
+            return (android.webkit.WebView.FindListener) real;
         }
 
         public android.webkit.WebView.FindListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFindResultReceived(int arg0, int arg1, boolean arg2) {
-            real.onFindResultReceived(arg0, arg1, arg2);
+            ((android.webkit.WebView.FindListener) real).onFindResultReceived(arg0, arg1, arg2);
         }
 
     }
     public static final class HitTestResult {
-        private final android.webkit.WebView.HitTestResult real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public HitTestResult(android.webkit.WebView.HitTestResult real) {
+        private final java.lang.Object real;
+
+        private HitTestResult(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult wrap(android.webkit.WebView.HitTestResult real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.HitTestResult(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebView.HitTestResult getReal() {
+            return (android.webkit.WebView.HitTestResult) real;
         }
 
         public android.webkit.WebView.HitTestResult unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getExtra() {
-            return real.getExtra();
+            return ((android.webkit.WebView.HitTestResult) real).getExtra();
         }
 
         public int getType() {
-            return real.getType();
+            return ((android.webkit.WebView.HitTestResult) real).getType();
         }
 
         public static final int ANCHOR_TYPE = android.webkit.WebView.HitTestResult.ANCHOR_TYPE;
@@ -647,42 +668,56 @@ public final class WebView {
 
     }
     public static final class PictureListener {
-        private final android.webkit.WebView.PictureListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PictureListener(android.webkit.WebView.PictureListener real) {
+        private final java.lang.Object real;
+
+        private PictureListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebView.PictureListener wrap(android.webkit.WebView.PictureListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.PictureListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.PictureListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebView.PictureListener getReal() {
+            return (android.webkit.WebView.PictureListener) real;
         }
 
         public android.webkit.WebView.PictureListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onNewPicture(com.micklab.dcg.wrapper.android.webkit.WebView arg0, com.micklab.dcg.wrapper.android.graphics.Picture arg1) {
-            real.onNewPicture(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            ((android.webkit.WebView.PictureListener) real).onNewPicture(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
     }
     public static final class VisualStateCallback {
-        private final android.webkit.WebView.VisualStateCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public VisualStateCallback(android.webkit.WebView.VisualStateCallback real) {
+        private final java.lang.Object real;
+
+        private VisualStateCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.webkit.WebView.VisualStateCallback wrap(android.webkit.WebView.VisualStateCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.VisualStateCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.VisualStateCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebView.VisualStateCallback getReal() {
+            return (android.webkit.WebView.VisualStateCallback) real;
         }
 
         public android.webkit.WebView.VisualStateCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onComplete(long arg0) {
-            real.onComplete(arg0);
+            ((android.webkit.WebView.VisualStateCallback) real).onComplete(arg0);
         }
 
     }

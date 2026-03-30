@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class Currency {
-    private final android.icu.util.Currency real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Currency(android.icu.util.Currency real) {
+    private final java.lang.Object real;
+
+    private Currency(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Currency wrap(android.icu.util.Currency real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Currency(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Currency(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.Currency getReal() {
+        return (android.icu.util.Currency) real;
     }
 
     public android.icu.util.Currency unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Currency fromJavaCurrency(java.util.Currency arg0) {
@@ -21,7 +28,7 @@ public final class Currency {
     }
 
     public static java.lang.String[] getAvailableCurrencyCodes(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.util.Date arg1) {
-        return android.icu.util.Currency.getAvailableCurrencyCodes(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.icu.util.Currency.getAvailableCurrencyCodes(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static java.lang.String[] getAvailableCurrencyCodes(java.util.Locale arg0, java.util.Date arg1) {
@@ -37,23 +44,23 @@ public final class Currency {
     }
 
     public java.lang.String getCurrencyCode() {
-        return real.getCurrencyCode();
+        return ((android.icu.util.Currency) real).getCurrencyCode();
     }
 
     public int getDefaultFractionDigits() {
-        return real.getDefaultFractionDigits();
+        return ((android.icu.util.Currency) real).getDefaultFractionDigits();
     }
 
     public int getDefaultFractionDigits(com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage arg0) {
-        return real.getDefaultFractionDigits(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Currency) real).getDefaultFractionDigits(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getDisplayName() {
-        return real.getDisplayName();
+        return ((android.icu.util.Currency) real).getDisplayName();
     }
 
     public java.lang.String getDisplayName(java.util.Locale arg0) {
-        return real.getDisplayName(arg0);
+        return ((android.icu.util.Currency) real).getDisplayName(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(java.util.Locale arg0) {
@@ -65,51 +72,51 @@ public final class Currency {
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static java.lang.String[] getKeywordValuesForLocale(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, boolean arg2) {
-        return android.icu.util.Currency.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        return android.icu.util.Currency.getKeywordValuesForLocale(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public java.lang.String getName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, int arg1, boolean[] arg2) {
-        return real.getName(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return ((android.icu.util.Currency) real).getName(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public java.lang.String getName(java.util.Locale arg0, int arg1, boolean[] arg2) {
-        return real.getName(arg0, arg1, arg2);
+        return ((android.icu.util.Currency) real).getName(arg0, arg1, arg2);
     }
 
     public java.lang.String getName(java.util.Locale arg0, int arg1, java.lang.String arg2, boolean[] arg3) {
-        return real.getName(arg0, arg1, arg2, arg3);
+        return ((android.icu.util.Currency) real).getName(arg0, arg1, arg2, arg3);
     }
 
     public java.lang.String getName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, int arg1, java.lang.String arg2, boolean[] arg3) {
-        return real.getName(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.icu.util.Currency) real).getName(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public int getNumericCode() {
-        return real.getNumericCode();
+        return ((android.icu.util.Currency) real).getNumericCode();
     }
 
     public double getRoundingIncrement() {
-        return real.getRoundingIncrement();
+        return ((android.icu.util.Currency) real).getRoundingIncrement();
     }
 
     public double getRoundingIncrement(com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage arg0) {
-        return real.getRoundingIncrement(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Currency) real).getRoundingIncrement(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getSymbol() {
-        return real.getSymbol();
+        return ((android.icu.util.Currency) real).getSymbol();
     }
 
     public java.lang.String getSymbol(java.util.Locale arg0) {
-        return real.getSymbol(arg0);
+        return ((android.icu.util.Currency) real).getSymbol(arg0);
     }
 
     public java.lang.String getSymbol(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return real.getSymbol(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.Currency) real).getSymbol(arg0 == null ? null : arg0.getReal());
     }
 
     public static boolean isAvailable(java.lang.String arg0, java.util.Date arg1, java.util.Date arg2) {
@@ -117,11 +124,11 @@ public final class Currency {
     }
 
     public java.util.Currency toJavaCurrency() {
-        return real.toJavaCurrency();
+        return ((android.icu.util.Currency) real).toJavaCurrency();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.util.Currency) real).toString();
     }
 
     public static final int FORMAL_SYMBOL_NAME = android.icu.util.Currency.FORMAL_SYMBOL_NAME;
@@ -132,18 +139,25 @@ public final class Currency {
     public static final int VARIANT_SYMBOL_NAME = android.icu.util.Currency.VARIANT_SYMBOL_NAME;
 
     public static final class CurrencyUsage {
-        private final android.icu.util.Currency.CurrencyUsage real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CurrencyUsage(android.icu.util.Currency.CurrencyUsage real) {
+        private final java.lang.Object real;
+
+        private CurrencyUsage(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage wrap(android.icu.util.Currency.CurrencyUsage real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.Currency.CurrencyUsage getReal() {
+            return (android.icu.util.Currency.CurrencyUsage) real;
         }
 
         public android.icu.util.Currency.CurrencyUsage unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.Currency.CurrencyUsage valueOf(java.lang.String arg0) {

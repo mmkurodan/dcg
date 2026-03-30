@@ -2,1262 +2,1269 @@
 package com.micklab.dcg.wrapper.android.widget;
 
 public final class TextView {
-    private final android.widget.TextView real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextView(android.widget.TextView real) {
+    private final java.lang.Object real;
+
+    private TextView(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.widget.TextView wrap(android.widget.TextView real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.widget.TextView getReal() {
+        return (android.widget.TextView) real;
     }
 
     public android.widget.TextView unwrap() {
-        return real;
+        return getReal();
     }
 
     public TextView(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        this(new android.widget.TextView(arg0 == null ? null : arg0.unwrap()));
+        this(new android.widget.TextView(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public TextView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.widget.TextView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        this(new android.widget.TextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public TextView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {
-        this(new android.widget.TextView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        this(new android.widget.TextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
     public TextView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
-        this(new android.widget.TextView(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3));
+        this(new android.widget.TextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void addExtraDataToAccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.addExtraDataToAccessibilityNodeInfo(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.widget.TextView) real).addExtraDataToAccessibilityNodeInfo(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void addTextChangedListener(com.micklab.dcg.wrapper.android.text.TextWatcher arg0) {
-        real.addTextChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).addTextChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void append(java.lang.CharSequence arg0) {
-        real.append(arg0);
+        ((android.widget.TextView) real).append(arg0);
     }
 
     public void append(java.lang.CharSequence arg0, int arg1, int arg2) {
-        real.append(arg0, arg1, arg2);
+        ((android.widget.TextView) real).append(arg0, arg1, arg2);
     }
 
     public void autofill(com.micklab.dcg.wrapper.android.view.autofill.AutofillValue arg0) {
-        real.autofill(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).autofill(arg0 == null ? null : arg0.getReal());
     }
 
     public void beginBatchEdit() {
-        real.beginBatchEdit();
+        ((android.widget.TextView) real).beginBatchEdit();
     }
 
     public boolean bringPointIntoView(int arg0) {
-        return real.bringPointIntoView(arg0);
+        return ((android.widget.TextView) real).bringPointIntoView(arg0);
     }
 
     public boolean bringPointIntoView(int arg0, boolean arg1) {
-        return real.bringPointIntoView(arg0, arg1);
+        return ((android.widget.TextView) real).bringPointIntoView(arg0, arg1);
     }
 
     public void cancelLongPress() {
-        real.cancelLongPress();
+        ((android.widget.TextView) real).cancelLongPress();
     }
 
     public void clearComposingText() {
-        real.clearComposingText();
+        ((android.widget.TextView) real).clearComposingText();
     }
 
     public void computeScroll() {
-        real.computeScroll();
+        ((android.widget.TextView) real).computeScroll();
     }
 
     public void debug(int arg0) {
-        real.debug(arg0);
+        ((android.widget.TextView) real).debug(arg0);
     }
 
     public boolean didTouchFocusSelect() {
-        return real.didTouchFocusSelect();
+        return ((android.widget.TextView) real).didTouchFocusSelect();
     }
 
     public void drawableHotspotChanged(float arg0, float arg1) {
-        real.drawableHotspotChanged(arg0, arg1);
+        ((android.widget.TextView) real).drawableHotspotChanged(arg0, arg1);
     }
 
     public void endBatchEdit() {
-        real.endBatchEdit();
+        ((android.widget.TextView) real).endBatchEdit();
     }
 
     public boolean extractText(com.micklab.dcg.wrapper.android.view.inputmethod.ExtractedTextRequest arg0, com.micklab.dcg.wrapper.android.view.inputmethod.ExtractedText arg1) {
-        return real.extractText(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).extractText(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {
-        return real.getAccessibilityClassName();
+        return ((android.widget.TextView) real).getAccessibilityClassName();
     }
 
     public int getAutoLinkMask() {
-        return real.getAutoLinkMask();
+        return ((android.widget.TextView) real).getAutoLinkMask();
     }
 
     public int getAutoSizeMaxTextSize() {
-        return real.getAutoSizeMaxTextSize();
+        return ((android.widget.TextView) real).getAutoSizeMaxTextSize();
     }
 
     public int getAutoSizeMinTextSize() {
-        return real.getAutoSizeMinTextSize();
+        return ((android.widget.TextView) real).getAutoSizeMinTextSize();
     }
 
     public int getAutoSizeStepGranularity() {
-        return real.getAutoSizeStepGranularity();
+        return ((android.widget.TextView) real).getAutoSizeStepGranularity();
     }
 
     public int[] getAutoSizeTextAvailableSizes() {
-        return real.getAutoSizeTextAvailableSizes();
+        return ((android.widget.TextView) real).getAutoSizeTextAvailableSizes();
     }
 
     public int getAutoSizeTextType() {
-        return real.getAutoSizeTextType();
+        return ((android.widget.TextView) real).getAutoSizeTextType();
     }
 
     public java.lang.String[] getAutofillHints() {
-        return real.getAutofillHints();
+        return ((android.widget.TextView) real).getAutofillHints();
     }
 
     public int getAutofillType() {
-        return real.getAutofillType();
+        return ((android.widget.TextView) real).getAutofillType();
     }
 
     public com.micklab.dcg.wrapper.android.view.autofill.AutofillValue getAutofillValue() {
-        return com.micklab.dcg.wrapper.android.view.autofill.AutofillValue.wrap(real.getAutofillValue());
+        return com.micklab.dcg.wrapper.android.view.autofill.AutofillValue.wrap(((android.widget.TextView) real).getAutofillValue());
     }
 
     public int getBaseline() {
-        return real.getBaseline();
+        return ((android.widget.TextView) real).getBaseline();
     }
 
     public int getBreakStrategy() {
-        return real.getBreakStrategy();
+        return ((android.widget.TextView) real).getBreakStrategy();
     }
 
     public int getCompoundDrawablePadding() {
-        return real.getCompoundDrawablePadding();
+        return ((android.widget.TextView) real).getCompoundDrawablePadding();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.BlendMode getCompoundDrawableTintBlendMode() {
-        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(real.getCompoundDrawableTintBlendMode());
+        return com.micklab.dcg.wrapper.android.graphics.BlendMode.wrap(((android.widget.TextView) real).getCompoundDrawableTintBlendMode());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getCompoundDrawableTintList() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getCompoundDrawableTintList());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.TextView) real).getCompoundDrawableTintList());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode getCompoundDrawableTintMode() {
-        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(real.getCompoundDrawableTintMode());
+        return com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode.wrap(((android.widget.TextView) real).getCompoundDrawableTintMode());
     }
 
     public android.graphics.drawable.Drawable[] getCompoundDrawables() {
-        return real.getCompoundDrawables();
+        return ((android.widget.TextView) real).getCompoundDrawables();
     }
 
     public android.graphics.drawable.Drawable[] getCompoundDrawablesRelative() {
-        return real.getCompoundDrawablesRelative();
+        return ((android.widget.TextView) real).getCompoundDrawablesRelative();
     }
 
     public int getCompoundPaddingBottom() {
-        return real.getCompoundPaddingBottom();
+        return ((android.widget.TextView) real).getCompoundPaddingBottom();
     }
 
     public int getCompoundPaddingEnd() {
-        return real.getCompoundPaddingEnd();
+        return ((android.widget.TextView) real).getCompoundPaddingEnd();
     }
 
     public int getCompoundPaddingLeft() {
-        return real.getCompoundPaddingLeft();
+        return ((android.widget.TextView) real).getCompoundPaddingLeft();
     }
 
     public int getCompoundPaddingRight() {
-        return real.getCompoundPaddingRight();
+        return ((android.widget.TextView) real).getCompoundPaddingRight();
     }
 
     public int getCompoundPaddingStart() {
-        return real.getCompoundPaddingStart();
+        return ((android.widget.TextView) real).getCompoundPaddingStart();
     }
 
     public int getCompoundPaddingTop() {
-        return real.getCompoundPaddingTop();
+        return ((android.widget.TextView) real).getCompoundPaddingTop();
     }
 
     public int getCurrentHintTextColor() {
-        return real.getCurrentHintTextColor();
+        return ((android.widget.TextView) real).getCurrentHintTextColor();
     }
 
     public int getCurrentTextColor() {
-        return real.getCurrentTextColor();
+        return ((android.widget.TextView) real).getCurrentTextColor();
     }
 
     public com.micklab.dcg.wrapper.android.view.ActionMode.Callback getCustomInsertionActionModeCallback() {
-        return com.micklab.dcg.wrapper.android.view.ActionMode.Callback.wrap(real.getCustomInsertionActionModeCallback());
+        return com.micklab.dcg.wrapper.android.view.ActionMode.Callback.wrap(((android.widget.TextView) real).getCustomInsertionActionModeCallback());
     }
 
     public com.micklab.dcg.wrapper.android.view.ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return com.micklab.dcg.wrapper.android.view.ActionMode.Callback.wrap(real.getCustomSelectionActionModeCallback());
+        return com.micklab.dcg.wrapper.android.view.ActionMode.Callback.wrap(((android.widget.TextView) real).getCustomSelectionActionModeCallback());
     }
 
     public com.micklab.dcg.wrapper.android.text.Editable getEditableText() {
-        return com.micklab.dcg.wrapper.android.text.Editable.wrap(real.getEditableText());
+        return com.micklab.dcg.wrapper.android.text.Editable.wrap(((android.widget.TextView) real).getEditableText());
     }
 
     public com.micklab.dcg.wrapper.android.text.TextUtils.TruncateAt getEllipsize() {
-        return com.micklab.dcg.wrapper.android.text.TextUtils.TruncateAt.wrap(real.getEllipsize());
+        return com.micklab.dcg.wrapper.android.text.TextUtils.TruncateAt.wrap(((android.widget.TextView) real).getEllipsize());
     }
 
     public java.lang.CharSequence getError() {
-        return real.getError();
+        return ((android.widget.TextView) real).getError();
     }
 
     public int getExtendedPaddingBottom() {
-        return real.getExtendedPaddingBottom();
+        return ((android.widget.TextView) real).getExtendedPaddingBottom();
     }
 
     public int getExtendedPaddingTop() {
-        return real.getExtendedPaddingTop();
+        return ((android.widget.TextView) real).getExtendedPaddingTop();
     }
 
     public android.text.InputFilter[] getFilters() {
-        return real.getFilters();
+        return ((android.widget.TextView) real).getFilters();
     }
 
     public int getFirstBaselineToTopHeight() {
-        return real.getFirstBaselineToTopHeight();
+        return ((android.widget.TextView) real).getFirstBaselineToTopHeight();
     }
 
     public void getFocusedRect(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
-        real.getFocusedRect(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).getFocusedRect(arg0 == null ? null : arg0.getReal());
     }
 
     public int getFocusedSearchResultHighlightColor() {
-        return real.getFocusedSearchResultHighlightColor();
+        return ((android.widget.TextView) real).getFocusedSearchResultHighlightColor();
     }
 
     public int getFocusedSearchResultIndex() {
-        return real.getFocusedSearchResultIndex();
+        return ((android.widget.TextView) real).getFocusedSearchResultIndex();
     }
 
     public java.lang.String getFontFeatureSettings() {
-        return real.getFontFeatureSettings();
+        return ((android.widget.TextView) real).getFontFeatureSettings();
     }
 
     public java.lang.String getFontVariationSettings() {
-        return real.getFontVariationSettings();
+        return ((android.widget.TextView) real).getFontVariationSettings();
     }
 
     public boolean getFreezesText() {
-        return real.getFreezesText();
+        return ((android.widget.TextView) real).getFreezesText();
     }
 
     public int getGravity() {
-        return real.getGravity();
+        return ((android.widget.TextView) real).getGravity();
     }
 
     public int getHighlightColor() {
-        return real.getHighlightColor();
+        return ((android.widget.TextView) real).getHighlightColor();
     }
 
     public com.micklab.dcg.wrapper.android.text.Highlights getHighlights() {
-        return com.micklab.dcg.wrapper.android.text.Highlights.wrap(real.getHighlights());
+        return com.micklab.dcg.wrapper.android.text.Highlights.wrap(((android.widget.TextView) real).getHighlights());
     }
 
     public java.lang.CharSequence getHint() {
-        return real.getHint();
+        return ((android.widget.TextView) real).getHint();
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getHintTextColors() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getHintTextColors());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.TextView) real).getHintTextColors());
     }
 
     public int getHyphenationFrequency() {
-        return real.getHyphenationFrequency();
+        return ((android.widget.TextView) real).getHyphenationFrequency();
     }
 
     public int getImeActionId() {
-        return real.getImeActionId();
+        return ((android.widget.TextView) real).getImeActionId();
     }
 
     public java.lang.CharSequence getImeActionLabel() {
-        return real.getImeActionLabel();
+        return ((android.widget.TextView) real).getImeActionLabel();
     }
 
     public com.micklab.dcg.wrapper.android.os.LocaleList getImeHintLocales() {
-        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(real.getImeHintLocales());
+        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(((android.widget.TextView) real).getImeHintLocales());
     }
 
     public int getImeOptions() {
-        return real.getImeOptions();
+        return ((android.widget.TextView) real).getImeOptions();
     }
 
     public boolean getIncludeFontPadding() {
-        return real.getIncludeFontPadding();
+        return ((android.widget.TextView) real).getIncludeFontPadding();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getInputExtras(boolean arg0) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getInputExtras(arg0));
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.widget.TextView) real).getInputExtras(arg0));
     }
 
     public int getInputType() {
-        return real.getInputType();
+        return ((android.widget.TextView) real).getInputType();
     }
 
     public int getJustificationMode() {
-        return real.getJustificationMode();
+        return ((android.widget.TextView) real).getJustificationMode();
     }
 
     public com.micklab.dcg.wrapper.android.text.method.KeyListener getKeyListener() {
-        return com.micklab.dcg.wrapper.android.text.method.KeyListener.wrap(real.getKeyListener());
+        return com.micklab.dcg.wrapper.android.text.method.KeyListener.wrap(((android.widget.TextView) real).getKeyListener());
     }
 
     public int getLastBaselineToBottomHeight() {
-        return real.getLastBaselineToBottomHeight();
+        return ((android.widget.TextView) real).getLastBaselineToBottomHeight();
     }
 
     public com.micklab.dcg.wrapper.android.text.Layout getLayout() {
-        return com.micklab.dcg.wrapper.android.text.Layout.wrap(real.getLayout());
+        return com.micklab.dcg.wrapper.android.text.Layout.wrap(((android.widget.TextView) real).getLayout());
     }
 
     public float getLetterSpacing() {
-        return real.getLetterSpacing();
+        return ((android.widget.TextView) real).getLetterSpacing();
     }
 
     public int getLineBounds(int arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1) {
-        return real.getLineBounds(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).getLineBounds(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public int getLineBreakStyle() {
-        return real.getLineBreakStyle();
+        return ((android.widget.TextView) real).getLineBreakStyle();
     }
 
     public int getLineBreakWordStyle() {
-        return real.getLineBreakWordStyle();
+        return ((android.widget.TextView) real).getLineBreakWordStyle();
     }
 
     public int getLineCount() {
-        return real.getLineCount();
+        return ((android.widget.TextView) real).getLineCount();
     }
 
     public int getLineHeight() {
-        return real.getLineHeight();
+        return ((android.widget.TextView) real).getLineHeight();
     }
 
     public float getLineSpacingExtra() {
-        return real.getLineSpacingExtra();
+        return ((android.widget.TextView) real).getLineSpacingExtra();
     }
 
     public float getLineSpacingMultiplier() {
-        return real.getLineSpacingMultiplier();
+        return ((android.widget.TextView) real).getLineSpacingMultiplier();
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getLinkTextColors() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getLinkTextColors());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.TextView) real).getLinkTextColors());
     }
 
     public boolean getLinksClickable() {
-        return real.getLinksClickable();
+        return ((android.widget.TextView) real).getLinksClickable();
     }
 
     public int getMarqueeRepeatLimit() {
-        return real.getMarqueeRepeatLimit();
+        return ((android.widget.TextView) real).getMarqueeRepeatLimit();
     }
 
     public int getMaxEms() {
-        return real.getMaxEms();
+        return ((android.widget.TextView) real).getMaxEms();
     }
 
     public int getMaxHeight() {
-        return real.getMaxHeight();
+        return ((android.widget.TextView) real).getMaxHeight();
     }
 
     public int getMaxLines() {
-        return real.getMaxLines();
+        return ((android.widget.TextView) real).getMaxLines();
     }
 
     public int getMaxWidth() {
-        return real.getMaxWidth();
+        return ((android.widget.TextView) real).getMaxWidth();
     }
 
     public int getMinEms() {
-        return real.getMinEms();
+        return ((android.widget.TextView) real).getMinEms();
     }
 
     public int getMinHeight() {
-        return real.getMinHeight();
+        return ((android.widget.TextView) real).getMinHeight();
     }
 
     public int getMinLines() {
-        return real.getMinLines();
+        return ((android.widget.TextView) real).getMinLines();
     }
 
     public int getMinWidth() {
-        return real.getMinWidth();
+        return ((android.widget.TextView) real).getMinWidth();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Paint.FontMetrics getMinimumFontMetrics() {
-        return com.micklab.dcg.wrapper.android.graphics.Paint.FontMetrics.wrap(real.getMinimumFontMetrics());
+        return com.micklab.dcg.wrapper.android.graphics.Paint.FontMetrics.wrap(((android.widget.TextView) real).getMinimumFontMetrics());
     }
 
     public com.micklab.dcg.wrapper.android.text.method.MovementMethod getMovementMethod() {
-        return com.micklab.dcg.wrapper.android.text.method.MovementMethod.wrap(real.getMovementMethod());
+        return com.micklab.dcg.wrapper.android.text.method.MovementMethod.wrap(((android.widget.TextView) real).getMovementMethod());
     }
 
     public int getOffsetForPosition(float arg0, float arg1) {
-        return real.getOffsetForPosition(arg0, arg1);
+        return ((android.widget.TextView) real).getOffsetForPosition(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.text.TextPaint getPaint() {
-        return com.micklab.dcg.wrapper.android.text.TextPaint.wrap(real.getPaint());
+        return com.micklab.dcg.wrapper.android.text.TextPaint.wrap(((android.widget.TextView) real).getPaint());
     }
 
     public int getPaintFlags() {
-        return real.getPaintFlags();
+        return ((android.widget.TextView) real).getPaintFlags();
     }
 
     public java.lang.String getPrivateImeOptions() {
-        return real.getPrivateImeOptions();
+        return ((android.widget.TextView) real).getPrivateImeOptions();
     }
 
     public int getSearchResultHighlightColor() {
-        return real.getSearchResultHighlightColor();
+        return ((android.widget.TextView) real).getSearchResultHighlightColor();
     }
 
     public int[] getSearchResultHighlights() {
-        return real.getSearchResultHighlights();
+        return ((android.widget.TextView) real).getSearchResultHighlights();
     }
 
     public int getSelectionEnd() {
-        return real.getSelectionEnd();
+        return ((android.widget.TextView) real).getSelectionEnd();
     }
 
     public int getSelectionStart() {
-        return real.getSelectionStart();
+        return ((android.widget.TextView) real).getSelectionStart();
     }
 
     public int getShadowColor() {
-        return real.getShadowColor();
+        return ((android.widget.TextView) real).getShadowColor();
     }
 
     public float getShadowDx() {
-        return real.getShadowDx();
+        return ((android.widget.TextView) real).getShadowDx();
     }
 
     public float getShadowDy() {
-        return real.getShadowDy();
+        return ((android.widget.TextView) real).getShadowDy();
     }
 
     public float getShadowRadius() {
-        return real.getShadowRadius();
+        return ((android.widget.TextView) real).getShadowRadius();
     }
 
     public boolean getShiftDrawingOffsetForStartOverhang() {
-        return real.getShiftDrawingOffsetForStartOverhang();
+        return ((android.widget.TextView) real).getShiftDrawingOffsetForStartOverhang();
     }
 
     public boolean getShowSoftInputOnFocus() {
-        return real.getShowSoftInputOnFocus();
+        return ((android.widget.TextView) real).getShowSoftInputOnFocus();
     }
 
     public java.lang.CharSequence getText() {
-        return real.getText();
+        return ((android.widget.TextView) real).getText();
     }
 
     public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier getTextClassifier() {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier.wrap(real.getTextClassifier());
+        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier.wrap(((android.widget.TextView) real).getTextClassifier());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getTextColors() {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getTextColors());
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.widget.TextView) real).getTextColors());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getTextCursorDrawable() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getTextCursorDrawable());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.TextView) real).getTextCursorDrawable());
     }
 
     public com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic getTextDirectionHeuristic() {
-        return com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic.wrap(real.getTextDirectionHeuristic());
+        return com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic.wrap(((android.widget.TextView) real).getTextDirectionHeuristic());
     }
 
     public java.util.Locale getTextLocale() {
-        return real.getTextLocale();
+        return ((android.widget.TextView) real).getTextLocale();
     }
 
     public com.micklab.dcg.wrapper.android.os.LocaleList getTextLocales() {
-        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(real.getTextLocales());
+        return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(((android.widget.TextView) real).getTextLocales());
     }
 
     public com.micklab.dcg.wrapper.android.text.PrecomputedText.Params getTextMetricsParams() {
-        return com.micklab.dcg.wrapper.android.text.PrecomputedText.Params.wrap(real.getTextMetricsParams());
+        return com.micklab.dcg.wrapper.android.text.PrecomputedText.Params.wrap(((android.widget.TextView) real).getTextMetricsParams());
     }
 
     public float getTextScaleX() {
-        return real.getTextScaleX();
+        return ((android.widget.TextView) real).getTextScaleX();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getTextSelectHandle() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getTextSelectHandle());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.TextView) real).getTextSelectHandle());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getTextSelectHandleLeft() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getTextSelectHandleLeft());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.TextView) real).getTextSelectHandleLeft());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getTextSelectHandleRight() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getTextSelectHandleRight());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.widget.TextView) real).getTextSelectHandleRight());
     }
 
     public float getTextSize() {
-        return real.getTextSize();
+        return ((android.widget.TextView) real).getTextSize();
     }
 
     public int getTextSizeUnit() {
-        return real.getTextSizeUnit();
+        return ((android.widget.TextView) real).getTextSizeUnit();
     }
 
     public int getTotalPaddingBottom() {
-        return real.getTotalPaddingBottom();
+        return ((android.widget.TextView) real).getTotalPaddingBottom();
     }
 
     public int getTotalPaddingEnd() {
-        return real.getTotalPaddingEnd();
+        return ((android.widget.TextView) real).getTotalPaddingEnd();
     }
 
     public int getTotalPaddingLeft() {
-        return real.getTotalPaddingLeft();
+        return ((android.widget.TextView) real).getTotalPaddingLeft();
     }
 
     public int getTotalPaddingRight() {
-        return real.getTotalPaddingRight();
+        return ((android.widget.TextView) real).getTotalPaddingRight();
     }
 
     public int getTotalPaddingStart() {
-        return real.getTotalPaddingStart();
+        return ((android.widget.TextView) real).getTotalPaddingStart();
     }
 
     public int getTotalPaddingTop() {
-        return real.getTotalPaddingTop();
+        return ((android.widget.TextView) real).getTotalPaddingTop();
     }
 
     public com.micklab.dcg.wrapper.android.text.method.TransformationMethod getTransformationMethod() {
-        return com.micklab.dcg.wrapper.android.text.method.TransformationMethod.wrap(real.getTransformationMethod());
+        return com.micklab.dcg.wrapper.android.text.method.TransformationMethod.wrap(((android.widget.TextView) real).getTransformationMethod());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.Typeface getTypeface() {
-        return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(real.getTypeface());
+        return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(((android.widget.TextView) real).getTypeface());
     }
 
     public android.text.style.URLSpan[] getUrls() {
-        return real.getUrls();
+        return ((android.widget.TextView) real).getUrls();
     }
 
     public boolean getUseBoundsForWidth() {
-        return real.getUseBoundsForWidth();
+        return ((android.widget.TextView) real).getUseBoundsForWidth();
     }
 
     public boolean hasOverlappingRendering() {
-        return real.hasOverlappingRendering();
+        return ((android.widget.TextView) real).hasOverlappingRendering();
     }
 
     public boolean hasSelection() {
-        return real.hasSelection();
+        return ((android.widget.TextView) real).hasSelection();
     }
 
     public void invalidateDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.invalidateDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).invalidateDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isAllCaps() {
-        return real.isAllCaps();
+        return ((android.widget.TextView) real).isAllCaps();
     }
 
     public boolean isAutoHandwritingEnabled() {
-        return real.isAutoHandwritingEnabled();
+        return ((android.widget.TextView) real).isAutoHandwritingEnabled();
     }
 
     public boolean isCursorVisible() {
-        return real.isCursorVisible();
+        return ((android.widget.TextView) real).isCursorVisible();
     }
 
     public boolean isElegantTextHeight() {
-        return real.isElegantTextHeight();
+        return ((android.widget.TextView) real).isElegantTextHeight();
     }
 
     public boolean isFallbackLineSpacing() {
-        return real.isFallbackLineSpacing();
+        return ((android.widget.TextView) real).isFallbackLineSpacing();
     }
 
     public boolean isHorizontallyScrollable() {
-        return real.isHorizontallyScrollable();
+        return ((android.widget.TextView) real).isHorizontallyScrollable();
     }
 
     public boolean isInputMethodTarget() {
-        return real.isInputMethodTarget();
+        return ((android.widget.TextView) real).isInputMethodTarget();
     }
 
     public boolean isLocalePreferredLineHeightForMinimumUsed() {
-        return real.isLocalePreferredLineHeightForMinimumUsed();
+        return ((android.widget.TextView) real).isLocalePreferredLineHeightForMinimumUsed();
     }
 
     public boolean isSingleLine() {
-        return real.isSingleLine();
+        return ((android.widget.TextView) real).isSingleLine();
     }
 
     public boolean isSuggestionsEnabled() {
-        return real.isSuggestionsEnabled();
+        return ((android.widget.TextView) real).isSuggestionsEnabled();
     }
 
     public boolean isTextSelectable() {
-        return real.isTextSelectable();
+        return ((android.widget.TextView) real).isTextSelectable();
     }
 
     public void jumpDrawablesToCurrentState() {
-        real.jumpDrawablesToCurrentState();
+        ((android.widget.TextView) real).jumpDrawablesToCurrentState();
     }
 
     public int length() {
-        return real.length();
+        return ((android.widget.TextView) real).length();
     }
 
     public boolean moveCursorToVisibleOffset() {
-        return real.moveCursorToVisibleOffset();
+        return ((android.widget.TextView) real).moveCursorToVisibleOffset();
     }
 
     public void onBeginBatchEdit() {
-        real.onBeginBatchEdit();
+        ((android.widget.TextView) real).onBeginBatchEdit();
     }
 
     public boolean onCheckIsTextEditor() {
-        return real.onCheckIsTextEditor();
+        return ((android.widget.TextView) real).onCheckIsTextEditor();
     }
 
     public void onCommitCompletion(com.micklab.dcg.wrapper.android.view.inputmethod.CompletionInfo arg0) {
-        real.onCommitCompletion(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).onCommitCompletion(arg0 == null ? null : arg0.getReal());
     }
 
     public void onCommitCorrection(com.micklab.dcg.wrapper.android.view.inputmethod.CorrectionInfo arg0) {
-        real.onCommitCorrection(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).onCommitCorrection(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection onCreateInputConnection(com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo arg0) {
-        return com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection.wrap(real.onCreateInputConnection(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection.wrap(((android.widget.TextView) real).onCreateInputConnection(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean onDragEvent(com.micklab.dcg.wrapper.android.view.DragEvent arg0) {
-        return real.onDragEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.TextView) real).onDragEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void onEditorAction(int arg0) {
-        real.onEditorAction(arg0);
+        ((android.widget.TextView) real).onEditorAction(arg0);
     }
 
     public void onEndBatchEdit() {
-        real.onEndBatchEdit();
+        ((android.widget.TextView) real).onEndBatchEdit();
     }
 
     public boolean onGenericMotionEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onGenericMotionEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.TextView) real).onGenericMotionEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onKeyDown(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyDown(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).onKeyDown(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyMultiple(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-        return real.onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.widget.TextView) real).onKeyMultiple(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public boolean onKeyPreIme(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyPreIme(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).onKeyPreIme(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyShortcut(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyShortcut(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).onKeyShortcut(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onKeyUp(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
-        return real.onKeyUp(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).onKeyUp(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean onPreDraw() {
-        return real.onPreDraw();
+        return ((android.widget.TextView) real).onPreDraw();
     }
 
     public boolean onPrivateIMECommand(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        return real.onPrivateIMECommand(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.widget.TextView) real).onPrivateIMECommand(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.view.ContentInfo onReceiveContent(com.micklab.dcg.wrapper.android.view.ContentInfo arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContentInfo.wrap(real.onReceiveContent(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.view.ContentInfo.wrap(((android.widget.TextView) real).onReceiveContent(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.view.PointerIcon onResolvePointerIcon(com.micklab.dcg.wrapper.android.view.MotionEvent arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(real.onResolvePointerIcon(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.view.PointerIcon.wrap(((android.widget.TextView) real).onResolvePointerIcon(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public void onRestoreInstanceState(com.micklab.dcg.wrapper.android.os.Parcelable arg0) {
-        real.onRestoreInstanceState(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).onRestoreInstanceState(arg0 == null ? null : arg0.getReal());
     }
 
     public void onRtlPropertiesChanged(int arg0) {
-        real.onRtlPropertiesChanged(arg0);
+        ((android.widget.TextView) real).onRtlPropertiesChanged(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.os.Parcelable onSaveInstanceState() {
-        return com.micklab.dcg.wrapper.android.os.Parcelable.wrap(real.onSaveInstanceState());
+        return com.micklab.dcg.wrapper.android.os.Parcelable.wrap(((android.widget.TextView) real).onSaveInstanceState());
     }
 
     public void onScreenStateChanged(int arg0) {
-        real.onScreenStateChanged(arg0);
+        ((android.widget.TextView) real).onScreenStateChanged(arg0);
     }
 
     public boolean onTextContextMenuItem(int arg0) {
-        return real.onTextContextMenuItem(arg0);
+        return ((android.widget.TextView) real).onTextContextMenuItem(arg0);
     }
 
     public boolean onTouchEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTouchEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.TextView) real).onTouchEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        return real.onTrackballEvent(arg0 == null ? null : arg0.unwrap());
+        return ((android.widget.TextView) real).onTrackballEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public void onVisibilityAggregated(boolean arg0) {
-        real.onVisibilityAggregated(arg0);
+        ((android.widget.TextView) real).onVisibilityAggregated(arg0);
     }
 
     public void onWindowFocusChanged(boolean arg0) {
-        real.onWindowFocusChanged(arg0);
+        ((android.widget.TextView) real).onWindowFocusChanged(arg0);
     }
 
     public boolean performLongClick() {
-        return real.performLongClick();
+        return ((android.widget.TextView) real).performLongClick();
     }
 
     public void removeTextChangedListener(com.micklab.dcg.wrapper.android.text.TextWatcher arg0) {
-        real.removeTextChangedListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).removeTextChangedListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void sendAccessibilityEventUnchecked(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
-        real.sendAccessibilityEventUnchecked(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).sendAccessibilityEventUnchecked(arg0 == null ? null : arg0.getReal());
     }
 
     public void setAllCaps(boolean arg0) {
-        real.setAllCaps(arg0);
+        ((android.widget.TextView) real).setAllCaps(arg0);
     }
 
     public void setAutoLinkMask(int arg0) {
-        real.setAutoLinkMask(arg0);
+        ((android.widget.TextView) real).setAutoLinkMask(arg0);
     }
 
     public void setAutoSizeTextTypeUniformWithConfiguration(int arg0, int arg1, int arg2, int arg3) {
-        real.setAutoSizeTextTypeUniformWithConfiguration(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setAutoSizeTextTypeUniformWithConfiguration(arg0, arg1, arg2, arg3);
     }
 
     public void setAutoSizeTextTypeUniformWithPresetSizes(int[] arg0, int arg1) {
-        real.setAutoSizeTextTypeUniformWithPresetSizes(arg0, arg1);
+        ((android.widget.TextView) real).setAutoSizeTextTypeUniformWithPresetSizes(arg0, arg1);
     }
 
     public void setAutoSizeTextTypeWithDefaults(int arg0) {
-        real.setAutoSizeTextTypeWithDefaults(arg0);
+        ((android.widget.TextView) real).setAutoSizeTextTypeWithDefaults(arg0);
     }
 
     public void setBreakStrategy(int arg0) {
-        real.setBreakStrategy(arg0);
+        ((android.widget.TextView) real).setBreakStrategy(arg0);
     }
 
     public void setCompoundDrawablePadding(int arg0) {
-        real.setCompoundDrawablePadding(arg0);
+        ((android.widget.TextView) real).setCompoundDrawablePadding(arg0);
     }
 
     public void setCompoundDrawableTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {
-        real.setCompoundDrawableTintBlendMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawableTintBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCompoundDrawableTintList(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setCompoundDrawableTintList(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawableTintList(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCompoundDrawableTintMode(com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg0) {
-        real.setCompoundDrawableTintMode(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawableTintMode(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCompoundDrawables(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
-        real.setCompoundDrawables(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawables(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public void setCompoundDrawablesRelative(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
-        real.setCompoundDrawablesRelative(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawablesRelative(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
-        real.setCompoundDrawablesRelativeWithIntrinsicBounds(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setCompoundDrawablesRelativeWithIntrinsicBounds(arg0, arg1, arg2, arg3);
     }
 
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
-        real.setCompoundDrawablesRelativeWithIntrinsicBounds(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawablesRelativeWithIntrinsicBounds(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public void setCompoundDrawablesWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
-        real.setCompoundDrawablesWithIntrinsicBounds(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setCompoundDrawablesWithIntrinsicBounds(arg0, arg1, arg2, arg3);
     }
 
     public void setCompoundDrawablesWithIntrinsicBounds(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
-        real.setCompoundDrawablesWithIntrinsicBounds(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        ((android.widget.TextView) real).setCompoundDrawablesWithIntrinsicBounds(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public void setCursorVisible(boolean arg0) {
-        real.setCursorVisible(arg0);
+        ((android.widget.TextView) real).setCursorVisible(arg0);
     }
 
     public void setCustomInsertionActionModeCallback(com.micklab.dcg.wrapper.android.view.ActionMode.Callback arg0) {
-        real.setCustomInsertionActionModeCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setCustomInsertionActionModeCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void setCustomSelectionActionModeCallback(com.micklab.dcg.wrapper.android.view.ActionMode.Callback arg0) {
-        real.setCustomSelectionActionModeCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setCustomSelectionActionModeCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public void setEditableFactory(com.micklab.dcg.wrapper.android.text.Editable.Factory arg0) {
-        real.setEditableFactory(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setEditableFactory(arg0 == null ? null : arg0.getReal());
     }
 
     public void setElegantTextHeight(boolean arg0) {
-        real.setElegantTextHeight(arg0);
+        ((android.widget.TextView) real).setElegantTextHeight(arg0);
     }
 
     public void setEllipsize(com.micklab.dcg.wrapper.android.text.TextUtils.TruncateAt arg0) {
-        real.setEllipsize(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setEllipsize(arg0 == null ? null : arg0.getReal());
     }
 
     public void setEms(int arg0) {
-        real.setEms(arg0);
+        ((android.widget.TextView) real).setEms(arg0);
     }
 
     public void setEnabled(boolean arg0) {
-        real.setEnabled(arg0);
+        ((android.widget.TextView) real).setEnabled(arg0);
     }
 
     public void setError(java.lang.CharSequence arg0) {
-        real.setError(arg0);
+        ((android.widget.TextView) real).setError(arg0);
     }
 
     public void setError(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1) {
-        real.setError(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.widget.TextView) real).setError(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setExtractedText(com.micklab.dcg.wrapper.android.view.inputmethod.ExtractedText arg0) {
-        real.setExtractedText(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setExtractedText(arg0 == null ? null : arg0.getReal());
     }
 
     public void setFallbackLineSpacing(boolean arg0) {
-        real.setFallbackLineSpacing(arg0);
+        ((android.widget.TextView) real).setFallbackLineSpacing(arg0);
     }
 
     public void setFilters(android.text.InputFilter[] arg0) {
-        real.setFilters(arg0);
+        ((android.widget.TextView) real).setFilters(arg0);
     }
 
     public void setFirstBaselineToTopHeight(int arg0) {
-        real.setFirstBaselineToTopHeight(arg0);
+        ((android.widget.TextView) real).setFirstBaselineToTopHeight(arg0);
     }
 
     public void setFocusedSearchResultHighlightColor(int arg0) {
-        real.setFocusedSearchResultHighlightColor(arg0);
+        ((android.widget.TextView) real).setFocusedSearchResultHighlightColor(arg0);
     }
 
     public void setFocusedSearchResultIndex(int arg0) {
-        real.setFocusedSearchResultIndex(arg0);
+        ((android.widget.TextView) real).setFocusedSearchResultIndex(arg0);
     }
 
     public void setFontFeatureSettings(java.lang.String arg0) {
-        real.setFontFeatureSettings(arg0);
+        ((android.widget.TextView) real).setFontFeatureSettings(arg0);
     }
 
     public boolean setFontVariationSettings(java.lang.String arg0) {
-        return real.setFontVariationSettings(arg0);
+        return ((android.widget.TextView) real).setFontVariationSettings(arg0);
     }
 
     public void setFreezesText(boolean arg0) {
-        real.setFreezesText(arg0);
+        ((android.widget.TextView) real).setFreezesText(arg0);
     }
 
     public void setGravity(int arg0) {
-        real.setGravity(arg0);
+        ((android.widget.TextView) real).setGravity(arg0);
     }
 
     public void setHeight(int arg0) {
-        real.setHeight(arg0);
+        ((android.widget.TextView) real).setHeight(arg0);
     }
 
     public void setHighlightColor(int arg0) {
-        real.setHighlightColor(arg0);
+        ((android.widget.TextView) real).setHighlightColor(arg0);
     }
 
     public void setHighlights(com.micklab.dcg.wrapper.android.text.Highlights arg0) {
-        real.setHighlights(arg0 == null ? null : arg0.unwrap());
-    }
-
-    public void setHint(java.lang.CharSequence arg0) {
-        real.setHint(arg0);
+        ((android.widget.TextView) real).setHighlights(arg0 == null ? null : arg0.getReal());
     }
 
     public void setHint(int arg0) {
-        real.setHint(arg0);
+        ((android.widget.TextView) real).setHint(arg0);
+    }
+
+    public void setHint(java.lang.CharSequence arg0) {
+        ((android.widget.TextView) real).setHint(arg0);
     }
 
     public void setHintTextColor(int arg0) {
-        real.setHintTextColor(arg0);
+        ((android.widget.TextView) real).setHintTextColor(arg0);
     }
 
     public void setHintTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setHintTextColor(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setHintTextColor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setHorizontallyScrolling(boolean arg0) {
-        real.setHorizontallyScrolling(arg0);
+        ((android.widget.TextView) real).setHorizontallyScrolling(arg0);
     }
 
     public void setHyphenationFrequency(int arg0) {
-        real.setHyphenationFrequency(arg0);
+        ((android.widget.TextView) real).setHyphenationFrequency(arg0);
     }
 
     public void setImeActionLabel(java.lang.CharSequence arg0, int arg1) {
-        real.setImeActionLabel(arg0, arg1);
+        ((android.widget.TextView) real).setImeActionLabel(arg0, arg1);
     }
 
     public void setImeHintLocales(com.micklab.dcg.wrapper.android.os.LocaleList arg0) {
-        real.setImeHintLocales(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setImeHintLocales(arg0 == null ? null : arg0.getReal());
     }
 
     public void setImeOptions(int arg0) {
-        real.setImeOptions(arg0);
+        ((android.widget.TextView) real).setImeOptions(arg0);
     }
 
     public void setIncludeFontPadding(boolean arg0) {
-        real.setIncludeFontPadding(arg0);
+        ((android.widget.TextView) real).setIncludeFontPadding(arg0);
     }
 
     public void setInputExtras(int arg0) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
-        real.setInputExtras(arg0);
+        ((android.widget.TextView) real).setInputExtras(arg0);
     }
 
     public void setInputType(int arg0) {
-        real.setInputType(arg0);
+        ((android.widget.TextView) real).setInputType(arg0);
     }
 
     public void setJustificationMode(int arg0) {
-        real.setJustificationMode(arg0);
+        ((android.widget.TextView) real).setJustificationMode(arg0);
     }
 
     public void setKeyListener(com.micklab.dcg.wrapper.android.text.method.KeyListener arg0) {
-        real.setKeyListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setKeyListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLastBaselineToBottomHeight(int arg0) {
-        real.setLastBaselineToBottomHeight(arg0);
+        ((android.widget.TextView) real).setLastBaselineToBottomHeight(arg0);
     }
 
     public void setLetterSpacing(float arg0) {
-        real.setLetterSpacing(arg0);
+        ((android.widget.TextView) real).setLetterSpacing(arg0);
     }
 
     public void setLineBreakStyle(int arg0) {
-        real.setLineBreakStyle(arg0);
+        ((android.widget.TextView) real).setLineBreakStyle(arg0);
     }
 
     public void setLineBreakWordStyle(int arg0) {
-        real.setLineBreakWordStyle(arg0);
+        ((android.widget.TextView) real).setLineBreakWordStyle(arg0);
     }
 
     public void setLineHeight(int arg0) {
-        real.setLineHeight(arg0);
+        ((android.widget.TextView) real).setLineHeight(arg0);
     }
 
     public void setLineHeight(int arg0, float arg1) {
-        real.setLineHeight(arg0, arg1);
+        ((android.widget.TextView) real).setLineHeight(arg0, arg1);
     }
 
     public void setLineSpacing(float arg0, float arg1) {
-        real.setLineSpacing(arg0, arg1);
+        ((android.widget.TextView) real).setLineSpacing(arg0, arg1);
     }
 
     public void setLines(int arg0) {
-        real.setLines(arg0);
+        ((android.widget.TextView) real).setLines(arg0);
     }
 
     public void setLinkTextColor(int arg0) {
-        real.setLinkTextColor(arg0);
+        ((android.widget.TextView) real).setLinkTextColor(arg0);
     }
 
     public void setLinkTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setLinkTextColor(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setLinkTextColor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setLinksClickable(boolean arg0) {
-        real.setLinksClickable(arg0);
+        ((android.widget.TextView) real).setLinksClickable(arg0);
     }
 
     public void setLocalePreferredLineHeightForMinimumUsed(boolean arg0) {
-        real.setLocalePreferredLineHeightForMinimumUsed(arg0);
+        ((android.widget.TextView) real).setLocalePreferredLineHeightForMinimumUsed(arg0);
     }
 
     public void setMarqueeRepeatLimit(int arg0) {
-        real.setMarqueeRepeatLimit(arg0);
+        ((android.widget.TextView) real).setMarqueeRepeatLimit(arg0);
     }
 
     public void setMaxEms(int arg0) {
-        real.setMaxEms(arg0);
+        ((android.widget.TextView) real).setMaxEms(arg0);
     }
 
     public void setMaxHeight(int arg0) {
-        real.setMaxHeight(arg0);
+        ((android.widget.TextView) real).setMaxHeight(arg0);
     }
 
     public void setMaxLines(int arg0) {
-        real.setMaxLines(arg0);
+        ((android.widget.TextView) real).setMaxLines(arg0);
     }
 
     public void setMaxWidth(int arg0) {
-        real.setMaxWidth(arg0);
+        ((android.widget.TextView) real).setMaxWidth(arg0);
     }
 
     public void setMinEms(int arg0) {
-        real.setMinEms(arg0);
+        ((android.widget.TextView) real).setMinEms(arg0);
     }
 
     public void setMinHeight(int arg0) {
-        real.setMinHeight(arg0);
+        ((android.widget.TextView) real).setMinHeight(arg0);
     }
 
     public void setMinLines(int arg0) {
-        real.setMinLines(arg0);
+        ((android.widget.TextView) real).setMinLines(arg0);
     }
 
     public void setMinWidth(int arg0) {
-        real.setMinWidth(arg0);
+        ((android.widget.TextView) real).setMinWidth(arg0);
     }
 
     public void setMinimumFontMetrics(com.micklab.dcg.wrapper.android.graphics.Paint.FontMetrics arg0) {
-        real.setMinimumFontMetrics(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setMinimumFontMetrics(arg0 == null ? null : arg0.getReal());
     }
 
     public void setMovementMethod(com.micklab.dcg.wrapper.android.text.method.MovementMethod arg0) {
-        real.setMovementMethod(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setMovementMethod(arg0 == null ? null : arg0.getReal());
     }
 
     public void setOnEditorActionListener(com.micklab.dcg.wrapper.android.widget.TextView.OnEditorActionListener arg0) {
-        real.setOnEditorActionListener(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setOnEditorActionListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setPadding(int arg0, int arg1, int arg2, int arg3) {
-        real.setPadding(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setPadding(arg0, arg1, arg2, arg3);
     }
 
     public void setPaddingRelative(int arg0, int arg1, int arg2, int arg3) {
-        real.setPaddingRelative(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setPaddingRelative(arg0, arg1, arg2, arg3);
     }
 
     public void setPaintFlags(int arg0) {
-        real.setPaintFlags(arg0);
+        ((android.widget.TextView) real).setPaintFlags(arg0);
     }
 
     public void setPrivateImeOptions(java.lang.String arg0) {
-        real.setPrivateImeOptions(arg0);
+        ((android.widget.TextView) real).setPrivateImeOptions(arg0);
     }
 
     public void setRawInputType(int arg0) {
-        real.setRawInputType(arg0);
+        ((android.widget.TextView) real).setRawInputType(arg0);
     }
 
     public void setScroller(com.micklab.dcg.wrapper.android.widget.Scroller arg0) {
-        real.setScroller(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setScroller(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSearchResultHighlightColor(int arg0) {
-        real.setSearchResultHighlightColor(arg0);
+        ((android.widget.TextView) real).setSearchResultHighlightColor(arg0);
     }
 
     public void setSearchResultHighlights(int... arg0) {
-        real.setSearchResultHighlights(arg0);
+        ((android.widget.TextView) real).setSearchResultHighlights(arg0);
     }
 
     public void setSelectAllOnFocus(boolean arg0) {
-        real.setSelectAllOnFocus(arg0);
+        ((android.widget.TextView) real).setSelectAllOnFocus(arg0);
     }
 
     public void setSelected(boolean arg0) {
-        real.setSelected(arg0);
+        ((android.widget.TextView) real).setSelected(arg0);
     }
 
     public void setShadowLayer(float arg0, float arg1, float arg2, int arg3) {
-        real.setShadowLayer(arg0, arg1, arg2, arg3);
+        ((android.widget.TextView) real).setShadowLayer(arg0, arg1, arg2, arg3);
     }
 
     public void setShiftDrawingOffsetForStartOverhang(boolean arg0) {
-        real.setShiftDrawingOffsetForStartOverhang(arg0);
+        ((android.widget.TextView) real).setShiftDrawingOffsetForStartOverhang(arg0);
     }
 
     public void setShowSoftInputOnFocus(boolean arg0) {
-        real.setShowSoftInputOnFocus(arg0);
+        ((android.widget.TextView) real).setShowSoftInputOnFocus(arg0);
     }
 
     public void setSingleLine() {
-        real.setSingleLine();
+        ((android.widget.TextView) real).setSingleLine();
     }
 
     public void setSingleLine(boolean arg0) {
-        real.setSingleLine(arg0);
+        ((android.widget.TextView) real).setSingleLine(arg0);
     }
 
     public void setSpannableFactory(com.micklab.dcg.wrapper.android.text.Spannable.Factory arg0) {
-        real.setSpannableFactory(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setSpannableFactory(arg0 == null ? null : arg0.getReal());
     }
 
     public void setText(java.lang.CharSequence arg0) {
-        real.setText(arg0);
+        ((android.widget.TextView) real).setText(arg0);
     }
 
     public void setText(int arg0) {
-        real.setText(arg0);
+        ((android.widget.TextView) real).setText(arg0);
     }
 
     public void setText(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
-        real.setText(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.widget.TextView) real).setText(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setText(int arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
-        real.setText(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.widget.TextView) real).setText(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setText(char[] arg0, int arg1, int arg2) {
-        real.setText(arg0, arg1, arg2);
+        ((android.widget.TextView) real).setText(arg0, arg1, arg2);
     }
 
     public void setTextAppearance(int arg0) {
-        real.setTextAppearance(arg0);
+        ((android.widget.TextView) real).setTextAppearance(arg0);
     }
 
     public void setTextAppearance(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        real.setTextAppearance(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.widget.TextView) real).setTextAppearance(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setTextClassifier(com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier arg0) {
-        real.setTextClassifier(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextClassifier(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextColor(int arg0) {
-        real.setTextColor(arg0);
+        ((android.widget.TextView) real).setTextColor(arg0);
     }
 
     public void setTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        real.setTextColor(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextColor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextCursorDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setTextCursorDrawable(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextCursorDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextCursorDrawable(int arg0) {
-        real.setTextCursorDrawable(arg0);
+        ((android.widget.TextView) real).setTextCursorDrawable(arg0);
     }
 
     public void setTextIsSelectable(boolean arg0) {
-        real.setTextIsSelectable(arg0);
+        ((android.widget.TextView) real).setTextIsSelectable(arg0);
     }
 
     public void setTextKeepState(java.lang.CharSequence arg0) {
-        real.setTextKeepState(arg0);
+        ((android.widget.TextView) real).setTextKeepState(arg0);
     }
 
     public void setTextKeepState(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
-        real.setTextKeepState(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.widget.TextView) real).setTextKeepState(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setTextLocale(java.util.Locale arg0) {
-        real.setTextLocale(arg0);
+        ((android.widget.TextView) real).setTextLocale(arg0);
     }
 
     public void setTextLocales(com.micklab.dcg.wrapper.android.os.LocaleList arg0) {
-        real.setTextLocales(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextLocales(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextMetricsParams(com.micklab.dcg.wrapper.android.text.PrecomputedText.Params arg0) {
-        real.setTextMetricsParams(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextMetricsParams(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextScaleX(float arg0) {
-        real.setTextScaleX(arg0);
+        ((android.widget.TextView) real).setTextScaleX(arg0);
     }
 
     public void setTextSelectHandle(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setTextSelectHandle(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextSelectHandle(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextSelectHandle(int arg0) {
-        real.setTextSelectHandle(arg0);
+        ((android.widget.TextView) real).setTextSelectHandle(arg0);
     }
 
     public void setTextSelectHandleLeft(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setTextSelectHandleLeft(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextSelectHandleLeft(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextSelectHandleLeft(int arg0) {
-        real.setTextSelectHandleLeft(arg0);
+        ((android.widget.TextView) real).setTextSelectHandleLeft(arg0);
     }
 
     public void setTextSelectHandleRight(int arg0) {
-        real.setTextSelectHandleRight(arg0);
+        ((android.widget.TextView) real).setTextSelectHandleRight(arg0);
     }
 
     public void setTextSelectHandleRight(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        real.setTextSelectHandleRight(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTextSelectHandleRight(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextSize(float arg0) {
-        real.setTextSize(arg0);
+        ((android.widget.TextView) real).setTextSize(arg0);
     }
 
     public void setTextSize(int arg0, float arg1) {
-        real.setTextSize(arg0, arg1);
+        ((android.widget.TextView) real).setTextSize(arg0, arg1);
     }
 
     public void setTransformationMethod(com.micklab.dcg.wrapper.android.text.method.TransformationMethod arg0) {
-        real.setTransformationMethod(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTransformationMethod(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTypeface(com.micklab.dcg.wrapper.android.graphics.Typeface arg0) {
-        real.setTypeface(arg0 == null ? null : arg0.unwrap());
+        ((android.widget.TextView) real).setTypeface(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTypeface(com.micklab.dcg.wrapper.android.graphics.Typeface arg0, int arg1) {
-        real.setTypeface(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.widget.TextView) real).setTypeface(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setUseBoundsForWidth(boolean arg0) {
-        real.setUseBoundsForWidth(arg0);
+        ((android.widget.TextView) real).setUseBoundsForWidth(arg0);
     }
 
     public void setWidth(int arg0) {
-        real.setWidth(arg0);
+        ((android.widget.TextView) real).setWidth(arg0);
     }
 
     public boolean showContextMenu() {
-        return real.showContextMenu();
+        return ((android.widget.TextView) real).showContextMenu();
     }
 
     public boolean showContextMenu(float arg0, float arg1) {
-        return real.showContextMenu(arg0, arg1);
+        return ((android.widget.TextView) real).showContextMenu(arg0, arg1);
     }
 
     public static final int AUTO_SIZE_TEXT_TYPE_NONE = android.widget.TextView.AUTO_SIZE_TEXT_TYPE_NONE;
@@ -1265,18 +1272,25 @@ public final class TextView {
     public static final int FOCUSED_SEARCH_RESULT_INDEX_NONE = android.widget.TextView.FOCUSED_SEARCH_RESULT_INDEX_NONE;
 
     public static final class BufferType {
-        private final android.widget.TextView.BufferType real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BufferType(android.widget.TextView.BufferType real) {
+        private final java.lang.Object real;
+
+        private BufferType(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.TextView.BufferType wrap(android.widget.TextView.BufferType real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.BufferType(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.BufferType(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.TextView.BufferType getReal() {
+            return (android.widget.TextView.BufferType) real;
         }
 
         public android.widget.TextView.BufferType unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.widget.TextView.BufferType valueOf(java.lang.String arg0) {
@@ -1293,46 +1307,60 @@ public final class TextView {
 
     }
     public static final class OnEditorActionListener {
-        private final android.widget.TextView.OnEditorActionListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnEditorActionListener(android.widget.TextView.OnEditorActionListener real) {
+        private final java.lang.Object real;
+
+        private OnEditorActionListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.TextView.OnEditorActionListener wrap(android.widget.TextView.OnEditorActionListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.OnEditorActionListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.OnEditorActionListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.TextView.OnEditorActionListener getReal() {
+            return (android.widget.TextView.OnEditorActionListener) real;
         }
 
         public android.widget.TextView.OnEditorActionListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean onEditorAction(com.micklab.dcg.wrapper.android.widget.TextView arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {
-            return real.onEditorAction(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+            return ((android.widget.TextView.OnEditorActionListener) real).onEditorAction(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
         }
 
     }
     public static final class SavedState {
-        private final android.widget.TextView.SavedState real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SavedState(android.widget.TextView.SavedState real) {
+        private final java.lang.Object real;
+
+        private SavedState(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.widget.TextView.SavedState wrap(android.widget.TextView.SavedState real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.SavedState(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TextView.SavedState(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.TextView.SavedState getReal() {
+            return (android.widget.TextView.SavedState) real;
         }
 
         public android.widget.TextView.SavedState unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.widget.TextView.SavedState) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.widget.TextView.SavedState) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 

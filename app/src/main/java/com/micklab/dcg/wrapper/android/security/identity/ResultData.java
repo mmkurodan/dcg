@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.security.identity;
 
 public final class ResultData {
-    private final android.security.identity.ResultData real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ResultData(android.security.identity.ResultData real) {
+    private final java.lang.Object real;
+
+    private ResultData(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.identity.ResultData wrap(android.security.identity.ResultData real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.ResultData(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.identity.ResultData(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.identity.ResultData getReal() {
+        return (android.security.identity.ResultData) real;
     }
 
     public android.security.identity.ResultData unwrap() {
-        return real;
+        return getReal();
     }
 
     public byte[] getAuthenticatedData() {
-        return real.getAuthenticatedData();
+        return ((android.security.identity.ResultData) real).getAuthenticatedData();
     }
 
     public byte[] getEntry(java.lang.String arg0, java.lang.String arg1) {
-        return real.getEntry(arg0, arg1);
+        return ((android.security.identity.ResultData) real).getEntry(arg0, arg1);
     }
 
     public byte[] getMessageAuthenticationCode() {
-        return real.getMessageAuthenticationCode();
+        return ((android.security.identity.ResultData) real).getMessageAuthenticationCode();
     }
 
     public byte[] getStaticAuthenticationData() {
-        return real.getStaticAuthenticationData();
+        return ((android.security.identity.ResultData) real).getStaticAuthenticationData();
     }
 
     public int getStatus(java.lang.String arg0, java.lang.String arg1) {
-        return real.getStatus(arg0, arg1);
+        return ((android.security.identity.ResultData) real).getStatus(arg0, arg1);
     }
 
     public static final int STATUS_NOT_IN_REQUEST_MESSAGE = android.security.identity.ResultData.STATUS_NOT_IN_REQUEST_MESSAGE;

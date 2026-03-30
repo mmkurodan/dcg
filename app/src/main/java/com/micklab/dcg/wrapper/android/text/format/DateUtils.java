@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.text.format;
 
 public final class DateUtils {
-    private final android.text.format.DateUtils real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DateUtils(android.text.format.DateUtils real) {
+    private final java.lang.Object real;
+
+    private DateUtils(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.format.DateUtils wrap(android.text.format.DateUtils real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.DateUtils(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.format.DateUtils(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.format.DateUtils getReal() {
+        return (android.text.format.DateUtils) real;
     }
 
     public android.text.format.DateUtils unwrap() {
-        return real;
+        return getReal();
     }
 
     public DateUtils() {
-        this(new android.text.format.DateUtils());
+        this(new android.text.format.DateUtils(), (__DcgwBridgeToken) null);
     }
 
     public static java.lang.String formatDateRange(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, long arg2, int arg3) {
-        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public static java.util.Formatter formatDateRange(com.micklab.dcg.wrapper.android.content.Context arg0, java.util.Formatter arg1, long arg2, long arg3, int arg4) {
-        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public static java.util.Formatter formatDateRange(com.micklab.dcg.wrapper.android.content.Context arg0, java.util.Formatter arg1, long arg2, long arg3, int arg4, java.lang.String arg5) {
-        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5);
+        return android.text.format.DateUtils.formatDateRange(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5);
     }
 
     public static java.lang.String formatDateTime(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, int arg2) {
-        return android.text.format.DateUtils.formatDateTime(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return android.text.format.DateUtils.formatDateTime(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static java.lang.String formatElapsedTime(long arg0) {
@@ -61,7 +68,7 @@ public final class DateUtils {
     }
 
     public static java.lang.CharSequence getRelativeDateTimeString(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, long arg2, long arg3, int arg4) {
-        return android.text.format.DateUtils.getRelativeDateTimeString(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        return android.text.format.DateUtils.getRelativeDateTimeString(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public static java.lang.CharSequence getRelativeTimeSpanString(long arg0) {
@@ -69,11 +76,11 @@ public final class DateUtils {
     }
 
     public static java.lang.CharSequence getRelativeTimeSpanString(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1) {
-        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.unwrap(), arg1);
+        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static java.lang.CharSequence getRelativeTimeSpanString(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, boolean arg2) {
-        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static java.lang.CharSequence getRelativeTimeSpanString(long arg0, long arg1, long arg2) {

@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.graphics;
 
 public final class PathIterator {
-    private final android.graphics.PathIterator real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PathIterator(android.graphics.PathIterator real) {
+    private final java.lang.Object real;
+
+    private PathIterator(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.PathIterator wrap(android.graphics.PathIterator real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PathIterator(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PathIterator(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.graphics.PathIterator getReal() {
+        return (android.graphics.PathIterator) real;
     }
 
     public android.graphics.PathIterator unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean hasNext() {
-        return real.hasNext();
+        return ((android.graphics.PathIterator) real).hasNext();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment next() {
-        return com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment.wrap(real.next());
+        return com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment.wrap(((android.graphics.PathIterator) real).next());
     }
 
     public int next(float[] arg0, int arg1) {
-        return real.next(arg0, arg1);
+        return ((android.graphics.PathIterator) real).next(arg0, arg1);
     }
 
     public int peek() {
-        return real.peek();
+        return ((android.graphics.PathIterator) real).peek();
     }
 
     public static final int VERB_CLOSE = android.graphics.PathIterator.VERB_CLOSE;
@@ -41,30 +48,37 @@ public final class PathIterator {
     public static final int VERB_QUAD = android.graphics.PathIterator.VERB_QUAD;
 
     public static final class Segment {
-        private final android.graphics.PathIterator.Segment real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Segment(android.graphics.PathIterator.Segment real) {
+        private final java.lang.Object real;
+
+        private Segment(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment wrap(android.graphics.PathIterator.Segment real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.PathIterator.Segment(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.PathIterator.Segment getReal() {
+            return (android.graphics.PathIterator.Segment) real;
         }
 
         public android.graphics.PathIterator.Segment unwrap() {
-            return real;
+            return getReal();
         }
 
         public float getConicWeight() {
-            return real.getConicWeight();
+            return ((android.graphics.PathIterator.Segment) real).getConicWeight();
         }
 
         public float[] getPoints() {
-            return real.getPoints();
+            return ((android.graphics.PathIterator.Segment) real).getPoints();
         }
 
         public int getVerb() {
-            return real.getVerb();
+            return ((android.graphics.PathIterator.Segment) real).getVerb();
         }
 
     }

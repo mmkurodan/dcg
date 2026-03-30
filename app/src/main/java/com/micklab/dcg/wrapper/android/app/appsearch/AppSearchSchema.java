@@ -2,361 +2,452 @@
 package com.micklab.dcg.wrapper.android.app.appsearch;
 
 public final class AppSearchSchema {
-    private final android.app.appsearch.AppSearchSchema real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AppSearchSchema(android.app.appsearch.AppSearchSchema real) {
+    private final java.lang.Object real;
+
+    private AppSearchSchema(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema wrap(android.app.appsearch.AppSearchSchema real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.appsearch.AppSearchSchema getReal() {
+        return (android.app.appsearch.AppSearchSchema) real;
     }
 
     public android.app.appsearch.AppSearchSchema unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.appsearch.AppSearchSchema) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.appsearch.AppSearchSchema) real).equals(arg0);
     }
 
     public java.lang.String getSchemaType() {
-        return real.getSchemaType();
+        return ((android.app.appsearch.AppSearchSchema) real).getSchemaType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.appsearch.AppSearchSchema) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.app.appsearch.AppSearchSchema) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.appsearch.AppSearchSchema) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class BooleanPropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.BooleanPropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BooleanPropertyConfig(android.app.appsearch.AppSearchSchema.BooleanPropertyConfig real) {
+        private final java.lang.Object real;
+
+        private BooleanPropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig wrap(android.app.appsearch.AppSearchSchema.BooleanPropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.BooleanPropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.BooleanPropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.BooleanPropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder(arg0));
+                this(new android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.BooleanPropertyConfig.Builder) real).setCardinality(arg0));
             }
 
         }
     }
     public static final class Builder {
-        private final android.app.appsearch.AppSearchSchema.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.appsearch.AppSearchSchema.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder wrap(android.app.appsearch.AppSearchSchema.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.Builder getReal() {
+            return (android.app.appsearch.AppSearchSchema.Builder) real;
         }
 
         public android.app.appsearch.AppSearchSchema.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0) {
-            this(new android.app.appsearch.AppSearchSchema.Builder(arg0));
+            this(new android.app.appsearch.AppSearchSchema.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder addParentType(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder.wrap(real.addParentType(arg0));
+            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder.wrap(((android.app.appsearch.AppSearchSchema.Builder) real).addParentType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder addProperty(com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.PropertyConfig arg0) {
-            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder.wrap(real.addProperty(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.Builder.wrap(((android.app.appsearch.AppSearchSchema.Builder) real).addProperty(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema build() {
-            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.wrap(((android.app.appsearch.AppSearchSchema.Builder) real).build());
         }
 
     }
     public static final class BytesPropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.BytesPropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BytesPropertyConfig(android.app.appsearch.AppSearchSchema.BytesPropertyConfig real) {
+        private final java.lang.Object real;
+
+        private BytesPropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig wrap(android.app.appsearch.AppSearchSchema.BytesPropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.BytesPropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.BytesPropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.BytesPropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder(arg0));
+                this(new android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.BytesPropertyConfig.Builder) real).setCardinality(arg0));
             }
 
         }
     }
     public static final class DocumentPropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.DocumentPropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DocumentPropertyConfig(android.app.appsearch.AppSearchSchema.DocumentPropertyConfig real) {
+        private final java.lang.Object real;
+
+        private DocumentPropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig wrap(android.app.appsearch.AppSearchSchema.DocumentPropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.DocumentPropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.DocumentPropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.DocumentPropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public java.lang.String getSchemaType() {
-            return real.getSchemaType();
+            return ((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig) real).getSchemaType();
         }
 
         public boolean shouldIndexNestedProperties() {
-            return real.shouldIndexNestedProperties();
+            return ((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig) real).shouldIndexNestedProperties();
         }
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0, java.lang.String arg1) {
-                this(new android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder(arg0, arg1));
+                this(new android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder(arg0, arg1), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder addIndexableNestedProperties(java.lang.String... arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(real.addIndexableNestedProperties(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real).addIndexableNestedProperties(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder addIndexableNestedPropertyPaths(android.app.appsearch.PropertyPath... arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(real.addIndexableNestedPropertyPaths(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real).addIndexableNestedPropertyPaths(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real).setCardinality(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder setShouldIndexNestedProperties(boolean arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(real.setShouldIndexNestedProperties(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.DocumentPropertyConfig.Builder) real).setShouldIndexNestedProperties(arg0));
             }
 
         }
     }
     public static final class DoublePropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.DoublePropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DoublePropertyConfig(android.app.appsearch.AppSearchSchema.DoublePropertyConfig real) {
+        private final java.lang.Object real;
+
+        private DoublePropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig wrap(android.app.appsearch.AppSearchSchema.DoublePropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.DoublePropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.DoublePropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.DoublePropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder(arg0));
+                this(new android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.DoublePropertyConfig.Builder) real).setCardinality(arg0));
             }
 
         }
     }
     public static final class LongPropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.LongPropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LongPropertyConfig(android.app.appsearch.AppSearchSchema.LongPropertyConfig real) {
+        private final java.lang.Object real;
+
+        private LongPropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig wrap(android.app.appsearch.AppSearchSchema.LongPropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.LongPropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.LongPropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.LongPropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getIndexingType() {
-            return real.getIndexingType();
+            return ((android.app.appsearch.AppSearchSchema.LongPropertyConfig) real).getIndexingType();
         }
 
         public static final int INDEXING_TYPE_NONE = android.app.appsearch.AppSearchSchema.LongPropertyConfig.INDEXING_TYPE_NONE;
         public static final int INDEXING_TYPE_RANGE = android.app.appsearch.AppSearchSchema.LongPropertyConfig.INDEXING_TYPE_RANGE;
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder(arg0));
+                this(new android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder) real).setCardinality(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder setIndexingType(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder.wrap(real.setIndexingType(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.LongPropertyConfig.Builder) real).setIndexingType(arg0));
             }
 
         }
     }
     public static final class PropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.PropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PropertyConfig(android.app.appsearch.AppSearchSchema.PropertyConfig real) {
+        private final java.lang.Object real;
+
+        private PropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.PropertyConfig wrap(android.app.appsearch.AppSearchSchema.PropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.PropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.PropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.PropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.PropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.PropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.app.appsearch.AppSearchSchema.PropertyConfig) real).equals(arg0);
         }
 
         public int getCardinality() {
-            return real.getCardinality();
+            return ((android.app.appsearch.AppSearchSchema.PropertyConfig) real).getCardinality();
         }
 
         public java.lang.String getName() {
-            return real.getName();
+            return ((android.app.appsearch.AppSearchSchema.PropertyConfig) real).getName();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.app.appsearch.AppSearchSchema.PropertyConfig) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.app.appsearch.AppSearchSchema.PropertyConfig) real).toString();
         }
 
         public static final int CARDINALITY_OPTIONAL = android.app.appsearch.AppSearchSchema.PropertyConfig.CARDINALITY_OPTIONAL;
@@ -365,30 +456,37 @@ public final class AppSearchSchema {
 
     }
     public static final class StringPropertyConfig {
-        private final android.app.appsearch.AppSearchSchema.StringPropertyConfig real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public StringPropertyConfig(android.app.appsearch.AppSearchSchema.StringPropertyConfig real) {
+        private final java.lang.Object real;
+
+        private StringPropertyConfig(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig wrap(android.app.appsearch.AppSearchSchema.StringPropertyConfig real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.appsearch.AppSearchSchema.StringPropertyConfig getReal() {
+            return (android.app.appsearch.AppSearchSchema.StringPropertyConfig) real;
         }
 
         public android.app.appsearch.AppSearchSchema.StringPropertyConfig unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getIndexingType() {
-            return real.getIndexingType();
+            return ((android.app.appsearch.AppSearchSchema.StringPropertyConfig) real).getIndexingType();
         }
 
         public int getJoinableValueType() {
-            return real.getJoinableValueType();
+            return ((android.app.appsearch.AppSearchSchema.StringPropertyConfig) real).getJoinableValueType();
         }
 
         public int getTokenizerType() {
-            return real.getTokenizerType();
+            return ((android.app.appsearch.AppSearchSchema.StringPropertyConfig) real).getTokenizerType();
         }
 
         public static final int INDEXING_TYPE_EXACT_TERMS = android.app.appsearch.AppSearchSchema.StringPropertyConfig.INDEXING_TYPE_EXACT_TERMS;
@@ -402,42 +500,49 @@ public final class AppSearchSchema {
         public static final int TOKENIZER_TYPE_VERBATIM = android.app.appsearch.AppSearchSchema.StringPropertyConfig.TOKENIZER_TYPE_VERBATIM;
 
         public static final class Builder {
-            private final android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder wrap(android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder getReal() {
+                return (android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real;
             }
 
             public android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(java.lang.String arg0) {
-                this(new android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder(arg0));
+                this(new android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig build() {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.wrap(((android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder setCardinality(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(real.setCardinality(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real).setCardinality(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder setIndexingType(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(real.setIndexingType(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real).setIndexingType(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder setJoinableValueType(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(real.setJoinableValueType(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real).setJoinableValueType(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder setTokenizerType(int arg0) {
-                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(real.setTokenizerType(arg0));
+                return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder.wrap(((android.app.appsearch.AppSearchSchema.StringPropertyConfig.Builder) real).setTokenizerType(arg0));
             }
 
         }

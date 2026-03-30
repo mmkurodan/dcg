@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization;
 
 public final class TrainingExamplesInput {
-    private final android.adservices.ondevicepersonalization.TrainingExamplesInput real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TrainingExamplesInput(android.adservices.ondevicepersonalization.TrainingExamplesInput real) {
+    private final java.lang.Object real;
+
+    private TrainingExamplesInput(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.TrainingExamplesInput wrap(android.adservices.ondevicepersonalization.TrainingExamplesInput real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.TrainingExamplesInput(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.TrainingExamplesInput(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.adservices.ondevicepersonalization.TrainingExamplesInput getReal() {
+        return (android.adservices.ondevicepersonalization.TrainingExamplesInput) real;
     }
 
     public android.adservices.ondevicepersonalization.TrainingExamplesInput unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).equals(arg0);
     }
 
     public java.lang.String getPopulationName() {
-        return real.getPopulationName();
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).getPopulationName();
     }
 
     public byte[] getResumptionToken() {
-        return real.getResumptionToken();
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).getResumptionToken();
     }
 
     public java.lang.String getTaskName() {
-        return real.getTaskName();
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).getTaskName();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).hashCode();
     }
 
 }

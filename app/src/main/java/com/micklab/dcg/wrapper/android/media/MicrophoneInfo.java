@@ -2,70 +2,77 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class MicrophoneInfo {
-    private final android.media.MicrophoneInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MicrophoneInfo(android.media.MicrophoneInfo real) {
+    private final java.lang.Object real;
+
+    private MicrophoneInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.MicrophoneInfo wrap(android.media.MicrophoneInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MicrophoneInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.MicrophoneInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.MicrophoneInfo getReal() {
+        return (android.media.MicrophoneInfo) real;
     }
 
     public android.media.MicrophoneInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public java.lang.String getAddress() {
-        return real.getAddress();
+        return ((android.media.MicrophoneInfo) real).getAddress();
     }
 
     public java.lang.String getDescription() {
-        return real.getDescription();
+        return ((android.media.MicrophoneInfo) real).getDescription();
     }
 
     public int getDirectionality() {
-        return real.getDirectionality();
+        return ((android.media.MicrophoneInfo) real).getDirectionality();
     }
 
     public int getGroup() {
-        return real.getGroup();
+        return ((android.media.MicrophoneInfo) real).getGroup();
     }
 
     public int getId() {
-        return real.getId();
+        return ((android.media.MicrophoneInfo) real).getId();
     }
 
     public int getIndexInTheGroup() {
-        return real.getIndexInTheGroup();
+        return ((android.media.MicrophoneInfo) real).getIndexInTheGroup();
     }
 
     public int getLocation() {
-        return real.getLocation();
+        return ((android.media.MicrophoneInfo) real).getLocation();
     }
 
     public float getMaxSpl() {
-        return real.getMaxSpl();
+        return ((android.media.MicrophoneInfo) real).getMaxSpl();
     }
 
     public float getMinSpl() {
-        return real.getMinSpl();
+        return ((android.media.MicrophoneInfo) real).getMinSpl();
     }
 
     public com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F getOrientation() {
-        return com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F.wrap(real.getOrientation());
+        return com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F.wrap(((android.media.MicrophoneInfo) real).getOrientation());
     }
 
     public com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F getPosition() {
-        return com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F.wrap(real.getPosition());
+        return com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F.wrap(((android.media.MicrophoneInfo) real).getPosition());
     }
 
     public float getSensitivity() {
-        return real.getSensitivity();
+        return ((android.media.MicrophoneInfo) real).getSensitivity();
     }
 
     public int getType() {
-        return real.getType();
+        return ((android.media.MicrophoneInfo) real).getType();
     }
 
     public static final int CHANNEL_MAPPING_DIRECT = android.media.MicrophoneInfo.CHANNEL_MAPPING_DIRECT;
@@ -88,22 +95,29 @@ public final class MicrophoneInfo {
     public static final float SPL_UNKNOWN = android.media.MicrophoneInfo.SPL_UNKNOWN;
 
     public static final class Coordinate3F {
-        private final android.media.MicrophoneInfo.Coordinate3F real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Coordinate3F(android.media.MicrophoneInfo.Coordinate3F real) {
+        private final java.lang.Object real;
+
+        private Coordinate3F(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F wrap(android.media.MicrophoneInfo.Coordinate3F real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MicrophoneInfo.Coordinate3F(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MicrophoneInfo.Coordinate3F getReal() {
+            return (android.media.MicrophoneInfo.Coordinate3F) real;
         }
 
         public android.media.MicrophoneInfo.Coordinate3F unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.media.MicrophoneInfo.Coordinate3F) real).equals(arg0);
         }
 
 

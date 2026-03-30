@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.health.connect;
 
 public final class HealthPermissions {
-    private final android.health.connect.HealthPermissions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HealthPermissions(android.health.connect.HealthPermissions real) {
+    private final java.lang.Object real;
+
+    private HealthPermissions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.HealthPermissions wrap(android.health.connect.HealthPermissions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthPermissions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.HealthPermissions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.HealthPermissions getReal() {
+        return (android.health.connect.HealthPermissions) real;
     }
 
     public android.health.connect.HealthPermissions unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String READ_ACTIVE_CALORIES_BURNED = android.health.connect.HealthPermissions.READ_ACTIVE_CALORIES_BURNED;

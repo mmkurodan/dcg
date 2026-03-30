@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.media.metrics;
 
 public final class PlaybackErrorEvent {
-    private final android.media.metrics.PlaybackErrorEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PlaybackErrorEvent(android.media.metrics.PlaybackErrorEvent real) {
+    private final java.lang.Object real;
+
+    private PlaybackErrorEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent wrap(android.media.metrics.PlaybackErrorEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.metrics.PlaybackErrorEvent getReal() {
+        return (android.media.metrics.PlaybackErrorEvent) real;
     }
 
     public android.media.metrics.PlaybackErrorEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.metrics.PlaybackErrorEvent) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.metrics.PlaybackErrorEvent) real).equals(arg0);
     }
 
     public int getErrorCode() {
-        return real.getErrorCode();
+        return ((android.media.metrics.PlaybackErrorEvent) real).getErrorCode();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getMetricsBundle() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getMetricsBundle());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.media.metrics.PlaybackErrorEvent) real).getMetricsBundle());
     }
 
     public int getSubErrorCode() {
-        return real.getSubErrorCode();
+        return ((android.media.metrics.PlaybackErrorEvent) real).getSubErrorCode();
     }
 
     public long getTimeSinceCreatedMillis() {
-        return real.getTimeSinceCreatedMillis();
+        return ((android.media.metrics.PlaybackErrorEvent) real).getTimeSinceCreatedMillis();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.metrics.PlaybackErrorEvent) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.metrics.PlaybackErrorEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.metrics.PlaybackErrorEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ERROR_AUDIO_TRACK_INIT_FAILED = android.media.metrics.PlaybackErrorEvent.ERROR_AUDIO_TRACK_INIT_FAILED;
@@ -87,46 +94,53 @@ public final class PlaybackErrorEvent {
     public static final int ERROR_UNKNOWN = android.media.metrics.PlaybackErrorEvent.ERROR_UNKNOWN;
 
     public static final class Builder {
-        private final android.media.metrics.PlaybackErrorEvent.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.metrics.PlaybackErrorEvent.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder wrap(android.media.metrics.PlaybackErrorEvent.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.metrics.PlaybackErrorEvent.Builder getReal() {
+            return (android.media.metrics.PlaybackErrorEvent.Builder) real;
         }
 
         public android.media.metrics.PlaybackErrorEvent.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.media.metrics.PlaybackErrorEvent.Builder());
+            this(new android.media.metrics.PlaybackErrorEvent.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent build() {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder setErrorCode(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(real.setErrorCode(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).setErrorCode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder setException(java.lang.Exception arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(real.setException(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).setException(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder setMetricsBundle(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(real.setMetricsBundle(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).setMetricsBundle(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder setSubErrorCode(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(real.setSubErrorCode(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).setSubErrorCode(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder setTimeSinceCreatedMillis(long arg0) {
-            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(real.setTimeSinceCreatedMillis(arg0));
+            return com.micklab.dcg.wrapper.android.media.metrics.PlaybackErrorEvent.Builder.wrap(((android.media.metrics.PlaybackErrorEvent.Builder) real).setTimeSinceCreatedMillis(arg0));
         }
 
     }

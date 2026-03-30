@@ -2,93 +2,107 @@
 package com.micklab.dcg.wrapper.android.view.accessibility;
 
 public final class CaptioningManager {
-    private final android.view.accessibility.CaptioningManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CaptioningManager(android.view.accessibility.CaptioningManager real) {
+    private final java.lang.Object real;
+
+    private CaptioningManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager wrap(android.view.accessibility.CaptioningManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.accessibility.CaptioningManager getReal() {
+        return (android.view.accessibility.CaptioningManager) real;
     }
 
     public android.view.accessibility.CaptioningManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void addCaptioningChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptioningChangeListener arg0) {
-        real.addCaptioningChangeListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.CaptioningManager) real).addCaptioningChangeListener(arg0 == null ? null : arg0.getReal());
     }
 
     public float getFontScale() {
-        return real.getFontScale();
+        return ((android.view.accessibility.CaptioningManager) real).getFontScale();
     }
 
     public java.util.Locale getLocale() {
-        return real.getLocale();
+        return ((android.view.accessibility.CaptioningManager) real).getLocale();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle getUserStyle() {
-        return com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle.wrap(real.getUserStyle());
+        return com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle.wrap(((android.view.accessibility.CaptioningManager) real).getUserStyle());
     }
 
     public boolean isCallCaptioningEnabled() {
-        return real.isCallCaptioningEnabled();
+        return ((android.view.accessibility.CaptioningManager) real).isCallCaptioningEnabled();
     }
 
     public boolean isEnabled() {
-        return real.isEnabled();
+        return ((android.view.accessibility.CaptioningManager) real).isEnabled();
     }
 
     public boolean isSystemAudioCaptioningEnabled() {
-        return real.isSystemAudioCaptioningEnabled();
+        return ((android.view.accessibility.CaptioningManager) real).isSystemAudioCaptioningEnabled();
     }
 
     public boolean isSystemAudioCaptioningUiEnabled() {
-        return real.isSystemAudioCaptioningUiEnabled();
+        return ((android.view.accessibility.CaptioningManager) real).isSystemAudioCaptioningUiEnabled();
     }
 
     public void removeCaptioningChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptioningChangeListener arg0) {
-        real.removeCaptioningChangeListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.accessibility.CaptioningManager) real).removeCaptioningChangeListener(arg0 == null ? null : arg0.getReal());
     }
 
     public static final class CaptionStyle {
-        private final android.view.accessibility.CaptioningManager.CaptionStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CaptionStyle(android.view.accessibility.CaptioningManager.CaptionStyle real) {
+        private final java.lang.Object real;
+
+        private CaptionStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle wrap(android.view.accessibility.CaptioningManager.CaptionStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.CaptioningManager.CaptionStyle getReal() {
+            return (android.view.accessibility.CaptioningManager.CaptionStyle) real;
         }
 
         public android.view.accessibility.CaptioningManager.CaptionStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.graphics.Typeface getTypeface() {
-            return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(real.getTypeface());
+            return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(((android.view.accessibility.CaptioningManager.CaptionStyle) real).getTypeface());
         }
 
         public boolean hasBackgroundColor() {
-            return real.hasBackgroundColor();
+            return ((android.view.accessibility.CaptioningManager.CaptionStyle) real).hasBackgroundColor();
         }
 
         public boolean hasEdgeColor() {
-            return real.hasEdgeColor();
+            return ((android.view.accessibility.CaptioningManager.CaptionStyle) real).hasEdgeColor();
         }
 
         public boolean hasEdgeType() {
-            return real.hasEdgeType();
+            return ((android.view.accessibility.CaptioningManager.CaptionStyle) real).hasEdgeType();
         }
 
         public boolean hasForegroundColor() {
-            return real.hasForegroundColor();
+            return ((android.view.accessibility.CaptioningManager.CaptionStyle) real).hasForegroundColor();
         }
 
         public boolean hasWindowColor() {
-            return real.hasWindowColor();
+            return ((android.view.accessibility.CaptioningManager.CaptionStyle) real).hasWindowColor();
         }
 
         public static final int EDGE_TYPE_DEPRESSED = android.view.accessibility.CaptioningManager.CaptionStyle.EDGE_TYPE_DEPRESSED;
@@ -100,42 +114,49 @@ public final class CaptioningManager {
 
     }
     public static final class CaptioningChangeListener {
-        private final android.view.accessibility.CaptioningManager.CaptioningChangeListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CaptioningChangeListener(android.view.accessibility.CaptioningManager.CaptioningChangeListener real) {
+        private final java.lang.Object real;
+
+        private CaptioningChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptioningChangeListener wrap(android.view.accessibility.CaptioningManager.CaptioningChangeListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptioningChangeListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptioningChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.CaptioningManager.CaptioningChangeListener getReal() {
+            return (android.view.accessibility.CaptioningManager.CaptioningChangeListener) real;
         }
 
         public android.view.accessibility.CaptioningManager.CaptioningChangeListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onEnabledChanged(boolean arg0) {
-            real.onEnabledChanged(arg0);
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onEnabledChanged(arg0);
         }
 
         public void onFontScaleChanged(float arg0) {
-            real.onFontScaleChanged(arg0);
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onFontScaleChanged(arg0);
         }
 
         public void onLocaleChanged(java.util.Locale arg0) {
-            real.onLocaleChanged(arg0);
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onLocaleChanged(arg0);
         }
 
         public void onSystemAudioCaptioningChanged(boolean arg0) {
-            real.onSystemAudioCaptioningChanged(arg0);
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onSystemAudioCaptioningChanged(arg0);
         }
 
         public void onSystemAudioCaptioningUiChanged(boolean arg0) {
-            real.onSystemAudioCaptioningUiChanged(arg0);
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onSystemAudioCaptioningUiChanged(arg0);
         }
 
         public void onUserStyleChanged(com.micklab.dcg.wrapper.android.view.accessibility.CaptioningManager.CaptionStyle arg0) {
-            real.onUserStyleChanged(arg0 == null ? null : arg0.unwrap());
+            ((android.view.accessibility.CaptioningManager.CaptioningChangeListener) real).onUserStyleChanged(arg0 == null ? null : arg0.getReal());
         }
 
     }

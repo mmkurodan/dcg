@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioMetadataMap {
-    private final android.media.AudioMetadataMap real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioMetadataMap(android.media.AudioMetadataMap real) {
+    private final java.lang.Object real;
+
+    private AudioMetadataMap(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioMetadataMap wrap(android.media.AudioMetadataMap real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadataMap(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioMetadataMap(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioMetadataMap getReal() {
+        return (android.media.AudioMetadataMap) real;
     }
 
     public android.media.AudioMetadataMap unwrap() {
-        return real;
+        return getReal();
     }
 
 }

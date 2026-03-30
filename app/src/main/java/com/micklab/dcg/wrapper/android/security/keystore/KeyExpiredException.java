@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.security.keystore;
 
 public final class KeyExpiredException {
-    private final android.security.keystore.KeyExpiredException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyExpiredException(android.security.keystore.KeyExpiredException real) {
+    private final java.lang.Object real;
+
+    private KeyExpiredException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.keystore.KeyExpiredException wrap(android.security.keystore.KeyExpiredException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyExpiredException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.keystore.KeyExpiredException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.keystore.KeyExpiredException getReal() {
+        return (android.security.keystore.KeyExpiredException) real;
     }
 
     public android.security.keystore.KeyExpiredException unwrap() {
-        return real;
+        return getReal();
     }
 
     public KeyExpiredException() {
-        this(new android.security.keystore.KeyExpiredException());
+        this(new android.security.keystore.KeyExpiredException(), (__DcgwBridgeToken) null);
     }
 
     public KeyExpiredException(java.lang.String arg0) {
-        this(new android.security.keystore.KeyExpiredException(arg0));
+        this(new android.security.keystore.KeyExpiredException(arg0), (__DcgwBridgeToken) null);
     }
 
     public KeyExpiredException(java.lang.String arg0, java.lang.Throwable arg1) {
-        this(new android.security.keystore.KeyExpiredException(arg0, arg1));
+        this(new android.security.keystore.KeyExpiredException(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
 }

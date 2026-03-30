@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class VersionInfo {
-    private final android.icu.util.VersionInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VersionInfo(android.icu.util.VersionInfo real) {
+    private final java.lang.Object real;
+
+    private VersionInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo wrap(android.icu.util.VersionInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.VersionInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.VersionInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.VersionInfo getReal() {
+        return (android.icu.util.VersionInfo) real;
     }
 
     public android.icu.util.VersionInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.icu.util.VersionInfo arg0) {
-        return real.compareTo(arg0 == null ? null : arg0.unwrap());
+        return ((android.icu.util.VersionInfo) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.util.VersionInfo) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo getInstance(java.lang.String arg0) {
@@ -45,27 +52,27 @@ public final class VersionInfo {
     }
 
     public int getMajor() {
-        return real.getMajor();
+        return ((android.icu.util.VersionInfo) real).getMajor();
     }
 
     public int getMicro() {
-        return real.getMicro();
+        return ((android.icu.util.VersionInfo) real).getMicro();
     }
 
     public int getMilli() {
-        return real.getMilli();
+        return ((android.icu.util.VersionInfo) real).getMilli();
     }
 
     public int getMinor() {
-        return real.getMinor();
+        return ((android.icu.util.VersionInfo) real).getMinor();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.util.VersionInfo) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.util.VersionInfo) real).toString();
     }
 
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo ICU_VERSION = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.ICU_VERSION);

@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class Rating {
-    private final android.media.Rating real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Rating(android.media.Rating real) {
+    private final java.lang.Object real;
+
+    private Rating(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.Rating wrap(android.media.Rating real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.Rating(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.Rating(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.Rating getReal() {
+        return (android.media.Rating) real;
     }
 
     public android.media.Rating unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.Rating) real).describeContents();
     }
 
     public float getPercentRating() {
-        return real.getPercentRating();
+        return ((android.media.Rating) real).getPercentRating();
     }
 
     public int getRatingStyle() {
-        return real.getRatingStyle();
+        return ((android.media.Rating) real).getRatingStyle();
     }
 
     public float getStarRating() {
-        return real.getStarRating();
+        return ((android.media.Rating) real).getStarRating();
     }
 
     public boolean hasHeart() {
-        return real.hasHeart();
+        return ((android.media.Rating) real).hasHeart();
     }
 
     public boolean isRated() {
-        return real.isRated();
+        return ((android.media.Rating) real).isRated();
     }
 
     public boolean isThumbUp() {
-        return real.isThumbUp();
+        return ((android.media.Rating) real).isThumbUp();
     }
 
     public static com.micklab.dcg.wrapper.android.media.Rating newHeartRating(boolean arg0) {
@@ -65,11 +72,11 @@ public final class Rating {
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.Rating) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.Rating) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int RATING_3_STARS = android.media.Rating.RATING_3_STARS;

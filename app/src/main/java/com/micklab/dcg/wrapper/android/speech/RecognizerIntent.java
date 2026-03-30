@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.speech;
 
 public final class RecognizerIntent {
-    private final android.speech.RecognizerIntent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RecognizerIntent(android.speech.RecognizerIntent real) {
+    private final java.lang.Object real;
+
+    private RecognizerIntent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.speech.RecognizerIntent wrap(android.speech.RecognizerIntent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognizerIntent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.speech.RecognizerIntent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.speech.RecognizerIntent getReal() {
+        return (android.speech.RecognizerIntent) real;
     }
 
     public android.speech.RecognizerIntent unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.content.Intent getVoiceDetailsIntent(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.speech.RecognizerIntent.getVoiceDetailsIntent(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(android.speech.RecognizerIntent.getVoiceDetailsIntent(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final java.lang.String ACTION_GET_LANGUAGE_DETAILS = android.speech.RecognizerIntent.ACTION_GET_LANGUAGE_DETAILS;

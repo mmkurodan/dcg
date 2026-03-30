@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class SubscribeConfig {
-    private final android.net.wifi.aware.SubscribeConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SubscribeConfig(android.net.wifi.aware.SubscribeConfig real) {
+    private final java.lang.Object real;
+
+    private SubscribeConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig wrap(android.net.wifi.aware.SubscribeConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.SubscribeConfig getReal() {
+        return (android.net.wifi.aware.SubscribeConfig) real;
     }
 
     public android.net.wifi.aware.SubscribeConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -50,18 +57,25 @@ public final class SubscribeConfig {
 
 
     public static final class Builder {
-        private final android.net.wifi.aware.SubscribeConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.aware.SubscribeConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig.Builder wrap(android.net.wifi.aware.SubscribeConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.SubscribeConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.aware.SubscribeConfig.Builder getReal() {
+            return (android.net.wifi.aware.SubscribeConfig.Builder) real;
         }
 
         public android.net.wifi.aware.SubscribeConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

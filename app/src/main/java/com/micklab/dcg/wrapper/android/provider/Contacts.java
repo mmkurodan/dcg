@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class Contacts {
-    private final android.provider.Contacts real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Contacts(android.provider.Contacts real) {
+    private final java.lang.Object real;
+
+    private Contacts(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.Contacts wrap(android.provider.Contacts real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.Contacts getReal() {
+        return (android.provider.Contacts) real;
     }
 
     public android.provider.Contacts unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final java.lang.String AUTHORITY = android.provider.Contacts.AUTHORITY;
@@ -25,22 +32,29 @@ public final class Contacts {
     public static final int KIND_POSTAL = android.provider.Contacts.KIND_POSTAL;
 
     public static final class ContactMethods {
-        private final android.provider.Contacts.ContactMethods real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ContactMethods(android.provider.Contacts.ContactMethods real) {
+        private final java.lang.Object real;
+
+        private ContactMethods(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethods wrap(android.provider.Contacts.ContactMethods real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethods(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethods(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.ContactMethods getReal() {
+            return (android.provider.Contacts.ContactMethods) real;
         }
 
         public android.provider.Contacts.ContactMethods unwrap() {
-            return real;
+            return getReal();
         }
 
         public void addPostalLocation(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, double arg2, double arg3) {
-            real.addPostalLocation(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            ((android.provider.Contacts.ContactMethods) real).addPostalLocation(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public static java.lang.Object decodeImProtocol(java.lang.String arg0) {
@@ -56,7 +70,7 @@ public final class Contacts {
         }
 
         public static java.lang.CharSequence getDisplayLabel(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, int arg2, java.lang.CharSequence arg3) {
-            return android.provider.Contacts.ContactMethods.getDisplayLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            return android.provider.Contacts.ContactMethods.getDisplayLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public static final java.lang.String CONTENT_EMAIL_ITEM_TYPE = android.provider.Contacts.ContactMethods.CONTENT_EMAIL_ITEM_TYPE;
@@ -82,18 +96,25 @@ public final class Contacts {
 
     }
     public static final class ContactMethodsColumns {
-        private final android.provider.Contacts.ContactMethodsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ContactMethodsColumns(android.provider.Contacts.ContactMethodsColumns real) {
+        private final java.lang.Object real;
+
+        private ContactMethodsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethodsColumns wrap(android.provider.Contacts.ContactMethodsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethodsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ContactMethodsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.ContactMethodsColumns getReal() {
+            return (android.provider.Contacts.ContactMethodsColumns) real;
         }
 
         public android.provider.Contacts.ContactMethodsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String AUX_DATA = android.provider.Contacts.ContactMethodsColumns.AUX_DATA;
@@ -109,18 +130,25 @@ public final class Contacts {
 
     }
     public static final class Extensions {
-        private final android.provider.Contacts.Extensions real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Extensions(android.provider.Contacts.Extensions real) {
+        private final java.lang.Object real;
+
+        private Extensions(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Extensions wrap(android.provider.Contacts.Extensions real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Extensions(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Extensions(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Extensions getReal() {
+            return (android.provider.Contacts.Extensions) real;
         }
 
         public android.provider.Contacts.Extensions unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.Contacts.Extensions.CONTENT_ITEM_TYPE;
@@ -131,18 +159,25 @@ public final class Contacts {
 
     }
     public static final class ExtensionsColumns {
-        private final android.provider.Contacts.ExtensionsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ExtensionsColumns(android.provider.Contacts.ExtensionsColumns real) {
+        private final java.lang.Object real;
+
+        private ExtensionsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.ExtensionsColumns wrap(android.provider.Contacts.ExtensionsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ExtensionsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.ExtensionsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.ExtensionsColumns getReal() {
+            return (android.provider.Contacts.ExtensionsColumns) real;
         }
 
         public android.provider.Contacts.ExtensionsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String NAME = android.provider.Contacts.ExtensionsColumns.NAME;
@@ -150,18 +185,25 @@ public final class Contacts {
 
     }
     public static final class GroupMembership {
-        private final android.provider.Contacts.GroupMembership real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupMembership(android.provider.Contacts.GroupMembership real) {
+        private final java.lang.Object real;
+
+        private GroupMembership(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.GroupMembership wrap(android.provider.Contacts.GroupMembership real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.GroupMembership(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.GroupMembership(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.GroupMembership getReal() {
+            return (android.provider.Contacts.GroupMembership) real;
         }
 
         public android.provider.Contacts.GroupMembership unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.GroupMembership.CONTENT_DIRECTORY;
@@ -178,18 +220,25 @@ public final class Contacts {
 
     }
     public static final class Groups {
-        private final android.provider.Contacts.Groups real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Groups(android.provider.Contacts.Groups real) {
+        private final java.lang.Object real;
+
+        private Groups(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Groups wrap(android.provider.Contacts.Groups real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Groups(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Groups(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Groups getReal() {
+            return (android.provider.Contacts.Groups) real;
         }
 
         public android.provider.Contacts.Groups unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_ITEM_TYPE = android.provider.Contacts.Groups.CONTENT_ITEM_TYPE;
@@ -202,18 +251,25 @@ public final class Contacts {
 
     }
     public static final class GroupsColumns {
-        private final android.provider.Contacts.GroupsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GroupsColumns(android.provider.Contacts.GroupsColumns real) {
+        private final java.lang.Object real;
+
+        private GroupsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.GroupsColumns wrap(android.provider.Contacts.GroupsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.GroupsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.GroupsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.GroupsColumns getReal() {
+            return (android.provider.Contacts.GroupsColumns) real;
         }
 
         public android.provider.Contacts.GroupsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String NAME = android.provider.Contacts.GroupsColumns.NAME;
@@ -223,22 +279,29 @@ public final class Contacts {
 
     }
     public static final class Intents {
-        private final android.provider.Contacts.Intents real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Intents(android.provider.Contacts.Intents real) {
+        private final java.lang.Object real;
+
+        private Intents(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Intents wrap(android.provider.Contacts.Intents real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Intents getReal() {
+            return (android.provider.Contacts.Intents) real;
         }
 
         public android.provider.Contacts.Intents unwrap() {
-            return real;
+            return getReal();
         }
 
         public Intents() {
-            this(new android.provider.Contacts.Intents());
+            this(new android.provider.Contacts.Intents(), (__DcgwBridgeToken) null);
         }
 
         public static final java.lang.String ATTACH_IMAGE = android.provider.Contacts.Intents.ATTACH_IMAGE;
@@ -250,22 +313,29 @@ public final class Contacts {
         public static final java.lang.String SHOW_OR_CREATE_CONTACT = android.provider.Contacts.Intents.SHOW_OR_CREATE_CONTACT;
 
         public static final class Insert {
-            private final android.provider.Contacts.Intents.Insert real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Insert(android.provider.Contacts.Intents.Insert real) {
+            private final java.lang.Object real;
+
+            private Insert(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Contacts.Intents.Insert wrap(android.provider.Contacts.Intents.Insert real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents.Insert(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents.Insert(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Contacts.Intents.Insert getReal() {
+                return (android.provider.Contacts.Intents.Insert) real;
             }
 
             public android.provider.Contacts.Intents.Insert unwrap() {
-                return real;
+                return getReal();
             }
 
             public Insert() {
-                this(new android.provider.Contacts.Intents.Insert());
+                this(new android.provider.Contacts.Intents.Insert(), (__DcgwBridgeToken) null);
             }
 
             public static final java.lang.String ACTION = android.provider.Contacts.Intents.Insert.ACTION;
@@ -298,22 +368,29 @@ public final class Contacts {
 
         }
         public static final class UI {
-            private final android.provider.Contacts.Intents.UI real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public UI(android.provider.Contacts.Intents.UI real) {
+            private final java.lang.Object real;
+
+            private UI(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Contacts.Intents.UI wrap(android.provider.Contacts.Intents.UI real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents.UI(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Intents.UI(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Contacts.Intents.UI getReal() {
+                return (android.provider.Contacts.Intents.UI) real;
             }
 
             public android.provider.Contacts.Intents.UI unwrap() {
-                return real;
+                return getReal();
             }
 
             public UI() {
-                this(new android.provider.Contacts.Intents.UI());
+                this(new android.provider.Contacts.Intents.UI(), (__DcgwBridgeToken) null);
             }
 
             public static final java.lang.String FILTER_CONTACTS_ACTION = android.provider.Contacts.Intents.UI.FILTER_CONTACTS_ACTION;
@@ -331,18 +408,25 @@ public final class Contacts {
         }
     }
     public static final class OrganizationColumns {
-        private final android.provider.Contacts.OrganizationColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OrganizationColumns(android.provider.Contacts.OrganizationColumns real) {
+        private final java.lang.Object real;
+
+        private OrganizationColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.OrganizationColumns wrap(android.provider.Contacts.OrganizationColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.OrganizationColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.OrganizationColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.OrganizationColumns getReal() {
+            return (android.provider.Contacts.OrganizationColumns) real;
         }
 
         public android.provider.Contacts.OrganizationColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String COMPANY = android.provider.Contacts.OrganizationColumns.COMPANY;
@@ -357,22 +441,29 @@ public final class Contacts {
 
     }
     public static final class Organizations {
-        private final android.provider.Contacts.Organizations real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Organizations(android.provider.Contacts.Organizations real) {
+        private final java.lang.Object real;
+
+        private Organizations(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Organizations wrap(android.provider.Contacts.Organizations real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Organizations(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Organizations(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Organizations getReal() {
+            return (android.provider.Contacts.Organizations) real;
         }
 
         public android.provider.Contacts.Organizations unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.CharSequence getDisplayLabel(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.lang.CharSequence arg2) {
-            return android.provider.Contacts.Organizations.getDisplayLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Contacts.Organizations.getDisplayLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.Organizations.CONTENT_DIRECTORY;
@@ -381,54 +472,61 @@ public final class Contacts {
 
     }
     public static final class People {
-        private final android.provider.Contacts.People real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public People(android.provider.Contacts.People real) {
+        private final java.lang.Object real;
+
+        private People(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.People wrap(android.provider.Contacts.People real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.People getReal() {
+            return (android.provider.Contacts.People) real;
         }
 
         public android.provider.Contacts.People unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri addToGroup(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, long arg2) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToGroup(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToGroup(arg0 == null ? null : arg0.getReal(), arg1, arg2));
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri addToGroup(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1, java.lang.String arg2) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToGroup(arg0 == null ? null : arg0.unwrap(), arg1, arg2));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToGroup(arg0 == null ? null : arg0.getReal(), arg1, arg2));
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri addToMyContactsGroup(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToMyContactsGroup(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.addToMyContactsGroup(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri createPersonInMyContactsGroup(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.content.ContentValues arg1) {
-            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.createPersonInMyContactsGroup(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+            return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.createPersonInMyContactsGroup(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public static com.micklab.dcg.wrapper.android.graphics.Bitmap loadContactPhoto(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.BitmapFactory.Options arg3) {
-            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.Contacts.People.loadContactPhoto(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap()));
+            return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.provider.Contacts.People.loadContactPhoto(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal()));
         }
 
         public static void markAsContacted(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-            android.provider.Contacts.People.markAsContacted(arg0 == null ? null : arg0.unwrap(), arg1);
+            android.provider.Contacts.People.markAsContacted(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static java.io.InputStream openContactPhotoInputStream(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
-            return android.provider.Contacts.People.openContactPhotoInputStream(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+            return android.provider.Contacts.People.openContactPhotoInputStream(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public static com.micklab.dcg.wrapper.android.database.Cursor queryGroups(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, long arg1) {
-            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.Contacts.People.queryGroups(arg0 == null ? null : arg0.unwrap(), arg1));
+            return com.micklab.dcg.wrapper.android.database.Cursor.wrap(android.provider.Contacts.People.queryGroups(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
         public static void setPhotoData(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, byte[] arg2) {
-            android.provider.Contacts.People.setPhotoData(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+            android.provider.Contacts.People.setPhotoData(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.People.CONTENT_FILTER_URI);
@@ -442,18 +540,25 @@ public final class Contacts {
         public static final java.lang.String PRIMARY_PHONE_ID = android.provider.Contacts.People.PRIMARY_PHONE_ID;
 
         public static final class ContactMethods {
-            private final android.provider.Contacts.People.ContactMethods real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public ContactMethods(android.provider.Contacts.People.ContactMethods real) {
+            private final java.lang.Object real;
+
+            private ContactMethods(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Contacts.People.ContactMethods wrap(android.provider.Contacts.People.ContactMethods real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.ContactMethods(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.ContactMethods(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Contacts.People.ContactMethods getReal() {
+                return (android.provider.Contacts.People.ContactMethods) real;
             }
 
             public android.provider.Contacts.People.ContactMethods unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.People.ContactMethods.CONTENT_DIRECTORY;
@@ -461,18 +566,25 @@ public final class Contacts {
 
         }
         public static final class Extensions {
-            private final android.provider.Contacts.People.Extensions real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Extensions(android.provider.Contacts.People.Extensions real) {
+            private final java.lang.Object real;
+
+            private Extensions(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Contacts.People.Extensions wrap(android.provider.Contacts.People.Extensions real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.Extensions(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.Extensions(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Contacts.People.Extensions getReal() {
+                return (android.provider.Contacts.People.Extensions) real;
             }
 
             public android.provider.Contacts.People.Extensions unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.People.Extensions.CONTENT_DIRECTORY;
@@ -481,18 +593,25 @@ public final class Contacts {
 
         }
         public static final class Phones {
-            private final android.provider.Contacts.People.Phones real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Phones(android.provider.Contacts.People.Phones real) {
+            private final java.lang.Object real;
+
+            private Phones(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Contacts.People.Phones wrap(android.provider.Contacts.People.Phones real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.Phones(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.People.Phones(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Contacts.People.Phones getReal() {
+                return (android.provider.Contacts.People.Phones) real;
             }
 
             public android.provider.Contacts.People.Phones unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.People.Phones.CONTENT_DIRECTORY;
@@ -501,18 +620,25 @@ public final class Contacts {
         }
     }
     public static final class PeopleColumns {
-        private final android.provider.Contacts.PeopleColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PeopleColumns(android.provider.Contacts.PeopleColumns real) {
+        private final java.lang.Object real;
+
+        private PeopleColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.PeopleColumns wrap(android.provider.Contacts.PeopleColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PeopleColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PeopleColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.PeopleColumns getReal() {
+            return (android.provider.Contacts.PeopleColumns) real;
         }
 
         public android.provider.Contacts.PeopleColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CUSTOM_RINGTONE = android.provider.Contacts.PeopleColumns.CUSTOM_RINGTONE;
@@ -528,26 +654,33 @@ public final class Contacts {
 
     }
     public static final class Phones {
-        private final android.provider.Contacts.Phones real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Phones(android.provider.Contacts.Phones real) {
+        private final java.lang.Object real;
+
+        private Phones(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Phones wrap(android.provider.Contacts.Phones real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Phones(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Phones(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Phones getReal() {
+            return (android.provider.Contacts.Phones) real;
         }
 
         public android.provider.Contacts.Phones unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.CharSequence getDisplayLabel(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.lang.CharSequence arg2) {
-            return android.provider.Contacts.Phones.getDisplayLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Contacts.Phones.getDisplayLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static java.lang.CharSequence getDisplayLabel(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.lang.CharSequence arg2, java.lang.CharSequence[] arg3) {
-            return android.provider.Contacts.Phones.getDisplayLabel(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            return android.provider.Contacts.Phones.getDisplayLabel(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_FILTER_URL = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Contacts.Phones.CONTENT_FILTER_URL);
@@ -559,18 +692,25 @@ public final class Contacts {
 
     }
     public static final class PhonesColumns {
-        private final android.provider.Contacts.PhonesColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PhonesColumns(android.provider.Contacts.PhonesColumns real) {
+        private final java.lang.Object real;
+
+        private PhonesColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.PhonesColumns wrap(android.provider.Contacts.PhonesColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PhonesColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PhonesColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.PhonesColumns getReal() {
+            return (android.provider.Contacts.PhonesColumns) real;
         }
 
         public android.provider.Contacts.PhonesColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ISPRIMARY = android.provider.Contacts.PhonesColumns.ISPRIMARY;
@@ -589,18 +729,25 @@ public final class Contacts {
 
     }
     public static final class Photos {
-        private final android.provider.Contacts.Photos real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Photos(android.provider.Contacts.Photos real) {
+        private final java.lang.Object real;
+
+        private Photos(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Photos wrap(android.provider.Contacts.Photos real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Photos(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Photos(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Photos getReal() {
+            return (android.provider.Contacts.Photos) real;
         }
 
         public android.provider.Contacts.Photos unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.Photos.CONTENT_DIRECTORY;
@@ -609,18 +756,25 @@ public final class Contacts {
 
     }
     public static final class PhotosColumns {
-        private final android.provider.Contacts.PhotosColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PhotosColumns(android.provider.Contacts.PhotosColumns real) {
+        private final java.lang.Object real;
+
+        private PhotosColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.PhotosColumns wrap(android.provider.Contacts.PhotosColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PhotosColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PhotosColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.PhotosColumns getReal() {
+            return (android.provider.Contacts.PhotosColumns) real;
         }
 
         public android.provider.Contacts.PhotosColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String DATA = android.provider.Contacts.PhotosColumns.DATA;
@@ -632,18 +786,25 @@ public final class Contacts {
 
     }
     public static final class PresenceColumns {
-        private final android.provider.Contacts.PresenceColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PresenceColumns(android.provider.Contacts.PresenceColumns real) {
+        private final java.lang.Object real;
+
+        private PresenceColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.PresenceColumns wrap(android.provider.Contacts.PresenceColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PresenceColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.PresenceColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.PresenceColumns getReal() {
+            return (android.provider.Contacts.PresenceColumns) real;
         }
 
         public android.provider.Contacts.PresenceColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final int AVAILABLE = android.provider.Contacts.PresenceColumns.AVAILABLE;
@@ -661,26 +822,33 @@ public final class Contacts {
 
     }
     public static final class Settings {
-        private final android.provider.Contacts.Settings real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Settings(android.provider.Contacts.Settings real) {
+        private final java.lang.Object real;
+
+        private Settings(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.Settings wrap(android.provider.Contacts.Settings real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Settings(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.Settings(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.Settings getReal() {
+            return (android.provider.Contacts.Settings) real;
         }
 
         public android.provider.Contacts.Settings unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.String getSetting(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2) {
-            return android.provider.Contacts.Settings.getSetting(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            return android.provider.Contacts.Settings.getSetting(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public static void setSetting(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3) {
-            android.provider.Contacts.Settings.setSetting(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+            android.provider.Contacts.Settings.setSetting(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
         }
 
         public static final java.lang.String CONTENT_DIRECTORY = android.provider.Contacts.Settings.CONTENT_DIRECTORY;
@@ -690,18 +858,25 @@ public final class Contacts {
 
     }
     public static final class SettingsColumns {
-        private final android.provider.Contacts.SettingsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SettingsColumns(android.provider.Contacts.SettingsColumns real) {
+        private final java.lang.Object real;
+
+        private SettingsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Contacts.SettingsColumns wrap(android.provider.Contacts.SettingsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.SettingsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Contacts.SettingsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Contacts.SettingsColumns getReal() {
+            return (android.provider.Contacts.SettingsColumns) real;
         }
 
         public android.provider.Contacts.SettingsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String KEY = android.provider.Contacts.SettingsColumns.KEY;

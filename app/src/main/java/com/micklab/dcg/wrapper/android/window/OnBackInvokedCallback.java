@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.window;
 
 public final class OnBackInvokedCallback {
-    private final android.window.OnBackInvokedCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public OnBackInvokedCallback(android.window.OnBackInvokedCallback real) {
+    private final java.lang.Object real;
+
+    private OnBackInvokedCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.window.OnBackInvokedCallback wrap(android.window.OnBackInvokedCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.window.OnBackInvokedCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.window.OnBackInvokedCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.window.OnBackInvokedCallback getReal() {
+        return (android.window.OnBackInvokedCallback) real;
     }
 
     public android.window.OnBackInvokedCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public void onBackInvoked() {
-        real.onBackInvoked();
+        ((android.window.OnBackInvokedCallback) real).onBackInvoked();
     }
 
 }

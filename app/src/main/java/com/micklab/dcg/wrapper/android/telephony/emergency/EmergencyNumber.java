@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.emergency;
 
 public final class EmergencyNumber {
-    private final android.telephony.emergency.EmergencyNumber real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public EmergencyNumber(android.telephony.emergency.EmergencyNumber real) {
+    private final java.lang.Object real;
+
+    private EmergencyNumber(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.emergency.EmergencyNumber wrap(android.telephony.emergency.EmergencyNumber real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.emergency.EmergencyNumber(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.emergency.EmergencyNumber(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.emergency.EmergencyNumber getReal() {
+        return (android.telephony.emergency.EmergencyNumber) real;
     }
 
     public android.telephony.emergency.EmergencyNumber unwrap() {
-        return real;
+        return getReal();
     }
 
     public int compareTo(com.micklab.dcg.wrapper.android.telephony.emergency.EmergencyNumber arg0) {

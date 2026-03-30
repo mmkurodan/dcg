@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class MutableByte {
-    private final android.util.MutableByte real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MutableByte(android.util.MutableByte real) {
+    private final java.lang.Object real;
+
+    private MutableByte(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.MutableByte wrap(android.util.MutableByte real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.MutableByte(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.MutableByte(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.MutableByte getReal() {
+        return (android.util.MutableByte) real;
     }
 
     public android.util.MutableByte unwrap() {
-        return real;
+        return getReal();
     }
 
     public MutableByte(byte arg0) {
-        this(new android.util.MutableByte(arg0));
+        this(new android.util.MutableByte(arg0), (__DcgwBridgeToken) null);
     }
 
 

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class SignalStrengthUpdateRequest {
-    private final android.telephony.SignalStrengthUpdateRequest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SignalStrengthUpdateRequest(android.telephony.SignalStrengthUpdateRequest real) {
+    private final java.lang.Object real;
+
+    private SignalStrengthUpdateRequest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest wrap(android.telephony.SignalStrengthUpdateRequest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.SignalStrengthUpdateRequest getReal() {
+        return (android.telephony.SignalStrengthUpdateRequest) real;
     }
 
     public android.telephony.SignalStrengthUpdateRequest unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -42,18 +49,25 @@ public final class SignalStrengthUpdateRequest {
 
 
     public static final class Builder {
-        private final android.telephony.SignalStrengthUpdateRequest.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.telephony.SignalStrengthUpdateRequest.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest.Builder wrap(android.telephony.SignalStrengthUpdateRequest.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.SignalStrengthUpdateRequest.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.SignalStrengthUpdateRequest.Builder getReal() {
+            return (android.telephony.SignalStrengthUpdateRequest.Builder) real;
         }
 
         public android.telephony.SignalStrengthUpdateRequest.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

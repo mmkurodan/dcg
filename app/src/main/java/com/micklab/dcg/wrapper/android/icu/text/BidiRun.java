@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class BidiRun {
-    private final android.icu.text.BidiRun real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BidiRun(android.icu.text.BidiRun real) {
+    private final java.lang.Object real;
+
+    private BidiRun(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.BidiRun wrap(android.icu.text.BidiRun real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.BidiRun(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.BidiRun(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.BidiRun getReal() {
+        return (android.icu.text.BidiRun) real;
     }
 
     public android.icu.text.BidiRun unwrap() {
-        return real;
+        return getReal();
     }
 
     public byte getDirection() {
-        return real.getDirection();
+        return ((android.icu.text.BidiRun) real).getDirection();
     }
 
     public byte getEmbeddingLevel() {
-        return real.getEmbeddingLevel();
+        return ((android.icu.text.BidiRun) real).getEmbeddingLevel();
     }
 
     public int getLength() {
-        return real.getLength();
+        return ((android.icu.text.BidiRun) real).getLength();
     }
 
     public int getLimit() {
-        return real.getLimit();
+        return ((android.icu.text.BidiRun) real).getLimit();
     }
 
     public int getStart() {
-        return real.getStart();
+        return ((android.icu.text.BidiRun) real).getStart();
     }
 
     public boolean isEvenRun() {
-        return real.isEvenRun();
+        return ((android.icu.text.BidiRun) real).isEvenRun();
     }
 
     public boolean isOddRun() {
-        return real.isOddRun();
+        return ((android.icu.text.BidiRun) real).isOddRun();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.text.BidiRun) real).toString();
     }
 
 }

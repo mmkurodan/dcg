@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeSessionConfiguration {
-    private final android.net.ipsec.ike.IkeSessionConfiguration real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeSessionConfiguration(android.net.ipsec.ike.IkeSessionConfiguration real) {
+    private final java.lang.Object real;
+
+    private IkeSessionConfiguration(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration wrap(android.net.ipsec.ike.IkeSessionConfiguration real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeSessionConfiguration getReal() {
+        return (android.net.ipsec.ike.IkeSessionConfiguration) real;
     }
 
     public android.net.ipsec.ike.IkeSessionConfiguration unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.net.eap.EapInfo getEapInfo() {
@@ -34,18 +41,25 @@ public final class IkeSessionConfiguration {
 
 
     public static final class Builder {
-        private final android.net.ipsec.ike.IkeSessionConfiguration.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.ipsec.ike.IkeSessionConfiguration.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration.Builder wrap(android.net.ipsec.ike.IkeSessionConfiguration.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConfiguration.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.ipsec.ike.IkeSessionConfiguration.Builder getReal() {
+            return (android.net.ipsec.ike.IkeSessionConfiguration.Builder) real;
         }
 
         public android.net.ipsec.ike.IkeSessionConfiguration.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeSessionConnectionInfo arg0) {

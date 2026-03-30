@@ -2,33 +2,47 @@
 package com.micklab.dcg.wrapper.android.provider;
 
 public final class Telephony {
-    private final android.provider.Telephony real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Telephony(android.provider.Telephony real) {
+    private final java.lang.Object real;
+
+    private Telephony(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.provider.Telephony wrap(android.provider.Telephony real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.provider.Telephony getReal() {
+        return (android.provider.Telephony) real;
     }
 
     public android.provider.Telephony unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class BaseMmsColumns {
-        private final android.provider.Telephony.BaseMmsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BaseMmsColumns(android.provider.Telephony.BaseMmsColumns real) {
+        private final java.lang.Object real;
+
+        private BaseMmsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.BaseMmsColumns wrap(android.provider.Telephony.BaseMmsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.BaseMmsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.BaseMmsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.BaseMmsColumns getReal() {
+            return (android.provider.Telephony.BaseMmsColumns) real;
         }
 
         public android.provider.Telephony.BaseMmsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String CONTENT_CLASS = android.provider.Telephony.BaseMmsColumns.CONTENT_CLASS;
@@ -74,36 +88,50 @@ public final class Telephony {
 
     }
     public static final class CanonicalAddressesColumns {
-        private final android.provider.Telephony.CanonicalAddressesColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CanonicalAddressesColumns(android.provider.Telephony.CanonicalAddressesColumns real) {
+        private final java.lang.Object real;
+
+        private CanonicalAddressesColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.CanonicalAddressesColumns wrap(android.provider.Telephony.CanonicalAddressesColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.CanonicalAddressesColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.CanonicalAddressesColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.CanonicalAddressesColumns getReal() {
+            return (android.provider.Telephony.CanonicalAddressesColumns) real;
         }
 
         public android.provider.Telephony.CanonicalAddressesColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ADDRESS = android.provider.Telephony.CanonicalAddressesColumns.ADDRESS;
 
     }
     public static final class CarrierId {
-        private final android.provider.Telephony.CarrierId real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CarrierId(android.provider.Telephony.CarrierId real) {
+        private final java.lang.Object real;
+
+        private CarrierId(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.CarrierId wrap(android.provider.Telephony.CarrierId real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.CarrierId(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.CarrierId(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.CarrierId getReal() {
+            return (android.provider.Telephony.CarrierId) real;
         }
 
         public android.provider.Telephony.CarrierId unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getSpecificCarrierIdUriForSubscriptionId(int arg0) {
@@ -122,18 +150,25 @@ public final class Telephony {
 
     }
     public static final class Carriers {
-        private final android.provider.Telephony.Carriers real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Carriers(android.provider.Telephony.Carriers real) {
+        private final java.lang.Object real;
+
+        private Carriers(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.Carriers wrap(android.provider.Telephony.Carriers real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Carriers(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Carriers(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.Carriers getReal() {
+            return (android.provider.Telephony.Carriers) real;
         }
 
         public android.provider.Telephony.Carriers unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ALWAYS_ON = android.provider.Telephony.Carriers.ALWAYS_ON;
@@ -171,18 +206,25 @@ public final class Telephony {
 
     }
     public static final class Mms {
-        private final android.provider.Telephony.Mms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Mms(android.provider.Telephony.Mms real) {
+        private final java.lang.Object real;
+
+        private Mms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms wrap(android.provider.Telephony.Mms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.Mms getReal() {
+            return (android.provider.Telephony.Mms) real;
         }
 
         public android.provider.Telephony.Mms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.CONTENT_URI);
@@ -191,18 +233,25 @@ public final class Telephony {
         public static final com.micklab.dcg.wrapper.android.net.Uri REPORT_STATUS_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.REPORT_STATUS_URI);
 
         public static final class Addr {
-            private final android.provider.Telephony.Mms.Addr real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Addr(android.provider.Telephony.Mms.Addr real) {
+            private final java.lang.Object real;
+
+            private Addr(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Addr wrap(android.provider.Telephony.Mms.Addr real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Addr(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Addr(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Addr getReal() {
+                return (android.provider.Telephony.Mms.Addr) real;
             }
 
             public android.provider.Telephony.Mms.Addr unwrap() {
-                return real;
+                return getReal();
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getAddrUriForMessage(java.lang.String arg0) {
@@ -217,18 +266,25 @@ public final class Telephony {
 
         }
         public static final class Draft {
-            private final android.provider.Telephony.Mms.Draft real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Draft(android.provider.Telephony.Mms.Draft real) {
+            private final java.lang.Object real;
+
+            private Draft(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Draft wrap(android.provider.Telephony.Mms.Draft real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Draft(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Draft(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Draft getReal() {
+                return (android.provider.Telephony.Mms.Draft) real;
             }
 
             public android.provider.Telephony.Mms.Draft unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.Draft.CONTENT_URI);
@@ -236,18 +292,25 @@ public final class Telephony {
 
         }
         public static final class Inbox {
-            private final android.provider.Telephony.Mms.Inbox real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Inbox(android.provider.Telephony.Mms.Inbox real) {
+            private final java.lang.Object real;
+
+            private Inbox(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Inbox wrap(android.provider.Telephony.Mms.Inbox real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Inbox(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Inbox(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Inbox getReal() {
+                return (android.provider.Telephony.Mms.Inbox) real;
             }
 
             public android.provider.Telephony.Mms.Inbox unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.Inbox.CONTENT_URI);
@@ -255,18 +318,25 @@ public final class Telephony {
 
         }
         public static final class Intents {
-            private final android.provider.Telephony.Mms.Intents real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Intents(android.provider.Telephony.Mms.Intents real) {
+            private final java.lang.Object real;
+
+            private Intents(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Intents wrap(android.provider.Telephony.Mms.Intents real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Intents(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Intents(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Intents getReal() {
+                return (android.provider.Telephony.Mms.Intents) real;
             }
 
             public android.provider.Telephony.Mms.Intents unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final java.lang.String CONTENT_CHANGED_ACTION = android.provider.Telephony.Mms.Intents.CONTENT_CHANGED_ACTION;
@@ -274,18 +344,25 @@ public final class Telephony {
 
         }
         public static final class Outbox {
-            private final android.provider.Telephony.Mms.Outbox real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Outbox(android.provider.Telephony.Mms.Outbox real) {
+            private final java.lang.Object real;
+
+            private Outbox(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Outbox wrap(android.provider.Telephony.Mms.Outbox real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Outbox(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Outbox(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Outbox getReal() {
+                return (android.provider.Telephony.Mms.Outbox) real;
             }
 
             public android.provider.Telephony.Mms.Outbox unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.Outbox.CONTENT_URI);
@@ -293,18 +370,25 @@ public final class Telephony {
 
         }
         public static final class Part {
-            private final android.provider.Telephony.Mms.Part real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Part(android.provider.Telephony.Mms.Part real) {
+            private final java.lang.Object real;
+
+            private Part(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Part wrap(android.provider.Telephony.Mms.Part real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Part(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Part(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Part getReal() {
+                return (android.provider.Telephony.Mms.Part) real;
             }
 
             public android.provider.Telephony.Mms.Part unwrap() {
-                return real;
+                return getReal();
             }
 
             public static com.micklab.dcg.wrapper.android.net.Uri getPartUriForMessage(java.lang.String arg0) {
@@ -327,18 +411,25 @@ public final class Telephony {
 
         }
         public static final class Rate {
-            private final android.provider.Telephony.Mms.Rate real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Rate(android.provider.Telephony.Mms.Rate real) {
+            private final java.lang.Object real;
+
+            private Rate(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Rate wrap(android.provider.Telephony.Mms.Rate real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Rate(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Rate(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Rate getReal() {
+                return (android.provider.Telephony.Mms.Rate) real;
             }
 
             public android.provider.Telephony.Mms.Rate unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.Rate.CONTENT_URI);
@@ -346,18 +437,25 @@ public final class Telephony {
 
         }
         public static final class Sent {
-            private final android.provider.Telephony.Mms.Sent real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Sent(android.provider.Telephony.Mms.Sent real) {
+            private final java.lang.Object real;
+
+            private Sent(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Sent wrap(android.provider.Telephony.Mms.Sent real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Sent(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Mms.Sent(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Mms.Sent getReal() {
+                return (android.provider.Telephony.Mms.Sent) real;
             }
 
             public android.provider.Telephony.Mms.Sent unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Mms.Sent.CONTENT_URI);
@@ -366,18 +464,25 @@ public final class Telephony {
         }
     }
     public static final class MmsSms {
-        private final android.provider.Telephony.MmsSms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MmsSms(android.provider.Telephony.MmsSms real) {
+        private final java.lang.Object real;
+
+        private MmsSms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms wrap(android.provider.Telephony.MmsSms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.MmsSms getReal() {
+            return (android.provider.Telephony.MmsSms) real;
         }
 
         public android.provider.Telephony.MmsSms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_CONVERSATIONS_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.MmsSms.CONTENT_CONVERSATIONS_URI);
@@ -400,18 +505,25 @@ public final class Telephony {
         public static final java.lang.String TYPE_DISCRIMINATOR_COLUMN = android.provider.Telephony.MmsSms.TYPE_DISCRIMINATOR_COLUMN;
 
         public static final class PendingMessages {
-            private final android.provider.Telephony.MmsSms.PendingMessages real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public PendingMessages(android.provider.Telephony.MmsSms.PendingMessages real) {
+            private final java.lang.Object real;
+
+            private PendingMessages(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms.PendingMessages wrap(android.provider.Telephony.MmsSms.PendingMessages real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms.PendingMessages(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.MmsSms.PendingMessages(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.MmsSms.PendingMessages getReal() {
+                return (android.provider.Telephony.MmsSms.PendingMessages) real;
             }
 
             public android.provider.Telephony.MmsSms.PendingMessages unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.MmsSms.PendingMessages.CONTENT_URI);
@@ -428,18 +540,25 @@ public final class Telephony {
         }
     }
     public static final class ServiceStateTable {
-        private final android.provider.Telephony.ServiceStateTable real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ServiceStateTable(android.provider.Telephony.ServiceStateTable real) {
+        private final java.lang.Object real;
+
+        private ServiceStateTable(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.ServiceStateTable wrap(android.provider.Telephony.ServiceStateTable real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.ServiceStateTable(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.ServiceStateTable(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.ServiceStateTable getReal() {
+            return (android.provider.Telephony.ServiceStateTable) real;
         }
 
         public android.provider.Telephony.ServiceStateTable unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.net.Uri getUriForSubscriptionId(int arg0) {
@@ -459,40 +578,54 @@ public final class Telephony {
 
     }
     public static final class Sms {
-        private final android.provider.Telephony.Sms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Sms(android.provider.Telephony.Sms real) {
+        private final java.lang.Object real;
+
+        private Sms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms wrap(android.provider.Telephony.Sms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.Sms getReal() {
+            return (android.provider.Telephony.Sms) real;
         }
 
         public android.provider.Telephony.Sms unwrap() {
-            return real;
+            return getReal();
         }
 
         public static java.lang.String getDefaultSmsPackage(com.micklab.dcg.wrapper.android.content.Context arg0) {
-            return android.provider.Telephony.Sms.getDefaultSmsPackage(arg0 == null ? null : arg0.unwrap());
+            return android.provider.Telephony.Sms.getDefaultSmsPackage(arg0 == null ? null : arg0.getReal());
         }
 
         public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.CONTENT_URI);
         public static final java.lang.String DEFAULT_SORT_ORDER = android.provider.Telephony.Sms.DEFAULT_SORT_ORDER;
 
         public static final class Conversations {
-            private final android.provider.Telephony.Sms.Conversations real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Conversations(android.provider.Telephony.Sms.Conversations real) {
+            private final java.lang.Object real;
+
+            private Conversations(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Conversations wrap(android.provider.Telephony.Sms.Conversations real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Conversations(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Conversations(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Conversations getReal() {
+                return (android.provider.Telephony.Sms.Conversations) real;
             }
 
             public android.provider.Telephony.Sms.Conversations unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.Conversations.CONTENT_URI);
@@ -502,18 +635,25 @@ public final class Telephony {
 
         }
         public static final class Draft {
-            private final android.provider.Telephony.Sms.Draft real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Draft(android.provider.Telephony.Sms.Draft real) {
+            private final java.lang.Object real;
+
+            private Draft(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Draft wrap(android.provider.Telephony.Sms.Draft real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Draft(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Draft(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Draft getReal() {
+                return (android.provider.Telephony.Sms.Draft) real;
             }
 
             public android.provider.Telephony.Sms.Draft unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.Draft.CONTENT_URI);
@@ -521,18 +661,25 @@ public final class Telephony {
 
         }
         public static final class Inbox {
-            private final android.provider.Telephony.Sms.Inbox real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Inbox(android.provider.Telephony.Sms.Inbox real) {
+            private final java.lang.Object real;
+
+            private Inbox(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Inbox wrap(android.provider.Telephony.Sms.Inbox real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Inbox(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Inbox(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Inbox getReal() {
+                return (android.provider.Telephony.Sms.Inbox) real;
             }
 
             public android.provider.Telephony.Sms.Inbox unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.Inbox.CONTENT_URI);
@@ -540,22 +687,29 @@ public final class Telephony {
 
         }
         public static final class Intents {
-            private final android.provider.Telephony.Sms.Intents real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Intents(android.provider.Telephony.Sms.Intents real) {
+            private final java.lang.Object real;
+
+            private Intents(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Intents wrap(android.provider.Telephony.Sms.Intents real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Intents(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Intents(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Intents getReal() {
+                return (android.provider.Telephony.Sms.Intents) real;
             }
 
             public android.provider.Telephony.Sms.Intents unwrap() {
-                return real;
+                return getReal();
             }
 
             public static android.telephony.SmsMessage[] getMessagesFromIntent(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-                return android.provider.Telephony.Sms.Intents.getMessagesFromIntent(arg0 == null ? null : arg0.unwrap());
+                return android.provider.Telephony.Sms.Intents.getMessagesFromIntent(arg0 == null ? null : arg0.getReal());
             }
 
             public static final java.lang.String ACTION_CHANGE_DEFAULT = android.provider.Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT;
@@ -587,18 +741,25 @@ public final class Telephony {
 
         }
         public static final class Outbox {
-            private final android.provider.Telephony.Sms.Outbox real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Outbox(android.provider.Telephony.Sms.Outbox real) {
+            private final java.lang.Object real;
+
+            private Outbox(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Outbox wrap(android.provider.Telephony.Sms.Outbox real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Outbox(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Outbox(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Outbox getReal() {
+                return (android.provider.Telephony.Sms.Outbox) real;
             }
 
             public android.provider.Telephony.Sms.Outbox unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.Outbox.CONTENT_URI);
@@ -606,18 +767,25 @@ public final class Telephony {
 
         }
         public static final class Sent {
-            private final android.provider.Telephony.Sms.Sent real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Sent(android.provider.Telephony.Sms.Sent real) {
+            private final java.lang.Object real;
+
+            private Sent(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Sent wrap(android.provider.Telephony.Sms.Sent real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Sent(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Sms.Sent(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.Telephony.Sms.Sent getReal() {
+                return (android.provider.Telephony.Sms.Sent) real;
             }
 
             public android.provider.Telephony.Sms.Sent unwrap() {
-                return real;
+                return getReal();
             }
 
             public static final com.micklab.dcg.wrapper.android.net.Uri CONTENT_URI = com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.Telephony.Sms.Sent.CONTENT_URI);
@@ -626,18 +794,25 @@ public final class Telephony {
         }
     }
     public static final class TextBasedSmsColumns {
-        private final android.provider.Telephony.TextBasedSmsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TextBasedSmsColumns(android.provider.Telephony.TextBasedSmsColumns real) {
+        private final java.lang.Object real;
+
+        private TextBasedSmsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.TextBasedSmsColumns wrap(android.provider.Telephony.TextBasedSmsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.TextBasedSmsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.TextBasedSmsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.TextBasedSmsColumns getReal() {
+            return (android.provider.Telephony.TextBasedSmsColumns) real;
         }
 
         public android.provider.Telephony.TextBasedSmsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ADDRESS = android.provider.Telephony.TextBasedSmsColumns.ADDRESS;
@@ -672,22 +847,29 @@ public final class Telephony {
 
     }
     public static final class Threads {
-        private final android.provider.Telephony.Threads real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Threads(android.provider.Telephony.Threads real) {
+        private final java.lang.Object real;
+
+        private Threads(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.Threads wrap(android.provider.Telephony.Threads real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Threads(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.Threads(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.Threads getReal() {
+            return (android.provider.Telephony.Threads) real;
         }
 
         public android.provider.Telephony.Threads unwrap() {
-            return real;
+            return getReal();
         }
 
         public static long getOrCreateThreadId(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-            return android.provider.Telephony.Threads.getOrCreateThreadId(arg0 == null ? null : arg0.unwrap(), arg1);
+            return android.provider.Telephony.Threads.getOrCreateThreadId(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final int BROADCAST_THREAD = android.provider.Telephony.Threads.BROADCAST_THREAD;
@@ -697,18 +879,25 @@ public final class Telephony {
 
     }
     public static final class ThreadsColumns {
-        private final android.provider.Telephony.ThreadsColumns real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ThreadsColumns(android.provider.Telephony.ThreadsColumns real) {
+        private final java.lang.Object real;
+
+        private ThreadsColumns(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.provider.Telephony.ThreadsColumns wrap(android.provider.Telephony.ThreadsColumns real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.ThreadsColumns(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.provider.Telephony.ThreadsColumns(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.provider.Telephony.ThreadsColumns getReal() {
+            return (android.provider.Telephony.ThreadsColumns) real;
         }
 
         public android.provider.Telephony.ThreadsColumns unwrap() {
-            return real;
+            return getReal();
         }
 
         public static final java.lang.String ARCHIVED = android.provider.Telephony.ThreadsColumns.ARCHIVED;

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class GLES32 {
-    private final android.opengl.GLES32 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public GLES32(android.opengl.GLES32 real) {
+    private final java.lang.Object real;
+
+    private GLES32(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.GLES32 wrap(android.opengl.GLES32 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES32(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES32(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.GLES32 getReal() {
+        return (android.opengl.GLES32) real;
     }
 
     public android.opengl.GLES32 unwrap() {
-        return real;
+        return getReal();
     }
 
     public static void glBlendBarrier() {
@@ -45,7 +52,7 @@ public final class GLES32 {
     }
 
     public static void glDebugMessageCallback(com.micklab.dcg.wrapper.android.opengl.GLES32.DebugProc arg0) {
-        android.opengl.GLES32.glDebugMessageCallback(arg0 == null ? null : arg0.unwrap());
+        android.opengl.GLES32.glDebugMessageCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public static void glDebugMessageControl(int arg0, int arg1, int arg2, int arg3, java.nio.IntBuffer arg4, boolean arg5) {
@@ -464,22 +471,29 @@ public final class GLES32 {
     public static final int GL_VERTEX_ARRAY = android.opengl.GLES32.GL_VERTEX_ARRAY;
 
     public static final class DebugProc {
-        private final android.opengl.GLES32.DebugProc real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DebugProc(android.opengl.GLES32.DebugProc real) {
+        private final java.lang.Object real;
+
+        private DebugProc(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.opengl.GLES32.DebugProc wrap(android.opengl.GLES32.DebugProc real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES32.DebugProc(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.GLES32.DebugProc(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.opengl.GLES32.DebugProc getReal() {
+            return (android.opengl.GLES32.DebugProc) real;
         }
 
         public android.opengl.GLES32.DebugProc unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onMessage(int arg0, int arg1, int arg2, int arg3, java.lang.String arg4) {
-            real.onMessage(arg0, arg1, arg2, arg3, arg4);
+            ((android.opengl.GLES32.DebugProc) real).onMessage(arg0, arg1, arg2, arg3, arg4);
         }
 
     }

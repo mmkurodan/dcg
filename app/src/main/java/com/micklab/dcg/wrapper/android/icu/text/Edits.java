@@ -2,129 +2,143 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class Edits {
-    private final android.icu.text.Edits real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Edits(android.icu.text.Edits real) {
+    private final java.lang.Object real;
+
+    private Edits(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.Edits wrap(android.icu.text.Edits real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Edits(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Edits(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.Edits getReal() {
+        return (android.icu.text.Edits) real;
     }
 
     public android.icu.text.Edits unwrap() {
-        return real;
+        return getReal();
     }
 
     public Edits() {
-        this(new android.icu.text.Edits());
+        this(new android.icu.text.Edits(), (__DcgwBridgeToken) null);
     }
 
     public void addReplace(int arg0, int arg1) {
-        real.addReplace(arg0, arg1);
+        ((android.icu.text.Edits) real).addReplace(arg0, arg1);
     }
 
     public void addUnchanged(int arg0) {
-        real.addUnchanged(arg0);
+        ((android.icu.text.Edits) real).addUnchanged(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator getCoarseChangesIterator() {
-        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(real.getCoarseChangesIterator());
+        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(((android.icu.text.Edits) real).getCoarseChangesIterator());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator getCoarseIterator() {
-        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(real.getCoarseIterator());
+        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(((android.icu.text.Edits) real).getCoarseIterator());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator getFineChangesIterator() {
-        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(real.getFineChangesIterator());
+        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(((android.icu.text.Edits) real).getFineChangesIterator());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator getFineIterator() {
-        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(real.getFineIterator());
+        return com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator.wrap(((android.icu.text.Edits) real).getFineIterator());
     }
 
     public boolean hasChanges() {
-        return real.hasChanges();
+        return ((android.icu.text.Edits) real).hasChanges();
     }
 
     public int lengthDelta() {
-        return real.lengthDelta();
+        return ((android.icu.text.Edits) real).lengthDelta();
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.Edits mergeAndAppend(com.micklab.dcg.wrapper.android.icu.text.Edits arg0, com.micklab.dcg.wrapper.android.icu.text.Edits arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.Edits.wrap(real.mergeAndAppend(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.text.Edits.wrap(((android.icu.text.Edits) real).mergeAndAppend(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public int numberOfChanges() {
-        return real.numberOfChanges();
+        return ((android.icu.text.Edits) real).numberOfChanges();
     }
 
     public void reset() {
-        real.reset();
+        ((android.icu.text.Edits) real).reset();
     }
 
     public static final class Iterator {
-        private final android.icu.text.Edits.Iterator real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Iterator(android.icu.text.Edits.Iterator real) {
+        private final java.lang.Object real;
+
+        private Iterator(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator wrap(android.icu.text.Edits.Iterator real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.Edits.Iterator(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.Edits.Iterator getReal() {
+            return (android.icu.text.Edits.Iterator) real;
         }
 
         public android.icu.text.Edits.Iterator unwrap() {
-            return real;
+            return getReal();
         }
 
         public int destinationIndex() {
-            return real.destinationIndex();
+            return ((android.icu.text.Edits.Iterator) real).destinationIndex();
         }
 
         public int destinationIndexFromSourceIndex(int arg0) {
-            return real.destinationIndexFromSourceIndex(arg0);
+            return ((android.icu.text.Edits.Iterator) real).destinationIndexFromSourceIndex(arg0);
         }
 
         public boolean findDestinationIndex(int arg0) {
-            return real.findDestinationIndex(arg0);
+            return ((android.icu.text.Edits.Iterator) real).findDestinationIndex(arg0);
         }
 
         public boolean findSourceIndex(int arg0) {
-            return real.findSourceIndex(arg0);
+            return ((android.icu.text.Edits.Iterator) real).findSourceIndex(arg0);
         }
 
         public boolean hasChange() {
-            return real.hasChange();
+            return ((android.icu.text.Edits.Iterator) real).hasChange();
         }
 
         public int newLength() {
-            return real.newLength();
+            return ((android.icu.text.Edits.Iterator) real).newLength();
         }
 
         public boolean next() {
-            return real.next();
+            return ((android.icu.text.Edits.Iterator) real).next();
         }
 
         public int oldLength() {
-            return real.oldLength();
+            return ((android.icu.text.Edits.Iterator) real).oldLength();
         }
 
         public int replacementIndex() {
-            return real.replacementIndex();
+            return ((android.icu.text.Edits.Iterator) real).replacementIndex();
         }
 
         public int sourceIndex() {
-            return real.sourceIndex();
+            return ((android.icu.text.Edits.Iterator) real).sourceIndex();
         }
 
         public int sourceIndexFromDestinationIndex(int arg0) {
-            return real.sourceIndexFromDestinationIndex(arg0);
+            return ((android.icu.text.Edits.Iterator) real).sourceIndexFromDestinationIndex(arg0);
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.icu.text.Edits.Iterator) real).toString();
         }
 
     }

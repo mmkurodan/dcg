@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.media.audiofx;
 
 public final class Visualizer {
-    private final android.media.audiofx.Visualizer real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Visualizer(android.media.audiofx.Visualizer real) {
+    private final java.lang.Object real;
+
+    private Visualizer(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.audiofx.Visualizer wrap(android.media.audiofx.Visualizer real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.audiofx.Visualizer getReal() {
+        return (android.media.audiofx.Visualizer) real;
     }
 
     public android.media.audiofx.Visualizer unwrap() {
-        return real;
+        return getReal();
     }
 
     public Visualizer(int arg0) throws java.lang.RuntimeException, java.lang.UnsupportedOperationException {
-        this(new android.media.audiofx.Visualizer(arg0));
+        this(new android.media.audiofx.Visualizer(arg0), (__DcgwBridgeToken) null);
     }
 
     public int getCaptureSize() throws java.lang.IllegalStateException {
-        return real.getCaptureSize();
+        return ((android.media.audiofx.Visualizer) real).getCaptureSize();
     }
 
     public static int[] getCaptureSizeRange() {
@@ -29,11 +36,11 @@ public final class Visualizer {
     }
 
     public boolean getEnabled() {
-        return real.getEnabled();
+        return ((android.media.audiofx.Visualizer) real).getEnabled();
     }
 
     public int getFft(byte[] arg0) throws java.lang.IllegalStateException {
-        return real.getFft(arg0);
+        return ((android.media.audiofx.Visualizer) real).getFft(arg0);
     }
 
     public static int getMaxCaptureRate() {
@@ -41,47 +48,47 @@ public final class Visualizer {
     }
 
     public int getMeasurementMode() throws java.lang.IllegalStateException {
-        return real.getMeasurementMode();
+        return ((android.media.audiofx.Visualizer) real).getMeasurementMode();
     }
 
     public int getMeasurementPeakRms(com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.MeasurementPeakRms arg0) {
-        return real.getMeasurementPeakRms(arg0 == null ? null : arg0.unwrap());
+        return ((android.media.audiofx.Visualizer) real).getMeasurementPeakRms(arg0 == null ? null : arg0.getReal());
     }
 
     public int getSamplingRate() throws java.lang.IllegalStateException {
-        return real.getSamplingRate();
+        return ((android.media.audiofx.Visualizer) real).getSamplingRate();
     }
 
     public int getScalingMode() throws java.lang.IllegalStateException {
-        return real.getScalingMode();
+        return ((android.media.audiofx.Visualizer) real).getScalingMode();
     }
 
     public int getWaveForm(byte[] arg0) throws java.lang.IllegalStateException {
-        return real.getWaveForm(arg0);
+        return ((android.media.audiofx.Visualizer) real).getWaveForm(arg0);
     }
 
     public void release() {
-        real.release();
+        ((android.media.audiofx.Visualizer) real).release();
     }
 
     public int setCaptureSize(int arg0) throws java.lang.IllegalStateException {
-        return real.setCaptureSize(arg0);
+        return ((android.media.audiofx.Visualizer) real).setCaptureSize(arg0);
     }
 
     public int setDataCaptureListener(com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.OnDataCaptureListener arg0, int arg1, boolean arg2, boolean arg3) {
-        return real.setDataCaptureListener(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.media.audiofx.Visualizer) real).setDataCaptureListener(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public int setEnabled(boolean arg0) throws java.lang.IllegalStateException {
-        return real.setEnabled(arg0);
+        return ((android.media.audiofx.Visualizer) real).setEnabled(arg0);
     }
 
     public int setMeasurementMode(int arg0) throws java.lang.IllegalStateException {
-        return real.setMeasurementMode(arg0);
+        return ((android.media.audiofx.Visualizer) real).setMeasurementMode(arg0);
     }
 
     public int setScalingMode(int arg0) throws java.lang.IllegalStateException {
-        return real.setScalingMode(arg0);
+        return ((android.media.audiofx.Visualizer) real).setScalingMode(arg0);
     }
 
     public static final int ALREADY_EXISTS = android.media.audiofx.Visualizer.ALREADY_EXISTS;
@@ -101,47 +108,61 @@ public final class Visualizer {
     public static final int SUCCESS = android.media.audiofx.Visualizer.SUCCESS;
 
     public static final class MeasurementPeakRms {
-        private final android.media.audiofx.Visualizer.MeasurementPeakRms real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MeasurementPeakRms(android.media.audiofx.Visualizer.MeasurementPeakRms real) {
+        private final java.lang.Object real;
+
+        private MeasurementPeakRms(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.MeasurementPeakRms wrap(android.media.audiofx.Visualizer.MeasurementPeakRms real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.MeasurementPeakRms(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.MeasurementPeakRms(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.Visualizer.MeasurementPeakRms getReal() {
+            return (android.media.audiofx.Visualizer.MeasurementPeakRms) real;
         }
 
         public android.media.audiofx.Visualizer.MeasurementPeakRms unwrap() {
-            return real;
+            return getReal();
         }
 
         public MeasurementPeakRms() {
-            this(new android.media.audiofx.Visualizer.MeasurementPeakRms());
+            this(new android.media.audiofx.Visualizer.MeasurementPeakRms(), (__DcgwBridgeToken) null);
         }
 
 
     }
     public static final class OnDataCaptureListener {
-        private final android.media.audiofx.Visualizer.OnDataCaptureListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnDataCaptureListener(android.media.audiofx.Visualizer.OnDataCaptureListener real) {
+        private final java.lang.Object real;
+
+        private OnDataCaptureListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.OnDataCaptureListener wrap(android.media.audiofx.Visualizer.OnDataCaptureListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.OnDataCaptureListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.audiofx.Visualizer.OnDataCaptureListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.audiofx.Visualizer.OnDataCaptureListener getReal() {
+            return (android.media.audiofx.Visualizer.OnDataCaptureListener) real;
         }
 
         public android.media.audiofx.Visualizer.OnDataCaptureListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onFftDataCapture(com.micklab.dcg.wrapper.android.media.audiofx.Visualizer arg0, byte[] arg1, int arg2) {
-            real.onFftDataCapture(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            ((android.media.audiofx.Visualizer.OnDataCaptureListener) real).onFftDataCapture(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
         public void onWaveFormDataCapture(com.micklab.dcg.wrapper.android.media.audiofx.Visualizer arg0, byte[] arg1, int arg2) {
-            real.onWaveFormDataCapture(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+            ((android.media.audiofx.Visualizer.OnDataCaptureListener) real).onWaveFormDataCapture(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
 
     }

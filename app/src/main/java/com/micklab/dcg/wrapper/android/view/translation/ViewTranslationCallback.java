@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.view.translation;
 
 public final class ViewTranslationCallback {
-    private final android.view.translation.ViewTranslationCallback real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ViewTranslationCallback(android.view.translation.ViewTranslationCallback real) {
+    private final java.lang.Object real;
+
+    private ViewTranslationCallback(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.translation.ViewTranslationCallback wrap(android.view.translation.ViewTranslationCallback real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.ViewTranslationCallback(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.translation.ViewTranslationCallback(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.translation.ViewTranslationCallback getReal() {
+        return (android.view.translation.ViewTranslationCallback) real;
     }
 
     public android.view.translation.ViewTranslationCallback unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean onClearTranslation(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.onClearTranslation(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.translation.ViewTranslationCallback) real).onClearTranslation(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onHideTranslation(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.onHideTranslation(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.translation.ViewTranslationCallback) real).onHideTranslation(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onShowTranslation(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return real.onShowTranslation(arg0 == null ? null : arg0.unwrap());
+        return ((android.view.translation.ViewTranslationCallback) real).onShowTranslation(arg0 == null ? null : arg0.getReal());
     }
 
 }

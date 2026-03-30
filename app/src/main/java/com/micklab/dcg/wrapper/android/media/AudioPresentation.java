@@ -2,66 +2,73 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class AudioPresentation {
-    private final android.media.AudioPresentation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AudioPresentation(android.media.AudioPresentation real) {
+    private final java.lang.Object real;
+
+    private AudioPresentation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.AudioPresentation wrap(android.media.AudioPresentation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioPresentation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioPresentation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.AudioPresentation getReal() {
+        return (android.media.AudioPresentation) real;
     }
 
     public android.media.AudioPresentation unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.media.AudioPresentation) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.media.AudioPresentation) real).equals(arg0);
     }
 
     public java.util.Locale getLocale() {
-        return real.getLocale();
+        return ((android.media.AudioPresentation) real).getLocale();
     }
 
     public int getMasteringIndication() {
-        return real.getMasteringIndication();
+        return ((android.media.AudioPresentation) real).getMasteringIndication();
     }
 
     public int getPresentationId() {
-        return real.getPresentationId();
+        return ((android.media.AudioPresentation) real).getPresentationId();
     }
 
     public int getProgramId() {
-        return real.getProgramId();
+        return ((android.media.AudioPresentation) real).getProgramId();
     }
 
     public boolean hasAudioDescription() {
-        return real.hasAudioDescription();
+        return ((android.media.AudioPresentation) real).hasAudioDescription();
     }
 
     public boolean hasDialogueEnhancement() {
-        return real.hasDialogueEnhancement();
+        return ((android.media.AudioPresentation) real).hasDialogueEnhancement();
     }
 
     public boolean hasSpokenSubtitles() {
-        return real.hasSpokenSubtitles();
+        return ((android.media.AudioPresentation) real).hasSpokenSubtitles();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.media.AudioPresentation) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.media.AudioPresentation) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.media.AudioPresentation) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CONTENT_COMMENTARY = android.media.AudioPresentation.CONTENT_COMMENTARY;
@@ -82,50 +89,57 @@ public final class AudioPresentation {
     public static final int PROGRAM_ID_UNKNOWN = android.media.AudioPresentation.PROGRAM_ID_UNKNOWN;
 
     public static final class Builder {
-        private final android.media.AudioPresentation.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.media.AudioPresentation.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder wrap(android.media.AudioPresentation.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.AudioPresentation.Builder getReal() {
+            return (android.media.AudioPresentation.Builder) real;
         }
 
         public android.media.AudioPresentation.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(int arg0) {
-            this(new android.media.AudioPresentation.Builder(arg0));
+            this(new android.media.AudioPresentation.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation build() {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.wrap(((android.media.AudioPresentation.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setHasAudioDescription(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setHasAudioDescription(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setHasAudioDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setHasDialogueEnhancement(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setHasDialogueEnhancement(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setHasDialogueEnhancement(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setHasSpokenSubtitles(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setHasSpokenSubtitles(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setHasSpokenSubtitles(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setLocale(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setLocale(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setMasteringIndication(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setMasteringIndication(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setMasteringIndication(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder setProgramId(int arg0) {
-            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(real.setProgramId(arg0));
+            return com.micklab.dcg.wrapper.android.media.AudioPresentation.Builder.wrap(((android.media.AudioPresentation.Builder) real).setProgramId(arg0));
         }
 
     }

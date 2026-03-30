@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class IkeIpv4AddrIdentification {
-    private final android.net.ipsec.ike.IkeIpv4AddrIdentification real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public IkeIpv4AddrIdentification(android.net.ipsec.ike.IkeIpv4AddrIdentification real) {
+    private final java.lang.Object real;
+
+    private IkeIpv4AddrIdentification(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeIpv4AddrIdentification wrap(android.net.ipsec.ike.IkeIpv4AddrIdentification real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeIpv4AddrIdentification(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeIpv4AddrIdentification(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.IkeIpv4AddrIdentification getReal() {
+        return (android.net.ipsec.ike.IkeIpv4AddrIdentification) real;
     }
 
     public android.net.ipsec.ike.IkeIpv4AddrIdentification unwrap() {
-        return real;
+        return getReal();
     }
 
     public IkeIpv4AddrIdentification(java.net.Inet4Address arg0) {

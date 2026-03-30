@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class ExternalStorageStats {
-    private final android.app.usage.ExternalStorageStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ExternalStorageStats(android.app.usage.ExternalStorageStats real) {
+    private final java.lang.Object real;
+
+    private ExternalStorageStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.ExternalStorageStats wrap(android.app.usage.ExternalStorageStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.ExternalStorageStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.ExternalStorageStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.ExternalStorageStats getReal() {
+        return (android.app.usage.ExternalStorageStats) real;
     }
 
     public android.app.usage.ExternalStorageStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.usage.ExternalStorageStats) real).describeContents();
     }
 
     public long getAppBytes() {
-        return real.getAppBytes();
+        return ((android.app.usage.ExternalStorageStats) real).getAppBytes();
     }
 
     public long getAudioBytes() {
-        return real.getAudioBytes();
+        return ((android.app.usage.ExternalStorageStats) real).getAudioBytes();
     }
 
     public long getImageBytes() {
-        return real.getImageBytes();
+        return ((android.app.usage.ExternalStorageStats) real).getImageBytes();
     }
 
     public long getTotalBytes() {
-        return real.getTotalBytes();
+        return ((android.app.usage.ExternalStorageStats) real).getTotalBytes();
     }
 
     public long getVideoBytes() {
-        return real.getVideoBytes();
+        return ((android.app.usage.ExternalStorageStats) real).getVideoBytes();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.usage.ExternalStorageStats) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

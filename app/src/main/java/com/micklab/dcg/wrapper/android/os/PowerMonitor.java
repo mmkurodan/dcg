@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class PowerMonitor {
-    private final android.os.PowerMonitor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PowerMonitor(android.os.PowerMonitor real) {
+    private final java.lang.Object real;
+
+    private PowerMonitor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.PowerMonitor wrap(android.os.PowerMonitor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerMonitor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerMonitor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.PowerMonitor getReal() {
+        return (android.os.PowerMonitor) real;
     }
 
     public android.os.PowerMonitor unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

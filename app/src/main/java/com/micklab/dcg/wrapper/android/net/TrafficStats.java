@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class TrafficStats {
-    private final android.net.TrafficStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TrafficStats(android.net.TrafficStats real) {
+    private final java.lang.Object real;
+
+    private TrafficStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.TrafficStats wrap(android.net.TrafficStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.TrafficStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.TrafficStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.TrafficStats getReal() {
+        return (android.net.TrafficStats) real;
     }
 
     public android.net.TrafficStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public TrafficStats() {

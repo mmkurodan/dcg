@@ -2,138 +2,145 @@
 package com.micklab.dcg.wrapper.android.content;
 
 public final class Context {
-    private final android.content.Context real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Context(android.content.Context real) {
+    private final java.lang.Object real;
+
+    private Context(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.content.Context wrap(android.content.Context real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Context(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.content.Context(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.content.Context getReal() {
+        return (android.content.Context) real;
     }
 
     public android.content.Context unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean bindIsolatedService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg1, java.lang.String arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.content.ServiceConnection arg4) {
-        return real.bindIsolatedService(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        return ((android.content.Context) real).bindIsolatedService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public boolean bindIsolatedService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.lang.String arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.content.ServiceConnection arg4) {
-        return real.bindIsolatedService(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4 == null ? null : arg4.unwrap());
+        return ((android.content.Context) real).bindIsolatedService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2) {
-        return real.bindService(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2) {
-        return real.bindService(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap());
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
-        return real.bindService(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap());
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
-        return real.bindService(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
-        return real.bindServiceAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap());
+        return ((android.content.Context) real).bindServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
-        return real.bindServiceAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap());
+        return ((android.content.Context) real).bindServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public int checkCallingOrSelfPermission(java.lang.String arg0) {
-        return real.checkCallingOrSelfPermission(arg0);
+        return ((android.content.Context) real).checkCallingOrSelfPermission(arg0);
     }
 
     public int checkCallingOrSelfUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        return real.checkCallingOrSelfUriPermission(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.content.Context) real).checkCallingOrSelfUriPermission(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public int checkCallingPermission(java.lang.String arg0) {
-        return real.checkCallingPermission(arg0);
+        return ((android.content.Context) real).checkCallingPermission(arg0);
     }
 
     public int checkCallingUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        return real.checkCallingUriPermission(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.content.Context) real).checkCallingUriPermission(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public int checkContentUriPermissionFull(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, int arg2, int arg3) {
-        return real.checkContentUriPermissionFull(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.content.Context) real).checkContentUriPermissionFull(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public int checkPermission(java.lang.String arg0, int arg1, int arg2) {
-        return real.checkPermission(arg0, arg1, arg2);
+        return ((android.content.Context) real).checkPermission(arg0, arg1, arg2);
     }
 
     public int checkSelfPermission(java.lang.String arg0) {
-        return real.checkSelfPermission(arg0);
+        return ((android.content.Context) real).checkSelfPermission(arg0);
     }
 
     public int checkUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, int arg2, int arg3) {
-        return real.checkUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3);
+        return ((android.content.Context) real).checkUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
     public int checkUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1, java.lang.String arg2, int arg3, int arg4, int arg5) {
-        return real.checkUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5);
+        return ((android.content.Context) real).checkUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5);
     }
 
     public void clearWallpaper() throws java.io.IOException {
-        real.clearWallpaper();
+        ((android.content.Context) real).clearWallpaper();
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createAttributionContext(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createAttributionContext(arg0));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createAttributionContext(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createConfigurationContext(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createConfigurationContext(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createConfigurationContext(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createContext(com.micklab.dcg.wrapper.android.content.ContextParams arg0) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createContext(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createContext(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createContextForSplit(java.lang.String arg0) throws android.content.pm.PackageManager.NameNotFoundException {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createContextForSplit(arg0));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createContextForSplit(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createDeviceContext(int arg0) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createDeviceContext(arg0));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createDeviceContext(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createDeviceProtectedStorageContext() {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createDeviceProtectedStorageContext());
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createDeviceProtectedStorageContext());
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createDisplayContext(com.micklab.dcg.wrapper.android.view.Display arg0) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createDisplayContext(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createDisplayContext(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createPackageContext(java.lang.String arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createPackageContext(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createPackageContext(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createWindowContext(int arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createWindowContext(arg0, arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createWindowContext(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Context createWindowContext(com.micklab.dcg.wrapper.android.view.Display arg0, int arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.createWindowContext(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).createWindowContext(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public java.lang.String[] databaseList() {
-        return real.databaseList();
+        return ((android.content.Context) real).databaseList();
     }
 
     public boolean deleteDatabase(java.lang.String arg0) {
-        return real.deleteDatabase(arg0);
+        return ((android.content.Context) real).deleteDatabase(arg0);
     }
 
     public boolean deleteFile(java.lang.String arg0) {
@@ -141,35 +148,35 @@ public final class Context {
     }
 
     public boolean deleteSharedPreferences(java.lang.String arg0) {
-        return real.deleteSharedPreferences(arg0);
+        return ((android.content.Context) real).deleteSharedPreferences(arg0);
     }
 
     public void enforceCallingOrSelfPermission(java.lang.String arg0, java.lang.String arg1) {
-        real.enforceCallingOrSelfPermission(arg0, arg1);
+        ((android.content.Context) real).enforceCallingOrSelfPermission(arg0, arg1);
     }
 
     public void enforceCallingOrSelfUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, java.lang.String arg2) {
-        real.enforceCallingOrSelfUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.content.Context) real).enforceCallingOrSelfUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void enforceCallingPermission(java.lang.String arg0, java.lang.String arg1) {
-        real.enforceCallingPermission(arg0, arg1);
+        ((android.content.Context) real).enforceCallingPermission(arg0, arg1);
     }
 
     public void enforceCallingUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, java.lang.String arg2) {
-        real.enforceCallingUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.content.Context) real).enforceCallingUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public void enforcePermission(java.lang.String arg0, int arg1, int arg2, java.lang.String arg3) {
-        real.enforcePermission(arg0, arg1, arg2, arg3);
+        ((android.content.Context) real).enforcePermission(arg0, arg1, arg2, arg3);
     }
 
     public void enforceUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1, int arg2, int arg3, java.lang.String arg4) {
-        real.enforceUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4);
+        ((android.content.Context) real).enforceUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public void enforceUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1, java.lang.String arg2, int arg3, int arg4, int arg5, java.lang.String arg6) {
-        real.enforceUriPermission(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3, arg4, arg5, arg6);
+        ((android.content.Context) real).enforceUriPermission(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
     public java.lang.String[] fileList() {
@@ -177,27 +184,27 @@ public final class Context {
     }
 
     public com.micklab.dcg.wrapper.android.content.Context getApplicationContext() {
-        return com.micklab.dcg.wrapper.android.content.Context.wrap(real.getApplicationContext());
+        return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.Context) real).getApplicationContext());
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo getApplicationInfo() {
-        return com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo.wrap(real.getApplicationInfo());
+        return com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo.wrap(((android.content.Context) real).getApplicationInfo());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.AssetManager getAssets() {
-        return com.micklab.dcg.wrapper.android.content.res.AssetManager.wrap(real.getAssets());
+        return com.micklab.dcg.wrapper.android.content.res.AssetManager.wrap(((android.content.Context) real).getAssets());
     }
 
     public com.micklab.dcg.wrapper.android.content.AttributionSource getAttributionSource() {
-        return com.micklab.dcg.wrapper.android.content.AttributionSource.wrap(real.getAttributionSource());
+        return com.micklab.dcg.wrapper.android.content.AttributionSource.wrap(((android.content.Context) real).getAttributionSource());
     }
 
     public java.lang.String getAttributionTag() {
-        return real.getAttributionTag();
+        return ((android.content.Context) real).getAttributionTag();
     }
 
     public java.io.File getCacheDir() {
-        return real.getCacheDir();
+        return ((android.content.Context) real).getCacheDir();
     }
 
     public java.lang.ClassLoader getClassLoader() {
@@ -205,51 +212,51 @@ public final class Context {
     }
 
     public java.io.File getCodeCacheDir() {
-        return real.getCodeCacheDir();
+        return ((android.content.Context) real).getCodeCacheDir();
     }
 
     public int getColor(int arg0) {
-        return real.getColor(arg0);
+        return ((android.content.Context) real).getColor(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getColorStateList(int arg0) {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(real.getColorStateList(arg0));
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.content.Context) real).getColorStateList(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.ContentResolver getContentResolver() {
-        return com.micklab.dcg.wrapper.android.content.ContentResolver.wrap(real.getContentResolver());
+        return com.micklab.dcg.wrapper.android.content.ContentResolver.wrap(((android.content.Context) real).getContentResolver());
     }
 
     public java.io.File getDataDir() {
-        return real.getDataDir();
+        return ((android.content.Context) real).getDataDir();
     }
 
     public java.io.File getDatabasePath(java.lang.String arg0) {
-        return real.getDatabasePath(arg0);
+        return ((android.content.Context) real).getDatabasePath(arg0);
     }
 
     public int getDeviceId() {
-        return real.getDeviceId();
+        return ((android.content.Context) real).getDeviceId();
     }
 
     public java.io.File getDir(java.lang.String arg0, int arg1) {
-        return real.getDir(arg0, arg1);
+        return ((android.content.Context) real).getDir(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.view.Display getDisplay() {
-        return com.micklab.dcg.wrapper.android.view.Display.wrap(real.getDisplay());
+        return com.micklab.dcg.wrapper.android.view.Display.wrap(((android.content.Context) real).getDisplay());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawable(int arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getDrawable(arg0));
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.Context) real).getDrawable(arg0));
     }
 
     public java.io.File getExternalCacheDir() {
-        return real.getExternalCacheDir();
+        return ((android.content.Context) real).getExternalCacheDir();
     }
 
     public java.io.File[] getExternalCacheDirs() {
-        return real.getExternalCacheDirs();
+        return ((android.content.Context) real).getExternalCacheDirs();
     }
 
     public java.io.File getExternalFilesDir(java.lang.String arg0) {
@@ -261,7 +268,7 @@ public final class Context {
     }
 
     public java.io.File[] getExternalMediaDirs() {
-        return real.getExternalMediaDirs();
+        return ((android.content.Context) real).getExternalMediaDirs();
     }
 
     public java.io.File getFileStreamPath(java.lang.String arg0) {
@@ -273,11 +280,11 @@ public final class Context {
     }
 
     public java.util.concurrent.Executor getMainExecutor() {
-        return real.getMainExecutor();
+        return ((android.content.Context) real).getMainExecutor();
     }
 
     public com.micklab.dcg.wrapper.android.os.Looper getMainLooper() {
-        return com.micklab.dcg.wrapper.android.os.Looper.wrap(real.getMainLooper());
+        return com.micklab.dcg.wrapper.android.os.Looper.wrap(((android.content.Context) real).getMainLooper());
     }
 
     public java.io.File getNoBackupFilesDir() {
@@ -285,115 +292,115 @@ public final class Context {
     }
 
     public java.io.File getObbDir() {
-        return real.getObbDir();
+        return ((android.content.Context) real).getObbDir();
     }
 
     public java.io.File[] getObbDirs() {
-        return real.getObbDirs();
+        return ((android.content.Context) real).getObbDirs();
     }
 
     public java.lang.String getOpPackageName() {
-        return real.getOpPackageName();
+        return ((android.content.Context) real).getOpPackageName();
     }
 
     public java.lang.String getPackageCodePath() {
-        return real.getPackageCodePath();
+        return ((android.content.Context) real).getPackageCodePath();
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.PackageManager getPackageManager() {
-        return com.micklab.dcg.wrapper.android.content.pm.PackageManager.wrap(real.getPackageManager());
+        return com.micklab.dcg.wrapper.android.content.pm.PackageManager.wrap(((android.content.Context) real).getPackageManager());
     }
 
     public java.lang.String getPackageName() {
-        return real.getPackageName();
+        return ((android.content.Context) real).getPackageName();
     }
 
     public java.lang.String getPackageResourcePath() {
-        return real.getPackageResourcePath();
+        return ((android.content.Context) real).getPackageResourcePath();
     }
 
     public com.micklab.dcg.wrapper.android.content.ContextParams getParams() {
-        return com.micklab.dcg.wrapper.android.content.ContextParams.wrap(real.getParams());
+        return com.micklab.dcg.wrapper.android.content.ContextParams.wrap(((android.content.Context) real).getParams());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.Resources getResources() {
-        return com.micklab.dcg.wrapper.android.content.res.Resources.wrap(real.getResources());
+        return com.micklab.dcg.wrapper.android.content.res.Resources.wrap(((android.content.Context) real).getResources());
     }
 
     public com.micklab.dcg.wrapper.android.content.SharedPreferences getSharedPreferences(java.lang.String arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.content.SharedPreferences.wrap(real.getSharedPreferences(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.SharedPreferences.wrap(((android.content.Context) real).getSharedPreferences(arg0, arg1));
     }
 
     public java.lang.String getString(int arg0) {
-        return real.getString(arg0);
+        return ((android.content.Context) real).getString(arg0);
     }
 
     public java.lang.String getString(int arg0, java.lang.Object... arg1) {
-        return real.getString(arg0, arg1);
+        return ((android.content.Context) real).getString(arg0, arg1);
     }
 
     public java.lang.Object getSystemService(java.lang.String arg0) {
-        return real.getSystemService(arg0);
+        return ((android.content.Context) real).getSystemService(arg0);
     }
 
     public java.lang.CharSequence getText(int arg0) {
-        return real.getText(arg0);
+        return ((android.content.Context) real).getText(arg0);
     }
 
     public android.content.res.Resources.Theme getTheme() {
-        return real.getTheme();
+        return ((android.content.Context) real).getTheme();
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getWallpaper() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.getWallpaper());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.Context) real).getWallpaper());
     }
 
     public int getWallpaperDesiredMinimumHeight() {
-        return real.getWallpaperDesiredMinimumHeight();
+        return ((android.content.Context) real).getWallpaperDesiredMinimumHeight();
     }
 
     public int getWallpaperDesiredMinimumWidth() {
-        return real.getWallpaperDesiredMinimumWidth();
+        return ((android.content.Context) real).getWallpaperDesiredMinimumWidth();
     }
 
     public void grantUriPermission(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2) {
-        real.grantUriPermission(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.content.Context) real).grantUriPermission(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean isDeviceProtectedStorage() {
-        return real.isDeviceProtectedStorage();
+        return ((android.content.Context) real).isDeviceProtectedStorage();
     }
 
     public boolean isRestricted() {
-        return real.isRestricted();
+        return ((android.content.Context) real).isRestricted();
     }
 
     public boolean isUiContext() {
-        return real.isUiContext();
+        return ((android.content.Context) real).isUiContext();
     }
 
     public boolean moveDatabaseFrom(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-        return real.moveDatabaseFrom(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.content.Context) real).moveDatabaseFrom(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean moveSharedPreferencesFrom(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1) {
-        return real.moveSharedPreferencesFrom(arg0 == null ? null : arg0.unwrap(), arg1);
+        return ((android.content.Context) real).moveSharedPreferencesFrom(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int[] arg0) {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(real.obtainStyledAttributes(arg0));
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int arg0, int[] arg1) throws android.content.res.Resources.NotFoundException {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(real.obtainStyledAttributes(arg0, arg1));
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1) {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(real.obtainStyledAttributes(arg0 == null ? null : arg0.unwrap(), arg1));
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1, int arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(real.obtainStyledAttributes(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3));
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
     }
 
     public java.io.FileInputStream openFileInput(java.lang.String arg0) throws java.io.FileNotFoundException {
@@ -405,199 +412,199 @@ public final class Context {
     }
 
     public com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg2) {
-        return com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.wrap(real.openOrCreateDatabase(arg0, arg1, arg2 == null ? null : arg2.unwrap()));
+        return com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.wrap(((android.content.Context) real).openOrCreateDatabase(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg2, com.micklab.dcg.wrapper.android.database.DatabaseErrorHandler arg3) {
-        return com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.wrap(real.openOrCreateDatabase(arg0, arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.wrap(((android.content.Context) real).openOrCreateDatabase(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable peekWallpaper() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(real.peekWallpaper());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.Context) real).peekWallpaper());
     }
 
     public void registerComponentCallbacks(com.micklab.dcg.wrapper.android.content.ComponentCallbacks arg0) {
-        real.registerComponentCallbacks(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).registerComponentCallbacks(arg0 == null ? null : arg0.getReal());
     }
 
     public void registerDeviceIdChangeListener(java.util.concurrent.Executor arg0, java.util.function.IntConsumer arg1) {
-        real.registerDeviceIdChangeListener(arg0, arg1);
+        ((android.content.Context) real).registerDeviceIdChangeListener(arg0, arg1);
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent registerReceiver(com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.registerReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Context) real).registerReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent registerReceiver(com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.registerReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Context) real).registerReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent registerReceiver(com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.registerReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Context) real).registerReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.Intent registerReceiver(com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg0, com.micklab.dcg.wrapper.android.content.IntentFilter arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Handler arg3, int arg4) {
-        return com.micklab.dcg.wrapper.android.content.Intent.wrap(real.registerReceiver(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap(), arg4));
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Context) real).registerReceiver(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal(), arg4));
     }
 
     public void removeStickyBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.removeStickyBroadcast(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).removeStickyBroadcast(arg0 == null ? null : arg0.getReal());
     }
 
     public void removeStickyBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        real.removeStickyBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).removeStickyBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void revokeSelfPermissionOnKill(java.lang.String arg0) {
-        real.revokeSelfPermissionOnKill(arg0);
+        ((android.content.Context) real).revokeSelfPermissionOnKill(arg0);
     }
 
     public void revokeUriPermission(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        real.revokeUriPermission(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.Context) real).revokeUriPermission(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void revokeUriPermission(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2) {
-        real.revokeUriPermission(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.content.Context) real).revokeUriPermission(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void sendBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.sendBroadcast(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).sendBroadcast(arg0 == null ? null : arg0.getReal());
     }
 
     public void sendBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1) {
-        real.sendBroadcast(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.Context) real).sendBroadcast(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void sendBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.sendBroadcast(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.content.Context) real).sendBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void sendBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        real.sendBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).sendBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void sendBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, java.lang.String arg2) {
-        real.sendBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.content.Context) real).sendBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public void sendBroadcastWithMultiplePermissions(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String[] arg1) {
-        real.sendBroadcastWithMultiplePermissions(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.Context) real).sendBroadcastWithMultiplePermissions(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1) {
-        real.sendOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        real.sendOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg2, com.micklab.dcg.wrapper.android.os.Handler arg3, int arg4, java.lang.String arg5, com.micklab.dcg.wrapper.android.os.Bundle arg6) {
-        real.sendOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4, arg5, arg6 == null ? null : arg6.unwrap());
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        real.sendOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap(), arg5, arg6, arg7 == null ? null : arg7.unwrap());
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        real.sendOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap(), arg5, arg6, arg7 == null ? null : arg7.unwrap());
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendOrderedBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        real.sendOrderedBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3 == null ? null : arg3.unwrap(), arg4 == null ? null : arg4.unwrap(), arg5, arg6, arg7 == null ? null : arg7.unwrap());
+        ((android.content.Context) real).sendOrderedBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendStickyBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.sendStickyBroadcast(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).sendStickyBroadcast(arg0 == null ? null : arg0.getReal());
     }
 
     public void sendStickyBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.sendStickyBroadcast(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).sendStickyBroadcast(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void sendStickyBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
-        real.sendStickyBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).sendStickyBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void sendStickyOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg1, com.micklab.dcg.wrapper.android.os.Handler arg2, int arg3, java.lang.String arg4, com.micklab.dcg.wrapper.android.os.Bundle arg5) {
-        real.sendStickyOrderedBroadcast(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3, arg4, arg5 == null ? null : arg5.unwrap());
+        ((android.content.Context) real).sendStickyOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
     public void sendStickyOrderedBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg2, com.micklab.dcg.wrapper.android.os.Handler arg3, int arg4, java.lang.String arg5, com.micklab.dcg.wrapper.android.os.Bundle arg6) {
-        real.sendStickyOrderedBroadcastAsUser(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2 == null ? null : arg2.unwrap(), arg3 == null ? null : arg3.unwrap(), arg4, arg5, arg6 == null ? null : arg6.unwrap());
+        ((android.content.Context) real).sendStickyOrderedBroadcastAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
     public void setTheme(int arg0) {
-        real.setTheme(arg0);
+        ((android.content.Context) real).setTheme(arg0);
     }
 
     public void setWallpaper(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) throws java.io.IOException {
-        real.setWallpaper(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).setWallpaper(arg0 == null ? null : arg0.getReal());
     }
 
     public void setWallpaper(java.io.InputStream arg0) throws java.io.IOException {
-        real.setWallpaper(arg0);
+        ((android.content.Context) real).setWallpaper(arg0);
     }
 
     public void startActivities(android.content.Intent[] arg0) {
-        real.startActivities(arg0);
+        ((android.content.Context) real).startActivities(arg0);
     }
 
     public void startActivities(android.content.Intent[] arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.startActivities(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).startActivities(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void startActivity(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        real.startActivity(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).startActivity(arg0 == null ? null : arg0.getReal());
     }
 
     public void startActivity(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.startActivity(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap());
+        ((android.content.Context) real).startActivity(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName startForegroundService(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.startForegroundService(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.content.Context) real).startForegroundService(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean startInstrumentation(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
-        return real.startInstrumentation(arg0 == null ? null : arg0.unwrap(), arg1, arg2 == null ? null : arg2.unwrap());
+        return ((android.content.Context) real).startInstrumentation(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void startIntentSender(com.micklab.dcg.wrapper.android.content.IntentSender arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, int arg2, int arg3, int arg4) throws android.content.IntentSender.SendIntentException {
-        real.startIntentSender(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4);
+        ((android.content.Context) real).startIntentSender(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
     }
 
     public void startIntentSender(com.micklab.dcg.wrapper.android.content.IntentSender arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, int arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.os.Bundle arg5) throws android.content.IntentSender.SendIntentException {
-        real.startIntentSender(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2, arg3, arg4, arg5 == null ? null : arg5.unwrap());
+        ((android.content.Context) real).startIntentSender(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.ComponentName startService(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(real.startService(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.content.ComponentName.wrap(((android.content.Context) real).startService(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean stopService(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-        return real.stopService(arg0 == null ? null : arg0.unwrap());
+        return ((android.content.Context) real).stopService(arg0 == null ? null : arg0.getReal());
     }
 
     public void unbindService(com.micklab.dcg.wrapper.android.content.ServiceConnection arg0) {
-        real.unbindService(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).unbindService(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterComponentCallbacks(com.micklab.dcg.wrapper.android.content.ComponentCallbacks arg0) {
-        real.unregisterComponentCallbacks(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).unregisterComponentCallbacks(arg0 == null ? null : arg0.getReal());
     }
 
     public void unregisterDeviceIdChangeListener(java.util.function.IntConsumer arg0) {
-        real.unregisterDeviceIdChangeListener(arg0);
+        ((android.content.Context) real).unregisterDeviceIdChangeListener(arg0);
     }
 
     public void unregisterReceiver(com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg0) {
-        real.unregisterReceiver(arg0 == null ? null : arg0.unwrap());
+        ((android.content.Context) real).unregisterReceiver(arg0 == null ? null : arg0.getReal());
     }
 
     public void updateServiceGroup(com.micklab.dcg.wrapper.android.content.ServiceConnection arg0, int arg1, int arg2) {
-        real.updateServiceGroup(arg0 == null ? null : arg0.unwrap(), arg1, arg2);
+        ((android.content.Context) real).updateServiceGroup(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static final java.lang.String ACCESSIBILITY_SERVICE = android.content.Context.ACCESSIBILITY_SERVICE;
@@ -725,18 +732,25 @@ public final class Context {
     public static final java.lang.String WINDOW_SERVICE = android.content.Context.WINDOW_SERVICE;
 
     public static final class BindServiceFlags {
-        private final android.content.Context.BindServiceFlags real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BindServiceFlags(android.content.Context.BindServiceFlags real) {
+        private final java.lang.Object real;
+
+        private BindServiceFlags(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags wrap(android.content.Context.BindServiceFlags real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Context.BindServiceFlags getReal() {
+            return (android.content.Context.BindServiceFlags) real;
         }
 
         public android.content.Context.BindServiceFlags unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags of(long arg0) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.aware;
 
 public final class PeerHandle {
-    private final android.net.wifi.aware.PeerHandle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public PeerHandle(android.net.wifi.aware.PeerHandle real) {
+    private final java.lang.Object real;
+
+    private PeerHandle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle wrap(android.net.wifi.aware.PeerHandle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.aware.PeerHandle getReal() {
+        return (android.net.wifi.aware.PeerHandle) real;
     }
 
     public android.net.wifi.aware.PeerHandle unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.rtp;
 
 public final class RtpStream {
-    private final android.net.rtp.RtpStream real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RtpStream(android.net.rtp.RtpStream real) {
+    private final java.lang.Object real;
+
+    private RtpStream(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.rtp.RtpStream wrap(android.net.rtp.RtpStream real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.RtpStream(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.rtp.RtpStream(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.rtp.RtpStream getReal() {
+        return (android.net.rtp.RtpStream) real;
     }
 
     public android.net.rtp.RtpStream unwrap() {
-        return real;
+        return getReal();
     }
 
     public void associate(java.net.InetAddress arg0, int arg1) {

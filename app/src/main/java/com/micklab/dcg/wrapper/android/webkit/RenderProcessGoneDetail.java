@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.webkit;
 
 public final class RenderProcessGoneDetail {
-    private final android.webkit.RenderProcessGoneDetail real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RenderProcessGoneDetail(android.webkit.RenderProcessGoneDetail real) {
+    private final java.lang.Object real;
+
+    private RenderProcessGoneDetail(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.webkit.RenderProcessGoneDetail wrap(android.webkit.RenderProcessGoneDetail real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.RenderProcessGoneDetail(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.RenderProcessGoneDetail(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.webkit.RenderProcessGoneDetail getReal() {
+        return (android.webkit.RenderProcessGoneDetail) real;
     }
 
     public android.webkit.RenderProcessGoneDetail unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean didCrash() {
-        return real.didCrash();
+        return ((android.webkit.RenderProcessGoneDetail) real).didCrash();
     }
 
     public int rendererPriorityAtExit() {
-        return real.rendererPriorityAtExit();
+        return ((android.webkit.RenderProcessGoneDetail) real).rendererPriorityAtExit();
     }
 
 }

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class ImsManager {
-    private final android.telephony.ims.ImsManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ImsManager(android.telephony.ims.ImsManager real) {
+    private final java.lang.Object real;
+
+    private ImsManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.ImsManager wrap(android.telephony.ims.ImsManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.ImsManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.ImsManager getReal() {
+        return (android.telephony.ims.ImsManager) real;
     }
 
     public android.telephony.ims.ImsManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public com.micklab.dcg.wrapper.android.telephony.ims.ImsMmTelManager getImsMmTelManager(int arg0) {

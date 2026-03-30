@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiNetworkSuggestion {
-    private final android.net.wifi.WifiNetworkSuggestion real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiNetworkSuggestion(android.net.wifi.WifiNetworkSuggestion real) {
+    private final java.lang.Object real;
+
+    private WifiNetworkSuggestion(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion wrap(android.net.wifi.WifiNetworkSuggestion real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiNetworkSuggestion getReal() {
+        return (android.net.wifi.WifiNetworkSuggestion) real;
     }
 
     public android.net.wifi.WifiNetworkSuggestion unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -126,18 +133,25 @@ public final class WifiNetworkSuggestion {
 
 
     public static final class Builder {
-        private final android.net.wifi.WifiNetworkSuggestion.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.WifiNetworkSuggestion.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion.Builder wrap(android.net.wifi.WifiNetworkSuggestion.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSuggestion.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiNetworkSuggestion.Builder getReal() {
+            return (android.net.wifi.WifiNetworkSuggestion.Builder) real;
         }
 
         public android.net.wifi.WifiNetworkSuggestion.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

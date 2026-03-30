@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class ParcelUuid {
-    private final android.os.ParcelUuid real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ParcelUuid(android.os.ParcelUuid real) {
+    private final java.lang.Object real;
+
+    private ParcelUuid(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.ParcelUuid wrap(android.os.ParcelUuid real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelUuid(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.ParcelUuid(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.ParcelUuid getReal() {
+        return (android.os.ParcelUuid) real;
     }
 
     public android.os.ParcelUuid unwrap() {
-        return real;
+        return getReal();
     }
 
     public ParcelUuid(java.util.UUID arg0) {

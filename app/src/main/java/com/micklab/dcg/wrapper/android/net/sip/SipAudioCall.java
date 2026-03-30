@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.sip;
 
 public final class SipAudioCall {
-    private final android.net.sip.SipAudioCall real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SipAudioCall(android.net.sip.SipAudioCall real) {
+    private final java.lang.Object real;
+
+    private SipAudioCall(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.sip.SipAudioCall wrap(android.net.sip.SipAudioCall real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipAudioCall(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipAudioCall(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.sip.SipAudioCall getReal() {
+        return (android.net.sip.SipAudioCall) real;
     }
 
     public android.net.sip.SipAudioCall unwrap() {
-        return real;
+        return getReal();
     }
 
     public SipAudioCall(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.sip.SipProfile arg1) {
@@ -101,18 +108,25 @@ public final class SipAudioCall {
     }
 
     public static final class Listener {
-        private final android.net.sip.SipAudioCall.Listener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Listener(android.net.sip.SipAudioCall.Listener real) {
+        private final java.lang.Object real;
+
+        private Listener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.sip.SipAudioCall.Listener wrap(android.net.sip.SipAudioCall.Listener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipAudioCall.Listener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.sip.SipAudioCall.Listener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.sip.SipAudioCall.Listener getReal() {
+            return (android.net.sip.SipAudioCall.Listener) real;
         }
 
         public android.net.sip.SipAudioCall.Listener unwrap() {
-            return real;
+            return getReal();
         }
 
         public Listener() {

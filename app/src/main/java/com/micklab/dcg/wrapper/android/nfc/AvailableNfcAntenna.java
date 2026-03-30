@@ -2,50 +2,57 @@
 package com.micklab.dcg.wrapper.android.nfc;
 
 public final class AvailableNfcAntenna {
-    private final android.nfc.AvailableNfcAntenna real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public AvailableNfcAntenna(android.nfc.AvailableNfcAntenna real) {
+    private final java.lang.Object real;
+
+    private AvailableNfcAntenna(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.nfc.AvailableNfcAntenna wrap(android.nfc.AvailableNfcAntenna real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.AvailableNfcAntenna(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.nfc.AvailableNfcAntenna(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.nfc.AvailableNfcAntenna getReal() {
+        return (android.nfc.AvailableNfcAntenna) real;
     }
 
     public android.nfc.AvailableNfcAntenna unwrap() {
-        return real;
+        return getReal();
     }
 
     public AvailableNfcAntenna(int arg0, int arg1) {
-        this(new android.nfc.AvailableNfcAntenna(arg0, arg1));
+        this(new android.nfc.AvailableNfcAntenna(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.nfc.AvailableNfcAntenna) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.nfc.AvailableNfcAntenna) real).equals(arg0);
     }
 
     public int getLocationX() {
-        return real.getLocationX();
+        return ((android.nfc.AvailableNfcAntenna) real).getLocationX();
     }
 
     public int getLocationY() {
-        return real.getLocationY();
+        return ((android.nfc.AvailableNfcAntenna) real).getLocationY();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.nfc.AvailableNfcAntenna) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.nfc.AvailableNfcAntenna) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.nfc.AvailableNfcAntenna) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

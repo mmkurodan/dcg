@@ -2,33 +2,47 @@
 package com.micklab.dcg.wrapper.android.telephony.ims.feature;
 
 public final class MmTelFeature {
-    private final android.telephony.ims.feature.MmTelFeature real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MmTelFeature(android.telephony.ims.feature.MmTelFeature real) {
+    private final java.lang.Object real;
+
+    private MmTelFeature(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature wrap(android.telephony.ims.feature.MmTelFeature real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.feature.MmTelFeature getReal() {
+        return (android.telephony.ims.feature.MmTelFeature) real;
     }
 
     public android.telephony.ims.feature.MmTelFeature unwrap() {
-        return real;
+        return getReal();
     }
 
     public static final class MmTelCapabilities {
-        private final android.telephony.ims.feature.MmTelFeature.MmTelCapabilities real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MmTelCapabilities(android.telephony.ims.feature.MmTelFeature.MmTelCapabilities real) {
+        private final java.lang.Object real;
+
+        private MmTelCapabilities(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature.MmTelCapabilities wrap(android.telephony.ims.feature.MmTelFeature.MmTelCapabilities real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature.MmTelCapabilities(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.feature.MmTelFeature.MmTelCapabilities(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.ims.feature.MmTelFeature.MmTelCapabilities getReal() {
+            return (android.telephony.ims.feature.MmTelFeature.MmTelCapabilities) real;
         }
 
         public android.telephony.ims.feature.MmTelFeature.MmTelCapabilities unwrap() {
-            return real;
+            return getReal();
         }
 
         public boolean equals(java.lang.Object arg0) {

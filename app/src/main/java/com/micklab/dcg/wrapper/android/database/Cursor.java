@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.database;
 
 public final class Cursor {
-    private final android.database.Cursor real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Cursor(android.database.Cursor real) {
+    private final java.lang.Object real;
+
+    private Cursor(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.database.Cursor wrap(android.database.Cursor real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.database.Cursor(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.database.Cursor(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.database.Cursor getReal() {
+        return (android.database.Cursor) real;
     }
 
     public android.database.Cursor unwrap() {
-        return real;
+        return getReal();
     }
 
     public void close() {

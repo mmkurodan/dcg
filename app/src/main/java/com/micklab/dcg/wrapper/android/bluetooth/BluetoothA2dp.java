@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.bluetooth;
 
 public final class BluetoothA2dp {
-    private final android.bluetooth.BluetoothA2dp real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BluetoothA2dp(android.bluetooth.BluetoothA2dp real) {
+    private final java.lang.Object real;
+
+    private BluetoothA2dp(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothA2dp wrap(android.bluetooth.BluetoothA2dp real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothA2dp(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothA2dp(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.bluetooth.BluetoothA2dp getReal() {
+        return (android.bluetooth.BluetoothA2dp) real;
     }
 
     public android.bluetooth.BluetoothA2dp unwrap() {
-        return real;
+        return getReal();
     }
 
     public void finalize() {
-        real.finalize();
+        ((android.bluetooth.BluetoothA2dp) real).finalize();
     }
 
     public int getConnectionState(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.getConnectionState(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothA2dp) real).getConnectionState(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean isA2dpPlaying(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0) {
-        return real.isA2dpPlaying(arg0 == null ? null : arg0.unwrap());
+        return ((android.bluetooth.BluetoothA2dp) real).isA2dpPlaying(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_CONNECTION_STATE_CHANGED = android.bluetooth.BluetoothA2dp.ACTION_CONNECTION_STATE_CHANGED;

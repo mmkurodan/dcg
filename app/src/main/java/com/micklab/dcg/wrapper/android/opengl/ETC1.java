@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.opengl;
 
 public final class ETC1 {
-    private final android.opengl.ETC1 real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ETC1(android.opengl.ETC1 real) {
+    private final java.lang.Object real;
+
+    private ETC1(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.opengl.ETC1 wrap(android.opengl.ETC1 real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.ETC1(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.opengl.ETC1(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.opengl.ETC1 getReal() {
+        return (android.opengl.ETC1) real;
     }
 
     public android.opengl.ETC1 unwrap() {
-        return real;
+        return getReal();
     }
 
     public ETC1() {
-        this(new android.opengl.ETC1());
+        this(new android.opengl.ETC1(), (__DcgwBridgeToken) null);
     }
 
     public static void decodeBlock(java.nio.Buffer arg0, java.nio.Buffer arg1) {

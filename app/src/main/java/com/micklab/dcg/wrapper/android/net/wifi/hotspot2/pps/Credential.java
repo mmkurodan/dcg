@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps;
 
 public final class Credential {
-    private final android.net.wifi.hotspot2.pps.Credential real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Credential(android.net.wifi.hotspot2.pps.Credential real) {
+    private final java.lang.Object real;
+
+    private Credential(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential wrap(android.net.wifi.hotspot2.pps.Credential real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.hotspot2.pps.Credential getReal() {
+        return (android.net.wifi.hotspot2.pps.Credential) real;
     }
 
     public android.net.wifi.hotspot2.pps.Credential unwrap() {
-        return real;
+        return getReal();
     }
 
     public Credential() {
@@ -110,18 +117,25 @@ public final class Credential {
 
 
     public static final class CertificateCredential {
-        private final android.net.wifi.hotspot2.pps.Credential.CertificateCredential real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public CertificateCredential(android.net.wifi.hotspot2.pps.Credential.CertificateCredential real) {
+        private final java.lang.Object real;
+
+        private CertificateCredential(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.CertificateCredential wrap(android.net.wifi.hotspot2.pps.Credential.CertificateCredential real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.CertificateCredential(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.CertificateCredential(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.hotspot2.pps.Credential.CertificateCredential getReal() {
+            return (android.net.wifi.hotspot2.pps.Credential.CertificateCredential) real;
         }
 
         public android.net.wifi.hotspot2.pps.Credential.CertificateCredential unwrap() {
-            return real;
+            return getReal();
         }
 
         public CertificateCredential() {
@@ -171,18 +185,25 @@ public final class Credential {
 
     }
     public static final class SimCredential {
-        private final android.net.wifi.hotspot2.pps.Credential.SimCredential real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SimCredential(android.net.wifi.hotspot2.pps.Credential.SimCredential real) {
+        private final java.lang.Object real;
+
+        private SimCredential(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.SimCredential wrap(android.net.wifi.hotspot2.pps.Credential.SimCredential real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.SimCredential(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.SimCredential(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.hotspot2.pps.Credential.SimCredential getReal() {
+            return (android.net.wifi.hotspot2.pps.Credential.SimCredential) real;
         }
 
         public android.net.wifi.hotspot2.pps.Credential.SimCredential unwrap() {
-            return real;
+            return getReal();
         }
 
         public SimCredential() {
@@ -232,18 +253,25 @@ public final class Credential {
 
     }
     public static final class UserCredential {
-        private final android.net.wifi.hotspot2.pps.Credential.UserCredential real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public UserCredential(android.net.wifi.hotspot2.pps.Credential.UserCredential real) {
+        private final java.lang.Object real;
+
+        private UserCredential(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.UserCredential wrap(android.net.wifi.hotspot2.pps.Credential.UserCredential real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.UserCredential(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.hotspot2.pps.Credential.UserCredential(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.hotspot2.pps.Credential.UserCredential getReal() {
+            return (android.net.wifi.hotspot2.pps.Credential.UserCredential) real;
         }
 
         public android.net.wifi.hotspot2.pps.Credential.UserCredential unwrap() {
-            return real;
+            return getReal();
         }
 
         public UserCredential() {

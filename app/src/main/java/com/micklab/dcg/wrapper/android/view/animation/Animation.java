@@ -2,198 +2,205 @@
 package com.micklab.dcg.wrapper.android.view.animation;
 
 public final class Animation {
-    private final android.view.animation.Animation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Animation(android.view.animation.Animation real) {
+    private final java.lang.Object real;
+
+    private Animation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.animation.Animation wrap(android.view.animation.Animation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Animation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Animation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.animation.Animation getReal() {
+        return (android.view.animation.Animation) real;
     }
 
     public android.view.animation.Animation unwrap() {
-        return real;
+        return getReal();
     }
 
     public void cancel() {
-        real.cancel();
+        ((android.view.animation.Animation) real).cancel();
     }
 
     public long computeDurationHint() {
-        return real.computeDurationHint();
+        return ((android.view.animation.Animation) real).computeDurationHint();
     }
 
     public int getBackdropColor() {
-        return real.getBackdropColor();
+        return ((android.view.animation.Animation) real).getBackdropColor();
     }
 
     public int getBackgroundColor() {
-        return real.getBackgroundColor();
+        return ((android.view.animation.Animation) real).getBackgroundColor();
     }
 
     public boolean getDetachWallpaper() {
-        return real.getDetachWallpaper();
+        return ((android.view.animation.Animation) real).getDetachWallpaper();
     }
 
     public long getDuration() {
-        return real.getDuration();
+        return ((android.view.animation.Animation) real).getDuration();
     }
 
     public boolean getFillAfter() {
-        return real.getFillAfter();
+        return ((android.view.animation.Animation) real).getFillAfter();
     }
 
     public boolean getFillBefore() {
-        return real.getFillBefore();
+        return ((android.view.animation.Animation) real).getFillBefore();
     }
 
     public com.micklab.dcg.wrapper.android.view.animation.Interpolator getInterpolator() {
-        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(real.getInterpolator());
+        return com.micklab.dcg.wrapper.android.view.animation.Interpolator.wrap(((android.view.animation.Animation) real).getInterpolator());
     }
 
     public int getRepeatCount() {
-        return real.getRepeatCount();
+        return ((android.view.animation.Animation) real).getRepeatCount();
     }
 
     public int getRepeatMode() {
-        return real.getRepeatMode();
+        return ((android.view.animation.Animation) real).getRepeatMode();
     }
 
     public boolean getShowBackdrop() {
-        return real.getShowBackdrop();
+        return ((android.view.animation.Animation) real).getShowBackdrop();
     }
 
     public long getStartOffset() {
-        return real.getStartOffset();
+        return ((android.view.animation.Animation) real).getStartOffset();
     }
 
     public long getStartTime() {
-        return real.getStartTime();
+        return ((android.view.animation.Animation) real).getStartTime();
     }
 
     public boolean getTransformation(long arg0, com.micklab.dcg.wrapper.android.view.animation.Transformation arg1) {
-        return real.getTransformation(arg0, arg1 == null ? null : arg1.unwrap());
+        return ((android.view.animation.Animation) real).getTransformation(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public boolean getTransformation(long arg0, com.micklab.dcg.wrapper.android.view.animation.Transformation arg1, float arg2) {
-        return real.getTransformation(arg0, arg1 == null ? null : arg1.unwrap(), arg2);
+        return ((android.view.animation.Animation) real).getTransformation(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int getZAdjustment() {
-        return real.getZAdjustment();
+        return ((android.view.animation.Animation) real).getZAdjustment();
     }
 
     public boolean hasEnded() {
-        return real.hasEnded();
+        return ((android.view.animation.Animation) real).hasEnded();
     }
 
     public boolean hasStarted() {
-        return real.hasStarted();
+        return ((android.view.animation.Animation) real).hasStarted();
     }
 
     public void initialize(int arg0, int arg1, int arg2, int arg3) {
-        real.initialize(arg0, arg1, arg2, arg3);
+        ((android.view.animation.Animation) real).initialize(arg0, arg1, arg2, arg3);
     }
 
     public boolean isFillEnabled() {
-        return real.isFillEnabled();
+        return ((android.view.animation.Animation) real).isFillEnabled();
     }
 
     public boolean isInitialized() {
-        return real.isInitialized();
+        return ((android.view.animation.Animation) real).isInitialized();
     }
 
     public void reset() {
-        real.reset();
+        ((android.view.animation.Animation) real).reset();
     }
 
     public void restrictDuration(long arg0) {
-        real.restrictDuration(arg0);
+        ((android.view.animation.Animation) real).restrictDuration(arg0);
     }
 
     public void scaleCurrentDuration(float arg0) {
-        real.scaleCurrentDuration(arg0);
+        ((android.view.animation.Animation) real).scaleCurrentDuration(arg0);
     }
 
     public void setAnimationListener(com.micklab.dcg.wrapper.android.view.animation.Animation.AnimationListener arg0) {
-        real.setAnimationListener(arg0 == null ? null : arg0.unwrap());
+        ((android.view.animation.Animation) real).setAnimationListener(arg0 == null ? null : arg0.getReal());
     }
 
     public void setBackdropColor(int arg0) {
-        real.setBackdropColor(arg0);
+        ((android.view.animation.Animation) real).setBackdropColor(arg0);
     }
 
     public void setBackgroundColor(int arg0) {
-        real.setBackgroundColor(arg0);
+        ((android.view.animation.Animation) real).setBackgroundColor(arg0);
     }
 
     public void setDetachWallpaper(boolean arg0) {
-        real.setDetachWallpaper(arg0);
+        ((android.view.animation.Animation) real).setDetachWallpaper(arg0);
     }
 
     public void setDuration(long arg0) {
-        real.setDuration(arg0);
+        ((android.view.animation.Animation) real).setDuration(arg0);
     }
 
     public void setFillAfter(boolean arg0) {
-        real.setFillAfter(arg0);
+        ((android.view.animation.Animation) real).setFillAfter(arg0);
     }
 
     public void setFillBefore(boolean arg0) {
-        real.setFillBefore(arg0);
+        ((android.view.animation.Animation) real).setFillBefore(arg0);
     }
 
     public void setFillEnabled(boolean arg0) {
-        real.setFillEnabled(arg0);
+        ((android.view.animation.Animation) real).setFillEnabled(arg0);
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.view.animation.Interpolator arg0) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap());
+        ((android.view.animation.Animation) real).setInterpolator(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        real.setInterpolator(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.animation.Animation) real).setInterpolator(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setRepeatCount(int arg0) {
-        real.setRepeatCount(arg0);
+        ((android.view.animation.Animation) real).setRepeatCount(arg0);
     }
 
     public void setRepeatMode(int arg0) {
-        real.setRepeatMode(arg0);
+        ((android.view.animation.Animation) real).setRepeatMode(arg0);
     }
 
     public void setShowBackdrop(boolean arg0) {
-        real.setShowBackdrop(arg0);
+        ((android.view.animation.Animation) real).setShowBackdrop(arg0);
     }
 
     public void setStartOffset(long arg0) {
-        real.setStartOffset(arg0);
+        ((android.view.animation.Animation) real).setStartOffset(arg0);
     }
 
     public void setStartTime(long arg0) {
-        real.setStartTime(arg0);
+        ((android.view.animation.Animation) real).setStartTime(arg0);
     }
 
     public void setZAdjustment(int arg0) {
-        real.setZAdjustment(arg0);
+        ((android.view.animation.Animation) real).setZAdjustment(arg0);
     }
 
     public void start() {
-        real.start();
+        ((android.view.animation.Animation) real).start();
     }
 
     public void startNow() {
-        real.startNow();
+        ((android.view.animation.Animation) real).startNow();
     }
 
     public boolean willChangeBounds() {
-        return real.willChangeBounds();
+        return ((android.view.animation.Animation) real).willChangeBounds();
     }
 
     public boolean willChangeTransformationMatrix() {
-        return real.willChangeTransformationMatrix();
+        return ((android.view.animation.Animation) real).willChangeTransformationMatrix();
     }
 
     public static final int ABSOLUTE = android.view.animation.Animation.ABSOLUTE;
@@ -208,30 +215,37 @@ public final class Animation {
     public static final int ZORDER_TOP = android.view.animation.Animation.ZORDER_TOP;
 
     public static final class AnimationListener {
-        private final android.view.animation.Animation.AnimationListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public AnimationListener(android.view.animation.Animation.AnimationListener real) {
+        private final java.lang.Object real;
+
+        private AnimationListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.animation.Animation.AnimationListener wrap(android.view.animation.Animation.AnimationListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Animation.AnimationListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.animation.Animation.AnimationListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.animation.Animation.AnimationListener getReal() {
+            return (android.view.animation.Animation.AnimationListener) real;
         }
 
         public android.view.animation.Animation.AnimationListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onAnimationEnd(com.micklab.dcg.wrapper.android.view.animation.Animation arg0) {
-            real.onAnimationEnd(arg0 == null ? null : arg0.unwrap());
+            ((android.view.animation.Animation.AnimationListener) real).onAnimationEnd(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationRepeat(com.micklab.dcg.wrapper.android.view.animation.Animation arg0) {
-            real.onAnimationRepeat(arg0 == null ? null : arg0.unwrap());
+            ((android.view.animation.Animation.AnimationListener) real).onAnimationRepeat(arg0 == null ? null : arg0.getReal());
         }
 
         public void onAnimationStart(com.micklab.dcg.wrapper.android.view.animation.Animation arg0) {
-            real.onAnimationStart(arg0 == null ? null : arg0.unwrap());
+            ((android.view.animation.Animation.AnimationListener) real).onAnimationStart(arg0 == null ? null : arg0.getReal());
         }
 
     }

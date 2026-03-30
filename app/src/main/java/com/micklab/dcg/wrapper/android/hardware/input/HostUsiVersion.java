@@ -2,46 +2,53 @@
 package com.micklab.dcg.wrapper.android.hardware.input;
 
 public final class HostUsiVersion {
-    private final android.hardware.input.HostUsiVersion real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HostUsiVersion(android.hardware.input.HostUsiVersion real) {
+    private final java.lang.Object real;
+
+    private HostUsiVersion(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.input.HostUsiVersion wrap(android.hardware.input.HostUsiVersion real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.input.HostUsiVersion(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.input.HostUsiVersion(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.input.HostUsiVersion getReal() {
+        return (android.hardware.input.HostUsiVersion) real;
     }
 
     public android.hardware.input.HostUsiVersion unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.hardware.input.HostUsiVersion) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.hardware.input.HostUsiVersion) real).equals(arg0);
     }
 
     public int getMajorVersion() {
-        return real.getMajorVersion();
+        return ((android.hardware.input.HostUsiVersion) real).getMajorVersion();
     }
 
     public int getMinorVersion() {
-        return real.getMinorVersion();
+        return ((android.hardware.input.HostUsiVersion) real).getMinorVersion();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.hardware.input.HostUsiVersion) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.hardware.input.HostUsiVersion) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.hardware.input.HostUsiVersion) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.wifi;
 
 public final class WifiNetworkSpecifier {
-    private final android.net.wifi.WifiNetworkSpecifier real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public WifiNetworkSpecifier(android.net.wifi.WifiNetworkSpecifier real) {
+    private final java.lang.Object real;
+
+    private WifiNetworkSpecifier(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier wrap(android.net.wifi.WifiNetworkSpecifier real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.wifi.WifiNetworkSpecifier getReal() {
+        return (android.net.wifi.WifiNetworkSpecifier) real;
     }
 
     public android.net.wifi.WifiNetworkSpecifier unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean canBeSatisfiedBy(com.micklab.dcg.wrapper.android.net.NetworkSpecifier arg0) {
@@ -54,18 +61,25 @@ public final class WifiNetworkSpecifier {
 
 
     public static final class Builder {
-        private final android.net.wifi.WifiNetworkSpecifier.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.wifi.WifiNetworkSpecifier.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier.Builder wrap(android.net.wifi.WifiNetworkSpecifier.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiNetworkSpecifier.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiNetworkSpecifier.Builder getReal() {
+            return (android.net.wifi.WifiNetworkSpecifier.Builder) real;
         }
 
         public android.net.wifi.WifiNetworkSpecifier.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {

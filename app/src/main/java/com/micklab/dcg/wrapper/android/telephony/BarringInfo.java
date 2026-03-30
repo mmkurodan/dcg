@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony;
 
 public final class BarringInfo {
-    private final android.telephony.BarringInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BarringInfo(android.telephony.BarringInfo real) {
+    private final java.lang.Object real;
+
+    private BarringInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.BarringInfo wrap(android.telephony.BarringInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.BarringInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.BarringInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.BarringInfo getReal() {
+        return (android.telephony.BarringInfo) real;
     }
 
     public android.telephony.BarringInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
@@ -42,18 +49,25 @@ public final class BarringInfo {
 
 
     public static final class BarringServiceInfo {
-        private final android.telephony.BarringInfo.BarringServiceInfo real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public BarringServiceInfo(android.telephony.BarringInfo.BarringServiceInfo real) {
+        private final java.lang.Object real;
+
+        private BarringServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.BarringInfo.BarringServiceInfo wrap(android.telephony.BarringInfo.BarringServiceInfo real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.BarringInfo.BarringServiceInfo(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.BarringInfo.BarringServiceInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.BarringInfo.BarringServiceInfo getReal() {
+            return (android.telephony.BarringInfo.BarringServiceInfo) real;
         }
 
         public android.telephony.BarringInfo.BarringServiceInfo unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {

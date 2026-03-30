@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.vcn;
 
 public final class VcnGatewayConnectionConfig {
-    private final android.net.vcn.VcnGatewayConnectionConfig real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VcnGatewayConnectionConfig(android.net.vcn.VcnGatewayConnectionConfig real) {
+    private final java.lang.Object real;
+
+    private VcnGatewayConnectionConfig(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig wrap(android.net.vcn.VcnGatewayConnectionConfig real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.vcn.VcnGatewayConnectionConfig getReal() {
+        return (android.net.vcn.VcnGatewayConnectionConfig) real;
     }
 
     public android.net.vcn.VcnGatewayConnectionConfig unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -54,18 +61,25 @@ public final class VcnGatewayConnectionConfig {
 
 
     public static final class Builder {
-        private final android.net.vcn.VcnGatewayConnectionConfig.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.net.vcn.VcnGatewayConnectionConfig.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig.Builder wrap(android.net.vcn.VcnGatewayConnectionConfig.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.vcn.VcnGatewayConnectionConfig.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.vcn.VcnGatewayConnectionConfig.Builder getReal() {
+            return (android.net.vcn.VcnGatewayConnectionConfig.Builder) real;
         }
 
         public android.net.vcn.VcnGatewayConnectionConfig.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.ipsec.ike.IkeTunnelConnectionParams arg1) {

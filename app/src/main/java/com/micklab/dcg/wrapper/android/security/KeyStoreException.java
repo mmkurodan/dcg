@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.security;
 
 public final class KeyStoreException {
-    private final android.security.KeyStoreException real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public KeyStoreException(android.security.KeyStoreException real) {
+    private final java.lang.Object real;
+
+    private KeyStoreException(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.security.KeyStoreException wrap(android.security.KeyStoreException real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.security.KeyStoreException(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.security.KeyStoreException(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.security.KeyStoreException getReal() {
+        return (android.security.KeyStoreException) real;
     }
 
     public android.security.KeyStoreException unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getNumericErrorCode() {
-        return real.getNumericErrorCode();
+        return ((android.security.KeyStoreException) real).getNumericErrorCode();
     }
 
     public int getRetryPolicy() {
-        return real.getRetryPolicy();
+        return ((android.security.KeyStoreException) real).getRetryPolicy();
     }
 
     public boolean isSystemError() {
-        return real.isSystemError();
+        return ((android.security.KeyStoreException) real).isSystemError();
     }
 
     public boolean isTransientFailure() {
-        return real.isTransientFailure();
+        return ((android.security.KeyStoreException) real).isTransientFailure();
     }
 
     public boolean requiresUserAuthentication() {
-        return real.requiresUserAuthentication();
+        return ((android.security.KeyStoreException) real).requiresUserAuthentication();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.security.KeyStoreException) real).toString();
     }
 
     public static final int ERROR_ATTESTATION_CHALLENGE_TOO_LARGE = android.security.KeyStoreException.ERROR_ATTESTATION_CHALLENGE_TOO_LARGE;

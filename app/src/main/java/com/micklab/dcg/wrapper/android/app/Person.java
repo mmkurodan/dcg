@@ -2,110 +2,124 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class Person {
-    private final android.app.Person real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Person(android.app.Person real) {
+    private final java.lang.Object real;
+
+    private Person(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.Person wrap(android.app.Person real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.Person(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.Person(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.Person getReal() {
+        return (android.app.Person) real;
     }
 
     public android.app.Person unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.Person) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.Person) real).equals(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Icon getIcon() {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(real.getIcon());
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(((android.app.Person) real).getIcon());
     }
 
     public java.lang.String getKey() {
-        return real.getKey();
+        return ((android.app.Person) real).getKey();
     }
 
     public java.lang.CharSequence getName() {
-        return real.getName();
+        return ((android.app.Person) real).getName();
     }
 
     public java.lang.String getUri() {
-        return real.getUri();
+        return ((android.app.Person) real).getUri();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.Person) real).hashCode();
     }
 
     public boolean isBot() {
-        return real.isBot();
+        return ((android.app.Person) real).isBot();
     }
 
     public boolean isImportant() {
-        return real.isImportant();
+        return ((android.app.Person) real).isImportant();
     }
 
     public com.micklab.dcg.wrapper.android.app.Person.Builder toBuilder() {
-        return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.toBuilder());
+        return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person) real).toBuilder());
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.Person) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 
     public static final class Builder {
-        private final android.app.Person.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.app.Person.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.Person.Builder wrap(android.app.Person.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Person.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.Person.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.Person.Builder getReal() {
+            return (android.app.Person.Builder) real;
         }
 
         public android.app.Person.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder() {
-            this(new android.app.Person.Builder());
+            this(new android.app.Person.Builder(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.Person build() {
-            return com.micklab.dcg.wrapper.android.app.Person.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.app.Person.wrap(((android.app.Person.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setBot(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setBot(arg0));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setBot(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Icon arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setIcon(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setImportant(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setImportant(arg0));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setImportant(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setKey(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setKey(arg0));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setKey(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setName(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setName(arg0));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setName(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.Person.Builder setUri(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(real.setUri(arg0));
+            return com.micklab.dcg.wrapper.android.app.Person.Builder.wrap(((android.app.Person.Builder) real).setUri(arg0));
         }
 
     }

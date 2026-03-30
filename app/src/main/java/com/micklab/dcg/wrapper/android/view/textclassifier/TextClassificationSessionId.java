@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.view.textclassifier;
 
 public final class TextClassificationSessionId {
-    private final android.view.textclassifier.TextClassificationSessionId real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextClassificationSessionId(android.view.textclassifier.TextClassificationSessionId real) {
+    private final java.lang.Object real;
+
+    private TextClassificationSessionId(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId wrap(android.view.textclassifier.TextClassificationSessionId real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationSessionId(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.textclassifier.TextClassificationSessionId getReal() {
+        return (android.view.textclassifier.TextClassificationSessionId) real;
     }
 
     public android.view.textclassifier.TextClassificationSessionId unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.textclassifier.TextClassificationSessionId) real).describeContents();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.view.textclassifier.TextClassificationSessionId) real).equals(arg0);
     }
 
     public java.lang.String getValue() {
-        return real.getValue();
+        return ((android.view.textclassifier.TextClassificationSessionId) real).getValue();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.view.textclassifier.TextClassificationSessionId) real).hashCode();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.textclassifier.TextClassificationSessionId) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.textclassifier.TextClassificationSessionId) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

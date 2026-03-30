@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net.ipsec.ike;
 
 public final class ChildSessionParams {
-    private final android.net.ipsec.ike.ChildSessionParams real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ChildSessionParams(android.net.ipsec.ike.ChildSessionParams real) {
+    private final java.lang.Object real;
+
+    private ChildSessionParams(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSessionParams wrap(android.net.ipsec.ike.ChildSessionParams real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSessionParams(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.ipsec.ike.ChildSessionParams(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.ipsec.ike.ChildSessionParams getReal() {
+        return (android.net.ipsec.ike.ChildSessionParams) real;
     }
 
     public android.net.ipsec.ike.ChildSessionParams unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

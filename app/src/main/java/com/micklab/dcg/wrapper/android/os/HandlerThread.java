@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class HandlerThread {
-    private final android.os.HandlerThread real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public HandlerThread(android.os.HandlerThread real) {
+    private final java.lang.Object real;
+
+    private HandlerThread(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.HandlerThread wrap(android.os.HandlerThread real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.HandlerThread(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.HandlerThread(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.HandlerThread getReal() {
+        return (android.os.HandlerThread) real;
     }
 
     public android.os.HandlerThread unwrap() {
-        return real;
+        return getReal();
     }
 
     public HandlerThread(java.lang.String arg0) {

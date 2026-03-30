@@ -2,26 +2,33 @@
 package com.micklab.dcg.wrapper.android.app.admin;
 
 public final class TargetUser {
-    private final android.app.admin.TargetUser real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TargetUser(android.app.admin.TargetUser real) {
+    private final java.lang.Object real;
+
+    private TargetUser(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.admin.TargetUser wrap(android.app.admin.TargetUser real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.TargetUser(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.admin.TargetUser(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.admin.TargetUser getReal() {
+        return (android.app.admin.TargetUser) real;
     }
 
     public android.app.admin.TargetUser unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.app.admin.TargetUser) real).equals(arg0);
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.app.admin.TargetUser) real).hashCode();
     }
 
     public static final com.micklab.dcg.wrapper.android.app.admin.TargetUser GLOBAL = com.micklab.dcg.wrapper.android.app.admin.TargetUser.wrap(android.app.admin.TargetUser.GLOBAL);

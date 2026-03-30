@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.number;
 
 public final class Notation {
-    private final android.icu.number.Notation real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Notation(android.icu.number.Notation real) {
+    private final java.lang.Object real;
+
+    private Notation(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.Notation wrap(android.icu.number.Notation real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Notation(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.number.Notation(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.number.Notation getReal() {
+        return (android.icu.number.Notation) real;
     }
 
     public android.icu.number.Notation unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.number.CompactNotation compactLong() {

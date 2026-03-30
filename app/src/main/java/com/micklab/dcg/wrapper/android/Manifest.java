@@ -2,41 +2,55 @@
 package com.micklab.dcg.wrapper.android;
 
 public final class Manifest {
-    private final android.Manifest real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Manifest(android.Manifest real) {
+    private final java.lang.Object real;
+
+    private Manifest(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.Manifest wrap(android.Manifest real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.Manifest getReal() {
+        return (android.Manifest) real;
     }
 
     public android.Manifest unwrap() {
-        return real;
+        return getReal();
     }
 
     public Manifest() {
-        this(new android.Manifest());
+        this(new android.Manifest(), (__DcgwBridgeToken) null);
     }
 
     public static final class permission {
-        private final android.Manifest.permission real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public permission(android.Manifest.permission real) {
+        private final java.lang.Object real;
+
+        private permission(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.Manifest.permission wrap(android.Manifest.permission real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest.permission(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest.permission(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.Manifest.permission getReal() {
+            return (android.Manifest.permission) real;
         }
 
         public android.Manifest.permission unwrap() {
-            return real;
+            return getReal();
         }
 
         public permission() {
-            this(new android.Manifest.permission());
+            this(new android.Manifest.permission(), (__DcgwBridgeToken) null);
         }
 
         public static final java.lang.String ACCEPT_HANDOVER = android.Manifest.permission.ACCEPT_HANDOVER;
@@ -345,22 +359,29 @@ public final class Manifest {
 
     }
     public static final class permission_group {
-        private final android.Manifest.permission_group real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public permission_group(android.Manifest.permission_group real) {
+        private final java.lang.Object real;
+
+        private permission_group(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.Manifest.permission_group wrap(android.Manifest.permission_group real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest.permission_group(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.Manifest.permission_group(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.Manifest.permission_group getReal() {
+            return (android.Manifest.permission_group) real;
         }
 
         public android.Manifest.permission_group unwrap() {
-            return real;
+            return getReal();
         }
 
         public permission_group() {
-            this(new android.Manifest.permission_group());
+            this(new android.Manifest.permission_group(), (__DcgwBridgeToken) null);
         }
 
         public static final java.lang.String ACTIVITY_RECOGNITION = android.Manifest.permission_group.ACTIVITY_RECOGNITION;

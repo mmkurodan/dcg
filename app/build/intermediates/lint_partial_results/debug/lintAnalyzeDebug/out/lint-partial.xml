@@ -10,28 +10,28 @@
     <map id="ScheduleExactAlarm">
         <location id="0"
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/app/AlarmManager.java"
-            line="48"
+            line="55"
             column="9"
-            startOffset="1862"
-            endLine="48"
-            endColumn="101"
-            endOffset="1954"/>
+            startOffset="2272"
+            endLine="55"
+            endColumn="132"
+            endOffset="2395"/>
         <location id="1"
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/app/AlarmManager.java"
-            line="56"
+            line="63"
             column="9"
-            startOffset="2282"
-            endLine="56"
-            endColumn="71"
-            endOffset="2344"/>
+            startOffset="2753"
+            endLine="63"
+            endColumn="101"
+            endOffset="2845"/>
         <location id="2"
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/app/AlarmManager.java"
-            line="64"
+            line="71"
             column="9"
-            startOffset="2795"
-            endLine="64"
-            endColumn="88"
-            endOffset="2874"/>
+            startOffset="3327"
+            endLine="71"
+            endColumn="118"
+            endOffset="3436"/>
         <entry
             name="ChecksExactAlarmPermission"
             boolean="true"/>
@@ -44,30 +44,30 @@
     <map id="SetAndClearCommunicationDevice">
         <location id="1"
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/media/AudioManager.java"
-            line="284"
+            line="291"
             column="16"
-            startOffset="11178"
-            endLine="284"
-            endColumn="80"
-            endOffset="11242"/>
+            startOffset="13334"
+            endLine="291"
+            endColumn="112"
+            endOffset="13430"/>
         <entry
             name="foundClearCommunicationDevice"
             boolean="true"/>
+    </map>
+    <map id="AppBundleLocaleChanges">
+        <location id="localeChangeLocation"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/content/res/Configuration.java"
+            line="107"
+            column="9"
+            startOffset="4169"
+            endLine="107"
+            endColumn="67"
+            endOffset="4227"/>
     </map>
     <map id="UnusedResources">
         <entry
             name="model"
             string="color[panel(U),stroke(U),panelSelected(U),accent(U),surface(U),textPrimary(U),textSecondary(U),error(U),primary(U),primaryDark(U),success(U),warning(U),info(U)],drawable[panel_background(U),panel_selected_background(U),result_background(U)],id[languageSpinner(U),titleInput(U),newButton(U),saveButton(U),deleteButton(U),runButton(U),importButton(U),exportButton(U),snippetListView(U),codeInput(U),resultView(U),snippetItemRoot(U),snippetTitleView(U),snippetMetaView(U),resultStatusView(U),resultHeadlineView(U),resultSummaryView(U),resultCopyLogsButton(U),resultStdoutLabelView(U),resultStdoutView(U),resultReturnValueLabelView(U),resultReturnValueView(U),resultErrorLabelView(U),resultErrorView(U),resultDetailsLabelView(U),resultDetailsView(U)],layout[activity_main(U),item_snippet(U),view_result(U)],string[app_name(U),editor_title(U),editor_subtitle(U),language_label(U),title_label(U),title_hint(U),action_new(U),action_save(U),action_delete(U),action_run(U),action_import(U),action_export(U),saved_snippets_label(U),source_code_label(U),action_copy_logs(U),result_stdout_label(U),result_return_value_label(U),result_error_label(U),result_details_label(U),result_copied_message(U)],style[Theme_Dcg(U),Theme_AppCompat_Light_NoActionBar(R)];d^0^1,e^2^3,f^0^1,2a^4^2e^5^2f^6^d^30^31^32^33^34^35^36^37^38^39^3a,2b^d^5^6,2c^5^3b^3c^6^3d^3e^7^3f,41^42^8^9^3^4;;;"/>
-    </map>
-    <map id="AppBundleLocaleChanges">
-        <location id="localeChangeLocation"
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/content/res/Configuration.java"
-            line="100"
-            column="9"
-            startOffset="3300"
-            endLine="100"
-            endColumn="29"
-            endOffset="3320"/>
     </map>
 
 </incidents>

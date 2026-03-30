@@ -2,65 +2,79 @@
 package com.micklab.dcg.wrapper.android.media;
 
 public final class VolumeShaper {
-    private final android.media.VolumeShaper real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VolumeShaper(android.media.VolumeShaper real) {
+    private final java.lang.Object real;
+
+    private VolumeShaper(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.VolumeShaper wrap(android.media.VolumeShaper real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.VolumeShaper getReal() {
+        return (android.media.VolumeShaper) real;
     }
 
     public android.media.VolumeShaper unwrap() {
-        return real;
+        return getReal();
     }
 
     public void apply(com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation arg0) {
-        real.apply(arg0 == null ? null : arg0.unwrap());
+        ((android.media.VolumeShaper) real).apply(arg0 == null ? null : arg0.getReal());
     }
 
     public void close() {
-        real.close();
+        ((android.media.VolumeShaper) real).close();
     }
 
     public float getVolume() {
-        return real.getVolume();
+        return ((android.media.VolumeShaper) real).getVolume();
     }
 
     public void replace(com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration arg0, com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation arg1, boolean arg2) {
-        real.replace(arg0 == null ? null : arg0.unwrap(), arg1 == null ? null : arg1.unwrap(), arg2);
+        ((android.media.VolumeShaper) real).replace(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public static final class Configuration {
-        private final android.media.VolumeShaper.Configuration real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Configuration(android.media.VolumeShaper.Configuration real) {
+        private final java.lang.Object real;
+
+        private Configuration(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration wrap(android.media.VolumeShaper.Configuration real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.VolumeShaper.Configuration getReal() {
+            return (android.media.VolumeShaper.Configuration) real;
         }
 
         public android.media.VolumeShaper.Configuration unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.media.VolumeShaper.Configuration) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.media.VolumeShaper.Configuration) real).equals(arg0);
         }
 
         public long getDuration() {
-            return real.getDuration();
+            return ((android.media.VolumeShaper.Configuration) real).getDuration();
         }
 
         public int getInterpolatorType() {
-            return real.getInterpolatorType();
+            return ((android.media.VolumeShaper.Configuration) real).getInterpolatorType();
         }
 
         public static int getMaximumCurvePoints() {
@@ -68,23 +82,23 @@ public final class VolumeShaper {
         }
 
         public float[] getTimes() {
-            return real.getTimes();
+            return ((android.media.VolumeShaper.Configuration) real).getTimes();
         }
 
         public float[] getVolumes() {
-            return real.getVolumes();
+            return ((android.media.VolumeShaper.Configuration) real).getVolumes();
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.media.VolumeShaper.Configuration) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.media.VolumeShaper.Configuration) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.VolumeShaper.Configuration) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration CUBIC_RAMP = com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.wrap(android.media.VolumeShaper.Configuration.CUBIC_RAMP);
@@ -97,34 +111,41 @@ public final class VolumeShaper {
         public static final com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration SINE_RAMP = com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.wrap(android.media.VolumeShaper.Configuration.SINE_RAMP);
 
         public static final class Builder {
-            private final android.media.VolumeShaper.Configuration.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.media.VolumeShaper.Configuration.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder wrap(android.media.VolumeShaper.Configuration.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.media.VolumeShaper.Configuration.Builder getReal() {
+                return (android.media.VolumeShaper.Configuration.Builder) real;
             }
 
             public android.media.VolumeShaper.Configuration.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder() {
-                this(new android.media.VolumeShaper.Configuration.Builder());
+                this(new android.media.VolumeShaper.Configuration.Builder(), (__DcgwBridgeToken) null);
             }
 
             public Builder(com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration arg0) {
-                this(new android.media.VolumeShaper.Configuration.Builder(arg0 == null ? null : arg0.unwrap()));
+                this(new android.media.VolumeShaper.Configuration.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration build() {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.wrap(((android.media.VolumeShaper.Configuration.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder invertVolumes() {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.invertVolumes());
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).invertVolumes());
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder reflectTimes() {
@@ -132,60 +153,67 @@ public final class VolumeShaper {
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder scaleToEndVolume(float arg0) {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.scaleToEndVolume(arg0));
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).scaleToEndVolume(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder scaleToStartVolume(float arg0) {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.scaleToStartVolume(arg0));
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).scaleToStartVolume(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder setCurve(float[] arg0, float[] arg1) {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.setCurve(arg0, arg1));
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).setCurve(arg0, arg1));
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder setDuration(long arg0) {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.setDuration(arg0));
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).setDuration(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder setInterpolatorType(int arg0) {
-                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(real.setInterpolatorType(arg0));
+                return com.micklab.dcg.wrapper.android.media.VolumeShaper.Configuration.Builder.wrap(((android.media.VolumeShaper.Configuration.Builder) real).setInterpolatorType(arg0));
             }
 
         }
     }
     public static final class Operation {
-        private final android.media.VolumeShaper.Operation real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Operation(android.media.VolumeShaper.Operation real) {
+        private final java.lang.Object real;
+
+        private Operation(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation wrap(android.media.VolumeShaper.Operation real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.VolumeShaper.Operation getReal() {
+            return (android.media.VolumeShaper.Operation) real;
         }
 
         public android.media.VolumeShaper.Operation unwrap() {
-            return real;
+            return getReal();
         }
 
         public int describeContents() {
-            return real.describeContents();
+            return ((android.media.VolumeShaper.Operation) real).describeContents();
         }
 
         public boolean equals(java.lang.Object arg0) {
-            return real.equals(arg0);
+            return ((android.media.VolumeShaper.Operation) real).equals(arg0);
         }
 
         public int hashCode() {
-            return real.hashCode();
+            return ((android.media.VolumeShaper.Operation) real).hashCode();
         }
 
         public java.lang.String toString() {
-            return real.toString();
+            return ((android.media.VolumeShaper.Operation) real).toString();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.media.VolumeShaper.Operation) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
         public static final com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation PLAY = com.micklab.dcg.wrapper.android.media.VolumeShaper.Operation.wrap(android.media.VolumeShaper.Operation.PLAY);

@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.text;
 
 public final class Spanned {
-    private final android.text.Spanned real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public Spanned(android.text.Spanned real) {
+    private final java.lang.Object real;
+
+    private Spanned(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.text.Spanned wrap(android.text.Spanned real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.text.Spanned(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.text.Spanned(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.text.Spanned getReal() {
+        return (android.text.Spanned) real;
     }
 
     public android.text.Spanned unwrap() {
-        return real;
+        return getReal();
     }
 
     public int getSpanEnd(java.lang.Object arg0) {
-        return real.getSpanEnd(arg0);
+        return ((android.text.Spanned) real).getSpanEnd(arg0);
     }
 
     public int getSpanFlags(java.lang.Object arg0) {
-        return real.getSpanFlags(arg0);
+        return ((android.text.Spanned) real).getSpanFlags(arg0);
     }
 
     public int getSpanStart(java.lang.Object arg0) {
-        return real.getSpanStart(arg0);
+        return ((android.text.Spanned) real).getSpanStart(arg0);
     }
 
     public static final int SPAN_COMPOSING = android.text.Spanned.SPAN_COMPOSING;

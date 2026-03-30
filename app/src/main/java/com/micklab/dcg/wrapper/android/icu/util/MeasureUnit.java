@@ -2,22 +2,29 @@
 package com.micklab.dcg.wrapper.android.icu.util;
 
 public final class MeasureUnit {
-    private final android.icu.util.MeasureUnit real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public MeasureUnit(android.icu.util.MeasureUnit real) {
+    private final java.lang.Object real;
+
+    private MeasureUnit(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit wrap(android.icu.util.MeasureUnit real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.util.MeasureUnit getReal() {
+        return (android.icu.util.MeasureUnit) real;
     }
 
     public android.icu.util.MeasureUnit unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.icu.util.MeasureUnit) real).equals(arg0);
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit forIdentifier(java.lang.String arg0) {
@@ -25,51 +32,51 @@ public final class MeasureUnit {
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity getComplexity() {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity.wrap(real.getComplexity());
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity.wrap(((android.icu.util.MeasureUnit) real).getComplexity());
     }
 
     public int getDimensionality() {
-        return real.getDimensionality();
+        return ((android.icu.util.MeasureUnit) real).getDimensionality();
     }
 
     public java.lang.String getIdentifier() {
-        return real.getIdentifier();
+        return ((android.icu.util.MeasureUnit) real).getIdentifier();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix getPrefix() {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix.wrap(real.getPrefix());
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix.wrap(((android.icu.util.MeasureUnit) real).getPrefix());
     }
 
     public java.lang.String getSubtype() {
-        return real.getSubtype();
+        return ((android.icu.util.MeasureUnit) real).getSubtype();
     }
 
     public java.lang.String getType() {
-        return real.getType();
+        return ((android.icu.util.MeasureUnit) real).getType();
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.icu.util.MeasureUnit) real).hashCode();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit product(com.micklab.dcg.wrapper.android.icu.util.MeasureUnit arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(real.product(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(((android.icu.util.MeasureUnit) real).product(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit reciprocal() {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(real.reciprocal());
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(((android.icu.util.MeasureUnit) real).reciprocal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.icu.util.MeasureUnit) real).toString();
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit withDimensionality(int arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(real.withDimensionality(arg0));
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(((android.icu.util.MeasureUnit) real).withDimensionality(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.MeasureUnit withPrefix(com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(real.withPrefix(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(((android.icu.util.MeasureUnit) real).withPrefix(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit ACRE = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.ACRE);
@@ -229,18 +236,25 @@ public final class MeasureUnit {
     public static final com.micklab.dcg.wrapper.android.icu.util.TimeUnit YEAR = com.micklab.dcg.wrapper.android.icu.util.TimeUnit.wrap(android.icu.util.MeasureUnit.YEAR);
 
     public static final class Complexity {
-        private final android.icu.util.MeasureUnit.Complexity real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Complexity(android.icu.util.MeasureUnit.Complexity real) {
+        private final java.lang.Object real;
+
+        private Complexity(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity wrap(android.icu.util.MeasureUnit.Complexity real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.MeasureUnit.Complexity getReal() {
+            return (android.icu.util.MeasureUnit.Complexity) real;
         }
 
         public android.icu.util.MeasureUnit.Complexity unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.Complexity valueOf(java.lang.String arg0) {
@@ -257,26 +271,33 @@ public final class MeasureUnit {
 
     }
     public static final class MeasurePrefix {
-        private final android.icu.util.MeasureUnit.MeasurePrefix real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public MeasurePrefix(android.icu.util.MeasureUnit.MeasurePrefix real) {
+        private final java.lang.Object real;
+
+        private MeasurePrefix(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix wrap(android.icu.util.MeasureUnit.MeasurePrefix real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.util.MeasureUnit.MeasurePrefix getReal() {
+            return (android.icu.util.MeasureUnit.MeasurePrefix) real;
         }
 
         public android.icu.util.MeasureUnit.MeasurePrefix unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getBase() {
-            return real.getBase();
+            return ((android.icu.util.MeasureUnit.MeasurePrefix) real).getBase();
         }
 
         public int getPower() {
-            return real.getPower();
+            return ((android.icu.util.MeasureUnit.MeasurePrefix) real).getPower();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.MeasurePrefix valueOf(java.lang.String arg0) {

@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class CancellationSignal {
-    private final android.os.CancellationSignal real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public CancellationSignal(android.os.CancellationSignal real) {
+    private final java.lang.Object real;
+
+    private CancellationSignal(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.CancellationSignal wrap(android.os.CancellationSignal real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CancellationSignal(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.CancellationSignal(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.CancellationSignal getReal() {
+        return (android.os.CancellationSignal) real;
     }
 
     public android.os.CancellationSignal unwrap() {
-        return real;
+        return getReal();
     }
 
     public CancellationSignal() {
@@ -37,18 +44,25 @@ public final class CancellationSignal {
     }
 
     public static final class OnCancelListener {
-        private final android.os.CancellationSignal.OnCancelListener real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public OnCancelListener(android.os.CancellationSignal.OnCancelListener real) {
+        private final java.lang.Object real;
+
+        private OnCancelListener(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.os.CancellationSignal.OnCancelListener wrap(android.os.CancellationSignal.OnCancelListener real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.CancellationSignal.OnCancelListener(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.CancellationSignal.OnCancelListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.CancellationSignal.OnCancelListener getReal() {
+            return (android.os.CancellationSignal.OnCancelListener) real;
         }
 
         public android.os.CancellationSignal.OnCancelListener unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onCancel() {

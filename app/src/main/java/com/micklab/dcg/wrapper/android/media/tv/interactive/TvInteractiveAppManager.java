@@ -2,38 +2,45 @@
 package com.micklab.dcg.wrapper.android.media.tv.interactive;
 
 public final class TvInteractiveAppManager {
-    private final android.media.tv.interactive.TvInteractiveAppManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TvInteractiveAppManager(android.media.tv.interactive.TvInteractiveAppManager real) {
+    private final java.lang.Object real;
+
+    private TvInteractiveAppManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager wrap(android.media.tv.interactive.TvInteractiveAppManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.media.tv.interactive.TvInteractiveAppManager getReal() {
+        return (android.media.tv.interactive.TvInteractiveAppManager) real;
     }
 
     public android.media.tv.interactive.TvInteractiveAppManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void registerAppLinkInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.media.tv.interactive.AppLinkInfo arg1) {
-        real.registerAppLinkInfo(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.tv.interactive.TvInteractiveAppManager) real).registerAppLinkInfo(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void registerCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback arg1) {
-        real.registerCallback(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.tv.interactive.TvInteractiveAppManager) real).registerCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void sendAppLinkCommand(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
-        real.sendAppLinkCommand(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.tv.interactive.TvInteractiveAppManager) real).sendAppLinkCommand(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterAppLinkInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.media.tv.interactive.AppLinkInfo arg1) {
-        real.unregisterAppLinkInfo(arg0, arg1 == null ? null : arg1.unwrap());
+        ((android.media.tv.interactive.TvInteractiveAppManager) real).unregisterAppLinkInfo(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void unregisterCallback(com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback arg0) {
-        real.unregisterCallback(arg0 == null ? null : arg0.unwrap());
+        ((android.media.tv.interactive.TvInteractiveAppManager) real).unregisterCallback(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String ACTION_APP_LINK_COMMAND = android.media.tv.interactive.TvInteractiveAppManager.ACTION_APP_LINK_COMMAND;
@@ -68,34 +75,41 @@ public final class TvInteractiveAppManager {
     public static final int TELETEXT_APP_STATE_SHOW = android.media.tv.interactive.TvInteractiveAppManager.TELETEXT_APP_STATE_SHOW;
 
     public static final class TvInteractiveAppCallback {
-        private final android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TvInteractiveAppCallback(android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback real) {
+        private final java.lang.Object real;
+
+        private TvInteractiveAppCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback wrap(android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback getReal() {
+            return (android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback) real;
         }
 
         public android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public void onInteractiveAppServiceAdded(java.lang.String arg0) {
-            real.onInteractiveAppServiceAdded(arg0);
+            ((android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback) real).onInteractiveAppServiceAdded(arg0);
         }
 
         public void onInteractiveAppServiceRemoved(java.lang.String arg0) {
-            real.onInteractiveAppServiceRemoved(arg0);
+            ((android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback) real).onInteractiveAppServiceRemoved(arg0);
         }
 
         public void onInteractiveAppServiceUpdated(java.lang.String arg0) {
-            real.onInteractiveAppServiceUpdated(arg0);
+            ((android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback) real).onInteractiveAppServiceUpdated(arg0);
         }
 
         public void onTvInteractiveAppServiceStateChanged(java.lang.String arg0, int arg1, int arg2, int arg3) {
-            real.onTvInteractiveAppServiceStateChanged(arg0, arg1, arg2, arg3);
+            ((android.media.tv.interactive.TvInteractiveAppManager.TvInteractiveAppCallback) real).onTvInteractiveAppServiceStateChanged(arg0, arg1, arg2, arg3);
         }
 
     }

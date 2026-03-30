@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class RegistrationManager {
-    private final android.telephony.ims.RegistrationManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public RegistrationManager(android.telephony.ims.RegistrationManager real) {
+    private final java.lang.Object real;
+
+    private RegistrationManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager wrap(android.telephony.ims.RegistrationManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.RegistrationManager getReal() {
+        return (android.telephony.ims.RegistrationManager) real;
     }
 
     public android.telephony.ims.RegistrationManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public void registerImsRegistrationCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager.RegistrationCallback arg1) throws android.telephony.ims.ImsException {
@@ -26,18 +33,25 @@ public final class RegistrationManager {
 
 
     public static final class RegistrationCallback {
-        private final android.telephony.ims.RegistrationManager.RegistrationCallback real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public RegistrationCallback(android.telephony.ims.RegistrationManager.RegistrationCallback real) {
+        private final java.lang.Object real;
+
+        private RegistrationCallback(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager.RegistrationCallback wrap(android.telephony.ims.RegistrationManager.RegistrationCallback real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager.RegistrationCallback(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.RegistrationManager.RegistrationCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.ims.RegistrationManager.RegistrationCallback getReal() {
+            return (android.telephony.ims.RegistrationManager.RegistrationCallback) real;
         }
 
         public android.telephony.ims.RegistrationManager.RegistrationCallback unwrap() {
-            return real;
+            return getReal();
         }
 
         public RegistrationCallback() {

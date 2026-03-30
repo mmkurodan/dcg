@@ -2,42 +2,49 @@
 package com.micklab.dcg.wrapper.android.window;
 
 public final class BackEvent {
-    private final android.window.BackEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BackEvent(android.window.BackEvent real) {
+    private final java.lang.Object real;
+
+    private BackEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.window.BackEvent wrap(android.window.BackEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.window.BackEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.window.BackEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.window.BackEvent getReal() {
+        return (android.window.BackEvent) real;
     }
 
     public android.window.BackEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public BackEvent(float arg0, float arg1, float arg2, int arg3) {
-        this(new android.window.BackEvent(arg0, arg1, arg2, arg3));
+        this(new android.window.BackEvent(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public float getProgress() {
-        return real.getProgress();
+        return ((android.window.BackEvent) real).getProgress();
     }
 
     public int getSwipeEdge() {
-        return real.getSwipeEdge();
+        return ((android.window.BackEvent) real).getSwipeEdge();
     }
 
     public float getTouchX() {
-        return real.getTouchX();
+        return ((android.window.BackEvent) real).getTouchX();
     }
 
     public float getTouchY() {
-        return real.getTouchY();
+        return ((android.window.BackEvent) real).getTouchY();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.window.BackEvent) real).toString();
     }
 
     public static final int EDGE_LEFT = android.window.BackEvent.EDGE_LEFT;

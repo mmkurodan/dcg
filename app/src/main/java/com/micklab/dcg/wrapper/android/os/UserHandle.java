@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class UserHandle {
-    private final android.os.UserHandle real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public UserHandle(android.os.UserHandle real) {
+    private final java.lang.Object real;
+
+    private UserHandle(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.os.UserHandle wrap(android.os.UserHandle real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserHandle(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.os.UserHandle(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.os.UserHandle getReal() {
+        return (android.os.UserHandle) real;
     }
 
     public android.os.UserHandle unwrap() {
-        return real;
+        return getReal();
     }
 
     public UserHandle(com.micklab.dcg.wrapper.android.os.Parcel arg0) {

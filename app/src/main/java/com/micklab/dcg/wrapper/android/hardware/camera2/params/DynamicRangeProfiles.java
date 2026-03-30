@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.hardware.camera2.params;
 
 public final class DynamicRangeProfiles {
-    private final android.hardware.camera2.params.DynamicRangeProfiles real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DynamicRangeProfiles(android.hardware.camera2.params.DynamicRangeProfiles real) {
+    private final java.lang.Object real;
+
+    private DynamicRangeProfiles(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.hardware.camera2.params.DynamicRangeProfiles wrap(android.hardware.camera2.params.DynamicRangeProfiles real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.DynamicRangeProfiles(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.camera2.params.DynamicRangeProfiles(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.hardware.camera2.params.DynamicRangeProfiles getReal() {
+        return (android.hardware.camera2.params.DynamicRangeProfiles) real;
     }
 
     public android.hardware.camera2.params.DynamicRangeProfiles unwrap() {
-        return real;
+        return getReal();
     }
 
     public DynamicRangeProfiles(long[] arg0) {
@@ -21,7 +28,7 @@ public final class DynamicRangeProfiles {
     }
 
     public boolean isExtraLatencyPresent(long arg0) {
-        return real.isExtraLatencyPresent(arg0);
+        return ((android.hardware.camera2.params.DynamicRangeProfiles) real).isExtraLatencyPresent(arg0);
     }
 
     public static final long DOLBY_VISION_10B_HDR_OEM = android.hardware.camera2.params.DynamicRangeProfiles.DOLBY_VISION_10B_HDR_OEM;

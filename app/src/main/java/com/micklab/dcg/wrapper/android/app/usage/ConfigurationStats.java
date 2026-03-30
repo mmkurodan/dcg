@@ -2,54 +2,61 @@
 package com.micklab.dcg.wrapper.android.app.usage;
 
 public final class ConfigurationStats {
-    private final android.app.usage.ConfigurationStats real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ConfigurationStats(android.app.usage.ConfigurationStats real) {
+    private final java.lang.Object real;
+
+    private ConfigurationStats(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.usage.ConfigurationStats wrap(android.app.usage.ConfigurationStats real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.ConfigurationStats(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.usage.ConfigurationStats(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.usage.ConfigurationStats getReal() {
+        return (android.app.usage.ConfigurationStats) real;
     }
 
     public android.app.usage.ConfigurationStats unwrap() {
-        return real;
+        return getReal();
     }
 
     public ConfigurationStats(com.micklab.dcg.wrapper.android.app.usage.ConfigurationStats arg0) {
-        this(new android.app.usage.ConfigurationStats(arg0 == null ? null : arg0.unwrap()));
+        this(new android.app.usage.ConfigurationStats(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.app.usage.ConfigurationStats) real).describeContents();
     }
 
     public int getActivationCount() {
-        return real.getActivationCount();
+        return ((android.app.usage.ConfigurationStats) real).getActivationCount();
     }
 
     public com.micklab.dcg.wrapper.android.content.res.Configuration getConfiguration() {
-        return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(real.getConfiguration());
+        return com.micklab.dcg.wrapper.android.content.res.Configuration.wrap(((android.app.usage.ConfigurationStats) real).getConfiguration());
     }
 
     public long getFirstTimeStamp() {
-        return real.getFirstTimeStamp();
+        return ((android.app.usage.ConfigurationStats) real).getFirstTimeStamp();
     }
 
     public long getLastTimeActive() {
-        return real.getLastTimeActive();
+        return ((android.app.usage.ConfigurationStats) real).getLastTimeActive();
     }
 
     public long getLastTimeStamp() {
-        return real.getLastTimeStamp();
+        return ((android.app.usage.ConfigurationStats) real).getLastTimeStamp();
     }
 
     public long getTotalTimeActive() {
-        return real.getTotalTimeActive();
+        return ((android.app.usage.ConfigurationStats) real).getTotalTimeActive();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.app.usage.ConfigurationStats) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
 

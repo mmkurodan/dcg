@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.ims;
 
 public final class SipDetails {
-    private final android.telephony.ims.SipDetails real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public SipDetails(android.telephony.ims.SipDetails real) {
+    private final java.lang.Object real;
+
+    private SipDetails(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.ims.SipDetails wrap(android.telephony.ims.SipDetails real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.SipDetails(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.ims.SipDetails(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.ims.SipDetails getReal() {
+        return (android.telephony.ims.SipDetails) real;
     }
 
     public android.telephony.ims.SipDetails unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {

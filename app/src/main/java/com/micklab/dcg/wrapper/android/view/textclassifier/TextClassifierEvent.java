@@ -2,74 +2,81 @@
 package com.micklab.dcg.wrapper.android.view.textclassifier;
 
 public final class TextClassifierEvent {
-    private final android.view.textclassifier.TextClassifierEvent real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TextClassifierEvent(android.view.textclassifier.TextClassifierEvent real) {
+    private final java.lang.Object real;
+
+    private TextClassifierEvent(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent wrap(android.view.textclassifier.TextClassifierEvent real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.view.textclassifier.TextClassifierEvent getReal() {
+        return (android.view.textclassifier.TextClassifierEvent) real;
     }
 
     public android.view.textclassifier.TextClassifierEvent unwrap() {
-        return real;
+        return getReal();
     }
 
     public int describeContents() {
-        return real.describeContents();
+        return ((android.view.textclassifier.TextClassifierEvent) real).describeContents();
     }
 
     public int[] getActionIndices() {
-        return real.getActionIndices();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getActionIndices();
     }
 
     public java.lang.String[] getEntityTypes() {
-        return real.getEntityTypes();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getEntityTypes();
     }
 
     public int getEventCategory() {
-        return real.getEventCategory();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getEventCategory();
     }
 
     public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationContext getEventContext() {
-        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationContext.wrap(real.getEventContext());
+        return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassificationContext.wrap(((android.view.textclassifier.TextClassifierEvent) real).getEventContext());
     }
 
     public int getEventIndex() {
-        return real.getEventIndex();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getEventIndex();
     }
 
     public int getEventType() {
-        return real.getEventType();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getEventType();
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getExtras() {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(real.getExtras());
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.view.textclassifier.TextClassifierEvent) real).getExtras());
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getLocale() {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(real.getLocale());
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(((android.view.textclassifier.TextClassifierEvent) real).getLocale());
     }
 
     public java.lang.String getModelName() {
-        return real.getModelName();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getModelName();
     }
 
     public java.lang.String getResultId() {
-        return real.getResultId();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getResultId();
     }
 
     public float[] getScores() {
-        return real.getScores();
+        return ((android.view.textclassifier.TextClassifierEvent) real).getScores();
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.view.textclassifier.TextClassifierEvent) real).toString();
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-        real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+        ((android.view.textclassifier.TextClassifierEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int CATEGORY_CONVERSATION_ACTIONS = android.view.textclassifier.TextClassifierEvent.CATEGORY_CONVERSATION_ACTIONS;
@@ -99,217 +106,280 @@ public final class TextClassifierEvent {
     public static final int TYPE_SMART_SELECTION_SINGLE = android.view.textclassifier.TextClassifierEvent.TYPE_SMART_SELECTION_SINGLE;
 
     public static final class Builder {
-        private final android.view.textclassifier.TextClassifierEvent.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.view.textclassifier.TextClassifierEvent.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.Builder wrap(android.view.textclassifier.TextClassifierEvent.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.textclassifier.TextClassifierEvent.Builder getReal() {
+            return (android.view.textclassifier.TextClassifierEvent.Builder) real;
         }
 
         public android.view.textclassifier.TextClassifierEvent.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
     }
     public static final class ConversationActionsEvent {
-        private final android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public ConversationActionsEvent(android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent real) {
+        private final java.lang.Object real;
+
+        private ConversationActionsEvent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent wrap(android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent getReal() {
+            return (android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent) real;
         }
 
         public android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent unwrap() {
-            return real;
+            return getReal();
         }
 
 
         public static final class Builder {
-            private final android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder wrap(android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder getReal() {
+                return (android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder) real;
             }
 
             public android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(int arg0) {
-                this(new android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder(arg0));
+                this(new android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent build() {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.wrap(((android.view.textclassifier.TextClassifierEvent.ConversationActionsEvent.Builder) real).build());
             }
 
         }
     }
     public static final class LanguageDetectionEvent {
-        private final android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public LanguageDetectionEvent(android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent real) {
+        private final java.lang.Object real;
+
+        private LanguageDetectionEvent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent wrap(android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent getReal() {
+            return (android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent) real;
         }
 
         public android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent unwrap() {
-            return real;
+            return getReal();
         }
 
 
         public static final class Builder {
-            private final android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder wrap(android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder getReal() {
+                return (android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder) real;
             }
 
             public android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(int arg0) {
-                this(new android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder(arg0));
+                this(new android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent build() {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.wrap(((android.view.textclassifier.TextClassifierEvent.LanguageDetectionEvent.Builder) real).build());
             }
 
         }
     }
     public static final class TextLinkifyEvent {
-        private final android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TextLinkifyEvent(android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent real) {
+        private final java.lang.Object real;
+
+        private TextLinkifyEvent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent wrap(android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent getReal() {
+            return (android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent) real;
         }
 
         public android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent unwrap() {
-            return real;
+            return getReal();
         }
 
 
         public static final class Builder {
-            private final android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder wrap(android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder getReal() {
+                return (android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder) real;
             }
 
             public android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(int arg0) {
-                this(new android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder(arg0));
+                this(new android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent build() {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.wrap(((android.view.textclassifier.TextClassifierEvent.TextLinkifyEvent.Builder) real).build());
             }
 
         }
     }
     public static final class TextSelectionEvent {
-        private final android.view.textclassifier.TextClassifierEvent.TextSelectionEvent real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public TextSelectionEvent(android.view.textclassifier.TextClassifierEvent.TextSelectionEvent real) {
+        private final java.lang.Object real;
+
+        private TextSelectionEvent(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent wrap(android.view.textclassifier.TextClassifierEvent.TextSelectionEvent real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.textclassifier.TextClassifierEvent.TextSelectionEvent getReal() {
+            return (android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real;
         }
 
         public android.view.textclassifier.TextClassifierEvent.TextSelectionEvent unwrap() {
-            return real;
+            return getReal();
         }
 
         public int getRelativeSuggestedWordEndIndex() {
-            return real.getRelativeSuggestedWordEndIndex();
+            return ((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real).getRelativeSuggestedWordEndIndex();
         }
 
         public int getRelativeSuggestedWordStartIndex() {
-            return real.getRelativeSuggestedWordStartIndex();
+            return ((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real).getRelativeSuggestedWordStartIndex();
         }
 
         public int getRelativeWordEndIndex() {
-            return real.getRelativeWordEndIndex();
+            return ((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real).getRelativeWordEndIndex();
         }
 
         public int getRelativeWordStartIndex() {
-            return real.getRelativeWordStartIndex();
+            return ((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real).getRelativeWordStartIndex();
         }
 
         public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
-            real.writeToParcel(arg0 == null ? null : arg0.unwrap(), arg1);
+            ((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
         }
 
 
         public static final class Builder {
-            private final android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder real;
+            private static final class __DcgwBridgeToken {
+            }
 
-            public Builder(android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder real) {
+            private final java.lang.Object real;
+
+            private Builder(java.lang.Object real, __DcgwBridgeToken token) {
                 this.real = real;
             }
 
             public static com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder wrap(android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder real) {
-                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder(real);
+                return real == null ? null : new com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder getReal() {
+                return (android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real;
             }
 
             public android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder unwrap() {
-                return real;
+                return getReal();
             }
 
             public Builder(int arg0) {
-                this(new android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder(arg0));
+                this(new android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder(arg0), (__DcgwBridgeToken) null);
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent build() {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.wrap(real.build());
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.wrap(((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real).build());
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder setRelativeSuggestedWordEndIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(real.setRelativeSuggestedWordEndIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real).setRelativeSuggestedWordEndIndex(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder setRelativeSuggestedWordStartIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(real.setRelativeSuggestedWordStartIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real).setRelativeSuggestedWordStartIndex(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder setRelativeWordEndIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(real.setRelativeWordEndIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real).setRelativeWordEndIndex(arg0));
             }
 
             public com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder setRelativeWordStartIndex(int arg0) {
-                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(real.setRelativeWordStartIndex(arg0));
+                return com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder.wrap(((android.view.textclassifier.TextClassifierEvent.TextSelectionEvent.Builder) real).setRelativeWordStartIndex(arg0));
             }
 
         }

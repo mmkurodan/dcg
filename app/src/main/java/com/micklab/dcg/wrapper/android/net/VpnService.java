@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.net;
 
 public final class VpnService {
-    private final android.net.VpnService real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public VpnService(android.net.VpnService real) {
+    private final java.lang.Object real;
+
+    private VpnService(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.net.VpnService wrap(android.net.VpnService real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnService(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.net.VpnService(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.net.VpnService getReal() {
+        return (android.net.VpnService) real;
     }
 
     public android.net.VpnService unwrap() {
-        return real;
+        return getReal();
     }
 
     public VpnService() {

@@ -2,65 +2,79 @@
 package com.micklab.dcg.wrapper.android.health.connect.datatypes;
 
 public final class BasalBodyTemperatureRecord {
-    private final android.health.connect.datatypes.BasalBodyTemperatureRecord real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public BasalBodyTemperatureRecord(android.health.connect.datatypes.BasalBodyTemperatureRecord real) {
+    private final java.lang.Object real;
+
+    private BasalBodyTemperatureRecord(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord wrap(android.health.connect.datatypes.BasalBodyTemperatureRecord real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.health.connect.datatypes.BasalBodyTemperatureRecord getReal() {
+        return (android.health.connect.datatypes.BasalBodyTemperatureRecord) real;
     }
 
     public android.health.connect.datatypes.BasalBodyTemperatureRecord unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {
-        return real.equals(arg0);
+        return ((android.health.connect.datatypes.BasalBodyTemperatureRecord) real).equals(arg0);
     }
 
     public int getMeasurementLocation() {
-        return real.getMeasurementLocation();
+        return ((android.health.connect.datatypes.BasalBodyTemperatureRecord) real).getMeasurementLocation();
     }
 
     public com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature getTemperature() {
-        return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature.wrap(real.getTemperature());
+        return com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature.wrap(((android.health.connect.datatypes.BasalBodyTemperatureRecord) real).getTemperature());
     }
 
     public int hashCode() {
-        return real.hashCode();
+        return ((android.health.connect.datatypes.BasalBodyTemperatureRecord) real).hashCode();
     }
 
     public static final class Builder {
-        private final android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder wrap(android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder getReal() {
+            return (android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder) real;
         }
 
         public android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public Builder(com.micklab.dcg.wrapper.android.health.connect.datatypes.Metadata arg0, java.time.Instant arg1, int arg2, com.micklab.dcg.wrapper.android.health.connect.datatypes.units.Temperature arg3) {
-            this(new android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder(arg0 == null ? null : arg0.unwrap(), arg1, arg2, arg3 == null ? null : arg3.unwrap()));
+            this(new android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord build() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.wrap(((android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder clearZoneOffset() {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder.wrap(real.clearZoneOffset());
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder.wrap(((android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder) real).clearZoneOffset());
         }
 
         public com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder setZoneOffset(java.time.ZoneOffset arg0) {
-            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder.wrap(real.setZoneOffset(arg0));
+            return com.micklab.dcg.wrapper.android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder.wrap(((android.health.connect.datatypes.BasalBodyTemperatureRecord.Builder) real).setZoneOffset(arg0));
         }
 
     }

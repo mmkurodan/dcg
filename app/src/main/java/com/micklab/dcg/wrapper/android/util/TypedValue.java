@@ -2,30 +2,37 @@
 package com.micklab.dcg.wrapper.android.util;
 
 public final class TypedValue {
-    private final android.util.TypedValue real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public TypedValue(android.util.TypedValue real) {
+    private final java.lang.Object real;
+
+    private TypedValue(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.util.TypedValue wrap(android.util.TypedValue real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.util.TypedValue(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.util.TypedValue(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.util.TypedValue getReal() {
+        return (android.util.TypedValue) real;
     }
 
     public android.util.TypedValue unwrap() {
-        return real;
+        return getReal();
     }
 
     public TypedValue() {
-        this(new android.util.TypedValue());
+        this(new android.util.TypedValue(), (__DcgwBridgeToken) null);
     }
 
     public static float applyDimension(int arg0, float arg1, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg2) {
-        return android.util.TypedValue.applyDimension(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.util.TypedValue.applyDimension(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.CharSequence coerceToString() {
-        return real.coerceToString();
+        return ((android.util.TypedValue) real).coerceToString();
     }
 
     public static java.lang.String coerceToString(int arg0, int arg1) {
@@ -33,15 +40,15 @@ public final class TypedValue {
     }
 
     public static float complexToDimension(int arg0, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg1) {
-        return android.util.TypedValue.complexToDimension(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.util.TypedValue.complexToDimension(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static int complexToDimensionPixelOffset(int arg0, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg1) {
-        return android.util.TypedValue.complexToDimensionPixelOffset(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.util.TypedValue.complexToDimensionPixelOffset(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static int complexToDimensionPixelSize(int arg0, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg1) {
-        return android.util.TypedValue.complexToDimensionPixelSize(arg0, arg1 == null ? null : arg1.unwrap());
+        return android.util.TypedValue.complexToDimensionPixelSize(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static float complexToFloat(int arg0) {
@@ -53,43 +60,43 @@ public final class TypedValue {
     }
 
     public static float convertDimensionToPixels(int arg0, float arg1, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg2) {
-        return android.util.TypedValue.convertDimensionToPixels(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.util.TypedValue.convertDimensionToPixels(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static float convertPixelsToDimension(int arg0, float arg1, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg2) {
-        return android.util.TypedValue.convertPixelsToDimension(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.util.TypedValue.convertPixelsToDimension(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public static float deriveDimension(int arg0, float arg1, com.micklab.dcg.wrapper.android.util.DisplayMetrics arg2) {
-        return android.util.TypedValue.deriveDimension(arg0, arg1, arg2 == null ? null : arg2.unwrap());
+        return android.util.TypedValue.deriveDimension(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public int getComplexUnit() {
-        return real.getComplexUnit();
+        return ((android.util.TypedValue) real).getComplexUnit();
     }
 
     public float getDimension(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
-        return real.getDimension(arg0 == null ? null : arg0.unwrap());
+        return ((android.util.TypedValue) real).getDimension(arg0 == null ? null : arg0.getReal());
     }
 
     public float getFloat() {
-        return real.getFloat();
+        return ((android.util.TypedValue) real).getFloat();
     }
 
     public float getFraction(float arg0, float arg1) {
-        return real.getFraction(arg0, arg1);
+        return ((android.util.TypedValue) real).getFraction(arg0, arg1);
     }
 
     public boolean isColorType() {
-        return real.isColorType();
+        return ((android.util.TypedValue) real).isColorType();
     }
 
     public void setTo(com.micklab.dcg.wrapper.android.util.TypedValue arg0) {
-        real.setTo(arg0 == null ? null : arg0.unwrap());
+        ((android.util.TypedValue) real).setTo(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {
-        return real.toString();
+        return ((android.util.TypedValue) real).toString();
     }
 
     public static final int COMPLEX_MANTISSA_MASK = android.util.TypedValue.COMPLEX_MANTISSA_MASK;

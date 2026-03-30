@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.telephony.mbms;
 
 public final class ServiceInfo {
-    private final android.telephony.mbms.ServiceInfo real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public ServiceInfo(android.telephony.mbms.ServiceInfo real) {
+    private final java.lang.Object real;
+
+    private ServiceInfo(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.mbms.ServiceInfo wrap(android.telephony.mbms.ServiceInfo real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.ServiceInfo(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.mbms.ServiceInfo(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.telephony.mbms.ServiceInfo getReal() {
+        return (android.telephony.mbms.ServiceInfo) real;
     }
 
     public android.telephony.mbms.ServiceInfo unwrap() {
-        return real;
+        return getReal();
     }
 
     public boolean equals(java.lang.Object arg0) {

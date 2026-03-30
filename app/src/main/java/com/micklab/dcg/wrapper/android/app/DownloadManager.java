@@ -2,34 +2,41 @@
 package com.micklab.dcg.wrapper.android.app;
 
 public final class DownloadManager {
-    private final android.app.DownloadManager real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DownloadManager(android.app.DownloadManager real) {
+    private final java.lang.Object real;
+
+    private DownloadManager(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.app.DownloadManager wrap(android.app.DownloadManager real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.app.DownloadManager getReal() {
+        return (android.app.DownloadManager) real;
     }
 
     public android.app.DownloadManager unwrap() {
-        return real;
+        return getReal();
     }
 
     public long addCompletedDownload(java.lang.String arg0, java.lang.String arg1, boolean arg2, java.lang.String arg3, java.lang.String arg4, long arg5, boolean arg6) {
-        return real.addCompletedDownload(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+        return ((android.app.DownloadManager) real).addCompletedDownload(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
     public long addCompletedDownload(java.lang.String arg0, java.lang.String arg1, boolean arg2, java.lang.String arg3, java.lang.String arg4, long arg5, boolean arg6, com.micklab.dcg.wrapper.android.net.Uri arg7, com.micklab.dcg.wrapper.android.net.Uri arg8) {
-        return real.addCompletedDownload(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7 == null ? null : arg7.unwrap(), arg8 == null ? null : arg8.unwrap());
+        return ((android.app.DownloadManager) real).addCompletedDownload(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7 == null ? null : arg7.getReal(), arg8 == null ? null : arg8.getReal());
     }
 
     public long enqueue(com.micklab.dcg.wrapper.android.app.DownloadManager.Request arg0) {
-        return real.enqueue(arg0 == null ? null : arg0.unwrap());
+        return ((android.app.DownloadManager) real).enqueue(arg0 == null ? null : arg0.getReal());
     }
 
     public static java.lang.Long getMaxBytesOverMobile(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.app.DownloadManager.getMaxBytesOverMobile(arg0 == null ? null : arg0.unwrap());
+        return android.app.DownloadManager.getMaxBytesOverMobile(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getMimeTypeForDownloadedFile(long arg0) {
@@ -37,7 +44,7 @@ public final class DownloadManager {
     }
 
     public static java.lang.Long getRecommendedMaxBytesOverMobile(com.micklab.dcg.wrapper.android.content.Context arg0) {
-        return android.app.DownloadManager.getRecommendedMaxBytesOverMobile(arg0 == null ? null : arg0.unwrap());
+        return android.app.DownloadManager.getRecommendedMaxBytesOverMobile(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.net.Uri getUriForDownloadedFile(long arg0) {
@@ -49,11 +56,11 @@ public final class DownloadManager {
     }
 
     public com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.app.DownloadManager.Query arg0) {
-        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(real.query(arg0 == null ? null : arg0.unwrap()));
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.app.DownloadManager) real).query(arg0 == null ? null : arg0.getReal()));
     }
 
     public int remove(long... arg0) {
-        return real.remove(arg0);
+        return ((android.app.DownloadManager) real).remove(arg0);
     }
 
     public static final java.lang.String ACTION_DOWNLOAD_COMPLETE = android.app.DownloadManager.ACTION_DOWNLOAD_COMPLETE;
@@ -91,58 +98,72 @@ public final class DownloadManager {
     public static final int STATUS_SUCCESSFUL = android.app.DownloadManager.STATUS_SUCCESSFUL;
 
     public static final class Query {
-        private final android.app.DownloadManager.Query real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Query(android.app.DownloadManager.Query real) {
+        private final java.lang.Object real;
+
+        private Query(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.DownloadManager.Query wrap(android.app.DownloadManager.Query real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager.Query(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager.Query(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.DownloadManager.Query getReal() {
+            return (android.app.DownloadManager.Query) real;
         }
 
         public android.app.DownloadManager.Query unwrap() {
-            return real;
+            return getReal();
         }
 
         public Query() {
-            this(new android.app.DownloadManager.Query());
+            this(new android.app.DownloadManager.Query(), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Query setFilterById(long... arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Query.wrap(real.setFilterById(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Query.wrap(((android.app.DownloadManager.Query) real).setFilterById(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Query setFilterByStatus(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Query.wrap(real.setFilterByStatus(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Query.wrap(((android.app.DownloadManager.Query) real).setFilterByStatus(arg0));
         }
 
     }
     public static final class Request {
-        private final android.app.DownloadManager.Request real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Request(android.app.DownloadManager.Request real) {
+        private final java.lang.Object real;
+
+        private Request(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.app.DownloadManager.Request wrap(android.app.DownloadManager.Request real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager.Request(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.DownloadManager.Request(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.DownloadManager.Request getReal() {
+            return (android.app.DownloadManager.Request) real;
         }
 
         public android.app.DownloadManager.Request unwrap() {
-            return real;
+            return getReal();
         }
 
         public Request(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            this(new android.app.DownloadManager.Request(arg0 == null ? null : arg0.unwrap()));
+            this(new android.app.DownloadManager.Request(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request addRequestHeader(java.lang.String arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.addRequestHeader(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).addRequestHeader(arg0, arg1));
         }
 
         public void allowScanningByMediaScanner() {
-            real.allowScanningByMediaScanner();
+            ((android.app.DownloadManager.Request) real).allowScanningByMediaScanner();
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setAllowedNetworkTypes(int arg0) {
@@ -150,15 +171,15 @@ public final class DownloadManager {
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setAllowedOverMetered(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setAllowedOverMetered(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setAllowedOverMetered(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setAllowedOverRoaming(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setAllowedOverRoaming(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setAllowedOverRoaming(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setDescription(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setDescription(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setDescription(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setDestinationInExternalFilesDir(com.micklab.dcg.wrapper.android.content.Context arg0, java.lang.String arg1, java.lang.String arg2) {
@@ -166,39 +187,39 @@ public final class DownloadManager {
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setDestinationInExternalPublicDir(java.lang.String arg0, java.lang.String arg1) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setDestinationInExternalPublicDir(arg0, arg1));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setDestinationInExternalPublicDir(arg0, arg1));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setDestinationUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setDestinationUri(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setDestinationUri(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setMimeType(java.lang.String arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setMimeType(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setMimeType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setNotificationVisibility(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setNotificationVisibility(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setNotificationVisibility(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setRequiresCharging(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setRequiresCharging(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setRequiresCharging(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setRequiresDeviceIdle(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setRequiresDeviceIdle(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setRequiresDeviceIdle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setShowRunningNotification(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setShowRunningNotification(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setShowRunningNotification(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setTitle(java.lang.CharSequence arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setTitle(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.DownloadManager.Request setVisibleInDownloadsUi(boolean arg0) {
-            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(real.setVisibleInDownloadsUi(arg0));
+            return com.micklab.dcg.wrapper.android.app.DownloadManager.Request.wrap(((android.app.DownloadManager.Request) real).setVisibleInDownloadsUi(arg0));
         }
 
         public static final int VISIBILITY_HIDDEN = android.app.DownloadManager.Request.VISIBILITY_HIDDEN;

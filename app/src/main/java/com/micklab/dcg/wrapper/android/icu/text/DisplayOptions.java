@@ -2,18 +2,25 @@
 package com.micklab.dcg.wrapper.android.icu.text;
 
 public final class DisplayOptions {
-    private final android.icu.text.DisplayOptions real;
+    private static final class __DcgwBridgeToken {
+    }
 
-    public DisplayOptions(android.icu.text.DisplayOptions real) {
+    private final java.lang.Object real;
+
+    private DisplayOptions(java.lang.Object real, __DcgwBridgeToken token) {
         this.real = real;
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions wrap(android.icu.text.DisplayOptions real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions(real);
+        return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions(real, (__DcgwBridgeToken) null);
+    }
+
+    public android.icu.text.DisplayOptions getReal() {
+        return (android.icu.text.DisplayOptions) real;
     }
 
     public android.icu.text.DisplayOptions unwrap() {
-        return real;
+        return getReal();
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder builder() {
@@ -21,98 +28,112 @@ public final class DisplayOptions {
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder copyToBuilder() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.copyToBuilder());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions) real).copyToBuilder());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization getCapitalization() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization.wrap(real.getCapitalization());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization.wrap(((android.icu.text.DisplayOptions) real).getCapitalization());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength getDisplayLength() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength.wrap(real.getDisplayLength());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength.wrap(((android.icu.text.DisplayOptions) real).getDisplayLength());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase getGrammaticalCase() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase.wrap(real.getGrammaticalCase());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase.wrap(((android.icu.text.DisplayOptions) real).getGrammaticalCase());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle getNameStyle() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle.wrap(real.getNameStyle());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle.wrap(((android.icu.text.DisplayOptions) real).getNameStyle());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass getNounClass() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass.wrap(real.getNounClass());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass.wrap(((android.icu.text.DisplayOptions) real).getNounClass());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory getPluralCategory() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory.wrap(real.getPluralCategory());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory.wrap(((android.icu.text.DisplayOptions) real).getPluralCategory());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling getSubstituteHandling() {
-        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling.wrap(real.getSubstituteHandling());
+        return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling.wrap(((android.icu.text.DisplayOptions) real).getSubstituteHandling());
     }
 
     public static final class Builder {
-        private final android.icu.text.DisplayOptions.Builder real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Builder(android.icu.text.DisplayOptions.Builder real) {
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder wrap(android.icu.text.DisplayOptions.Builder real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.Builder getReal() {
+            return (android.icu.text.DisplayOptions.Builder) real;
         }
 
         public android.icu.text.DisplayOptions.Builder unwrap() {
-            return real;
+            return getReal();
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions build() {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.wrap(real.build());
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.wrap(((android.icu.text.DisplayOptions.Builder) real).build());
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setCapitalization(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setCapitalization(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setCapitalization(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setDisplayLength(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setDisplayLength(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setDisplayLength(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setGrammaticalCase(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setGrammaticalCase(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setGrammaticalCase(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setNameStyle(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setNameStyle(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setNameStyle(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setNounClass(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setNounClass(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setNounClass(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setPluralCategory(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setPluralCategory(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setPluralCategory(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder setSubstituteHandling(com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling arg0) {
-            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(real.setSubstituteHandling(arg0 == null ? null : arg0.unwrap()));
+            return com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Builder.wrap(((android.icu.text.DisplayOptions.Builder) real).setSubstituteHandling(arg0 == null ? null : arg0.getReal()));
         }
 
     }
     public static final class Capitalization {
-        private final android.icu.text.DisplayOptions.Capitalization real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public Capitalization(android.icu.text.DisplayOptions.Capitalization real) {
+        private final java.lang.Object real;
+
+        private Capitalization(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization wrap(android.icu.text.DisplayOptions.Capitalization real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.Capitalization getReal() {
+            return (android.icu.text.DisplayOptions.Capitalization) real;
         }
 
         public android.icu.text.DisplayOptions.Capitalization unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.Capitalization valueOf(java.lang.String arg0) {
@@ -131,18 +152,25 @@ public final class DisplayOptions {
 
     }
     public static final class DisplayLength {
-        private final android.icu.text.DisplayOptions.DisplayLength real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public DisplayLength(android.icu.text.DisplayOptions.DisplayLength real) {
+        private final java.lang.Object real;
+
+        private DisplayLength(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength wrap(android.icu.text.DisplayOptions.DisplayLength real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.DisplayLength getReal() {
+            return (android.icu.text.DisplayOptions.DisplayLength) real;
         }
 
         public android.icu.text.DisplayOptions.DisplayLength unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.DisplayLength valueOf(java.lang.String arg0) {
@@ -159,18 +187,25 @@ public final class DisplayOptions {
 
     }
     public static final class GrammaticalCase {
-        private final android.icu.text.DisplayOptions.GrammaticalCase real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public GrammaticalCase(android.icu.text.DisplayOptions.GrammaticalCase real) {
+        private final java.lang.Object real;
+
+        private GrammaticalCase(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase wrap(android.icu.text.DisplayOptions.GrammaticalCase real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.GrammaticalCase getReal() {
+            return (android.icu.text.DisplayOptions.GrammaticalCase) real;
         }
 
         public android.icu.text.DisplayOptions.GrammaticalCase unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase fromIdentifier(java.lang.String arg0) {
@@ -178,7 +213,7 @@ public final class DisplayOptions {
         }
 
         public java.lang.String getIdentifier() {
-            return real.getIdentifier();
+            return ((android.icu.text.DisplayOptions.GrammaticalCase) real).getIdentifier();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.GrammaticalCase valueOf(java.lang.String arg0) {
@@ -207,18 +242,25 @@ public final class DisplayOptions {
 
     }
     public static final class NameStyle {
-        private final android.icu.text.DisplayOptions.NameStyle real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NameStyle(android.icu.text.DisplayOptions.NameStyle real) {
+        private final java.lang.Object real;
+
+        private NameStyle(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle wrap(android.icu.text.DisplayOptions.NameStyle real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.NameStyle getReal() {
+            return (android.icu.text.DisplayOptions.NameStyle) real;
         }
 
         public android.icu.text.DisplayOptions.NameStyle unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NameStyle valueOf(java.lang.String arg0) {
@@ -235,18 +277,25 @@ public final class DisplayOptions {
 
     }
     public static final class NounClass {
-        private final android.icu.text.DisplayOptions.NounClass real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public NounClass(android.icu.text.DisplayOptions.NounClass real) {
+        private final java.lang.Object real;
+
+        private NounClass(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass wrap(android.icu.text.DisplayOptions.NounClass real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.NounClass getReal() {
+            return (android.icu.text.DisplayOptions.NounClass) real;
         }
 
         public android.icu.text.DisplayOptions.NounClass unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass fromIdentifier(java.lang.String arg0) {
@@ -254,7 +303,7 @@ public final class DisplayOptions {
         }
 
         public java.lang.String getIdentifier() {
-            return real.getIdentifier();
+            return ((android.icu.text.DisplayOptions.NounClass) real).getIdentifier();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.NounClass valueOf(java.lang.String arg0) {
@@ -277,18 +326,25 @@ public final class DisplayOptions {
 
     }
     public static final class PluralCategory {
-        private final android.icu.text.DisplayOptions.PluralCategory real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public PluralCategory(android.icu.text.DisplayOptions.PluralCategory real) {
+        private final java.lang.Object real;
+
+        private PluralCategory(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory wrap(android.icu.text.DisplayOptions.PluralCategory real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.PluralCategory getReal() {
+            return (android.icu.text.DisplayOptions.PluralCategory) real;
         }
 
         public android.icu.text.DisplayOptions.PluralCategory unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory fromIdentifier(java.lang.String arg0) {
@@ -296,7 +352,7 @@ public final class DisplayOptions {
         }
 
         public java.lang.String getIdentifier() {
-            return real.getIdentifier();
+            return ((android.icu.text.DisplayOptions.PluralCategory) real).getIdentifier();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.PluralCategory valueOf(java.lang.String arg0) {
@@ -317,18 +373,25 @@ public final class DisplayOptions {
 
     }
     public static final class SubstituteHandling {
-        private final android.icu.text.DisplayOptions.SubstituteHandling real;
+        private static final class __DcgwBridgeToken {
+        }
 
-        public SubstituteHandling(android.icu.text.DisplayOptions.SubstituteHandling real) {
+        private final java.lang.Object real;
+
+        private SubstituteHandling(java.lang.Object real, __DcgwBridgeToken token) {
             this.real = real;
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling wrap(android.icu.text.DisplayOptions.SubstituteHandling real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling(real);
+            return real == null ? null : new com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.icu.text.DisplayOptions.SubstituteHandling getReal() {
+            return (android.icu.text.DisplayOptions.SubstituteHandling) real;
         }
 
         public android.icu.text.DisplayOptions.SubstituteHandling unwrap() {
-            return real;
+            return getReal();
         }
 
         public static com.micklab.dcg.wrapper.android.icu.text.DisplayOptions.SubstituteHandling valueOf(java.lang.String arg0) {
