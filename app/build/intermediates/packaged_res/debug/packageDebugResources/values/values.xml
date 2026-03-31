@@ -18,6 +18,7 @@
     <string name="action_export">Export</string>
     <string name="action_import">Import</string>
     <string name="action_new">New</string>
+    <string name="action_open_output">Open output</string>
     <string name="action_run">Run</string>
     <string name="action_save">Save</string>
     <string name="app_name">Dynamic Code Runner</string>
@@ -27,6 +28,7 @@
     <string name="result_copied_message">%1$s copied to clipboard</string>
     <string name="result_details_label">Details</string>
     <string name="result_error_label">Error</string>
+    <string name="result_output_label">Output</string>
     <string name="result_return_value_label">Return value</string>
     <string name="result_stdout_label">stdout</string>
     <string name="saved_snippets_label">Saved snippets</string>

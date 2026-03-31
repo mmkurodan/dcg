@@ -201,7 +201,7 @@
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
                     startOffset="3843"
-                    endOffset="5044"/>
+                    endOffset="4714"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -219,16 +219,7 @@
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
                     startOffset="4356"
-                    endOffset="4677"/>
-            </fix-attribute>
-            <fix-attribute
-                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
-                attribute="style"
-                value="?android:attr/buttonBarButtonStyle">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4695"
-                    endOffset="5016"/>
+                    endOffset="4686"/>
             </fix-attribute>
         </fix-composite>
         <location
@@ -254,7 +245,7 @@
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
                     startOffset="3843"
-                    endOffset="5044"/>
+                    endOffset="4714"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -272,16 +263,7 @@
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
                     startOffset="4356"
-                    endOffset="4677"/>
-            </fix-attribute>
-            <fix-attribute
-                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
-                attribute="style"
-                value="?android:attr/buttonBarButtonStyle">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4695"
-                    endOffset="5016"/>
+                    endOffset="4686"/>
             </fix-attribute>
         </fix-composite>
         <location
@@ -306,8 +288,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3843"
-                    endOffset="5044"/>
+                    startOffset="4728"
+                    endOffset="5596"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -315,8 +297,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4076"
-                    endOffset="4338"/>
+                    startOffset="4961"
+                    endOffset="5229"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -324,27 +306,62 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4356"
-                    endOffset="4677"/>
-            </fix-attribute>
-            <fix-attribute
-                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
-                attribute="style"
-                value="?android:attr/buttonBarButtonStyle">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4695"
-                    endOffset="5016"/>
+                    startOffset="5247"
+                    endOffset="5568"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="120"
+            line="127"
             column="18"
-            startOffset="4696"
-            endLine="120"
+            startOffset="4962"
+            endLine="127"
             endColumn="24"
-            endOffset="4702"/>
+            endOffset="4968"/>
+    </incident>
+
+    <incident
+        id="ButtonStyle"
+        severity="warning"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <fix-composite
+            description="Make borderless">
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarStyle">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4728"
+                    endOffset="5596"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4961"
+                    endOffset="5229"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="5247"
+                    endOffset="5568"/>
+            </fix-attribute>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="134"
+            column="18"
+            startOffset="5248"
+            endLine="134"
+            endColumn="24"
+            endOffset="5254"/>
     </incident>
 
     <incident
@@ -353,12 +370,12 @@
         message="The vertically scrolling `ScrollView` should not contain another vertically scrolling widget (`ListView`)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="138"
+            line="152"
             column="10"
-            startOffset="5386"
-            endLine="138"
+            startOffset="5938"
+            endLine="152"
             endColumn="18"
-            endOffset="5394"/>
+            endOffset="5946"/>
     </incident>
 
     <incident
@@ -381,12 +398,68 @@
         </fix-alternatives>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="156"
+            line="170"
             column="10"
-            startOffset="6082"
-            endLine="156"
+            startOffset="6634"
+            endLine="170"
             endColumn="18"
-            endOffset="6090"/>
+            endOffset="6642"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="241"
+            column="53"
+            startOffset="9450"
+            endLine="241"
+            endColumn="64"
+            endOffset="9461"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="298"
+            column="58"
+            startOffset="11850"
+            endLine="298"
+            endColumn="69"
+            endOffset="11861"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="312"
+            column="61"
+            startOffset="12467"
+            endLine="312"
+            endColumn="72"
+            endOffset="12478"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/output/DynamicOutputRuntime.java"
+            line="318"
+            column="56"
+            startOffset="13111"
+            endLine="318"
+            endColumn="67"
+            endOffset="13122"/>
     </incident>
 
     <incident

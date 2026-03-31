@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-29:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-29:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-29:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-29:12
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /root/.gradle/caches/8.12/transforms/4e3560ad571c9cf5bec1beb57f8284ea/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] /root/.gradle/caches/8.12/transforms/368047bef971ba83e26fab905c33ff29/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.5.4] /root/.gradle/caches/8.12/transforms/b37893328e29680fe321a0fa562ccbd9/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
@@ -54,8 +54,8 @@ ADDED from /root/dcg/app/src/main/AndroidManifest.xml:6:5-8:38
 	android:name
 		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:7:9-65
 application
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-27:19
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-27:19
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-31:19
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-31:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.12/transforms/35a9df06703e7690c5228ac5d003f183/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.12/transforms/35a9df06703e7690c5228ac5d003f183/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /root/.gradle/caches/8.12/transforms/601a2a230dc454296ff3f4633a74b57c/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
@@ -96,6 +96,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /root/dcg/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:22:27-74
+activity#com.micklab.dcg.OutputActivity
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:27:9-29:40
+	android:exported
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:28:13-43
 uses-sdk
 INJECTED from /root/dcg/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /root/dcg/app/src/main/AndroidManifest.xml

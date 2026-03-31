@@ -110,10 +110,24 @@
                     android:text="@string/action_run" />
 
                 <Button
-                    android:id="@+id/importButton"
+                    android:id="@+id/openOutputButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/action_open_output" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/importButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/action_import" />
 
@@ -167,11 +181,5 @@
             android:scrollbars="vertical"
             android:textColor="@color/textPrimary"
             android:textSize="14sp" />
-
-        <com.micklab.dcg.ui.ResultView
-            android:id="@+id/resultView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
     </LinearLayout>
 </ScrollView>

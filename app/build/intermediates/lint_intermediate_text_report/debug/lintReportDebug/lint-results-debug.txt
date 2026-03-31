@@ -1,10 +1,38 @@
-/root/dcg/app/src/main/res/layout/activity_main.xml:138: Warning: The vertically scrolling ScrollView should not contain another vertically scrolling widget (ListView) [NestedScrolling]
+/root/dcg/app/src/main/res/layout/activity_main.xml:152: Warning: The vertically scrolling ScrollView should not contain another vertically scrolling widget (ListView) [NestedScrolling]
         <ListView
          ~~~~~~~~
 
    Explanation for issues of type "NestedScrolling":
    A scrolling widget such as a ScrollView should not contain any nested
    scrolling widgets since this has various usability issues
+
+/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:318: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String normalizedType = ((String) type).trim().toLowerCase();
+                                                       ~~~~~~~~~~~
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:241: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String type = stringValue(spec.get("type")).toLowerCase();
+                                                    ~~~~~~~~~~~
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:298: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String emphasis = stringValue(spec.get("style")).toLowerCase();
+                                                         ~~~~~~~~~~~
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:312: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String keyboard = stringValue(spec.get("keyboard")).toLowerCase();
+                                                            ~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.ROOT) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
 
 /root/dcg/app/src/main/res/layout/activity_main.xml:5: Warning: Possible overdraw: Root element paints background @color/surface with a theme that also paints a background (inferred theme is @style/Theme.Dcg) [Overdraw]
     android:background="@color/surface"
@@ -57,7 +85,10 @@
 /root/dcg/app/src/main/res/layout/activity_main.xml:112: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
                 <Button
                  ~~~~~~
-/root/dcg/app/src/main/res/layout/activity_main.xml:120: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+/root/dcg/app/src/main/res/layout/activity_main.xml:127: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                <Button
+                 ~~~~~~
+/root/dcg/app/src/main/res/layout/activity_main.xml:134: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
                 <Button
                  ~~~~~~
 
@@ -71,7 +102,7 @@
 /root/dcg/app/src/main/res/layout/activity_main.xml:58: Warning: Missing autofillHints attribute [Autofill]
             <EditText
              ~~~~~~~~
-/root/dcg/app/src/main/res/layout/activity_main.xml:156: Warning: Missing autofillHints attribute [Autofill]
+/root/dcg/app/src/main/res/layout/activity_main.xml:170: Warning: Missing autofillHints attribute [Autofill]
         <EditText
          ~~~~~~~~
 
@@ -112,4 +143,4 @@
 
    https://developer.android.com/guide/topics/resources/localization.html
 
-0 errors, 12 warnings
+0 errors, 17 warnings

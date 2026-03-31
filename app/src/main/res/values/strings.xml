@@ -11,9 +11,11 @@
     <string name="action_save">Save</string>
     <string name="action_delete">Delete</string>
     <string name="action_run">Run</string>
+    <string name="action_open_output">Open output</string>
     <string name="action_import">Import</string>
     <string name="action_export">Export</string>
     <string name="action_copy_logs">Copy logs</string>
+    <string name="result_output_label">Output</string>
     <string name="result_stdout_label">stdout</string>
     <string name="result_return_value_label">Return value</string>
     <string name="result_error_label">Error</string>

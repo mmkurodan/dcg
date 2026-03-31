@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-03-31T04:17:55" hostname="localhost" time="0.017">
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-03-31T11:49:22" hostname="localhost" time="0.013">
   <properties/>
-  <testcase name="stagedWrapperAssetContainsBitmapNestedClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.006"/>
-  <testcase name="wrapperJarValidationRequiresBitmapAndNestedConfigClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
+  <testcase name="stagedWrapperAssetContainsBitmapNestedClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.007"/>
+  <testcase name="wrapperJarValidationRequiresBitmapAndNestedConfigClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.002"/>
   <testcase name="compilerArgumentsIncludeWrapperClasspathWhenProvided" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
-  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
-  <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.005"/>
-  <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

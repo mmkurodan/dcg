@@ -1,5 +1,9 @@
 package com.micklab.dcg.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ExecutionResult {
     private final ExecutionStatus status;
     private final String headline;
@@ -9,8 +13,22 @@ public class ExecutionResult {
     private final String error;
     private final String details;
     private final long durationMs;
+    private final List<ExecutionOutputItem> outputItems;
 
     public ExecutionResult(ExecutionStatus status, String headline, String summary, String stdout, String returnValue, String error, String details, long durationMs) {
+        this(status, headline, summary, stdout, returnValue, error, details, durationMs, Collections.emptyList());
+    }
+
+    public ExecutionResult(
+            ExecutionStatus status,
+            String headline,
+            String summary,
+            String stdout,
+            String returnValue,
+            String error,
+            String details,
+            long durationMs,
+            List<ExecutionOutputItem> outputItems) {
         this.status = status;
         this.headline = headline == null ? "" : headline;
         this.summary = summary == null ? "" : summary;
@@ -19,6 +37,9 @@ public class ExecutionResult {
         this.error = error == null ? "" : error;
         this.details = details == null ? "" : details;
         this.durationMs = durationMs;
+        this.outputItems = outputItems == null
+                ? Collections.emptyList()
+                : Collections.unmodifiableList(new ArrayList<>(outputItems));
     }
 
     public static ExecutionResult idle(String headline, String summary) {
@@ -83,5 +104,22 @@ public class ExecutionResult {
 
     public long getDurationMs() {
         return durationMs;
+    }
+
+    public List<ExecutionOutputItem> getOutputItems() {
+        return outputItems;
+    }
+
+    public ExecutionResult withOutputItems(List<ExecutionOutputItem> outputItems) {
+        return new ExecutionResult(
+                status,
+                headline,
+                summary,
+                stdout,
+                returnValue,
+                error,
+                details,
+                durationMs,
+                outputItems);
     }
 }

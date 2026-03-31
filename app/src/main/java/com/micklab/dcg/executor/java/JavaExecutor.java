@@ -16,6 +16,7 @@ import com.micklab.dcg.executor.LanguageExecutor;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
+import com.micklab.dcg.output.DynamicOutputRuntime;
 import com.micklab.dcg.util.DiagnosticFormatter;
 
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
@@ -191,17 +192,35 @@ public class JavaExecutor implements LanguageExecutor {
                     dexDir,
                     resolveLibraryFiles(bootClasspath, wrapperClasspath));
             InvocationOutcome outcome = loadAndRun(context, dexFile, parsedSource.getQualifiedClassName());
-            return ExecutionResult.success(
-                    "Java execution succeeded",
-                    parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".",
-                    outcome.stdout,
-                    outcome.returnValue,
-                    outcome.stderr,
-                    joinDetails(
-                            "Dex output: " + dexFile.getName(),
-                            formatRewriteDetails(preparedSource),
-                            formatBootClasspathDetails(bootClasspathDiagnostics)),
-                    elapsedSince(startTime));
+            try {
+                DynamicOutputRuntime.StructuredOutput structuredOutput =
+                        DynamicOutputRuntime.extractStructuredOutput(outcome.dynamicClass, outcome.returnValueObject);
+                return ExecutionResult.success(
+                                "Java execution succeeded",
+                                parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".",
+                                mergeConsoleOutput(outcome.stdout, structuredOutput.getStdout()),
+                                structuredOutput.getReturnValueText(),
+                                mergeConsoleOutput(outcome.stderr, structuredOutput.getStderr()),
+                                joinDetails(
+                                        "Dex output: " + dexFile.getName(),
+                                        formatRewriteDetails(preparedSource),
+                                        formatBootClasspathDetails(bootClasspathDiagnostics)),
+                                elapsedSince(startTime))
+                        .withOutputItems(structuredOutput.getOutputItems());
+            } catch (DynamicOutputRuntime.InvocationFailureException exception) {
+                Throwable rootCause = unwrap(exception.getCause());
+                return ExecutionResult.runtimeError(
+                        "Java execution failed",
+                        exception.getEntrypoint() + " threw an exception.",
+                        mergeConsoleOutput(outcome.stdout, exception.getStdout()),
+                        combineError(
+                                mergeConsoleOutput(outcome.stderr, exception.getStderr()),
+                                DiagnosticFormatter.formatThrowable(rootCause)),
+                        joinDetails(
+                                buildRuntimeDetails(parsedSource, sourceFile, preparedSource),
+                                formatBootClasspathDetails(bootClasspathDiagnostics)),
+                        elapsedSince(startTime));
+            }
         } catch (CapturedInvocationException exception) {
             Throwable rootCause = unwrap(exception.getCause());
             return ExecutionResult.runtimeError(
@@ -335,12 +354,12 @@ public class JavaExecutor implements LanguageExecutor {
 
         Method runMethod = findRunMethod(dynamicClass);
         if (runMethod != null) {
-            return invokeCapturingOutput(runMethod, new Object[0], "public static run()");
+            return invokeCapturingOutput(dynamicClass, runMethod, new Object[0], "public static run()");
         }
 
         Method mainMethod = findMainMethod(dynamicClass);
         if (mainMethod != null) {
-            return invokeCapturingOutput(mainMethod, new Object[]{new String[0]}, "public static void main(String[])");
+            return invokeCapturingOutput(dynamicClass, mainMethod, new Object[]{new String[0]}, "public static void main(String[])");
         }
 
         throw new IllegalStateException(DiagnosticFormatter.formatEntrypointGuidance(qualifiedClassName));
@@ -371,7 +390,7 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
-    private InvocationOutcome invokeCapturingOutput(Method method, Object[] arguments, String entrypoint) throws Exception {
+    private InvocationOutcome invokeCapturingOutput(Class<?> dynamicClass, Method method, Object[] arguments, String entrypoint) throws Exception {
         PrintStream originalOut = System.out;
         PrintStream originalErr = System.err;
         ByteArrayOutputStream stdoutCapture = new ByteArrayOutputStream();
@@ -404,7 +423,8 @@ public class JavaExecutor implements LanguageExecutor {
                 entrypoint,
                 stdout,
                 stderr,
-                method.getReturnType() == Void.TYPE || returnValue == null ? "" : String.valueOf(returnValue));
+                method.getReturnType() == Void.TYPE ? null : returnValue,
+                dynamicClass);
     }
 
     @TargetApi(Build.VERSION_CODES.O)
@@ -792,6 +812,16 @@ public class JavaExecutor implements LanguageExecutor {
         return stderr + "\n\n" + throwableText;
     }
 
+    private String mergeConsoleOutput(String first, String second) {
+        if (TextUtils.isEmpty(first)) {
+            return second == null ? "" : second;
+        }
+        if (TextUtils.isEmpty(second)) {
+            return first;
+        }
+        return first + "\n" + second;
+    }
+
     private String buildBootClasspathDiagnostics(
             String resolvedBootClasspath,
             String resolvedClasspath,
@@ -904,13 +934,15 @@ public class JavaExecutor implements LanguageExecutor {
         private final String entrypoint;
         private final String stdout;
         private final String stderr;
-        private final String returnValue;
+        private final Object returnValueObject;
+        private final Class<?> dynamicClass;
 
-        private InvocationOutcome(String entrypoint, String stdout, String stderr, String returnValue) {
+        private InvocationOutcome(String entrypoint, String stdout, String stderr, Object returnValueObject, Class<?> dynamicClass) {
             this.entrypoint = entrypoint;
             this.stdout = stdout == null ? "" : stdout;
             this.stderr = stderr == null ? "" : stderr;
-            this.returnValue = returnValue == null ? "" : returnValue;
+            this.returnValueObject = returnValueObject;
+            this.dynamicClass = dynamicClass;
         }
     }
 

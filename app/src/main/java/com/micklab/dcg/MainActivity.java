@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -24,8 +25,8 @@ import com.micklab.dcg.executor.java.JavaSourceParser;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
+import com.micklab.dcg.output.OutputStore;
 import com.micklab.dcg.storage.FileManager;
-import com.micklab.dcg.ui.ResultView;
 import com.micklab.dcg.ui.SnippetListAdapter;
 import com.micklab.dcg.util.DiagnosticFormatter;
 
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private Button saveButton;
     private Button deleteButton;
     private Button runButton;
+    private Button openOutputButton;
     private Button importButton;
     private Button exportButton;
-    private ResultView resultView;
 
     private FileManager fileManager;
     private LanguageExecutorRegistry executorRegistry;
@@ -77,10 +78,6 @@ public class MainActivity extends AppCompatActivity {
         setupButtons();
         ensureSeedSnippet();
         refreshSnippets(null);
-        resultView.render(ExecutionResult.info(
-                "Project scaffold ready",
-                "Java now compiles on-device through an Android-compatible ECJ 4.6 bundle, D8, and InMemoryDexClassLoader.",
-                "Use the language selector to prepare future Kotlin and JavaScript snippets today."));
     }
 
     @Override
@@ -98,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
         deleteButton = findViewById(R.id.deleteButton);
         runButton = findViewById(R.id.runButton);
+        openOutputButton = findViewById(R.id.openOutputButton);
         importButton = findViewById(R.id.importButton);
         exportButton = findViewById(R.id.exportButton);
-        resultView = findViewById(R.id.resultView);
     }
 
     private void setupLanguageSpinner() {
@@ -134,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             if (granted && pendingExportSnippet != null) {
                 exportSnippetNow(pendingExportSnippet);
             } else {
-                resultView.render(ExecutionResult.ioError(
+                showToast(ExecutionResult.ioError(
                         "Export cancelled",
                         "Legacy external storage permission was denied.",
                         "On Android 10+ the app exports directly to Downloads without this permission."));
@@ -153,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
         });
         deleteButton.setOnClickListener(view -> deleteCurrentSnippet());
         runButton.setOnClickListener(view -> runCurrentSnippet());
+        openOutputButton.setOnClickListener(view -> openOutputScreen());
         importButton.setOnClickListener(view -> importLauncher.launch(fileManager.createImportIntent()));
         exportButton.setOnClickListener(view -> exportCurrentSnippet());
     }
@@ -164,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             fileManager.save(SourceSnippet.createTemplate(SupportedLanguage.JAVA));
         } catch (IOException exception) {
-            resultView.render(ExecutionResult.ioError(
+            showToast(ExecutionResult.ioError(
                     "Seed snippet failed",
                     "The app could not create its initial Java example.",
                     DiagnosticFormatter.formatThrowable(exception)));
@@ -220,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
         codeInput.setText(template.getContent());
         languageSpinner.setSelection(SupportedLanguage.spinnerPositionOf(language));
         snippetAdapter.setSelectedId(null);
-        resultView.render(ExecutionResult.info(
+        showToast(ExecutionResult.info(
                 "New " + language.getDisplayName() + " snippet",
                 "Edit the template, then save or run it.",
                 language == SupportedLanguage.JAVA
@@ -234,14 +232,14 @@ public class MainActivity extends AppCompatActivity {
             SourceSnippet saved = fileManager.save(draft);
             currentSnippet = saved.copy();
             if (showSuccessMessage) {
-                resultView.render(ExecutionResult.info(
+                showToast(ExecutionResult.info(
                         "Snippet saved",
                         saved.getFileName() + " is now stored in internal app storage.",
                         "Use export to copy it into Downloads or run to execute it through the selected language pipeline."));
             }
             return saved;
         } catch (IOException exception) {
-            resultView.render(ExecutionResult.ioError(
+            showToast(ExecutionResult.ioError(
                     "Save failed",
                     "The app could not write the snippet into internal storage.",
                     DiagnosticFormatter.formatThrowable(exception)));
@@ -286,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
         }
         boolean deleted = fileManager.delete(currentSnippet);
         if (deleted) {
-            resultView.render(ExecutionResult.info(
+            showToast(ExecutionResult.info(
                     "Snippet deleted",
                     currentSnippet.getFileName() + " was removed from internal storage.",
                     "Any copy already exported to Downloads is left untouched."));
@@ -294,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
             refreshSnippets(null);
             return;
         }
-        resultView.render(ExecutionResult.ioError(
+        showToast(ExecutionResult.ioError(
                 "Delete failed",
                 "The selected snippet could not be deleted.",
                 "Try saving again or restarting the app before retrying."));
@@ -309,11 +307,12 @@ public class MainActivity extends AppCompatActivity {
         setBusy(true, "Running " + saved.getLanguage().getDisplayName() + "...", executor.isSupported()
                 ? "Compiling and executing the current snippet."
                 : "This runtime is still a placeholder executor.");
+        openOutputScreen();
         backgroundExecutor.execute(() -> {
             ExecutionResult result = executor.execute(getApplicationContext(), saved);
             runOnUiThread(() -> {
                 setBusy(false, null, null);
-                resultView.render(result);
+                OutputStore.publish(result);
                 refreshSnippets(saved.getId());
             });
         });
@@ -342,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = fileManager.exportSnippet(snippet);
                 runOnUiThread(() -> {
                     setBusy(false, null, null);
-                    resultView.render(ExecutionResult.info(
+                    showToast(ExecutionResult.info(
                             "Export complete",
                             snippet.getFileName() + " was copied to Downloads.",
                             uri.toString()));
@@ -350,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException exception) {
                 runOnUiThread(() -> {
                     setBusy(false, null, null);
-                    resultView.render(ExecutionResult.ioError(
+                    showToast(ExecutionResult.ioError(
                             "Export failed",
                             "The snippet could not be written into Downloads.",
                             DiagnosticFormatter.formatThrowable(exception)));
@@ -368,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     setBusy(false, null, null);
                     refreshSnippets(saved.getId());
-                    resultView.render(ExecutionResult.info(
+                    showToast(ExecutionResult.info(
                             "Import complete",
                             saved.getFileName() + " was copied into internal storage.",
                             "Language was inferred as " + saved.getLanguage().getDisplayName() + "."));
@@ -376,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException exception) {
                 runOnUiThread(() -> {
                     setBusy(false, null, null);
-                    resultView.render(ExecutionResult.ioError(
+                    showToast(ExecutionResult.ioError(
                             "Import failed",
                             "The selected file could not be read.",
                             DiagnosticFormatter.formatThrowable(exception)));
@@ -395,11 +394,39 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setEnabled(!busy);
         deleteButton.setEnabled(!busy);
         runButton.setEnabled(!busy);
+        openOutputButton.setEnabled(!busy);
         importButton.setEnabled(!busy);
         exportButton.setEnabled(!busy);
         if (busy) {
-            resultView.render(ExecutionResult.info(headline, details, ""));
+            OutputStore.publish(ExecutionResult.info(headline, details, ""));
         }
+    }
+
+    private void openOutputScreen() {
+        startActivity(new Intent(this, OutputActivity.class));
+    }
+
+    private void showToast(ExecutionResult result) {
+        if (result == null) {
+            return;
+        }
+        StringBuilder builder = new StringBuilder();
+        if (!TextUtils.isEmpty(result.getHeadline())) {
+            builder.append(result.getHeadline());
+        }
+        if (!TextUtils.isEmpty(result.getSummary())) {
+            if (builder.length() > 0) {
+                builder.append('\n');
+            }
+            builder.append(result.getSummary());
+        }
+        if (builder.length() == 0 && !TextUtils.isEmpty(result.getDetails())) {
+            builder.append(result.getDetails());
+        }
+        if (builder.length() == 0) {
+            return;
+        }
+        Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show();
     }
 
     private SupportedLanguage selectedLanguage() {

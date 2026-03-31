@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 12 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 17 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Mar 31 04:18:55 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Mar 31 11:50:06 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,9 +187,10 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#NestedScrolling"><i class="material-icons warning-icon">warning</i>Nested scrolling widgets (1)</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (4)</a>
       <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (1)</a>
       <a class="mdl-navigation__link" href="#MissingApplicationIcon"><i class="material-icons warning-icon">warning</i>Missing application icon (1)</a>
-      <a class="mdl-navigation__link" href="#ButtonStyle"><i class="material-icons warning-icon">warning</i>Button should be borderless (6)</a>
+      <a class="mdl-navigation__link" href="#ButtonStyle"><i class="material-icons warning-icon">warning</i>Button should be borderless (7)</a>
       <a class="mdl-navigation__link" href="#Autofill"><i class="material-icons warning-icon">warning</i>Use Autofill (2)</a>
       <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (1)</a>
     </nav>
@@ -209,6 +210,9 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#NestedScrolling">NestedScrolling</a>: Nested scrolling widgets</td></tr>
+<tr>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
@@ -222,7 +226,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability">Usability</a>
 </td></tr>
 <tr>
-<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ButtonStyle">ButtonStyle</a>: Button should be borderless</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -253,14 +257,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:138</span>: <span class="message">The vertically scrolling <code>ScrollView</code> should not contain another vertically scrolling widget (<code>ListView</code>)</span><br /><pre class="errorlines">
-<span class="lineno"> 135 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
-<span class="lineno"> 136 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
-<span class="lineno"> 137 </span>
-<span class="caretline"><span class="lineno"> 138 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">ListView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 139 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/snippetListView"</span>
-<span class="lineno"> 140 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
-<span class="lineno"> 141 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"220dp"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:152</span>: <span class="message">The vertically scrolling <code>ScrollView</code> should not contain another vertically scrolling widget (<code>ListView</code>)</span><br /><pre class="errorlines">
+<span class="lineno"> 149 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
+<span class="lineno"> 150 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
+<span class="lineno"> 151 </span>
+<span class="caretline"><span class="lineno"> 152 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">ListView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 153 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/snippetListView"</span>
+<span class="lineno"> 154 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno"> 155 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"220dp"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationNestedScrolling" style="display: none;">
@@ -286,6 +290,85 @@ A scrolling widget such as a <code>ScrollView</code> should not contain any nest
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationNestedScrollingLink" onclick="reveal('explanationNestedScrolling');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="NestedScrollingCardLink" onclick="hideid('NestedScrollingCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="DefaultLocale"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Implied default locale in case conversion</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:318</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 315 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
+<span class="lineno"> 316 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 317 </span>        }
+<span class="caretline"><span class="lineno"> 318 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 319 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
+<span class="lineno"> 320 </span>                || <span class="string">"input"</span>.equals(normalizedType)
+<span class="lineno"> 321 </span>                || <span class="string">"button"</span>.equals(normalizedType)
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:241</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 238 </span>      DynamicUiRequest request,
+<span class="lineno"> 239 </span>      Map&lt;String, EditText> inputs,
+<span class="lineno"> 240 </span>      LinearLayout actionOutputLayout) {
+<span class="caretline"><span class="lineno"> 241 </span>  String type = stringValue(spec.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 242 </span>  <span class="keyword">switch</span> (type) {
+<span class="lineno"> 243 </span>      <span class="keyword">case</span> <span class="string">"row"</span>:
+<span class="lineno"> 244 </span>          <span class="keyword">return</span> buildInteractiveCollection(asCollection(spec.get(<span class="string">"children"</span>)), LinearLayout.HORIZONTAL, request, inputs, actionOutputLayout);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:298</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 295 </span>
+<span class="lineno"> 296 </span>    <span class="keyword">private</span> View buildTextNode(Map&lt;?, ?> spec) {
+<span class="lineno"> 297 </span>        TextView textView = createBodyText(stringValue(spec.get(<span class="string">"text"</span>)));
+<span class="caretline"><span class="lineno"> 298 </span>        String emphasis = stringValue(spec.get(<span class="string">"style"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 299 </span>        <span class="keyword">if</span> (<span class="string">"title"</span>.equals(emphasis)) {
+<span class="lineno"> 300 </span>            textView.setTextSize(<span class="number">20</span>);
+<span class="lineno"> 301 </span>            textView.setTypeface(Typeface.DEFAULT_BOLD);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:312</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 309 </span>        editText.setHint(stringValue(spec.get(<span class="string">"hint"</span>)));
+<span class="lineno"> 310 </span>        editText.setText(stringValue(spec.get(<span class="string">"value"</span>)));
+<span class="lineno"> 311 </span>        editText.setTextColor(color(R.color.textPrimary));
+<span class="caretline"><span class="lineno"> 312 </span>        String keyboard = stringValue(spec.get(<span class="string">"keyboard"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 313 </span>        <span class="keyword">if</span> (<span class="string">"number"</span>.equals(keyboard) || booleanValue(spec.get(<span class="string">"numeric"</span>))) {
+<span class="lineno"> 314 </span>            editText.setInputType(InputType.TYPE_CLASS_NUMBER
+<span class="lineno"> 315 </span>                    | InputType.TYPE_NUMBER_FLAG_DECIMAL
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationDefaultLocale" style="display: none;">
+Calling <code>String#toLowerCase()</code> or <code>#toUpperCase()</code> <b>without specifying an explicit locale</b> is a common source of bugs. The reason for that is that those methods will use the current locale on the user's device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for <code>i</code> is <b>not</b> <code>I</code>.<br/>
+<br/>
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call <code>String#toUpperCase(Locale.ROOT)</code> instead. If you really want to use the current locale, call <code>String#toUpperCase(Locale.getDefault())</code> instead.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/java/util/Locale.html#default_locale">https://developer.android.com/reference/java/util/Locale.html#default_locale</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "DefaultLocale" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">DefaultLocale</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDefaultLocaleLink" onclick="reveal('explanationDefaultLocale');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DefaultLocaleCardLink" onclick="hideid('DefaultLocaleCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -443,18 +526,27 @@ Dismiss</button>            </div>
 <span class="lineno"> 110 </span>                    <span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"@string/action_run"</span> />
 <span class="lineno"> 111 </span>
 <span class="caretline"><span class="lineno"> 112 </span>                <span class="tag">&lt;</span><span class="warning"><span class="tag">Button</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 113 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/importButton"</span>
+</span><span class="lineno"> 113 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/openOutputButton"</span>
 <span class="lineno"> 114 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
 <span class="lineno"> 115 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:120</span>: <span class="message">Buttons in button bars should be borderless; use <code>style="?android:attr/buttonBarButtonStyle"</code> (and <code>?android:attr/buttonBarStyle</code> on the parent)</span><br /><pre class="errorlines">
-<span class="lineno"> 117 </span>                    <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"1"</span>
-<span class="lineno"> 118 </span>                    <span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"@string/action_import"</span> />
-<span class="lineno"> 119 </span>
-<span class="caretline"><span class="lineno"> 120 </span>                <span class="tag">&lt;</span><span class="warning"><span class="tag">Button</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 121 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/exportButton"</span>
-<span class="lineno"> 122 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
-<span class="lineno"> 123 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:127</span>: <span class="message">Buttons in button bars should be borderless; use <code>style="?android:attr/buttonBarButtonStyle"</code> (and <code>?android:attr/buttonBarStyle</code> on the parent)</span><br /><pre class="errorlines">
+<span class="lineno"> 124 </span>                <span class="prefix">android:</span><span class="attribute">layout_marginTop</span>=<span class="value">"8dp"</span>
+<span class="lineno"> 125 </span>                <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"horizontal"</span>>
+<span class="lineno"> 126 </span>
+<span class="caretline"><span class="lineno"> 127 </span>                <span class="tag">&lt;</span><span class="warning"><span class="tag">Button</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 128 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/importButton"</span>
+<span class="lineno"> 129 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 130 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:134</span>: <span class="message">Buttons in button bars should be borderless; use <code>style="?android:attr/buttonBarButtonStyle"</code> (and <code>?android:attr/buttonBarStyle</code> on the parent)</span><br /><pre class="errorlines">
+<span class="lineno"> 131 </span>                    <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"1"</span>
+<span class="lineno"> 132 </span>                    <span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"@string/action_import"</span> />
+<span class="lineno"> 133 </span>
+<span class="caretline"><span class="lineno"> 134 </span>                <span class="tag">&lt;</span><span class="warning"><span class="tag">Button</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 135 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/exportButton"</span>
+<span class="lineno"> 136 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 137 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationButtonStyle" style="display: none;">
@@ -502,14 +594,14 @@ Dismiss</button>            </div>
 <span class="lineno">  60 </span>                <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
 <span class="lineno">  61 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:156</span>: <span class="message">Missing <code>autofillHints</code> attribute</span><br /><pre class="errorlines">
-<span class="lineno"> 153 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
-<span class="lineno"> 154 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
-<span class="lineno"> 155 </span>
-<span class="caretline"><span class="lineno"> 156 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 157 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/codeInput"</span>
-<span class="lineno"> 158 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
-<span class="lineno"> 159 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"360dp"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:170</span>: <span class="message">Missing <code>autofillHints</code> attribute</span><br /><pre class="errorlines">
+<span class="lineno"> 167 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
+<span class="lineno"> 168 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
+<span class="lineno"> 169 </span>
+<span class="caretline"><span class="lineno"> 170 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 171 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/codeInput"</span>
+<span class="lineno"> 172 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno"> 173 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"360dp"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationAutofill" style="display: none;">

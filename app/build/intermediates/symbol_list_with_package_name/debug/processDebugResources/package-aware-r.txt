@@ -772,6 +772,7 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id openOutputButton
 id parentPanel
 id progress_circular
 id progress_horizontal
@@ -789,7 +790,6 @@ id resultStatusView
 id resultStdoutLabelView
 id resultStdoutView
 id resultSummaryView
-id resultView
 id right_icon
 id right_side
 id runButton
@@ -949,6 +949,7 @@ string action_delete
 string action_export
 string action_import
 string action_new
+string action_open_output
 string action_run
 string action_save
 string androidx_startup
@@ -966,6 +967,7 @@ string language_label
 string result_copied_message
 string result_details_label
 string result_error_label
+string result_output_label
 string result_return_value_label
 string result_stdout_label
 string saved_snippets_label

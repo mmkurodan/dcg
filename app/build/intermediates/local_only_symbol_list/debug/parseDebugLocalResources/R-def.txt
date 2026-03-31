@@ -22,6 +22,7 @@ id exportButton
 id importButton
 id languageSpinner
 id newButton
+id openOutputButton
 id resultCopyLogsButton
 id resultDetailsLabelView
 id resultDetailsView
@@ -34,7 +35,6 @@ id resultStatusView
 id resultStdoutLabelView
 id resultStdoutView
 id resultSummaryView
-id resultView
 id runButton
 id saveButton
 id snippetItemRoot
@@ -50,6 +50,7 @@ string action_delete
 string action_export
 string action_import
 string action_new
+string action_open_output
 string action_run
 string action_save
 string app_name
@@ -59,6 +60,7 @@ string language_label
 string result_copied_message
 string result_details_label
 string result_error_label
+string result_output_label
 string result_return_value_label
 string result_stdout_label
 string saved_snippets_label
