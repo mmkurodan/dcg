@@ -454,12 +454,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/output/DynamicOutputRuntime.java"
-            line="339"
+            line="343"
             column="56"
-            startOffset="13890"
-            endLine="339"
+            startOffset="14114"
+            endLine="343"
             endColumn="67"
-            endOffset="13901"/>
+            endOffset="14125"/>
     </incident>
 
     <incident

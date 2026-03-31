@@ -26,6 +26,7 @@ public final class DynamicOutputRuntime {
     private static final String VIEW_FACTORY_METHOD = "createOutputView";
     private static final String WRAPPER_CONTEXT_CLASS = "com.micklab.dcg.wrapper.android.content.Context";
     private static final String OUTPUT_MODEL_JSON_METHOD = "__dcgGetOutputModelJson";
+    private static final String PSEUDO_OUTPUT_MODEL_JSON_METHOD = "__dcgGetPseudoOutputModelJson";
 
     private DynamicOutputRuntime() {
     }
@@ -149,14 +150,17 @@ public final class DynamicOutputRuntime {
     }
 
     private static String extractOutputModelJson(Class<?> dynamicClass) throws Exception {
-        Method method = findZeroArgStaticMethod(dynamicClass, OUTPUT_MODEL_JSON_METHOD);
+        Method method = findZeroArgStaticMethod(dynamicClass, PSEUDO_OUTPUT_MODEL_JSON_METHOD);
+        if (method == null) {
+            method = findZeroArgStaticMethod(dynamicClass, OUTPUT_MODEL_JSON_METHOD);
+        }
         if (method == null) {
             return "";
         }
         CapturedInvocation invocation = captureInvocation(
                 method,
                 new Object[0],
-                "public static String " + OUTPUT_MODEL_JSON_METHOD + "()");
+                "public static String " + method.getName() + "()");
         if (invocation.returnValue == null) {
             return "";
         }

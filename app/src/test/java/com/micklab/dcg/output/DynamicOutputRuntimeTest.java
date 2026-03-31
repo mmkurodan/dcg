@@ -136,6 +136,10 @@ public class DynamicOutputRuntimeTest {
             return nodes;
         }
 
+        public static String __dcgGetPseudoOutputModelJson() {
+            return __dcgGetOutputModelJson();
+        }
+
         public static String __dcgGetOutputModelJson() {
             return "{\"version\":1,\"spec\":[{\"type\":\"column\",\"children\":[{\"type\":\"text\",\"text\":\"Pseudo\"},{\"type\":\"input\",\"id\":\"name\",\"hint\":\"Name\"},{\"type\":\"button\",\"text\":\"Submit\",\"action\":\"submit\"}]}]}";
         }

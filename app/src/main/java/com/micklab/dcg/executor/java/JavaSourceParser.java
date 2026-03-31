@@ -45,7 +45,7 @@ public final class JavaSourceParser {
     private static final String PSEUDO_MAIN_ACTIVITY = "com.micklab.dcg.wrapper.pseudo.PseudoMainActivity";
     private static final String PSEUDO_RESULT = "com.micklab.dcg.wrapper.pseudo.PseudoResult";
     private static final String BUILD_OUTPUT_METHOD = "buildOutput";
-    private static final String OUTPUT_MODEL_JSON_METHOD = "__dcgGetOutputModelJson";
+    private static final String PSEUDO_OUTPUT_MODEL_JSON_METHOD = "__dcgGetPseudoOutputModelJson";
     private static final String PSEUDO_HELPER_METHOD = "__dcgCreatePseudoResult";
     private static final String PSEUDO_CACHE_FIELD = "__dcgPseudoResultCache";
     private static final String PARSER_FILE_NAME = "Snippet.java";
@@ -494,7 +494,7 @@ public final class JavaSourceParser {
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_CACHE_FIELD + ";\n\n"
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_HELPER_METHOD + "() {\n"
                 + "        " + className + " __dcgActivity = new " + className + "();\n"
-                + "        __dcgActivity.onCreate((com.micklab.dcg.wrapper.android.os.Bundle) null);\n"
+                + "        __dcgActivity.onCreate(null);\n"
                 + "        return new " + PSEUDO_RESULT + "(\n"
                 + "                __dcgActivity.__dcgBuildOutputSpec(),\n"
                 + "                __dcgActivity.__dcgGetOutputModelJson());\n"
@@ -503,7 +503,7 @@ public final class JavaSourceParser {
                 + "        " + PSEUDO_CACHE_FIELD + " = " + PSEUDO_HELPER_METHOD + "();\n"
                 + "        return " + PSEUDO_CACHE_FIELD + ".getSpec();\n"
                 + "    }\n\n"
-                + "    public static String " + OUTPUT_MODEL_JSON_METHOD + "() {\n"
+                + "    public static String " + PSEUDO_OUTPUT_MODEL_JSON_METHOD + "() {\n"
                 + "        if (" + PSEUDO_CACHE_FIELD + " == null) {\n"
                 + "            " + PSEUDO_CACHE_FIELD + " = " + PSEUDO_HELPER_METHOD + "();\n"
                 + "        }\n"
@@ -594,6 +594,7 @@ public final class JavaSourceParser {
 
     private static Map<String, String> buildPseudoTypeReplacements() {
         LinkedHashMap<String, String> replacements = new LinkedHashMap<>();
+        replacements.put("android.os.Bundle", "com.micklab.dcg.wrapper.android.os.Bundle");
         replacements.put("android.widget.TextView", "com.micklab.dcg.wrapper.pseudo.TextView");
         replacements.put("android.widget.Button", "com.micklab.dcg.wrapper.pseudo.Button");
         replacements.put("android.widget.EditText", "com.micklab.dcg.wrapper.pseudo.EditText");

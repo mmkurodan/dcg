@@ -31,7 +31,7 @@
         errorLine2="                                                       ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java"
-            line="339"
+            line="343"
             column="56"/>
     </issue>
 

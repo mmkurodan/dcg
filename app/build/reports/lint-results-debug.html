@@ -179,7 +179,7 @@ document.getElementById(id).style.display = 'none';
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Lint Report: 17 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Mar 31 20:25:56 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Mar 31 21:27:29 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -301,14 +301,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:339</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 336 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
-<span class="lineno"> 337 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
-<span class="lineno"> 338 </span>        }
-<span class="caretline"><span class="lineno"> 339 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 340 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
-<span class="lineno"> 341 </span>                || <span class="string">"image"</span>.equals(normalizedType)
-<span class="lineno"> 342 </span>                || <span class="string">"input"</span>.equals(normalizedType)
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:343</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 340 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
+<span class="lineno"> 341 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 342 </span>        }
+<span class="caretline"><span class="lineno"> 343 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 344 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
+<span class="lineno"> 345 </span>                || <span class="string">"image"</span>.equals(normalizedType)
+<span class="lineno"> 346 </span>                || <span class="string">"input"</span>.equals(normalizedType)
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:248</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">

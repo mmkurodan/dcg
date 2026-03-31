@@ -108,6 +108,22 @@ public class JavaSourceParserTest {
         assertFalse(rewritten.contains("androidx.appcompat.app.AppCompatActivity"));
         assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
         assertTrue(rewritten.contains("public static Object buildOutput()"));
-        assertTrue(rewritten.contains("public static String __dcgGetOutputModelJson()"));
+        assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
+        assertFalse(rewritten.contains("__dcgActivity.onCreate((com.micklab.dcg.wrapper.android.os.Bundle) null);"));
+    }
+
+    @Test
+    public void prepareForCompilationRewritesQualifiedBundleForPseudoMainActivity() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
+        assertTrue(rewritten.contains("__dcgActivity.onCreate(null);"));
     }
 }
