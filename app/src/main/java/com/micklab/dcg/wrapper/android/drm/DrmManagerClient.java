@@ -35,12 +35,12 @@ public final class DrmManagerClient {
         return ((android.drm.DrmManagerClient) real).acquireRights(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean canHandle(java.lang.String arg0, java.lang.String arg1) {
-        return ((android.drm.DrmManagerClient) real).canHandle(arg0, arg1);
-    }
-
     public boolean canHandle(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) {
         return ((android.drm.DrmManagerClient) real).canHandle(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
+    public boolean canHandle(java.lang.String arg0, java.lang.String arg1) {
+        return ((android.drm.DrmManagerClient) real).canHandle(arg0, arg1);
     }
 
     public int checkRightsStatus(com.micklab.dcg.wrapper.android.net.Uri arg0) {
@@ -51,12 +51,12 @@ public final class DrmManagerClient {
         return ((android.drm.DrmManagerClient) real).checkRightsStatus(arg0);
     }
 
-    public int checkRightsStatus(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
-        return ((android.drm.DrmManagerClient) real).checkRightsStatus(arg0 == null ? null : arg0.getReal(), arg1);
-    }
-
     public int checkRightsStatus(java.lang.String arg0, int arg1) {
         return ((android.drm.DrmManagerClient) real).checkRightsStatus(arg0, arg1);
+    }
+
+    public int checkRightsStatus(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
+        return ((android.drm.DrmManagerClient) real).checkRightsStatus(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void close() {
@@ -123,12 +123,12 @@ public final class DrmManagerClient {
         return ((android.drm.DrmManagerClient) real).removeAllRights();
     }
 
-    public int removeRights(java.lang.String arg0) {
-        return ((android.drm.DrmManagerClient) real).removeRights(arg0);
-    }
-
     public int removeRights(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return ((android.drm.DrmManagerClient) real).removeRights(arg0 == null ? null : arg0.getReal());
+    }
+
+    public int removeRights(java.lang.String arg0) {
+        return ((android.drm.DrmManagerClient) real).removeRights(arg0);
     }
 
     public int saveRights(com.micklab.dcg.wrapper.android.drm.DrmRights arg0, java.lang.String arg1, java.lang.String arg2) throws java.io.IOException {

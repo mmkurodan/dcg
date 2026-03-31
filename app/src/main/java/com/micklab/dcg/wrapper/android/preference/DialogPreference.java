@@ -75,19 +75,19 @@ public final class DialogPreference {
         ((android.preference.DialogPreference) real).setDialogLayoutResource(arg0);
     }
 
-    public void setDialogMessage(int arg0) {
-        ((android.preference.DialogPreference) real).setDialogMessage(arg0);
-    }
-
     public void setDialogMessage(java.lang.CharSequence arg0) {
         ((android.preference.DialogPreference) real).setDialogMessage(arg0);
     }
 
-    public void setDialogTitle(java.lang.CharSequence arg0) {
-        ((android.preference.DialogPreference) real).setDialogTitle(arg0);
+    public void setDialogMessage(int arg0) {
+        ((android.preference.DialogPreference) real).setDialogMessage(arg0);
     }
 
     public void setDialogTitle(int arg0) {
+        ((android.preference.DialogPreference) real).setDialogTitle(arg0);
+    }
+
+    public void setDialogTitle(java.lang.CharSequence arg0) {
         ((android.preference.DialogPreference) real).setDialogTitle(arg0);
     }
 

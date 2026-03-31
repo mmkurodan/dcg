@@ -55,6 +55,26 @@ public final class WifiP2pDevice {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isGroupOwner()");
     }
 
+    public boolean isOpportunisticBootstrappingMethodSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isOpportunisticBootstrappingMethodSupported()");
+    }
+
+    public boolean isPassphraseDisplayBootstrappingMethodSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isPassphraseDisplayBootstrappingMethodSupported()");
+    }
+
+    public boolean isPassphraseKeypadBootstrappingMethodSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isPassphraseKeypadBootstrappingMethodSupported()");
+    }
+
+    public boolean isPinCodeDisplayBootstrappingMethodSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isPinCodeDisplayBootstrappingMethodSupported()");
+    }
+
+    public boolean isPinCodeKeypadBootstrappingMethodSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isPinCodeKeypadBootstrappingMethodSupported()");
+    }
+
     public boolean isServiceDiscoveryCapable() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pDevice#isServiceDiscoveryCapable()");
     }

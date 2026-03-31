@@ -23,6 +23,10 @@ public final class IBinder {
         return getReal();
     }
 
+    public void addFrozenStateChangeCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.os.IBinder.FrozenStateChangeCallback arg1) throws android.os.RemoteException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder#addFrozenStateChangeCallback(java.util.concurrent.Executor,android.os.IBinder$FrozenStateChangeCallback)");
+    }
+
     public void dump(java.io.FileDescriptor arg0, java.lang.String[] arg1) throws android.os.RemoteException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder#dump(java.io.FileDescriptor,[Ljava.lang.String;)");
     }
@@ -53,6 +57,10 @@ public final class IBinder {
 
     public com.micklab.dcg.wrapper.android.os.IInterface queryLocalInterface(java.lang.String arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder#queryLocalInterface(java.lang.String)");
+    }
+
+    public boolean removeFrozenStateChangeCallback(com.micklab.dcg.wrapper.android.os.IBinder.FrozenStateChangeCallback arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder#removeFrozenStateChangeCallback(android.os.IBinder$FrozenStateChangeCallback)");
     }
 
     public boolean transact(int arg0, com.micklab.dcg.wrapper.android.os.Parcel arg1, com.micklab.dcg.wrapper.android.os.Parcel arg2, int arg3) throws android.os.RemoteException {
@@ -93,6 +101,34 @@ public final class IBinder {
         public void binderDied(com.micklab.dcg.wrapper.android.os.IBinder arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder$DeathRecipient#binderDied(android.os.IBinder)");
         }
+
+    }
+    public static final class FrozenStateChangeCallback {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private FrozenStateChangeCallback(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.os.IBinder.FrozenStateChangeCallback wrap(android.os.IBinder.FrozenStateChangeCallback real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.IBinder.FrozenStateChangeCallback(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.IBinder.FrozenStateChangeCallback getReal() {
+            return (android.os.IBinder.FrozenStateChangeCallback) real;
+        }
+
+        public android.os.IBinder.FrozenStateChangeCallback unwrap() {
+            return getReal();
+        }
+
+        public void onFrozenStateChanged(com.micklab.dcg.wrapper.android.os.IBinder arg0, int arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.IBinder$FrozenStateChangeCallback#onFrozenStateChanged(android.os.IBinder,int)");
+        }
+
 
     }
 }

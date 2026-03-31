@@ -35,6 +35,10 @@ public final class NsdServiceInfo {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdServiceInfo#getHost()");
     }
 
+    public java.lang.String getHostname() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdServiceInfo#getHostname()");
+    }
+
     public com.micklab.dcg.wrapper.android.net.Network getNetwork() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdServiceInfo#getNetwork()");
     }

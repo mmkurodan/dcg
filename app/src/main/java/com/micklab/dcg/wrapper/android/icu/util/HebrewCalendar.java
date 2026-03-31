@@ -27,7 +27,15 @@ public final class HebrewCalendar {
         this(new android.icu.util.HebrewCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public HebrewCalendar(java.util.Date arg0) {
+        this(new android.icu.util.HebrewCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public HebrewCalendar(java.util.Locale arg0) {
         this(new android.icu.util.HebrewCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class HebrewCalendar {
         this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public HebrewCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public HebrewCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.HebrewCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public HebrewCalendar(int arg0, int arg1, int arg2) {
@@ -63,12 +63,24 @@ public final class HebrewCalendar {
         ((android.icu.util.HebrewCalendar) real).add(arg0, arg1);
     }
 
+    public java.lang.String getTemporalMonthCode() {
+        return ((android.icu.util.HebrewCalendar) real).getTemporalMonthCode();
+    }
+
     public java.lang.String getType() {
         return ((android.icu.util.HebrewCalendar) real).getType();
     }
 
+    public boolean inTemporalLeapYear() {
+        return ((android.icu.util.HebrewCalendar) real).inTemporalLeapYear();
+    }
+
     public void roll(int arg0, int arg1) {
         ((android.icu.util.HebrewCalendar) real).roll(arg0, arg1);
+    }
+
+    public void setTemporalMonthCode(java.lang.String arg0) {
+        ((android.icu.util.HebrewCalendar) real).setTemporalMonthCode(arg0);
     }
 
     public static final int ADAR = android.icu.util.HebrewCalendar.ADAR;

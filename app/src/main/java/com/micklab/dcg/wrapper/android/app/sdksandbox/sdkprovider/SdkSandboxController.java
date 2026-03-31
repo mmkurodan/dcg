@@ -35,8 +35,16 @@ public final class SdkSandboxController {
         return com.micklab.dcg.wrapper.android.os.IBinder.wrap(((android.app.sdksandbox.sdkprovider.SdkSandboxController) real).registerSdkSandboxActivityHandler(arg0 == null ? null : arg0.getReal()));
     }
 
+    public void registerSdkSandboxClientImportanceListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxClientImportanceListener arg1) {
+        ((android.app.sdksandbox.sdkprovider.SdkSandboxController) real).registerSdkSandboxClientImportanceListener(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
     public void unregisterSdkSandboxActivityHandler(com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxActivityHandler arg0) {
         ((android.app.sdksandbox.sdkprovider.SdkSandboxController) real).unregisterSdkSandboxActivityHandler(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void unregisterSdkSandboxClientImportanceListener(com.micklab.dcg.wrapper.android.app.sdksandbox.sdkprovider.SdkSandboxClientImportanceListener arg0) {
+        ((android.app.sdksandbox.sdkprovider.SdkSandboxController) real).unregisterSdkSandboxClientImportanceListener(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String SDK_SANDBOX_CONTROLLER_SERVICE = android.app.sdksandbox.sdkprovider.SdkSandboxController.SDK_SANDBOX_CONTROLLER_SERVICE;

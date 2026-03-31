@@ -67,6 +67,10 @@ public final class AudioDeviceInfo {
         return ((android.media.AudioDeviceInfo) real).getSampleRates();
     }
 
+    public int getSpeakerLayoutChannelMask() {
+        return ((android.media.AudioDeviceInfo) real).getSpeakerLayoutChannelMask();
+    }
+
     public int getType() {
         return ((android.media.AudioDeviceInfo) real).getType();
     }
@@ -105,6 +109,7 @@ public final class AudioDeviceInfo {
     public static final int TYPE_IP = android.media.AudioDeviceInfo.TYPE_IP;
     public static final int TYPE_LINE_ANALOG = android.media.AudioDeviceInfo.TYPE_LINE_ANALOG;
     public static final int TYPE_LINE_DIGITAL = android.media.AudioDeviceInfo.TYPE_LINE_DIGITAL;
+    public static final int TYPE_MULTICHANNEL_GROUP = android.media.AudioDeviceInfo.TYPE_MULTICHANNEL_GROUP;
     public static final int TYPE_REMOTE_SUBMIX = android.media.AudioDeviceInfo.TYPE_REMOTE_SUBMIX;
     public static final int TYPE_TELEPHONY = android.media.AudioDeviceInfo.TYPE_TELEPHONY;
     public static final int TYPE_TV_TUNER = android.media.AudioDeviceInfo.TYPE_TV_TUNER;

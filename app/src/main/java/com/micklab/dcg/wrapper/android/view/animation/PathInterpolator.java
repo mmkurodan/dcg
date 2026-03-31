@@ -27,12 +27,12 @@ public final class PathInterpolator {
         this(new android.view.animation.PathInterpolator(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public PathInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.view.animation.PathInterpolator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public PathInterpolator(float arg0, float arg1) {
         this(new android.view.animation.PathInterpolator(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public PathInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+        this(new android.view.animation.PathInterpolator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public PathInterpolator(float arg0, float arg1, float arg2, float arg3) {

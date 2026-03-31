@@ -63,16 +63,16 @@ public final class DateIntervalFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat.wrap(android.icu.text.DateIntervalFormat.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat getInstance(java.lang.String arg0, java.util.Locale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat.wrap(android.icu.text.DateIntervalFormat.getInstance(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat getInstance(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat.wrap(android.icu.text.DateIntervalFormat.getInstance(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat getInstance(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat.wrap(android.icu.text.DateIntervalFormat.getInstance(arg0, arg1 == null ? null : arg1.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat getInstance(java.lang.String arg0, java.util.Locale arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat.wrap(android.icu.text.DateIntervalFormat.getInstance(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateIntervalFormat getInstance(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, com.micklab.dcg.wrapper.android.icu.text.DateIntervalInfo arg2) {

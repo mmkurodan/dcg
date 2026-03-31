@@ -23,6 +23,10 @@ public final class RenderInput {
         return getReal();
     }
 
+    public RenderInput(int arg0, int arg1, com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.RenderingConfig arg2) {
+        this(new android.adservices.ondevicepersonalization.RenderInput(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public boolean equals(java.lang.Object arg0) {
         return ((android.adservices.ondevicepersonalization.RenderInput) real).equals(arg0);
     }

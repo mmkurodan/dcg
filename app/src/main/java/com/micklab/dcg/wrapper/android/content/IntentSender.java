@@ -63,6 +63,10 @@ public final class IntentSender {
         ((android.content.IntentSender) real).sendIntent(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5);
     }
 
+    public void sendIntent(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, com.micklab.dcg.wrapper.android.content.Intent arg2, java.lang.String arg3, com.micklab.dcg.wrapper.android.os.Bundle arg4, java.util.concurrent.Executor arg5, com.micklab.dcg.wrapper.android.content.IntentSender.OnFinished arg6) throws android.content.IntentSender.SendIntentException {
+        ((android.content.IntentSender) real).sendIntent(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal(), arg5, arg6 == null ? null : arg6.getReal());
+    }
+
     public java.lang.String toString() {
         return ((android.content.IntentSender) real).toString();
     }
@@ -129,11 +133,11 @@ public final class IntentSender {
             this(new android.content.IntentSender.SendIntentException(), (__DcgwBridgeToken) null);
         }
 
-        public SendIntentException(java.lang.String arg0) {
+        public SendIntentException(java.lang.Exception arg0) {
             this(new android.content.IntentSender.SendIntentException(arg0), (__DcgwBridgeToken) null);
         }
 
-        public SendIntentException(java.lang.Exception arg0) {
+        public SendIntentException(java.lang.String arg0) {
             this(new android.content.IntentSender.SendIntentException(arg0), (__DcgwBridgeToken) null);
         }
 

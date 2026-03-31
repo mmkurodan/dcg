@@ -27,12 +27,12 @@ public final class Time {
         this(new android.text.format.Time(), (__DcgwBridgeToken) null);
     }
 
-    public Time(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
-        this(new android.text.format.Time(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public Time(java.lang.String arg0) {
         this(new android.text.format.Time(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public Time(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
+        this(new android.text.format.Time(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public boolean after(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
@@ -103,12 +103,12 @@ public final class Time {
         return ((android.text.format.Time) real).parse3339(arg0);
     }
 
-    public void set(long arg0) {
-        ((android.text.format.Time) real).set(arg0);
-    }
-
     public void set(com.micklab.dcg.wrapper.android.text.format.Time arg0) {
         ((android.text.format.Time) real).set(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void set(long arg0) {
+        ((android.text.format.Time) real).set(arg0);
     }
 
     public void set(int arg0, int arg1, int arg2) {

@@ -163,12 +163,12 @@ public final class GradientDrawable {
         ((android.graphics.drawable.GradientDrawable) real).setAlpha(arg0);
     }
 
-    public void setColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        ((android.graphics.drawable.GradientDrawable) real).setColor(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setColor(int arg0) {
         ((android.graphics.drawable.GradientDrawable) real).setColor(arg0);
+    }
+
+    public void setColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
+        ((android.graphics.drawable.GradientDrawable) real).setColor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setColorFilter(com.micklab.dcg.wrapper.android.graphics.ColorFilter arg0) {

@@ -27,6 +27,10 @@ public final class ChineseCalendar {
         this(new android.icu.util.ChineseCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public ChineseCalendar(java.util.Date arg0) {
+        this(new android.icu.util.ChineseCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
     public ChineseCalendar(java.util.Locale arg0) {
         this(new android.icu.util.ChineseCalendar(arg0), (__DcgwBridgeToken) null);
     }
@@ -39,16 +43,12 @@ public final class ChineseCalendar {
         this(new android.icu.util.ChineseCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public ChineseCalendar(java.util.Date arg0) {
-        this(new android.icu.util.ChineseCalendar(arg0), (__DcgwBridgeToken) null);
+    public ChineseCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.ChineseCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ChineseCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.ChineseCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public ChineseCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.ChineseCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ChineseCalendar(int arg0, int arg1, int arg2, int arg3) {
@@ -71,12 +71,24 @@ public final class ChineseCalendar {
         ((android.icu.util.ChineseCalendar) real).add(arg0, arg1);
     }
 
+    public java.lang.String getTemporalMonthCode() {
+        return ((android.icu.util.ChineseCalendar) real).getTemporalMonthCode();
+    }
+
     public java.lang.String getType() {
         return ((android.icu.util.ChineseCalendar) real).getType();
     }
 
+    public boolean inTemporalLeapYear() {
+        return ((android.icu.util.ChineseCalendar) real).inTemporalLeapYear();
+    }
+
     public void roll(int arg0, int arg1) {
         ((android.icu.util.ChineseCalendar) real).roll(arg0, arg1);
+    }
+
+    public void setTemporalMonthCode(java.lang.String arg0) {
+        ((android.icu.util.ChineseCalendar) real).setTemporalMonthCode(arg0);
     }
 
 }

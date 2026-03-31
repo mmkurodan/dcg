@@ -23,6 +23,14 @@ public final class PowerManager {
         return getReal();
     }
 
+    public void addThermalHeadroomListener(com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalHeadroomChangedListener arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#addThermalHeadroomListener(android.os.PowerManager$OnThermalHeadroomChangedListener)");
+    }
+
+    public void addThermalHeadroomListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalHeadroomChangedListener arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#addThermalHeadroomListener(java.util.concurrent.Executor,android.os.PowerManager$OnThermalHeadroomChangedListener)");
+    }
+
     public void addThermalStatusListener(com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#addThermalStatusListener(android.os.PowerManager$OnThermalStatusChangedListener)");
     }
@@ -111,11 +119,38 @@ public final class PowerManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#reboot(java.lang.String)");
     }
 
+    public void removeThermalHeadroomListener(com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalHeadroomChangedListener arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#removeThermalHeadroomListener(android.os.PowerManager$OnThermalHeadroomChangedListener)");
+    }
+
     public void removeThermalStatusListener(com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalStatusChangedListener arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#removeThermalStatusListener(android.os.PowerManager$OnThermalStatusChangedListener)");
     }
 
 
+    public static final class OnThermalHeadroomChangedListener {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private OnThermalHeadroomChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalHeadroomChangedListener wrap(android.os.PowerManager.OnThermalHeadroomChangedListener real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.OnThermalHeadroomChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.PowerManager.OnThermalHeadroomChangedListener getReal() {
+            return (android.os.PowerManager.OnThermalHeadroomChangedListener) real;
+        }
+
+        public android.os.PowerManager.OnThermalHeadroomChangedListener unwrap() {
+            return getReal();
+        }
+
+    }
     public static final class OnThermalStatusChangedListener {
         private static final class __DcgwBridgeToken {
         }

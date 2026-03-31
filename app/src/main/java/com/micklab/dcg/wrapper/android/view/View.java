@@ -891,6 +891,10 @@ public final class View {
         return com.micklab.dcg.wrapper.android.animation.StateListAnimator.wrap(((android.view.View) real).getStateListAnimator());
     }
 
+    public java.lang.CharSequence getSupplementalDescription() {
+        return ((android.view.View) real).getSupplementalDescription();
+    }
+
     public int getSystemUiVisibility() {
         return ((android.view.View) real).getSystemUiVisibility();
     }
@@ -1591,6 +1595,10 @@ public final class View {
         ((android.view.View) real).removeOnUnhandledKeyEventListener(arg0 == null ? null : arg0.getReal());
     }
 
+    public void reportAppJankStats(com.micklab.dcg.wrapper.android.app.jank.AppJankStats arg0) {
+        ((android.view.View) real).reportAppJankStats(arg0 == null ? null : arg0.getReal());
+    }
+
     public void requestApplyInsets() {
         ((android.view.View) real).requestApplyInsets();
     }
@@ -1631,12 +1639,12 @@ public final class View {
         return ((android.view.View) real).requestRectangleOnScreen(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public void requestUnbufferedDispatch(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
-        ((android.view.View) real).requestUnbufferedDispatch(arg0 == null ? null : arg0.getReal());
-    }
-
     public void requestUnbufferedDispatch(int arg0) {
         ((android.view.View) real).requestUnbufferedDispatch(arg0);
+    }
+
+    public void requestUnbufferedDispatch(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
+        ((android.view.View) real).requestUnbufferedDispatch(arg0 == null ? null : arg0.getReal());
     }
 
     public void resetPivot() {
@@ -1851,11 +1859,11 @@ public final class View {
         ((android.view.View) real).setFitsSystemWindows(arg0);
     }
 
-    public void setFocusable(int arg0) {
+    public void setFocusable(boolean arg0) {
         ((android.view.View) real).setFocusable(arg0);
     }
 
-    public void setFocusable(boolean arg0) {
+    public void setFocusable(int arg0) {
         ((android.view.View) real).setFocusable(arg0);
     }
 
@@ -2251,6 +2259,10 @@ public final class View {
         ((android.view.View) real).setStateListAnimator(arg0 == null ? null : arg0.getReal());
     }
 
+    public void setSupplementalDescription(java.lang.CharSequence arg0) {
+        ((android.view.View) real).setSupplementalDescription(arg0);
+    }
+
     public void setSystemUiVisibility(int arg0) {
         ((android.view.View) real).setSystemUiVisibility(arg0);
     }
@@ -2462,6 +2474,7 @@ public final class View {
     public static final int DRAG_FLAG_GLOBAL_SAME_APPLICATION = android.view.View.DRAG_FLAG_GLOBAL_SAME_APPLICATION;
     public static final int DRAG_FLAG_GLOBAL_URI_READ = android.view.View.DRAG_FLAG_GLOBAL_URI_READ;
     public static final int DRAG_FLAG_GLOBAL_URI_WRITE = android.view.View.DRAG_FLAG_GLOBAL_URI_WRITE;
+    public static final int DRAG_FLAG_HIDE_CALLING_TASK_ON_DRAG_START = android.view.View.DRAG_FLAG_HIDE_CALLING_TASK_ON_DRAG_START;
     public static final int DRAG_FLAG_OPAQUE = android.view.View.DRAG_FLAG_OPAQUE;
     public static final int DRAG_FLAG_START_INTENT_SENDER_ON_UNHANDLED_DRAG = android.view.View.DRAG_FLAG_START_INTENT_SENDER_ON_UNHANDLED_DRAG;
     public static final int DRAWING_CACHE_QUALITY_AUTO = android.view.View.DRAWING_CACHE_QUALITY_AUTO;

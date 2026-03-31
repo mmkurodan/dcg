@@ -75,11 +75,11 @@ public final class TileService {
         ((android.service.quicksettings.TileService) real).showDialog(arg0 == null ? null : arg0.getReal());
     }
 
-    public void startActivityAndCollapse(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
+    public void startActivityAndCollapse(com.micklab.dcg.wrapper.android.content.Intent arg0) {
         ((android.service.quicksettings.TileService) real).startActivityAndCollapse(arg0 == null ? null : arg0.getReal());
     }
 
-    public void startActivityAndCollapse(com.micklab.dcg.wrapper.android.content.Intent arg0) {
+    public void startActivityAndCollapse(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
         ((android.service.quicksettings.TileService) real).startActivityAndCollapse(arg0 == null ? null : arg0.getReal());
     }
 

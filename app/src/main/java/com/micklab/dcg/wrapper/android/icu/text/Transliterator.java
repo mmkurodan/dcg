@@ -39,12 +39,12 @@ public final class Transliterator {
         return android.icu.text.Transliterator.getDisplayName(arg0);
     }
 
-    public static java.lang.String getDisplayName(java.lang.String arg0, java.util.Locale arg1) {
-        return android.icu.text.Transliterator.getDisplayName(arg0, arg1);
-    }
-
     public static java.lang.String getDisplayName(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         return android.icu.text.Transliterator.getDisplayName(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public static java.lang.String getDisplayName(java.lang.String arg0, java.util.Locale arg1) {
+        return android.icu.text.Transliterator.getDisplayName(arg0, arg1);
     }
 
     public android.icu.text.Transliterator[] getElements() {

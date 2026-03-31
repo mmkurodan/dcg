@@ -71,7 +71,15 @@ public final class JsonWriter {
         ((android.util.JsonWriter) real).setLenient(arg0);
     }
 
+    public com.micklab.dcg.wrapper.android.util.JsonWriter value(java.lang.String arg0) throws java.io.IOException {
+        return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
+    }
+
     public com.micklab.dcg.wrapper.android.util.JsonWriter value(boolean arg0) throws java.io.IOException {
+        return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.util.JsonWriter value(java.lang.Number arg0) throws java.io.IOException {
         return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
     }
 
@@ -80,14 +88,6 @@ public final class JsonWriter {
     }
 
     public com.micklab.dcg.wrapper.android.util.JsonWriter value(long arg0) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
-    }
-
-    public com.micklab.dcg.wrapper.android.util.JsonWriter value(java.lang.String arg0) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
-    }
-
-    public com.micklab.dcg.wrapper.android.util.JsonWriter value(java.lang.Number arg0) throws java.io.IOException {
         return com.micklab.dcg.wrapper.android.util.JsonWriter.wrap(((android.util.JsonWriter) real).value(arg0));
     }
 

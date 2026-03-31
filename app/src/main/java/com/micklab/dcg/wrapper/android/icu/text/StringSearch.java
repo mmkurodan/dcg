@@ -27,12 +27,12 @@ public final class StringSearch {
         this(new android.icu.text.StringSearch(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public StringSearch(java.lang.String arg0, java.text.CharacterIterator arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        this(new android.icu.text.StringSearch(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public StringSearch(java.lang.String arg0, java.text.CharacterIterator arg1, java.util.Locale arg2) {
         this(new android.icu.text.StringSearch(arg0, arg1, arg2), (__DcgwBridgeToken) null);
+    }
+
+    public StringSearch(java.lang.String arg0, java.text.CharacterIterator arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
+        this(new android.icu.text.StringSearch(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 
     public StringSearch(java.lang.String arg0, java.text.CharacterIterator arg1, com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator arg2) {

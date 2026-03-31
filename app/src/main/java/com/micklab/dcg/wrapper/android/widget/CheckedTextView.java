@@ -83,12 +83,12 @@ public final class CheckedTextView {
         return com.micklab.dcg.wrapper.android.os.Parcelable.wrap(((android.widget.CheckedTextView) real).onSaveInstanceState());
     }
 
-    public void setCheckMarkDrawable(int arg0) {
-        ((android.widget.CheckedTextView) real).setCheckMarkDrawable(arg0);
-    }
-
     public void setCheckMarkDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.widget.CheckedTextView) real).setCheckMarkDrawable(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setCheckMarkDrawable(int arg0) {
+        ((android.widget.CheckedTextView) real).setCheckMarkDrawable(arg0);
     }
 
     public void setCheckMarkTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {

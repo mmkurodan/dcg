@@ -206,12 +206,12 @@ public final class ApnSetting {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setEntryName(java.lang.String)");
         }
 
-        public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setMmsProxyAddress(java.net.InetAddress arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setMmsProxyAddress(java.net.InetAddress)");
-        }
-
         public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setMmsProxyAddress(java.lang.String arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setMmsProxyAddress(java.lang.String)");
+        }
+
+        public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setMmsProxyAddress(java.net.InetAddress arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setMmsProxyAddress(java.net.InetAddress)");
         }
 
         public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setMmsProxyPort(int arg0) {
@@ -258,12 +258,12 @@ public final class ApnSetting {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setProtocol(int)");
         }
 
-        public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setProxyAddress(java.lang.String arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setProxyAddress(java.lang.String)");
-        }
-
         public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setProxyAddress(java.net.InetAddress arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setProxyAddress(java.net.InetAddress)");
+        }
+
+        public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setProxyAddress(java.lang.String arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.data.ApnSetting$Builder#setProxyAddress(java.lang.String)");
         }
 
         public com.micklab.dcg.wrapper.android.telephony.data.ApnSetting.Builder setProxyPort(int arg0) {

@@ -104,5 +104,6 @@ public final class HardwareBuffer {
     public static final long USAGE_VIDEO_ENCODE = android.hardware.HardwareBuffer.USAGE_VIDEO_ENCODE;
     public static final int YCBCR_420_888 = android.hardware.HardwareBuffer.YCBCR_420_888;
     public static final int YCBCR_P010 = android.hardware.HardwareBuffer.YCBCR_P010;
+    public static final int YCBCR_P210 = android.hardware.HardwareBuffer.YCBCR_P210;
 
 }

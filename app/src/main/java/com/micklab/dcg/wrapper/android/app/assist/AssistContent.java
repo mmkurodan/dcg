@@ -43,6 +43,10 @@ public final class AssistContent {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.app.assist.AssistContent) real).getIntent());
     }
 
+    public com.micklab.dcg.wrapper.android.net.Uri getSessionTransferUri() {
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.app.assist.AssistContent) real).getSessionTransferUri());
+    }
+
     public java.lang.String getStructuredData() {
         return ((android.app.assist.AssistContent) real).getStructuredData();
     }
@@ -67,6 +71,10 @@ public final class AssistContent {
         ((android.app.assist.AssistContent) real).setIntent(arg0 == null ? null : arg0.getReal());
     }
 
+    public void setSessionTransferUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        ((android.app.assist.AssistContent) real).setSessionTransferUri(arg0 == null ? null : arg0.getReal());
+    }
+
     public void setStructuredData(java.lang.String arg0) {
         ((android.app.assist.AssistContent) real).setStructuredData(arg0);
     }
@@ -79,5 +87,6 @@ public final class AssistContent {
         ((android.app.assist.AssistContent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public static final java.lang.String EXTRA_APP_FUNCTION_DATA = android.app.assist.AssistContent.EXTRA_APP_FUNCTION_DATA;
 
 }

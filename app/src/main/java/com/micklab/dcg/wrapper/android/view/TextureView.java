@@ -47,6 +47,10 @@ public final class TextureView {
         ((android.view.TextureView) real).draw(arg0 == null ? null : arg0.getReal());
     }
 
+    public java.lang.CharSequence getAccessibilityClassName() {
+        return ((android.view.TextureView) real).getAccessibilityClassName();
+    }
+
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getBitmap() {
         return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.view.TextureView) real).getBitmap());
     }

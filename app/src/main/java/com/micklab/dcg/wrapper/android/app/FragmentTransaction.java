@@ -99,11 +99,11 @@ public final class FragmentTransaction {
         return com.micklab.dcg.wrapper.android.app.FragmentTransaction.wrap(((android.app.FragmentTransaction) real).runOnCommit(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.app.FragmentTransaction setBreadCrumbShortTitle(int arg0) {
+    public com.micklab.dcg.wrapper.android.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence arg0) {
         return com.micklab.dcg.wrapper.android.app.FragmentTransaction.wrap(((android.app.FragmentTransaction) real).setBreadCrumbShortTitle(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence arg0) {
+    public com.micklab.dcg.wrapper.android.app.FragmentTransaction setBreadCrumbShortTitle(int arg0) {
         return com.micklab.dcg.wrapper.android.app.FragmentTransaction.wrap(((android.app.FragmentTransaction) real).setBreadCrumbShortTitle(arg0));
     }
 

@@ -23,11 +23,11 @@ public final class LauncherActivity {
         return getReal();
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.app.LauncherActivity) real).setTitle(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.app.LauncherActivity) real).setTitle(arg0);
     }
 

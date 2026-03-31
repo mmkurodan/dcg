@@ -23,11 +23,11 @@ public final class Base64 {
         return getReal();
     }
 
-    public static byte[] decode(byte[] arg0, int arg1) {
+    public static byte[] decode(java.lang.String arg0, int arg1) {
         return android.util.Base64.decode(arg0, arg1);
     }
 
-    public static byte[] decode(java.lang.String arg0, int arg1) {
+    public static byte[] decode(byte[] arg0, int arg1) {
         return android.util.Base64.decode(arg0, arg1);
     }
 

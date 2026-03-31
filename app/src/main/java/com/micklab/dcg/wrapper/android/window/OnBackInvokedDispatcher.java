@@ -33,5 +33,6 @@ public final class OnBackInvokedDispatcher {
 
     public static final int PRIORITY_DEFAULT = android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT;
     public static final int PRIORITY_OVERLAY = android.window.OnBackInvokedDispatcher.PRIORITY_OVERLAY;
+    public static final int PRIORITY_SYSTEM_NAVIGATION_OBSERVER = android.window.OnBackInvokedDispatcher.PRIORITY_SYSTEM_NAVIGATION_OBSERVER;
 
 }

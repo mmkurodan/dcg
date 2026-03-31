@@ -31,16 +31,28 @@ public final class TestLooperManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#getMessageQueue()");
     }
 
-    public boolean hasMessages(com.micklab.dcg.wrapper.android.os.Handler arg0, java.lang.Object arg1, int arg2) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#hasMessages(android.os.Handler,java.lang.Object,int)");
-    }
-
     public boolean hasMessages(com.micklab.dcg.wrapper.android.os.Handler arg0, java.lang.Object arg1, java.lang.Runnable arg2) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#hasMessages(android.os.Handler,java.lang.Object,java.lang.Runnable)");
     }
 
+    public boolean hasMessages(com.micklab.dcg.wrapper.android.os.Handler arg0, java.lang.Object arg1, int arg2) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#hasMessages(android.os.Handler,java.lang.Object,int)");
+    }
+
+    public boolean isBlockedOnSyncBarrier() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#isBlockedOnSyncBarrier()");
+    }
+
     public com.micklab.dcg.wrapper.android.os.Message next() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#next()");
+    }
+
+    public java.lang.Long peekWhen() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#peekWhen()");
+    }
+
+    public com.micklab.dcg.wrapper.android.os.Message poll() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.TestLooperManager#poll()");
     }
 
     public void recycle(com.micklab.dcg.wrapper.android.os.Message arg0) {

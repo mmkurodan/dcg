@@ -59,6 +59,10 @@ public final class AbstractInputMethodService {
         ((android.inputmethodservice.AbstractInputMethodService) real).onLowMemory();
     }
 
+    public boolean onShouldVerifyKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
+        return ((android.inputmethodservice.AbstractInputMethodService) real).onShouldVerifyKeyEvent(arg0 == null ? null : arg0.getReal());
+    }
+
     public boolean onTrackballEvent(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
         return ((android.inputmethodservice.AbstractInputMethodService) real).onTrackballEvent(arg0 == null ? null : arg0.getReal());
     }

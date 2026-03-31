@@ -27,6 +27,10 @@ public final class OverlayProperties {
         return ((android.hardware.OverlayProperties) real).describeContents();
     }
 
+    public android.hardware.LutProperties[] getLutProperties() {
+        return ((android.hardware.OverlayProperties) real).getLutProperties();
+    }
+
     public boolean isCombinationSupported(int arg0, int arg1) {
         return ((android.hardware.OverlayProperties) real).isCombinationSupported(arg0, arg1);
     }

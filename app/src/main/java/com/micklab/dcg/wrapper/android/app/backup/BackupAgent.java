@@ -47,11 +47,11 @@ public final class BackupAgent {
         ((android.app.backup.BackupAgent) real).onQuotaExceeded(arg0, arg1);
     }
 
-    public void onRestore(com.micklab.dcg.wrapper.android.app.backup.BackupDataInput arg0, long arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2) throws java.io.IOException {
+    public void onRestore(com.micklab.dcg.wrapper.android.app.backup.BackupDataInput arg0, int arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2) throws java.io.IOException {
         ((android.app.backup.BackupAgent) real).onRestore(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
-    public void onRestore(com.micklab.dcg.wrapper.android.app.backup.BackupDataInput arg0, int arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2) throws java.io.IOException {
+    public void onRestore(com.micklab.dcg.wrapper.android.app.backup.BackupDataInput arg0, long arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2) throws java.io.IOException {
         ((android.app.backup.BackupAgent) real).onRestore(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 

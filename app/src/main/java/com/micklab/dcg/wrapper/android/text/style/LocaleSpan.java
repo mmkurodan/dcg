@@ -23,16 +23,16 @@ public final class LocaleSpan {
         return getReal();
     }
 
+    public LocaleSpan(java.util.Locale arg0) {
+        this(new android.text.style.LocaleSpan(arg0), (__DcgwBridgeToken) null);
+    }
+
     public LocaleSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.text.style.LocaleSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public LocaleSpan(com.micklab.dcg.wrapper.android.os.LocaleList arg0) {
         this(new android.text.style.LocaleSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
-    public LocaleSpan(java.util.Locale arg0) {
-        this(new android.text.style.LocaleSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

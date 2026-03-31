@@ -249,6 +249,8 @@ public final class AccessibilityService {
     public static final int GLOBAL_ACTION_HOME = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_HOME;
     public static final int GLOBAL_ACTION_KEYCODE_HEADSETHOOK = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_KEYCODE_HEADSETHOOK;
     public static final int GLOBAL_ACTION_LOCK_SCREEN = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_LOCK_SCREEN;
+    public static final int GLOBAL_ACTION_MEDIA_PLAY_PAUSE = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_MEDIA_PLAY_PAUSE;
+    public static final int GLOBAL_ACTION_MENU = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_MENU;
     public static final int GLOBAL_ACTION_NOTIFICATIONS = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS;
     public static final int GLOBAL_ACTION_POWER_DIALOG = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_POWER_DIALOG;
     public static final int GLOBAL_ACTION_QUICK_SETTINGS = android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS;

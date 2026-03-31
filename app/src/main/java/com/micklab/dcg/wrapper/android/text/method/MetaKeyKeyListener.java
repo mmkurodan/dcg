@@ -43,16 +43,12 @@ public final class MetaKeyKeyListener {
         ((android.text.method.MetaKeyKeyListener) real).clearMetaKeyState(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public static int getMetaState(java.lang.CharSequence arg0) {
-        return android.text.method.MetaKeyKeyListener.getMetaState(arg0);
-    }
-
     public static int getMetaState(long arg0) {
         return android.text.method.MetaKeyKeyListener.getMetaState(arg0);
     }
 
-    public static int getMetaState(java.lang.CharSequence arg0, int arg1) {
-        return android.text.method.MetaKeyKeyListener.getMetaState(arg0, arg1);
+    public static int getMetaState(java.lang.CharSequence arg0) {
+        return android.text.method.MetaKeyKeyListener.getMetaState(arg0);
     }
 
     public static int getMetaState(long arg0, int arg1) {
@@ -61,6 +57,10 @@ public final class MetaKeyKeyListener {
 
     public static int getMetaState(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1) {
         return android.text.method.MetaKeyKeyListener.getMetaState(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public static int getMetaState(java.lang.CharSequence arg0, int arg1) {
+        return android.text.method.MetaKeyKeyListener.getMetaState(arg0, arg1);
     }
 
     public static int getMetaState(java.lang.CharSequence arg0, int arg1, com.micklab.dcg.wrapper.android.view.KeyEvent arg2) {

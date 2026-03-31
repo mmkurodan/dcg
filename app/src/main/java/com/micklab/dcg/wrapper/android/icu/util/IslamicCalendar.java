@@ -27,7 +27,15 @@ public final class IslamicCalendar {
         this(new android.icu.util.IslamicCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public IslamicCalendar(java.util.Date arg0) {
+        this(new android.icu.util.IslamicCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public IslamicCalendar(java.util.Locale arg0) {
         this(new android.icu.util.IslamicCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class IslamicCalendar {
         this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public IslamicCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public IslamicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.IslamicCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IslamicCalendar(int arg0, int arg1, int arg2) {
@@ -65,6 +65,10 @@ public final class IslamicCalendar {
 
     public java.lang.String getType() {
         return ((android.icu.util.IslamicCalendar) real).getType();
+    }
+
+    public boolean inTemporalLeapYear() {
+        return ((android.icu.util.IslamicCalendar) real).inTemporalLeapYear();
     }
 
     public void setCalculationType(com.micklab.dcg.wrapper.android.icu.util.IslamicCalendar.CalculationType arg0) {

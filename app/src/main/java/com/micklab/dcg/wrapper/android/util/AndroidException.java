@@ -27,11 +27,11 @@ public final class AndroidException {
         this(new android.util.AndroidException(), (__DcgwBridgeToken) null);
     }
 
-    public AndroidException(java.lang.Exception arg0) {
+    public AndroidException(java.lang.String arg0) {
         this(new android.util.AndroidException(arg0), (__DcgwBridgeToken) null);
     }
 
-    public AndroidException(java.lang.String arg0) {
+    public AndroidException(java.lang.Exception arg0) {
         this(new android.util.AndroidException(arg0), (__DcgwBridgeToken) null);
     }
 

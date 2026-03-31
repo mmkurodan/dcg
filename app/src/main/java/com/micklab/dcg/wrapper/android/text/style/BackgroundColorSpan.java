@@ -23,12 +23,12 @@ public final class BackgroundColorSpan {
         return getReal();
     }
 
-    public BackgroundColorSpan(int arg0) {
-        this(new android.text.style.BackgroundColorSpan(arg0), (__DcgwBridgeToken) null);
-    }
-
     public BackgroundColorSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.text.style.BackgroundColorSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public BackgroundColorSpan(int arg0) {
+        this(new android.text.style.BackgroundColorSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

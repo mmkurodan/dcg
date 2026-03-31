@@ -179,12 +179,12 @@ public final class MediaDrm {
         ((android.media.MediaDrm) real).setOnEventListener(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setOnEventListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        ((android.media.MediaDrm) real).setOnEventListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public void setOnEventListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg1) {
         ((android.media.MediaDrm) real).setOnEventListener(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void setOnEventListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnEventListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        ((android.media.MediaDrm) real).setOnEventListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnExpirationUpdateListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnExpirationUpdateListener arg1) {
@@ -195,20 +195,20 @@ public final class MediaDrm {
         ((android.media.MediaDrm) real).setOnExpirationUpdateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void setOnKeyStatusChangeListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        ((android.media.MediaDrm) real).setOnKeyStatusChangeListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public void setOnKeyStatusChangeListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener arg1) {
         ((android.media.MediaDrm) real).setOnKeyStatusChangeListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void setOnSessionLostStateListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        ((android.media.MediaDrm) real).setOnSessionLostStateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+    public void setOnKeyStatusChangeListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnKeyStatusChangeListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        ((android.media.MediaDrm) real).setOnKeyStatusChangeListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setOnSessionLostStateListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener arg1) {
         ((android.media.MediaDrm) real).setOnSessionLostStateListener(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void setOnSessionLostStateListener(com.micklab.dcg.wrapper.android.media.MediaDrm.OnSessionLostStateListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        ((android.media.MediaDrm) real).setOnSessionLostStateListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setPropertyByteArray(java.lang.String arg0, byte[] arg1) {

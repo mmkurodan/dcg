@@ -27,12 +27,12 @@ public final class AccessibilityEvent {
         this(new android.view.accessibility.AccessibilityEvent(), (__DcgwBridgeToken) null);
     }
 
-    public AccessibilityEvent(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
-        this(new android.view.accessibility.AccessibilityEvent(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public AccessibilityEvent(int arg0) {
         this(new android.view.accessibility.AccessibilityEvent(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public AccessibilityEvent(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityEvent arg0) {
+        this(new android.view.accessibility.AccessibilityEvent(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void appendRecord(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityRecord arg0) {
@@ -151,6 +151,7 @@ public final class AccessibilityEvent {
         ((android.view.accessibility.AccessibilityEvent) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public static final int CONTENT_CHANGE_TYPE_CHECKED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_CHECKED;
     public static final int CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION;
     public static final int CONTENT_CHANGE_TYPE_CONTENT_INVALID = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_CONTENT_INVALID;
     public static final int CONTENT_CHANGE_TYPE_DRAG_CANCELLED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_DRAG_CANCELLED;
@@ -158,11 +159,13 @@ public final class AccessibilityEvent {
     public static final int CONTENT_CHANGE_TYPE_DRAG_STARTED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_DRAG_STARTED;
     public static final int CONTENT_CHANGE_TYPE_ENABLED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_ENABLED;
     public static final int CONTENT_CHANGE_TYPE_ERROR = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_ERROR;
+    public static final int CONTENT_CHANGE_TYPE_EXPANDED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_EXPANDED;
     public static final int CONTENT_CHANGE_TYPE_PANE_APPEARED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_APPEARED;
     public static final int CONTENT_CHANGE_TYPE_PANE_DISAPPEARED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_DISAPPEARED;
     public static final int CONTENT_CHANGE_TYPE_PANE_TITLE = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_TITLE;
     public static final int CONTENT_CHANGE_TYPE_STATE_DESCRIPTION = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_STATE_DESCRIPTION;
     public static final int CONTENT_CHANGE_TYPE_SUBTREE = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE;
+    public static final int CONTENT_CHANGE_TYPE_SUPPLEMENTAL_DESCRIPTION = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_SUPPLEMENTAL_DESCRIPTION;
     public static final int CONTENT_CHANGE_TYPE_TEXT = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_TEXT;
     public static final int CONTENT_CHANGE_TYPE_UNDEFINED = android.view.accessibility.AccessibilityEvent.CONTENT_CHANGE_TYPE_UNDEFINED;
     public static final int INVALID_POSITION = android.view.accessibility.AccessibilityEvent.INVALID_POSITION;

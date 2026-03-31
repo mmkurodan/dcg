@@ -171,6 +171,10 @@ public final class InputMethodService {
         return com.micklab.dcg.wrapper.android.view.View.wrap(((android.inputmethodservice.InputMethodService) real).onCreateInputView());
     }
 
+    public void onCustomImeSwitcherButtonRequestedVisible(boolean arg0) {
+        ((android.inputmethodservice.InputMethodService) real).onCustomImeSwitcherButtonRequestedVisible(arg0);
+    }
+
     public void onDestroy() {
         ((android.inputmethodservice.InputMethodService) real).onDestroy();
     }
@@ -253,6 +257,10 @@ public final class InputMethodService {
 
     public void onPrepareStylusHandwriting() {
         ((android.inputmethodservice.InputMethodService) real).onPrepareStylusHandwriting();
+    }
+
+    public boolean onShouldVerifyKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
+        return ((android.inputmethodservice.InputMethodService) real).onShouldVerifyKeyEvent(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean onShowInputRequested(int arg0, boolean arg1) {
@@ -373,6 +381,10 @@ public final class InputMethodService {
 
     public void setInputView(com.micklab.dcg.wrapper.android.view.View arg0) {
         ((android.inputmethodservice.InputMethodService) real).setInputView(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setStylusHandwritingRegion(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
+        ((android.inputmethodservice.InputMethodService) real).setStylusHandwritingRegion(arg0 == null ? null : arg0.getReal());
     }
 
     public void setStylusHandwritingSessionTimeout(java.time.Duration arg0) {

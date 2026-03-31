@@ -27,12 +27,12 @@ public final class PersistableBundle {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PersistableBundle#android.os.PersistableBundle()");
     }
 
-    public PersistableBundle(com.micklab.dcg.wrapper.android.os.PersistableBundle arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PersistableBundle#android.os.PersistableBundle(android.os.PersistableBundle)");
-    }
-
     public PersistableBundle(int arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PersistableBundle#android.os.PersistableBundle(int)");
+    }
+
+    public PersistableBundle(com.micklab.dcg.wrapper.android.os.PersistableBundle arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PersistableBundle#android.os.PersistableBundle(android.os.PersistableBundle)");
     }
 
     public java.lang.Object clone() {

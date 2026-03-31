@@ -35,6 +35,10 @@ public final class AssociationInfo {
         return com.micklab.dcg.wrapper.android.companion.AssociatedDevice.wrap(((android.companion.AssociationInfo) real).getAssociatedDevice());
     }
 
+    public com.micklab.dcg.wrapper.android.companion.DeviceId getDeviceId() {
+        return com.micklab.dcg.wrapper.android.companion.DeviceId.wrap(((android.companion.AssociationInfo) real).getDeviceId());
+    }
+
     public com.micklab.dcg.wrapper.android.net.MacAddress getDeviceMacAddress() {
         return com.micklab.dcg.wrapper.android.net.MacAddress.wrap(((android.companion.AssociationInfo) real).getDeviceMacAddress());
     }

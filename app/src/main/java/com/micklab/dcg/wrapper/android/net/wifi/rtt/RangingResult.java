@@ -91,6 +91,14 @@ public final class RangingResult {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getNumSuccessfulMeasurements()");
     }
 
+    public long getPasnComebackAfterMillis() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getPasnComebackAfterMillis()");
+    }
+
+    public byte[] getPasnComebackCookie() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getPasnComebackCookie()");
+    }
+
     public com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle getPeerHandle() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getPeerHandle()");
     }
@@ -101,6 +109,10 @@ public final class RangingResult {
 
     public int getRssi() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getRssi()");
+    }
+
+    public int getSecureHeLtfProtocolVersion() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#getSecureHeLtfProtocolVersion()");
     }
 
     public int getStatus() {
@@ -121,6 +133,18 @@ public final class RangingResult {
 
     public boolean is80211mcMeasurement() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#is80211mcMeasurement()");
+    }
+
+    public boolean isRangingAuthenticated() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#isRangingAuthenticated()");
+    }
+
+    public boolean isRangingFrameProtected() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#isRangingFrameProtected()");
+    }
+
+    public boolean isSecureHeLtfEnabled() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult#isSecureHeLtfEnabled()");
     }
 
     public java.lang.String toString() {
@@ -230,8 +254,24 @@ public final class RangingResult {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setNumSuccessfulMeasurements(int)");
         }
 
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setPasnComebackAfterMillis(long arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setPasnComebackAfterMillis(long)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setPasnComebackCookie(byte[] arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setPasnComebackCookie([B)");
+        }
+
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setPeerHandle(com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setPeerHandle(android.net.wifi.aware.PeerHandle)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setRangingAuthenticated(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setRangingAuthenticated(boolean)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setRangingFrameProtected(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setRangingFrameProtected(boolean)");
         }
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setRangingTimestampMillis(long arg0) {
@@ -240,6 +280,14 @@ public final class RangingResult {
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setRssi(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setRssi(int)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setSecureHeLtfEnabled(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setSecureHeLtfEnabled(boolean)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setSecureHeLtfProtocolVersion(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingResult$Builder#setSecureHeLtfProtocolVersion(int)");
         }
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingResult.Builder setStatus(int arg0) {

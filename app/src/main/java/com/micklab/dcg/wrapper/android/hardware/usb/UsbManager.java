@@ -27,11 +27,11 @@ public final class UsbManager {
         return ((android.hardware.usb.UsbManager) real).getAccessoryList();
     }
 
-    public boolean hasPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0) {
+    public boolean hasPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0) {
         return ((android.hardware.usb.UsbManager) real).hasPermission(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean hasPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0) {
+    public boolean hasPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0) {
         return ((android.hardware.usb.UsbManager) real).hasPermission(arg0 == null ? null : arg0.getReal());
     }
 
@@ -39,15 +39,23 @@ public final class UsbManager {
         return com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor.wrap(((android.hardware.usb.UsbManager) real).openAccessory(arg0 == null ? null : arg0.getReal()));
     }
 
+    public java.io.InputStream openAccessoryInputStream(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0) {
+        return ((android.hardware.usb.UsbManager) real).openAccessoryInputStream(arg0 == null ? null : arg0.getReal());
+    }
+
+    public java.io.OutputStream openAccessoryOutputStream(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0) {
+        return ((android.hardware.usb.UsbManager) real).openAccessoryOutputStream(arg0 == null ? null : arg0.getReal());
+    }
+
     public com.micklab.dcg.wrapper.android.hardware.usb.UsbDeviceConnection openDevice(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0) {
         return com.micklab.dcg.wrapper.android.hardware.usb.UsbDeviceConnection.wrap(((android.hardware.usb.UsbManager) real).openDevice(arg0 == null ? null : arg0.getReal()));
     }
 
-    public void requestPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
+    public void requestPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
         ((android.hardware.usb.UsbManager) real).requestPermission(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void requestPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbAccessory arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
+    public void requestPermission(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
         ((android.hardware.usb.UsbManager) real).requestPermission(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 

@@ -23,5 +23,13 @@ public final class ProfilingManager {
         return getReal();
     }
 
+    public void clearProfilingTriggers() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingManager#clearProfilingTriggers()");
+    }
+
+    public void removeProfilingTriggersByType(int[] arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingManager#removeProfilingTriggersByType([I)");
+    }
+
 
 }

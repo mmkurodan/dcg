@@ -35,19 +35,19 @@ public final class ULocale {
         this(new android.icu.util.ULocale(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(java.lang.String arg0, boolean[] arg1) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(android.icu.util.ULocale[] arg0, boolean[] arg1) {
         return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(java.lang.String arg0, android.icu.util.ULocale[] arg1, boolean[] arg2) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1, arg2));
+    public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(java.lang.String arg0, boolean[] arg1) {
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(android.icu.util.ULocale[] arg0, android.icu.util.ULocale[] arg1, boolean[] arg2) {
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1, arg2));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.util.ULocale acceptLanguage(java.lang.String arg0, android.icu.util.ULocale[] arg1, boolean[] arg2) {
         return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.acceptLanguage(arg0, arg1, arg2));
     }
 
@@ -67,12 +67,12 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.ULocale createCanonical(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.createCanonical(arg0 == null ? null : arg0.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.util.ULocale createCanonical(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.createCanonical(arg0));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.util.ULocale createCanonical(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.util.ULocale.wrap(android.icu.util.ULocale.createCanonical(arg0 == null ? null : arg0.getReal()));
     }
 
     public boolean equals(java.lang.Object arg0) {
@@ -127,24 +127,24 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).getDisplayCountry(arg0 == null ? null : arg0.getReal());
     }
 
-    public static java.lang.String getDisplayCountry(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayCountry(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
     public static java.lang.String getDisplayCountry(java.lang.String arg0, java.lang.String arg1) {
         return android.icu.util.ULocale.getDisplayCountry(arg0, arg1);
+    }
+
+    public static java.lang.String getDisplayCountry(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        return android.icu.util.ULocale.getDisplayCountry(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public static java.lang.String getDisplayKeyword(java.lang.String arg0) {
         return android.icu.util.ULocale.getDisplayKeyword(arg0);
     }
 
-    public static java.lang.String getDisplayKeyword(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayKeyword(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
     public static java.lang.String getDisplayKeyword(java.lang.String arg0, java.lang.String arg1) {
         return android.icu.util.ULocale.getDisplayKeyword(arg0, arg1);
+    }
+
+    public static java.lang.String getDisplayKeyword(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        return android.icu.util.ULocale.getDisplayKeyword(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayKeywordValue(java.lang.String arg0) {
@@ -155,12 +155,12 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).getDisplayKeywordValue(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public static java.lang.String getDisplayKeywordValue(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return android.icu.util.ULocale.getDisplayKeywordValue(arg0, arg1, arg2 == null ? null : arg2.getReal());
-    }
-
     public static java.lang.String getDisplayKeywordValue(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
         return android.icu.util.ULocale.getDisplayKeywordValue(arg0, arg1, arg2);
+    }
+
+    public static java.lang.String getDisplayKeywordValue(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
+        return android.icu.util.ULocale.getDisplayKeywordValue(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public java.lang.String getDisplayLanguage() {
@@ -203,12 +203,12 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
-    public static java.lang.String getDisplayName(java.lang.String arg0, java.lang.String arg1) {
-        return android.icu.util.ULocale.getDisplayName(arg0, arg1);
-    }
-
     public static java.lang.String getDisplayName(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         return android.icu.util.ULocale.getDisplayName(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public static java.lang.String getDisplayName(java.lang.String arg0, java.lang.String arg1) {
+        return android.icu.util.ULocale.getDisplayName(arg0, arg1);
     }
 
     public java.lang.String getDisplayNameWithDialect() {
@@ -219,12 +219,12 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).getDisplayNameWithDialect(arg0 == null ? null : arg0.getReal());
     }
 
-    public static java.lang.String getDisplayNameWithDialect(java.lang.String arg0, java.lang.String arg1) {
-        return android.icu.util.ULocale.getDisplayNameWithDialect(arg0, arg1);
-    }
-
     public static java.lang.String getDisplayNameWithDialect(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         return android.icu.util.ULocale.getDisplayNameWithDialect(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public static java.lang.String getDisplayNameWithDialect(java.lang.String arg0, java.lang.String arg1) {
+        return android.icu.util.ULocale.getDisplayNameWithDialect(arg0, arg1);
     }
 
     public java.lang.String getDisplayScript() {
@@ -235,12 +235,12 @@ public final class ULocale {
         return ((android.icu.util.ULocale) real).getDisplayScript(arg0 == null ? null : arg0.getReal());
     }
 
-    public static java.lang.String getDisplayScript(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.util.ULocale.getDisplayScript(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
     public static java.lang.String getDisplayScript(java.lang.String arg0, java.lang.String arg1) {
         return android.icu.util.ULocale.getDisplayScript(arg0, arg1);
+    }
+
+    public static java.lang.String getDisplayScript(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        return android.icu.util.ULocale.getDisplayScript(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public java.lang.String getDisplayVariant() {

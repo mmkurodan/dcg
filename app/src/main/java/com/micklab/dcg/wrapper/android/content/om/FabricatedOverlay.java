@@ -35,11 +35,11 @@ public final class FabricatedOverlay {
         ((android.content.om.FabricatedOverlay) real).setNinePatchResourceValue(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public void setResourceValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg1, java.lang.String arg2) {
+    public void setResourceValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg1, java.lang.String arg2) {
         ((android.content.om.FabricatedOverlay) real).setResourceValue(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public void setResourceValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg1, java.lang.String arg2) {
+    public void setResourceValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg1, java.lang.String arg2) {
         ((android.content.om.FabricatedOverlay) real).setResourceValue(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 

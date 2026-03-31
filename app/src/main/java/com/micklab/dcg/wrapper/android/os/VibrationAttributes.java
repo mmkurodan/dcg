@@ -90,12 +90,12 @@ public final class VibrationAttributes {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.VibrationAttributes$Builder#android.os.VibrationAttributes$Builder()");
         }
 
-        public Builder(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.VibrationAttributes$Builder#android.os.VibrationAttributes$Builder(android.media.AudioAttributes)");
-        }
-
         public Builder(com.micklab.dcg.wrapper.android.os.VibrationAttributes arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.VibrationAttributes$Builder#android.os.VibrationAttributes$Builder(android.os.VibrationAttributes)");
+        }
+
+        public Builder(com.micklab.dcg.wrapper.android.media.AudioAttributes arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.VibrationAttributes$Builder#android.os.VibrationAttributes$Builder(android.media.AudioAttributes)");
         }
 
         public com.micklab.dcg.wrapper.android.os.VibrationAttributes build() {

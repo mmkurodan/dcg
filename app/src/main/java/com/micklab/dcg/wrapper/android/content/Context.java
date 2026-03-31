@@ -31,12 +31,12 @@ public final class Context {
         return ((android.content.Context) real).bindIsolatedService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
-    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2) {
-        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
-    }
-
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2) {
         return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+    }
+
+    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2) {
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
@@ -391,12 +391,12 @@ public final class Context {
         return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int arg0, int[] arg1) throws android.content.res.Resources.NotFoundException {
-        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0, arg1));
-    }
-
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1) {
         return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0 == null ? null : arg0.getReal(), arg1));
+    }
+
+    public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int arg0, int[] arg1) throws android.content.res.Resources.NotFoundException {
+        return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.Context) real).obtainStyledAttributes(arg0, arg1));
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1, int arg2, int arg3) {
@@ -503,12 +503,12 @@ public final class Context {
         ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
-    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
-    }
-
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
         ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
+    }
+
+    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendOrderedBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
@@ -610,8 +610,10 @@ public final class Context {
     public static final java.lang.String ACCESSIBILITY_SERVICE = android.content.Context.ACCESSIBILITY_SERVICE;
     public static final java.lang.String ACCOUNT_SERVICE = android.content.Context.ACCOUNT_SERVICE;
     public static final java.lang.String ACTIVITY_SERVICE = android.content.Context.ACTIVITY_SERVICE;
+    public static final java.lang.String ADVANCED_PROTECTION_SERVICE = android.content.Context.ADVANCED_PROTECTION_SERVICE;
     public static final java.lang.String ALARM_SERVICE = android.content.Context.ALARM_SERVICE;
     public static final java.lang.String APPWIDGET_SERVICE = android.content.Context.APPWIDGET_SERVICE;
+    public static final java.lang.String APP_FUNCTION_SERVICE = android.content.Context.APP_FUNCTION_SERVICE;
     public static final java.lang.String APP_OPS_SERVICE = android.content.Context.APP_OPS_SERVICE;
     public static final java.lang.String APP_SEARCH_SERVICE = android.content.Context.APP_SEARCH_SERVICE;
     public static final java.lang.String AUDIO_SERVICE = android.content.Context.AUDIO_SERVICE;
@@ -668,6 +670,7 @@ public final class Context {
     public static final java.lang.String IPSEC_SERVICE = android.content.Context.IPSEC_SERVICE;
     public static final java.lang.String JOB_SCHEDULER_SERVICE = android.content.Context.JOB_SCHEDULER_SERVICE;
     public static final java.lang.String KEYGUARD_SERVICE = android.content.Context.KEYGUARD_SERVICE;
+    public static final java.lang.String KEYSTORE_SERVICE = android.content.Context.KEYSTORE_SERVICE;
     public static final java.lang.String LAUNCHER_APPS_SERVICE = android.content.Context.LAUNCHER_APPS_SERVICE;
     public static final java.lang.String LAYOUT_INFLATER_SERVICE = android.content.Context.LAYOUT_INFLATER_SERVICE;
     public static final java.lang.String LOCALE_SERVICE = android.content.Context.LOCALE_SERVICE;
@@ -675,6 +678,7 @@ public final class Context {
     public static final java.lang.String MEDIA_COMMUNICATION_SERVICE = android.content.Context.MEDIA_COMMUNICATION_SERVICE;
     public static final java.lang.String MEDIA_METRICS_SERVICE = android.content.Context.MEDIA_METRICS_SERVICE;
     public static final java.lang.String MEDIA_PROJECTION_SERVICE = android.content.Context.MEDIA_PROJECTION_SERVICE;
+    public static final java.lang.String MEDIA_QUALITY_SERVICE = android.content.Context.MEDIA_QUALITY_SERVICE;
     public static final java.lang.String MEDIA_ROUTER_SERVICE = android.content.Context.MEDIA_ROUTER_SERVICE;
     public static final java.lang.String MEDIA_SESSION_SERVICE = android.content.Context.MEDIA_SESSION_SERVICE;
     public static final java.lang.String MIDI_SERVICE = android.content.Context.MIDI_SERVICE;
@@ -700,6 +704,7 @@ public final class Context {
     public static final int RECEIVER_VISIBLE_TO_INSTANT_APPS = android.content.Context.RECEIVER_VISIBLE_TO_INSTANT_APPS;
     public static final java.lang.String RESTRICTIONS_SERVICE = android.content.Context.RESTRICTIONS_SERVICE;
     public static final java.lang.String ROLE_SERVICE = android.content.Context.ROLE_SERVICE;
+    public static final java.lang.String SATELLITE_SERVICE = android.content.Context.SATELLITE_SERVICE;
     public static final java.lang.String SEARCH_SERVICE = android.content.Context.SEARCH_SERVICE;
     public static final java.lang.String SECURITY_STATE_SERVICE = android.content.Context.SECURITY_STATE_SERVICE;
     public static final java.lang.String SENSOR_SERVICE = android.content.Context.SENSOR_SERVICE;
@@ -712,8 +717,10 @@ public final class Context {
     public static final java.lang.String TELEPHONY_IMS_SERVICE = android.content.Context.TELEPHONY_IMS_SERVICE;
     public static final java.lang.String TELEPHONY_SERVICE = android.content.Context.TELEPHONY_SERVICE;
     public static final java.lang.String TELEPHONY_SUBSCRIPTION_SERVICE = android.content.Context.TELEPHONY_SUBSCRIPTION_SERVICE;
+    public static final java.lang.String TETHERING_SERVICE = android.content.Context.TETHERING_SERVICE;
     public static final java.lang.String TEXT_CLASSIFICATION_SERVICE = android.content.Context.TEXT_CLASSIFICATION_SERVICE;
     public static final java.lang.String TEXT_SERVICES_MANAGER_SERVICE = android.content.Context.TEXT_SERVICES_MANAGER_SERVICE;
+    public static final java.lang.String TV_AD_SERVICE = android.content.Context.TV_AD_SERVICE;
     public static final java.lang.String TV_INPUT_SERVICE = android.content.Context.TV_INPUT_SERVICE;
     public static final java.lang.String TV_INTERACTIVE_APP_SERVICE = android.content.Context.TV_INTERACTIVE_APP_SERVICE;
     public static final java.lang.String UI_MODE_SERVICE = android.content.Context.UI_MODE_SERVICE;

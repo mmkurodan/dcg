@@ -39,12 +39,12 @@ public final class LocaleDisplayNames {
         return com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.wrap(android.icu.text.LocaleDisplayNames.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.DialectHandling arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.wrap(android.icu.text.LocaleDisplayNames.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, android.icu.text.DisplayContext... arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.wrap(android.icu.text.LocaleDisplayNames.getInstance(arg0 == null ? null : arg0.getReal(), arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.DialectHandling arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames.wrap(android.icu.text.LocaleDisplayNames.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.LocaleDisplayNames getInstance(java.util.Locale arg0, android.icu.text.DisplayContext... arg1) {
@@ -67,11 +67,11 @@ public final class LocaleDisplayNames {
         return ((android.icu.text.LocaleDisplayNames) real).languageDisplayName(arg0);
     }
 
-    public java.lang.String localeDisplayName(java.lang.String arg0) {
+    public java.lang.String localeDisplayName(java.util.Locale arg0) {
         return ((android.icu.text.LocaleDisplayNames) real).localeDisplayName(arg0);
     }
 
-    public java.lang.String localeDisplayName(java.util.Locale arg0) {
+    public java.lang.String localeDisplayName(java.lang.String arg0) {
         return ((android.icu.text.LocaleDisplayNames) real).localeDisplayName(arg0);
     }
 
@@ -83,11 +83,11 @@ public final class LocaleDisplayNames {
         return ((android.icu.text.LocaleDisplayNames) real).regionDisplayName(arg0);
     }
 
-    public java.lang.String scriptDisplayName(int arg0) {
+    public java.lang.String scriptDisplayName(java.lang.String arg0) {
         return ((android.icu.text.LocaleDisplayNames) real).scriptDisplayName(arg0);
     }
 
-    public java.lang.String scriptDisplayName(java.lang.String arg0) {
+    public java.lang.String scriptDisplayName(int arg0) {
         return ((android.icu.text.LocaleDisplayNames) real).scriptDisplayName(arg0);
     }
 

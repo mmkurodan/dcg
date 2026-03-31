@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-03-30T23:04:51" hostname="localhost" time="0.014">
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-03-31T01:05:07" hostname="localhost" time="0.043">
   <properties/>
-  <testcase name="compilerArgumentsIncludeWrapperClasspathWhenProvided" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.009"/>
-  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="compilerArgumentsIncludeWrapperClasspathWhenProvided" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.027"/>
+  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.004"/>
   <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
-  <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.004"/>
   <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

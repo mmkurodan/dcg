@@ -333,6 +333,10 @@ public final class StrictMode {
                 throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.StrictMode$VmPolicy$Builder#detectAll()");
             }
 
+            public com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder detectBlockedBackgroundActivityLaunch() {
+                throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.StrictMode$VmPolicy$Builder#detectBlockedBackgroundActivityLaunch()");
+            }
+
             public com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder detectCleartextNetwork() {
                 throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.StrictMode$VmPolicy$Builder#detectCleartextNetwork()");
             }
@@ -379,6 +383,10 @@ public final class StrictMode {
 
             public com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder detectUntaggedSockets() {
                 throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.StrictMode$VmPolicy$Builder#detectUntaggedSockets()");
+            }
+
+            public com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder ignoreBlockedBackgroundActivityLaunch() {
+                throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.StrictMode$VmPolicy$Builder#ignoreBlockedBackgroundActivityLaunch()");
             }
 
             public com.micklab.dcg.wrapper.android.os.StrictMode.VmPolicy.Builder penaltyDeath() {

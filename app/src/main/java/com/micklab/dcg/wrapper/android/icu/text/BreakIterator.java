@@ -95,12 +95,12 @@ public final class BreakIterator {
         return com.micklab.dcg.wrapper.android.icu.text.BreakIterator.wrap(android.icu.text.BreakIterator.getTitleInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.BreakIterator getTitleInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.BreakIterator.wrap(android.icu.text.BreakIterator.getTitleInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.BreakIterator getTitleInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.BreakIterator.wrap(android.icu.text.BreakIterator.getTitleInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.BreakIterator getTitleInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.BreakIterator.wrap(android.icu.text.BreakIterator.getTitleInstance(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.BreakIterator getWordInstance() {
@@ -139,11 +139,11 @@ public final class BreakIterator {
         return ((android.icu.text.BreakIterator) real).previous();
     }
 
-    public void setText(java.lang.String arg0) {
+    public void setText(java.lang.CharSequence arg0) {
         ((android.icu.text.BreakIterator) real).setText(arg0);
     }
 
-    public void setText(java.lang.CharSequence arg0) {
+    public void setText(java.lang.String arg0) {
         ((android.icu.text.BreakIterator) real).setText(arg0);
     }
 

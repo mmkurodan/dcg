@@ -43,20 +43,20 @@ public final class PropertyValuesHolder {
         return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofKeyframe(arg0, arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiFloat(java.lang.String arg0, float[][] arg1) {
-        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiFloat(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiFloat(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
         return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiFloat(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiInt(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
-        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiInt(arg0, arg1 == null ? null : arg1.getReal()));
+    public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiFloat(java.lang.String arg0, float[][] arg1) {
+        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiFloat(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiInt(java.lang.String arg0, int[][] arg1) {
         return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiInt(arg0, arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder ofMultiInt(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Path arg1) {
+        return com.micklab.dcg.wrapper.android.animation.PropertyValuesHolder.wrap(android.animation.PropertyValuesHolder.ofMultiInt(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public void setFloatValues(float... arg0) {

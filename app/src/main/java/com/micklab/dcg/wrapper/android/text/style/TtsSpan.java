@@ -79,6 +79,7 @@ public final class TtsSpan {
     public static final java.lang.String ARG_PROTOCOL = android.text.style.TtsSpan.ARG_PROTOCOL;
     public static final java.lang.String ARG_QUANTITY = android.text.style.TtsSpan.ARG_QUANTITY;
     public static final java.lang.String ARG_QUERY_STRING = android.text.style.TtsSpan.ARG_QUERY_STRING;
+    public static final java.lang.String ARG_SECONDS = android.text.style.TtsSpan.ARG_SECONDS;
     public static final java.lang.String ARG_TEXT = android.text.style.TtsSpan.ARG_TEXT;
     public static final java.lang.String ARG_UNIT = android.text.style.TtsSpan.ARG_UNIT;
     public static final java.lang.String ARG_USERNAME = android.text.style.TtsSpan.ARG_USERNAME;
@@ -115,6 +116,7 @@ public final class TtsSpan {
     public static final java.lang.String TYPE_DATE = android.text.style.TtsSpan.TYPE_DATE;
     public static final java.lang.String TYPE_DECIMAL = android.text.style.TtsSpan.TYPE_DECIMAL;
     public static final java.lang.String TYPE_DIGITS = android.text.style.TtsSpan.TYPE_DIGITS;
+    public static final java.lang.String TYPE_DURATION = android.text.style.TtsSpan.TYPE_DURATION;
     public static final java.lang.String TYPE_ELECTRONIC = android.text.style.TtsSpan.TYPE_ELECTRONIC;
     public static final java.lang.String TYPE_FRACTION = android.text.style.TtsSpan.TYPE_FRACTION;
     public static final java.lang.String TYPE_MEASURE = android.text.style.TtsSpan.TYPE_MEASURE;
@@ -189,19 +191,19 @@ public final class TtsSpan {
             this(new android.text.style.TtsSpan.CardinalBuilder(), (__DcgwBridgeToken) null);
         }
 
-        public CardinalBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.CardinalBuilder(arg0), (__DcgwBridgeToken) null);
-        }
-
         public CardinalBuilder(long arg0) {
             this(new android.text.style.TtsSpan.CardinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder setNumber(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(((android.text.style.TtsSpan.CardinalBuilder) real).setNumber(arg0));
+        public CardinalBuilder(java.lang.String arg0) {
+            this(new android.text.style.TtsSpan.CardinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder setNumber(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(((android.text.style.TtsSpan.CardinalBuilder) real).setNumber(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder setNumber(long arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.CardinalBuilder.wrap(((android.text.style.TtsSpan.CardinalBuilder) real).setNumber(arg0));
         }
 
@@ -339,6 +341,45 @@ public final class TtsSpan {
         }
 
     }
+    public static final class DurationBuilder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private DurationBuilder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder wrap(android.text.style.TtsSpan.DurationBuilder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.text.style.TtsSpan.DurationBuilder getReal() {
+            return (android.text.style.TtsSpan.DurationBuilder) real;
+        }
+
+        public android.text.style.TtsSpan.DurationBuilder unwrap() {
+            return getReal();
+        }
+
+        public DurationBuilder() {
+            this(new android.text.style.TtsSpan.DurationBuilder(), (__DcgwBridgeToken) null);
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder setHours(int arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder.wrap(((android.text.style.TtsSpan.DurationBuilder) real).setHours(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder setMinutes(int arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder.wrap(((android.text.style.TtsSpan.DurationBuilder) real).setMinutes(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder setSeconds(int arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.DurationBuilder.wrap(((android.text.style.TtsSpan.DurationBuilder) real).setSeconds(arg0));
+        }
+
+    }
     public static final class ElectronicBuilder {
         private static final class __DcgwBridgeToken {
         }
@@ -448,11 +489,11 @@ public final class TtsSpan {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setIntegerPart(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(java.lang.String arg0) {
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(long arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setNumerator(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(long arg0) {
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder setNumerator(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.FractionBuilder.wrap(((android.text.style.TtsSpan.FractionBuilder) real).setNumerator(arg0));
         }
 
@@ -495,11 +536,11 @@ public final class TtsSpan {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setFractionalPart(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(java.lang.String arg0) {
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(long arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setIntegerPart(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(long arg0) {
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder setIntegerPart(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.MeasureBuilder.wrap(((android.text.style.TtsSpan.MeasureBuilder) real).setIntegerPart(arg0));
         }
 
@@ -597,19 +638,19 @@ public final class TtsSpan {
             this(new android.text.style.TtsSpan.OrdinalBuilder(), (__DcgwBridgeToken) null);
         }
 
-        public OrdinalBuilder(java.lang.String arg0) {
-            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0), (__DcgwBridgeToken) null);
-        }
-
         public OrdinalBuilder(long arg0) {
             this(new android.text.style.TtsSpan.OrdinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
-        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder setNumber(long arg0) {
-            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(((android.text.style.TtsSpan.OrdinalBuilder) real).setNumber(arg0));
+        public OrdinalBuilder(java.lang.String arg0) {
+            this(new android.text.style.TtsSpan.OrdinalBuilder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder setNumber(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(((android.text.style.TtsSpan.OrdinalBuilder) real).setNumber(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder setNumber(long arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.OrdinalBuilder.wrap(((android.text.style.TtsSpan.OrdinalBuilder) real).setNumber(arg0));
         }
 
@@ -755,6 +796,10 @@ public final class TtsSpan {
 
         public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder setMinutes(int arg0) {
             return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(((android.text.style.TtsSpan.TimeBuilder) real).setMinutes(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder setSeconds(int arg0) {
+            return com.micklab.dcg.wrapper.android.text.style.TtsSpan.TimeBuilder.wrap(((android.text.style.TtsSpan.TimeBuilder) real).setSeconds(arg0));
         }
 
     }

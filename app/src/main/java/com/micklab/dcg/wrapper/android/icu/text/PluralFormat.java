@@ -31,10 +31,6 @@ public final class PluralFormat {
         this(new android.icu.text.PluralFormat(arg0), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public PluralFormat(java.util.Locale arg0) {
         this(new android.icu.text.PluralFormat(arg0), (__DcgwBridgeToken) null);
     }
@@ -43,35 +39,39 @@ public final class PluralFormat {
         this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1) {
-        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
-        this(new android.icu.text.PluralFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1) {
+        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
         this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(com.micklab.dcg.wrapper.android.icu.text.PluralRules arg0, java.lang.String arg1) {
-        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
     public PluralFormat(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules arg1) {
         this(new android.icu.text.PluralFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public PluralFormat(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
+        this(new android.icu.text.PluralFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public PluralFormat(com.micklab.dcg.wrapper.android.icu.text.PluralRules arg0, java.lang.String arg1) {
+        this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules arg1) {
         this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules arg1, java.lang.String arg2) {
+    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1, java.lang.String arg2) {
         this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
-    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1, java.lang.String arg2) {
+    public PluralFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules arg1, java.lang.String arg2) {
         this(new android.icu.text.PluralFormat(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 

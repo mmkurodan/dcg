@@ -63,11 +63,20 @@ public final class DisplayManager {
         ((android.hardware.display.DisplayManager) real).registerDisplayListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
+    public void registerDisplayListener(java.util.concurrent.Executor arg0, long arg1, com.micklab.dcg.wrapper.android.hardware.display.DisplayManager.DisplayListener arg2) {
+        ((android.hardware.display.DisplayManager) real).registerDisplayListener(arg0, arg1, arg2 == null ? null : arg2.getReal());
+    }
+
     public void unregisterDisplayListener(com.micklab.dcg.wrapper.android.hardware.display.DisplayManager.DisplayListener arg0) {
         ((android.hardware.display.DisplayManager) real).unregisterDisplayListener(arg0 == null ? null : arg0.getReal());
     }
 
     public static final java.lang.String DISPLAY_CATEGORY_PRESENTATION = android.hardware.display.DisplayManager.DISPLAY_CATEGORY_PRESENTATION;
+    public static final long EVENT_TYPE_DISPLAY_ADDED = android.hardware.display.DisplayManager.EVENT_TYPE_DISPLAY_ADDED;
+    public static final long EVENT_TYPE_DISPLAY_CHANGED = android.hardware.display.DisplayManager.EVENT_TYPE_DISPLAY_CHANGED;
+    public static final long EVENT_TYPE_DISPLAY_REFRESH_RATE = android.hardware.display.DisplayManager.EVENT_TYPE_DISPLAY_REFRESH_RATE;
+    public static final long EVENT_TYPE_DISPLAY_REMOVED = android.hardware.display.DisplayManager.EVENT_TYPE_DISPLAY_REMOVED;
+    public static final long EVENT_TYPE_DISPLAY_STATE = android.hardware.display.DisplayManager.EVENT_TYPE_DISPLAY_STATE;
     public static final int MATCH_CONTENT_FRAMERATE_ALWAYS = android.hardware.display.DisplayManager.MATCH_CONTENT_FRAMERATE_ALWAYS;
     public static final int MATCH_CONTENT_FRAMERATE_NEVER = android.hardware.display.DisplayManager.MATCH_CONTENT_FRAMERATE_NEVER;
     public static final int MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY = android.hardware.display.DisplayManager.MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY;

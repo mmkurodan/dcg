@@ -98,12 +98,12 @@ public final class LocationRequest {
             return getReal();
         }
 
-        public Builder(long arg0) {
-            this(new android.location.LocationRequest.Builder(arg0), (__DcgwBridgeToken) null);
-        }
-
         public Builder(com.micklab.dcg.wrapper.android.location.LocationRequest arg0) {
             this(new android.location.LocationRequest.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public Builder(long arg0) {
+            this(new android.location.LocationRequest.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.location.LocationRequest build() {

@@ -47,6 +47,14 @@ public final class GenericDocument {
         return ((android.app.appsearch.GenericDocument) real).getProperty(arg0);
     }
 
+    public com.micklab.dcg.wrapper.android.app.appsearch.AppSearchBlobHandle getPropertyBlobHandle(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.app.appsearch.AppSearchBlobHandle.wrap(((android.app.appsearch.GenericDocument) real).getPropertyBlobHandle(arg0));
+    }
+
+    public android.app.appsearch.AppSearchBlobHandle[] getPropertyBlobHandleArray(java.lang.String arg0) {
+        return ((android.app.appsearch.GenericDocument) real).getPropertyBlobHandleArray(arg0);
+    }
+
     public boolean getPropertyBoolean(java.lang.String arg0) {
         return ((android.app.appsearch.GenericDocument) real).getPropertyBoolean(arg0);
     }
@@ -77,6 +85,14 @@ public final class GenericDocument {
 
     public double[] getPropertyDoubleArray(java.lang.String arg0) {
         return ((android.app.appsearch.GenericDocument) real).getPropertyDoubleArray(arg0);
+    }
+
+    public com.micklab.dcg.wrapper.android.app.appsearch.EmbeddingVector getPropertyEmbedding(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.app.appsearch.EmbeddingVector.wrap(((android.app.appsearch.GenericDocument) real).getPropertyEmbedding(arg0));
+    }
+
+    public android.app.appsearch.EmbeddingVector[] getPropertyEmbeddingArray(java.lang.String arg0) {
+        return ((android.app.appsearch.GenericDocument) real).getPropertyEmbeddingArray(arg0);
     }
 
     public long getPropertyLong(java.lang.String arg0) {

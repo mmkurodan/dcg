@@ -23,7 +23,7 @@ public final class Allocation {
         return getReal();
     }
 
-    public void copy1DRangeFrom(int arg0, int arg1, short[] arg2) {
+    public void copy1DRangeFrom(int arg0, int arg1, float[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
     }
 
@@ -31,7 +31,11 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeFrom(int arg0, int arg1, float[] arg2) {
+    public void copy1DRangeFrom(int arg0, int arg1, int[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeFrom(int arg0, int arg1, short[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
     }
 
@@ -39,27 +43,11 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeFrom(int arg0, int arg1, int[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2);
-    }
-
     public void copy1DRangeFrom(int arg0, int arg1, com.micklab.dcg.wrapper.android.renderscript.Allocation arg2, int arg3) {
         ((android.renderscript.Allocation) real).copy1DRangeFrom(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
-    public void copy1DRangeFromUnchecked(int arg0, int arg1, short[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
-    }
-
-    public void copy1DRangeFromUnchecked(int arg0, int arg1, byte[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
-    }
-
     public void copy1DRangeFromUnchecked(int arg0, int arg1, int[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
-    }
-
-    public void copy1DRangeFromUnchecked(int arg0, int arg1, java.lang.Object arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
     }
 
@@ -67,11 +55,19 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeTo(int arg0, int arg1, int[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
+    public void copy1DRangeFromUnchecked(int arg0, int arg1, java.lang.Object arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeTo(int arg0, int arg1, short[] arg2) {
+    public void copy1DRangeFromUnchecked(int arg0, int arg1, byte[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeFromUnchecked(int arg0, int arg1, short[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeFromUnchecked(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeTo(int arg0, int arg1, int[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
     }
 
@@ -79,15 +75,19 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeTo(int arg0, int arg1, byte[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
-    }
-
     public void copy1DRangeTo(int arg0, int arg1, java.lang.Object arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeToUnchecked(int arg0, int arg1, int[] arg2) {
+    public void copy1DRangeTo(int arg0, int arg1, byte[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeTo(int arg0, int arg1, short[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeTo(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeToUnchecked(int arg0, int arg1, byte[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
     }
 
@@ -95,15 +95,15 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeToUnchecked(int arg0, int arg1, short[] arg2) {
-        ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
-    }
-
     public void copy1DRangeToUnchecked(int arg0, int arg1, float[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
     }
 
-    public void copy1DRangeToUnchecked(int arg0, int arg1, byte[] arg2) {
+    public void copy1DRangeToUnchecked(int arg0, int arg1, short[] arg2) {
+        ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
+    }
+
+    public void copy1DRangeToUnchecked(int arg0, int arg1, int[] arg2) {
         ((android.renderscript.Allocation) real).copy1DRangeToUnchecked(arg0, arg1, arg2);
     }
 
@@ -111,15 +111,7 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
-    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
-        ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
-    }
-
-    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, java.lang.Object arg4) {
-        ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
-    }
-
-    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
+    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
         ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
     }
 
@@ -127,7 +119,15 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
     }
 
-    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
+    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, java.lang.Object arg4) {
+        ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
+    }
+
+    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
+        ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
+    }
+
+    public void copy2DRangeFrom(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
         ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4);
     }
 
@@ -135,7 +135,7 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy2DRangeFrom(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5, arg6);
     }
 
-    public void copy2DRangeTo(int arg0, int arg1, int arg2, int arg3, java.lang.Object arg4) {
+    public void copy2DRangeTo(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
         ((android.renderscript.Allocation) real).copy2DRangeTo(arg0, arg1, arg2, arg3, arg4);
     }
 
@@ -147,7 +147,7 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy2DRangeTo(arg0, arg1, arg2, arg3, arg4);
     }
 
-    public void copy2DRangeTo(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
+    public void copy2DRangeTo(int arg0, int arg1, int arg2, int arg3, java.lang.Object arg4) {
         ((android.renderscript.Allocation) real).copy2DRangeTo(arg0, arg1, arg2, arg3, arg4);
     }
 
@@ -167,11 +167,15 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copy3DRangeTo(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
-    public void copyFrom(com.micklab.dcg.wrapper.android.renderscript.Allocation arg0) {
-        ((android.renderscript.Allocation) real).copyFrom(arg0 == null ? null : arg0.getReal());
+    public void copyFrom(int[] arg0) {
+        ((android.renderscript.Allocation) real).copyFrom(arg0);
     }
 
-    public void copyFrom(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
+    public void copyFrom(java.lang.Object arg0) {
+        ((android.renderscript.Allocation) real).copyFrom(arg0);
+    }
+
+    public void copyFrom(com.micklab.dcg.wrapper.android.renderscript.Allocation arg0) {
         ((android.renderscript.Allocation) real).copyFrom(arg0 == null ? null : arg0.getReal());
     }
 
@@ -183,11 +187,7 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copyFrom(arg0);
     }
 
-    public void copyFrom(java.lang.Object arg0) {
-        ((android.renderscript.Allocation) real).copyFrom(arg0);
-    }
-
-    public void copyFrom(int[] arg0) {
+    public void copyFrom(android.renderscript.BaseObj[] arg0) {
         ((android.renderscript.Allocation) real).copyFrom(arg0);
     }
 
@@ -195,15 +195,15 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copyFrom(arg0);
     }
 
-    public void copyFrom(android.renderscript.BaseObj[] arg0) {
-        ((android.renderscript.Allocation) real).copyFrom(arg0);
-    }
-
-    public void copyFromUnchecked(java.lang.Object arg0) {
-        ((android.renderscript.Allocation) real).copyFromUnchecked(arg0);
+    public void copyFrom(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
+        ((android.renderscript.Allocation) real).copyFrom(arg0 == null ? null : arg0.getReal());
     }
 
     public void copyFromUnchecked(float[] arg0) {
+        ((android.renderscript.Allocation) real).copyFromUnchecked(arg0);
+    }
+
+    public void copyFromUnchecked(java.lang.Object arg0) {
         ((android.renderscript.Allocation) real).copyFromUnchecked(arg0);
     }
 
@@ -219,14 +219,6 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copyFromUnchecked(arg0);
     }
 
-    public void copyTo(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-        ((android.renderscript.Allocation) real).copyTo(arg0 == null ? null : arg0.getReal());
-    }
-
-    public void copyTo(int[] arg0) {
-        ((android.renderscript.Allocation) real).copyTo(arg0);
-    }
-
     public void copyTo(short[] arg0) {
         ((android.renderscript.Allocation) real).copyTo(arg0);
     }
@@ -235,11 +227,19 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copyTo(arg0);
     }
 
+    public void copyTo(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
+        ((android.renderscript.Allocation) real).copyTo(arg0 == null ? null : arg0.getReal());
+    }
+
     public void copyTo(byte[] arg0) {
         ((android.renderscript.Allocation) real).copyTo(arg0);
     }
 
     public void copyTo(float[] arg0) {
+        ((android.renderscript.Allocation) real).copyTo(arg0);
+    }
+
+    public void copyTo(int[] arg0) {
         ((android.renderscript.Allocation) real).copyTo(arg0);
     }
 

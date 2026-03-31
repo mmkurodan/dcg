@@ -75,24 +75,24 @@ public final class TimeZone {
         return ((android.icu.util.TimeZone) real).getDisplayName();
     }
 
-    public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return ((android.icu.util.TimeZone) real).getDisplayName(arg0 == null ? null : arg0.getReal());
-    }
-
     public java.lang.String getDisplayName(java.util.Locale arg0) {
         return ((android.icu.util.TimeZone) real).getDisplayName(arg0);
+    }
+
+    public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String getDisplayName(boolean arg0, int arg1) {
         return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1);
     }
 
-    public java.lang.String getDisplayName(boolean arg0, int arg1, java.util.Locale arg2) {
-        return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1, arg2);
-    }
-
     public java.lang.String getDisplayName(boolean arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
         return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1, arg2 == null ? null : arg2.getReal());
+    }
+
+    public java.lang.String getDisplayName(boolean arg0, int arg1, java.util.Locale arg2) {
+        return ((android.icu.util.TimeZone) real).getDisplayName(arg0, arg1, arg2);
     }
 
     public static java.lang.String getEquivalentID(java.lang.String arg0, int arg1) {
@@ -109,6 +109,10 @@ public final class TimeZone {
 
     public static java.lang.String getIDForWindowsID(java.lang.String arg0, java.lang.String arg1) {
         return android.icu.util.TimeZone.getIDForWindowsID(arg0, arg1);
+    }
+
+    public static java.lang.String getIanaID(java.lang.String arg0) {
+        return android.icu.util.TimeZone.getIanaID(arg0);
     }
 
     public int getOffset(long arg0) {

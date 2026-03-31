@@ -63,6 +63,18 @@ public final class InputMethodSubtype {
         return ((android.view.inputmethod.InputMethodSubtype) real).getLanguageTag();
     }
 
+    public java.lang.CharSequence getLayoutDisplayName(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg1) {
+        return ((android.view.inputmethod.InputMethodSubtype) real).getLayoutDisplayName(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+    }
+
+    public java.lang.CharSequence getLayoutLabelNonLocalized() {
+        return ((android.view.inputmethod.InputMethodSubtype) real).getLayoutLabelNonLocalized();
+    }
+
+    public int getLayoutLabelResource() {
+        return ((android.view.inputmethod.InputMethodSubtype) real).getLayoutLabelResource();
+    }
+
     public java.lang.String getLocale() {
         return ((android.view.inputmethod.InputMethodSubtype) real).getLocale();
     }
@@ -148,6 +160,14 @@ public final class InputMethodSubtype {
 
         public com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder setLanguageTag(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder.wrap(((android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder) real).setLanguageTag(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder setLayoutLabelNonLocalized(java.lang.CharSequence arg0) {
+            return com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder.wrap(((android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder) real).setLayoutLabelNonLocalized(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder setLayoutLabelResource(int arg0) {
+            return com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder.wrap(((android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder) real).setLayoutLabelResource(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(boolean arg0) {

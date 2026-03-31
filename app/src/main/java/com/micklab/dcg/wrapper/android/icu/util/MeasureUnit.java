@@ -86,6 +86,7 @@ public final class MeasureUnit {
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit ARC_SECOND = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.ARC_SECOND);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit ASTRONOMICAL_UNIT = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.ASTRONOMICAL_UNIT);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit ATMOSPHERE = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.ATMOSPHERE);
+    public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit BEAUFORT = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.BEAUFORT);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit BIT = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.BIT);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit BUSHEL = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.BUSHEL);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit BYTE = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.BYTE);
@@ -122,6 +123,7 @@ public final class MeasureUnit {
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit FURLONG = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.FURLONG);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GALLON = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GALLON);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GALLON_IMPERIAL = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GALLON_IMPERIAL);
+    public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GASOLINE_ENERGY_DENSITY = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GASOLINE_ENERGY_DENSITY);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GENERIC_TEMPERATURE = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GENERIC_TEMPERATURE);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GIGABIT = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GIGABIT);
     public static final com.micklab.dcg.wrapper.android.icu.util.MeasureUnit GIGABYTE = com.micklab.dcg.wrapper.android.icu.util.MeasureUnit.wrap(android.icu.util.MeasureUnit.GIGABYTE);

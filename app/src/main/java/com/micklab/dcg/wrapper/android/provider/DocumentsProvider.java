@@ -147,12 +147,12 @@ public final class DocumentsProvider {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).query(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.database.Cursor queryChildDocuments(java.lang.String arg0, java.lang.String[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).queryChildDocuments(arg0, arg1, arg2 == null ? null : arg2.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.database.Cursor queryChildDocuments(java.lang.String arg0, java.lang.String[] arg1, java.lang.String arg2) throws java.io.FileNotFoundException {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).queryChildDocuments(arg0, arg1, arg2));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor queryChildDocuments(java.lang.String arg0, java.lang.String[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) throws java.io.FileNotFoundException {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).queryChildDocuments(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.database.Cursor queryDocument(java.lang.String arg0, java.lang.String[] arg1) throws java.io.FileNotFoundException {
@@ -171,12 +171,12 @@ public final class DocumentsProvider {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).queryRoots(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.database.Cursor querySearchDocuments(java.lang.String arg0, java.lang.String[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) throws java.io.FileNotFoundException {
-        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).querySearchDocuments(arg0, arg1, arg2 == null ? null : arg2.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.database.Cursor querySearchDocuments(java.lang.String arg0, java.lang.String arg1, java.lang.String[] arg2) throws java.io.FileNotFoundException {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).querySearchDocuments(arg0, arg1, arg2));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor querySearchDocuments(java.lang.String arg0, java.lang.String[] arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) throws java.io.FileNotFoundException {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.DocumentsProvider) real).querySearchDocuments(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public void removeDocument(java.lang.String arg0, java.lang.String arg1) throws java.io.FileNotFoundException {

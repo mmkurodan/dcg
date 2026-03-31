@@ -59,6 +59,10 @@ public final class JobScheduler {
         return ((android.app.job.JobScheduler) real).getPendingJobReason(arg0);
     }
 
+    public int[] getPendingJobReasons(int arg0) {
+        return ((android.app.job.JobScheduler) real).getPendingJobReasons(arg0);
+    }
+
     public int schedule(com.micklab.dcg.wrapper.android.app.job.JobInfo arg0) {
         return ((android.app.job.JobScheduler) real).schedule(arg0 == null ? null : arg0.getReal());
     }
@@ -70,6 +74,7 @@ public final class JobScheduler {
     public static final int PENDING_JOB_REASON_CONSTRAINT_CHARGING = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_CHARGING;
     public static final int PENDING_JOB_REASON_CONSTRAINT_CONNECTIVITY = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_CONNECTIVITY;
     public static final int PENDING_JOB_REASON_CONSTRAINT_CONTENT_TRIGGER = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_CONTENT_TRIGGER;
+    public static final int PENDING_JOB_REASON_CONSTRAINT_DEADLINE = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_DEADLINE;
     public static final int PENDING_JOB_REASON_CONSTRAINT_DEVICE_IDLE = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_DEVICE_IDLE;
     public static final int PENDING_JOB_REASON_CONSTRAINT_MINIMUM_LATENCY = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_MINIMUM_LATENCY;
     public static final int PENDING_JOB_REASON_CONSTRAINT_PREFETCH = android.app.job.JobScheduler.PENDING_JOB_REASON_CONSTRAINT_PREFETCH;

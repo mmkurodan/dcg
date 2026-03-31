@@ -27,6 +27,10 @@ public final class NetworkSecurityPolicy {
         return com.micklab.dcg.wrapper.android.security.NetworkSecurityPolicy.wrap(android.security.NetworkSecurityPolicy.getInstance());
     }
 
+    public boolean isCertificateTransparencyVerificationRequired(java.lang.String arg0) {
+        return ((android.security.NetworkSecurityPolicy) real).isCertificateTransparencyVerificationRequired(arg0);
+    }
+
     public boolean isCleartextTrafficPermitted() {
         return ((android.security.NetworkSecurityPolicy) real).isCleartextTrafficPermitted();
     }

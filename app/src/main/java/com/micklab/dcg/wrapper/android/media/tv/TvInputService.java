@@ -259,6 +259,10 @@ public final class TvInputService {
             ((android.media.tv.TvInputService.Session) real).notifyVideoAvailable();
         }
 
+        public void notifyVideoFreezeUpdated(boolean arg0) {
+            ((android.media.tv.TvInputService.Session) real).notifyVideoFreezeUpdated(arg0);
+        }
+
         public void notifyVideoUnavailable(int arg0) {
             ((android.media.tv.TvInputService.Session) real).notifyVideoUnavailable(arg0);
         }
@@ -315,6 +319,10 @@ public final class TvInputService {
             ((android.media.tv.TvInputService.Session) real).onRequestBroadcastInfo(arg0 == null ? null : arg0.getReal());
         }
 
+        public void onResumePlayback() {
+            ((android.media.tv.TvInputService.Session) real).onResumePlayback();
+        }
+
         public boolean onSelectAudioPresentation(int arg0, int arg1) {
             return ((android.media.tv.TvInputService.Session) real).onSelectAudioPresentation(arg0, arg1);
         }
@@ -341,6 +349,10 @@ public final class TvInputService {
 
         public void onSetTvMessageEnabled(int arg0, boolean arg1) {
             ((android.media.tv.TvInputService.Session) real).onSetTvMessageEnabled(arg0, arg1);
+        }
+
+        public void onStopPlayback(int arg0) {
+            ((android.media.tv.TvInputService.Session) real).onStopPlayback(arg0);
         }
 
         public void onSurfaceChanged(int arg0, int arg1, int arg2) {
@@ -395,12 +407,20 @@ public final class TvInputService {
             return ((android.media.tv.TvInputService.Session) real).onTune(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
+        public void onTvAdSessionData(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.tv.TvInputService.Session) real).onTvAdSessionData(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
         public void onTvMessage(int arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
             ((android.media.tv.TvInputService.Session) real).onTvMessage(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void onUnblockContent(com.micklab.dcg.wrapper.android.media.tv.TvContentRating arg0) {
             ((android.media.tv.TvInputService.Session) real).onUnblockContent(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void sendTvInputSessionData(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.tv.TvInputService.Session) real).sendTvInputSessionData(arg0, arg1 == null ? null : arg1.getReal());
         }
 
         public void setOverlayViewEnabled(boolean arg0) {

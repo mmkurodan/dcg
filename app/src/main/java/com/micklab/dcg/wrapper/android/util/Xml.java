@@ -39,11 +39,11 @@ public final class Xml {
         return android.util.Xml.newSerializer();
     }
 
-    public static void parse(java.lang.String arg0, org.xml.sax.ContentHandler arg1) throws org.xml.sax.SAXException {
+    public static void parse(java.io.Reader arg0, org.xml.sax.ContentHandler arg1) throws java.io.IOException, org.xml.sax.SAXException {
         android.util.Xml.parse(arg0, arg1);
     }
 
-    public static void parse(java.io.Reader arg0, org.xml.sax.ContentHandler arg1) throws java.io.IOException, org.xml.sax.SAXException {
+    public static void parse(java.lang.String arg0, org.xml.sax.ContentHandler arg1) throws org.xml.sax.SAXException {
         android.util.Xml.parse(arg0, arg1);
     }
 

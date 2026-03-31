@@ -103,11 +103,11 @@ public final class PrintJob {
         ((android.printservice.PrintJob) real).setProgress(arg0);
     }
 
-    public void setStatus(int arg0) {
+    public void setStatus(java.lang.CharSequence arg0) {
         ((android.printservice.PrintJob) real).setStatus(arg0);
     }
 
-    public void setStatus(java.lang.CharSequence arg0) {
+    public void setStatus(int arg0) {
         ((android.printservice.PrintJob) real).setStatus(arg0);
     }
 

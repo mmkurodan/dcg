@@ -1657,19 +1657,19 @@ public final class ContactsContract {
             this(new android.provider.ContactsContract.QuickContact(), (__DcgwBridgeToken) null);
         }
 
-        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, java.lang.String[] arg3, java.lang.String arg4) {
-            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
-        }
-
         public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, java.lang.String[] arg3, java.lang.String arg4) {
             android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
-        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
+        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
             android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
-        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.View arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
+        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, java.lang.String[] arg3, java.lang.String arg4) {
+            android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
+        }
+
+        public static void showQuickContact(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.net.Uri arg2, int arg3, java.lang.String[] arg4) {
             android.provider.ContactsContract.QuickContact.showQuickContact(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4);
         }
 
@@ -1752,6 +1752,95 @@ public final class ContactsContract {
 
             public static final java.lang.String CONTENT_DIRECTORY = android.provider.ContactsContract.RawContacts.Data.CONTENT_DIRECTORY;
 
+        }
+        public static final class DefaultAccount {
+            private static final class __DcgwBridgeToken {
+            }
+
+            private final java.lang.Object real;
+
+            private DefaultAccount(java.lang.Object real, __DcgwBridgeToken token) {
+                this.real = real;
+            }
+
+            public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount wrap(android.provider.ContactsContract.RawContacts.DefaultAccount real) {
+                return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount(real, (__DcgwBridgeToken) null);
+            }
+
+            public android.provider.ContactsContract.RawContacts.DefaultAccount getReal() {
+                return (android.provider.ContactsContract.RawContacts.DefaultAccount) real;
+            }
+
+            public android.provider.ContactsContract.RawContacts.DefaultAccount unwrap() {
+                return getReal();
+            }
+
+            public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState getDefaultAccountForNewContacts(com.micklab.dcg.wrapper.android.content.ContentResolver arg0) {
+                return com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.getDefaultAccountForNewContacts(arg0 == null ? null : arg0.getReal()));
+            }
+
+            public static final java.lang.String ACTION_MOVE_CONTACTS_TO_DEFAULT_ACCOUNT = android.provider.ContactsContract.RawContacts.DefaultAccount.ACTION_MOVE_CONTACTS_TO_DEFAULT_ACCOUNT;
+
+            public static final class DefaultAccountAndState {
+                private static final class __DcgwBridgeToken {
+                }
+
+                private final java.lang.Object real;
+
+                private DefaultAccountAndState(java.lang.Object real, __DcgwBridgeToken token) {
+                    this.real = real;
+                }
+
+                public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState real) {
+                    return real == null ? null : new com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState(real, (__DcgwBridgeToken) null);
+                }
+
+                public android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState getReal() {
+                    return (android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState) real;
+                }
+
+                public android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState unwrap() {
+                    return getReal();
+                }
+
+                public boolean equals(java.lang.Object arg0) {
+                    return ((android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState) real).equals(arg0);
+                }
+
+                public com.micklab.dcg.wrapper.android.accounts.Account getAccount() {
+                    return com.micklab.dcg.wrapper.android.accounts.Account.wrap(((android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState) real).getAccount());
+                }
+
+                public int getState() {
+                    return ((android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState) real).getState();
+                }
+
+                public int hashCode() {
+                    return ((android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState) real).hashCode();
+                }
+
+                public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState ofCloud(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.ofCloud(arg0 == null ? null : arg0.getReal()));
+                }
+
+                public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState ofLocal() {
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.ofLocal());
+                }
+
+                public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState ofNotSet() {
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.ofNotSet());
+                }
+
+                public static com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState ofSim(com.micklab.dcg.wrapper.android.accounts.Account arg0) {
+                    return com.micklab.dcg.wrapper.android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.wrap(android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.ofSim(arg0 == null ? null : arg0.getReal()));
+                }
+
+                public static final int DEFAULT_ACCOUNT_STATE_CLOUD = android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.DEFAULT_ACCOUNT_STATE_CLOUD;
+                public static final int DEFAULT_ACCOUNT_STATE_LOCAL = android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.DEFAULT_ACCOUNT_STATE_LOCAL;
+                public static final int DEFAULT_ACCOUNT_STATE_NOT_SET = android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.DEFAULT_ACCOUNT_STATE_NOT_SET;
+                public static final int DEFAULT_ACCOUNT_STATE_SIM = android.provider.ContactsContract.RawContacts.DefaultAccount.DefaultAccountAndState.DEFAULT_ACCOUNT_STATE_SIM;
+
+            }
         }
         public static final class DisplayPhoto {
             private static final class __DcgwBridgeToken {

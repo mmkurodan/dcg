@@ -31,12 +31,12 @@ public final class ContextWrapper {
         return ((android.content.ContextWrapper) real).bindIsolatedService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
-    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2) {
-        return ((android.content.ContextWrapper) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
-    }
-
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2) {
         return ((android.content.ContextWrapper) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+    }
+
+    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2) {
+        return ((android.content.ContextWrapper) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
@@ -47,12 +47,12 @@ public final class ContextWrapper {
         return ((android.content.ContextWrapper) real).bindService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
-        return ((android.content.ContextWrapper) real).bindServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
-    }
-
     public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
         return ((android.content.ContextWrapper) real).bindServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
+    }
+
+    public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, int arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
+        return ((android.content.ContextWrapper) real).bindServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public int checkCallingOrSelfPermission(java.lang.String arg0) {
@@ -499,12 +499,12 @@ public final class ContextWrapper {
         ((android.content.ContextWrapper) real).setTheme(arg0);
     }
 
-    public void setWallpaper(java.io.InputStream arg0) throws java.io.IOException {
-        ((android.content.ContextWrapper) real).setWallpaper(arg0);
-    }
-
     public void setWallpaper(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) throws java.io.IOException {
         ((android.content.ContextWrapper) real).setWallpaper(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setWallpaper(java.io.InputStream arg0) throws java.io.IOException {
+        ((android.content.ContextWrapper) real).setWallpaper(arg0);
     }
 
     public void startActivities(android.content.Intent[] arg0) {

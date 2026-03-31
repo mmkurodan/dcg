@@ -23,6 +23,10 @@ public final class DownloadCompletedInput {
         return getReal();
     }
 
+    public DownloadCompletedInput(com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.KeyValueStore arg0) {
+        this(new android.adservices.ondevicepersonalization.DownloadCompletedInput(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public boolean equals(java.lang.Object arg0) {
         return ((android.adservices.ondevicepersonalization.DownloadCompletedInput) real).equals(arg0);
     }

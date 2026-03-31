@@ -51,12 +51,12 @@ public final class VpnService {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.VpnService#protect(java.net.Socket)");
     }
 
-    public boolean protect(int arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.VpnService#protect(int)");
-    }
-
     public boolean protect(java.net.DatagramSocket arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.VpnService#protect(java.net.DatagramSocket)");
+    }
+
+    public boolean protect(int arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.VpnService#protect(int)");
     }
 
     public boolean setUnderlyingNetworks(android.net.Network[] arg0) {

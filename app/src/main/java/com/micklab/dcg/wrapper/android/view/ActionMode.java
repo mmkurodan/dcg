@@ -83,11 +83,11 @@ public final class ActionMode {
         ((android.view.ActionMode) real).setCustomView(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setSubtitle(int arg0) {
+    public void setSubtitle(java.lang.CharSequence arg0) {
         ((android.view.ActionMode) real).setSubtitle(arg0);
     }
 
-    public void setSubtitle(java.lang.CharSequence arg0) {
+    public void setSubtitle(int arg0) {
         ((android.view.ActionMode) real).setSubtitle(arg0);
     }
 
@@ -95,11 +95,11 @@ public final class ActionMode {
         ((android.view.ActionMode) real).setTag(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.view.ActionMode) real).setTitle(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.view.ActionMode) real).setTitle(arg0);
     }
 

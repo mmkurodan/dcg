@@ -51,6 +51,14 @@ public final class SubscriptionPlan {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan#getNetworkTypes()");
     }
 
+    public java.time.ZonedDateTime getPlanEndDate() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan#getPlanEndDate()");
+    }
+
+    public int getSubscriptionStatus() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan#getSubscriptionStatus()");
+    }
+
     public java.lang.CharSequence getSummary() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan#getSummary()");
     }
@@ -120,6 +128,10 @@ public final class SubscriptionPlan {
 
         public com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder setNetworkTypes(int[] arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan$Builder#setNetworkTypes([I)");
+        }
+
+        public com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder setSubscriptionStatus(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SubscriptionPlan$Builder#setSubscriptionStatus(int)");
         }
 
         public com.micklab.dcg.wrapper.android.telephony.SubscriptionPlan.Builder setSummary(java.lang.CharSequence arg0) {

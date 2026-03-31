@@ -87,11 +87,11 @@ public final class Toast {
         ((android.widget.Toast) real).setMargin(arg0, arg1);
     }
 
-    public void setText(java.lang.CharSequence arg0) {
+    public void setText(int arg0) {
         ((android.widget.Toast) real).setText(arg0);
     }
 
-    public void setText(int arg0) {
+    public void setText(java.lang.CharSequence arg0) {
         ((android.widget.Toast) real).setText(arg0);
     }
 

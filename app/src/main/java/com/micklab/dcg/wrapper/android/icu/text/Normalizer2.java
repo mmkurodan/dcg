@@ -59,6 +59,10 @@ public final class Normalizer2 {
         return com.micklab.dcg.wrapper.android.icu.text.Normalizer2.wrap(android.icu.text.Normalizer2.getNFKCInstance());
     }
 
+    public static com.micklab.dcg.wrapper.android.icu.text.Normalizer2 getNFKCSimpleCasefoldInstance() {
+        return com.micklab.dcg.wrapper.android.icu.text.Normalizer2.wrap(android.icu.text.Normalizer2.getNFKCSimpleCasefoldInstance());
+    }
+
     public static com.micklab.dcg.wrapper.android.icu.text.Normalizer2 getNFKDInstance() {
         return com.micklab.dcg.wrapper.android.icu.text.Normalizer2.wrap(android.icu.text.Normalizer2.getNFKDInstance());
     }

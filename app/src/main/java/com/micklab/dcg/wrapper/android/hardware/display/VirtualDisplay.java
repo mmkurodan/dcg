@@ -39,6 +39,10 @@ public final class VirtualDisplay {
         ((android.hardware.display.VirtualDisplay) real).resize(arg0, arg1, arg2);
     }
 
+    public void setRotation(int arg0) {
+        ((android.hardware.display.VirtualDisplay) real).setRotation(arg0);
+    }
+
     public void setSurface(com.micklab.dcg.wrapper.android.view.Surface arg0) {
         ((android.hardware.display.VirtualDisplay) real).setSurface(arg0 == null ? null : arg0.getReal());
     }

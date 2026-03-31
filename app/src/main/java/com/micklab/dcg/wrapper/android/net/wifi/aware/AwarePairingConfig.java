@@ -35,6 +35,10 @@ public final class AwarePairingConfig {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.aware.AwarePairingConfig#getBootstrappingMethods()");
     }
 
+    public int getSupportedCipherSuites() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.aware.AwarePairingConfig#getSupportedCipherSuites()");
+    }
+
     public int hashCode() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.aware.AwarePairingConfig#hashCode()");
     }
@@ -100,6 +104,10 @@ public final class AwarePairingConfig {
 
         public com.micklab.dcg.wrapper.android.net.wifi.aware.AwarePairingConfig.Builder setPairingVerificationEnabled(boolean arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.aware.AwarePairingConfig$Builder#setPairingVerificationEnabled(boolean)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.aware.AwarePairingConfig.Builder setSupportedCipherSuites(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.aware.AwarePairingConfig$Builder#setSupportedCipherSuites(int)");
         }
 
     }

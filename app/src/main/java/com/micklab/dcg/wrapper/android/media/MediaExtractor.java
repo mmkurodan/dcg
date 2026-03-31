@@ -99,20 +99,20 @@ public final class MediaExtractor {
         ((android.media.MediaExtractor) real).selectTrack(arg0);
     }
 
-    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.io.IOException {
-        ((android.media.MediaExtractor) real).setDataSource(arg0 == null ? null : arg0.getReal());
-    }
-
-    public void setDataSource(com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg0) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
-        ((android.media.MediaExtractor) real).setDataSource(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setDataSource(java.io.FileDescriptor arg0) throws java.io.IOException {
         ((android.media.MediaExtractor) real).setDataSource(arg0);
     }
 
     public void setDataSource(java.lang.String arg0) throws java.io.IOException {
         ((android.media.MediaExtractor) real).setDataSource(arg0);
+    }
+
+    public void setDataSource(com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg0) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
+        ((android.media.MediaExtractor) real).setDataSource(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.io.IOException {
+        ((android.media.MediaExtractor) real).setDataSource(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDataSource(java.io.FileDescriptor arg0, long arg1, long arg2) throws java.io.IOException {

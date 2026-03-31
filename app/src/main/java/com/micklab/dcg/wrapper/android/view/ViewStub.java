@@ -27,12 +27,12 @@ public final class ViewStub {
         this(new android.view.ViewStub(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public ViewStub(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.view.ViewStub(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public ViewStub(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
         this(new android.view.ViewStub(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    }
+
+    public ViewStub(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+        this(new android.view.ViewStub(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ViewStub(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2) {

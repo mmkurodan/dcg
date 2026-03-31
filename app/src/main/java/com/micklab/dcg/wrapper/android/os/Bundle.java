@@ -27,20 +27,20 @@ public final class Bundle {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle()");
     }
 
-    public Bundle(com.micklab.dcg.wrapper.android.os.PersistableBundle arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(android.os.PersistableBundle)");
-    }
-
-    public Bundle(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(android.os.Bundle)");
+    public Bundle(java.lang.ClassLoader arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(java.lang.ClassLoader)");
     }
 
     public Bundle(int arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(int)");
     }
 
-    public Bundle(java.lang.ClassLoader arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(java.lang.ClassLoader)");
+    public Bundle(com.micklab.dcg.wrapper.android.os.PersistableBundle arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(android.os.PersistableBundle)");
+    }
+
+    public Bundle(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Bundle#android.os.Bundle(android.os.Bundle)");
     }
 
     public void clear() {

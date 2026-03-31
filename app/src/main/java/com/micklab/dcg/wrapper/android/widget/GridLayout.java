@@ -119,12 +119,12 @@ public final class GridLayout {
         return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Alignment arg1) {
-        return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1 == null ? null : arg1.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, float arg1) {
         return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Alignment arg1) {
+        return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, int arg1) {
@@ -135,12 +135,12 @@ public final class GridLayout {
         return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Alignment arg1, float arg2) {
-        return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1 == null ? null : arg1.getReal(), arg2));
-    }
-
     public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, int arg1, float arg2) {
         return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1, arg2));
+    }
+
+    public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Alignment arg1, float arg2) {
+        return com.micklab.dcg.wrapper.android.widget.GridLayout.Spec.wrap(android.widget.GridLayout.spec(arg0, arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.widget.GridLayout.Spec spec(int arg0, int arg1, com.micklab.dcg.wrapper.android.widget.GridLayout.Alignment arg2, float arg3) {
@@ -223,11 +223,11 @@ public final class GridLayout {
             this(new android.widget.GridLayout.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+        public LayoutParams(com.micklab.dcg.wrapper.android.widget.GridLayout.Spec arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Spec arg1) {
             this(new android.widget.GridLayout.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.widget.GridLayout.Spec arg0, com.micklab.dcg.wrapper.android.widget.GridLayout.Spec arg1) {
+        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
             this(new android.widget.GridLayout.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 

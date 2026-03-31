@@ -63,12 +63,12 @@ public final class CollationElementIterator {
         ((android.icu.text.CollationElementIterator) real).setOffset(arg0);
     }
 
-    public void setText(com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator arg0) {
-        ((android.icu.text.CollationElementIterator) real).setText(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setText(java.lang.String arg0) {
         ((android.icu.text.CollationElementIterator) real).setText(arg0);
+    }
+
+    public void setText(com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator arg0) {
+        ((android.icu.text.CollationElementIterator) real).setText(arg0 == null ? null : arg0.getReal());
     }
 
     public void setText(java.text.CharacterIterator arg0) {

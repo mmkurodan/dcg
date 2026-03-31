@@ -79,12 +79,12 @@ public final class PackageInstaller {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller#requestUnarchive(java.lang.String,android.content.IntentSender)");
     }
 
-    public void uninstall(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller#uninstall(java.lang.String,android.content.IntentSender)");
-    }
-
     public void uninstall(com.micklab.dcg.wrapper.android.content.pm.VersionedPackage arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller#uninstall(android.content.pm.VersionedPackage,android.content.IntentSender)");
+    }
+
+    public void uninstall(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller#uninstall(java.lang.String,android.content.IntentSender)");
     }
 
     public void uninstall(com.micklab.dcg.wrapper.android.content.pm.VersionedPackage arg0, int arg1, com.micklab.dcg.wrapper.android.content.IntentSender arg2) {
@@ -646,6 +646,10 @@ public final class PackageInstaller {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller$SessionInfo#isApplicationEnabledSettingPersistent()");
         }
 
+        public boolean isAutoInstallDependenciesEnabled() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller$SessionInfo#isAutoInstallDependenciesEnabled()");
+        }
+
         public boolean isCommitted() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller$SessionInfo#isCommitted()");
         }
@@ -740,6 +744,10 @@ public final class PackageInstaller {
 
         public void setApplicationEnabledSettingPersistent() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller$SessionParams#setApplicationEnabledSettingPersistent()");
+        }
+
+        public void setAutoInstallDependenciesEnabled(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageInstaller$SessionParams#setAutoInstallDependenciesEnabled(boolean)");
         }
 
         public void setAutoRevokePermissionsMode(boolean arg0) {

@@ -105,6 +105,7 @@ public final class JobParameters {
     public static final int STOP_REASON_QUOTA = android.app.job.JobParameters.STOP_REASON_QUOTA;
     public static final int STOP_REASON_SYSTEM_PROCESSING = android.app.job.JobParameters.STOP_REASON_SYSTEM_PROCESSING;
     public static final int STOP_REASON_TIMEOUT = android.app.job.JobParameters.STOP_REASON_TIMEOUT;
+    public static final int STOP_REASON_TIMEOUT_ABANDONED = android.app.job.JobParameters.STOP_REASON_TIMEOUT_ABANDONED;
     public static final int STOP_REASON_UNDEFINED = android.app.job.JobParameters.STOP_REASON_UNDEFINED;
     public static final int STOP_REASON_USER = android.app.job.JobParameters.STOP_REASON_USER;
 

@@ -35,12 +35,12 @@ public final class LocationManager {
         return ((android.location.LocationManager) real).addNmeaListener(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean addNmeaListener(com.micklab.dcg.wrapper.android.location.OnNmeaMessageListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        return ((android.location.LocationManager) real).addNmeaListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public boolean addNmeaListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.location.OnNmeaMessageListener arg1) {
         return ((android.location.LocationManager) real).addNmeaListener(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public boolean addNmeaListener(com.micklab.dcg.wrapper.android.location.OnNmeaMessageListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        return ((android.location.LocationManager) real).addNmeaListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addProximityAlert(double arg0, double arg1, float arg2, long arg3, com.micklab.dcg.wrapper.android.app.PendingIntent arg4) {
@@ -147,23 +147,23 @@ public final class LocationManager {
         return ((android.location.LocationManager) real).registerGnssStatusCallback(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean registerGnssStatusCallback(com.micklab.dcg.wrapper.android.location.GnssStatus.Callback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        return ((android.location.LocationManager) real).registerGnssStatusCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public boolean registerGnssStatusCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.location.GnssStatus.Callback arg1) {
         return ((android.location.LocationManager) real).registerGnssStatusCallback(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public boolean registerGnssStatusCallback(com.micklab.dcg.wrapper.android.location.GnssStatus.Callback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        return ((android.location.LocationManager) real).registerGnssStatusCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void removeGpsStatusListener(com.micklab.dcg.wrapper.android.location.GpsStatus.Listener arg0) {
         ((android.location.LocationManager) real).removeGpsStatusListener(arg0 == null ? null : arg0.getReal());
     }
 
-    public void removeNmeaListener(com.micklab.dcg.wrapper.android.location.OnNmeaMessageListener arg0) {
+    public void removeNmeaListener(com.micklab.dcg.wrapper.android.location.GpsStatus.NmeaListener arg0) {
         ((android.location.LocationManager) real).removeNmeaListener(arg0 == null ? null : arg0.getReal());
     }
 
-    public void removeNmeaListener(com.micklab.dcg.wrapper.android.location.GpsStatus.NmeaListener arg0) {
+    public void removeNmeaListener(com.micklab.dcg.wrapper.android.location.OnNmeaMessageListener arg0) {
         ((android.location.LocationManager) real).removeNmeaListener(arg0 == null ? null : arg0.getReal());
     }
 
@@ -175,11 +175,11 @@ public final class LocationManager {
         ((android.location.LocationManager) real).removeTestProvider(arg0);
     }
 
-    public void removeUpdates(com.micklab.dcg.wrapper.android.location.LocationListener arg0) {
+    public void removeUpdates(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
         ((android.location.LocationManager) real).removeUpdates(arg0 == null ? null : arg0.getReal());
     }
 
-    public void removeUpdates(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
+    public void removeUpdates(com.micklab.dcg.wrapper.android.location.LocationListener arg0) {
         ((android.location.LocationManager) real).removeUpdates(arg0 == null ? null : arg0.getReal());
     }
 
@@ -199,7 +199,7 @@ public final class LocationManager {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
-    public void requestLocationUpdates(java.lang.String arg0, long arg1, float arg2, com.micklab.dcg.wrapper.android.app.PendingIntent arg3) {
+    public void requestLocationUpdates(java.lang.String arg0, long arg1, float arg2, com.micklab.dcg.wrapper.android.location.LocationListener arg3) {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
@@ -207,7 +207,7 @@ public final class LocationManager {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void requestLocationUpdates(java.lang.String arg0, long arg1, float arg2, com.micklab.dcg.wrapper.android.location.LocationListener arg3) {
+    public void requestLocationUpdates(java.lang.String arg0, long arg1, float arg2, com.micklab.dcg.wrapper.android.app.PendingIntent arg3) {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
@@ -219,12 +219,12 @@ public final class LocationManager {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal());
     }
 
-    public void requestLocationUpdates(long arg0, float arg1, com.micklab.dcg.wrapper.android.location.Criteria arg2, com.micklab.dcg.wrapper.android.location.LocationListener arg3, com.micklab.dcg.wrapper.android.os.Looper arg4) {
-        ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
-    }
-
     public void requestLocationUpdates(long arg0, float arg1, com.micklab.dcg.wrapper.android.location.Criteria arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.location.LocationListener arg4) {
         ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
+    }
+
+    public void requestLocationUpdates(long arg0, float arg1, com.micklab.dcg.wrapper.android.location.Criteria arg2, com.micklab.dcg.wrapper.android.location.LocationListener arg3, com.micklab.dcg.wrapper.android.os.Looper arg4) {
+        ((android.location.LocationManager) real).requestLocationUpdates(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public void requestSingleUpdate(com.micklab.dcg.wrapper.android.location.Criteria arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
@@ -235,12 +235,12 @@ public final class LocationManager {
         ((android.location.LocationManager) real).requestSingleUpdate(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void requestSingleUpdate(com.micklab.dcg.wrapper.android.location.Criteria arg0, com.micklab.dcg.wrapper.android.location.LocationListener arg1, com.micklab.dcg.wrapper.android.os.Looper arg2) {
-        ((android.location.LocationManager) real).requestSingleUpdate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
-    }
-
     public void requestSingleUpdate(java.lang.String arg0, com.micklab.dcg.wrapper.android.location.LocationListener arg1, com.micklab.dcg.wrapper.android.os.Looper arg2) {
         ((android.location.LocationManager) real).requestSingleUpdate(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+    }
+
+    public void requestSingleUpdate(com.micklab.dcg.wrapper.android.location.Criteria arg0, com.micklab.dcg.wrapper.android.location.LocationListener arg1, com.micklab.dcg.wrapper.android.os.Looper arg2) {
+        ((android.location.LocationManager) real).requestSingleUpdate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public boolean sendExtraCommand(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {

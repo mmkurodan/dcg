@@ -87,12 +87,12 @@ public final class AppWidgetManager {
         return ((android.appwidget.AppWidgetManager) real).setWidgetPreview(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
     }
 
-    public void updateAppWidget(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
-        ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public void updateAppWidget(int[] arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
         ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void updateAppWidget(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {
+        ((android.appwidget.AppWidgetManager) real).updateAppWidget(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void updateAppWidget(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews arg1) {

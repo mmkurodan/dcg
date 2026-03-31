@@ -27,11 +27,11 @@ public final class AudioRecord {
         this(new android.media.AudioRecord(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
-    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         ((android.media.AudioRecord) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRecord.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         ((android.media.AudioRecord) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
@@ -119,7 +119,7 @@ public final class AudioRecord {
         return ((android.media.AudioRecord) real).read(arg0, arg1);
     }
 
-    public int read(short[] arg0, int arg1, int arg2) {
+    public int read(java.nio.ByteBuffer arg0, int arg1, int arg2) {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
@@ -127,11 +127,11 @@ public final class AudioRecord {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
-    public int read(java.nio.ByteBuffer arg0, int arg1, int arg2) {
+    public int read(short[] arg0, int arg1, int arg2) {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2);
     }
 
-    public int read(short[] arg0, int arg1, int arg2, int arg3) {
+    public int read(float[] arg0, int arg1, int arg2, int arg3) {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 
@@ -139,7 +139,7 @@ public final class AudioRecord {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 
-    public int read(float[] arg0, int arg1, int arg2, int arg3) {
+    public int read(short[] arg0, int arg1, int arg2, int arg3) {
         return ((android.media.AudioRecord) real).read(arg0, arg1, arg2, arg3);
     }
 

@@ -27,12 +27,12 @@ public final class Currency {
         return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.fromJavaCurrency(arg0));
     }
 
-    public static java.lang.String[] getAvailableCurrencyCodes(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.util.Date arg1) {
-        return android.icu.util.Currency.getAvailableCurrencyCodes(arg0 == null ? null : arg0.getReal(), arg1);
-    }
-
     public static java.lang.String[] getAvailableCurrencyCodes(java.util.Locale arg0, java.util.Date arg1) {
         return android.icu.util.Currency.getAvailableCurrencyCodes(arg0, arg1);
+    }
+
+    public static java.lang.String[] getAvailableCurrencyCodes(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.util.Date arg1) {
+        return android.icu.util.Currency.getAvailableCurrencyCodes(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static java.util.Locale[] getAvailableLocales() {
@@ -63,16 +63,16 @@ public final class Currency {
         return ((android.icu.util.Currency) real).getDisplayName(arg0);
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.util.Currency getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.util.Currency.wrap(android.icu.util.Currency.getInstance(arg0));
     }
 
     public static java.lang.String[] getKeywordValuesForLocale(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1, boolean arg2) {

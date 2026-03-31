@@ -127,12 +127,12 @@ public final class DatabaseUtils {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils#dumpCurrentRow(android.database.Cursor)");
     }
 
-    public static void dumpCurrentRow(com.micklab.dcg.wrapper.android.database.Cursor arg0, java.io.PrintStream arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils#dumpCurrentRow(android.database.Cursor,java.io.PrintStream)");
-    }
-
     public static void dumpCurrentRow(com.micklab.dcg.wrapper.android.database.Cursor arg0, java.lang.StringBuilder arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils#dumpCurrentRow(android.database.Cursor,java.lang.StringBuilder)");
+    }
+
+    public static void dumpCurrentRow(com.micklab.dcg.wrapper.android.database.Cursor arg0, java.io.PrintStream arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils#dumpCurrentRow(android.database.Cursor,java.io.PrintStream)");
     }
 
     public static java.lang.String dumpCurrentRowToString(com.micklab.dcg.wrapper.android.database.Cursor arg0) {
@@ -242,12 +242,8 @@ public final class DatabaseUtils {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#android.database.DatabaseUtils$InsertHelper(android.database.sqlite.SQLiteDatabase,java.lang.String)");
         }
 
-        public void bind(int arg0, java.lang.String arg1) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,java.lang.String)");
-        }
-
-        public void bind(int arg0, float arg1) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,float)");
+        public void bind(int arg0, boolean arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,boolean)");
         }
 
         public void bind(int arg0, double arg1) {
@@ -258,12 +254,16 @@ public final class DatabaseUtils {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,[B)");
         }
 
+        public void bind(int arg0, float arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,float)");
+        }
+
         public void bind(int arg0, int arg1) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,int)");
         }
 
-        public void bind(int arg0, boolean arg1) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,boolean)");
+        public void bind(int arg0, java.lang.String arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.DatabaseUtils$InsertHelper#bind(int,java.lang.String)");
         }
 
         public void bind(int arg0, long arg1) {

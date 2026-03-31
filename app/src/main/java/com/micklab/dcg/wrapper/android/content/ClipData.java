@@ -110,16 +110,16 @@ public final class ClipData {
             return getReal();
         }
 
+        public Item(com.micklab.dcg.wrapper.android.content.Intent arg0) {
+            this(new android.content.ClipData.Item(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
         public Item(com.micklab.dcg.wrapper.android.net.Uri arg0) {
             this(new android.content.ClipData.Item(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Item(java.lang.CharSequence arg0) {
             this(new android.content.ClipData.Item(arg0), (__DcgwBridgeToken) null);
-        }
-
-        public Item(com.micklab.dcg.wrapper.android.content.Intent arg0) {
-            this(new android.content.ClipData.Item(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Item(java.lang.CharSequence arg0, java.lang.String arg1) {

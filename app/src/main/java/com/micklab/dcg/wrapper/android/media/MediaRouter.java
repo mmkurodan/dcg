@@ -39,11 +39,11 @@ public final class MediaRouter {
         ((android.media.MediaRouter) real).clearUserRoutes();
     }
 
-    public com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory createRouteCategory(java.lang.CharSequence arg0, boolean arg1) {
+    public com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory createRouteCategory(int arg0, boolean arg1) {
         return com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory.wrap(((android.media.MediaRouter) real).createRouteCategory(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory createRouteCategory(int arg0, boolean arg1) {
+    public com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory createRouteCategory(java.lang.CharSequence arg0, boolean arg1) {
         return com.micklab.dcg.wrapper.android.media.MediaRouter.RouteCategory.wrap(((android.media.MediaRouter) real).createRouteCategory(arg0, arg1));
     }
 
@@ -487,11 +487,11 @@ public final class MediaRouter {
             ((android.media.MediaRouter.UserRouteInfo) real).setIconResource(arg0);
         }
 
-        public void setName(int arg0) {
+        public void setName(java.lang.CharSequence arg0) {
             ((android.media.MediaRouter.UserRouteInfo) real).setName(arg0);
         }
 
-        public void setName(java.lang.CharSequence arg0) {
+        public void setName(int arg0) {
             ((android.media.MediaRouter.UserRouteInfo) real).setName(arg0);
         }
 

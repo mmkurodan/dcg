@@ -335,15 +335,15 @@ public final class AudioTrack {
         return ((android.media.AudioTrack) real).write(arg0, arg1, arg2, arg3);
     }
 
+    public int write(short[] arg0, int arg1, int arg2, int arg3) {
+        return ((android.media.AudioTrack) real).write(arg0, arg1, arg2, arg3);
+    }
+
     public int write(java.nio.ByteBuffer arg0, int arg1, int arg2, long arg3) {
         return ((android.media.AudioTrack) real).write(arg0, arg1, arg2, arg3);
     }
 
     public int write(float[] arg0, int arg1, int arg2, int arg3) {
-        return ((android.media.AudioTrack) real).write(arg0, arg1, arg2, arg3);
-    }
-
-    public int write(short[] arg0, int arg1, int arg2, int arg3) {
         return ((android.media.AudioTrack) real).write(arg0, arg1, arg2, arg3);
     }
 
@@ -554,11 +554,11 @@ public final class AudioTrack {
             return getReal();
         }
 
-        public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioTrack arg0) {
+        public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioRouting arg0) {
             ((android.media.AudioTrack.OnRoutingChangedListener) real).onRoutingChanged(arg0 == null ? null : arg0.getReal());
         }
 
-        public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioRouting arg0) {
+        public void onRoutingChanged(com.micklab.dcg.wrapper.android.media.AudioTrack arg0) {
             ((android.media.AudioTrack.OnRoutingChangedListener) real).onRoutingChanged(arg0 == null ? null : arg0.getReal());
         }
 

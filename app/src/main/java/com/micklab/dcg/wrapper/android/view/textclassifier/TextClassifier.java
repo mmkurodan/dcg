@@ -72,6 +72,7 @@ public final class TextClassifier {
     }
 
     public static final java.lang.String EXTRA_FROM_TEXT_CLASSIFIER = android.view.textclassifier.TextClassifier.EXTRA_FROM_TEXT_CLASSIFIER;
+    public static final java.lang.String EXTRA_TEXT_ORIGIN_PACKAGE = android.view.textclassifier.TextClassifier.EXTRA_TEXT_ORIGIN_PACKAGE;
     public static final java.lang.String HINT_TEXT_IS_EDITABLE = android.view.textclassifier.TextClassifier.HINT_TEXT_IS_EDITABLE;
     public static final java.lang.String HINT_TEXT_IS_NOT_EDITABLE = android.view.textclassifier.TextClassifier.HINT_TEXT_IS_NOT_EDITABLE;
     public static final com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier NO_OP = com.micklab.dcg.wrapper.android.view.textclassifier.TextClassifier.wrap(android.view.textclassifier.TextClassifier.NO_OP);
@@ -81,6 +82,7 @@ public final class TextClassifier {
     public static final java.lang.String TYPE_EMAIL = android.view.textclassifier.TextClassifier.TYPE_EMAIL;
     public static final java.lang.String TYPE_FLIGHT_NUMBER = android.view.textclassifier.TextClassifier.TYPE_FLIGHT_NUMBER;
     public static final java.lang.String TYPE_OTHER = android.view.textclassifier.TextClassifier.TYPE_OTHER;
+    public static final java.lang.String TYPE_OTP = android.view.textclassifier.TextClassifier.TYPE_OTP;
     public static final java.lang.String TYPE_PHONE = android.view.textclassifier.TextClassifier.TYPE_PHONE;
     public static final java.lang.String TYPE_UNKNOWN = android.view.textclassifier.TextClassifier.TYPE_UNKNOWN;
     public static final java.lang.String TYPE_URL = android.view.textclassifier.TextClassifier.TYPE_URL;

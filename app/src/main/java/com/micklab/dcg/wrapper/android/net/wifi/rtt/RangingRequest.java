@@ -51,6 +51,10 @@ public final class RangingRequest {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest#getRttBurstSize()");
     }
 
+    public int getSecurityMode() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest#getSecurityMode()");
+    }
+
     public int hashCode() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest#hashCode()");
     }
@@ -102,12 +106,12 @@ public final class RangingRequest {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#addResponder(android.net.wifi.rtt.ResponderConfig)");
         }
 
-        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder addWifiAwarePeer(com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#addWifiAwarePeer(android.net.wifi.aware.PeerHandle)");
-        }
-
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder addWifiAwarePeer(com.micklab.dcg.wrapper.android.net.MacAddress arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#addWifiAwarePeer(android.net.MacAddress)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder addWifiAwarePeer(com.micklab.dcg.wrapper.android.net.wifi.aware.PeerHandle arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#addWifiAwarePeer(android.net.wifi.aware.PeerHandle)");
         }
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest build() {
@@ -116,6 +120,10 @@ public final class RangingRequest {
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder setRttBurstSize(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#setRttBurstSize(int)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.RangingRequest.Builder setSecurityMode(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.RangingRequest$Builder#setSecurityMode(int)");
         }
 
     }

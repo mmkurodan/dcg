@@ -63,6 +63,10 @@ public final class ResponderConfig {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.ResponderConfig#getResponderType()");
     }
 
+    public com.micklab.dcg.wrapper.android.net.wifi.rtt.SecureRangingConfig getSecureRangingConfig() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.ResponderConfig#getSecureRangingConfig()");
+    }
+
     public int hashCode() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.ResponderConfig#hashCode()");
     }
@@ -148,6 +152,10 @@ public final class ResponderConfig {
 
         public com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig.Builder setResponderType(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.ResponderConfig$Builder#setResponderType(int)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.rtt.ResponderConfig.Builder setSecureRangingConfig(com.micklab.dcg.wrapper.android.net.wifi.rtt.SecureRangingConfig arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.rtt.ResponderConfig$Builder#setSecureRangingConfig(android.net.wifi.rtt.SecureRangingConfig)");
         }
 
     }

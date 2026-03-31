@@ -37,6 +37,7 @@ public final class ImageFormat {
     public static final int FLEX_RGBA_8888 = android.graphics.ImageFormat.FLEX_RGBA_8888;
     public static final int FLEX_RGB_888 = android.graphics.ImageFormat.FLEX_RGB_888;
     public static final int HEIC = android.graphics.ImageFormat.HEIC;
+    public static final int HEIC_ULTRAHDR = android.graphics.ImageFormat.HEIC_ULTRAHDR;
     public static final int JPEG = android.graphics.ImageFormat.JPEG;
     public static final int JPEG_R = android.graphics.ImageFormat.JPEG_R;
     public static final int NV16 = android.graphics.ImageFormat.NV16;
@@ -50,6 +51,7 @@ public final class ImageFormat {
     public static final int UNKNOWN = android.graphics.ImageFormat.UNKNOWN;
     public static final int Y8 = android.graphics.ImageFormat.Y8;
     public static final int YCBCR_P010 = android.graphics.ImageFormat.YCBCR_P010;
+    public static final int YCBCR_P210 = android.graphics.ImageFormat.YCBCR_P210;
     public static final int YUV_420_888 = android.graphics.ImageFormat.YUV_420_888;
     public static final int YUV_422_888 = android.graphics.ImageFormat.YUV_422_888;
     public static final int YUV_444_888 = android.graphics.ImageFormat.YUV_444_888;

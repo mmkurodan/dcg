@@ -27,12 +27,12 @@ public final class TextPaint {
         this(new android.text.TextPaint(), (__DcgwBridgeToken) null);
     }
 
-    public TextPaint(com.micklab.dcg.wrapper.android.graphics.Paint arg0) {
-        this(new android.text.TextPaint(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public TextPaint(int arg0) {
         this(new android.text.TextPaint(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public TextPaint(com.micklab.dcg.wrapper.android.graphics.Paint arg0) {
+        this(new android.text.TextPaint(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public float getUnderlineThickness() {

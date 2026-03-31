@@ -59,11 +59,11 @@ public final class MultiSelectListPreference {
         ((android.preference.MultiSelectListPreference) real).setEntries(arg0);
     }
 
-    public void setEntryValues(int arg0) {
+    public void setEntryValues(java.lang.CharSequence[] arg0) {
         ((android.preference.MultiSelectListPreference) real).setEntryValues(arg0);
     }
 
-    public void setEntryValues(java.lang.CharSequence[] arg0) {
+    public void setEntryValues(int arg0) {
         ((android.preference.MultiSelectListPreference) real).setEntryValues(arg0);
     }
 

@@ -117,11 +117,11 @@ public final class PrintJobInfo {
             return com.micklab.dcg.wrapper.android.print.PrintJobInfo.wrap(((android.print.PrintJobInfo.Builder) real).build());
         }
 
-        public void putAdvancedOption(java.lang.String arg0, int arg1) {
+        public void putAdvancedOption(java.lang.String arg0, java.lang.String arg1) {
             ((android.print.PrintJobInfo.Builder) real).putAdvancedOption(arg0, arg1);
         }
 
-        public void putAdvancedOption(java.lang.String arg0, java.lang.String arg1) {
+        public void putAdvancedOption(java.lang.String arg0, int arg1) {
             ((android.print.PrintJobInfo.Builder) real).putAdvancedOption(arg0, arg1);
         }
 

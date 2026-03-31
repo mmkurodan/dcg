@@ -63,12 +63,12 @@ public final class CameraManager {
         ((android.hardware.camera2.CameraManager) real).registerAvailabilityCallback(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void registerTorchCallback(com.micklab.dcg.wrapper.android.hardware.camera2.CameraManager.TorchCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
-        ((android.hardware.camera2.CameraManager) real).registerTorchCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public void registerTorchCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.hardware.camera2.CameraManager.TorchCallback arg1) {
         ((android.hardware.camera2.CameraManager) real).registerTorchCallback(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void registerTorchCallback(com.micklab.dcg.wrapper.android.hardware.camera2.CameraManager.TorchCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+        ((android.hardware.camera2.CameraManager) real).registerTorchCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void setTorchMode(java.lang.String arg0, boolean arg1) throws android.hardware.camera2.CameraAccessException {

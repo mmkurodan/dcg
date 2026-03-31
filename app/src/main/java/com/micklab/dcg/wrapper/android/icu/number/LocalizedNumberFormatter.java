@@ -23,8 +23,8 @@ public final class LocalizedNumberFormatter {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumber format(com.micklab.dcg.wrapper.android.icu.util.Measure arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumber.wrap(((android.icu.number.LocalizedNumberFormatter) real).format(arg0 == null ? null : arg0.getReal()));
+    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumber format(long arg0) {
+        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumber.wrap(((android.icu.number.LocalizedNumberFormatter) real).format(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.number.FormattedNumber format(java.lang.Number arg0) {
@@ -35,12 +35,16 @@ public final class LocalizedNumberFormatter {
         return com.micklab.dcg.wrapper.android.icu.number.FormattedNumber.wrap(((android.icu.number.LocalizedNumberFormatter) real).format(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumber format(long arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumber.wrap(((android.icu.number.LocalizedNumberFormatter) real).format(arg0));
+    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumber format(com.micklab.dcg.wrapper.android.icu.util.Measure arg0) {
+        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumber.wrap(((android.icu.number.LocalizedNumberFormatter) real).format(arg0 == null ? null : arg0.getReal()));
     }
 
     public java.text.Format toFormat() {
         return ((android.icu.number.LocalizedNumberFormatter) real).toFormat();
+    }
+
+    public com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter withoutLocale() {
+        return com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter.wrap(((android.icu.number.LocalizedNumberFormatter) real).withoutLocale());
     }
 
 }

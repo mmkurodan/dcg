@@ -83,11 +83,11 @@ public final class BluetoothAdapter {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.bluetooth.BluetoothAdapter#getProfileProxy(android.content.Context,android.bluetooth.BluetoothProfile$ServiceListener,int)");
     }
 
-    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(java.lang.String arg0) {
+    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(byte[] arg0) {
         return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothAdapter) real).getRemoteDevice(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(byte[] arg0) {
+    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice getRemoteDevice(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.wrap(((android.bluetooth.BluetoothAdapter) real).getRemoteDevice(arg0));
     }
 
@@ -165,6 +165,10 @@ public final class BluetoothAdapter {
 
     public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingRfcommWithServiceRecord(java.lang.String arg0, java.util.UUID arg1) throws java.io.IOException {
         return com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket.wrap(((android.bluetooth.BluetoothAdapter) real).listenUsingRfcommWithServiceRecord(arg0, arg1));
+    }
+
+    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothServerSocket listenUsingSocketSettings(com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocketSettings arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.bluetooth.BluetoothAdapter#listenUsingSocketSettings(android.bluetooth.BluetoothSocketSettings)");
     }
 
     public boolean setName(java.lang.String arg0) {

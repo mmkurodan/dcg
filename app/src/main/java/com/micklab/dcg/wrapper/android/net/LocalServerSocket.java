@@ -23,12 +23,12 @@ public final class LocalServerSocket {
         return getReal();
     }
 
-    public LocalServerSocket(java.lang.String arg0) throws java.io.IOException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.LocalServerSocket#android.net.LocalServerSocket(java.lang.String)");
-    }
-
     public LocalServerSocket(java.io.FileDescriptor arg0) throws java.io.IOException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.LocalServerSocket#android.net.LocalServerSocket(java.io.FileDescriptor)");
+    }
+
+    public LocalServerSocket(java.lang.String arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.LocalServerSocket#android.net.LocalServerSocket(java.lang.String)");
     }
 
     public com.micklab.dcg.wrapper.android.net.LocalSocket accept() throws java.io.IOException {

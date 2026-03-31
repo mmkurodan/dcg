@@ -70,6 +70,7 @@ public final class Manifest {
         public static final java.lang.String BATTERY_STATS = android.Manifest.permission.BATTERY_STATS;
         public static final java.lang.String BIND_ACCESSIBILITY_SERVICE = android.Manifest.permission.BIND_ACCESSIBILITY_SERVICE;
         public static final java.lang.String BIND_APPWIDGET = android.Manifest.permission.BIND_APPWIDGET;
+        public static final java.lang.String BIND_APP_FUNCTION_SERVICE = android.Manifest.permission.BIND_APP_FUNCTION_SERVICE;
         public static final java.lang.String BIND_AUTOFILL_SERVICE = android.Manifest.permission.BIND_AUTOFILL_SERVICE;
         public static final java.lang.String BIND_CALL_REDIRECTION_SERVICE = android.Manifest.permission.BIND_CALL_REDIRECTION_SERVICE;
         public static final java.lang.String BIND_CARRIER_MESSAGING_CLIENT_SERVICE = android.Manifest.permission.BIND_CARRIER_MESSAGING_CLIENT_SERVICE;
@@ -94,6 +95,7 @@ public final class Manifest {
         public static final java.lang.String BIND_SCREENING_SERVICE = android.Manifest.permission.BIND_SCREENING_SERVICE;
         public static final java.lang.String BIND_TELECOM_CONNECTION_SERVICE = android.Manifest.permission.BIND_TELECOM_CONNECTION_SERVICE;
         public static final java.lang.String BIND_TEXT_SERVICE = android.Manifest.permission.BIND_TEXT_SERVICE;
+        public static final java.lang.String BIND_TV_AD_SERVICE = android.Manifest.permission.BIND_TV_AD_SERVICE;
         public static final java.lang.String BIND_TV_INPUT = android.Manifest.permission.BIND_TV_INPUT;
         public static final java.lang.String BIND_TV_INTERACTIVE_APP = android.Manifest.permission.BIND_TV_INTERACTIVE_APP;
         public static final java.lang.String BIND_VISUAL_VOICEMAIL_SERVICE = android.Manifest.permission.BIND_VISUAL_VOICEMAIL_SERVICE;
@@ -137,6 +139,7 @@ public final class Manifest {
         public static final java.lang.String DUMP = android.Manifest.permission.DUMP;
         public static final java.lang.String ENFORCE_UPDATE_OWNERSHIP = android.Manifest.permission.ENFORCE_UPDATE_OWNERSHIP;
         public static final java.lang.String EXECUTE_APP_ACTION = android.Manifest.permission.EXECUTE_APP_ACTION;
+        public static final java.lang.String EXECUTE_APP_FUNCTIONS = android.Manifest.permission.EXECUTE_APP_FUNCTIONS;
         public static final java.lang.String EXPAND_STATUS_BAR = android.Manifest.permission.EXPAND_STATUS_BAR;
         public static final java.lang.String FACTORY_TEST = android.Manifest.permission.FACTORY_TEST;
         public static final java.lang.String FOREGROUND_SERVICE = android.Manifest.permission.FOREGROUND_SERVICE;
@@ -178,6 +181,7 @@ public final class Manifest {
         public static final java.lang.String MANAGE_DEVICE_POLICY_ACROSS_USERS_SECURITY_CRITICAL = android.Manifest.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS_SECURITY_CRITICAL;
         public static final java.lang.String MANAGE_DEVICE_POLICY_AIRPLANE_MODE = android.Manifest.permission.MANAGE_DEVICE_POLICY_AIRPLANE_MODE;
         public static final java.lang.String MANAGE_DEVICE_POLICY_APPS_CONTROL = android.Manifest.permission.MANAGE_DEVICE_POLICY_APPS_CONTROL;
+        public static final java.lang.String MANAGE_DEVICE_POLICY_APP_FUNCTIONS = android.Manifest.permission.MANAGE_DEVICE_POLICY_APP_FUNCTIONS;
         public static final java.lang.String MANAGE_DEVICE_POLICY_APP_RESTRICTIONS = android.Manifest.permission.MANAGE_DEVICE_POLICY_APP_RESTRICTIONS;
         public static final java.lang.String MANAGE_DEVICE_POLICY_APP_USER_DATA = android.Manifest.permission.MANAGE_DEVICE_POLICY_APP_USER_DATA;
         public static final java.lang.String MANAGE_DEVICE_POLICY_ASSIST_CONTENT = android.Manifest.permission.MANAGE_DEVICE_POLICY_ASSIST_CONTENT;
@@ -269,11 +273,14 @@ public final class Manifest {
         public static final java.lang.String PROCESS_OUTGOING_CALLS = android.Manifest.permission.PROCESS_OUTGOING_CALLS;
         public static final java.lang.String PROVIDE_OWN_AUTOFILL_SUGGESTIONS = android.Manifest.permission.PROVIDE_OWN_AUTOFILL_SUGGESTIONS;
         public static final java.lang.String PROVIDE_REMOTE_CREDENTIALS = android.Manifest.permission.PROVIDE_REMOTE_CREDENTIALS;
+        public static final java.lang.String QUERY_ADVANCED_PROTECTION_MODE = android.Manifest.permission.QUERY_ADVANCED_PROTECTION_MODE;
         public static final java.lang.String QUERY_ALL_PACKAGES = android.Manifest.permission.QUERY_ALL_PACKAGES;
+        public static final java.lang.String RANGING = android.Manifest.permission.RANGING;
         public static final java.lang.String READ_ASSISTANT_APP_SEARCH_DATA = android.Manifest.permission.READ_ASSISTANT_APP_SEARCH_DATA;
         public static final java.lang.String READ_BASIC_PHONE_STATE = android.Manifest.permission.READ_BASIC_PHONE_STATE;
         public static final java.lang.String READ_CALENDAR = android.Manifest.permission.READ_CALENDAR;
         public static final java.lang.String READ_CALL_LOG = android.Manifest.permission.READ_CALL_LOG;
+        public static final java.lang.String READ_COLOR_ZONES = android.Manifest.permission.READ_COLOR_ZONES;
         public static final java.lang.String READ_CONTACTS = android.Manifest.permission.READ_CONTACTS;
         public static final java.lang.String READ_DROPBOX_DATA = android.Manifest.permission.READ_DROPBOX_DATA;
         public static final java.lang.String READ_EXTERNAL_STORAGE = android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -291,6 +298,7 @@ public final class Manifest {
         public static final java.lang.String READ_SMS = android.Manifest.permission.READ_SMS;
         public static final java.lang.String READ_SYNC_SETTINGS = android.Manifest.permission.READ_SYNC_SETTINGS;
         public static final java.lang.String READ_SYNC_STATS = android.Manifest.permission.READ_SYNC_STATS;
+        public static final java.lang.String READ_SYSTEM_PREFERENCES = android.Manifest.permission.READ_SYSTEM_PREFERENCES;
         public static final java.lang.String READ_VOICEMAIL = android.Manifest.permission.READ_VOICEMAIL;
         public static final java.lang.String REBOOT = android.Manifest.permission.REBOOT;
         public static final java.lang.String RECEIVE_BOOT_COMPLETED = android.Manifest.permission.RECEIVE_BOOT_COMPLETED;
@@ -307,6 +315,7 @@ public final class Manifest {
         public static final java.lang.String REQUEST_IGNORE_BATTERY_OPTIMIZATIONS = android.Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS;
         public static final java.lang.String REQUEST_INSTALL_PACKAGES = android.Manifest.permission.REQUEST_INSTALL_PACKAGES;
         public static final java.lang.String REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE = android.Manifest.permission.REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE;
+        public static final java.lang.String REQUEST_OBSERVE_DEVICE_UUID_PRESENCE = android.Manifest.permission.REQUEST_OBSERVE_DEVICE_UUID_PRESENCE;
         public static final java.lang.String REQUEST_PASSWORD_COMPLEXITY = android.Manifest.permission.REQUEST_PASSWORD_COMPLEXITY;
         public static final java.lang.String RESTART_PACKAGES = android.Manifest.permission.RESTART_PACKAGES;
         public static final java.lang.String RUN_USER_INITIATED_JOBS = android.Manifest.permission.RUN_USER_INITIATED_JOBS;
@@ -334,6 +343,7 @@ public final class Manifest {
         public static final java.lang.String SYSTEM_ALERT_WINDOW = android.Manifest.permission.SYSTEM_ALERT_WINDOW;
         public static final java.lang.String TRANSMIT_IR = android.Manifest.permission.TRANSMIT_IR;
         public static final java.lang.String TURN_SCREEN_ON = android.Manifest.permission.TURN_SCREEN_ON;
+        public static final java.lang.String TV_IMPLICIT_ENTER_PIP = android.Manifest.permission.TV_IMPLICIT_ENTER_PIP;
         public static final java.lang.String UNINSTALL_SHORTCUT = android.Manifest.permission.UNINSTALL_SHORTCUT;
         public static final java.lang.String UPDATE_DEVICE_STATS = android.Manifest.permission.UPDATE_DEVICE_STATS;
         public static final java.lang.String UPDATE_PACKAGES_WITHOUT_USER_ACTION = android.Manifest.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION;
@@ -355,6 +365,7 @@ public final class Manifest {
         public static final java.lang.String WRITE_SECURE_SETTINGS = android.Manifest.permission.WRITE_SECURE_SETTINGS;
         public static final java.lang.String WRITE_SETTINGS = android.Manifest.permission.WRITE_SETTINGS;
         public static final java.lang.String WRITE_SYNC_SETTINGS = android.Manifest.permission.WRITE_SYNC_SETTINGS;
+        public static final java.lang.String WRITE_SYSTEM_PREFERENCES = android.Manifest.permission.WRITE_SYSTEM_PREFERENCES;
         public static final java.lang.String WRITE_VOICEMAIL = android.Manifest.permission.WRITE_VOICEMAIL;
 
     }

@@ -43,11 +43,11 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawBitmap(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
-    public void drawBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.RectF arg2, com.micklab.dcg.wrapper.android.graphics.Paint arg3) {
+    public void drawBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Rect arg2, com.micklab.dcg.wrapper.android.graphics.Paint arg3) {
         ((android.graphics.RecordingCanvas) real).drawBitmap(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
-    public void drawBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Rect arg2, com.micklab.dcg.wrapper.android.graphics.Paint arg3) {
+    public void drawBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.RectF arg2, com.micklab.dcg.wrapper.android.graphics.Paint arg3) {
         ((android.graphics.RecordingCanvas) real).drawBitmap(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
@@ -75,7 +75,7 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawColor(arg0);
     }
 
-    public void drawColor(int arg0, com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg1) {
+    public void drawColor(int arg0, com.micklab.dcg.wrapper.android.graphics.BlendMode arg1) {
         ((android.graphics.RecordingCanvas) real).drawColor(arg0, arg1 == null ? null : arg1.getReal());
     }
 
@@ -83,7 +83,7 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawColor(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void drawColor(int arg0, com.micklab.dcg.wrapper.android.graphics.BlendMode arg1) {
+    public void drawColor(int arg0, com.micklab.dcg.wrapper.android.graphics.PorterDuff.Mode arg1) {
         ((android.graphics.RecordingCanvas) real).drawColor(arg0, arg1 == null ? null : arg1.getReal());
     }
 
@@ -175,11 +175,11 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawRGB(arg0, arg1, arg2);
     }
 
-    public void drawRect(com.micklab.dcg.wrapper.android.graphics.Rect arg0, com.micklab.dcg.wrapper.android.graphics.Paint arg1) {
+    public void drawRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Paint arg1) {
         ((android.graphics.RecordingCanvas) real).drawRect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void drawRect(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Paint arg1) {
+    public void drawRect(com.micklab.dcg.wrapper.android.graphics.Rect arg0, com.micklab.dcg.wrapper.android.graphics.Paint arg1) {
         ((android.graphics.RecordingCanvas) real).drawRect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
@@ -207,7 +207,7 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawText(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void drawText(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
+    public void drawText(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
         ((android.graphics.RecordingCanvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
@@ -215,7 +215,7 @@ public final class RecordingCanvas {
         ((android.graphics.RecordingCanvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
-    public void drawText(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
+    public void drawText(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
         ((android.graphics.RecordingCanvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 

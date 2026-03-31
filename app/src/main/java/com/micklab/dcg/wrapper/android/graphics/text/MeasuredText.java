@@ -61,12 +61,12 @@ public final class MeasuredText {
             return getReal();
         }
 
-        public Builder(char[] arg0) {
-            this(new android.graphics.text.MeasuredText.Builder(arg0), (__DcgwBridgeToken) null);
-        }
-
         public Builder(com.micklab.dcg.wrapper.android.graphics.text.MeasuredText arg0) {
             this(new android.graphics.text.MeasuredText.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public Builder(char[] arg0) {
+            this(new android.graphics.text.MeasuredText.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder appendReplacementRun(com.micklab.dcg.wrapper.android.graphics.Paint arg0, int arg1, float arg2) {
@@ -85,11 +85,11 @@ public final class MeasuredText {
             return com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.wrap(((android.graphics.text.MeasuredText.Builder) real).build());
         }
 
-        public com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder setComputeHyphenation(boolean arg0) {
+        public com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder setComputeHyphenation(int arg0) {
             return com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder.wrap(((android.graphics.text.MeasuredText.Builder) real).setComputeHyphenation(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder setComputeHyphenation(int arg0) {
+        public com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder setComputeHyphenation(boolean arg0) {
             return com.micklab.dcg.wrapper.android.graphics.text.MeasuredText.Builder.wrap(((android.graphics.text.MeasuredText.Builder) real).setComputeHyphenation(arg0));
         }
 

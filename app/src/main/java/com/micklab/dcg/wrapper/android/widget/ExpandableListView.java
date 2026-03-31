@@ -123,11 +123,11 @@ public final class ExpandableListView {
         return ((android.widget.ExpandableListView) real).performItemClick(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
-    public void setAdapter(com.micklab.dcg.wrapper.android.widget.ExpandableListAdapter arg0) {
+    public void setAdapter(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0) {
         ((android.widget.ExpandableListView) real).setAdapter(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setAdapter(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0) {
+    public void setAdapter(com.micklab.dcg.wrapper.android.widget.ExpandableListAdapter arg0) {
         ((android.widget.ExpandableListView) real).setAdapter(arg0 == null ? null : arg0.getReal());
     }
 

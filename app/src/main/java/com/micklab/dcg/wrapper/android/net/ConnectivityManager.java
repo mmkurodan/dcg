@@ -79,12 +79,12 @@ public final class ConnectivityManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#getNetworkCapabilities(android.net.Network)");
     }
 
-    public com.micklab.dcg.wrapper.android.net.NetworkInfo getNetworkInfo(com.micklab.dcg.wrapper.android.net.Network arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#getNetworkInfo(android.net.Network)");
-    }
-
     public com.micklab.dcg.wrapper.android.net.NetworkInfo getNetworkInfo(int arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#getNetworkInfo(int)");
+    }
+
+    public com.micklab.dcg.wrapper.android.net.NetworkInfo getNetworkInfo(com.micklab.dcg.wrapper.android.net.Network arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#getNetworkInfo(android.net.Network)");
     }
 
     public int getNetworkPreference() {
@@ -127,12 +127,12 @@ public final class ConnectivityManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#registerDefaultNetworkCallback(android.net.ConnectivityManager$NetworkCallback,android.os.Handler)");
     }
 
-    public void registerNetworkCallback(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#registerNetworkCallback(android.net.NetworkRequest,android.app.PendingIntent)");
-    }
-
     public void registerNetworkCallback(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#registerNetworkCallback(android.net.NetworkRequest,android.net.ConnectivityManager$NetworkCallback)");
+    }
+
+    public void registerNetworkCallback(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#registerNetworkCallback(android.net.NetworkRequest,android.app.PendingIntent)");
     }
 
     public void registerNetworkCallback(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg1, com.micklab.dcg.wrapper.android.os.Handler arg2) {
@@ -159,12 +159,12 @@ public final class ConnectivityManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#requestBandwidthUpdate(android.net.Network)");
     }
 
-    public void requestNetwork(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#requestNetwork(android.net.NetworkRequest,android.app.PendingIntent)");
-    }
-
     public void requestNetwork(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#requestNetwork(android.net.NetworkRequest,android.net.ConnectivityManager$NetworkCallback)");
+    }
+
+    public void requestNetwork(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#requestNetwork(android.net.NetworkRequest,android.app.PendingIntent)");
     }
 
     public void requestNetwork(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg1, int arg2) {
@@ -179,6 +179,10 @@ public final class ConnectivityManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#requestNetwork(android.net.NetworkRequest,android.net.ConnectivityManager$NetworkCallback,android.os.Handler,int)");
     }
 
+    public void reserveNetwork(com.micklab.dcg.wrapper.android.net.NetworkRequest arg0, com.micklab.dcg.wrapper.android.os.Handler arg1, com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg2) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#reserveNetwork(android.net.NetworkRequest,android.os.Handler,android.net.ConnectivityManager$NetworkCallback)");
+    }
+
     public void setNetworkPreference(int arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#setNetworkPreference(int)");
     }
@@ -187,12 +191,12 @@ public final class ConnectivityManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#setProcessDefaultNetwork(android.net.Network)");
     }
 
-    public void unregisterNetworkCallback(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#unregisterNetworkCallback(android.app.PendingIntent)");
-    }
-
     public void unregisterNetworkCallback(com.micklab.dcg.wrapper.android.net.ConnectivityManager.NetworkCallback arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#unregisterNetworkCallback(android.net.ConnectivityManager$NetworkCallback)");
+    }
+
+    public void unregisterNetworkCallback(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager#unregisterNetworkCallback(android.app.PendingIntent)");
     }
 
 
@@ -248,6 +252,10 @@ public final class ConnectivityManager {
 
         public void onLost(com.micklab.dcg.wrapper.android.net.Network arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager$NetworkCallback#onLost(android.net.Network)");
+        }
+
+        public void onReserved(com.micklab.dcg.wrapper.android.net.NetworkCapabilities arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ConnectivityManager$NetworkCallback#onReserved(android.net.NetworkCapabilities)");
         }
 
         public void onUnavailable() {

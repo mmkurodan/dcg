@@ -55,17 +55,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="14482"
-                endOffset="14515"/>
+                startOffset="13825"
+                endOffset="13858"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="309"
+            line="300"
             column="5"
-            startOffset="14482"
-            endLine="309"
+            startOffset="13825"
+            endLine="300"
             endColumn="38"
-            endOffset="14515"/>
+            endOffset="13858"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>
@@ -81,17 +81,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="15477"
-                endOffset="15510"/>
+                startOffset="14820"
+                endOffset="14853"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="334"
+            line="325"
             column="5"
-            startOffset="15477"
-            endLine="334"
+            startOffset="14820"
+            endLine="325"
             endColumn="38"
-            endOffset="15510"/>
+            endOffset="14853"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>
@@ -107,17 +107,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="19024"
-                endOffset="19057"/>
+                startOffset="18367"
+                endOffset="18400"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="416"
+            line="407"
             column="5"
-            startOffset="19024"
-            endLine="416"
+            startOffset="18367"
+            endLine="407"
             endColumn="38"
-            endOffset="19057"/>
+            endOffset="18400"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>
@@ -133,17 +133,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="19265"
-                endOffset="19298"/>
+                startOffset="18608"
+                endOffset="18641"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="423"
+            line="414"
             column="5"
-            startOffset="19265"
-            endLine="423"
+            startOffset="18608"
+            endLine="414"
             endColumn="38"
-            endOffset="19298"/>
+            endOffset="18641"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>
@@ -159,17 +159,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="33140"
-                endOffset="33173"/>
+                startOffset="29722"
+                endOffset="29755"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="720"
+            line="654"
             column="5"
-            startOffset="33140"
-            endLine="720"
+            startOffset="29722"
+            endLine="654"
             endColumn="38"
-            endOffset="33173"/>
+            endOffset="29755"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>
@@ -185,17 +185,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-                startOffset="34859"
-                endOffset="34892"/>
+                startOffset="31441"
+                endOffset="31474"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/executor/java/JavaExecutor.java"
-            line="760"
+            line="694"
             column="5"
-            startOffset="34859"
-            endLine="760"
+            startOffset="31441"
+            endLine="694"
             endColumn="38"
-            endOffset="34892"/>
+            endOffset="31474"/>
         <map>
             <condition minGE="fffffffffe000000"/>
         </map>

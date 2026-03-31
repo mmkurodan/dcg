@@ -23,12 +23,12 @@ public final class TvContract {
         return getReal();
     }
 
-    public static com.micklab.dcg.wrapper.android.net.Uri buildChannelLogoUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildChannelLogoUri(arg0 == null ? null : arg0.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.net.Uri buildChannelLogoUri(long arg0) {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildChannelLogoUri(arg0));
+    }
+
+    public static com.micklab.dcg.wrapper.android.net.Uri buildChannelLogoUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildChannelLogoUri(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildChannelUri(long arg0) {
@@ -63,20 +63,20 @@ public final class TvContract {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramUri(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(long arg0) {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0, long arg1, long arg2) {
-        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal(), arg1, arg2));
+    public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(long arg0, long arg1, long arg2) {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0, arg1, arg2));
+    }
+
+    public static com.micklab.dcg.wrapper.android.net.Uri buildProgramsUriForChannel(com.micklab.dcg.wrapper.android.net.Uri arg0, long arg1, long arg2) {
+        return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.tv.TvContract.buildProgramsUriForChannel(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.net.Uri buildRecordedProgramUri(long arg0) {
@@ -172,12 +172,16 @@ public final class TvContract {
             return android.media.tv.TvContract.Channels.getVideoResolution(arg0);
         }
 
+        public static final int BROADCAST_VISIBILITY_TYPE_INVISIBLE = android.media.tv.TvContract.Channels.BROADCAST_VISIBILITY_TYPE_INVISIBLE;
+        public static final int BROADCAST_VISIBILITY_TYPE_NUMERIC_SELECTABLE_ONLY = android.media.tv.TvContract.Channels.BROADCAST_VISIBILITY_TYPE_NUMERIC_SELECTABLE_ONLY;
+        public static final int BROADCAST_VISIBILITY_TYPE_VISIBLE = android.media.tv.TvContract.Channels.BROADCAST_VISIBILITY_TYPE_VISIBLE;
         public static final java.lang.String COLUMN_APP_LINK_COLOR = android.media.tv.TvContract.Channels.COLUMN_APP_LINK_COLOR;
         public static final java.lang.String COLUMN_APP_LINK_ICON_URI = android.media.tv.TvContract.Channels.COLUMN_APP_LINK_ICON_URI;
         public static final java.lang.String COLUMN_APP_LINK_INTENT_URI = android.media.tv.TvContract.Channels.COLUMN_APP_LINK_INTENT_URI;
         public static final java.lang.String COLUMN_APP_LINK_POSTER_ART_URI = android.media.tv.TvContract.Channels.COLUMN_APP_LINK_POSTER_ART_URI;
         public static final java.lang.String COLUMN_APP_LINK_TEXT = android.media.tv.TvContract.Channels.COLUMN_APP_LINK_TEXT;
         public static final java.lang.String COLUMN_BROADCAST_GENRE = android.media.tv.TvContract.Channels.COLUMN_BROADCAST_GENRE;
+        public static final java.lang.String COLUMN_BROADCAST_VISIBILITY_TYPE = android.media.tv.TvContract.Channels.COLUMN_BROADCAST_VISIBILITY_TYPE;
         public static final java.lang.String COLUMN_BROWSABLE = android.media.tv.TvContract.Channels.COLUMN_BROWSABLE;
         public static final java.lang.String COLUMN_CHANNEL_LIST_ID = android.media.tv.TvContract.Channels.COLUMN_CHANNEL_LIST_ID;
         public static final java.lang.String COLUMN_DESCRIPTION = android.media.tv.TvContract.Channels.COLUMN_DESCRIPTION;

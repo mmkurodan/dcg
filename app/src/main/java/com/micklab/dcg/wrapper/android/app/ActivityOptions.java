@@ -47,6 +47,10 @@ public final class ActivityOptions {
         return ((android.app.ActivityOptions) real).getSplashScreenStyle();
     }
 
+    public boolean isAllowPassThroughOnTouchOutside() {
+        return ((android.app.ActivityOptions) real).isAllowPassThroughOnTouchOutside();
+    }
+
     public boolean isPendingIntentBackgroundActivityLaunchAllowed() {
         return ((android.app.ActivityOptions) real).isPendingIntentBackgroundActivityLaunchAllowed();
     }
@@ -93,6 +97,10 @@ public final class ActivityOptions {
 
     public void requestUsageTimeReport(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
         ((android.app.ActivityOptions) real).requestUsageTimeReport(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setAllowPassThroughOnTouchOutside(boolean arg0) {
+        ((android.app.ActivityOptions) real).setAllowPassThroughOnTouchOutside(arg0);
     }
 
     public com.micklab.dcg.wrapper.android.app.ActivityOptions setAppVerificationBundle(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
@@ -146,6 +154,8 @@ public final class ActivityOptions {
     public static final java.lang.String EXTRA_USAGE_TIME_REPORT = android.app.ActivityOptions.EXTRA_USAGE_TIME_REPORT;
     public static final java.lang.String EXTRA_USAGE_TIME_REPORT_PACKAGES = android.app.ActivityOptions.EXTRA_USAGE_TIME_REPORT_PACKAGES;
     public static final int MODE_BACKGROUND_ACTIVITY_START_ALLOWED = android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED;
+    public static final int MODE_BACKGROUND_ACTIVITY_START_ALLOW_ALWAYS = android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOW_ALWAYS;
+    public static final int MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE = android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE;
     public static final int MODE_BACKGROUND_ACTIVITY_START_DENIED = android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_DENIED;
     public static final int MODE_BACKGROUND_ACTIVITY_START_SYSTEM_DEFINED = android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_SYSTEM_DEFINED;
 

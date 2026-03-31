@@ -95,12 +95,12 @@ public final class TabWidget {
         ((android.widget.TabWidget) real).setCurrentTab(arg0);
     }
 
-    public void setDividerDrawable(int arg0) {
-        ((android.widget.TabWidget) real).setDividerDrawable(arg0);
-    }
-
     public void setDividerDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.widget.TabWidget) real).setDividerDrawable(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setDividerDrawable(int arg0) {
+        ((android.widget.TabWidget) real).setDividerDrawable(arg0);
     }
 
     public void setEnabled(boolean arg0) {

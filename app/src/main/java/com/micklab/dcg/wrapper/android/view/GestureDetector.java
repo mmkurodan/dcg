@@ -27,11 +27,11 @@ public final class GestureDetector {
         this(new android.view.GestureDetector(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public GestureDetector(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.GestureDetector.OnGestureListener arg1) {
+    public GestureDetector(com.micklab.dcg.wrapper.android.view.GestureDetector.OnGestureListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         this(new android.view.GestureDetector(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public GestureDetector(com.micklab.dcg.wrapper.android.view.GestureDetector.OnGestureListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+    public GestureDetector(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.view.GestureDetector.OnGestureListener arg1) {
         this(new android.view.GestureDetector(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 

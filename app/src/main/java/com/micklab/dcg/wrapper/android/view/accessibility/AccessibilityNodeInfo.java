@@ -27,11 +27,11 @@ public final class AccessibilityNodeInfo {
         this(new android.view.accessibility.AccessibilityNodeInfo(), (__DcgwBridgeToken) null);
     }
 
-    public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
+    public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.View arg0) {
         this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.View arg0) {
+    public AccessibilityNodeInfo(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
         this(new android.view.accessibility.AccessibilityNodeInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -53,6 +53,14 @@ public final class AccessibilityNodeInfo {
 
     public void addChild(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).addChild(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
+    public void addLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addLabeledBy(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void addLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).addLabeledBy(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public boolean canOpenPopup() {
@@ -89,6 +97,10 @@ public final class AccessibilityNodeInfo {
 
     public void getBoundsInWindow(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).getBoundsInWindow(arg0 == null ? null : arg0.getReal());
+    }
+
+    public int getChecked() {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getChecked();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo getChild(int arg0) {
@@ -129,6 +141,10 @@ public final class AccessibilityNodeInfo {
 
     public java.lang.CharSequence getError() {
         return ((android.view.accessibility.AccessibilityNodeInfo) real).getError();
+    }
+
+    public int getExpandedState() {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getExpandedState();
     }
 
     public com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.ExtraRenderingInfo getExtraRenderingInfo() {
@@ -193,6 +209,10 @@ public final class AccessibilityNodeInfo {
 
     public java.lang.CharSequence getStateDescription() {
         return ((android.view.accessibility.AccessibilityNodeInfo) real).getStateDescription();
+    }
+
+    public java.lang.CharSequence getSupplementalDescription() {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).getSupplementalDescription();
     }
 
     public java.lang.CharSequence getText() {
@@ -287,6 +307,10 @@ public final class AccessibilityNodeInfo {
         return ((android.view.accessibility.AccessibilityNodeInfo) real).isEnabled();
     }
 
+    public boolean isFieldRequired() {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).isFieldRequired();
+    }
+
     public boolean isFocusable() {
         return ((android.view.accessibility.AccessibilityNodeInfo) real).isFocusable();
     }
@@ -351,11 +375,11 @@ public final class AccessibilityNodeInfo {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain());
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
@@ -399,6 +423,14 @@ public final class AccessibilityNodeInfo {
         return ((android.view.accessibility.AccessibilityNodeInfo) real).removeChild(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public boolean removeLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0) {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).removeLabeledBy(arg0 == null ? null : arg0.getReal());
+    }
+
+    public boolean removeLabeledBy(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
+        return ((android.view.accessibility.AccessibilityNodeInfo) real).removeLabeledBy(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
     public void setAccessibilityDataSensitive(boolean arg0) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).setAccessibilityDataSensitive(arg0);
     }
@@ -428,6 +460,10 @@ public final class AccessibilityNodeInfo {
     }
 
     public void setChecked(boolean arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setChecked(arg0);
+    }
+
+    public void setChecked(int arg0) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).setChecked(arg0);
     }
 
@@ -481,6 +517,14 @@ public final class AccessibilityNodeInfo {
 
     public void setError(java.lang.CharSequence arg0) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).setError(arg0);
+    }
+
+    public void setExpandedState(int arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setExpandedState(arg0);
+    }
+
+    public void setFieldRequired(boolean arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setFieldRequired(arg0);
     }
 
     public void setFocusable(boolean arg0) {
@@ -611,6 +655,10 @@ public final class AccessibilityNodeInfo {
         ((android.view.accessibility.AccessibilityNodeInfo) real).setStateDescription(arg0);
     }
 
+    public void setSupplementalDescription(java.lang.CharSequence arg0) {
+        ((android.view.accessibility.AccessibilityNodeInfo) real).setSupplementalDescription(arg0);
+    }
+
     public void setText(java.lang.CharSequence arg0) {
         ((android.view.accessibility.AccessibilityNodeInfo) real).setText(arg0);
     }
@@ -707,10 +755,18 @@ public final class AccessibilityNodeInfo {
     public static final int ACTION_SELECT = android.view.accessibility.AccessibilityNodeInfo.ACTION_SELECT;
     public static final int ACTION_SET_SELECTION = android.view.accessibility.AccessibilityNodeInfo.ACTION_SET_SELECTION;
     public static final int ACTION_SET_TEXT = android.view.accessibility.AccessibilityNodeInfo.ACTION_SET_TEXT;
+    public static final int CHECKED_STATE_FALSE = android.view.accessibility.AccessibilityNodeInfo.CHECKED_STATE_FALSE;
+    public static final int CHECKED_STATE_PARTIAL = android.view.accessibility.AccessibilityNodeInfo.CHECKED_STATE_PARTIAL;
+    public static final int CHECKED_STATE_TRUE = android.view.accessibility.AccessibilityNodeInfo.CHECKED_STATE_TRUE;
+    public static final int EXPANDED_STATE_COLLAPSED = android.view.accessibility.AccessibilityNodeInfo.EXPANDED_STATE_COLLAPSED;
+    public static final int EXPANDED_STATE_FULL = android.view.accessibility.AccessibilityNodeInfo.EXPANDED_STATE_FULL;
+    public static final int EXPANDED_STATE_PARTIAL = android.view.accessibility.AccessibilityNodeInfo.EXPANDED_STATE_PARTIAL;
+    public static final int EXPANDED_STATE_UNDEFINED = android.view.accessibility.AccessibilityNodeInfo.EXPANDED_STATE_UNDEFINED;
     public static final java.lang.String EXTRA_DATA_RENDERING_INFO_KEY = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_RENDERING_INFO_KEY;
     public static final java.lang.String EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH;
     public static final int EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_MAX_LENGTH = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_MAX_LENGTH;
     public static final java.lang.String EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX;
+    public static final java.lang.String EXTRA_DATA_TEXT_CHARACTER_LOCATION_IN_WINDOW_KEY = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_TEXT_CHARACTER_LOCATION_IN_WINDOW_KEY;
     public static final java.lang.String EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY = android.view.accessibility.AccessibilityNodeInfo.EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY;
     public static final int FLAG_PREFETCH_ANCESTORS = android.view.accessibility.AccessibilityNodeInfo.FLAG_PREFETCH_ANCESTORS;
     public static final int FLAG_PREFETCH_DESCENDANTS_BREADTH_FIRST = android.view.accessibility.AccessibilityNodeInfo.FLAG_PREFETCH_DESCENDANTS_BREADTH_FIRST;
@@ -1165,7 +1221,9 @@ public final class AccessibilityNodeInfo {
             return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.RangeInfo.obtain(arg0, arg1, arg2, arg3));
         }
 
+        public static final com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo INDETERMINATE = com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.RangeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.RangeInfo.INDETERMINATE);
         public static final int RANGE_TYPE_FLOAT = android.view.accessibility.AccessibilityNodeInfo.RangeInfo.RANGE_TYPE_FLOAT;
+        public static final int RANGE_TYPE_INDETERMINATE = android.view.accessibility.AccessibilityNodeInfo.RangeInfo.RANGE_TYPE_INDETERMINATE;
         public static final int RANGE_TYPE_INT = android.view.accessibility.AccessibilityNodeInfo.RangeInfo.RANGE_TYPE_INT;
         public static final int RANGE_TYPE_PERCENT = android.view.accessibility.AccessibilityNodeInfo.RangeInfo.RANGE_TYPE_PERCENT;
 

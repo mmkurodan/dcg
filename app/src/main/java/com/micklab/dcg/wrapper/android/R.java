@@ -207,6 +207,7 @@ public final class R {
         public static final int activityCloseExitAnimation = android.R.attr.activityCloseExitAnimation;
         public static final int activityOpenEnterAnimation = android.R.attr.activityOpenEnterAnimation;
         public static final int activityOpenExitAnimation = android.R.attr.activityOpenExitAnimation;
+        public static final int adServiceTypes = android.R.attr.adServiceTypes;
         public static final int addPrintersActivity = android.R.attr.addPrintersActivity;
         public static final int addStatesFromChildren = android.R.attr.addStatesFromChildren;
         public static final int adjustViewBounds = android.R.attr.adjustViewBounds;
@@ -767,6 +768,7 @@ public final class R {
         public static final int insetRight = android.R.attr.insetRight;
         public static final int insetTop = android.R.attr.insetTop;
         public static final int installLocation = android.R.attr.installLocation;
+        public static final int intentMatchingFlags = android.R.attr.intentMatchingFlags;
         public static final int interactiveUiTimeout = android.R.attr.interactiveUiTimeout;
         public static final int interpolator = android.R.attr.interpolator;
         public static final int intro = android.R.attr.intro;
@@ -821,6 +823,7 @@ public final class R {
         public static final int label = android.R.attr.label;
         public static final int labelFor = android.R.attr.labelFor;
         public static final int labelTextSize = android.R.attr.labelTextSize;
+        public static final int languageSettingsActivity = android.R.attr.languageSettingsActivity;
         public static final int languageTag = android.R.attr.languageTag;
         public static final int largeHeap = android.R.attr.largeHeap;
         public static final int largeScreens = android.R.attr.largeScreens;
@@ -833,6 +836,7 @@ public final class R {
         public static final int layout = android.R.attr.layout;
         public static final int layoutAnimation = android.R.attr.layoutAnimation;
         public static final int layoutDirection = android.R.attr.layoutDirection;
+        public static final int layoutLabel = android.R.attr.layoutLabel;
         public static final int layoutMode = android.R.attr.layoutMode;
         public static final int layout_above = android.R.attr.layout_above;
         public static final int layout_alignBaseline = android.R.attr.layout_alignBaseline;
@@ -1026,6 +1030,7 @@ public final class R {
         public static final int paddingStart = android.R.attr.paddingStart;
         public static final int paddingTop = android.R.attr.paddingTop;
         public static final int paddingVertical = android.R.attr.paddingVertical;
+        public static final int pageSizeCompat = android.R.attr.pageSizeCompat;
         public static final int panelBackground = android.R.attr.panelBackground;
         public static final int panelColorBackground = android.R.attr.panelColorBackground;
         public static final int panelColorForeground = android.R.attr.panelColorForeground;
@@ -1367,6 +1372,7 @@ public final class R {
         public static final int summaryColumn = android.R.attr.summaryColumn;
         public static final int summaryOff = android.R.attr.summaryOff;
         public static final int summaryOn = android.R.attr.summaryOn;
+        public static final int supplementalDescription = android.R.attr.supplementalDescription;
         public static final int supportedTypes = android.R.attr.supportedTypes;
         public static final int supportsAssist = android.R.attr.supportsAssist;
         public static final int supportsBatteryGameMode = android.R.attr.supportsBatteryGameMode;
@@ -1613,6 +1619,7 @@ public final class R {
         public static final int wallpaperIntraOpenExitAnimation = android.R.attr.wallpaperIntraOpenExitAnimation;
         public static final int wallpaperOpenEnterAnimation = android.R.attr.wallpaperOpenEnterAnimation;
         public static final int wallpaperOpenExitAnimation = android.R.attr.wallpaperOpenExitAnimation;
+        public static final int wantsRoleHolderPriority = android.R.attr.wantsRoleHolderPriority;
         public static final int webTextViewStyle = android.R.attr.webTextViewStyle;
         public static final int webViewStyle = android.R.attr.webViewStyle;
         public static final int weekDayTextAppearance = android.R.attr.weekDayTextAppearance;

@@ -75,12 +75,12 @@ public final class RingtoneManager {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.media.RingtoneManager.getValidRingtoneUri(arg0 == null ? null : arg0.getReal()));
     }
 
-    public boolean hasHapticChannels(int arg0) {
-        return ((android.media.RingtoneManager) real).hasHapticChannels(arg0);
-    }
-
     public static boolean hasHapticChannels(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return android.media.RingtoneManager.hasHapticChannels(arg0 == null ? null : arg0.getReal());
+    }
+
+    public boolean hasHapticChannels(int arg0) {
+        return ((android.media.RingtoneManager) real).hasHapticChannels(arg0);
     }
 
     public static boolean hasHapticChannels(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {

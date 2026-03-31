@@ -91,23 +91,7 @@ public final class ProtoOutputStream {
         return android.util.proto.ProtoOutputStream.token2String(arg0);
     }
 
-    public void write(long arg0, double arg1) {
-        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
-    }
-
-    public void write(long arg0, byte[] arg1) {
-        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
-    }
-
-    public void write(long arg0, java.lang.String arg1) {
-        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
-    }
-
     public void write(long arg0, int arg1) {
-        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
-    }
-
-    public void write(long arg0, float arg1) {
         ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
@@ -115,7 +99,23 @@ public final class ProtoOutputStream {
         ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 
+    public void write(long arg0, java.lang.String arg1) {
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
+    }
+
+    public void write(long arg0, float arg1) {
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
+    }
+
+    public void write(long arg0, byte[] arg1) {
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
+    }
+
     public void write(long arg0, boolean arg1) {
+        ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
+    }
+
+    public void write(long arg0, double arg1) {
         ((android.util.proto.ProtoOutputStream) real).write(arg0, arg1);
     }
 

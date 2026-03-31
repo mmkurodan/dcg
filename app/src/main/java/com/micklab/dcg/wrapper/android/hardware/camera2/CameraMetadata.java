@@ -52,6 +52,7 @@ public final class CameraMetadata {
     public static final int COLOR_CORRECTION_ABERRATION_MODE_FAST = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_ABERRATION_MODE_FAST;
     public static final int COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY;
     public static final int COLOR_CORRECTION_ABERRATION_MODE_OFF = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_ABERRATION_MODE_OFF;
+    public static final int COLOR_CORRECTION_MODE_CCT = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_MODE_CCT;
     public static final int COLOR_CORRECTION_MODE_FAST = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_MODE_FAST;
     public static final int COLOR_CORRECTION_MODE_HIGH_QUALITY = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_MODE_HIGH_QUALITY;
     public static final int COLOR_CORRECTION_MODE_TRANSFORM_MATRIX = android.hardware.camera2.CameraMetadata.COLOR_CORRECTION_MODE_TRANSFORM_MATRIX;
@@ -69,6 +70,9 @@ public final class CameraMetadata {
     public static final int CONTROL_AE_PRECAPTURE_TRIGGER_CANCEL = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRECAPTURE_TRIGGER_CANCEL;
     public static final int CONTROL_AE_PRECAPTURE_TRIGGER_IDLE = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRECAPTURE_TRIGGER_IDLE;
     public static final int CONTROL_AE_PRECAPTURE_TRIGGER_START = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRECAPTURE_TRIGGER_START;
+    public static final int CONTROL_AE_PRIORITY_MODE_OFF = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRIORITY_MODE_OFF;
+    public static final int CONTROL_AE_PRIORITY_MODE_SENSOR_EXPOSURE_TIME_PRIORITY = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRIORITY_MODE_SENSOR_EXPOSURE_TIME_PRIORITY;
+    public static final int CONTROL_AE_PRIORITY_MODE_SENSOR_SENSITIVITY_PRIORITY = android.hardware.camera2.CameraMetadata.CONTROL_AE_PRIORITY_MODE_SENSOR_SENSITIVITY_PRIORITY;
     public static final int CONTROL_AE_STATE_CONVERGED = android.hardware.camera2.CameraMetadata.CONTROL_AE_STATE_CONVERGED;
     public static final int CONTROL_AE_STATE_FLASH_REQUIRED = android.hardware.camera2.CameraMetadata.CONTROL_AE_STATE_FLASH_REQUIRED;
     public static final int CONTROL_AE_STATE_INACTIVE = android.hardware.camera2.CameraMetadata.CONTROL_AE_STATE_INACTIVE;
@@ -162,6 +166,8 @@ public final class CameraMetadata {
     public static final int CONTROL_VIDEO_STABILIZATION_MODE_OFF = android.hardware.camera2.CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_OFF;
     public static final int CONTROL_VIDEO_STABILIZATION_MODE_ON = android.hardware.camera2.CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_ON;
     public static final int CONTROL_VIDEO_STABILIZATION_MODE_PREVIEW_STABILIZATION = android.hardware.camera2.CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_PREVIEW_STABILIZATION;
+    public static final int CONTROL_ZOOM_METHOD_AUTO = android.hardware.camera2.CameraMetadata.CONTROL_ZOOM_METHOD_AUTO;
+    public static final int CONTROL_ZOOM_METHOD_ZOOM_RATIO = android.hardware.camera2.CameraMetadata.CONTROL_ZOOM_METHOD_ZOOM_RATIO;
     public static final int DISTORTION_CORRECTION_MODE_FAST = android.hardware.camera2.CameraMetadata.DISTORTION_CORRECTION_MODE_FAST;
     public static final int DISTORTION_CORRECTION_MODE_HIGH_QUALITY = android.hardware.camera2.CameraMetadata.DISTORTION_CORRECTION_MODE_HIGH_QUALITY;
     public static final int DISTORTION_CORRECTION_MODE_OFF = android.hardware.camera2.CameraMetadata.DISTORTION_CORRECTION_MODE_OFF;
@@ -169,6 +175,9 @@ public final class CameraMetadata {
     public static final int EDGE_MODE_HIGH_QUALITY = android.hardware.camera2.CameraMetadata.EDGE_MODE_HIGH_QUALITY;
     public static final int EDGE_MODE_OFF = android.hardware.camera2.CameraMetadata.EDGE_MODE_OFF;
     public static final int EDGE_MODE_ZERO_SHUTTER_LAG = android.hardware.camera2.CameraMetadata.EDGE_MODE_ZERO_SHUTTER_LAG;
+    public static final int EXTENSION_NIGHT_MODE_INDICATOR_OFF = android.hardware.camera2.CameraMetadata.EXTENSION_NIGHT_MODE_INDICATOR_OFF;
+    public static final int EXTENSION_NIGHT_MODE_INDICATOR_ON = android.hardware.camera2.CameraMetadata.EXTENSION_NIGHT_MODE_INDICATOR_ON;
+    public static final int EXTENSION_NIGHT_MODE_INDICATOR_UNKNOWN = android.hardware.camera2.CameraMetadata.EXTENSION_NIGHT_MODE_INDICATOR_UNKNOWN;
     public static final int FLASH_MODE_OFF = android.hardware.camera2.CameraMetadata.FLASH_MODE_OFF;
     public static final int FLASH_MODE_SINGLE = android.hardware.camera2.CameraMetadata.FLASH_MODE_SINGLE;
     public static final int FLASH_MODE_TORCH = android.hardware.camera2.CameraMetadata.FLASH_MODE_TORCH;

@@ -27,6 +27,10 @@ public final class MultiResolutionImageReader {
         this(new android.hardware.camera2.MultiResolutionImageReader(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
+    public MultiResolutionImageReader(java.util.Collection arg0, int arg1, int arg2, long arg3) {
+        this(new android.hardware.camera2.MultiResolutionImageReader(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
+    }
+
     public void close() {
         ((android.hardware.camera2.MultiResolutionImageReader) real).close();
     }

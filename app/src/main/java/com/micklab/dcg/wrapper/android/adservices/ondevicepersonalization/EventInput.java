@@ -23,6 +23,10 @@ public final class EventInput {
         return getReal();
     }
 
+    public EventInput(com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.RequestLogRecord arg0, com.micklab.dcg.wrapper.android.os.PersistableBundle arg1) {
+        this(new android.adservices.ondevicepersonalization.EventInput(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public boolean equals(java.lang.Object arg0) {
         return ((android.adservices.ondevicepersonalization.EventInput) real).equals(arg0);
     }

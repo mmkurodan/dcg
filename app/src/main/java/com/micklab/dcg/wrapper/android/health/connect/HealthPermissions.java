@@ -24,6 +24,7 @@ public final class HealthPermissions {
     }
 
     public static final java.lang.String READ_ACTIVE_CALORIES_BURNED = android.health.connect.HealthPermissions.READ_ACTIVE_CALORIES_BURNED;
+    public static final java.lang.String READ_ACTIVITY_INTENSITY = android.health.connect.HealthPermissions.READ_ACTIVITY_INTENSITY;
     public static final java.lang.String READ_BASAL_BODY_TEMPERATURE = android.health.connect.HealthPermissions.READ_BASAL_BODY_TEMPERATURE;
     public static final java.lang.String READ_BASAL_METABOLIC_RATE = android.health.connect.HealthPermissions.READ_BASAL_METABOLIC_RATE;
     public static final java.lang.String READ_BLOOD_GLUCOSE = android.health.connect.HealthPermissions.READ_BLOOD_GLUCOSE;
@@ -46,7 +47,20 @@ public final class HealthPermissions {
     public static final java.lang.String READ_HYDRATION = android.health.connect.HealthPermissions.READ_HYDRATION;
     public static final java.lang.String READ_INTERMENSTRUAL_BLEEDING = android.health.connect.HealthPermissions.READ_INTERMENSTRUAL_BLEEDING;
     public static final java.lang.String READ_LEAN_BODY_MASS = android.health.connect.HealthPermissions.READ_LEAN_BODY_MASS;
+    public static final java.lang.String READ_MEDICAL_DATA_ALLERGIES_INTOLERANCES = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_ALLERGIES_INTOLERANCES;
+    public static final java.lang.String READ_MEDICAL_DATA_CONDITIONS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_CONDITIONS;
+    public static final java.lang.String READ_MEDICAL_DATA_LABORATORY_RESULTS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_LABORATORY_RESULTS;
+    public static final java.lang.String READ_MEDICAL_DATA_MEDICATIONS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_MEDICATIONS;
+    public static final java.lang.String READ_MEDICAL_DATA_PERSONAL_DETAILS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_PERSONAL_DETAILS;
+    public static final java.lang.String READ_MEDICAL_DATA_PRACTITIONER_DETAILS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_PRACTITIONER_DETAILS;
+    public static final java.lang.String READ_MEDICAL_DATA_PREGNANCY = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_PREGNANCY;
+    public static final java.lang.String READ_MEDICAL_DATA_PROCEDURES = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_PROCEDURES;
+    public static final java.lang.String READ_MEDICAL_DATA_SOCIAL_HISTORY = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_SOCIAL_HISTORY;
+    public static final java.lang.String READ_MEDICAL_DATA_VACCINES = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_VACCINES;
+    public static final java.lang.String READ_MEDICAL_DATA_VISITS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_VISITS;
+    public static final java.lang.String READ_MEDICAL_DATA_VITAL_SIGNS = android.health.connect.HealthPermissions.READ_MEDICAL_DATA_VITAL_SIGNS;
     public static final java.lang.String READ_MENSTRUATION = android.health.connect.HealthPermissions.READ_MENSTRUATION;
+    public static final java.lang.String READ_MINDFULNESS = android.health.connect.HealthPermissions.READ_MINDFULNESS;
     public static final java.lang.String READ_NUTRITION = android.health.connect.HealthPermissions.READ_NUTRITION;
     public static final java.lang.String READ_OVULATION_TEST = android.health.connect.HealthPermissions.READ_OVULATION_TEST;
     public static final java.lang.String READ_OXYGEN_SATURATION = android.health.connect.HealthPermissions.READ_OXYGEN_SATURATION;
@@ -64,6 +78,7 @@ public final class HealthPermissions {
     public static final java.lang.String READ_WEIGHT = android.health.connect.HealthPermissions.READ_WEIGHT;
     public static final java.lang.String READ_WHEELCHAIR_PUSHES = android.health.connect.HealthPermissions.READ_WHEELCHAIR_PUSHES;
     public static final java.lang.String WRITE_ACTIVE_CALORIES_BURNED = android.health.connect.HealthPermissions.WRITE_ACTIVE_CALORIES_BURNED;
+    public static final java.lang.String WRITE_ACTIVITY_INTENSITY = android.health.connect.HealthPermissions.WRITE_ACTIVITY_INTENSITY;
     public static final java.lang.String WRITE_BASAL_BODY_TEMPERATURE = android.health.connect.HealthPermissions.WRITE_BASAL_BODY_TEMPERATURE;
     public static final java.lang.String WRITE_BASAL_METABOLIC_RATE = android.health.connect.HealthPermissions.WRITE_BASAL_METABOLIC_RATE;
     public static final java.lang.String WRITE_BLOOD_GLUCOSE = android.health.connect.HealthPermissions.WRITE_BLOOD_GLUCOSE;
@@ -84,7 +99,9 @@ public final class HealthPermissions {
     public static final java.lang.String WRITE_HYDRATION = android.health.connect.HealthPermissions.WRITE_HYDRATION;
     public static final java.lang.String WRITE_INTERMENSTRUAL_BLEEDING = android.health.connect.HealthPermissions.WRITE_INTERMENSTRUAL_BLEEDING;
     public static final java.lang.String WRITE_LEAN_BODY_MASS = android.health.connect.HealthPermissions.WRITE_LEAN_BODY_MASS;
+    public static final java.lang.String WRITE_MEDICAL_DATA = android.health.connect.HealthPermissions.WRITE_MEDICAL_DATA;
     public static final java.lang.String WRITE_MENSTRUATION = android.health.connect.HealthPermissions.WRITE_MENSTRUATION;
+    public static final java.lang.String WRITE_MINDFULNESS = android.health.connect.HealthPermissions.WRITE_MINDFULNESS;
     public static final java.lang.String WRITE_NUTRITION = android.health.connect.HealthPermissions.WRITE_NUTRITION;
     public static final java.lang.String WRITE_OVULATION_TEST = android.health.connect.HealthPermissions.WRITE_OVULATION_TEST;
     public static final java.lang.String WRITE_OXYGEN_SATURATION = android.health.connect.HealthPermissions.WRITE_OXYGEN_SATURATION;

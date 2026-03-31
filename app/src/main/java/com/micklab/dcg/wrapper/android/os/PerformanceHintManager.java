@@ -57,12 +57,12 @@ public final class PerformanceHintManager {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PerformanceHintManager$Session#close()");
         }
 
-        public void reportActualWorkDuration(com.micklab.dcg.wrapper.android.os.WorkDuration arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PerformanceHintManager$Session#reportActualWorkDuration(android.os.WorkDuration)");
-        }
-
         public void reportActualWorkDuration(long arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PerformanceHintManager$Session#reportActualWorkDuration(long)");
+        }
+
+        public void reportActualWorkDuration(com.micklab.dcg.wrapper.android.os.WorkDuration arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PerformanceHintManager$Session#reportActualWorkDuration(android.os.WorkDuration)");
         }
 
         public void setPreferPowerEfficiency(boolean arg0) {

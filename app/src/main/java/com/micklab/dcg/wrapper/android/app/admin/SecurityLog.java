@@ -56,6 +56,8 @@ public final class SecurityLog {
     public static final int TAG_MAX_SCREEN_LOCK_TIMEOUT_SET = android.app.admin.SecurityLog.TAG_MAX_SCREEN_LOCK_TIMEOUT_SET;
     public static final int TAG_MEDIA_MOUNT = android.app.admin.SecurityLog.TAG_MEDIA_MOUNT;
     public static final int TAG_MEDIA_UNMOUNT = android.app.admin.SecurityLog.TAG_MEDIA_UNMOUNT;
+    public static final int TAG_NFC_DISABLED = android.app.admin.SecurityLog.TAG_NFC_DISABLED;
+    public static final int TAG_NFC_ENABLED = android.app.admin.SecurityLog.TAG_NFC_ENABLED;
     public static final int TAG_OS_SHUTDOWN = android.app.admin.SecurityLog.TAG_OS_SHUTDOWN;
     public static final int TAG_OS_STARTUP = android.app.admin.SecurityLog.TAG_OS_STARTUP;
     public static final int TAG_PACKAGE_INSTALLED = android.app.admin.SecurityLog.TAG_PACKAGE_INSTALLED;

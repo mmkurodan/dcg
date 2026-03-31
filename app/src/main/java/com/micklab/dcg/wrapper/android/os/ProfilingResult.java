@@ -27,6 +27,10 @@ public final class ProfilingResult {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#describeContents()");
     }
 
+    public boolean equals(java.lang.Object arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#equals(java.lang.Object)");
+    }
+
     public int getErrorCode() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#getErrorCode()");
     }
@@ -41,6 +45,14 @@ public final class ProfilingResult {
 
     public java.lang.String getTag() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#getTag()");
+    }
+
+    public int getTriggerType() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#getTriggerType()");
+    }
+
+    public int hashCode() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.ProfilingResult#hashCode()");
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {

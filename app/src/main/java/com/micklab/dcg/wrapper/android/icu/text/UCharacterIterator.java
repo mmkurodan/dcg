@@ -43,15 +43,15 @@ public final class UCharacterIterator {
         return ((android.icu.text.UCharacterIterator) real).getIndex();
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.text.CharacterIterator arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(com.micklab.dcg.wrapper.android.icu.text.Replaceable arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0 == null ? null : arg0.getReal()));
+    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.lang.StringBuffer arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.lang.String arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.text.CharacterIterator arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0));
     }
 
@@ -59,8 +59,8 @@ public final class UCharacterIterator {
         return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(java.lang.StringBuffer arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0));
+    public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(com.micklab.dcg.wrapper.android.icu.text.Replaceable arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator.wrap(android.icu.text.UCharacterIterator.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator getInstance(char[] arg0, int arg1, int arg2) {

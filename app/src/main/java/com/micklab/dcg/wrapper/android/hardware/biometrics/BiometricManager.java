@@ -40,7 +40,9 @@ public final class BiometricManager {
     }
 
     public static final int BIOMETRIC_ERROR_HW_UNAVAILABLE = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE;
+    public static final int BIOMETRIC_ERROR_IDENTITY_CHECK_NOT_ACTIVE = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_IDENTITY_CHECK_NOT_ACTIVE;
     public static final int BIOMETRIC_ERROR_NONE_ENROLLED = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED;
+    public static final int BIOMETRIC_ERROR_NOT_ENABLED_FOR_APPS = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_NOT_ENABLED_FOR_APPS;
     public static final int BIOMETRIC_ERROR_NO_HARDWARE = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE;
     public static final int BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED = android.hardware.biometrics.BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED;
     public static final long BIOMETRIC_NO_AUTHENTICATION = android.hardware.biometrics.BiometricManager.BIOMETRIC_NO_AUTHENTICATION;
@@ -71,6 +73,7 @@ public final class BiometricManager {
         public static final int BIOMETRIC_STRONG = android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG;
         public static final int BIOMETRIC_WEAK = android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_WEAK;
         public static final int DEVICE_CREDENTIAL = android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL;
+        public static final int IDENTITY_CHECK = android.hardware.biometrics.BiometricManager.Authenticators.IDENTITY_CHECK;
 
     }
     public static final class Strings {

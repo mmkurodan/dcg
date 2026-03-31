@@ -30,6 +30,7 @@ public final class DevicePolicyIdentifiers {
     public static final java.lang.String ACCOUNT_MANAGEMENT_DISABLED_POLICY = android.app.admin.DevicePolicyIdentifiers.ACCOUNT_MANAGEMENT_DISABLED_POLICY;
     public static final java.lang.String APPLICATION_HIDDEN_POLICY = android.app.admin.DevicePolicyIdentifiers.APPLICATION_HIDDEN_POLICY;
     public static final java.lang.String APPLICATION_RESTRICTIONS_POLICY = android.app.admin.DevicePolicyIdentifiers.APPLICATION_RESTRICTIONS_POLICY;
+    public static final java.lang.String APP_FUNCTIONS_POLICY = android.app.admin.DevicePolicyIdentifiers.APP_FUNCTIONS_POLICY;
     public static final java.lang.String AUTO_TIMEZONE_POLICY = android.app.admin.DevicePolicyIdentifiers.AUTO_TIMEZONE_POLICY;
     public static final java.lang.String AUTO_TIME_POLICY = android.app.admin.DevicePolicyIdentifiers.AUTO_TIME_POLICY;
     public static final java.lang.String BACKUP_SERVICE_POLICY = android.app.admin.DevicePolicyIdentifiers.BACKUP_SERVICE_POLICY;

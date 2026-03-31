@@ -23,11 +23,11 @@ public final class Half {
         return getReal();
     }
 
-    public Half(java.lang.String arg0) throws java.lang.NumberFormatException {
+    public Half(short arg0) {
         this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
-    public Half(double arg0) {
+    public Half(java.lang.String arg0) throws java.lang.NumberFormatException {
         this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,7 +35,7 @@ public final class Half {
         this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 
-    public Half(short arg0) {
+    public Half(double arg0) {
         this(new android.util.Half(arg0), (__DcgwBridgeToken) null);
     }
 

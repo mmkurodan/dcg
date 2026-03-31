@@ -23,11 +23,11 @@ public final class SurfaceTexture {
         return getReal();
     }
 
-    public SurfaceTexture(boolean arg0) {
+    public SurfaceTexture(int arg0) {
         this(new android.graphics.SurfaceTexture(arg0), (__DcgwBridgeToken) null);
     }
 
-    public SurfaceTexture(int arg0) {
+    public SurfaceTexture(boolean arg0) {
         this(new android.graphics.SurfaceTexture(arg0), (__DcgwBridgeToken) null);
     }
 

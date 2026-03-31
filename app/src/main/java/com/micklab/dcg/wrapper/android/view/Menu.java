@@ -23,19 +23,19 @@ public final class Menu {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.view.MenuItem add(java.lang.CharSequence arg0) {
-        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0));
-    }
-
     public com.micklab.dcg.wrapper.android.view.MenuItem add(int arg0) {
         return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.view.MenuItem add(int arg0, int arg1, int arg2, int arg3) {
-        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0, arg1, arg2, arg3));
+    public com.micklab.dcg.wrapper.android.view.MenuItem add(java.lang.CharSequence arg0) {
+        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.view.MenuItem add(int arg0, int arg1, int arg2, java.lang.CharSequence arg3) {
+        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0, arg1, arg2, arg3));
+    }
+
+    public com.micklab.dcg.wrapper.android.view.MenuItem add(int arg0, int arg1, int arg2, int arg3) {
         return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.Menu) real).add(arg0, arg1, arg2, arg3));
     }
 

@@ -80,12 +80,12 @@ public final class LeadingMarginSpan {
             return getReal();
         }
 
-        public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            this(new android.text.style.LeadingMarginSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-        }
-
         public Standard(int arg0) {
             this(new android.text.style.LeadingMarginSpan.Standard(arg0), (__DcgwBridgeToken) null);
+        }
+
+        public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+            this(new android.text.style.LeadingMarginSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public Standard(int arg0, int arg1) {

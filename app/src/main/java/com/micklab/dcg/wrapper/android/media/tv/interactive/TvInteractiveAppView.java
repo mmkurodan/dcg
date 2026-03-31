@@ -99,6 +99,10 @@ public final class TvInteractiveAppView {
         ((android.media.tv.interactive.TvInteractiveAppView) real).notifyTvMessage(arg0, arg1 == null ? null : arg1.getReal());
     }
 
+    public void notifyVideoFreezeUpdated(boolean arg0) {
+        ((android.media.tv.interactive.TvInteractiveAppView) real).notifyVideoFreezeUpdated(arg0);
+    }
+
     public void onAttachedToWindow() {
         ((android.media.tv.interactive.TvInteractiveAppView) real).onAttachedToWindow();
     }
@@ -137,6 +141,10 @@ public final class TvInteractiveAppView {
 
     public void sendAvailableSpeeds(float[] arg0) {
         ((android.media.tv.interactive.TvInteractiveAppView) real).sendAvailableSpeeds(arg0);
+    }
+
+    public void sendCertificate(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.http.SslCertificate arg2) {
+        ((android.media.tv.interactive.TvInteractiveAppView) real).sendCertificate(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void sendCurrentChannelLcn(int arg0) {
@@ -185,6 +193,14 @@ public final class TvInteractiveAppView {
 
     public int setTvView(com.micklab.dcg.wrapper.android.media.tv.TvView arg0) {
         return ((android.media.tv.interactive.TvInteractiveAppView) real).setTvView(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setZOrderMediaOverlay(boolean arg0) {
+        ((android.media.tv.interactive.TvInteractiveAppView) real).setZOrderMediaOverlay(arg0);
+    }
+
+    public void setZOrderOnTop(boolean arg0) {
+        ((android.media.tv.interactive.TvInteractiveAppView) real).setZOrderOnTop(arg0);
     }
 
     public void startInteractiveApp() {
@@ -263,6 +279,10 @@ public final class TvInteractiveAppView {
             ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestAvailableSpeeds(arg0);
         }
 
+        public void onRequestCertificate(java.lang.String arg0, java.lang.String arg1, int arg2) {
+            ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestCertificate(arg0, arg1, arg2);
+        }
+
         public void onRequestCurrentChannelLcn(java.lang.String arg0) {
             ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestCurrentChannelLcn(arg0);
         }
@@ -287,8 +307,16 @@ public final class TvInteractiveAppView {
             ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestScheduleRecording(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6, arg7 == null ? null : arg7.getReal());
         }
 
+        public void onRequestSelectedTrackInfo(java.lang.String arg0) {
+            ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestSelectedTrackInfo(arg0);
+        }
+
         public void onRequestSigning(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, byte[] arg4) {
             ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestSigning(arg0, arg1, arg2, arg3, arg4);
+        }
+
+        public void onRequestSigning(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, int arg4, byte[] arg5) {
+            ((android.media.tv.interactive.TvInteractiveAppView.TvInteractiveAppCallback) real).onRequestSigning(arg0, arg1, arg2, arg3, arg4, arg5);
         }
 
         public void onRequestStartRecording(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.net.Uri arg2) {

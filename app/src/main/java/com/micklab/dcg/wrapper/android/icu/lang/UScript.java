@@ -31,12 +31,12 @@ public final class UScript {
         return android.icu.lang.UScript.getCode(arg0);
     }
 
-    public static int[] getCode(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return android.icu.lang.UScript.getCode(arg0 == null ? null : arg0.getReal());
-    }
-
     public static int[] getCode(java.lang.String arg0) {
         return android.icu.lang.UScript.getCode(arg0);
+    }
+
+    public static int[] getCode(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return android.icu.lang.UScript.getCode(arg0 == null ? null : arg0.getReal());
     }
 
     public static int getCodeFromName(java.lang.String arg0) {
@@ -84,6 +84,7 @@ public final class UScript {
     public static final int AHOM = android.icu.lang.UScript.AHOM;
     public static final int ANATOLIAN_HIEROGLYPHS = android.icu.lang.UScript.ANATOLIAN_HIEROGLYPHS;
     public static final int ARABIC = android.icu.lang.UScript.ARABIC;
+    public static final int ARABIC_NASTALIQ = android.icu.lang.UScript.ARABIC_NASTALIQ;
     public static final int ARMENIAN = android.icu.lang.UScript.ARMENIAN;
     public static final int AVESTAN = android.icu.lang.UScript.AVESTAN;
     public static final int BALINESE = android.icu.lang.UScript.BALINESE;
@@ -125,6 +126,7 @@ public final class UScript {
     public static final int ELYMAIC = android.icu.lang.UScript.ELYMAIC;
     public static final int ESTRANGELO_SYRIAC = android.icu.lang.UScript.ESTRANGELO_SYRIAC;
     public static final int ETHIOPIC = android.icu.lang.UScript.ETHIOPIC;
+    public static final int GARAY = android.icu.lang.UScript.GARAY;
     public static final int GEORGIAN = android.icu.lang.UScript.GEORGIAN;
     public static final int GLAGOLITIC = android.icu.lang.UScript.GLAGOLITIC;
     public static final int GOTHIC = android.icu.lang.UScript.GOTHIC;
@@ -133,6 +135,7 @@ public final class UScript {
     public static final int GUJARATI = android.icu.lang.UScript.GUJARATI;
     public static final int GUNJALA_GONDI = android.icu.lang.UScript.GUNJALA_GONDI;
     public static final int GURMUKHI = android.icu.lang.UScript.GURMUKHI;
+    public static final int GURUNG_KHEMA = android.icu.lang.UScript.GURUNG_KHEMA;
     public static final int HAN = android.icu.lang.UScript.HAN;
     public static final int HANGUL = android.icu.lang.UScript.HANGUL;
     public static final int HANIFI_ROHINGYA = android.icu.lang.UScript.HANIFI_ROHINGYA;
@@ -164,6 +167,7 @@ public final class UScript {
     public static final int KHOJKI = android.icu.lang.UScript.KHOJKI;
     public static final int KHUDAWADI = android.icu.lang.UScript.KHUDAWADI;
     public static final int KHUTSURI = android.icu.lang.UScript.KHUTSURI;
+    public static final int KIRAT_RAI = android.icu.lang.UScript.KIRAT_RAI;
     public static final int KOREAN = android.icu.lang.UScript.KOREAN;
     public static final int KPELLE = android.icu.lang.UScript.KPELLE;
     public static final int LANNA = android.icu.lang.UScript.LANNA;
@@ -222,6 +226,7 @@ public final class UScript {
     public static final int OLD_SOUTH_ARABIAN = android.icu.lang.UScript.OLD_SOUTH_ARABIAN;
     public static final int OLD_UYGHUR = android.icu.lang.UScript.OLD_UYGHUR;
     public static final int OL_CHIKI = android.icu.lang.UScript.OL_CHIKI;
+    public static final int OL_ONAL = android.icu.lang.UScript.OL_ONAL;
     public static final int ORIYA = android.icu.lang.UScript.ORIYA;
     public static final int ORKHON = android.icu.lang.UScript.ORKHON;
     public static final int OSAGE = android.icu.lang.UScript.OSAGE;
@@ -250,6 +255,7 @@ public final class UScript {
     public static final int SORA_SOMPENG = android.icu.lang.UScript.SORA_SOMPENG;
     public static final int SOYOMBO = android.icu.lang.UScript.SOYOMBO;
     public static final int SUNDANESE = android.icu.lang.UScript.SUNDANESE;
+    public static final int SUNUWAR = android.icu.lang.UScript.SUNUWAR;
     public static final int SYLOTI_NAGRI = android.icu.lang.UScript.SYLOTI_NAGRI;
     public static final int SYMBOLS = android.icu.lang.UScript.SYMBOLS;
     public static final int SYMBOLS_EMOJI = android.icu.lang.UScript.SYMBOLS_EMOJI;
@@ -269,8 +275,10 @@ public final class UScript {
     public static final int TIBETAN = android.icu.lang.UScript.TIBETAN;
     public static final int TIFINAGH = android.icu.lang.UScript.TIFINAGH;
     public static final int TIRHUTA = android.icu.lang.UScript.TIRHUTA;
+    public static final int TODHRI = android.icu.lang.UScript.TODHRI;
     public static final int TOTO = android.icu.lang.UScript.TOTO;
     public static final int TRADITIONAL_HAN = android.icu.lang.UScript.TRADITIONAL_HAN;
+    public static final int TULU_TIGALARI = android.icu.lang.UScript.TULU_TIGALARI;
     public static final int UCAS = android.icu.lang.UScript.UCAS;
     public static final int UGARITIC = android.icu.lang.UScript.UGARITIC;
     public static final int UNKNOWN = android.icu.lang.UScript.UNKNOWN;

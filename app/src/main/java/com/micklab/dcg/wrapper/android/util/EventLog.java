@@ -31,7 +31,7 @@ public final class EventLog {
         return android.util.EventLog.getTagName(arg0);
     }
 
-    public static int writeEvent(int arg0, float arg1) {
+    public static int writeEvent(int arg0, long arg1) {
         return android.util.EventLog.writeEvent(arg0, arg1);
     }
 
@@ -43,11 +43,11 @@ public final class EventLog {
         return android.util.EventLog.writeEvent(arg0, arg1);
     }
 
-    public static int writeEvent(int arg0, long arg1) {
+    public static int writeEvent(int arg0, int arg1) {
         return android.util.EventLog.writeEvent(arg0, arg1);
     }
 
-    public static int writeEvent(int arg0, int arg1) {
+    public static int writeEvent(int arg0, float arg1) {
         return android.util.EventLog.writeEvent(arg0, arg1);
     }
 

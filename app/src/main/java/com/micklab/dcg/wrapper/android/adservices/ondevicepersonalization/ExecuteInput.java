@@ -23,6 +23,10 @@ public final class ExecuteInput {
         return getReal();
     }
 
+    public ExecuteInput(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.PersistableBundle arg1) {
+        this(new android.adservices.ondevicepersonalization.ExecuteInput(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public java.lang.String getAppPackageName() {
         return ((android.adservices.ondevicepersonalization.ExecuteInput) real).getAppPackageName();
     }

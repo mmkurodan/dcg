@@ -27,12 +27,12 @@ public final class NumberFormatter {
         return com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.with());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter withLocale(java.util.Locale arg0) {
         return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.withLocale(arg0));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberFormatter.wrap(android.icu.number.NumberFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final class DecimalSeparatorDisplay {

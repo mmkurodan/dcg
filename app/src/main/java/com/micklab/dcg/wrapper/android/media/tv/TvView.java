@@ -83,6 +83,10 @@ public final class TvView {
         ((android.media.tv.TvView) real).reset();
     }
 
+    public void resumePlayback() {
+        ((android.media.tv.TvView) real).resumePlayback();
+    }
+
     public void selectAudioPresentation(int arg0, int arg1) {
         ((android.media.tv.TvView) real).selectAudioPresentation(arg0, arg1);
     }
@@ -123,12 +127,20 @@ public final class TvView {
         ((android.media.tv.TvView) real).setTvMessageEnabled(arg0, arg1);
     }
 
+    public void setVideoFrozen(boolean arg0) {
+        ((android.media.tv.TvView) real).setVideoFrozen(arg0);
+    }
+
     public void setZOrderMediaOverlay(boolean arg0) {
         ((android.media.tv.TvView) real).setZOrderMediaOverlay(arg0);
     }
 
     public void setZOrderOnTop(boolean arg0) {
         ((android.media.tv.TvView) real).setZOrderOnTop(arg0);
+    }
+
+    public void stopPlayback(int arg0) {
+        ((android.media.tv.TvView) real).stopPlayback(arg0);
     }
 
     public void timeShiftPause() {
@@ -305,6 +317,10 @@ public final class TvView {
 
         public void onVideoAvailable(java.lang.String arg0) {
             ((android.media.tv.TvView.TvInputCallback) real).onVideoAvailable(arg0);
+        }
+
+        public void onVideoFreezeUpdated(java.lang.String arg0, boolean arg1) {
+            ((android.media.tv.TvView.TvInputCallback) real).onVideoFreezeUpdated(arg0, arg1);
         }
 
         public void onVideoSizeChanged(java.lang.String arg0, int arg1, int arg2) {

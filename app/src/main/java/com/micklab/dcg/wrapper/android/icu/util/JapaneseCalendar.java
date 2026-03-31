@@ -31,12 +31,12 @@ public final class JapaneseCalendar {
         this(new android.icu.util.JapaneseCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
-    public JapaneseCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
-        this(new android.icu.util.JapaneseCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public JapaneseCalendar(java.util.Locale arg0) {
         this(new android.icu.util.JapaneseCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public JapaneseCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
+        this(new android.icu.util.JapaneseCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public JapaneseCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {

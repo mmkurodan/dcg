@@ -139,11 +139,11 @@ public final class NinePatchDrawable {
         ((android.graphics.drawable.NinePatchDrawable) real).setFilterBitmap(arg0);
     }
 
-    public void setTargetDensity(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
+    public void setTargetDensity(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
         ((android.graphics.drawable.NinePatchDrawable) real).setTargetDensity(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTargetDensity(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
+    public void setTargetDensity(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
         ((android.graphics.drawable.NinePatchDrawable) real).setTargetDensity(arg0 == null ? null : arg0.getReal());
     }
 

@@ -27,11 +27,11 @@ public final class RectF {
         this(new android.graphics.RectF(), (__DcgwBridgeToken) null);
     }
 
-    public RectF(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+    public RectF(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
         this(new android.graphics.RectF(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public RectF(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
+    public RectF(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         this(new android.graphics.RectF(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -119,11 +119,11 @@ public final class RectF {
         ((android.graphics.RectF) real).roundOut(arg0 == null ? null : arg0.getReal());
     }
 
-    public void set(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+    public void set(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
         ((android.graphics.RectF) real).set(arg0 == null ? null : arg0.getReal());
     }
 
-    public void set(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
+    public void set(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         ((android.graphics.RectF) real).set(arg0 == null ? null : arg0.getReal());
     }
 

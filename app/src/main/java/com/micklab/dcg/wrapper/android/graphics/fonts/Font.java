@@ -93,19 +93,19 @@ public final class Font {
             return getReal();
         }
 
-        public Builder(com.micklab.dcg.wrapper.android.graphics.fonts.Font arg0) {
+        public Builder(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {
             this(new android.graphics.fonts.Font.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-        }
-
-        public Builder(java.nio.ByteBuffer arg0) {
-            this(new android.graphics.fonts.Font.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public Builder(java.io.File arg0) {
             this(new android.graphics.fonts.Font.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
-        public Builder(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {
+        public Builder(java.nio.ByteBuffer arg0) {
+            this(new android.graphics.fonts.Font.Builder(arg0), (__DcgwBridgeToken) null);
+        }
+
+        public Builder(com.micklab.dcg.wrapper.android.graphics.fonts.Font arg0) {
             this(new android.graphics.fonts.Font.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 

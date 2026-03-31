@@ -31,6 +31,10 @@ public final class SearchSpec {
         return ((android.app.appsearch.SearchSpec) real).getAdvancedRankingExpression();
     }
 
+    public int getDefaultEmbeddingSearchMetricType() {
+        return ((android.app.appsearch.SearchSpec) real).getDefaultEmbeddingSearchMetricType();
+    }
+
     public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec getJoinSpec() {
         return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.wrap(((android.app.appsearch.SearchSpec) real).getJoinSpec());
     }
@@ -79,12 +83,20 @@ public final class SearchSpec {
         return ((android.app.appsearch.SearchSpec) real).isListFilterHasPropertyFunctionEnabled();
     }
 
+    public boolean isListFilterMatchScoreExpressionFunctionEnabled() {
+        return ((android.app.appsearch.SearchSpec) real).isListFilterMatchScoreExpressionFunctionEnabled();
+    }
+
     public boolean isListFilterQueryLanguageEnabled() {
         return ((android.app.appsearch.SearchSpec) real).isListFilterQueryLanguageEnabled();
     }
 
     public boolean isNumericSearchEnabled() {
         return ((android.app.appsearch.SearchSpec) real).isNumericSearchEnabled();
+    }
+
+    public boolean isScorablePropertyRankingEnabled() {
+        return ((android.app.appsearch.SearchSpec) real).isScorablePropertyRankingEnabled();
     }
 
     public boolean isVerbatimSearchEnabled() {
@@ -95,6 +107,10 @@ public final class SearchSpec {
         ((android.app.appsearch.SearchSpec) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public static final int EMBEDDING_SEARCH_METRIC_TYPE_COSINE = android.app.appsearch.SearchSpec.EMBEDDING_SEARCH_METRIC_TYPE_COSINE;
+    public static final int EMBEDDING_SEARCH_METRIC_TYPE_DEFAULT = android.app.appsearch.SearchSpec.EMBEDDING_SEARCH_METRIC_TYPE_DEFAULT;
+    public static final int EMBEDDING_SEARCH_METRIC_TYPE_DOT_PRODUCT = android.app.appsearch.SearchSpec.EMBEDDING_SEARCH_METRIC_TYPE_DOT_PRODUCT;
+    public static final int EMBEDDING_SEARCH_METRIC_TYPE_EUCLIDEAN = android.app.appsearch.SearchSpec.EMBEDDING_SEARCH_METRIC_TYPE_EUCLIDEAN;
     public static final int GROUPING_TYPE_PER_NAMESPACE = android.app.appsearch.SearchSpec.GROUPING_TYPE_PER_NAMESPACE;
     public static final int GROUPING_TYPE_PER_PACKAGE = android.app.appsearch.SearchSpec.GROUPING_TYPE_PER_PACKAGE;
     public static final int GROUPING_TYPE_PER_SCHEMA = android.app.appsearch.SearchSpec.GROUPING_TYPE_PER_SCHEMA;
@@ -141,6 +157,18 @@ public final class SearchSpec {
             this(new android.app.appsearch.SearchSpec.Builder(), (__DcgwBridgeToken) null);
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec arg0) {
+            this(new android.app.appsearch.SearchSpec.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addEmbeddingParameters(android.app.appsearch.EmbeddingVector... arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addEmbeddingParameters(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addFilterDocumentIds(java.lang.String... arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterDocumentIds(arg0));
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addFilterNamespaces(java.lang.String... arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterNamespaces(arg0));
         }
@@ -153,8 +181,72 @@ public final class SearchSpec {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addFilterSchemas(arg0));
         }
 
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addInformationalRankingExpressions(java.lang.String... arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addInformationalRankingExpressions(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder addSearchStringParameters(java.lang.String... arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).addSearchStringParameters(arg0));
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec build() {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.wrap(((android.app.appsearch.SearchSpec.Builder) real).build());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearEmbeddingParameters() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearEmbeddingParameters());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearFilterDocumentIds() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearFilterDocumentIds());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearFilterNamespaces() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearFilterNamespaces());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearFilterPackageNames() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearFilterPackageNames());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearFilterProperties() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearFilterProperties());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearFilterSchemas() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearFilterSchemas());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearInformationalRankingExpressions() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearInformationalRankingExpressions());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearJoinSpec() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearJoinSpec());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearProjections() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearProjections());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearPropertyWeights() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearPropertyWeights());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearResultGrouping() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearResultGrouping());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearSearchSourceLogTag() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearSearchSourceLogTag());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder clearSearchStringParameters() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).clearSearchStringParameters());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setDefaultEmbeddingSearchMetricType(int arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setDefaultEmbeddingSearchMetricType(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setJoinSpec(com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec arg0) {
@@ -163,6 +255,10 @@ public final class SearchSpec {
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setListFilterHasPropertyFunctionEnabled(boolean arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setListFilterHasPropertyFunctionEnabled(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setListFilterMatchScoreExpressionFunctionEnabled(boolean arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setListFilterMatchScoreExpressionFunctionEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setListFilterQueryLanguageEnabled(boolean arg0) {
@@ -181,11 +277,11 @@ public final class SearchSpec {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setOrder(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(java.lang.String arg0) {
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(int arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setRankingStrategy(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(int arg0) {
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setRankingStrategy(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setRankingStrategy(arg0));
         }
 
@@ -195,6 +291,10 @@ public final class SearchSpec {
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setResultGrouping(int arg0, int arg1) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setResultGrouping(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setScorablePropertyRankingEnabled(boolean arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder.wrap(((android.app.appsearch.SearchSpec.Builder) real).setScorablePropertyRankingEnabled(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSpec.Builder setSearchSourceLogTag(java.lang.String arg0) {

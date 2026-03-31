@@ -107,6 +107,10 @@ public final class Path {
         ((android.graphics.Path) real).close();
     }
 
+    public void computeBounds(com.micklab.dcg.wrapper.android.graphics.RectF arg0) {
+        ((android.graphics.Path) real).computeBounds(arg0 == null ? null : arg0.getReal());
+    }
+
     public void computeBounds(com.micklab.dcg.wrapper.android.graphics.RectF arg0, boolean arg1) {
         ((android.graphics.Path) real).computeBounds(arg0 == null ? null : arg0.getReal(), arg1);
     }

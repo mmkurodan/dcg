@@ -699,6 +699,10 @@ public final class Activity {
         return com.micklab.dcg.wrapper.android.view.DragAndDropPermissions.wrap(((android.app.Activity) real).requestDragAndDropPermissions(arg0 == null ? null : arg0.getReal()));
     }
 
+    public void requestOpenInBrowserEducation() {
+        ((android.app.Activity) real).requestOpenInBrowserEducation();
+    }
+
     public void requestPermissions(java.lang.String[] arg0, int arg1) {
         ((android.app.Activity) real).requestPermissions(arg0, arg1);
     }
@@ -735,12 +739,12 @@ public final class Activity {
         ((android.app.Activity) real).setContentTransitionManager(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setContentView(int arg0) {
-        ((android.app.Activity) real).setContentView(arg0);
-    }
-
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
         ((android.app.Activity) real).setContentView(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setContentView(int arg0) {
+        ((android.app.Activity) real).setContentView(arg0);
     }
 
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
@@ -859,11 +863,11 @@ public final class Activity {
         ((android.app.Activity) real).setTheme(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.app.Activity) real).setTitle(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.app.Activity) real).setTitle(arg0);
     }
 

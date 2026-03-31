@@ -23,11 +23,11 @@ public final class BrailleDisplayController {
         return getReal();
     }
 
-    public void connect(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
+    public void connect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
         ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void connect(com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
+    public void connect(com.micklab.dcg.wrapper.android.hardware.usb.UsbDevice arg0, com.micklab.dcg.wrapper.android.accessibilityservice.BrailleDisplayController.BrailleDisplayCallback arg1) {
         ((android.accessibilityservice.BrailleDisplayController) real).connect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 

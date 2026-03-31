@@ -43,12 +43,28 @@ public final class SurfaceView {
         ((android.view.SurfaceView) real).applyTransactionToFrame(arg0 == null ? null : arg0.getReal());
     }
 
+    public void clearChildSurfacePackage() {
+        ((android.view.SurfaceView) real).clearChildSurfacePackage();
+    }
+
     public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
         ((android.view.SurfaceView) real).draw(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean gatherTransparentRegion(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
         return ((android.view.SurfaceView) real).gatherTransparentRegion(arg0 == null ? null : arg0.getReal());
+    }
+
+    public java.lang.CharSequence getAccessibilityClassName() {
+        return ((android.view.SurfaceView) real).getAccessibilityClassName();
+    }
+
+    public com.micklab.dcg.wrapper.android.view.SurfaceControlViewHost.SurfacePackage getChildSurfacePackage() {
+        return com.micklab.dcg.wrapper.android.view.SurfaceControlViewHost.SurfacePackage.wrap(((android.view.SurfaceView) real).getChildSurfacePackage());
+    }
+
+    public int getCompositionOrder() {
+        return ((android.view.SurfaceView) real).getCompositionOrder();
     }
 
     public com.micklab.dcg.wrapper.android.view.SurfaceHolder getHolder() {
@@ -81,6 +97,10 @@ public final class SurfaceView {
 
     public void setClipBounds(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         ((android.view.SurfaceView) real).setClipBounds(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setCompositionOrder(int arg0) {
+        ((android.view.SurfaceView) real).setCompositionOrder(arg0);
     }
 
     public void setDesiredHdrHeadroom(float arg0) {

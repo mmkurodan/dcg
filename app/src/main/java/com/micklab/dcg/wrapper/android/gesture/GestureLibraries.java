@@ -23,12 +23,12 @@ public final class GestureLibraries {
         return getReal();
     }
 
-    public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromFile(java.lang.String arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.gesture.GestureLibraries#fromFile(java.lang.String)");
-    }
-
     public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromFile(java.io.File arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.gesture.GestureLibraries#fromFile(java.io.File)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromFile(java.lang.String arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.gesture.GestureLibraries#fromFile(java.lang.String)");
     }
 
     public static com.micklab.dcg.wrapper.android.gesture.GestureLibrary fromFileDescriptor(com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg0) {

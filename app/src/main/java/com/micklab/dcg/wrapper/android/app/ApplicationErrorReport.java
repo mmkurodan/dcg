@@ -159,12 +159,12 @@ public final class ApplicationErrorReport {
             this(new android.app.ApplicationErrorReport.CrashInfo(), (__DcgwBridgeToken) null);
         }
 
-        public CrashInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-            this(new android.app.ApplicationErrorReport.CrashInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-        }
-
         public CrashInfo(java.lang.Throwable arg0) {
             this(new android.app.ApplicationErrorReport.CrashInfo(arg0), (__DcgwBridgeToken) null);
+        }
+
+        public CrashInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+            this(new android.app.ApplicationErrorReport.CrashInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public void dump(com.micklab.dcg.wrapper.android.util.Printer arg0, java.lang.String arg1) {

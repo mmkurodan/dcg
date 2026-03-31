@@ -23,15 +23,15 @@ public final class ExifInterface {
         return getReal();
     }
 
+    public ExifInterface(java.lang.String arg0) throws java.io.IOException {
+        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
+    }
+
     public ExifInterface(java.io.InputStream arg0) throws java.io.IOException {
         this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 
     public ExifInterface(java.io.FileDescriptor arg0) throws java.io.IOException {
-        this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public ExifInterface(java.lang.String arg0) throws java.io.IOException {
         this(new android.media.ExifInterface(arg0), (__DcgwBridgeToken) null);
     }
 

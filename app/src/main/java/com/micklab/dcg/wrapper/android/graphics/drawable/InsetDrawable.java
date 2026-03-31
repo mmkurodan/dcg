@@ -23,19 +23,19 @@ public final class InsetDrawable {
         return getReal();
     }
 
-    public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, float arg1) {
-        this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
     public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, int arg1) {
         this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
-    public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, float arg1, float arg2, float arg3, float arg4) {
-        this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
+    public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, float arg1) {
+        this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, int arg1, int arg2, int arg3, int arg4) {
+        this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
+    }
+
+    public InsetDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, float arg1, float arg2, float arg3, float arg4) {
         this(new android.graphics.drawable.InsetDrawable(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 

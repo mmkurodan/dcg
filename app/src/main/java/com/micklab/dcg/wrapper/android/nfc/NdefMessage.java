@@ -23,11 +23,11 @@ public final class NdefMessage {
         return getReal();
     }
 
-    public NdefMessage(android.nfc.NdefRecord[] arg0) {
+    public NdefMessage(byte[] arg0) throws android.nfc.FormatException {
         this(new android.nfc.NdefMessage(arg0), (__DcgwBridgeToken) null);
     }
 
-    public NdefMessage(byte[] arg0) throws android.nfc.FormatException {
+    public NdefMessage(android.nfc.NdefRecord[] arg0) {
         this(new android.nfc.NdefMessage(arg0), (__DcgwBridgeToken) null);
     }
 

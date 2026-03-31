@@ -75,20 +75,20 @@ public final class Calendar {
         return android.icu.util.Calendar.getAvailableLocales();
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeFormat(int arg0, int arg1, java.util.Locale arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(((android.icu.util.Calendar) real).getDateTimeFormat(arg0, arg1, arg2));
-    }
-
     public com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeFormat(int arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(((android.icu.util.Calendar) real).getDateTimeFormat(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
-    public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return ((android.icu.util.Calendar) real).getDisplayName(arg0 == null ? null : arg0.getReal());
+    public com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeFormat(int arg0, int arg1, java.util.Locale arg2) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(((android.icu.util.Calendar) real).getDateTimeFormat(arg0, arg1, arg2));
     }
 
     public java.lang.String getDisplayName(java.util.Locale arg0) {
         return ((android.icu.util.Calendar) real).getDisplayName(arg0);
+    }
+
+    public java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return ((android.icu.util.Calendar) real).getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
     public int getFieldCount() {
@@ -107,16 +107,16 @@ public final class Calendar {
         return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.util.Calendar.wrap(android.icu.util.Calendar.getInstance(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.util.Calendar getInstance(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
@@ -155,6 +155,10 @@ public final class Calendar {
         return ((android.icu.util.Calendar) real).getSkippedWallTimeOption();
     }
 
+    public java.lang.String getTemporalMonthCode() {
+        return ((android.icu.util.Calendar) real).getTemporalMonthCode();
+    }
+
     public java.util.Date getTime() {
         return ((android.icu.util.Calendar) real).getTime();
     }
@@ -181,6 +185,10 @@ public final class Calendar {
 
     public int hashCode() {
         return ((android.icu.util.Calendar) real).hashCode();
+    }
+
+    public boolean inTemporalLeapYear() {
+        return ((android.icu.util.Calendar) real).inTemporalLeapYear();
     }
 
     public boolean isEquivalentTo(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0) {
@@ -247,6 +255,10 @@ public final class Calendar {
         ((android.icu.util.Calendar) real).setSkippedWallTimeOption(arg0);
     }
 
+    public void setTemporalMonthCode(java.lang.String arg0) {
+        ((android.icu.util.Calendar) real).setTemporalMonthCode(arg0);
+    }
+
     public void setTime(java.util.Date arg0) {
         ((android.icu.util.Calendar) real).setTime(arg0);
     }
@@ -299,6 +311,7 @@ public final class Calendar {
     public static final int MONTH = android.icu.util.Calendar.MONTH;
     public static final int NOVEMBER = android.icu.util.Calendar.NOVEMBER;
     public static final int OCTOBER = android.icu.util.Calendar.OCTOBER;
+    public static final int ORDINAL_MONTH = android.icu.util.Calendar.ORDINAL_MONTH;
     public static final int PM = android.icu.util.Calendar.PM;
     public static final int SATURDAY = android.icu.util.Calendar.SATURDAY;
     public static final int SECOND = android.icu.util.Calendar.SECOND;

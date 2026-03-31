@@ -35,6 +35,10 @@ public final class MediaCodecInfo {
         return ((android.media.MediaCodecInfo) real).getName();
     }
 
+    public int getSecurityModel() {
+        return ((android.media.MediaCodecInfo) real).getSecurityModel();
+    }
+
     public java.lang.String[] getSupportedTypes() {
         return ((android.media.MediaCodecInfo) real).getSupportedTypes();
     }
@@ -58,6 +62,9 @@ public final class MediaCodecInfo {
     public boolean isVendor() {
         return ((android.media.MediaCodecInfo) real).isVendor();
     }
+
+    public static final int SECURITY_MODEL_MEMORY_SAFE = android.media.MediaCodecInfo.SECURITY_MODEL_MEMORY_SAFE;
+    public static final int SECURITY_MODEL_SANDBOXED = android.media.MediaCodecInfo.SECURITY_MODEL_SANDBOXED;
 
     public static final class AudioCapabilities {
         private static final class __DcgwBridgeToken {
@@ -217,6 +224,7 @@ public final class MediaCodecInfo {
         public static final int COLOR_FormatYUV444Flexible = android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV444Flexible;
         public static final int COLOR_FormatYUV444Interleaved = android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV444Interleaved;
         public static final int COLOR_FormatYUVP010 = android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUVP010;
+        public static final int COLOR_FormatYUVP210 = android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUVP210;
         public static final int COLOR_QCOM_FormatYUV420SemiPlanar = android.media.MediaCodecInfo.CodecCapabilities.COLOR_QCOM_FormatYUV420SemiPlanar;
         public static final int COLOR_TI_FormatYUV420PackedSemiPlanar = android.media.MediaCodecInfo.CodecCapabilities.COLOR_TI_FormatYUV420PackedSemiPlanar;
         public static final java.lang.String FEATURE_AdaptivePlayback = android.media.MediaCodecInfo.CodecCapabilities.FEATURE_AdaptivePlayback;
@@ -288,6 +296,62 @@ public final class MediaCodecInfo {
         public static final int AC4Level2 = android.media.MediaCodecInfo.CodecProfileLevel.AC4Level2;
         public static final int AC4Level3 = android.media.MediaCodecInfo.CodecProfileLevel.AC4Level3;
         public static final int AC4Level4 = android.media.MediaCodecInfo.CodecProfileLevel.AC4Level4;
+        public static final int APVLevel11Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel11Band0;
+        public static final int APVLevel11Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel11Band1;
+        public static final int APVLevel11Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel11Band2;
+        public static final int APVLevel11Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel11Band3;
+        public static final int APVLevel1Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel1Band0;
+        public static final int APVLevel1Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel1Band1;
+        public static final int APVLevel1Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel1Band2;
+        public static final int APVLevel1Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel1Band3;
+        public static final int APVLevel21Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel21Band0;
+        public static final int APVLevel21Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel21Band1;
+        public static final int APVLevel21Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel21Band2;
+        public static final int APVLevel21Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel21Band3;
+        public static final int APVLevel2Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel2Band0;
+        public static final int APVLevel2Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel2Band1;
+        public static final int APVLevel2Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel2Band2;
+        public static final int APVLevel2Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel2Band3;
+        public static final int APVLevel31Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel31Band0;
+        public static final int APVLevel31Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel31Band1;
+        public static final int APVLevel31Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel31Band2;
+        public static final int APVLevel31Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel31Band3;
+        public static final int APVLevel3Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel3Band0;
+        public static final int APVLevel3Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel3Band1;
+        public static final int APVLevel3Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel3Band2;
+        public static final int APVLevel3Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel3Band3;
+        public static final int APVLevel41Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel41Band0;
+        public static final int APVLevel41Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel41Band1;
+        public static final int APVLevel41Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel41Band2;
+        public static final int APVLevel41Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel41Band3;
+        public static final int APVLevel4Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel4Band0;
+        public static final int APVLevel4Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel4Band1;
+        public static final int APVLevel4Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel4Band2;
+        public static final int APVLevel4Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel4Band3;
+        public static final int APVLevel51Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel51Band0;
+        public static final int APVLevel51Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel51Band1;
+        public static final int APVLevel51Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel51Band2;
+        public static final int APVLevel51Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel51Band3;
+        public static final int APVLevel5Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel5Band0;
+        public static final int APVLevel5Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel5Band1;
+        public static final int APVLevel5Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel5Band2;
+        public static final int APVLevel5Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel5Band3;
+        public static final int APVLevel61Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel61Band0;
+        public static final int APVLevel61Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel61Band1;
+        public static final int APVLevel61Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel61Band2;
+        public static final int APVLevel61Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel61Band3;
+        public static final int APVLevel6Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel6Band0;
+        public static final int APVLevel6Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel6Band1;
+        public static final int APVLevel6Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel6Band2;
+        public static final int APVLevel6Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel6Band3;
+        public static final int APVLevel71Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel71Band0;
+        public static final int APVLevel71Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel71Band1;
+        public static final int APVLevel71Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel71Band2;
+        public static final int APVLevel71Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel71Band3;
+        public static final int APVLevel7Band0 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel7Band0;
+        public static final int APVLevel7Band1 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel7Band1;
+        public static final int APVLevel7Band2 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel7Band2;
+        public static final int APVLevel7Band3 = android.media.MediaCodecInfo.CodecProfileLevel.APVLevel7Band3;
         public static final int AV1Level2 = android.media.MediaCodecInfo.CodecProfileLevel.AV1Level2;
         public static final int AV1Level21 = android.media.MediaCodecInfo.CodecProfileLevel.AV1Level21;
         public static final int AV1Level22 = android.media.MediaCodecInfo.CodecProfileLevel.AV1Level22;
@@ -509,11 +573,11 @@ public final class MediaCodecInfo {
                 this(new android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint(arg0, arg1, arg2), (__DcgwBridgeToken) null);
             }
 
-            public boolean covers(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
+            public boolean covers(com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint arg0) {
                 return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).covers(arg0 == null ? null : arg0.getReal());
             }
 
-            public boolean covers(com.micklab.dcg.wrapper.android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint arg0) {
+            public boolean covers(com.micklab.dcg.wrapper.android.media.MediaFormat arg0) {
                 return ((android.media.MediaCodecInfo.VideoCapabilities.PerformancePoint) real).covers(arg0 == null ? null : arg0.getReal());
             }
 

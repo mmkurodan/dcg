@@ -23,7 +23,7 @@ public final class ComposeShader {
         return getReal();
     }
 
-    public ComposeShader(com.micklab.dcg.wrapper.android.graphics.Shader arg0, com.micklab.dcg.wrapper.android.graphics.Shader arg1, com.micklab.dcg.wrapper.android.graphics.Xfermode arg2) {
+    public ComposeShader(com.micklab.dcg.wrapper.android.graphics.Shader arg0, com.micklab.dcg.wrapper.android.graphics.Shader arg1, com.micklab.dcg.wrapper.android.graphics.BlendMode arg2) {
         this(new android.graphics.ComposeShader(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -31,7 +31,7 @@ public final class ComposeShader {
         this(new android.graphics.ComposeShader(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public ComposeShader(com.micklab.dcg.wrapper.android.graphics.Shader arg0, com.micklab.dcg.wrapper.android.graphics.Shader arg1, com.micklab.dcg.wrapper.android.graphics.BlendMode arg2) {
+    public ComposeShader(com.micklab.dcg.wrapper.android.graphics.Shader arg0, com.micklab.dcg.wrapper.android.graphics.Shader arg1, com.micklab.dcg.wrapper.android.graphics.Xfermode arg2) {
         this(new android.graphics.ComposeShader(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 

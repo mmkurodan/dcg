@@ -191,12 +191,12 @@ public final class SQLiteDatabase {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.sqlite.SQLiteDatabase#openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)");
     }
 
-    public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String arg0, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.sqlite.SQLiteDatabase#openOrCreateDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory)");
-    }
-
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.io.File arg0, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.sqlite.SQLiteDatabase#openOrCreateDatabase(java.io.File,android.database.sqlite.SQLiteDatabase$CursorFactory)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String arg0, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.sqlite.SQLiteDatabase#openOrCreateDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory)");
     }
 
     public static com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String arg0, com.micklab.dcg.wrapper.android.database.sqlite.SQLiteDatabase.CursorFactory arg1, com.micklab.dcg.wrapper.android.database.DatabaseErrorHandler arg2) {

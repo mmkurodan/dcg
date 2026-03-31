@@ -23,19 +23,19 @@ public final class SweepGradient {
         return getReal();
     }
 
-    public SweepGradient(float arg0, float arg1, long arg2, long arg3) {
-        this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
-    }
-
-    public SweepGradient(float arg0, float arg1, int arg2, int arg3) {
-        this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
-    }
-
     public SweepGradient(float arg0, float arg1, long[] arg2, float[] arg3) {
         this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
+    public SweepGradient(float arg0, float arg1, long arg2, long arg3) {
+        this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
+    }
+
     public SweepGradient(float arg0, float arg1, int[] arg2, float[] arg3) {
+        this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
+    }
+
+    public SweepGradient(float arg0, float arg1, int arg2, int arg3) {
         this(new android.graphics.SweepGradient(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 

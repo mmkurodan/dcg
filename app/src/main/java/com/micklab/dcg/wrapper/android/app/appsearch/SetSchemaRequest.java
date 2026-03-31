@@ -23,8 +23,16 @@ public final class SetSchemaRequest {
         return getReal();
     }
 
+    public boolean equals(java.lang.Object arg0) {
+        return ((android.app.appsearch.SetSchemaRequest) real).equals(arg0);
+    }
+
     public int getVersion() {
         return ((android.app.appsearch.SetSchemaRequest) real).getVersion();
+    }
+
+    public int hashCode() {
+        return ((android.app.appsearch.SetSchemaRequest) real).hashCode();
     }
 
     public boolean isForceOverride() {
@@ -64,6 +72,10 @@ public final class SetSchemaRequest {
             this(new android.app.appsearch.SetSchemaRequest.Builder(), (__DcgwBridgeToken) null);
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest arg0) {
+            this(new android.app.appsearch.SetSchemaRequest.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder addSchemaTypeVisibleToConfig(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.appsearch.SchemaVisibilityConfig arg1) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).addSchemaTypeVisibleToConfig(arg0, arg1 == null ? null : arg1.getReal()));
         }
@@ -76,12 +88,20 @@ public final class SetSchemaRequest {
             return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).build());
         }
 
+        public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder clearMigrators() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).clearMigrators());
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder clearRequiredPermissionsForSchemaTypeVisibility(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).clearRequiredPermissionsForSchemaTypeVisibility(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder clearSchemaTypeVisibleToConfigs(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).clearSchemaTypeVisibleToConfigs(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder clearSchemas() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder.wrap(((android.app.appsearch.SetSchemaRequest.Builder) real).clearSchemas());
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.SetSchemaRequest.Builder setForceOverride(boolean arg0) {

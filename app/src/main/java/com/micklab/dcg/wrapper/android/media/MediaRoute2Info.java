@@ -108,6 +108,7 @@ public final class MediaRoute2Info {
     public static final int SUITABILITY_STATUS_NOT_SUITABLE_FOR_TRANSFER = android.media.MediaRoute2Info.SUITABILITY_STATUS_NOT_SUITABLE_FOR_TRANSFER;
     public static final int SUITABILITY_STATUS_SUITABLE_FOR_DEFAULT_TRANSFER = android.media.MediaRoute2Info.SUITABILITY_STATUS_SUITABLE_FOR_DEFAULT_TRANSFER;
     public static final int SUITABILITY_STATUS_SUITABLE_FOR_MANUAL_TRANSFER = android.media.MediaRoute2Info.SUITABILITY_STATUS_SUITABLE_FOR_MANUAL_TRANSFER;
+    public static final int TYPE_AUX_LINE = android.media.MediaRoute2Info.TYPE_AUX_LINE;
     public static final int TYPE_BLE_HEADSET = android.media.MediaRoute2Info.TYPE_BLE_HEADSET;
     public static final int TYPE_BLUETOOTH_A2DP = android.media.MediaRoute2Info.TYPE_BLUETOOTH_A2DP;
     public static final int TYPE_BUILTIN_SPEAKER = android.media.MediaRoute2Info.TYPE_BUILTIN_SPEAKER;
@@ -117,6 +118,9 @@ public final class MediaRoute2Info {
     public static final int TYPE_HDMI_ARC = android.media.MediaRoute2Info.TYPE_HDMI_ARC;
     public static final int TYPE_HDMI_EARC = android.media.MediaRoute2Info.TYPE_HDMI_EARC;
     public static final int TYPE_HEARING_AID = android.media.MediaRoute2Info.TYPE_HEARING_AID;
+    public static final int TYPE_LINE_ANALOG = android.media.MediaRoute2Info.TYPE_LINE_ANALOG;
+    public static final int TYPE_LINE_DIGITAL = android.media.MediaRoute2Info.TYPE_LINE_DIGITAL;
+    public static final int TYPE_MULTICHANNEL_SPEAKER_GROUP = android.media.MediaRoute2Info.TYPE_MULTICHANNEL_SPEAKER_GROUP;
     public static final int TYPE_REMOTE_AUDIO_VIDEO_RECEIVER = android.media.MediaRoute2Info.TYPE_REMOTE_AUDIO_VIDEO_RECEIVER;
     public static final int TYPE_REMOTE_CAR = android.media.MediaRoute2Info.TYPE_REMOTE_CAR;
     public static final int TYPE_REMOTE_COMPUTER = android.media.MediaRoute2Info.TYPE_REMOTE_COMPUTER;

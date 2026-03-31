@@ -51,15 +51,15 @@ public final class BitmapRegionDecoder {
         return com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder.wrap(android.graphics.BitmapRegionDecoder.newInstance(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder newInstance(java.lang.String arg0, boolean arg1) throws java.io.IOException {
-        return com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder.wrap(android.graphics.BitmapRegionDecoder.newInstance(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder newInstance(java.io.FileDescriptor arg0, boolean arg1) throws java.io.IOException {
         return com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder.wrap(android.graphics.BitmapRegionDecoder.newInstance(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder newInstance(java.io.InputStream arg0, boolean arg1) throws java.io.IOException {
+        return com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder.wrap(android.graphics.BitmapRegionDecoder.newInstance(arg0, arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder newInstance(java.lang.String arg0, boolean arg1) throws java.io.IOException {
         return com.micklab.dcg.wrapper.android.graphics.BitmapRegionDecoder.wrap(android.graphics.BitmapRegionDecoder.newInstance(arg0, arg1));
     }
 

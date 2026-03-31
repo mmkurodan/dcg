@@ -44,6 +44,8 @@ public final class BroadcastInfoRequest {
     }
 
     public static final int REQUEST_OPTION_AUTO_UPDATE = android.media.tv.BroadcastInfoRequest.REQUEST_OPTION_AUTO_UPDATE;
+    public static final int REQUEST_OPTION_ONESHOT = android.media.tv.BroadcastInfoRequest.REQUEST_OPTION_ONESHOT;
+    public static final int REQUEST_OPTION_ONEWAY = android.media.tv.BroadcastInfoRequest.REQUEST_OPTION_ONEWAY;
     public static final int REQUEST_OPTION_REPEAT = android.media.tv.BroadcastInfoRequest.REQUEST_OPTION_REPEAT;
 
 }

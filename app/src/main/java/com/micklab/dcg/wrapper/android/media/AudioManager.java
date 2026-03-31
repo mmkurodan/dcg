@@ -239,11 +239,11 @@ public final class AudioManager {
         ((android.media.AudioManager) real).registerAudioRecordingCallback(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
+    public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
         ((android.media.AudioManager) real).registerMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 
-    public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
+    public void registerMediaButtonEventReceiver(com.micklab.dcg.wrapper.android.app.PendingIntent arg0) {
         ((android.media.AudioManager) real).registerMediaButtonEventReceiver(arg0 == null ? null : arg0.getReal());
     }
 

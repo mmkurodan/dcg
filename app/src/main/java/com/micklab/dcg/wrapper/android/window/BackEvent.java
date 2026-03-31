@@ -27,6 +27,18 @@ public final class BackEvent {
         this(new android.window.BackEvent(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
+    public BackEvent(float arg0, float arg1, float arg2, int arg3, long arg4) {
+        this(new android.window.BackEvent(arg0, arg1, arg2, arg3, arg4), (__DcgwBridgeToken) null);
+    }
+
+    public boolean equals(java.lang.Object arg0) {
+        return ((android.window.BackEvent) real).equals(arg0);
+    }
+
+    public long getFrameTimeMillis() {
+        return ((android.window.BackEvent) real).getFrameTimeMillis();
+    }
+
     public float getProgress() {
         return ((android.window.BackEvent) real).getProgress();
     }
@@ -48,6 +60,7 @@ public final class BackEvent {
     }
 
     public static final int EDGE_LEFT = android.window.BackEvent.EDGE_LEFT;
+    public static final int EDGE_NONE = android.window.BackEvent.EDGE_NONE;
     public static final int EDGE_RIGHT = android.window.BackEvent.EDGE_RIGHT;
 
 }

@@ -39,12 +39,12 @@ public final class Typeface {
         return com.micklab.dcg.wrapper.android.graphics.Typeface.wrap(android.graphics.Typeface.createFromAsset(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.Typeface createFromFile(java.io.File arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.graphics.Typeface#createFromFile(java.io.File)");
-    }
-
     public static com.micklab.dcg.wrapper.android.graphics.Typeface createFromFile(java.lang.String arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.graphics.Typeface#createFromFile(java.lang.String)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.Typeface createFromFile(java.io.File arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.graphics.Typeface#createFromFile(java.io.File)");
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Typeface defaultFromStyle(int arg0) {
@@ -135,11 +135,11 @@ public final class Typeface {
             return com.micklab.dcg.wrapper.android.graphics.Typeface.Builder.wrap(((android.graphics.Typeface.Builder) real).setFallback(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.graphics.Typeface.Builder setFontVariationSettings(android.graphics.fonts.FontVariationAxis[] arg0) {
+        public com.micklab.dcg.wrapper.android.graphics.Typeface.Builder setFontVariationSettings(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.graphics.Typeface.Builder.wrap(((android.graphics.Typeface.Builder) real).setFontVariationSettings(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.graphics.Typeface.Builder setFontVariationSettings(java.lang.String arg0) {
+        public com.micklab.dcg.wrapper.android.graphics.Typeface.Builder setFontVariationSettings(android.graphics.fonts.FontVariationAxis[] arg0) {
             return com.micklab.dcg.wrapper.android.graphics.Typeface.Builder.wrap(((android.graphics.Typeface.Builder) real).setFontVariationSettings(arg0));
         }
 

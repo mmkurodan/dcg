@@ -171,16 +171,16 @@ public final class MediaRecorder {
         ((android.media.MediaRecorder) real).setOrientationHint(arg0);
     }
 
-    public void setOutputFile(java.io.FileDescriptor arg0) throws java.lang.IllegalStateException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.FileDescriptor)");
-    }
-
     public void setOutputFile(java.lang.String arg0) throws java.lang.IllegalStateException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.lang.String)");
     }
 
     public void setOutputFile(java.io.File arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.File)");
+    }
+
+    public void setOutputFile(java.io.FileDescriptor arg0) throws java.lang.IllegalStateException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.FileDescriptor)");
     }
 
     public void setOutputFormat(int arg0) throws java.lang.IllegalStateException {

@@ -27,19 +27,19 @@ public final class Normalizer {
         return ((android.icu.text.Normalizer) real).clone();
     }
 
-    public static int compare(int arg0, int arg1, int arg2) {
-        return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
-    }
-
-    public static int compare(char[] arg0, char[] arg1, int arg2) {
-        return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
-    }
-
     public static int compare(int arg0, java.lang.String arg1, int arg2) {
         return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
     }
 
+    public static int compare(int arg0, int arg1, int arg2) {
+        return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
+    }
+
     public static int compare(java.lang.String arg0, java.lang.String arg1, int arg2) {
+        return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
+    }
+
+    public static int compare(char[] arg0, char[] arg1, int arg2) {
         return android.icu.text.Normalizer.compare(arg0, arg1, arg2);
     }
 

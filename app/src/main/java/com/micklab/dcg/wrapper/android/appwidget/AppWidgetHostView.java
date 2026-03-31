@@ -47,6 +47,10 @@ public final class AppWidgetHostView {
         return com.micklab.dcg.wrapper.android.graphics.Rect.wrap(android.appwidget.AppWidgetHostView.getDefaultPaddingForWidget(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
+    public void onWindowFocusChanged(boolean arg0) {
+        ((android.appwidget.AppWidgetHostView) real).onWindowFocusChanged(arg0);
+    }
+
     public void resetColorResources() {
         ((android.appwidget.AppWidgetHostView) real).resetColorResources();
     }

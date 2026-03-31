@@ -27,11 +27,11 @@ public final class ContextThemeWrapper {
         this(new android.view.ContextThemeWrapper(), (__DcgwBridgeToken) null);
     }
 
-    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, android.content.res.Resources.Theme arg1) {
+    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
         this(new android.view.ContextThemeWrapper(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
-    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
+    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, android.content.res.Resources.Theme arg1) {
         this(new android.view.ContextThemeWrapper(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 

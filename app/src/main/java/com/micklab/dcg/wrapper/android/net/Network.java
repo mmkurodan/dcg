@@ -23,16 +23,16 @@ public final class Network {
         return getReal();
     }
 
-    public void bindSocket(java.io.FileDescriptor arg0) throws java.io.IOException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.Network#bindSocket(java.io.FileDescriptor)");
+    public void bindSocket(java.net.Socket arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.Network#bindSocket(java.net.Socket)");
     }
 
     public void bindSocket(java.net.DatagramSocket arg0) throws java.io.IOException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.Network#bindSocket(java.net.DatagramSocket)");
     }
 
-    public void bindSocket(java.net.Socket arg0) throws java.io.IOException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.Network#bindSocket(java.net.Socket)");
+    public void bindSocket(java.io.FileDescriptor arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.Network#bindSocket(java.io.FileDescriptor)");
     }
 
     public int describeContents() {

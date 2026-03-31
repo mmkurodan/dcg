@@ -23,12 +23,12 @@ public final class AbsoluteSizeSpan {
         return getReal();
     }
 
-    public AbsoluteSizeSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.AbsoluteSizeSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public AbsoluteSizeSpan(int arg0) {
         this(new android.text.style.AbsoluteSizeSpan(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public AbsoluteSizeSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+        this(new android.text.style.AbsoluteSizeSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public AbsoluteSizeSpan(int arg0, boolean arg1) {

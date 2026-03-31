@@ -23,19 +23,19 @@ public final class RadialGradient {
         return getReal();
     }
 
-    public RadialGradient(float arg0, float arg1, float arg2, long arg3, long arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
-        this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
-    }
-
-    public RadialGradient(float arg0, float arg1, float arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
-        this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public RadialGradient(float arg0, float arg1, float arg2, long[] arg3, float[] arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
         this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
     }
 
+    public RadialGradient(float arg0, float arg1, float arg2, long arg3, long arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
+        this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public RadialGradient(float arg0, float arg1, float arg2, int[] arg3, float[] arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
+        this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public RadialGradient(float arg0, float arg1, float arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.graphics.Shader.TileMode arg5) {
         this(new android.graphics.RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
     }
 

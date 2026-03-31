@@ -35,6 +35,10 @@ public final class WifiAvailableChannel {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiAvailableChannel#equals(java.lang.Object)");
     }
 
+    public int getChannelWidth() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiAvailableChannel#getChannelWidth()");
+    }
+
     public int getFrequencyMhz() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiAvailableChannel#getFrequencyMhz()");
     }

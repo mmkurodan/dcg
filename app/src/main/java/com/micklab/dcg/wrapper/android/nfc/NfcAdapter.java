@@ -23,12 +23,20 @@ public final class NfcAdapter {
         return getReal();
     }
 
+    public boolean disable() {
+        return ((android.nfc.NfcAdapter) real).disable();
+    }
+
     public void disableForegroundDispatch(com.micklab.dcg.wrapper.android.app.Activity arg0) {
         ((android.nfc.NfcAdapter) real).disableForegroundDispatch(arg0 == null ? null : arg0.getReal());
     }
 
     public void disableReaderMode(com.micklab.dcg.wrapper.android.app.Activity arg0) {
         ((android.nfc.NfcAdapter) real).disableReaderMode(arg0 == null ? null : arg0.getReal());
+    }
+
+    public boolean enable() {
+        return ((android.nfc.NfcAdapter) real).enable();
     }
 
     public void enableForegroundDispatch(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.app.PendingIntent arg1, android.content.IntentFilter[] arg2, java.lang.String[][] arg3) {
@@ -79,6 +87,14 @@ public final class NfcAdapter {
         return ((android.nfc.NfcAdapter) real).isSecureNfcSupported();
     }
 
+    public boolean isTagIntentAllowed() {
+        return ((android.nfc.NfcAdapter) real).isTagIntentAllowed();
+    }
+
+    public boolean isTagIntentAppPreferenceSupported() {
+        return ((android.nfc.NfcAdapter) real).isTagIntentAppPreferenceSupported();
+    }
+
     public void resetDiscoveryTechnology(com.micklab.dcg.wrapper.android.app.Activity arg0) {
         ((android.nfc.NfcAdapter) real).resetDiscoveryTechnology(arg0 == null ? null : arg0.getReal());
     }
@@ -92,6 +108,7 @@ public final class NfcAdapter {
     }
 
     public static final java.lang.String ACTION_ADAPTER_STATE_CHANGED = android.nfc.NfcAdapter.ACTION_ADAPTER_STATE_CHANGED;
+    public static final java.lang.String ACTION_CHANGE_TAG_INTENT_PREFERENCE = android.nfc.NfcAdapter.ACTION_CHANGE_TAG_INTENT_PREFERENCE;
     public static final java.lang.String ACTION_NDEF_DISCOVERED = android.nfc.NfcAdapter.ACTION_NDEF_DISCOVERED;
     public static final java.lang.String ACTION_PREFERRED_PAYMENT_CHANGED = android.nfc.NfcAdapter.ACTION_PREFERRED_PAYMENT_CHANGED;
     public static final java.lang.String ACTION_TAG_DISCOVERED = android.nfc.NfcAdapter.ACTION_TAG_DISCOVERED;

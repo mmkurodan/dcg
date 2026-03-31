@@ -91,15 +91,15 @@ public final class MediaMetadataRetriever {
         ((android.media.MediaMetadataRetriever) real).release();
     }
 
-    public void setDataSource(java.lang.String arg0) throws java.lang.IllegalArgumentException {
-        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0);
-    }
-
     public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.lang.IllegalArgumentException {
         ((android.media.MediaMetadataRetriever) real).setDataSource(arg0 == null ? null : arg0.getReal());
     }
 
     public void setDataSource(java.io.FileDescriptor arg0) throws java.lang.IllegalArgumentException {
+        ((android.media.MediaMetadataRetriever) real).setDataSource(arg0);
+    }
+
+    public void setDataSource(java.lang.String arg0) throws java.lang.IllegalArgumentException {
         ((android.media.MediaMetadataRetriever) real).setDataSource(arg0);
     }
 

@@ -147,11 +147,11 @@ public final class MediaCodec {
         ((android.media.MediaCodec) real).release();
     }
 
-    public void releaseOutputBuffer(int arg0, boolean arg1) {
+    public void releaseOutputBuffer(int arg0, long arg1) {
         ((android.media.MediaCodec) real).releaseOutputBuffer(arg0, arg1);
     }
 
-    public void releaseOutputBuffer(int arg0, long arg1) {
+    public void releaseOutputBuffer(int arg0, boolean arg1) {
         ((android.media.MediaCodec) real).releaseOutputBuffer(arg0, arg1);
     }
 
@@ -300,6 +300,10 @@ public final class MediaCodec {
 
         public void onInputBufferAvailable(com.micklab.dcg.wrapper.android.media.MediaCodec arg0, int arg1) {
             ((android.media.MediaCodec.Callback) real).onInputBufferAvailable(arg0 == null ? null : arg0.getReal(), arg1);
+        }
+
+        public void onMetricsFlushed(com.micklab.dcg.wrapper.android.media.MediaCodec arg0, com.micklab.dcg.wrapper.android.os.PersistableBundle arg1) {
+            ((android.media.MediaCodec.Callback) real).onMetricsFlushed(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onOutputBufferAvailable(com.micklab.dcg.wrapper.android.media.MediaCodec arg0, int arg1, com.micklab.dcg.wrapper.android.media.MediaCodec.BufferInfo arg2) {

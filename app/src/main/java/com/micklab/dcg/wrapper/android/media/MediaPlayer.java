@@ -35,11 +35,11 @@ public final class MediaPlayer {
         ((android.media.MediaPlayer) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void addTimedTextSource(java.io.FileDescriptor arg0, java.lang.String arg1) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException {
+    public void addTimedTextSource(java.lang.String arg0, java.lang.String arg1) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
         ((android.media.MediaPlayer) real).addTimedTextSource(arg0, arg1);
     }
 
-    public void addTimedTextSource(java.lang.String arg0, java.lang.String arg1) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
+    public void addTimedTextSource(java.io.FileDescriptor arg0, java.lang.String arg1) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException {
         ((android.media.MediaPlayer) real).addTimedTextSource(arg0, arg1);
     }
 
@@ -63,12 +63,12 @@ public final class MediaPlayer {
         ((android.media.MediaPlayer) real).clearOnSubtitleDataListener();
     }
 
-    public static com.micklab.dcg.wrapper.android.media.MediaPlayer create(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.media.MediaPlayer.wrap(android.media.MediaPlayer.create(arg0 == null ? null : arg0.getReal(), arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.media.MediaPlayer create(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
         return com.micklab.dcg.wrapper.android.media.MediaPlayer.wrap(android.media.MediaPlayer.create(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.media.MediaPlayer create(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1) {
+        return com.micklab.dcg.wrapper.android.media.MediaPlayer.wrap(android.media.MediaPlayer.create(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaPlayer create(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, com.micklab.dcg.wrapper.android.view.SurfaceHolder arg2) {
@@ -227,7 +227,7 @@ public final class MediaPlayer {
         ((android.media.MediaPlayer) real).setAuxEffectSendLevel(arg0);
     }
 
-    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException {
+    public void setDataSource(com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg0) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
         ((android.media.MediaPlayer) real).setDataSource(arg0 == null ? null : arg0.getReal());
     }
 
@@ -235,7 +235,7 @@ public final class MediaPlayer {
         ((android.media.MediaPlayer) real).setDataSource(arg0);
     }
 
-    public void setDataSource(com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg0) throws java.io.IOException, java.lang.IllegalArgumentException, java.lang.IllegalStateException {
+    public void setDataSource(com.micklab.dcg.wrapper.android.media.MediaDataSource arg0) throws java.lang.IllegalArgumentException, java.lang.IllegalStateException {
         ((android.media.MediaPlayer) real).setDataSource(arg0 == null ? null : arg0.getReal());
     }
 

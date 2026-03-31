@@ -35,15 +35,15 @@ public final class DateFormatSymbols {
         this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    public DateFormatSymbols(java.lang.Class arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(java.lang.Class arg0, java.util.Locale arg1) {
         this(new android.icu.text.DateFormatSymbols(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public DateFormatSymbols(java.lang.Class arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+    public DateFormatSymbols(java.util.ResourceBundle arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -51,8 +51,8 @@ public final class DateFormatSymbols {
         this(new android.icu.text.DateFormatSymbols(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public DateFormatSymbols(java.util.ResourceBundle arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.DateFormatSymbols(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.text.DateFormatSymbols(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public DateFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, java.util.Locale arg1) {
@@ -87,12 +87,12 @@ public final class DateFormatSymbols {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols.wrap(android.icu.text.DateFormatSymbols.getInstance(arg0));
     }
 
     public java.lang.String getLocalPatternChars() {

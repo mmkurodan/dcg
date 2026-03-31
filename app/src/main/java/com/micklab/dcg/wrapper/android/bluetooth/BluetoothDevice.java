@@ -59,6 +59,10 @@ public final class BluetoothDevice {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.bluetooth.BluetoothDevice#createRfcommSocketToServiceRecord(java.util.UUID)");
     }
 
+    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocket createUsingSocketSettings(com.micklab.dcg.wrapper.android.bluetooth.BluetoothSocketSettings arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.bluetooth.BluetoothDevice#createUsingSocketSettings(android.bluetooth.BluetoothSocketSettings)");
+    }
+
     public int describeContents() {
         return ((android.bluetooth.BluetoothDevice) real).describeContents();
     }
@@ -89,6 +93,10 @@ public final class BluetoothDevice {
 
     public int getBondState() {
         return ((android.bluetooth.BluetoothDevice) real).getBondState();
+    }
+
+    public com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.BluetoothAddress getIdentityAddressWithType() {
+        return com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.BluetoothAddress.wrap(((android.bluetooth.BluetoothDevice) real).getIdentityAddressWithType());
     }
 
     public java.lang.String getName() {
@@ -133,7 +141,9 @@ public final class BluetoothDevice {
     public static final java.lang.String ACTION_ALIAS_CHANGED = android.bluetooth.BluetoothDevice.ACTION_ALIAS_CHANGED;
     public static final java.lang.String ACTION_BOND_STATE_CHANGED = android.bluetooth.BluetoothDevice.ACTION_BOND_STATE_CHANGED;
     public static final java.lang.String ACTION_CLASS_CHANGED = android.bluetooth.BluetoothDevice.ACTION_CLASS_CHANGED;
+    public static final java.lang.String ACTION_ENCRYPTION_CHANGE = android.bluetooth.BluetoothDevice.ACTION_ENCRYPTION_CHANGE;
     public static final java.lang.String ACTION_FOUND = android.bluetooth.BluetoothDevice.ACTION_FOUND;
+    public static final java.lang.String ACTION_KEY_MISSING = android.bluetooth.BluetoothDevice.ACTION_KEY_MISSING;
     public static final java.lang.String ACTION_NAME_CHANGED = android.bluetooth.BluetoothDevice.ACTION_NAME_CHANGED;
     public static final java.lang.String ACTION_PAIRING_REQUEST = android.bluetooth.BluetoothDevice.ACTION_PAIRING_REQUEST;
     public static final java.lang.String ACTION_UUID = android.bluetooth.BluetoothDevice.ACTION_UUID;
@@ -148,11 +158,18 @@ public final class BluetoothDevice {
     public static final int DEVICE_TYPE_DUAL = android.bluetooth.BluetoothDevice.DEVICE_TYPE_DUAL;
     public static final int DEVICE_TYPE_LE = android.bluetooth.BluetoothDevice.DEVICE_TYPE_LE;
     public static final int DEVICE_TYPE_UNKNOWN = android.bluetooth.BluetoothDevice.DEVICE_TYPE_UNKNOWN;
+    public static final int ENCRYPTION_ALGORITHM_AES = android.bluetooth.BluetoothDevice.ENCRYPTION_ALGORITHM_AES;
+    public static final int ENCRYPTION_ALGORITHM_E0 = android.bluetooth.BluetoothDevice.ENCRYPTION_ALGORITHM_E0;
+    public static final int ENCRYPTION_ALGORITHM_NONE = android.bluetooth.BluetoothDevice.ENCRYPTION_ALGORITHM_NONE;
     public static final int ERROR = android.bluetooth.BluetoothDevice.ERROR;
     public static final java.lang.String EXTRA_BOND_STATE = android.bluetooth.BluetoothDevice.EXTRA_BOND_STATE;
     public static final java.lang.String EXTRA_CLASS = android.bluetooth.BluetoothDevice.EXTRA_CLASS;
     public static final java.lang.String EXTRA_DEVICE = android.bluetooth.BluetoothDevice.EXTRA_DEVICE;
+    public static final java.lang.String EXTRA_ENCRYPTION_ALGORITHM = android.bluetooth.BluetoothDevice.EXTRA_ENCRYPTION_ALGORITHM;
+    public static final java.lang.String EXTRA_ENCRYPTION_ENABLED = android.bluetooth.BluetoothDevice.EXTRA_ENCRYPTION_ENABLED;
+    public static final java.lang.String EXTRA_ENCRYPTION_STATUS = android.bluetooth.BluetoothDevice.EXTRA_ENCRYPTION_STATUS;
     public static final java.lang.String EXTRA_IS_COORDINATED_SET_MEMBER = android.bluetooth.BluetoothDevice.EXTRA_IS_COORDINATED_SET_MEMBER;
+    public static final java.lang.String EXTRA_KEY_SIZE = android.bluetooth.BluetoothDevice.EXTRA_KEY_SIZE;
     public static final java.lang.String EXTRA_NAME = android.bluetooth.BluetoothDevice.EXTRA_NAME;
     public static final java.lang.String EXTRA_PAIRING_KEY = android.bluetooth.BluetoothDevice.EXTRA_PAIRING_KEY;
     public static final java.lang.String EXTRA_PAIRING_VARIANT = android.bluetooth.BluetoothDevice.EXTRA_PAIRING_VARIANT;
@@ -175,4 +192,48 @@ public final class BluetoothDevice {
     public static final int TRANSPORT_BREDR = android.bluetooth.BluetoothDevice.TRANSPORT_BREDR;
     public static final int TRANSPORT_LE = android.bluetooth.BluetoothDevice.TRANSPORT_LE;
 
+    public static final class BluetoothAddress {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private BluetoothAddress(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.BluetoothAddress wrap(android.bluetooth.BluetoothDevice.BluetoothAddress real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.bluetooth.BluetoothDevice.BluetoothAddress(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.bluetooth.BluetoothDevice.BluetoothAddress getReal() {
+            return (android.bluetooth.BluetoothDevice.BluetoothAddress) real;
+        }
+
+        public android.bluetooth.BluetoothDevice.BluetoothAddress unwrap() {
+            return getReal();
+        }
+
+        public BluetoothAddress(java.lang.String arg0, int arg1) {
+            this(new android.bluetooth.BluetoothDevice.BluetoothAddress(arg0, arg1), (__DcgwBridgeToken) null);
+        }
+
+        public int describeContents() {
+            return ((android.bluetooth.BluetoothDevice.BluetoothAddress) real).describeContents();
+        }
+
+        public java.lang.String getAddress() {
+            return ((android.bluetooth.BluetoothDevice.BluetoothAddress) real).getAddress();
+        }
+
+        public int getAddressType() {
+            return ((android.bluetooth.BluetoothDevice.BluetoothAddress) real).getAddressType();
+        }
+
+        public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
+            ((android.bluetooth.BluetoothDevice.BluetoothAddress) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
+        }
+
+
+    }
 }

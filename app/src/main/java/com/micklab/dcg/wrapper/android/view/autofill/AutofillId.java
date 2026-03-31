@@ -35,8 +35,28 @@ public final class AutofillId {
         return ((android.view.autofill.AutofillId) real).equals(arg0);
     }
 
+    public int getAutofillVirtualId() {
+        return ((android.view.autofill.AutofillId) real).getAutofillVirtualId();
+    }
+
+    public int getSessionId() {
+        return ((android.view.autofill.AutofillId) real).getSessionId();
+    }
+
+    public int getViewId() {
+        return ((android.view.autofill.AutofillId) real).getViewId();
+    }
+
     public int hashCode() {
         return ((android.view.autofill.AutofillId) real).hashCode();
+    }
+
+    public boolean isInAutofillSession() {
+        return ((android.view.autofill.AutofillId) real).isInAutofillSession();
+    }
+
+    public boolean isVirtual() {
+        return ((android.view.autofill.AutofillId) real).isVirtual();
     }
 
     public java.lang.String toString() {

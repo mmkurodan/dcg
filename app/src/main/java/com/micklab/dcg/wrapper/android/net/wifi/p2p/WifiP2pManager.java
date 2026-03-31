@@ -75,6 +75,10 @@ public final class WifiP2pManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#discoverServices(android.net.wifi.p2p.WifiP2pManager$Channel,android.net.wifi.p2p.WifiP2pManager$ActionListener)");
     }
 
+    public void discoverUsdBasedServices(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pUsdBasedServiceDiscoveryConfig arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener arg2) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#discoverUsdBasedServices(android.net.wifi.p2p.WifiP2pManager$Channel,android.net.wifi.p2p.WifiP2pUsdBasedServiceDiscoveryConfig,android.net.wifi.p2p.WifiP2pManager$ActionListener)");
+    }
+
     public static int getP2pMaxAllowedVendorElementsLengthBytes() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#getP2pMaxAllowedVendorElementsLengthBytes()");
     }
@@ -95,8 +99,16 @@ public final class WifiP2pManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#isGroupOwnerIPv6LinkLocalAddressProvided()");
     }
 
+    public boolean isPccModeSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#isPccModeSupported()");
+    }
+
     public boolean isSetVendorElementsSupported() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#isSetVendorElementsSupported()");
+    }
+
+    public boolean isWiFiDirectR2Supported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#isWiFiDirectR2Supported()");
     }
 
     public void registerWifiP2pListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.WifiP2pListener arg1) {
@@ -181,6 +193,10 @@ public final class WifiP2pManager {
 
     public void startPeerDiscovery(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDiscoveryConfig arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener arg2) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#startPeerDiscovery(android.net.wifi.p2p.WifiP2pManager$Channel,android.net.wifi.p2p.WifiP2pDiscoveryConfig,android.net.wifi.p2p.WifiP2pManager$ActionListener)");
+    }
+
+    public void startUsdBasedLocalServiceAdvertisement(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pServiceInfo arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pUsdBasedLocalServiceAdvertisementConfig arg2, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener arg3) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager#startUsdBasedLocalServiceAdvertisement(android.net.wifi.p2p.WifiP2pManager$Channel,android.net.wifi.p2p.nsd.WifiP2pServiceInfo,android.net.wifi.p2p.WifiP2pUsdBasedLocalServiceAdvertisementConfig,android.net.wifi.p2p.WifiP2pManager$ActionListener)");
     }
 
     public void stopListening(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.Channel arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pManager.ActionListener arg1) {
@@ -584,6 +600,10 @@ public final class WifiP2pManager {
 
         public void onServiceAvailable(int arg0, byte[] arg1, com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg2) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager$ServiceResponseListener#onServiceAvailable(int,[B,android.net.wifi.p2p.WifiP2pDevice)");
+        }
+
+        public void onUsdBasedServiceAvailable(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pDevice arg0, com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pUsdBasedServiceResponse arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pManager$ServiceResponseListener#onUsdBasedServiceAvailable(android.net.wifi.p2p.WifiP2pDevice,android.net.wifi.p2p.nsd.WifiP2pUsdBasedServiceResponse)");
         }
 
     }

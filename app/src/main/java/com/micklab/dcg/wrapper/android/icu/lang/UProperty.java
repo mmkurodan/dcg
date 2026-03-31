@@ -74,6 +74,9 @@ public final class UProperty {
     public static final int IDEOGRAPHIC = android.icu.lang.UProperty.IDEOGRAPHIC;
     public static final int IDS_BINARY_OPERATOR = android.icu.lang.UProperty.IDS_BINARY_OPERATOR;
     public static final int IDS_TRINARY_OPERATOR = android.icu.lang.UProperty.IDS_TRINARY_OPERATOR;
+    public static final int IDS_UNARY_OPERATOR = android.icu.lang.UProperty.IDS_UNARY_OPERATOR;
+    public static final int ID_COMPAT_MATH_CONTINUE = android.icu.lang.UProperty.ID_COMPAT_MATH_CONTINUE;
+    public static final int ID_COMPAT_MATH_START = android.icu.lang.UProperty.ID_COMPAT_MATH_START;
     public static final int ID_CONTINUE = android.icu.lang.UProperty.ID_CONTINUE;
     public static final int ID_START = android.icu.lang.UProperty.ID_START;
     public static final int INDIC_POSITIONAL_CATEGORY = android.icu.lang.UProperty.INDIC_POSITIONAL_CATEGORY;

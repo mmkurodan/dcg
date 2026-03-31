@@ -23,20 +23,20 @@ public final class ContentProviderResult {
         return getReal();
     }
 
-    public ContentProviderResult(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.content.ContentProviderResult(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public ContentProviderResult(java.lang.Throwable arg0) {
         this(new android.content.ContentProviderResult(arg0), (__DcgwBridgeToken) null);
     }
 
-    public ContentProviderResult(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
+    public ContentProviderResult(int arg0) {
+        this(new android.content.ContentProviderResult(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public ContentProviderResult(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.content.ContentProviderResult(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public ContentProviderResult(int arg0) {
-        this(new android.content.ContentProviderResult(arg0), (__DcgwBridgeToken) null);
+    public ContentProviderResult(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
+        this(new android.content.ContentProviderResult(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ContentProviderResult(com.micklab.dcg.wrapper.android.net.Uri arg0) {

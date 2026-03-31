@@ -23,19 +23,19 @@ public final class CurrencyAmount {
         return getReal();
     }
 
-    public CurrencyAmount(double arg0, java.util.Currency arg1) {
-        this(new android.icu.util.CurrencyAmount(arg0, arg1), (__DcgwBridgeToken) null);
-    }
-
     public CurrencyAmount(java.lang.Number arg0, java.util.Currency arg1) {
         this(new android.icu.util.CurrencyAmount(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public CurrencyAmount(double arg0, com.micklab.dcg.wrapper.android.icu.util.Currency arg1) {
+    public CurrencyAmount(java.lang.Number arg0, com.micklab.dcg.wrapper.android.icu.util.Currency arg1) {
         this(new android.icu.util.CurrencyAmount(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public CurrencyAmount(java.lang.Number arg0, com.micklab.dcg.wrapper.android.icu.util.Currency arg1) {
+    public CurrencyAmount(double arg0, java.util.Currency arg1) {
+        this(new android.icu.util.CurrencyAmount(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public CurrencyAmount(double arg0, com.micklab.dcg.wrapper.android.icu.util.Currency arg1) {
         this(new android.icu.util.CurrencyAmount(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 

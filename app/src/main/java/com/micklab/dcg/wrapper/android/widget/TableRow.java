@@ -77,6 +77,10 @@ public final class TableRow {
             this(new android.widget.TableRow.LayoutParams(), (__DcgwBridgeToken) null);
         }
 
+        public LayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
+            this(new android.widget.TableRow.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
         public LayoutParams(int arg0) {
             this(new android.widget.TableRow.LayoutParams(arg0), (__DcgwBridgeToken) null);
         }
@@ -85,16 +89,12 @@ public final class TableRow {
             this(new android.widget.TableRow.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
-            this(new android.widget.TableRow.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        public LayoutParams(int arg0, int arg1) {
+            this(new android.widget.TableRow.LayoutParams(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
             this(new android.widget.TableRow.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-        }
-
-        public LayoutParams(int arg0, int arg1) {
-            this(new android.widget.TableRow.LayoutParams(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, float arg2) {

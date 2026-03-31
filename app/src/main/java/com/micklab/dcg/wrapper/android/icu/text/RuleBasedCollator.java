@@ -47,16 +47,16 @@ public final class RuleBasedCollator {
         return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(((android.icu.text.RuleBasedCollator) real).freeze());
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(java.text.CharacterIterator arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0));
+    public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(com.micklab.dcg.wrapper.android.icu.text.UCharacterIterator arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0 == null ? null : arg0.getReal()));
+    public com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator getCollationElementIterator(java.text.CharacterIterator arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.CollationElementIterator.wrap(((android.icu.text.RuleBasedCollator) real).getCollationElementIterator(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationKey getCollationKey(java.lang.String arg0) {

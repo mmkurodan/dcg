@@ -27,12 +27,12 @@ public final class CurrencyPluralInfo {
         this(new android.icu.text.CurrencyPluralInfo(), (__DcgwBridgeToken) null);
     }
 
-    public CurrencyPluralInfo(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.CurrencyPluralInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public CurrencyPluralInfo(java.util.Locale arg0) {
         this(new android.icu.text.CurrencyPluralInfo(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public CurrencyPluralInfo(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.text.CurrencyPluralInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {
@@ -51,12 +51,12 @@ public final class CurrencyPluralInfo {
         return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.CurrencyPluralInfo.wrap(android.icu.text.CurrencyPluralInfo.getInstance(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getLocale() {

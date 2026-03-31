@@ -77,6 +77,7 @@ public final class AppWidgetProviderInfo {
     public static final int RESIZE_VERTICAL = android.appwidget.AppWidgetProviderInfo.RESIZE_VERTICAL;
     public static final int WIDGET_CATEGORY_HOME_SCREEN = android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_HOME_SCREEN;
     public static final int WIDGET_CATEGORY_KEYGUARD = android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_KEYGUARD;
+    public static final int WIDGET_CATEGORY_NOT_KEYGUARD = android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_NOT_KEYGUARD;
     public static final int WIDGET_CATEGORY_SEARCHBOX = android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_SEARCHBOX;
     public static final int WIDGET_FEATURE_CONFIGURATION_OPTIONAL = android.appwidget.AppWidgetProviderInfo.WIDGET_FEATURE_CONFIGURATION_OPTIONAL;
     public static final int WIDGET_FEATURE_HIDE_FROM_PICKER = android.appwidget.AppWidgetProviderInfo.WIDGET_FEATURE_HIDE_FROM_PICKER;

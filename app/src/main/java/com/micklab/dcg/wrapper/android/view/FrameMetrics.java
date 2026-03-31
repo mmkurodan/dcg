@@ -36,6 +36,7 @@ public final class FrameMetrics {
     public static final int DEADLINE = android.view.FrameMetrics.DEADLINE;
     public static final int DRAW_DURATION = android.view.FrameMetrics.DRAW_DURATION;
     public static final int FIRST_DRAW_FRAME = android.view.FrameMetrics.FIRST_DRAW_FRAME;
+    public static final int FRAME_TIMELINE_VSYNC_ID = android.view.FrameMetrics.FRAME_TIMELINE_VSYNC_ID;
     public static final int GPU_DURATION = android.view.FrameMetrics.GPU_DURATION;
     public static final int INPUT_HANDLING_DURATION = android.view.FrameMetrics.INPUT_HANDLING_DURATION;
     public static final int INTENDED_VSYNC_TIMESTAMP = android.view.FrameMetrics.INTENDED_VSYNC_TIMESTAMP;

@@ -59,6 +59,10 @@ public final class CustomAudience {
         return ((android.adservices.customaudience.CustomAudience) real).getName();
     }
 
+    public double getPriority() {
+        return ((android.adservices.customaudience.CustomAudience) real).getPriority();
+    }
+
     public com.micklab.dcg.wrapper.android.adservices.customaudience.TrustedBiddingData getTrustedBiddingData() {
         return com.micklab.dcg.wrapper.android.adservices.customaudience.TrustedBiddingData.wrap(((android.adservices.customaudience.CustomAudience) real).getTrustedBiddingData());
     }
@@ -137,6 +141,10 @@ public final class CustomAudience {
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.Builder setName(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.Builder.wrap(((android.adservices.customaudience.CustomAudience.Builder) real).setName(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.Builder setPriority(double arg0) {
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.Builder.wrap(((android.adservices.customaudience.CustomAudience.Builder) real).setPriority(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.CustomAudience.Builder setTrustedBiddingData(com.micklab.dcg.wrapper.android.adservices.customaudience.TrustedBiddingData arg0) {

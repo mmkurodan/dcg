@@ -23,12 +23,12 @@ public final class StructCmsghdr {
         return getReal();
     }
 
-    public StructCmsghdr(int arg0, int arg1, short arg2) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.system.StructCmsghdr#android.system.StructCmsghdr(int,int,short)");
-    }
-
     public StructCmsghdr(int arg0, int arg1, byte[] arg2) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.system.StructCmsghdr#android.system.StructCmsghdr(int,int,[B)");
+    }
+
+    public StructCmsghdr(int arg0, int arg1, short arg2) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.system.StructCmsghdr#android.system.StructCmsghdr(int,int,short)");
     }
 
 

@@ -75,6 +75,14 @@ public final class ScanResult {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.ScanResult#isPasspointNetwork()");
     }
 
+    public boolean isRangingFrameProtectionRequired() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.ScanResult#isRangingFrameProtectionRequired()");
+    }
+
+    public boolean isSecureHeLtfSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.ScanResult#isSecureHeLtfSupported()");
+    }
+
     public boolean isTwtResponder() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.ScanResult#isTwtResponder()");
     }

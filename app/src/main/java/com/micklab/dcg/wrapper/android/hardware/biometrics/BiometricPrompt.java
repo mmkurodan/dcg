@@ -82,8 +82,10 @@ public final class BiometricPrompt {
     public static final int BIOMETRIC_ERROR_CANCELED = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_CANCELED;
     public static final int BIOMETRIC_ERROR_HW_NOT_PRESENT = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_HW_NOT_PRESENT;
     public static final int BIOMETRIC_ERROR_HW_UNAVAILABLE = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_HW_UNAVAILABLE;
+    public static final int BIOMETRIC_ERROR_IDENTITY_CHECK_NOT_ACTIVE = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_IDENTITY_CHECK_NOT_ACTIVE;
     public static final int BIOMETRIC_ERROR_LOCKOUT = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_LOCKOUT;
     public static final int BIOMETRIC_ERROR_LOCKOUT_PERMANENT = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_LOCKOUT_PERMANENT;
+    public static final int BIOMETRIC_ERROR_NOT_ENABLED_FOR_APPS = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_NOT_ENABLED_FOR_APPS;
     public static final int BIOMETRIC_ERROR_NO_BIOMETRICS = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_NO_BIOMETRICS;
     public static final int BIOMETRIC_ERROR_NO_DEVICE_CREDENTIAL = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_NO_DEVICE_CREDENTIAL;
     public static final int BIOMETRIC_ERROR_NO_SPACE = android.hardware.biometrics.BiometricPrompt.BIOMETRIC_ERROR_NO_SPACE;
@@ -265,15 +267,7 @@ public final class BiometricPrompt {
             this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
-        public CryptoObject(com.micklab.dcg.wrapper.android.security.identity.PresentationSession arg0) {
-            this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-        }
-
-        public CryptoObject(com.micklab.dcg.wrapper.android.security.identity.IdentityCredential arg0) {
-            this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-        }
-
-        public CryptoObject(java.security.Signature arg0) {
+        public CryptoObject(javax.crypto.Mac arg0) {
             this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
@@ -281,7 +275,15 @@ public final class BiometricPrompt {
             this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 
-        public CryptoObject(javax.crypto.Mac arg0) {
+        public CryptoObject(com.micklab.dcg.wrapper.android.security.identity.IdentityCredential arg0) {
+            this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public CryptoObject(com.micklab.dcg.wrapper.android.security.identity.PresentationSession arg0) {
+            this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public CryptoObject(java.security.Signature arg0) {
             this(new android.hardware.biometrics.BiometricPrompt.CryptoObject(arg0), (__DcgwBridgeToken) null);
         }
 

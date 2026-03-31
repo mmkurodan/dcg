@@ -115,20 +115,20 @@ public final class PendingIntent {
         ((android.app.PendingIntent) real).send();
     }
 
-    public void send(int arg0) throws android.app.PendingIntent.CanceledException {
-        ((android.app.PendingIntent) real).send(arg0);
-    }
-
     public void send(com.micklab.dcg.wrapper.android.os.Bundle arg0) throws android.app.PendingIntent.CanceledException {
         ((android.app.PendingIntent) real).send(arg0 == null ? null : arg0.getReal());
     }
 
-    public void send(int arg0, com.micklab.dcg.wrapper.android.app.PendingIntent.OnFinished arg1, com.micklab.dcg.wrapper.android.os.Handler arg2) throws android.app.PendingIntent.CanceledException {
-        ((android.app.PendingIntent) real).send(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+    public void send(int arg0) throws android.app.PendingIntent.CanceledException {
+        ((android.app.PendingIntent) real).send(arg0);
     }
 
     public void send(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, com.micklab.dcg.wrapper.android.content.Intent arg2) throws android.app.PendingIntent.CanceledException {
         ((android.app.PendingIntent) real).send(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal());
+    }
+
+    public void send(int arg0, com.micklab.dcg.wrapper.android.app.PendingIntent.OnFinished arg1, com.micklab.dcg.wrapper.android.os.Handler arg2) throws android.app.PendingIntent.CanceledException {
+        ((android.app.PendingIntent) real).send(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
     public void send(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, com.micklab.dcg.wrapper.android.content.Intent arg2, com.micklab.dcg.wrapper.android.app.PendingIntent.OnFinished arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) throws android.app.PendingIntent.CanceledException {
@@ -189,11 +189,11 @@ public final class PendingIntent {
             this(new android.app.PendingIntent.CanceledException(), (__DcgwBridgeToken) null);
         }
 
-        public CanceledException(java.lang.String arg0) {
+        public CanceledException(java.lang.Exception arg0) {
             this(new android.app.PendingIntent.CanceledException(arg0), (__DcgwBridgeToken) null);
         }
 
-        public CanceledException(java.lang.Exception arg0) {
+        public CanceledException(java.lang.String arg0) {
             this(new android.app.PendingIntent.CanceledException(arg0), (__DcgwBridgeToken) null);
         }
 

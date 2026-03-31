@@ -23,6 +23,10 @@ public final class WebTriggerInput {
         return getReal();
     }
 
+    public WebTriggerInput(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1, byte[] arg2) {
+        this(new android.adservices.ondevicepersonalization.WebTriggerInput(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
+    }
+
     public boolean equals(java.lang.Object arg0) {
         return ((android.adservices.ondevicepersonalization.WebTriggerInput) real).equals(arg0);
     }

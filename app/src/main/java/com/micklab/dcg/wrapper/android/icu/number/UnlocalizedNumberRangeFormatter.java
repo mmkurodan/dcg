@@ -23,12 +23,12 @@ public final class UnlocalizedNumberRangeFormatter {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter locale(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(((android.icu.number.UnlocalizedNumberRangeFormatter) real).locale(arg0));
-    }
-
     public com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter locale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(((android.icu.number.UnlocalizedNumberRangeFormatter) real).locale(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter locale(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(((android.icu.number.UnlocalizedNumberRangeFormatter) real).locale(arg0));
     }
 
 }

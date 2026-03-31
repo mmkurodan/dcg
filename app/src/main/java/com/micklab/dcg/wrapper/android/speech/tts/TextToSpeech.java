@@ -35,11 +35,11 @@ public final class TextToSpeech {
         return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public int addEarcon(java.lang.String arg0, java.lang.String arg1) {
+    public int addEarcon(java.lang.String arg0, java.io.File arg1) {
         return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1);
     }
 
-    public int addEarcon(java.lang.String arg0, java.io.File arg1) {
+    public int addEarcon(java.lang.String arg0, java.lang.String arg1) {
         return ((android.speech.tts.TextToSpeech) real).addEarcon(arg0, arg1);
     }
 
@@ -59,11 +59,11 @@ public final class TextToSpeech {
         return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public int addSpeech(java.lang.String arg0, java.lang.String arg1, int arg2) {
+    public int addSpeech(java.lang.CharSequence arg0, java.lang.String arg1, int arg2) {
         return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1, arg2);
     }
 
-    public int addSpeech(java.lang.CharSequence arg0, java.lang.String arg1, int arg2) {
+    public int addSpeech(java.lang.String arg0, java.lang.String arg1, int arg2) {
         return ((android.speech.tts.TextToSpeech) real).addSpeech(arg0, arg1, arg2);
     }
 

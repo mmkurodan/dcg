@@ -259,6 +259,9 @@ public final class ViewStructure {
         ((android.view.ViewStructure) real).setWebDomain(arg0);
     }
 
+    public static final java.lang.String EXTRA_VIRTUAL_STRUCTURE_TYPE = android.view.ViewStructure.EXTRA_VIRTUAL_STRUCTURE_TYPE;
+    public static final java.lang.String EXTRA_VIRTUAL_STRUCTURE_VERSION_NUMBER = android.view.ViewStructure.EXTRA_VIRTUAL_STRUCTURE_VERSION_NUMBER;
+
     public static final class HtmlInfo {
         private static final class __DcgwBridgeToken {
         }

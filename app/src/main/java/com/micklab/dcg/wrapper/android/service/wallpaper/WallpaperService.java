@@ -35,6 +35,10 @@ public final class WallpaperService {
         return ((android.service.wallpaper.WallpaperService) real).onCreateEngine();
     }
 
+    public android.service.wallpaper.WallpaperService.Engine onCreateEngine(com.micklab.dcg.wrapper.android.app.wallpaper.WallpaperDescription arg0) {
+        return ((android.service.wallpaper.WallpaperService) real).onCreateEngine(arg0 == null ? null : arg0.getReal());
+    }
+
     public void onDestroy() {
         ((android.service.wallpaper.WallpaperService) real).onDestroy();
     }

@@ -44,6 +44,7 @@ public final class ReportEventRequest {
     }
 
     public static final int FLAG_REPORTING_DESTINATION_BUYER = android.adservices.adselection.ReportEventRequest.FLAG_REPORTING_DESTINATION_BUYER;
+    public static final int FLAG_REPORTING_DESTINATION_COMPONENT_SELLER = android.adservices.adselection.ReportEventRequest.FLAG_REPORTING_DESTINATION_COMPONENT_SELLER;
     public static final int FLAG_REPORTING_DESTINATION_SELLER = android.adservices.adselection.ReportEventRequest.FLAG_REPORTING_DESTINATION_SELLER;
 
     public static final class Builder {

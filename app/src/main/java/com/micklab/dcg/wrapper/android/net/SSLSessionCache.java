@@ -23,12 +23,12 @@ public final class SSLSessionCache {
         return getReal();
     }
 
-    public SSLSessionCache(java.io.File arg0) throws java.io.IOException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLSessionCache#android.net.SSLSessionCache(java.io.File)");
-    }
-
     public SSLSessionCache(com.micklab.dcg.wrapper.android.content.Context arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLSessionCache#android.net.SSLSessionCache(android.content.Context)");
+    }
+
+    public SSLSessionCache(java.io.File arg0) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLSessionCache#android.net.SSLSessionCache(java.io.File)");
     }
 
 }

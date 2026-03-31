@@ -23,15 +23,15 @@ public final class AlphabeticIndex {
         return getReal();
     }
 
-    public AlphabeticIndex(com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator arg0) {
-        this(new android.icu.text.AlphabeticIndex(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public AlphabeticIndex(java.util.Locale arg0) {
         this(new android.icu.text.AlphabeticIndex(arg0), (__DcgwBridgeToken) null);
     }
 
     public AlphabeticIndex(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.text.AlphabeticIndex(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public AlphabeticIndex(com.micklab.dcg.wrapper.android.icu.text.RuleBasedCollator arg0) {
         this(new android.icu.text.AlphabeticIndex(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 

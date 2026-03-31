@@ -64,6 +64,7 @@ public final class BluetoothSocket {
     }
 
     public static final int TYPE_L2CAP = android.bluetooth.BluetoothSocket.TYPE_L2CAP;
+    public static final int TYPE_LE = android.bluetooth.BluetoothSocket.TYPE_LE;
     public static final int TYPE_RFCOMM = android.bluetooth.BluetoothSocket.TYPE_RFCOMM;
     public static final int TYPE_SCO = android.bluetooth.BluetoothSocket.TYPE_SCO;
 

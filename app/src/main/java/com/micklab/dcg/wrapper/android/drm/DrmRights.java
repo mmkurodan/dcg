@@ -23,16 +23,16 @@ public final class DrmRights {
         return getReal();
     }
 
-    public DrmRights(com.micklab.dcg.wrapper.android.drm.ProcessedData arg0, java.lang.String arg1) {
-        this(new android.drm.DrmRights(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    public DrmRights(java.lang.String arg0, java.lang.String arg1) {
+        this(new android.drm.DrmRights(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public DrmRights(java.io.File arg0, java.lang.String arg1) {
         this(new android.drm.DrmRights(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public DrmRights(java.lang.String arg0, java.lang.String arg1) {
-        this(new android.drm.DrmRights(arg0, arg1), (__DcgwBridgeToken) null);
+    public DrmRights(com.micklab.dcg.wrapper.android.drm.ProcessedData arg0, java.lang.String arg1) {
+        this(new android.drm.DrmRights(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public DrmRights(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {

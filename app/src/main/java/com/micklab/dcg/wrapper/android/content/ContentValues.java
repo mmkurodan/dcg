@@ -27,12 +27,12 @@ public final class ContentValues {
         this(new android.content.ContentValues(), (__DcgwBridgeToken) null);
     }
 
-    public ContentValues(com.micklab.dcg.wrapper.android.content.ContentValues arg0) {
-        this(new android.content.ContentValues(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public ContentValues(int arg0) {
         this(new android.content.ContentValues(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public ContentValues(com.micklab.dcg.wrapper.android.content.ContentValues arg0) {
+        this(new android.content.ContentValues(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void clear() {
@@ -99,7 +99,19 @@ public final class ContentValues {
         return ((android.content.ContentValues) real).isEmpty();
     }
 
+    public void put(java.lang.String arg0, java.lang.Integer arg1) {
+        ((android.content.ContentValues) real).put(arg0, arg1);
+    }
+
     public void put(java.lang.String arg0, java.lang.Float arg1) {
+        ((android.content.ContentValues) real).put(arg0, arg1);
+    }
+
+    public void put(java.lang.String arg0, java.lang.Long arg1) {
+        ((android.content.ContentValues) real).put(arg0, arg1);
+    }
+
+    public void put(java.lang.String arg0, java.lang.Boolean arg1) {
         ((android.content.ContentValues) real).put(arg0, arg1);
     }
 
@@ -107,7 +119,7 @@ public final class ContentValues {
         ((android.content.ContentValues) real).put(arg0, arg1);
     }
 
-    public void put(java.lang.String arg0, java.lang.Boolean arg1) {
+    public void put(java.lang.String arg0, java.lang.Byte arg1) {
         ((android.content.ContentValues) real).put(arg0, arg1);
     }
 
@@ -119,19 +131,7 @@ public final class ContentValues {
         ((android.content.ContentValues) real).put(arg0, arg1);
     }
 
-    public void put(java.lang.String arg0, java.lang.Byte arg1) {
-        ((android.content.ContentValues) real).put(arg0, arg1);
-    }
-
     public void put(java.lang.String arg0, java.lang.Short arg1) {
-        ((android.content.ContentValues) real).put(arg0, arg1);
-    }
-
-    public void put(java.lang.String arg0, java.lang.Integer arg1) {
-        ((android.content.ContentValues) real).put(arg0, arg1);
-    }
-
-    public void put(java.lang.String arg0, java.lang.Long arg1) {
         ((android.content.ContentValues) real).put(arg0, arg1);
     }
 

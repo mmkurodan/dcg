@@ -27,6 +27,10 @@ public final class ArrayAdapter {
         this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
+    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.lang.Object[] arg2) {
+        this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
+    }
+
     public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.util.List arg2) {
         this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
@@ -35,15 +39,11 @@ public final class ArrayAdapter {
         this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, java.lang.Object[] arg2) {
-        this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
-    }
-
-    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, int arg2, java.util.List arg3) {
+    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, int arg2, java.lang.Object[] arg3) {
         this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
-    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, int arg2, java.lang.Object[] arg3) {
+    public ArrayAdapter(com.micklab.dcg.wrapper.android.content.Context arg0, int arg1, int arg2, java.util.List arg3) {
         this(new android.widget.ArrayAdapter(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 

@@ -27,12 +27,12 @@ public final class ServiceState {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ServiceState#android.telephony.ServiceState()");
     }
 
-    public ServiceState(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ServiceState#android.telephony.ServiceState(android.os.Parcel)");
-    }
-
     public ServiceState(com.micklab.dcg.wrapper.android.telephony.ServiceState arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ServiceState#android.telephony.ServiceState(android.telephony.ServiceState)");
+    }
+
+    public ServiceState(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ServiceState#android.telephony.ServiceState(android.os.Parcel)");
     }
 
     public int describeContents() {

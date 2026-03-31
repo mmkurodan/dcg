@@ -27,7 +27,14 @@ public final class OnDevicePersonalizationException {
         return ((android.adservices.ondevicepersonalization.OnDevicePersonalizationException) real).getErrorCode();
     }
 
+    public static final int ERROR_INFERENCE_FAILED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_INFERENCE_FAILED;
+    public static final int ERROR_INFERENCE_MODEL_NOT_FOUND = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_INFERENCE_MODEL_NOT_FOUND;
+    public static final int ERROR_INVALID_TRAINING_MANIFEST = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_INVALID_TRAINING_MANIFEST;
     public static final int ERROR_ISOLATED_SERVICE_FAILED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_ISOLATED_SERVICE_FAILED;
+    public static final int ERROR_ISOLATED_SERVICE_LOADING_FAILED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_ISOLATED_SERVICE_LOADING_FAILED;
+    public static final int ERROR_ISOLATED_SERVICE_MANIFEST_PARSING_FAILED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_ISOLATED_SERVICE_MANIFEST_PARSING_FAILED;
+    public static final int ERROR_ISOLATED_SERVICE_TIMEOUT = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_ISOLATED_SERVICE_TIMEOUT;
     public static final int ERROR_PERSONALIZATION_DISABLED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_PERSONALIZATION_DISABLED;
+    public static final int ERROR_SCHEDULE_TRAINING_FAILED = android.adservices.ondevicepersonalization.OnDevicePersonalizationException.ERROR_SCHEDULE_TRAINING_FAILED;
 
 }

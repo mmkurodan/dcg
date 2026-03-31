@@ -23,12 +23,12 @@ public final class StyleSpan {
         return getReal();
     }
 
-    public StyleSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.text.style.StyleSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public StyleSpan(int arg0) {
         this(new android.text.style.StyleSpan(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public StyleSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+        this(new android.text.style.StyleSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public StyleSpan(int arg0, int arg1) {

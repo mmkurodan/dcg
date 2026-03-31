@@ -31,8 +31,20 @@ public final class ImageSpan {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
+    public ImageSpan(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, int arg1) {
+        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    }
+
+    public ImageSpan(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, int arg1) {
+        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    }
+
     public ImageSpan(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, java.lang.String arg1) {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    }
+
+    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
+        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
@@ -43,23 +55,11 @@ public final class ImageSpan {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
-    public ImageSpan(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, int arg1) {
-        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
-        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
-    public ImageSpan(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, int arg1) {
-        this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
     public ImageSpan(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, java.lang.String arg1, int arg2) {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2) {
+    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, int arg2) {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
@@ -67,7 +67,7 @@ public final class ImageSpan {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, int arg2) {
+    public ImageSpan(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, int arg2) {
         this(new android.text.style.ImageSpan(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 

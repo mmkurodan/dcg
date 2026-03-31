@@ -27,19 +27,19 @@ public final class ContextMenu {
         ((android.view.ContextMenu) real).clearHeader();
     }
 
-    public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderIcon(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderIcon(int arg0) {
         return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderIcon(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderTitle(int arg0) {
-        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderTitle(arg0));
+    public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderIcon(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderTitle(java.lang.CharSequence arg0) {
+        return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderTitle(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.view.ContextMenu setHeaderTitle(int arg0) {
         return com.micklab.dcg.wrapper.android.view.ContextMenu.wrap(((android.view.ContextMenu) real).setHeaderTitle(arg0));
     }
 

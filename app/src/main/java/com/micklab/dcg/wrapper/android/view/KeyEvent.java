@@ -372,6 +372,7 @@ public final class KeyEvent {
     public static final int KEYCODE_CHANNEL_DOWN = android.view.KeyEvent.KEYCODE_CHANNEL_DOWN;
     public static final int KEYCODE_CHANNEL_UP = android.view.KeyEvent.KEYCODE_CHANNEL_UP;
     public static final int KEYCODE_CLEAR = android.view.KeyEvent.KEYCODE_CLEAR;
+    public static final int KEYCODE_CLOSE = android.view.KeyEvent.KEYCODE_CLOSE;
     public static final int KEYCODE_COMMA = android.view.KeyEvent.KEYCODE_COMMA;
     public static final int KEYCODE_CONTACTS = android.view.KeyEvent.KEYCODE_CONTACTS;
     public static final int KEYCODE_COPY = android.view.KeyEvent.KEYCODE_COPY;
@@ -384,6 +385,8 @@ public final class KeyEvent {
     public static final int KEYCODE_DEMO_APP_2 = android.view.KeyEvent.KEYCODE_DEMO_APP_2;
     public static final int KEYCODE_DEMO_APP_3 = android.view.KeyEvent.KEYCODE_DEMO_APP_3;
     public static final int KEYCODE_DEMO_APP_4 = android.view.KeyEvent.KEYCODE_DEMO_APP_4;
+    public static final int KEYCODE_DICTATE = android.view.KeyEvent.KEYCODE_DICTATE;
+    public static final int KEYCODE_DO_NOT_DISTURB = android.view.KeyEvent.KEYCODE_DO_NOT_DISTURB;
     public static final int KEYCODE_DPAD_CENTER = android.view.KeyEvent.KEYCODE_DPAD_CENTER;
     public static final int KEYCODE_DPAD_DOWN = android.view.KeyEvent.KEYCODE_DPAD_DOWN;
     public static final int KEYCODE_DPAD_DOWN_LEFT = android.view.KeyEvent.KEYCODE_DPAD_DOWN_LEFT;
@@ -408,7 +411,19 @@ public final class KeyEvent {
     public static final int KEYCODE_F10 = android.view.KeyEvent.KEYCODE_F10;
     public static final int KEYCODE_F11 = android.view.KeyEvent.KEYCODE_F11;
     public static final int KEYCODE_F12 = android.view.KeyEvent.KEYCODE_F12;
+    public static final int KEYCODE_F13 = android.view.KeyEvent.KEYCODE_F13;
+    public static final int KEYCODE_F14 = android.view.KeyEvent.KEYCODE_F14;
+    public static final int KEYCODE_F15 = android.view.KeyEvent.KEYCODE_F15;
+    public static final int KEYCODE_F16 = android.view.KeyEvent.KEYCODE_F16;
+    public static final int KEYCODE_F17 = android.view.KeyEvent.KEYCODE_F17;
+    public static final int KEYCODE_F18 = android.view.KeyEvent.KEYCODE_F18;
+    public static final int KEYCODE_F19 = android.view.KeyEvent.KEYCODE_F19;
     public static final int KEYCODE_F2 = android.view.KeyEvent.KEYCODE_F2;
+    public static final int KEYCODE_F20 = android.view.KeyEvent.KEYCODE_F20;
+    public static final int KEYCODE_F21 = android.view.KeyEvent.KEYCODE_F21;
+    public static final int KEYCODE_F22 = android.view.KeyEvent.KEYCODE_F22;
+    public static final int KEYCODE_F23 = android.view.KeyEvent.KEYCODE_F23;
+    public static final int KEYCODE_F24 = android.view.KeyEvent.KEYCODE_F24;
     public static final int KEYCODE_F3 = android.view.KeyEvent.KEYCODE_F3;
     public static final int KEYCODE_F4 = android.view.KeyEvent.KEYCODE_F4;
     public static final int KEYCODE_F5 = android.view.KeyEvent.KEYCODE_F5;
@@ -423,6 +438,7 @@ public final class KeyEvent {
     public static final int KEYCODE_FOCUS = android.view.KeyEvent.KEYCODE_FOCUS;
     public static final int KEYCODE_FORWARD = android.view.KeyEvent.KEYCODE_FORWARD;
     public static final int KEYCODE_FORWARD_DEL = android.view.KeyEvent.KEYCODE_FORWARD_DEL;
+    public static final int KEYCODE_FULLSCREEN = android.view.KeyEvent.KEYCODE_FULLSCREEN;
     public static final int KEYCODE_FUNCTION = android.view.KeyEvent.KEYCODE_FUNCTION;
     public static final int KEYCODE_G = android.view.KeyEvent.KEYCODE_G;
     public static final int KEYCODE_GRAVE = android.view.KeyEvent.KEYCODE_GRAVE;
@@ -446,6 +462,7 @@ public final class KeyEvent {
     public static final int KEYCODE_LANGUAGE_SWITCH = android.view.KeyEvent.KEYCODE_LANGUAGE_SWITCH;
     public static final int KEYCODE_LAST_CHANNEL = android.view.KeyEvent.KEYCODE_LAST_CHANNEL;
     public static final int KEYCODE_LEFT_BRACKET = android.view.KeyEvent.KEYCODE_LEFT_BRACKET;
+    public static final int KEYCODE_LOCK = android.view.KeyEvent.KEYCODE_LOCK;
     public static final int KEYCODE_M = android.view.KeyEvent.KEYCODE_M;
     public static final int KEYCODE_MACRO_1 = android.view.KeyEvent.KEYCODE_MACRO_1;
     public static final int KEYCODE_MACRO_2 = android.view.KeyEvent.KEYCODE_MACRO_2;
@@ -483,6 +500,7 @@ public final class KeyEvent {
     public static final int KEYCODE_NAVIGATE_NEXT = android.view.KeyEvent.KEYCODE_NAVIGATE_NEXT;
     public static final int KEYCODE_NAVIGATE_OUT = android.view.KeyEvent.KEYCODE_NAVIGATE_OUT;
     public static final int KEYCODE_NAVIGATE_PREVIOUS = android.view.KeyEvent.KEYCODE_NAVIGATE_PREVIOUS;
+    public static final int KEYCODE_NEW = android.view.KeyEvent.KEYCODE_NEW;
     public static final int KEYCODE_NOTIFICATION = android.view.KeyEvent.KEYCODE_NOTIFICATION;
     public static final int KEYCODE_NUM = android.view.KeyEvent.KEYCODE_NUM;
     public static final int KEYCODE_NUMPAD_0 = android.view.KeyEvent.KEYCODE_NUMPAD_0;
@@ -517,6 +535,7 @@ public final class KeyEvent {
     public static final int KEYCODE_PLUS = android.view.KeyEvent.KEYCODE_PLUS;
     public static final int KEYCODE_POUND = android.view.KeyEvent.KEYCODE_POUND;
     public static final int KEYCODE_POWER = android.view.KeyEvent.KEYCODE_POWER;
+    public static final int KEYCODE_PRINT = android.view.KeyEvent.KEYCODE_PRINT;
     public static final int KEYCODE_PROG_BLUE = android.view.KeyEvent.KEYCODE_PROG_BLUE;
     public static final int KEYCODE_PROG_GREEN = android.view.KeyEvent.KEYCODE_PROG_GREEN;
     public static final int KEYCODE_PROG_RED = android.view.KeyEvent.KEYCODE_PROG_RED;

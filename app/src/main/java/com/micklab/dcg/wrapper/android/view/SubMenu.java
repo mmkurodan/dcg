@@ -39,11 +39,11 @@ public final class SubMenu {
         return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setHeaderIcon(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.view.SubMenu setHeaderTitle(int arg0) {
+    public com.micklab.dcg.wrapper.android.view.SubMenu setHeaderTitle(java.lang.CharSequence arg0) {
         return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setHeaderTitle(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.view.SubMenu setHeaderTitle(java.lang.CharSequence arg0) {
+    public com.micklab.dcg.wrapper.android.view.SubMenu setHeaderTitle(int arg0) {
         return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setHeaderTitle(arg0));
     }
 
@@ -51,12 +51,12 @@ public final class SubMenu {
         return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setHeaderView(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.view.SubMenu setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setIcon(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.view.SubMenu setIcon(int arg0) {
         return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setIcon(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.view.SubMenu setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        return com.micklab.dcg.wrapper.android.view.SubMenu.wrap(((android.view.SubMenu) real).setIcon(arg0 == null ? null : arg0.getReal()));
     }
 
 }

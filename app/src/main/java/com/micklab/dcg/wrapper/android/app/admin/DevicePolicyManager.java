@@ -51,12 +51,12 @@ public final class DevicePolicyManager {
         ((android.app.admin.DevicePolicyManager) real).addUserRestrictionGlobally(arg0);
     }
 
-    public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
-        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
-    }
-
     public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, int arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
         return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
+    }
+
+    public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
+        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
     public boolean canAdminGrantSensorsPermissions() {
@@ -123,6 +123,10 @@ public final class DevicePolicyManager {
         return ((android.app.admin.DevicePolicyManager) real).getAlwaysOnVpnPackage(arg0 == null ? null : arg0.getReal());
     }
 
+    public int getAppFunctionsPolicy() {
+        return ((android.app.admin.DevicePolicyManager) real).getAppFunctionsPolicy();
+    }
+
     public com.micklab.dcg.wrapper.android.os.Bundle getApplicationRestrictions(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1) {
         return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.app.admin.DevicePolicyManager) real).getApplicationRestrictions(arg0 == null ? null : arg0.getReal(), arg1));
     }
@@ -135,12 +139,20 @@ public final class DevicePolicyManager {
         return ((android.app.admin.DevicePolicyManager) real).getAutoTimeEnabled(arg0 == null ? null : arg0.getReal());
     }
 
+    public int getAutoTimePolicy() {
+        return ((android.app.admin.DevicePolicyManager) real).getAutoTimePolicy();
+    }
+
     public boolean getAutoTimeRequired() {
         return ((android.app.admin.DevicePolicyManager) real).getAutoTimeRequired();
     }
 
     public boolean getAutoTimeZoneEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
         return ((android.app.admin.DevicePolicyManager) real).getAutoTimeZoneEnabled(arg0 == null ? null : arg0.getReal());
+    }
+
+    public int getAutoTimeZonePolicy() {
+        return ((android.app.admin.DevicePolicyManager) real).getAutoTimeZonePolicy();
     }
 
     public boolean getBluetoothContactSharingDisabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
@@ -431,11 +443,11 @@ public final class DevicePolicyManager {
         return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
     }
 
-    public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, boolean arg4) {
+    public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, int arg4) {
         return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
-    public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, int arg4) {
+    public boolean installKeyPair(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.security.PrivateKey arg1, java.security.cert.Certificate[] arg2, java.lang.String arg3, boolean arg4) {
         return ((android.app.admin.DevicePolicyManager) real).installKeyPair(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
@@ -647,6 +659,10 @@ public final class DevicePolicyManager {
         ((android.app.admin.DevicePolicyManager) real).setAlwaysOnVpnPackage(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
+    public void setAppFunctionsPolicy(int arg0) {
+        ((android.app.admin.DevicePolicyManager) real).setAppFunctionsPolicy(arg0);
+    }
+
     public boolean setApplicationHidden(com.micklab.dcg.wrapper.android.content.ComponentName arg0, java.lang.String arg1, boolean arg2) {
         return ((android.app.admin.DevicePolicyManager) real).setApplicationHidden(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
@@ -663,12 +679,20 @@ public final class DevicePolicyManager {
         ((android.app.admin.DevicePolicyManager) real).setAutoTimeEnabled(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public void setAutoTimePolicy(int arg0) {
+        ((android.app.admin.DevicePolicyManager) real).setAutoTimePolicy(arg0);
+    }
+
     public void setAutoTimeRequired(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
         ((android.app.admin.DevicePolicyManager) real).setAutoTimeRequired(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setAutoTimeZoneEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
         ((android.app.admin.DevicePolicyManager) real).setAutoTimeZoneEnabled(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
+    public void setAutoTimeZonePolicy(int arg0) {
+        ((android.app.admin.DevicePolicyManager) real).setAutoTimeZonePolicy(arg0);
     }
 
     public void setBackupServiceEnabled(com.micklab.dcg.wrapper.android.content.ComponentName arg0, boolean arg1) {
@@ -1041,6 +1065,14 @@ public final class DevicePolicyManager {
     public static final java.lang.String ACTION_SET_NEW_PASSWORD = android.app.admin.DevicePolicyManager.ACTION_SET_NEW_PASSWORD;
     public static final java.lang.String ACTION_START_ENCRYPTION = android.app.admin.DevicePolicyManager.ACTION_START_ENCRYPTION;
     public static final java.lang.String ACTION_SYSTEM_UPDATE_POLICY_CHANGED = android.app.admin.DevicePolicyManager.ACTION_SYSTEM_UPDATE_POLICY_CHANGED;
+    public static final int APP_FUNCTIONS_DISABLED = android.app.admin.DevicePolicyManager.APP_FUNCTIONS_DISABLED;
+    public static final int APP_FUNCTIONS_NOT_CONTROLLED_BY_POLICY = android.app.admin.DevicePolicyManager.APP_FUNCTIONS_NOT_CONTROLLED_BY_POLICY;
+    public static final int AUTO_TIME_DISABLED = android.app.admin.DevicePolicyManager.AUTO_TIME_DISABLED;
+    public static final int AUTO_TIME_ENABLED = android.app.admin.DevicePolicyManager.AUTO_TIME_ENABLED;
+    public static final int AUTO_TIME_NOT_CONTROLLED_BY_POLICY = android.app.admin.DevicePolicyManager.AUTO_TIME_NOT_CONTROLLED_BY_POLICY;
+    public static final int AUTO_TIME_ZONE_DISABLED = android.app.admin.DevicePolicyManager.AUTO_TIME_ZONE_DISABLED;
+    public static final int AUTO_TIME_ZONE_ENABLED = android.app.admin.DevicePolicyManager.AUTO_TIME_ZONE_ENABLED;
+    public static final int AUTO_TIME_ZONE_NOT_CONTROLLED_BY_POLICY = android.app.admin.DevicePolicyManager.AUTO_TIME_ZONE_NOT_CONTROLLED_BY_POLICY;
     public static final int CONTENT_PROTECTION_DISABLED = android.app.admin.DevicePolicyManager.CONTENT_PROTECTION_DISABLED;
     public static final int CONTENT_PROTECTION_ENABLED = android.app.admin.DevicePolicyManager.CONTENT_PROTECTION_ENABLED;
     public static final int CONTENT_PROTECTION_NOT_CONTROLLED_BY_POLICY = android.app.admin.DevicePolicyManager.CONTENT_PROTECTION_NOT_CONTROLLED_BY_POLICY;

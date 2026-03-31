@@ -167,11 +167,11 @@ public final class PrecomputedText {
                 return getReal();
             }
 
-            public Builder(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
+            public Builder(com.micklab.dcg.wrapper.android.text.PrecomputedText.Params arg0) {
                 this(new android.text.PrecomputedText.Params.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
             }
 
-            public Builder(com.micklab.dcg.wrapper.android.text.PrecomputedText.Params arg0) {
+            public Builder(com.micklab.dcg.wrapper.android.text.TextPaint arg0) {
                 this(new android.text.PrecomputedText.Params.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
             }
 

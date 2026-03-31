@@ -27,20 +27,20 @@ public final class ArraySet {
         this(new android.util.ArraySet(), (__DcgwBridgeToken) null);
     }
 
-    public ArraySet(java.lang.Object[] arg0) {
+    public ArraySet(java.util.Collection arg0) {
         this(new android.util.ArraySet(arg0), (__DcgwBridgeToken) null);
     }
 
-    public ArraySet(java.util.Collection arg0) {
+    public ArraySet(int arg0) {
+        this(new android.util.ArraySet(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public ArraySet(java.lang.Object[] arg0) {
         this(new android.util.ArraySet(arg0), (__DcgwBridgeToken) null);
     }
 
     public ArraySet(com.micklab.dcg.wrapper.android.util.ArraySet arg0) {
         this(new android.util.ArraySet(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
-    public ArraySet(int arg0) {
-        this(new android.util.ArraySet(arg0), (__DcgwBridgeToken) null);
     }
 
     public boolean add(java.lang.Object arg0) {

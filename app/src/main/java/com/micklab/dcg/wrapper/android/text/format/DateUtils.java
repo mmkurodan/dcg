@@ -79,12 +79,12 @@ public final class DateUtils {
         return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public static java.lang.CharSequence getRelativeTimeSpanString(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, boolean arg2) {
-        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
-    }
-
     public static java.lang.CharSequence getRelativeTimeSpanString(long arg0, long arg1, long arg2) {
         return android.text.format.DateUtils.getRelativeTimeSpanString(arg0, arg1, arg2);
+    }
+
+    public static java.lang.CharSequence getRelativeTimeSpanString(com.micklab.dcg.wrapper.android.content.Context arg0, long arg1, boolean arg2) {
+        return android.text.format.DateUtils.getRelativeTimeSpanString(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public static java.lang.CharSequence getRelativeTimeSpanString(long arg0, long arg1, long arg2, int arg3) {

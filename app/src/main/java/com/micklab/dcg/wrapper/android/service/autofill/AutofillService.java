@@ -55,6 +55,10 @@ public final class AutofillService {
         ((android.service.autofill.AutofillService) real).onSavedDatasetsInfoRequest(arg0 == null ? null : arg0.getReal());
     }
 
+    public void onSessionDestroyed(com.micklab.dcg.wrapper.android.service.autofill.FillEventHistory arg0) {
+        ((android.service.autofill.AutofillService) real).onSessionDestroyed(arg0 == null ? null : arg0.getReal());
+    }
+
     public static final java.lang.String EXTRA_FILL_RESPONSE = android.service.autofill.AutofillService.EXTRA_FILL_RESPONSE;
     public static final java.lang.String SERVICE_INTERFACE = android.service.autofill.AutofillService.SERVICE_INTERFACE;
     public static final java.lang.String SERVICE_META_DATA = android.service.autofill.AutofillService.SERVICE_META_DATA;

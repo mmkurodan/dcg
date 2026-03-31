@@ -63,12 +63,12 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#checkPermission(java.lang.String,java.lang.String)");
     }
 
-    public int checkSignatures(int arg0, int arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#checkSignatures(int,int)");
-    }
-
     public int checkSignatures(java.lang.String arg0, java.lang.String arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#checkSignatures(java.lang.String,java.lang.String)");
+    }
+
+    public int checkSignatures(int arg0, int arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#checkSignatures(int,int)");
     }
 
     public void clearInstantAppCookie() {
@@ -87,12 +87,12 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#extendVerificationTimeout(int,int,long)");
     }
 
-    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getActivityBanner(com.micklab.dcg.wrapper.android.content.Intent arg0) throws android.content.pm.PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getActivityBanner(android.content.Intent)");
-    }
-
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getActivityBanner(com.micklab.dcg.wrapper.android.content.ComponentName arg0) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getActivityBanner(android.content.ComponentName)");
+    }
+
+    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getActivityBanner(com.micklab.dcg.wrapper.android.content.Intent arg0) throws android.content.pm.PackageManager.NameNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getActivityBanner(android.content.Intent)");
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getActivityIcon(com.micklab.dcg.wrapper.android.content.Intent arg0) throws android.content.pm.PackageManager.NameNotFoundException {
@@ -131,32 +131,32 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationEnabledSetting(java.lang.String)");
     }
 
-    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationIcon(com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationIcon(android.content.pm.ApplicationInfo)");
-    }
-
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationIcon(java.lang.String arg0) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationIcon(java.lang.String)");
     }
 
-    public com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ApplicationInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationInfo(java.lang.String,android.content.pm.PackageManager$ApplicationInfoFlags)");
+    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationIcon(com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationIcon(android.content.pm.ApplicationInfo)");
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationInfo(java.lang.String,int)");
     }
 
+    public com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo getApplicationInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ApplicationInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationInfo(java.lang.String,android.content.pm.PackageManager$ApplicationInfoFlags)");
+    }
+
     public java.lang.CharSequence getApplicationLabel(com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationLabel(android.content.pm.ApplicationInfo)");
     }
 
-    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationLogo(com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationLogo(android.content.pm.ApplicationInfo)");
-    }
-
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationLogo(java.lang.String arg0) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationLogo(java.lang.String)");
+    }
+
+    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getApplicationLogo(com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getApplicationLogo(android.content.pm.ApplicationInfo)");
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ArchivedPackageInfo getArchivedPackage(java.lang.String arg0) {
@@ -243,20 +243,20 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageGids(java.lang.String,android.content.pm.PackageManager$PackageInfoFlags)");
     }
 
-    public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(java.lang.String arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(java.lang.String,int)");
-    }
-
-    public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(java.lang.String,android.content.pm.PackageManager$PackageInfoFlags)");
-    }
-
     public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(com.micklab.dcg.wrapper.android.content.pm.VersionedPackage arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(android.content.pm.VersionedPackage,int)");
     }
 
+    public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(java.lang.String arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(java.lang.String,int)");
+    }
+
     public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(com.micklab.dcg.wrapper.android.content.pm.VersionedPackage arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(android.content.pm.VersionedPackage,android.content.pm.PackageManager$PackageInfoFlags)");
+    }
+
+    public com.micklab.dcg.wrapper.android.content.pm.PackageInfo getPackageInfo(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.PackageInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getPackageInfo(java.lang.String,android.content.pm.PackageManager$PackageInfoFlags)");
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.PackageInstaller getPackageInstaller() {
@@ -323,12 +323,12 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getResourcesForApplication(android.content.pm.ApplicationInfo,android.content.res.Configuration)");
     }
 
-    public com.micklab.dcg.wrapper.android.content.pm.ServiceInfo getServiceInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getServiceInfo(android.content.ComponentName,android.content.pm.PackageManager$ComponentInfoFlags)");
-    }
-
     public com.micklab.dcg.wrapper.android.content.pm.ServiceInfo getServiceInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0, int arg1) throws android.content.pm.PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getServiceInfo(android.content.ComponentName,int)");
+    }
+
+    public com.micklab.dcg.wrapper.android.content.pm.ServiceInfo getServiceInfo(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags arg1) throws android.content.pm.PackageManager.NameNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getServiceInfo(android.content.ComponentName,android.content.pm.PackageManager$ComponentInfoFlags)");
     }
 
     public com.micklab.dcg.wrapper.android.os.Bundle getSuspendedPackageAppExtras() {
@@ -365,6 +365,10 @@ public final class PackageManager {
 
     public java.lang.CharSequence getUserBadgedLabel(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getUserBadgedLabel(java.lang.CharSequence,android.os.UserHandle)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.content.pm.SigningInfo getVerifiedSigningInfo(java.lang.String arg0, int arg1) throws android.content.pm.SigningInfoException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#getVerifiedSigningInfo(java.lang.String,int)");
     }
 
     public com.micklab.dcg.wrapper.android.content.res.XmlResourceParser getXml(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.content.pm.ApplicationInfo arg2) {
@@ -459,20 +463,20 @@ public final class PackageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveActivity(android.content.Intent,android.content.pm.PackageManager$ResolveInfoFlags)");
     }
 
-    public com.micklab.dcg.wrapper.android.content.pm.ProviderInfo resolveContentProvider(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveContentProvider(java.lang.String,android.content.pm.PackageManager$ComponentInfoFlags)");
-    }
-
     public com.micklab.dcg.wrapper.android.content.pm.ProviderInfo resolveContentProvider(java.lang.String arg0, int arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveContentProvider(java.lang.String,int)");
     }
 
-    public com.micklab.dcg.wrapper.android.content.pm.ResolveInfo resolveService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ResolveInfoFlags arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveService(android.content.Intent,android.content.pm.PackageManager$ResolveInfoFlags)");
+    public com.micklab.dcg.wrapper.android.content.pm.ProviderInfo resolveContentProvider(java.lang.String arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ComponentInfoFlags arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveContentProvider(java.lang.String,android.content.pm.PackageManager$ComponentInfoFlags)");
     }
 
     public com.micklab.dcg.wrapper.android.content.pm.ResolveInfo resolveService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveService(android.content.Intent,int)");
+    }
+
+    public com.micklab.dcg.wrapper.android.content.pm.ResolveInfo resolveService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.pm.PackageManager.ResolveInfoFlags arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager#resolveService(android.content.Intent,android.content.pm.PackageManager$ResolveInfoFlags)");
     }
 
     public void setApplicationCategoryHint(java.lang.String arg0, int arg1) {
@@ -725,6 +729,10 @@ public final class PackageManager {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager$Property#describeContents()");
         }
 
+        public boolean equals(java.lang.Object arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager$Property#equals(java.lang.Object)");
+        }
+
         public boolean getBoolean() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager$Property#getBoolean()");
         }
@@ -755,6 +763,10 @@ public final class PackageManager {
 
         public java.lang.String getString() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager$Property#getString()");
+        }
+
+        public int hashCode() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageManager$Property#hashCode()");
         }
 
         public boolean isBoolean() {

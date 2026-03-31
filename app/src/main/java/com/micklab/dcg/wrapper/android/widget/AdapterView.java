@@ -27,12 +27,12 @@ public final class AdapterView {
         ((android.widget.AdapterView) real).addView(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
-        ((android.widget.AdapterView) real).addView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public void addView(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
         ((android.widget.AdapterView) real).addView(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
+    public void addView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
+        ((android.widget.AdapterView) real).addView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public void addView(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg2) {

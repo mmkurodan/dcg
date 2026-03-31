@@ -27,7 +27,7 @@ public final class ImageDecoder {
         ((android.graphics.ImageDecoder) real).close();
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(java.nio.ByteBuffer arg0) {
+    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(java.io.File arg0) {
         return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0));
     }
 
@@ -35,12 +35,8 @@ public final class ImageDecoder {
         return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(java.io.File arg0) {
+    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(java.nio.ByteBuffer arg0) {
         return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0));
-    }
-
-    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {
@@ -48,6 +44,10 @@ public final class ImageDecoder {
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(com.micklab.dcg.wrapper.android.content.res.AssetManager arg0, java.lang.String arg1) {
+        return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0 == null ? null : arg0.getReal(), arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source createSource(com.micklab.dcg.wrapper.android.content.res.Resources arg0, int arg1) {
         return com.micklab.dcg.wrapper.android.graphics.ImageDecoder.Source.wrap(android.graphics.ImageDecoder.createSource(arg0 == null ? null : arg0.getReal(), arg1));
     }
 

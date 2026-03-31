@@ -31,11 +31,11 @@ public final class TaskStackBuilder {
         return com.micklab.dcg.wrapper.android.app.TaskStackBuilder.wrap(((android.app.TaskStackBuilder) real).addNextIntentWithParentStack(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.app.TaskStackBuilder addParentStack(com.micklab.dcg.wrapper.android.app.Activity arg0) {
+    public com.micklab.dcg.wrapper.android.app.TaskStackBuilder addParentStack(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
         return com.micklab.dcg.wrapper.android.app.TaskStackBuilder.wrap(((android.app.TaskStackBuilder) real).addParentStack(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.app.TaskStackBuilder addParentStack(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
+    public com.micklab.dcg.wrapper.android.app.TaskStackBuilder addParentStack(com.micklab.dcg.wrapper.android.app.Activity arg0) {
         return com.micklab.dcg.wrapper.android.app.TaskStackBuilder.wrap(((android.app.TaskStackBuilder) real).addParentStack(arg0 == null ? null : arg0.getReal()));
     }
 

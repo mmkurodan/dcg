@@ -91,12 +91,12 @@ public final class AlarmManager {
         ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void setWindow(int arg0, long arg1, long arg2, java.lang.String arg3, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg4, com.micklab.dcg.wrapper.android.os.Handler arg5) {
-        ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5 == null ? null : arg5.getReal());
-    }
-
     public void setWindow(int arg0, long arg1, long arg2, java.lang.String arg3, java.util.concurrent.Executor arg4, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg5) {
         ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
+    }
+
+    public void setWindow(int arg0, long arg1, long arg2, java.lang.String arg3, com.micklab.dcg.wrapper.android.app.AlarmManager.OnAlarmListener arg4, com.micklab.dcg.wrapper.android.os.Handler arg5) {
+        ((android.app.AlarmManager) real).setWindow(arg0, arg1, arg2, arg3, arg4 == null ? null : arg4.getReal(), arg5 == null ? null : arg5.getReal());
     }
 
     public static final java.lang.String ACTION_NEXT_ALARM_CLOCK_CHANGED = android.app.AlarmManager.ACTION_NEXT_ALARM_CLOCK_CHANGED;

@@ -49,12 +49,12 @@ public final class LineBackgroundSpan {
             return getReal();
         }
 
-        public Standard(int arg0) {
-            this(new android.text.style.LineBackgroundSpan.Standard(arg0), (__DcgwBridgeToken) null);
-        }
-
         public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
             this(new android.text.style.LineBackgroundSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public Standard(int arg0) {
+            this(new android.text.style.LineBackgroundSpan.Standard(arg0), (__DcgwBridgeToken) null);
         }
 
         public int describeContents() {

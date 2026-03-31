@@ -35,6 +35,10 @@ public final class AdSelectionOutcome {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.adservices.adselection.AdSelectionOutcome) real).getRenderUri());
     }
 
+    public com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier getWinningSeller() {
+        return com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier.wrap(((android.adservices.adselection.AdSelectionOutcome) real).getWinningSeller());
+    }
+
     public boolean hasOutcome() {
         return ((android.adservices.adselection.AdSelectionOutcome) real).hasOutcome();
     }

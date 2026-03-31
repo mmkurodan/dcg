@@ -39,6 +39,10 @@ public final class ScheduleCustomAudienceUpdateRequest {
         return ((android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest) real).hashCode();
     }
 
+    public boolean shouldReplacePendingUpdates() {
+        return ((android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest) real).shouldReplacePendingUpdates();
+    }
+
     public java.lang.String toString() {
         return ((android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest) real).toString();
     }
@@ -65,6 +69,10 @@ public final class ScheduleCustomAudienceUpdateRequest {
             return getReal();
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.net.Uri arg0, java.time.Duration arg1) {
+            this(new android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+        }
+
         public Builder(com.micklab.dcg.wrapper.android.net.Uri arg0, java.time.Duration arg1, java.util.List arg2) {
             this(new android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
         }
@@ -75,6 +83,10 @@ public final class ScheduleCustomAudienceUpdateRequest {
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setMinDelay(java.time.Duration arg0) {
             return com.micklab.dcg.wrapper.android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder.wrap(((android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder) real).setMinDelay(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setShouldReplacePendingUpdates(boolean arg0) {
+            return com.micklab.dcg.wrapper.android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder.wrap(((android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder) real).setShouldReplacePendingUpdates(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setUpdateUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {

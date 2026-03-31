@@ -27,11 +27,11 @@ public final class Region {
         this(new android.graphics.Region(), (__DcgwBridgeToken) null);
     }
 
-    public Region(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+    public Region(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
         this(new android.graphics.Region(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public Region(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
+    public Region(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         this(new android.graphics.Region(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -87,11 +87,11 @@ public final class Region {
         return ((android.graphics.Region) real).op(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public boolean op(com.micklab.dcg.wrapper.android.graphics.Rect arg0, com.micklab.dcg.wrapper.android.graphics.Region arg1, com.micklab.dcg.wrapper.android.graphics.Region.Op arg2) {
+    public boolean op(com.micklab.dcg.wrapper.android.graphics.Region arg0, com.micklab.dcg.wrapper.android.graphics.Region arg1, com.micklab.dcg.wrapper.android.graphics.Region.Op arg2) {
         return ((android.graphics.Region) real).op(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
-    public boolean op(com.micklab.dcg.wrapper.android.graphics.Region arg0, com.micklab.dcg.wrapper.android.graphics.Region arg1, com.micklab.dcg.wrapper.android.graphics.Region.Op arg2) {
+    public boolean op(com.micklab.dcg.wrapper.android.graphics.Rect arg0, com.micklab.dcg.wrapper.android.graphics.Region arg1, com.micklab.dcg.wrapper.android.graphics.Region.Op arg2) {
         return ((android.graphics.Region) real).op(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 

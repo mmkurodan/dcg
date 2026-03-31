@@ -49,11 +49,11 @@ public final class AlignmentSpan {
             return getReal();
         }
 
-        public Standard(com.micklab.dcg.wrapper.android.text.Layout.Alignment arg0) {
+        public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
             this(new android.text.style.AlignmentSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+        public Standard(com.micklab.dcg.wrapper.android.text.Layout.Alignment arg0) {
             this(new android.text.style.AlignmentSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 

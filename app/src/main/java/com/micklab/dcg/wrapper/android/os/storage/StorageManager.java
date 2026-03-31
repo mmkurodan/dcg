@@ -55,12 +55,12 @@ public final class StorageManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.storage.StorageManager#getPrimaryStorageVolume()");
     }
 
-    public com.micklab.dcg.wrapper.android.os.storage.StorageVolume getStorageVolume(java.io.File arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.storage.StorageManager#getStorageVolume(java.io.File)");
-    }
-
     public com.micklab.dcg.wrapper.android.os.storage.StorageVolume getStorageVolume(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.storage.StorageManager#getStorageVolume(android.net.Uri)");
+    }
+
+    public com.micklab.dcg.wrapper.android.os.storage.StorageVolume getStorageVolume(java.io.File arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.storage.StorageManager#getStorageVolume(java.io.File)");
     }
 
     public java.util.UUID getUuidForPath(java.io.File arg0) throws java.io.IOException {

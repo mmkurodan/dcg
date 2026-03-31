@@ -23,11 +23,11 @@ public final class KeyboardShortcutInfo {
         return getReal();
     }
 
-    public KeyboardShortcutInfo(java.lang.CharSequence arg0, int arg1, int arg2) {
+    public KeyboardShortcutInfo(java.lang.CharSequence arg0, char arg1, int arg2) {
         this(new android.view.KeyboardShortcutInfo(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public KeyboardShortcutInfo(java.lang.CharSequence arg0, char arg1, int arg2) {
+    public KeyboardShortcutInfo(java.lang.CharSequence arg0, int arg1, int arg2) {
         this(new android.view.KeyboardShortcutInfo(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 

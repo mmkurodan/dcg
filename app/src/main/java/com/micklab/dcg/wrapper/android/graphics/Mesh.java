@@ -31,16 +31,16 @@ public final class Mesh {
         this(new android.graphics.Mesh(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
     }
 
+    public void setColorUniform(java.lang.String arg0, int arg1) {
+        ((android.graphics.Mesh) real).setColorUniform(arg0, arg1);
+    }
+
     public void setColorUniform(java.lang.String arg0, long arg1) {
         ((android.graphics.Mesh) real).setColorUniform(arg0, arg1);
     }
 
     public void setColorUniform(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Color arg1) {
         ((android.graphics.Mesh) real).setColorUniform(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
-    public void setColorUniform(java.lang.String arg0, int arg1) {
-        ((android.graphics.Mesh) real).setColorUniform(arg0, arg1);
     }
 
     public void setFloatUniform(java.lang.String arg0, float[] arg1) {

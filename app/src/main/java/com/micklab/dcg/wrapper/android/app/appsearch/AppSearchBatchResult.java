@@ -57,5 +57,9 @@ public final class AppSearchBatchResult {
             this(new android.app.appsearch.AppSearchBatchResult.Builder(), (__DcgwBridgeToken) null);
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.app.appsearch.AppSearchBatchResult arg0) {
+            this(new android.app.appsearch.AppSearchBatchResult.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
     }
 }

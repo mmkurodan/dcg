@@ -47,12 +47,12 @@ public final class MeasureFormat {
         return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getCurrencyFormat());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getCurrencyFormat(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getCurrencyFormat(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getCurrencyFormat(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getCurrencyFormat(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getCurrencyFormat(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getCurrencyFormat(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.FormatWidth arg1) {
@@ -63,12 +63,12 @@ public final class MeasureFormat {
         return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getInstance(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getInstance(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.FormatWidth arg1, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getInstance(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.FormatWidth arg1, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg2) {
         return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.MeasureFormat getInstance(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.FormatWidth arg1, com.micklab.dcg.wrapper.android.icu.text.NumberFormat arg2) {
+        return com.micklab.dcg.wrapper.android.icu.text.MeasureFormat.wrap(android.icu.text.MeasureFormat.getInstance(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.ULocale getLocale() {

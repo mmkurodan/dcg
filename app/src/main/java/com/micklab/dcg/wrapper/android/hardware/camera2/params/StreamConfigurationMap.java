@@ -67,12 +67,12 @@ public final class StreamConfigurationMap {
         return ((android.hardware.camera2.params.StreamConfigurationMap) real).hashCode();
     }
 
-    public boolean isOutputSupportedFor(int arg0) {
-        return ((android.hardware.camera2.params.StreamConfigurationMap) real).isOutputSupportedFor(arg0);
-    }
-
     public boolean isOutputSupportedFor(com.micklab.dcg.wrapper.android.view.Surface arg0) {
         return ((android.hardware.camera2.params.StreamConfigurationMap) real).isOutputSupportedFor(arg0 == null ? null : arg0.getReal());
+    }
+
+    public boolean isOutputSupportedFor(int arg0) {
+        return ((android.hardware.camera2.params.StreamConfigurationMap) real).isOutputSupportedFor(arg0);
     }
 
     public java.lang.String toString() {

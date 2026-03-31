@@ -35,16 +35,16 @@ public final class TransitionSet {
         return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).addListener(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.transition.TransitionSet addTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).addTarget(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.transition.TransitionSet addTarget(int arg0) {
         return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).addTarget(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.transition.TransitionSet addTarget(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).addTarget(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.transition.TransitionSet addTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
+        return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).addTarget(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.transition.TransitionSet addTransition(com.micklab.dcg.wrapper.android.transition.Transition arg0) {
@@ -67,12 +67,12 @@ public final class TransitionSet {
         return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.TransitionSet) real).excludeTarget(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.transition.Transition excludeTarget(java.lang.String arg0, boolean arg1) {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.TransitionSet) real).excludeTarget(arg0, arg1));
-    }
-
     public com.micklab.dcg.wrapper.android.transition.Transition excludeTarget(com.micklab.dcg.wrapper.android.view.View arg0, boolean arg1) {
         return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.TransitionSet) real).excludeTarget(arg0 == null ? null : arg0.getReal(), arg1));
+    }
+
+    public com.micklab.dcg.wrapper.android.transition.Transition excludeTarget(java.lang.String arg0, boolean arg1) {
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.TransitionSet) real).excludeTarget(arg0, arg1));
     }
 
     public int getOrdering() {
@@ -91,12 +91,12 @@ public final class TransitionSet {
         return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).removeListener(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.transition.TransitionSet removeTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).removeTarget(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.transition.TransitionSet removeTarget(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).removeTarget(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.transition.TransitionSet removeTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
+        return com.micklab.dcg.wrapper.android.transition.TransitionSet.wrap(((android.transition.TransitionSet) real).removeTarget(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.transition.TransitionSet removeTarget(int arg0) {

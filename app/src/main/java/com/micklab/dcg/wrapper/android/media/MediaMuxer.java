@@ -23,11 +23,11 @@ public final class MediaMuxer {
         return getReal();
     }
 
-    public MediaMuxer(java.lang.String arg0, int arg1) throws java.io.IOException {
+    public MediaMuxer(java.io.FileDescriptor arg0, int arg1) throws java.io.IOException {
         this(new android.media.MediaMuxer(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public MediaMuxer(java.io.FileDescriptor arg0, int arg1) throws java.io.IOException {
+    public MediaMuxer(java.lang.String arg0, int arg1) throws java.io.IOException {
         this(new android.media.MediaMuxer(arg0, arg1), (__DcgwBridgeToken) null);
     }
 

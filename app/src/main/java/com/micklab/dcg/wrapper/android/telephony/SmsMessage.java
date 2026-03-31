@@ -23,12 +23,12 @@ public final class SmsMessage {
         return getReal();
     }
 
-    public static int[] calculateLength(java.lang.String arg0, boolean arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SmsMessage#calculateLength(java.lang.String,boolean)");
-    }
-
     public static int[] calculateLength(java.lang.CharSequence arg0, boolean arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SmsMessage#calculateLength(java.lang.CharSequence,boolean)");
+    }
+
+    public static int[] calculateLength(java.lang.String arg0, boolean arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SmsMessage#calculateLength(java.lang.String,boolean)");
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.SmsMessage createFromPdu(byte[] arg0) {
@@ -85,6 +85,10 @@ public final class SmsMessage {
 
     public java.lang.String getPseudoSubject() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SmsMessage#getPseudoSubject()");
+    }
+
+    public java.lang.String getRecipientAddress() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.SmsMessage#getRecipientAddress()");
     }
 
     public java.lang.String getServiceCenterAddress() {

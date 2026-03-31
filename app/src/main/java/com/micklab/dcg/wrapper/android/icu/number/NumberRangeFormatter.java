@@ -27,12 +27,12 @@ public final class NumberRangeFormatter {
         return com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.with());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter withLocale(java.util.Locale arg0) {
         return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.withLocale(arg0));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter withLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.number.LocalizedNumberRangeFormatter.wrap(android.icu.number.NumberRangeFormatter.withLocale(arg0 == null ? null : arg0.getReal()));
     }
 
     public static final class RangeCollapse {

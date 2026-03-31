@@ -69,12 +69,12 @@ public final class TunnelModeChildSessionParams {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ipsec.ike.TunnelModeChildSessionParams$Builder#addInboundTrafficSelectors(android.net.ipsec.ike.IkeTrafficSelector)");
         }
 
-        public com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder addInternalAddressRequest(int arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ipsec.ike.TunnelModeChildSessionParams$Builder#addInternalAddressRequest(int)");
-        }
-
         public com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder addInternalAddressRequest(java.net.Inet4Address arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ipsec.ike.TunnelModeChildSessionParams$Builder#addInternalAddressRequest(java.net.Inet4Address)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder addInternalAddressRequest(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.ipsec.ike.TunnelModeChildSessionParams$Builder#addInternalAddressRequest(int)");
         }
 
         public com.micklab.dcg.wrapper.android.net.ipsec.ike.TunnelModeChildSessionParams.Builder addInternalAddressRequest(java.net.Inet6Address arg0, int arg1) {

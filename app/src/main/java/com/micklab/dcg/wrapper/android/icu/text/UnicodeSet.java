@@ -103,11 +103,11 @@ public final class UnicodeSet {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).applyPattern(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet applyPattern(java.lang.String arg0, boolean arg1) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet applyPattern(java.lang.String arg0, int arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).applyPattern(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet applyPattern(java.lang.String arg0, int arg1) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet applyPattern(java.lang.String arg0, boolean arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).applyPattern(arg0, arg1));
     }
 
@@ -275,11 +275,11 @@ public final class UnicodeSet {
         return ((android.icu.text.UnicodeSet) real).matchesIndexValue(arg0);
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet remove(int arg0) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet remove(java.lang.CharSequence arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).remove(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet remove(java.lang.CharSequence arg0) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet remove(int arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).remove(arg0));
     }
 
@@ -299,11 +299,11 @@ public final class UnicodeSet {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).removeAllStrings());
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet retain(java.lang.CharSequence arg0) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet retain(int arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).retain(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet retain(int arg0) {
+    public com.micklab.dcg.wrapper.android.icu.text.UnicodeSet retain(java.lang.CharSequence arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.UnicodeSet.wrap(((android.icu.text.UnicodeSet) real).retain(arg0));
     }
 
@@ -363,6 +363,7 @@ public final class UnicodeSet {
     public static final int IGNORE_SPACE = android.icu.text.UnicodeSet.IGNORE_SPACE;
     public static final int MAX_VALUE = android.icu.text.UnicodeSet.MAX_VALUE;
     public static final int MIN_VALUE = android.icu.text.UnicodeSet.MIN_VALUE;
+    public static final int SIMPLE_CASE_INSENSITIVE = android.icu.text.UnicodeSet.SIMPLE_CASE_INSENSITIVE;
 
     public static final class ComparisonStyle {
         private static final class __DcgwBridgeToken {

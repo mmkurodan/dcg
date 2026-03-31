@@ -327,12 +327,12 @@ public final class Window {
         ((android.view.Window) real).setContainer(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setContentView(int arg0) {
-        ((android.view.Window) real).setContentView(arg0);
-    }
-
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
         ((android.view.Window) real).setContentView(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setContentView(int arg0) {
+        ((android.view.Window) real).setContentView(arg0);
     }
 
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {

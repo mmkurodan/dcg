@@ -27,15 +27,15 @@ public final class DateFormat {
         this(new android.text.format.DateFormat(), (__DcgwBridgeToken) null);
     }
 
-    public static java.lang.CharSequence format(java.lang.CharSequence arg0, java.util.Calendar arg1) {
-        return android.text.format.DateFormat.format(arg0, arg1);
-    }
-
     public static java.lang.CharSequence format(java.lang.CharSequence arg0, long arg1) {
         return android.text.format.DateFormat.format(arg0, arg1);
     }
 
     public static java.lang.CharSequence format(java.lang.CharSequence arg0, java.util.Date arg1) {
+        return android.text.format.DateFormat.format(arg0, arg1);
+    }
+
+    public static java.lang.CharSequence format(java.lang.CharSequence arg0, java.util.Calendar arg1) {
         return android.text.format.DateFormat.format(arg0, arg1);
     }
 

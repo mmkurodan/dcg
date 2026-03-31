@@ -51,6 +51,10 @@ public final class CompanionDeviceService {
         ((android.companion.CompanionDeviceService) real).onDeviceDisappeared(arg0);
     }
 
+    public void onDevicePresenceEvent(com.micklab.dcg.wrapper.android.companion.DevicePresenceEvent arg0) {
+        ((android.companion.CompanionDeviceService) real).onDevicePresenceEvent(arg0 == null ? null : arg0.getReal());
+    }
+
     public static final java.lang.String SERVICE_INTERFACE = android.companion.CompanionDeviceService.SERVICE_INTERFACE;
 
 }

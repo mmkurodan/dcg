@@ -31,6 +31,10 @@ public final class GetAdSelectionDataRequest {
         return com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier.wrap(((android.adservices.adselection.GetAdSelectionDataRequest) real).getSeller());
     }
 
+    public com.micklab.dcg.wrapper.android.adservices.adselection.SellerConfiguration getSellerConfiguration() {
+        return com.micklab.dcg.wrapper.android.adservices.adselection.SellerConfiguration.wrap(((android.adservices.adselection.GetAdSelectionDataRequest) real).getSellerConfiguration());
+    }
+
     public static final class Builder {
         private static final class __DcgwBridgeToken {
         }
@@ -67,6 +71,10 @@ public final class GetAdSelectionDataRequest {
 
         public com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataRequest.Builder setSeller(com.micklab.dcg.wrapper.android.adservices.common.AdTechIdentifier arg0) {
             return com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataRequest.Builder.wrap(((android.adservices.adselection.GetAdSelectionDataRequest.Builder) real).setSeller(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataRequest.Builder setSellerConfiguration(com.micklab.dcg.wrapper.android.adservices.adselection.SellerConfiguration arg0) {
+            return com.micklab.dcg.wrapper.android.adservices.adselection.GetAdSelectionDataRequest.Builder.wrap(((android.adservices.adselection.GetAdSelectionDataRequest.Builder) real).setSellerConfiguration(arg0 == null ? null : arg0.getReal()));
         }
 
     }

@@ -70,7 +70,11 @@ final class AndroidWrapperGenerator {
             try (URLClassLoader classLoader = new URLClassLoader(classpath, getClass().getClassLoader())) {
                 List<Class<?>> topLevelClasses = loadTopLevelClasses(topLevelClassNames, classLoader);
                 buildWrapperTypeIndex(topLevelClasses);
+                for (String className : topLevelClassNames) {
+                    wrapperTypeByAndroidType.putIfAbsent(className, toWrapperTypeName(className));
+                }
                 generateWrapperSources(topLevelClasses);
+                generateOpaqueWrapperSources(topLevelClassNames, topLevelClasses);
             }
             writeForbiddenPolicy();
             logger.lifecycle("Generated {} wrapper types into {}", wrapperTypeByAndroidType.size(), outputDirectory.getAbsolutePath());
@@ -123,7 +127,7 @@ final class AndroidWrapperGenerator {
                 if (!Modifier.isPublic(clazz.getModifiers())) {
                     continue;
                 }
-                if (clazz.isAnnotation() || clazz.isPrimitive() || clazz.isArray()) {
+                if (clazz.isPrimitive() || clazz.isArray()) {
                     continue;
                 }
                 classes.add(clazz);
@@ -181,6 +185,51 @@ final class AndroidWrapperGenerator {
             ensureDirectory(sourceFile.getParent());
             Files.write(sourceFile, source.getBytes(StandardCharsets.UTF_8));
         }
+    }
+
+    private void generateOpaqueWrapperSources(List<String> topLevelClassNames, List<Class<?>> generatedClasses) throws IOException {
+        Set<String> generatedNames = new LinkedHashSet<>();
+        for (Class<?> generatedClass : generatedClasses) {
+            generatedNames.add(generatedClass.getName());
+        }
+        for (String className : topLevelClassNames) {
+            if (generatedNames.contains(className)) {
+                continue;
+            }
+            String source = buildOpaqueWrapperSource(className);
+            String wrapperPackageName = wrapperPackageOf(className);
+            Path packagePath = packagePathWithinOutput(wrapperPackageName);
+            Path sourceFile = outputDirectory.toPath()
+                    .resolve(packagePath)
+                    .resolve(simpleTopLevelName(className) + JAVA_EXTENSION);
+            ensureDirectory(sourceFile.getParent());
+            Files.write(sourceFile, source.getBytes(StandardCharsets.UTF_8));
+        }
+    }
+
+    private String buildOpaqueWrapperSource(String androidTypeName) {
+        String wrapperPackageName = wrapperPackageOf(androidTypeName);
+        String wrapperSimpleName = simpleTopLevelName(androidTypeName);
+        String wrapperTypeName = toWrapperTypeName(androidTypeName);
+        return SOURCE_HEADER
+                + "package " + wrapperPackageName + ";\n\n"
+                + "public final class " + wrapperSimpleName + " {\n"
+                + "    private static final class __DcgwBridgeToken {\n"
+                + "    }\n\n"
+                + "    private final java.lang.Object real;\n\n"
+                + "    private " + wrapperSimpleName + "(java.lang.Object real, __DcgwBridgeToken token) {\n"
+                + "        this.real = real;\n"
+                + "    }\n\n"
+                + "    public static " + wrapperTypeName + " wrap(java.lang.Object real) {\n"
+                + "        return real == null ? null : new " + wrapperTypeName + "(real, (__DcgwBridgeToken) null);\n"
+                + "    }\n\n"
+                + "    public java.lang.Object getReal() {\n"
+                + "        return real;\n"
+                + "    }\n\n"
+                + "    public java.lang.Object unwrap() {\n"
+                + "        return getReal();\n"
+                + "    }\n"
+                + "}\n";
     }
 
     private void writeForbiddenPolicy() throws IOException {

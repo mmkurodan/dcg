@@ -67,12 +67,12 @@ public final class ObjectAnimator {
         return com.micklab.dcg.wrapper.android.animation.ObjectAnimator.wrap(android.animation.ObjectAnimator.ofMultiFloat(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.animation.ObjectAnimator ofMultiInt(java.lang.Object arg0, java.lang.String arg1, int[][] arg2) {
-        return com.micklab.dcg.wrapper.android.animation.ObjectAnimator.wrap(android.animation.ObjectAnimator.ofMultiInt(arg0, arg1, arg2));
-    }
-
     public static com.micklab.dcg.wrapper.android.animation.ObjectAnimator ofMultiInt(java.lang.Object arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.graphics.Path arg2) {
         return com.micklab.dcg.wrapper.android.animation.ObjectAnimator.wrap(android.animation.ObjectAnimator.ofMultiInt(arg0, arg1, arg2 == null ? null : arg2.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.animation.ObjectAnimator ofMultiInt(java.lang.Object arg0, java.lang.String arg1, int[][] arg2) {
+        return com.micklab.dcg.wrapper.android.animation.ObjectAnimator.wrap(android.animation.ObjectAnimator.ofMultiInt(arg0, arg1, arg2));
     }
 
     public static com.micklab.dcg.wrapper.android.animation.ObjectAnimator ofPropertyValuesHolder(java.lang.Object arg0, android.animation.PropertyValuesHolder... arg1) {

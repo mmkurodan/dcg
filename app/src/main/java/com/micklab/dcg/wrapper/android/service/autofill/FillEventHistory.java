@@ -31,6 +31,10 @@ public final class FillEventHistory {
         return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.service.autofill.FillEventHistory) real).getClientState());
     }
 
+    public int getSessionId() {
+        return ((android.service.autofill.FillEventHistory) real).getSessionId();
+    }
+
     public java.lang.String toString() {
         return ((android.service.autofill.FillEventHistory) real).toString();
     }
@@ -70,6 +74,10 @@ public final class FillEventHistory {
             return ((android.service.autofill.FillEventHistory.Event) real).getDatasetId();
         }
 
+        public com.micklab.dcg.wrapper.android.view.autofill.AutofillId getFocusedId() {
+            return com.micklab.dcg.wrapper.android.view.autofill.AutofillId.wrap(((android.service.autofill.FillEventHistory.Event) real).getFocusedId());
+        }
+
         public int getNoSaveUiReason() {
             return ((android.service.autofill.FillEventHistory.Event) real).getNoSaveUiReason();
         }
@@ -92,6 +100,7 @@ public final class FillEventHistory {
         public static final int NO_SAVE_UI_REASON_NONE = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_NONE;
         public static final int NO_SAVE_UI_REASON_NO_SAVE_INFO = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_NO_SAVE_INFO;
         public static final int NO_SAVE_UI_REASON_NO_VALUE_CHANGED = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_NO_VALUE_CHANGED;
+        public static final int NO_SAVE_UI_REASON_USING_CREDMAN = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_USING_CREDMAN;
         public static final int NO_SAVE_UI_REASON_WITH_DELAY_SAVE_FLAG = android.service.autofill.FillEventHistory.Event.NO_SAVE_UI_REASON_WITH_DELAY_SAVE_FLAG;
         public static final int TYPE_AUTHENTICATION_SELECTED = android.service.autofill.FillEventHistory.Event.TYPE_AUTHENTICATION_SELECTED;
         public static final int TYPE_CONTEXT_COMMITTED = android.service.autofill.FillEventHistory.Event.TYPE_CONTEXT_COMMITTED;
@@ -100,6 +109,7 @@ public final class FillEventHistory {
         public static final int TYPE_DATASET_SELECTED = android.service.autofill.FillEventHistory.Event.TYPE_DATASET_SELECTED;
         public static final int TYPE_SAVE_SHOWN = android.service.autofill.FillEventHistory.Event.TYPE_SAVE_SHOWN;
         public static final int TYPE_VIEW_REQUESTED_AUTOFILL = android.service.autofill.FillEventHistory.Event.TYPE_VIEW_REQUESTED_AUTOFILL;
+        public static final int UI_TYPE_CREDENTIAL_MANAGER = android.service.autofill.FillEventHistory.Event.UI_TYPE_CREDENTIAL_MANAGER;
         public static final int UI_TYPE_DIALOG = android.service.autofill.FillEventHistory.Event.UI_TYPE_DIALOG;
         public static final int UI_TYPE_INLINE = android.service.autofill.FillEventHistory.Event.UI_TYPE_INLINE;
         public static final int UI_TYPE_MENU = android.service.autofill.FillEventHistory.Event.UI_TYPE_MENU;

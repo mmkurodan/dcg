@@ -43,6 +43,10 @@ public final class AttachedSurfaceControl {
         return com.micklab.dcg.wrapper.android.window.InputTransferToken.wrap(((android.view.AttachedSurfaceControl) real).getInputTransferToken());
     }
 
+    public com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListenerRegistration registerOnJankDataListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListener arg1) {
+        return com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListenerRegistration.wrap(((android.view.AttachedSurfaceControl) real).registerOnJankDataListener(arg0, arg1 == null ? null : arg1.getReal()));
+    }
+
     public void removeOnBufferTransformHintChangedListener(com.micklab.dcg.wrapper.android.view.AttachedSurfaceControl.OnBufferTransformHintChangedListener arg0) {
         ((android.view.AttachedSurfaceControl) real).removeOnBufferTransformHintChangedListener(arg0 == null ? null : arg0.getReal());
     }

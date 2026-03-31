@@ -23,12 +23,12 @@ public final class SelectionBoundary {
         return getReal();
     }
 
-    public SelectionBoundary(int arg0) {
-        this(new android.graphics.pdf.models.selection.SelectionBoundary(arg0), (__DcgwBridgeToken) null);
-    }
-
     public SelectionBoundary(com.micklab.dcg.wrapper.android.graphics.Point arg0) {
         this(new android.graphics.pdf.models.selection.SelectionBoundary(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public SelectionBoundary(int arg0) {
+        this(new android.graphics.pdf.models.selection.SelectionBoundary(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

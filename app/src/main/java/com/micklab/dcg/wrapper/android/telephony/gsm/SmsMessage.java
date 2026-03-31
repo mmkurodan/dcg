@@ -27,12 +27,12 @@ public final class SmsMessage {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.gsm.SmsMessage#android.telephony.gsm.SmsMessage()");
     }
 
-    public static int[] calculateLength(java.lang.String arg0, boolean arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.gsm.SmsMessage#calculateLength(java.lang.String,boolean)");
-    }
-
     public static int[] calculateLength(java.lang.CharSequence arg0, boolean arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.gsm.SmsMessage#calculateLength(java.lang.CharSequence,boolean)");
+    }
+
+    public static int[] calculateLength(java.lang.String arg0, boolean arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.gsm.SmsMessage#calculateLength(java.lang.String,boolean)");
     }
 
     public static com.micklab.dcg.wrapper.android.telephony.gsm.SmsMessage createFromPdu(byte[] arg0) {

@@ -199,11 +199,11 @@ public final class Fragment {
         ((android.app.Fragment) real).onActivityResult(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
-    public void onAttach(com.micklab.dcg.wrapper.android.app.Activity arg0) {
+    public void onAttach(com.micklab.dcg.wrapper.android.content.Context arg0) {
         ((android.app.Fragment) real).onAttach(arg0 == null ? null : arg0.getReal());
     }
 
-    public void onAttach(com.micklab.dcg.wrapper.android.content.Context arg0) {
+    public void onAttach(com.micklab.dcg.wrapper.android.app.Activity arg0) {
         ((android.app.Fragment) real).onAttach(arg0 == null ? null : arg0.getReal());
     }
 

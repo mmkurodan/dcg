@@ -35,19 +35,19 @@ public final class SpannableStringBuilder {
         this(new android.text.SpannableStringBuilder(arg0, arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(char arg0) {
-        return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0));
-    }
-
     public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(java.lang.CharSequence arg0) {
         return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(java.lang.CharSequence arg0, int arg1, int arg2) {
-        return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0, arg1, arg2));
+    public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(char arg0) {
+        return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(java.lang.CharSequence arg0, java.lang.Object arg1, int arg2) {
+        return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0, arg1, arg2));
+    }
+
+    public com.micklab.dcg.wrapper.android.text.SpannableStringBuilder append(java.lang.CharSequence arg0, int arg1, int arg2) {
         return com.micklab.dcg.wrapper.android.text.SpannableStringBuilder.wrap(((android.text.SpannableStringBuilder) real).append(arg0, arg1, arg2));
     }
 

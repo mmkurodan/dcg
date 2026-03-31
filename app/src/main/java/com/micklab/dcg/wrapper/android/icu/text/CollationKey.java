@@ -31,12 +31,12 @@ public final class CollationKey {
         return ((android.icu.text.CollationKey) real).compareTo(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean equals(com.micklab.dcg.wrapper.android.icu.text.CollationKey arg0) {
-        return ((android.icu.text.CollationKey) real).equals(arg0 == null ? null : arg0.getReal());
-    }
-
     public boolean equals(java.lang.Object arg0) {
         return ((android.icu.text.CollationKey) real).equals(arg0);
+    }
+
+    public boolean equals(com.micklab.dcg.wrapper.android.icu.text.CollationKey arg0) {
+        return ((android.icu.text.CollationKey) real).equals(arg0 == null ? null : arg0.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.icu.text.CollationKey getBound(int arg0, int arg1) {

@@ -63,19 +63,19 @@ public final class ListPreference {
         return ((android.preference.ListPreference) real).getValue();
     }
 
-    public void setEntries(int arg0) {
-        ((android.preference.ListPreference) real).setEntries(arg0);
-    }
-
     public void setEntries(java.lang.CharSequence[] arg0) {
         ((android.preference.ListPreference) real).setEntries(arg0);
     }
 
-    public void setEntryValues(int arg0) {
-        ((android.preference.ListPreference) real).setEntryValues(arg0);
+    public void setEntries(int arg0) {
+        ((android.preference.ListPreference) real).setEntries(arg0);
     }
 
     public void setEntryValues(java.lang.CharSequence[] arg0) {
+        ((android.preference.ListPreference) real).setEntryValues(arg0);
+    }
+
+    public void setEntryValues(int arg0) {
         ((android.preference.ListPreference) real).setEntryValues(arg0);
     }
 

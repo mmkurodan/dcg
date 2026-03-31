@@ -35,6 +35,14 @@ public final class StorageInfo {
         return ((android.app.appsearch.StorageInfo) real).getAliveNamespacesCount();
     }
 
+    public int getBlobsCount() {
+        return ((android.app.appsearch.StorageInfo) real).getBlobsCount();
+    }
+
+    public long getBlobsSizeBytes() {
+        return ((android.app.appsearch.StorageInfo) real).getBlobsSizeBytes();
+    }
+
     public long getSizeBytes() {
         return ((android.app.appsearch.StorageInfo) real).getSizeBytes();
     }
@@ -80,6 +88,14 @@ public final class StorageInfo {
 
         public com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder setAliveNamespacesCount(int arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder.wrap(((android.app.appsearch.StorageInfo.Builder) real).setAliveNamespacesCount(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder setBlobsCount(int arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder.wrap(((android.app.appsearch.StorageInfo.Builder) real).setBlobsCount(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder setBlobsSizeBytes(long arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder.wrap(((android.app.appsearch.StorageInfo.Builder) real).setBlobsSizeBytes(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.StorageInfo.Builder setSizeBytes(long arg0) {

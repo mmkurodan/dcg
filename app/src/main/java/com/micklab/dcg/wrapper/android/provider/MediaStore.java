@@ -91,6 +91,18 @@ public final class MediaStore {
         android.provider.MediaStore.notifyCloudMediaChangedEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
+    public static com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor openAssetFileDescriptor(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3) throws java.io.FileNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.provider.MediaStore#openAssetFileDescriptor(android.content.ContentResolver,android.net.Uri,java.lang.String,android.os.CancellationSignal)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor openFileDescriptor(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3) throws java.io.FileNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.provider.MediaStore#openFileDescriptor(android.content.ContentResolver,android.net.Uri,java.lang.String,android.os.CancellationSignal)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor openTypedAssetFileDescriptor(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3, com.micklab.dcg.wrapper.android.os.CancellationSignal arg4) throws java.io.FileNotFoundException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.provider.MediaStore#openTypedAssetFileDescriptor(android.content.ContentResolver,android.net.Uri,java.lang.String,android.os.Bundle,android.os.CancellationSignal)");
+    }
+
     public static com.micklab.dcg.wrapper.android.net.Uri setIncludePending(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.setIncludePending(arg0 == null ? null : arg0.getReal()));
     }
@@ -100,8 +112,11 @@ public final class MediaStore {
     }
 
     public static final java.lang.String ACCESS_MEDIA_OWNER_PACKAGE_NAME_PERMISSION = android.provider.MediaStore.ACCESS_MEDIA_OWNER_PACKAGE_NAME_PERMISSION;
+    public static final java.lang.String ACCESS_OEM_METADATA_PERMISSION = android.provider.MediaStore.ACCESS_OEM_METADATA_PERMISSION;
     public static final java.lang.String ACTION_IMAGE_CAPTURE = android.provider.MediaStore.ACTION_IMAGE_CAPTURE;
     public static final java.lang.String ACTION_IMAGE_CAPTURE_SECURE = android.provider.MediaStore.ACTION_IMAGE_CAPTURE_SECURE;
+    public static final java.lang.String ACTION_MOTION_PHOTO_CAPTURE = android.provider.MediaStore.ACTION_MOTION_PHOTO_CAPTURE;
+    public static final java.lang.String ACTION_MOTION_PHOTO_CAPTURE_SECURE = android.provider.MediaStore.ACTION_MOTION_PHOTO_CAPTURE_SECURE;
     public static final java.lang.String ACTION_PICK_IMAGES = android.provider.MediaStore.ACTION_PICK_IMAGES;
     public static final java.lang.String ACTION_PICK_IMAGES_SETTINGS = android.provider.MediaStore.ACTION_PICK_IMAGES_SETTINGS;
     public static final java.lang.String ACTION_REVIEW = android.provider.MediaStore.ACTION_REVIEW;
@@ -124,6 +139,7 @@ public final class MediaStore {
     public static final java.lang.String EXTRA_MEDIA_RADIO_CHANNEL = android.provider.MediaStore.EXTRA_MEDIA_RADIO_CHANNEL;
     public static final java.lang.String EXTRA_MEDIA_TITLE = android.provider.MediaStore.EXTRA_MEDIA_TITLE;
     public static final java.lang.String EXTRA_OUTPUT = android.provider.MediaStore.EXTRA_OUTPUT;
+    public static final java.lang.String EXTRA_PICKER_PRE_SELECTION_URIS = android.provider.MediaStore.EXTRA_PICKER_PRE_SELECTION_URIS;
     public static final java.lang.String EXTRA_PICK_IMAGES_ACCENT_COLOR = android.provider.MediaStore.EXTRA_PICK_IMAGES_ACCENT_COLOR;
     public static final java.lang.String EXTRA_PICK_IMAGES_IN_ORDER = android.provider.MediaStore.EXTRA_PICK_IMAGES_IN_ORDER;
     public static final java.lang.String EXTRA_PICK_IMAGES_LAUNCH_TAB = android.provider.MediaStore.EXTRA_PICK_IMAGES_LAUNCH_TAB;
@@ -154,6 +170,7 @@ public final class MediaStore {
     public static final java.lang.String QUERY_ARG_MATCH_FAVORITE = android.provider.MediaStore.QUERY_ARG_MATCH_FAVORITE;
     public static final java.lang.String QUERY_ARG_MATCH_PENDING = android.provider.MediaStore.QUERY_ARG_MATCH_PENDING;
     public static final java.lang.String QUERY_ARG_MATCH_TRASHED = android.provider.MediaStore.QUERY_ARG_MATCH_TRASHED;
+    public static final java.lang.String QUERY_ARG_MEDIA_STANDARD_SORT_ORDER = android.provider.MediaStore.QUERY_ARG_MEDIA_STANDARD_SORT_ORDER;
     public static final java.lang.String QUERY_ARG_RELATED_URI = android.provider.MediaStore.QUERY_ARG_RELATED_URI;
     public static final java.lang.String UNKNOWN_STRING = android.provider.MediaStore.UNKNOWN_STRING;
     public static final java.lang.String VOLUME_EXTERNAL = android.provider.MediaStore.VOLUME_EXTERNAL;
@@ -384,6 +401,7 @@ public final class MediaStore {
             public static final java.lang.String ALBUM_KEY = android.provider.MediaStore.Audio.AudioColumns.ALBUM_KEY;
             public static final java.lang.String ARTIST_ID = android.provider.MediaStore.Audio.AudioColumns.ARTIST_ID;
             public static final java.lang.String ARTIST_KEY = android.provider.MediaStore.Audio.AudioColumns.ARTIST_KEY;
+            public static final java.lang.String BITS_PER_SAMPLE = android.provider.MediaStore.Audio.AudioColumns.BITS_PER_SAMPLE;
             public static final java.lang.String BOOKMARK = android.provider.MediaStore.Audio.AudioColumns.BOOKMARK;
             public static final java.lang.String GENRE = android.provider.MediaStore.Audio.AudioColumns.GENRE;
             public static final java.lang.String GENRE_ID = android.provider.MediaStore.Audio.AudioColumns.GENRE_ID;
@@ -395,6 +413,7 @@ public final class MediaStore {
             public static final java.lang.String IS_PODCAST = android.provider.MediaStore.Audio.AudioColumns.IS_PODCAST;
             public static final java.lang.String IS_RECORDING = android.provider.MediaStore.Audio.AudioColumns.IS_RECORDING;
             public static final java.lang.String IS_RINGTONE = android.provider.MediaStore.Audio.AudioColumns.IS_RINGTONE;
+            public static final java.lang.String SAMPLERATE = android.provider.MediaStore.Audio.AudioColumns.SAMPLERATE;
             public static final java.lang.String TITLE_KEY = android.provider.MediaStore.Audio.AudioColumns.TITLE_KEY;
             public static final java.lang.String TITLE_RESOURCE_URI = android.provider.MediaStore.Audio.AudioColumns.TITLE_RESOURCE_URI;
             public static final java.lang.String TRACK = android.provider.MediaStore.Audio.AudioColumns.TRACK;
@@ -911,12 +930,12 @@ public final class MediaStore {
                 return com.micklab.dcg.wrapper.android.net.Uri.wrap(android.provider.MediaStore.Images.Media.getContentUri(arg0, arg1));
             }
 
-            public static java.lang.String insertImage(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3) throws java.io.FileNotFoundException {
-                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
-            }
-
             public static java.lang.String insertImage(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, java.lang.String arg2, java.lang.String arg3) {
                 return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
+            }
+
+            public static java.lang.String insertImage(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3) throws java.io.FileNotFoundException {
+                return android.provider.MediaStore.Images.Media.insertImage(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3);
             }
 
             public static com.micklab.dcg.wrapper.android.database.Cursor query(com.micklab.dcg.wrapper.android.content.ContentResolver arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, java.lang.String[] arg2) {
@@ -1060,6 +1079,7 @@ public final class MediaStore {
         public static final java.lang.String GENERATION_MODIFIED = android.provider.MediaStore.MediaColumns.GENERATION_MODIFIED;
         public static final java.lang.String GENRE = android.provider.MediaStore.MediaColumns.GENRE;
         public static final java.lang.String HEIGHT = android.provider.MediaStore.MediaColumns.HEIGHT;
+        public static final java.lang.String INFERRED_DATE = android.provider.MediaStore.MediaColumns.INFERRED_DATE;
         public static final java.lang.String INSTANCE_ID = android.provider.MediaStore.MediaColumns.INSTANCE_ID;
         public static final java.lang.String IS_DOWNLOAD = android.provider.MediaStore.MediaColumns.IS_DOWNLOAD;
         public static final java.lang.String IS_DRM = android.provider.MediaStore.MediaColumns.IS_DRM;
@@ -1068,6 +1088,7 @@ public final class MediaStore {
         public static final java.lang.String IS_TRASHED = android.provider.MediaStore.MediaColumns.IS_TRASHED;
         public static final java.lang.String MIME_TYPE = android.provider.MediaStore.MediaColumns.MIME_TYPE;
         public static final java.lang.String NUM_TRACKS = android.provider.MediaStore.MediaColumns.NUM_TRACKS;
+        public static final java.lang.String OEM_METADATA = android.provider.MediaStore.MediaColumns.OEM_METADATA;
         public static final java.lang.String ORIENTATION = android.provider.MediaStore.MediaColumns.ORIENTATION;
         public static final java.lang.String ORIGINAL_DOCUMENT_ID = android.provider.MediaStore.MediaColumns.ORIGINAL_DOCUMENT_ID;
         public static final java.lang.String OWNER_PACKAGE_NAME = android.provider.MediaStore.MediaColumns.OWNER_PACKAGE_NAME;

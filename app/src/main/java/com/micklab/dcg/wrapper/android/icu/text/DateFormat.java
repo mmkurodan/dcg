@@ -39,11 +39,11 @@ public final class DateFormat {
         return ((android.icu.text.DateFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
-    public java.lang.StringBuffer format(java.lang.Object arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(java.util.Date arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DateFormat) real).format(arg0, arg1, arg2);
     }
 
-    public java.lang.StringBuffer format(java.util.Date arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(java.lang.Object arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DateFormat) real).format(arg0, arg1, arg2);
     }
 
@@ -71,16 +71,16 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0 == null ? null : arg0.getReal(), arg1));
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(int arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(int arg0, java.util.Locale arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0, arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(int arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0, arg1 == null ? null : arg1.getReal()));
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateInstance(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
@@ -99,6 +99,10 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0, arg1));
     }
 
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(int arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0, arg1, arg2 == null ? null : arg2.getReal()));
+    }
+
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(int arg0, int arg1, java.util.Locale arg2) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0, arg1, arg2));
     }
@@ -107,16 +111,12 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(int arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0, arg1, arg2 == null ? null : arg2.getReal()));
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, int arg2, java.util.Locale arg3) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.icu.util.ULocale arg3) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
-    }
-
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getDateTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, int arg2, java.util.Locale arg3) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getDateTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getInstance() {
@@ -127,12 +127,12 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getInstance(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, java.util.Locale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getInstance(arg0 == null ? null : arg0.getReal(), arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getInstance(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, java.util.Locale arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getInstance(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getInstanceForSkeleton(java.lang.String arg0) {
@@ -187,10 +187,6 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(int arg0, java.util.Locale arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0 == null ? null : arg0.getReal(), arg1));
     }
@@ -199,12 +195,16 @@ public final class DateFormat {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
-        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(int arg0, java.util.Locale arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, java.util.Locale arg2) {
         return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.DateFormat getTimeInstance(com.micklab.dcg.wrapper.android.icu.util.Calendar arg0, int arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {
+        return com.micklab.dcg.wrapper.android.icu.text.DateFormat.wrap(android.icu.text.DateFormat.getTimeInstance(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.icu.util.TimeZone getTimeZone() {

@@ -23,11 +23,11 @@ public final class Surface {
         return getReal();
     }
 
-    public Surface(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0) {
+    public Surface(com.micklab.dcg.wrapper.android.graphics.SurfaceTexture arg0) {
         this(new android.view.Surface(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public Surface(com.micklab.dcg.wrapper.android.graphics.SurfaceTexture arg0) {
+    public Surface(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0) {
         this(new android.view.Surface(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -85,6 +85,7 @@ public final class Surface {
 
     public static final int CHANGE_FRAME_RATE_ALWAYS = android.view.Surface.CHANGE_FRAME_RATE_ALWAYS;
     public static final int CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS = android.view.Surface.CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS;
+    public static final int FRAME_RATE_COMPATIBILITY_AT_LEAST = android.view.Surface.FRAME_RATE_COMPATIBILITY_AT_LEAST;
     public static final int FRAME_RATE_COMPATIBILITY_DEFAULT = android.view.Surface.FRAME_RATE_COMPATIBILITY_DEFAULT;
     public static final int FRAME_RATE_COMPATIBILITY_FIXED_SOURCE = android.view.Surface.FRAME_RATE_COMPATIBILITY_FIXED_SOURCE;
     public static final int ROTATION_0 = android.view.Surface.ROTATION_0;

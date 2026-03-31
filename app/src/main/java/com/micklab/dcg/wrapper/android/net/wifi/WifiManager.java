@@ -47,6 +47,10 @@ public final class WifiManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#addSuggestionUserApprovalStatusListener(java.util.concurrent.Executor,android.net.wifi.WifiManager$SuggestionUserApprovalStatusListener)");
     }
 
+    public void addWifiStateChangedListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WifiStateChangedListener arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#addWifiStateChangedListener(java.util.concurrent.Executor,android.net.wifi.WifiManager$WifiStateChangedListener)");
+    }
+
     public void allowAutojoinGlobal(boolean arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#allowAutojoinGlobal(boolean)");
     }
@@ -81,6 +85,10 @@ public final class WifiManager {
 
     public boolean disableNetwork(int arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#disableNetwork(int)");
+    }
+
+    public void disallowCurrentSuggestedNetwork(com.micklab.dcg.wrapper.android.net.wifi.BlockingOption arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#disallowCurrentSuggestedNetwork(android.net.wifi.BlockingOption)");
     }
 
     public boolean disconnect() {
@@ -347,6 +355,10 @@ public final class WifiManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#removeSuggestionUserApprovalStatusListener(android.net.wifi.WifiManager$SuggestionUserApprovalStatusListener)");
     }
 
+    public void removeWifiStateChangedListener(com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WifiStateChangedListener arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#removeWifiStateChangedListener(android.net.wifi.WifiManager$WifiStateChangedListener)");
+    }
+
     public boolean saveConfiguration() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#saveConfiguration()");
     }
@@ -373,6 +385,10 @@ public final class WifiManager {
 
     public void startLocalOnlyHotspot(com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyHotspotCallback arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#startLocalOnlyHotspot(android.net.wifi.WifiManager$LocalOnlyHotspotCallback,android.os.Handler)");
+    }
+
+    public void startLocalOnlyHotspotWithConfiguration(com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration arg0, java.util.concurrent.Executor arg1, com.micklab.dcg.wrapper.android.net.wifi.WifiManager.LocalOnlyHotspotCallback arg2) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager#startLocalOnlyHotspotWithConfiguration(android.net.wifi.SoftApConfiguration,java.util.concurrent.Executor,android.net.wifi.WifiManager$LocalOnlyHotspotCallback)");
     }
 
     public boolean startScan() {
@@ -651,6 +667,33 @@ public final class WifiManager {
 
         public void onUserApprovalStatusChange(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager$SuggestionUserApprovalStatusListener#onUserApprovalStatusChange(int)");
+        }
+
+    }
+    public static final class WifiStateChangedListener {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private WifiStateChangedListener(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WifiStateChangedListener wrap(android.net.wifi.WifiManager.WifiStateChangedListener real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.WifiManager.WifiStateChangedListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.WifiManager.WifiStateChangedListener getReal() {
+            return (android.net.wifi.WifiManager.WifiStateChangedListener) real;
+        }
+
+        public android.net.wifi.WifiManager.WifiStateChangedListener unwrap() {
+            return getReal();
+        }
+
+        public void onWifiStateChanged() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.WifiManager$WifiStateChangedListener#onWifiStateChanged()");
         }
 
     }

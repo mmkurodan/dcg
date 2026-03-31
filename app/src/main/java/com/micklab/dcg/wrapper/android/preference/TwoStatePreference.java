@@ -47,19 +47,19 @@ public final class TwoStatePreference {
         ((android.preference.TwoStatePreference) real).setDisableDependentsState(arg0);
     }
 
-    public void setSummaryOff(int arg0) {
-        ((android.preference.TwoStatePreference) real).setSummaryOff(arg0);
-    }
-
     public void setSummaryOff(java.lang.CharSequence arg0) {
         ((android.preference.TwoStatePreference) real).setSummaryOff(arg0);
     }
 
-    public void setSummaryOn(int arg0) {
-        ((android.preference.TwoStatePreference) real).setSummaryOn(arg0);
+    public void setSummaryOff(int arg0) {
+        ((android.preference.TwoStatePreference) real).setSummaryOff(arg0);
     }
 
     public void setSummaryOn(java.lang.CharSequence arg0) {
+        ((android.preference.TwoStatePreference) real).setSummaryOn(arg0);
+    }
+
+    public void setSummaryOn(int arg0) {
         ((android.preference.TwoStatePreference) real).setSummaryOn(arg0);
     }
 

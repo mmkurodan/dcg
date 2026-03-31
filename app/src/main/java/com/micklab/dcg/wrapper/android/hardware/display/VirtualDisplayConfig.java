@@ -31,8 +31,16 @@ public final class VirtualDisplayConfig {
         return ((android.hardware.display.VirtualDisplayConfig) real).equals(arg0);
     }
 
+    public float getDefaultBrightness() {
+        return ((android.hardware.display.VirtualDisplayConfig) real).getDefaultBrightness();
+    }
+
     public int getDensityDpi() {
         return ((android.hardware.display.VirtualDisplayConfig) real).getDensityDpi();
+    }
+
+    public float getDimBrightness() {
+        return ((android.hardware.display.VirtualDisplayConfig) real).getDimBrightness();
     }
 
     public int getFlags() {
@@ -72,6 +80,33 @@ public final class VirtualDisplayConfig {
     }
 
 
+    public static final class BrightnessListener {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private BrightnessListener(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.BrightnessListener wrap(android.hardware.display.VirtualDisplayConfig.BrightnessListener real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.BrightnessListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.hardware.display.VirtualDisplayConfig.BrightnessListener getReal() {
+            return (android.hardware.display.VirtualDisplayConfig.BrightnessListener) real;
+        }
+
+        public android.hardware.display.VirtualDisplayConfig.BrightnessListener unwrap() {
+            return getReal();
+        }
+
+        public void onBrightnessChanged(float arg0) {
+            ((android.hardware.display.VirtualDisplayConfig.BrightnessListener) real).onBrightnessChanged(arg0);
+        }
+
+    }
     public static final class Builder {
         private static final class __DcgwBridgeToken {
         }
@@ -104,6 +139,18 @@ public final class VirtualDisplayConfig {
 
         public com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig build() {
             return com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.wrap(((android.hardware.display.VirtualDisplayConfig.Builder) real).build());
+        }
+
+        public com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder setBrightnessListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.BrightnessListener arg1) {
+            return com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder.wrap(((android.hardware.display.VirtualDisplayConfig.Builder) real).setBrightnessListener(arg0, arg1 == null ? null : arg1.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder setDefaultBrightness(float arg0) {
+            return com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder.wrap(((android.hardware.display.VirtualDisplayConfig.Builder) real).setDefaultBrightness(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder setDimBrightness(float arg0) {
+            return com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder.wrap(((android.hardware.display.VirtualDisplayConfig.Builder) real).setDimBrightness(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.hardware.display.VirtualDisplayConfig.Builder setFlags(int arg0) {

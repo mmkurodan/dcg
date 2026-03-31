@@ -31,12 +31,12 @@ public final class AnticipateOvershootInterpolator {
         this(new android.view.animation.AnticipateOvershootInterpolator(arg0), (__DcgwBridgeToken) null);
     }
 
-    public AnticipateOvershootInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-        this(new android.view.animation.AnticipateOvershootInterpolator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public AnticipateOvershootInterpolator(float arg0, float arg1) {
         this(new android.view.animation.AnticipateOvershootInterpolator(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public AnticipateOvershootInterpolator(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+        this(new android.view.animation.AnticipateOvershootInterpolator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public float getInterpolation(float arg0) {

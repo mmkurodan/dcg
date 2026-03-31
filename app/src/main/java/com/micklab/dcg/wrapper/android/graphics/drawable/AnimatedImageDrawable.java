@@ -67,6 +67,10 @@ public final class AnimatedImageDrawable {
         return ((android.graphics.drawable.AnimatedImageDrawable) real).isAutoMirrored();
     }
 
+    public boolean isFilterBitmap() {
+        return ((android.graphics.drawable.AnimatedImageDrawable) real).isFilterBitmap();
+    }
+
     public boolean isRunning() {
         return ((android.graphics.drawable.AnimatedImageDrawable) real).isRunning();
     }
@@ -89,6 +93,10 @@ public final class AnimatedImageDrawable {
 
     public void setColorFilter(com.micklab.dcg.wrapper.android.graphics.ColorFilter arg0) {
         ((android.graphics.drawable.AnimatedImageDrawable) real).setColorFilter(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setFilterBitmap(boolean arg0) {
+        ((android.graphics.drawable.AnimatedImageDrawable) real).setFilterBitmap(arg0);
     }
 
     public void setRepeatCount(int arg0) {

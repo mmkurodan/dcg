@@ -106,12 +106,12 @@ public final class AttributionSource {
             return getReal();
         }
 
-        public Builder(int arg0) {
-            this(new android.content.AttributionSource.Builder(arg0), (__DcgwBridgeToken) null);
-        }
-
         public Builder(com.micklab.dcg.wrapper.android.content.AttributionSource arg0) {
             this(new android.content.AttributionSource.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public Builder(int arg0) {
+            this(new android.content.AttributionSource.Builder(arg0), (__DcgwBridgeToken) null);
         }
 
         public com.micklab.dcg.wrapper.android.content.AttributionSource build() {

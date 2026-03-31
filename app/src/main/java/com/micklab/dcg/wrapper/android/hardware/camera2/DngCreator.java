@@ -43,11 +43,11 @@ public final class DngCreator {
         return com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator.wrap(((android.hardware.camera2.DngCreator) real).setOrientation(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator setThumbnail(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
+    public com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator setThumbnail(com.micklab.dcg.wrapper.android.media.Image arg0) {
         return com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator.wrap(((android.hardware.camera2.DngCreator) real).setThumbnail(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator setThumbnail(com.micklab.dcg.wrapper.android.media.Image arg0) {
+    public com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator setThumbnail(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
         return com.micklab.dcg.wrapper.android.hardware.camera2.DngCreator.wrap(((android.hardware.camera2.DngCreator) real).setThumbnail(arg0 == null ? null : arg0.getReal()));
     }
 

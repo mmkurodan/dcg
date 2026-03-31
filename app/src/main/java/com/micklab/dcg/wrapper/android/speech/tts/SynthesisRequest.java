@@ -23,11 +23,11 @@ public final class SynthesisRequest {
         return getReal();
     }
 
-    public SynthesisRequest(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+    public SynthesisRequest(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
         this(new android.speech.tts.SynthesisRequest(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public SynthesisRequest(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+    public SynthesisRequest(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
         this(new android.speech.tts.SynthesisRequest(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 

@@ -27,7 +27,15 @@ public final class CopticCalendar {
         this(new android.icu.util.CopticCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public CopticCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public CopticCalendar(java.util.Date arg0) {
+        this(new android.icu.util.CopticCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public CopticCalendar(java.util.Locale arg0) {
         this(new android.icu.util.CopticCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class CopticCalendar {
         this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public CopticCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.CopticCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public CopticCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public CopticCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public CopticCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public CopticCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.CopticCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public CopticCalendar(int arg0, int arg1, int arg2) {
@@ -59,8 +59,16 @@ public final class CopticCalendar {
         this(new android.icu.util.CopticCalendar(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
     }
 
+    public java.lang.String getTemporalMonthCode() {
+        return ((android.icu.util.CopticCalendar) real).getTemporalMonthCode();
+    }
+
     public java.lang.String getType() {
         return ((android.icu.util.CopticCalendar) real).getType();
+    }
+
+    public void setTemporalMonthCode(java.lang.String arg0) {
+        ((android.icu.util.CopticCalendar) real).setTemporalMonthCode(arg0);
     }
 
     public static final int AMSHIR = android.icu.util.CopticCalendar.AMSHIR;

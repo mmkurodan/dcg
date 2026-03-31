@@ -58,20 +58,20 @@ public final class RegistrationManager {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#android.telephony.ims.RegistrationManager$RegistrationCallback()");
         }
 
-        public void onRegistered(com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistered(android.telephony.ims.ImsRegistrationAttributes)");
-        }
-
         public void onRegistered(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistered(int)");
         }
 
-        public void onRegistering(com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistering(android.telephony.ims.ImsRegistrationAttributes)");
+        public void onRegistered(com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistered(android.telephony.ims.ImsRegistrationAttributes)");
         }
 
         public void onRegistering(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistering(int)");
+        }
+
+        public void onRegistering(com.micklab.dcg.wrapper.android.telephony.ims.ImsRegistrationAttributes arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.ims.RegistrationManager$RegistrationCallback#onRegistering(android.telephony.ims.ImsRegistrationAttributes)");
         }
 
         public void onTechnologyChangeFailed(int arg0, com.micklab.dcg.wrapper.android.telephony.ims.ImsReasonInfo arg1) {

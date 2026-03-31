@@ -51,11 +51,11 @@ public final class DigitsKeyListener {
         return com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener.wrap(android.text.method.DigitsKeyListener.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener getInstance(java.lang.String arg0) {
+    public static com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener getInstance(java.util.Locale arg0) {
         return com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener.wrap(android.text.method.DigitsKeyListener.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener getInstance(java.util.Locale arg0) {
+    public static com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener getInstance(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.text.method.DigitsKeyListener.wrap(android.text.method.DigitsKeyListener.getInstance(arg0));
     }
 

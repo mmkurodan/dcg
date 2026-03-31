@@ -27,12 +27,12 @@ public final class MessageFormat {
         this(new android.icu.text.MessageFormat(arg0), (__DcgwBridgeToken) null);
     }
 
-    public MessageFormat(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.text.MessageFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public MessageFormat(java.lang.String arg0, java.util.Locale arg1) {
         this(new android.icu.text.MessageFormat(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public MessageFormat(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.text.MessageFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void applyPattern(java.lang.String arg0) {
@@ -59,11 +59,11 @@ public final class MessageFormat {
         return android.icu.text.MessageFormat.format(arg0, arg1);
     }
 
-    public java.lang.StringBuffer format(java.lang.Object arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(java.lang.Object[] arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.MessageFormat) real).format(arg0, arg1, arg2);
     }
 
-    public java.lang.StringBuffer format(java.lang.Object[] arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(java.lang.Object arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.MessageFormat) real).format(arg0, arg1, arg2);
     }
 
@@ -131,12 +131,12 @@ public final class MessageFormat {
         ((android.icu.text.MessageFormat) real).setFormatsByArgumentIndex(arg0);
     }
 
-    public void setLocale(java.util.Locale arg0) {
-        ((android.icu.text.MessageFormat) real).setLocale(arg0);
-    }
-
     public void setLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         ((android.icu.text.MessageFormat) real).setLocale(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setLocale(java.util.Locale arg0) {
+        ((android.icu.text.MessageFormat) real).setLocale(arg0);
     }
 
     public java.lang.String toPattern() {

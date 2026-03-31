@@ -23,18 +23,6 @@ public final class BigDecimal {
         return getReal();
     }
 
-    public BigDecimal(double arg0) {
-        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public BigDecimal(int arg0) {
-        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public BigDecimal(long arg0) {
-        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
-    }
-
     public BigDecimal(java.lang.String arg0) {
         this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
@@ -47,7 +35,19 @@ public final class BigDecimal {
         this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
+    public BigDecimal(long arg0) {
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
+    }
+
     public BigDecimal(char[] arg0) {
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public BigDecimal(double arg0) {
+        this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public BigDecimal(int arg0) {
         this(new android.icu.math.BigDecimal(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -267,11 +267,11 @@ public final class BigDecimal {
         return ((android.icu.math.BigDecimal) real).unscaledValue();
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal valueOf(long arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal valueOf(double arg0) {
         return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.math.BigDecimal.valueOf(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal valueOf(double arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal valueOf(long arg0) {
         return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.math.BigDecimal.valueOf(arg0));
     }
 

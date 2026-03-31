@@ -23,12 +23,12 @@ public final class URLSpan {
         return getReal();
     }
 
-    public URLSpan(java.lang.String arg0) {
-        this(new android.text.style.URLSpan(arg0), (__DcgwBridgeToken) null);
-    }
-
     public URLSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.text.style.URLSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public URLSpan(java.lang.String arg0) {
+        this(new android.text.style.URLSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

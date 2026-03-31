@@ -55,8 +55,16 @@ public final class Script {
         ((android.renderscript.Script) real).setTimeZone(arg0);
     }
 
-    public void setVar(int arg0, com.micklab.dcg.wrapper.android.renderscript.FieldPacker arg1) {
-        ((android.renderscript.Script) real).setVar(arg0, arg1 == null ? null : arg1.getReal());
+    public void setVar(int arg0, float arg1) {
+        ((android.renderscript.Script) real).setVar(arg0, arg1);
+    }
+
+    public void setVar(int arg0, double arg1) {
+        ((android.renderscript.Script) real).setVar(arg0, arg1);
+    }
+
+    public void setVar(int arg0, int arg1) {
+        ((android.renderscript.Script) real).setVar(arg0, arg1);
     }
 
     public void setVar(int arg0, long arg1) {
@@ -67,19 +75,11 @@ public final class Script {
         ((android.renderscript.Script) real).setVar(arg0, arg1 == null ? null : arg1.getReal());
     }
 
+    public void setVar(int arg0, com.micklab.dcg.wrapper.android.renderscript.FieldPacker arg1) {
+        ((android.renderscript.Script) real).setVar(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
     public void setVar(int arg0, boolean arg1) {
-        ((android.renderscript.Script) real).setVar(arg0, arg1);
-    }
-
-    public void setVar(int arg0, float arg1) {
-        ((android.renderscript.Script) real).setVar(arg0, arg1);
-    }
-
-    public void setVar(int arg0, double arg1) {
-        ((android.renderscript.Script) real).setVar(arg0, arg1);
-    }
-
-    public void setVar(int arg0, int arg1) {
         ((android.renderscript.Script) real).setVar(arg0, arg1);
     }
 

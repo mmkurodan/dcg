@@ -23,11 +23,11 @@ public final class PropertyPath {
         return getReal();
     }
 
-    public PropertyPath(java.util.List arg0) {
+    public PropertyPath(java.lang.String arg0) {
         this(new android.app.appsearch.PropertyPath(arg0), (__DcgwBridgeToken) null);
     }
 
-    public PropertyPath(java.lang.String arg0) {
+    public PropertyPath(java.util.List arg0) {
         this(new android.app.appsearch.PropertyPath(arg0), (__DcgwBridgeToken) null);
     }
 

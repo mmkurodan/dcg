@@ -51,6 +51,10 @@ public final class CloudMediaProvider {
         return com.micklab.dcg.wrapper.android.provider.CloudMediaProvider.CloudMediaSurfaceController.wrap(((android.provider.CloudMediaProvider) real).onCreateCloudMediaSurfaceController(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
     }
 
+    public com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.Capabilities onGetCapabilities() {
+        return com.micklab.dcg.wrapper.android.provider.CloudMediaProviderContract.Capabilities.wrap(((android.provider.CloudMediaProvider) real).onGetCapabilities());
+    }
+
     public com.micklab.dcg.wrapper.android.os.Bundle onGetMediaCollectionInfo(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
         return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.provider.CloudMediaProvider) real).onGetMediaCollectionInfo(arg0 == null ? null : arg0.getReal()));
     }
@@ -73,6 +77,30 @@ public final class CloudMediaProvider {
 
     public com.micklab.dcg.wrapper.android.database.Cursor onQueryMedia(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onQueryMedia(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onQueryMediaCategories(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.os.CancellationSignal arg2) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onQueryMediaCategories(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onQueryMediaInMediaSet(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.os.CancellationSignal arg2) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onQueryMediaInMediaSet(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onQueryMediaSets(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.os.CancellationSignal arg2) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onQueryMediaSets(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onQuerySearchSuggestions(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.os.CancellationSignal arg2) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onQuerySearchSuggestions(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onSearchMedia(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1, com.micklab.dcg.wrapper.android.os.CancellationSignal arg2) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onSearchMedia(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.database.Cursor onSearchMedia(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.os.CancellationSignal arg3) {
+        return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.provider.CloudMediaProvider) real).onSearchMedia(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor openFile(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1) throws java.io.FileNotFoundException {

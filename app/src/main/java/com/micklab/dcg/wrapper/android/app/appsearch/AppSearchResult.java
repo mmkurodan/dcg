@@ -51,6 +51,7 @@ public final class AppSearchResult {
         return ((android.app.appsearch.AppSearchResult) real).toString();
     }
 
+    public static final int RESULT_ALREADY_EXISTS = android.app.appsearch.AppSearchResult.RESULT_ALREADY_EXISTS;
     public static final int RESULT_DENIED = android.app.appsearch.AppSearchResult.RESULT_DENIED;
     public static final int RESULT_INTERNAL_ERROR = android.app.appsearch.AppSearchResult.RESULT_INTERNAL_ERROR;
     public static final int RESULT_INVALID_ARGUMENT = android.app.appsearch.AppSearchResult.RESULT_INVALID_ARGUMENT;

@@ -27,11 +27,11 @@ public final class AndroidRuntimeException {
         this(new android.util.AndroidRuntimeException(), (__DcgwBridgeToken) null);
     }
 
-    public AndroidRuntimeException(java.lang.Exception arg0) {
+    public AndroidRuntimeException(java.lang.String arg0) {
         this(new android.util.AndroidRuntimeException(arg0), (__DcgwBridgeToken) null);
     }
 
-    public AndroidRuntimeException(java.lang.String arg0) {
+    public AndroidRuntimeException(java.lang.Exception arg0) {
         this(new android.util.AndroidRuntimeException(arg0), (__DcgwBridgeToken) null);
     }
 

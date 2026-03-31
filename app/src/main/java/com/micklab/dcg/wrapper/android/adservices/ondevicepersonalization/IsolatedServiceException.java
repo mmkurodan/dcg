@@ -27,4 +27,16 @@ public final class IsolatedServiceException {
         this(new android.adservices.ondevicepersonalization.IsolatedServiceException(arg0), (__DcgwBridgeToken) null);
     }
 
+    public IsolatedServiceException(int arg0, java.lang.Throwable arg1) {
+        this(new android.adservices.ondevicepersonalization.IsolatedServiceException(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public IsolatedServiceException(int arg0, java.lang.String arg1, java.lang.Throwable arg2) {
+        this(new android.adservices.ondevicepersonalization.IsolatedServiceException(arg0, arg1, arg2), (__DcgwBridgeToken) null);
+    }
+
+    public int getErrorCode() {
+        return ((android.adservices.ondevicepersonalization.IsolatedServiceException) real).getErrorCode();
+    }
+
 }

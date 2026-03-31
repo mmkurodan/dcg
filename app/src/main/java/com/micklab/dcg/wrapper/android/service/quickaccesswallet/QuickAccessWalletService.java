@@ -23,6 +23,10 @@ public final class QuickAccessWalletService {
         return getReal();
     }
 
+    public com.micklab.dcg.wrapper.android.app.PendingIntent getGestureTargetActivityPendingIntent() {
+        return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.service.quickaccesswallet.QuickAccessWalletService) real).getGestureTargetActivityPendingIntent());
+    }
+
     public com.micklab.dcg.wrapper.android.app.PendingIntent getTargetActivityPendingIntent() {
         return com.micklab.dcg.wrapper.android.app.PendingIntent.wrap(((android.service.quickaccesswallet.QuickAccessWalletService) real).getTargetActivityPendingIntent());
     }

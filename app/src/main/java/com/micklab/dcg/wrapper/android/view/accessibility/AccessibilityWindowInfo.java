@@ -145,5 +145,6 @@ public final class AccessibilityWindowInfo {
     public static final int TYPE_MAGNIFICATION_OVERLAY = android.view.accessibility.AccessibilityWindowInfo.TYPE_MAGNIFICATION_OVERLAY;
     public static final int TYPE_SPLIT_SCREEN_DIVIDER = android.view.accessibility.AccessibilityWindowInfo.TYPE_SPLIT_SCREEN_DIVIDER;
     public static final int TYPE_SYSTEM = android.view.accessibility.AccessibilityWindowInfo.TYPE_SYSTEM;
+    public static final int TYPE_WINDOW_CONTROL = android.view.accessibility.AccessibilityWindowInfo.TYPE_WINDOW_CONTROL;
 
 }

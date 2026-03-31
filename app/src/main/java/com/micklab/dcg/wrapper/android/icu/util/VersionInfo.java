@@ -31,11 +31,11 @@ public final class VersionInfo {
         return ((android.icu.util.VersionInfo) real).equals(arg0);
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo getInstance(java.lang.String arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo getInstance(int arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.getInstance(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo getInstance(int arg0) {
+    public static com.micklab.dcg.wrapper.android.icu.util.VersionInfo getInstance(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.getInstance(arg0));
     }
 
@@ -86,6 +86,7 @@ public final class VersionInfo {
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_14_0 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_14_0);
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_15_0 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_15_0);
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_15_1 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_15_1);
+    public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_16_0 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_16_0);
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_1_0 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_1_0);
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_1_0_1 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_1_0_1);
     public static final com.micklab.dcg.wrapper.android.icu.util.VersionInfo UNICODE_1_1_0 = com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.util.VersionInfo.UNICODE_1_1_0);

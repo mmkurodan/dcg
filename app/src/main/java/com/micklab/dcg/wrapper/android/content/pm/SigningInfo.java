@@ -59,6 +59,10 @@ public final class SigningInfo {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.SigningInfo#hasPastSigningCertificates()");
     }
 
+    public boolean signersMatchExactly(com.micklab.dcg.wrapper.android.content.pm.SigningInfo arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.SigningInfo#signersMatchExactly(android.content.pm.SigningInfo)");
+    }
+
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.SigningInfo#writeToParcel(android.os.Parcel,int)");
     }

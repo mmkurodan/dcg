@@ -51,6 +51,7 @@ public final class DataSpace {
     public static final int DATASPACE_DISPLAY_P3 = android.hardware.DataSpace.DATASPACE_DISPLAY_P3;
     public static final int DATASPACE_DYNAMIC_DEPTH = android.hardware.DataSpace.DATASPACE_DYNAMIC_DEPTH;
     public static final int DATASPACE_HEIF = android.hardware.DataSpace.DATASPACE_HEIF;
+    public static final int DATASPACE_HEIF_ULTRAHDR = android.hardware.DataSpace.DATASPACE_HEIF_ULTRAHDR;
     public static final int DATASPACE_JFIF = android.hardware.DataSpace.DATASPACE_JFIF;
     public static final int DATASPACE_JPEG_R = android.hardware.DataSpace.DATASPACE_JPEG_R;
     public static final int DATASPACE_SCRGB = android.hardware.DataSpace.DATASPACE_SCRGB;

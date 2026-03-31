@@ -27,12 +27,12 @@ public final class ColorMatrix {
         this(new android.graphics.ColorMatrix(), (__DcgwBridgeToken) null);
     }
 
-    public ColorMatrix(com.micklab.dcg.wrapper.android.graphics.ColorMatrix arg0) {
-        this(new android.graphics.ColorMatrix(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public ColorMatrix(float[] arg0) {
         this(new android.graphics.ColorMatrix(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public ColorMatrix(com.micklab.dcg.wrapper.android.graphics.ColorMatrix arg0) {
+        this(new android.graphics.ColorMatrix(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public boolean equals(java.lang.Object arg0) {

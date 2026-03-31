@@ -78,12 +78,12 @@ public final class DropBoxManager {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.DropBoxManager$Entry#android.os.DropBoxManager$Entry(java.lang.String,long,java.io.File,int)");
         }
 
-        public Entry(java.lang.String arg0, long arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2, int arg3) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.DropBoxManager$Entry#android.os.DropBoxManager$Entry(java.lang.String,long,android.os.ParcelFileDescriptor,int)");
-        }
-
         public Entry(java.lang.String arg0, long arg1, byte[] arg2, int arg3) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.DropBoxManager$Entry#android.os.DropBoxManager$Entry(java.lang.String,long,[B,int)");
+        }
+
+        public Entry(java.lang.String arg0, long arg1, com.micklab.dcg.wrapper.android.os.ParcelFileDescriptor arg2, int arg3) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.DropBoxManager$Entry#android.os.DropBoxManager$Entry(java.lang.String,long,android.os.ParcelFileDescriptor,int)");
         }
 
         public void close() {

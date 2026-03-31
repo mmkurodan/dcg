@@ -27,7 +27,15 @@ public final class EthiopicCalendar {
         this(new android.icu.util.EthiopicCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public EthiopicCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public EthiopicCalendar(java.util.Date arg0) {
+        this(new android.icu.util.EthiopicCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public EthiopicCalendar(java.util.Locale arg0) {
         this(new android.icu.util.EthiopicCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class EthiopicCalendar {
         this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public EthiopicCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.EthiopicCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public EthiopicCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public EthiopicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public EthiopicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public EthiopicCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.EthiopicCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public EthiopicCalendar(int arg0, int arg1, int arg2) {
@@ -57,6 +57,10 @@ public final class EthiopicCalendar {
 
     public EthiopicCalendar(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
         this(new android.icu.util.EthiopicCalendar(arg0, arg1, arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
+    }
+
+    public java.lang.String getTemporalMonthCode() {
+        return ((android.icu.util.EthiopicCalendar) real).getTemporalMonthCode();
     }
 
     public java.lang.String getType() {
@@ -69,6 +73,10 @@ public final class EthiopicCalendar {
 
     public void setAmeteAlemEra(boolean arg0) {
         ((android.icu.util.EthiopicCalendar) real).setAmeteAlemEra(arg0);
+    }
+
+    public void setTemporalMonthCode(java.lang.String arg0) {
+        ((android.icu.util.EthiopicCalendar) real).setTemporalMonthCode(arg0);
     }
 
     public static final int GENBOT = android.icu.util.EthiopicCalendar.GENBOT;

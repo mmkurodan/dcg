@@ -137,6 +137,10 @@ public final class TvInteractiveAppService {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onBroadcastInfoResponse(arg0 == null ? null : arg0.getReal());
         }
 
+        public void onCertificate(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.http.SslCertificate arg2) {
+            ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onCertificate(arg0, arg1, arg2 == null ? null : arg2.getReal());
+        }
+
         public void onContentAllowed() {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onContentAllowed();
         }
@@ -317,6 +321,10 @@ public final class TvInteractiveAppService {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onVideoAvailable();
         }
 
+        public void onVideoFreezeUpdated(boolean arg0) {
+            ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onVideoFreezeUpdated(arg0);
+        }
+
         public void onVideoUnavailable(int arg0) {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).onVideoUnavailable(arg0);
         }
@@ -335,6 +343,10 @@ public final class TvInteractiveAppService {
 
         public void requestBroadcastInfo(com.micklab.dcg.wrapper.android.media.tv.BroadcastInfoRequest arg0) {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestBroadcastInfo(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void requestCertificate(java.lang.String arg0, int arg1) {
+            ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestCertificate(arg0, arg1);
         }
 
         public void requestCurrentChannelLcn() {
@@ -361,8 +373,16 @@ public final class TvInteractiveAppService {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestScheduleRecording(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4, arg5, arg6 == null ? null : arg6.getReal());
         }
 
+        public void requestSelectedTrackInfo() {
+            ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestSelectedTrackInfo();
+        }
+
         public void requestSigning(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, byte[] arg3) {
             ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestSigning(arg0, arg1, arg2, arg3);
+        }
+
+        public void requestSigning(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, int arg3, byte[] arg4) {
+            ((android.media.tv.interactive.TvInteractiveAppService.Session) real).requestSigning(arg0, arg1, arg2, arg3, arg4);
         }
 
         public void requestStartRecording(java.lang.String arg0, com.micklab.dcg.wrapper.android.net.Uri arg1) {

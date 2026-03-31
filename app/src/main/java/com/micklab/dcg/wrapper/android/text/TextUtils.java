@@ -83,11 +83,11 @@ public final class TextUtils {
         return android.text.TextUtils.htmlEncode(arg0);
     }
 
-    public static int indexOf(java.lang.CharSequence arg0, java.lang.CharSequence arg1) {
+    public static int indexOf(java.lang.CharSequence arg0, char arg1) {
         return android.text.TextUtils.indexOf(arg0, arg1);
     }
 
-    public static int indexOf(java.lang.CharSequence arg0, char arg1) {
+    public static int indexOf(java.lang.CharSequence arg0, java.lang.CharSequence arg1) {
         return android.text.TextUtils.indexOf(arg0, arg1);
     }
 
@@ -99,11 +99,11 @@ public final class TextUtils {
         return android.text.TextUtils.indexOf(arg0, arg1, arg2);
     }
 
-    public static int indexOf(java.lang.CharSequence arg0, java.lang.CharSequence arg1, int arg2, int arg3) {
+    public static int indexOf(java.lang.CharSequence arg0, char arg1, int arg2, int arg3) {
         return android.text.TextUtils.indexOf(arg0, arg1, arg2, arg3);
     }
 
-    public static int indexOf(java.lang.CharSequence arg0, char arg1, int arg2, int arg3) {
+    public static int indexOf(java.lang.CharSequence arg0, java.lang.CharSequence arg1, int arg2, int arg3) {
         return android.text.TextUtils.indexOf(arg0, arg1, arg2, arg3);
     }
 
@@ -151,11 +151,11 @@ public final class TextUtils {
         return android.text.TextUtils.replace(arg0, arg1, arg2);
     }
 
-    public static java.lang.String[] split(java.lang.String arg0, java.lang.String arg1) {
+    public static java.lang.String[] split(java.lang.String arg0, java.util.regex.Pattern arg1) {
         return android.text.TextUtils.split(arg0, arg1);
     }
 
-    public static java.lang.String[] split(java.lang.String arg0, java.util.regex.Pattern arg1) {
+    public static java.lang.String[] split(java.lang.String arg0, java.lang.String arg1) {
         return android.text.TextUtils.split(arg0, arg1);
     }
 

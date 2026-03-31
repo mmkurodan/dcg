@@ -63,12 +63,12 @@ public final class GLSurfaceView {
         ((android.opengl.GLSurfaceView) real).setDebugFlags(arg0);
     }
 
-    public void setEGLConfigChooser(com.micklab.dcg.wrapper.android.opengl.GLSurfaceView.EGLConfigChooser arg0) {
-        ((android.opengl.GLSurfaceView) real).setEGLConfigChooser(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setEGLConfigChooser(boolean arg0) {
         ((android.opengl.GLSurfaceView) real).setEGLConfigChooser(arg0);
+    }
+
+    public void setEGLConfigChooser(com.micklab.dcg.wrapper.android.opengl.GLSurfaceView.EGLConfigChooser arg0) {
+        ((android.opengl.GLSurfaceView) real).setEGLConfigChooser(arg0 == null ? null : arg0.getReal());
     }
 
     public void setEGLConfigChooser(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {

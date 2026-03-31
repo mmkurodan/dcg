@@ -27,12 +27,12 @@ public final class DecimalFormatSymbols {
         this(new android.icu.text.DecimalFormatSymbols(), (__DcgwBridgeToken) null);
     }
 
-    public DecimalFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.text.DecimalFormatSymbols(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public DecimalFormatSymbols(java.util.Locale arg0) {
         this(new android.icu.text.DecimalFormatSymbols(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public DecimalFormatSymbols(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.text.DecimalFormatSymbols(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public java.lang.Object clone() {

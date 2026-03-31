@@ -23,6 +23,10 @@ public final class AppInfo {
         return getReal();
     }
 
+    public AppInfo(boolean arg0) {
+        this(new android.adservices.ondevicepersonalization.AppInfo(arg0), (__DcgwBridgeToken) null);
+    }
+
     public int describeContents() {
         return ((android.adservices.ondevicepersonalization.AppInfo) real).describeContents();
     }

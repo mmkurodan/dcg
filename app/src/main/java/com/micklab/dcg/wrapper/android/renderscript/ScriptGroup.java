@@ -96,11 +96,11 @@ public final class ScriptGroup {
             this(new android.renderscript.ScriptGroup.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder addConnection(com.micklab.dcg.wrapper.android.renderscript.Type arg0, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg1, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg2) {
+        public com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder addConnection(com.micklab.dcg.wrapper.android.renderscript.Type arg0, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg1, com.micklab.dcg.wrapper.android.renderscript.Script.FieldID arg2) {
             return com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder.wrap(((android.renderscript.ScriptGroup.Builder) real).addConnection(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder addConnection(com.micklab.dcg.wrapper.android.renderscript.Type arg0, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg1, com.micklab.dcg.wrapper.android.renderscript.Script.FieldID arg2) {
+        public com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder addConnection(com.micklab.dcg.wrapper.android.renderscript.Type arg0, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg1, com.micklab.dcg.wrapper.android.renderscript.Script.KernelID arg2) {
             return com.micklab.dcg.wrapper.android.renderscript.ScriptGroup.Builder.wrap(((android.renderscript.ScriptGroup.Builder) real).addConnection(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 

@@ -27,10 +27,6 @@ public final class OutputConfiguration {
         this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.view.Surface arg1) {
         this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
@@ -39,12 +35,16 @@ public final class OutputConfiguration {
         this(new android.hardware.camera2.params.OutputConfiguration(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
-    public OutputConfiguration(int arg0, int arg1, com.micklab.dcg.wrapper.android.util.Size arg2) {
-        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
+    public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1) {
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, com.micklab.dcg.wrapper.android.util.Size arg1, long arg2) {
         this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
+    }
+
+    public OutputConfiguration(int arg0, int arg1, com.micklab.dcg.wrapper.android.util.Size arg2) {
+        this(new android.hardware.camera2.params.OutputConfiguration(arg0, arg1, arg2 == null ? null : arg2.getReal()), (__DcgwBridgeToken) null);
     }
 
     public OutputConfiguration(int arg0, int arg1, com.micklab.dcg.wrapper.android.util.Size arg2, long arg3) {
@@ -81,6 +81,10 @@ public final class OutputConfiguration {
 
     public int getMirrorMode() {
         return ((android.hardware.camera2.params.OutputConfiguration) real).getMirrorMode();
+    }
+
+    public int getMirrorMode(com.micklab.dcg.wrapper.android.view.Surface arg0) {
+        return ((android.hardware.camera2.params.OutputConfiguration) real).getMirrorMode(arg0 == null ? null : arg0.getReal());
     }
 
     public long getStreamUseCase() {
@@ -121,6 +125,10 @@ public final class OutputConfiguration {
 
     public void setMirrorMode(int arg0) {
         ((android.hardware.camera2.params.OutputConfiguration) real).setMirrorMode(arg0);
+    }
+
+    public void setMirrorMode(com.micklab.dcg.wrapper.android.view.Surface arg0, int arg1) {
+        ((android.hardware.camera2.params.OutputConfiguration) real).setMirrorMode(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void setPhysicalCameraId(java.lang.String arg0) {

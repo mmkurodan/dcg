@@ -51,11 +51,11 @@ public final class Color {
         return android.graphics.Color.alpha(arg0);
     }
 
-    public static int argb(int arg0, int arg1, int arg2, int arg3) {
+    public static int argb(float arg0, float arg1, float arg2, float arg3) {
         return android.graphics.Color.argb(arg0, arg1, arg2, arg3);
     }
 
-    public static int argb(float arg0, float arg1, float arg2, float arg3) {
+    public static int argb(int arg0, int arg1, int arg2, int arg3) {
         return android.graphics.Color.argb(arg0, arg1, arg2, arg3);
     }
 
@@ -171,11 +171,11 @@ public final class Color {
         return ((android.graphics.Color) real).luminance();
     }
 
-    public static float luminance(long arg0) {
+    public static float luminance(int arg0) {
         return android.graphics.Color.luminance(arg0);
     }
 
-    public static float luminance(int arg0) {
+    public static float luminance(long arg0) {
         return android.graphics.Color.luminance(arg0);
     }
 
@@ -215,11 +215,11 @@ public final class Color {
         return android.graphics.Color.red(arg0);
     }
 
-    public static int rgb(int arg0, int arg1, int arg2) {
+    public static int rgb(float arg0, float arg1, float arg2) {
         return android.graphics.Color.rgb(arg0, arg1, arg2);
     }
 
-    public static int rgb(float arg0, float arg1, float arg2) {
+    public static int rgb(int arg0, int arg1, int arg2) {
         return android.graphics.Color.rgb(arg0, arg1, arg2);
     }
 

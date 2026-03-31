@@ -27,11 +27,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.charCount(arg0);
     }
 
-    public static int codePointAt(char[] arg0, int arg1) {
+    public static int codePointAt(java.lang.CharSequence arg0, int arg1) {
         return android.icu.lang.UCharacter.codePointAt(arg0, arg1);
     }
 
-    public static int codePointAt(java.lang.CharSequence arg0, int arg1) {
+    public static int codePointAt(char[] arg0, int arg1) {
         return android.icu.lang.UCharacter.codePointAt(arg0, arg1);
     }
 
@@ -39,11 +39,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.codePointAt(arg0, arg1, arg2);
     }
 
-    public static int codePointBefore(char[] arg0, int arg1) {
+    public static int codePointBefore(java.lang.CharSequence arg0, int arg1) {
         return android.icu.lang.UCharacter.codePointBefore(arg0, arg1);
     }
 
-    public static int codePointBefore(java.lang.CharSequence arg0, int arg1) {
+    public static int codePointBefore(char[] arg0, int arg1) {
         return android.icu.lang.UCharacter.codePointBefore(arg0, arg1);
     }
 
@@ -67,19 +67,19 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.digit(arg0, arg1);
     }
 
-    public static int foldCase(int arg0, boolean arg1) {
-        return android.icu.lang.UCharacter.foldCase(arg0, arg1);
-    }
-
     public static int foldCase(int arg0, int arg1) {
         return android.icu.lang.UCharacter.foldCase(arg0, arg1);
     }
 
-    public static java.lang.String foldCase(java.lang.String arg0, boolean arg1) {
+    public static int foldCase(int arg0, boolean arg1) {
         return android.icu.lang.UCharacter.foldCase(arg0, arg1);
     }
 
     public static java.lang.String foldCase(java.lang.String arg0, int arg1) {
+        return android.icu.lang.UCharacter.foldCase(arg0, arg1);
+    }
+
+    public static java.lang.String foldCase(java.lang.String arg0, boolean arg1) {
         return android.icu.lang.UCharacter.foldCase(arg0, arg1);
     }
 
@@ -111,11 +111,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.getCodePoint(arg0);
     }
 
-    public static int getCodePoint(int arg0, int arg1) {
+    public static int getCodePoint(char arg0, char arg1) {
         return android.icu.lang.UCharacter.getCodePoint(arg0, arg1);
     }
 
-    public static int getCodePoint(char arg0, char arg1) {
+    public static int getCodePoint(int arg0, int arg1) {
         return android.icu.lang.UCharacter.getCodePoint(arg0, arg1);
     }
 
@@ -211,11 +211,11 @@ public final class UCharacter {
         return com.micklab.dcg.wrapper.android.icu.util.VersionInfo.wrap(android.icu.lang.UCharacter.getUnicodeVersion());
     }
 
-    public static boolean hasBinaryProperty(java.lang.CharSequence arg0, int arg1) {
+    public static boolean hasBinaryProperty(int arg0, int arg1) {
         return android.icu.lang.UCharacter.hasBinaryProperty(arg0, arg1);
     }
 
-    public static boolean hasBinaryProperty(int arg0, int arg1) {
+    public static boolean hasBinaryProperty(java.lang.CharSequence arg0, int arg1) {
         return android.icu.lang.UCharacter.hasBinaryProperty(arg0, arg1);
     }
 
@@ -259,11 +259,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.isJavaIdentifierStart(arg0);
     }
 
-    public static boolean isLegal(int arg0) {
+    public static boolean isLegal(java.lang.String arg0) {
         return android.icu.lang.UCharacter.isLegal(arg0);
     }
 
-    public static boolean isLegal(java.lang.String arg0) {
+    public static boolean isLegal(int arg0) {
         return android.icu.lang.UCharacter.isLegal(arg0);
     }
 
@@ -275,11 +275,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.isLetterOrDigit(arg0);
     }
 
-    public static boolean isLowSurrogate(char arg0) {
+    public static boolean isLowSurrogate(int arg0) {
         return android.icu.lang.UCharacter.isLowSurrogate(arg0);
     }
 
-    public static boolean isLowSurrogate(int arg0) {
+    public static boolean isLowSurrogate(char arg0) {
         return android.icu.lang.UCharacter.isLowSurrogate(arg0);
     }
 
@@ -307,11 +307,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.isSupplementaryCodePoint(arg0);
     }
 
-    public static boolean isSurrogatePair(char arg0, char arg1) {
+    public static boolean isSurrogatePair(int arg0, int arg1) {
         return android.icu.lang.UCharacter.isSurrogatePair(arg0, arg1);
     }
 
-    public static boolean isSurrogatePair(int arg0, int arg1) {
+    public static boolean isSurrogatePair(char arg0, char arg1) {
         return android.icu.lang.UCharacter.isSurrogatePair(arg0, arg1);
     }
 
@@ -371,11 +371,11 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.toChars(arg0, arg1, arg2);
     }
 
-    public static int toCodePoint(int arg0, int arg1) {
+    public static int toCodePoint(char arg0, char arg1) {
         return android.icu.lang.UCharacter.toCodePoint(arg0, arg1);
     }
 
-    public static int toCodePoint(char arg0, char arg1) {
+    public static int toCodePoint(int arg0, int arg1) {
         return android.icu.lang.UCharacter.toCodePoint(arg0, arg1);
     }
 
@@ -387,12 +387,12 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.toLowerCase(arg0);
     }
 
-    public static java.lang.String toLowerCase(java.util.Locale arg0, java.lang.String arg1) {
-        return android.icu.lang.UCharacter.toLowerCase(arg0, arg1);
-    }
-
     public static java.lang.String toLowerCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1) {
         return android.icu.lang.UCharacter.toLowerCase(arg0 == null ? null : arg0.getReal(), arg1);
+    }
+
+    public static java.lang.String toLowerCase(java.util.Locale arg0, java.lang.String arg1) {
+        return android.icu.lang.UCharacter.toLowerCase(arg0, arg1);
     }
 
     public static java.lang.String toString(int arg0) {
@@ -415,12 +415,12 @@ public final class UCharacter {
         return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
-    public static java.lang.String toTitleCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2, int arg3) {
-        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3);
-    }
-
     public static java.lang.String toTitleCase(java.util.Locale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2, int arg3) {
         return android.icu.lang.UCharacter.toTitleCase(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3);
+    }
+
+    public static java.lang.String toTitleCase(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.text.BreakIterator arg2, int arg3) {
+        return android.icu.lang.UCharacter.toTitleCase(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3);
     }
 
     public static int toUpperCase(int arg0) {
@@ -721,6 +721,7 @@ public final class UCharacter {
         public static final int OTHER = android.icu.lang.UCharacter.IndicSyllabicCategory.OTHER;
         public static final int PURE_KILLER = android.icu.lang.UCharacter.IndicSyllabicCategory.PURE_KILLER;
         public static final int REGISTER_SHIFTER = android.icu.lang.UCharacter.IndicSyllabicCategory.REGISTER_SHIFTER;
+        public static final int REORDERING_KILLER = android.icu.lang.UCharacter.IndicSyllabicCategory.REORDERING_KILLER;
         public static final int SYLLABLE_MODIFIER = android.icu.lang.UCharacter.IndicSyllabicCategory.SYLLABLE_MODIFIER;
         public static final int TONE_LETTER = android.icu.lang.UCharacter.IndicSyllabicCategory.TONE_LETTER;
         public static final int TONE_MARK = android.icu.lang.UCharacter.IndicSyllabicCategory.TONE_MARK;
@@ -781,6 +782,7 @@ public final class UCharacter {
         public static final int HETH = android.icu.lang.UCharacter.JoiningGroup.HETH;
         public static final int KAF = android.icu.lang.UCharacter.JoiningGroup.KAF;
         public static final int KAPH = android.icu.lang.UCharacter.JoiningGroup.KAPH;
+        public static final int KASHMIRI_YEH = android.icu.lang.UCharacter.JoiningGroup.KASHMIRI_YEH;
         public static final int KHAPH = android.icu.lang.UCharacter.JoiningGroup.KHAPH;
         public static final int KNOTTED_HEH = android.icu.lang.UCharacter.JoiningGroup.KNOTTED_HEH;
         public static final int LAM = android.icu.lang.UCharacter.JoiningGroup.LAM;
@@ -1257,6 +1259,8 @@ public final class UCharacter {
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock EARLY_DYNASTIC_CUNEIFORM = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.EARLY_DYNASTIC_CUNEIFORM);
         public static final int EARLY_DYNASTIC_CUNEIFORM_ID = android.icu.lang.UCharacter.UnicodeBlock.EARLY_DYNASTIC_CUNEIFORM_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock EGYPTIAN_HIEROGLYPHS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPHS);
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock EGYPTIAN_HIEROGLYPHS_EXTENDED_A = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPHS_EXTENDED_A);
+        public static final int EGYPTIAN_HIEROGLYPHS_EXTENDED_A_ID = android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPHS_EXTENDED_A_ID;
         public static final int EGYPTIAN_HIEROGLYPHS_ID = android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPHS_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS);
         public static final int EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS_ID = android.icu.lang.UCharacter.UnicodeBlock.EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS_ID;
@@ -1284,6 +1288,8 @@ public final class UCharacter {
         public static final int ETHIOPIC_ID = android.icu.lang.UCharacter.UnicodeBlock.ETHIOPIC_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock ETHIOPIC_SUPPLEMENT = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.ETHIOPIC_SUPPLEMENT);
         public static final int ETHIOPIC_SUPPLEMENT_ID = android.icu.lang.UCharacter.UnicodeBlock.ETHIOPIC_SUPPLEMENT_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock GARAY = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.GARAY);
+        public static final int GARAY_ID = android.icu.lang.UCharacter.UnicodeBlock.GARAY_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock GENERAL_PUNCTUATION = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.GENERAL_PUNCTUATION);
         public static final int GENERAL_PUNCTUATION_ID = android.icu.lang.UCharacter.UnicodeBlock.GENERAL_PUNCTUATION_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock GEOMETRIC_SHAPES = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.GEOMETRIC_SHAPES);
@@ -1314,6 +1320,8 @@ public final class UCharacter {
         public static final int GUNJALA_GONDI_ID = android.icu.lang.UCharacter.UnicodeBlock.GUNJALA_GONDI_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock GURMUKHI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.GURMUKHI);
         public static final int GURMUKHI_ID = android.icu.lang.UCharacter.UnicodeBlock.GURMUKHI_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock GURUNG_KHEMA = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.GURUNG_KHEMA);
+        public static final int GURUNG_KHEMA_ID = android.icu.lang.UCharacter.UnicodeBlock.GURUNG_KHEMA_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock HALFWIDTH_AND_FULLWIDTH_FORMS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS);
         public static final int HALFWIDTH_AND_FULLWIDTH_FORMS_ID = android.icu.lang.UCharacter.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock HANGUL_COMPATIBILITY_JAMO = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.HANGUL_COMPATIBILITY_JAMO);
@@ -1394,6 +1402,8 @@ public final class UCharacter {
         public static final int KHOJKI_ID = android.icu.lang.UCharacter.UnicodeBlock.KHOJKI_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock KHUDAWADI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.KHUDAWADI);
         public static final int KHUDAWADI_ID = android.icu.lang.UCharacter.UnicodeBlock.KHUDAWADI_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock KIRAT_RAI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.KIRAT_RAI);
+        public static final int KIRAT_RAI_ID = android.icu.lang.UCharacter.UnicodeBlock.KIRAT_RAI_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock LAO = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.LAO);
         public static final int LAO_ID = android.icu.lang.UCharacter.UnicodeBlock.LAO_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock LATIN_1_SUPPLEMENT = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.LATIN_1_SUPPLEMENT);
@@ -1503,6 +1513,8 @@ public final class UCharacter {
         public static final int MYANMAR_EXTENDED_A_ID = android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_EXTENDED_A_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock MYANMAR_EXTENDED_B = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_EXTENDED_B);
         public static final int MYANMAR_EXTENDED_B_ID = android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_EXTENDED_B_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock MYANMAR_EXTENDED_C = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_EXTENDED_C);
+        public static final int MYANMAR_EXTENDED_C_ID = android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_EXTENDED_C_ID;
         public static final int MYANMAR_ID = android.icu.lang.UCharacter.UnicodeBlock.MYANMAR_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock NABATAEAN = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.NABATAEAN);
         public static final int NABATAEAN_ID = android.icu.lang.UCharacter.UnicodeBlock.NABATAEAN_ID;
@@ -1545,6 +1557,8 @@ public final class UCharacter {
         public static final int OLD_UYGHUR_ID = android.icu.lang.UCharacter.UnicodeBlock.OLD_UYGHUR_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock OL_CHIKI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.OL_CHIKI);
         public static final int OL_CHIKI_ID = android.icu.lang.UCharacter.UnicodeBlock.OL_CHIKI_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock OL_ONAL = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.OL_ONAL);
+        public static final int OL_ONAL_ID = android.icu.lang.UCharacter.UnicodeBlock.OL_ONAL_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock OPTICAL_CHARACTER_RECOGNITION = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.OPTICAL_CHARACTER_RECOGNITION);
         public static final int OPTICAL_CHARACTER_RECOGNITION_ID = android.icu.lang.UCharacter.UnicodeBlock.OPTICAL_CHARACTER_RECOGNITION_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock ORIYA = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.ORIYA);
@@ -1621,6 +1635,8 @@ public final class UCharacter {
         public static final int SUNDANESE_ID = android.icu.lang.UCharacter.UnicodeBlock.SUNDANESE_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SUNDANESE_SUPPLEMENT = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SUNDANESE_SUPPLEMENT);
         public static final int SUNDANESE_SUPPLEMENT_ID = android.icu.lang.UCharacter.UnicodeBlock.SUNDANESE_SUPPLEMENT_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SUNUWAR = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SUNUWAR);
+        public static final int SUNUWAR_ID = android.icu.lang.UCharacter.UnicodeBlock.SUNUWAR_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SUPERSCRIPTS_AND_SUBSCRIPTS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SUPERSCRIPTS_AND_SUBSCRIPTS);
         public static final int SUPERSCRIPTS_AND_SUBSCRIPTS_ID = android.icu.lang.UCharacter.UnicodeBlock.SUPERSCRIPTS_AND_SUBSCRIPTS_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SUPPLEMENTAL_ARROWS_A = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SUPPLEMENTAL_ARROWS_A);
@@ -1647,6 +1663,8 @@ public final class UCharacter {
         public static final int SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A_ID = android.icu.lang.UCharacter.UnicodeBlock.SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SYMBOLS_FOR_LEGACY_COMPUTING = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SYMBOLS_FOR_LEGACY_COMPUTING);
         public static final int SYMBOLS_FOR_LEGACY_COMPUTING_ID = android.icu.lang.UCharacter.UnicodeBlock.SYMBOLS_FOR_LEGACY_COMPUTING_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT);
+        public static final int SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT_ID = android.icu.lang.UCharacter.UnicodeBlock.SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SYRIAC = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SYRIAC);
         public static final int SYRIAC_ID = android.icu.lang.UCharacter.UnicodeBlock.SYRIAC_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock SYRIAC_SUPPLEMENT = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.SYRIAC_SUPPLEMENT);
@@ -1691,10 +1709,14 @@ public final class UCharacter {
         public static final int TIFINAGH_ID = android.icu.lang.UCharacter.UnicodeBlock.TIFINAGH_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock TIRHUTA = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.TIRHUTA);
         public static final int TIRHUTA_ID = android.icu.lang.UCharacter.UnicodeBlock.TIRHUTA_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock TODHRI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.TODHRI);
+        public static final int TODHRI_ID = android.icu.lang.UCharacter.UnicodeBlock.TODHRI_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock TOTO = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.TOTO);
         public static final int TOTO_ID = android.icu.lang.UCharacter.UnicodeBlock.TOTO_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock TRANSPORT_AND_MAP_SYMBOLS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.TRANSPORT_AND_MAP_SYMBOLS);
         public static final int TRANSPORT_AND_MAP_SYMBOLS_ID = android.icu.lang.UCharacter.UnicodeBlock.TRANSPORT_AND_MAP_SYMBOLS_ID;
+        public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock TULU_TIGALARI = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.TULU_TIGALARI);
+        public static final int TULU_TIGALARI_ID = android.icu.lang.UCharacter.UnicodeBlock.TULU_TIGALARI_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock UGARITIC = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.UGARITIC);
         public static final int UGARITIC_ID = android.icu.lang.UCharacter.UnicodeBlock.UGARITIC_ID;
         public static final com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS = com.micklab.dcg.wrapper.android.icu.lang.UCharacter.UnicodeBlock.wrap(android.icu.lang.UCharacter.UnicodeBlock.UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS);

@@ -23,12 +23,12 @@ public final class UniversalTimeScale {
         return getReal();
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(long arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.bigDecimalFrom(arg0, arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
         return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.bigDecimalFrom(arg0 == null ? null : arg0.getReal(), arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(long arg0, int arg1) {
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.bigDecimalFrom(arg0, arg1));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal bigDecimalFrom(double arg0, int arg1) {
@@ -43,12 +43,12 @@ public final class UniversalTimeScale {
         return android.icu.util.UniversalTimeScale.getTimeScaleValue(arg0, arg1);
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal toBigDecimal(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.toBigDecimal(arg0 == null ? null : arg0.getReal(), arg1));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal toBigDecimal(long arg0, int arg1) {
         return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.toBigDecimal(arg0, arg1));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.math.BigDecimal toBigDecimal(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, int arg1) {
+        return com.micklab.dcg.wrapper.android.icu.math.BigDecimal.wrap(android.icu.util.UniversalTimeScale.toBigDecimal(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
     public static long toLong(long arg0, int arg1) {

@@ -59,27 +59,27 @@ public final class DecimalFormat {
         return ((android.icu.text.DecimalFormat) real).equals(arg0);
     }
 
-    public java.lang.StringBuffer format(java.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(long arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DecimalFormat) real).format(arg0, arg1, arg2);
-    }
-
-    public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return ((android.icu.text.DecimalFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
-    }
-
-    public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
-        return ((android.icu.text.DecimalFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
     }
 
     public java.lang.StringBuffer format(double arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DecimalFormat) real).format(arg0, arg1, arg2);
     }
 
-    public java.lang.StringBuffer format(long arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(java.math.BigInteger arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DecimalFormat) real).format(arg0, arg1, arg2);
     }
 
-    public java.lang.StringBuffer format(java.math.BigInteger arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+    public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.util.CurrencyAmount arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+        return ((android.icu.text.DecimalFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
+    }
+
+    public java.lang.StringBuffer format(com.micklab.dcg.wrapper.android.icu.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
+        return ((android.icu.text.DecimalFormat) real).format(arg0 == null ? null : arg0.getReal(), arg1, arg2);
+    }
+
+    public java.lang.StringBuffer format(java.math.BigDecimal arg0, java.lang.StringBuffer arg1, java.text.FieldPosition arg2) {
         return ((android.icu.text.DecimalFormat) real).format(arg0, arg1, arg2);
     }
 

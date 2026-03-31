@@ -35,6 +35,10 @@ public final class ContentCaptureSession {
         ((android.view.contentcapture.ContentCaptureSession) real).destroy();
     }
 
+    public void flush() {
+        ((android.view.contentcapture.ContentCaptureSession) real).flush();
+    }
+
     public com.micklab.dcg.wrapper.android.view.contentcapture.ContentCaptureContext getContentCaptureContext() {
         return com.micklab.dcg.wrapper.android.view.contentcapture.ContentCaptureContext.wrap(((android.view.contentcapture.ContentCaptureSession) real).getContentCaptureContext());
     }

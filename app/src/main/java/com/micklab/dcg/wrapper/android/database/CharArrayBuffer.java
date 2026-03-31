@@ -23,12 +23,12 @@ public final class CharArrayBuffer {
         return getReal();
     }
 
-    public CharArrayBuffer(int arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CharArrayBuffer#android.database.CharArrayBuffer(int)");
-    }
-
     public CharArrayBuffer(char[] arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CharArrayBuffer#android.database.CharArrayBuffer([C)");
+    }
+
+    public CharArrayBuffer(int arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CharArrayBuffer#android.database.CharArrayBuffer(int)");
     }
 
 

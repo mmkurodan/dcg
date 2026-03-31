@@ -43,6 +43,10 @@ public final class NotificationListenerService {
         ((android.service.notification.NotificationListenerService) real).clearRequestedListenerHints();
     }
 
+    public com.micklab.dcg.wrapper.android.app.NotificationChannel createConversationNotificationChannelForPackage(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, java.lang.String arg2, java.lang.String arg3) {
+        return com.micklab.dcg.wrapper.android.app.NotificationChannel.wrap(((android.service.notification.NotificationListenerService) real).createConversationNotificationChannelForPackage(arg0, arg1 == null ? null : arg1.getReal(), arg2, arg3));
+    }
+
     public android.service.notification.StatusBarNotification[] getActiveNotifications() {
         return ((android.service.notification.NotificationListenerService) real).getActiveNotifications();
     }

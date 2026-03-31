@@ -31,12 +31,12 @@ public final class NsdManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdManager#discoverServices(android.net.nsd.DiscoveryRequest,java.util.concurrent.Executor,android.net.nsd.NsdManager$DiscoveryListener)");
     }
 
-    public void discoverServices(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.Network arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener arg4) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdManager#discoverServices(java.lang.String,int,android.net.Network,java.util.concurrent.Executor,android.net.nsd.NsdManager$DiscoveryListener)");
-    }
-
     public void discoverServices(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.NetworkRequest arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener arg4) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdManager#discoverServices(java.lang.String,int,android.net.NetworkRequest,java.util.concurrent.Executor,android.net.nsd.NsdManager$DiscoveryListener)");
+    }
+
+    public void discoverServices(java.lang.String arg0, int arg1, com.micklab.dcg.wrapper.android.net.Network arg2, java.util.concurrent.Executor arg3, com.micklab.dcg.wrapper.android.net.nsd.NsdManager.DiscoveryListener arg4) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.nsd.NsdManager#discoverServices(java.lang.String,int,android.net.Network,java.util.concurrent.Executor,android.net.nsd.NsdManager$DiscoveryListener)");
     }
 
     public void registerService(com.micklab.dcg.wrapper.android.net.nsd.NsdServiceInfo arg0, int arg1, com.micklab.dcg.wrapper.android.net.nsd.NsdManager.RegistrationListener arg2) {

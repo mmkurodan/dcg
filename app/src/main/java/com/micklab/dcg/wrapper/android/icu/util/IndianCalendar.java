@@ -27,7 +27,15 @@ public final class IndianCalendar {
         this(new android.icu.util.IndianCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public IndianCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public IndianCalendar(java.util.Date arg0) {
+        this(new android.icu.util.IndianCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public IndianCalendar(java.util.Locale arg0) {
         this(new android.icu.util.IndianCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class IndianCalendar {
         this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public IndianCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.IndianCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public IndianCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public IndianCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IndianCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public IndianCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.IndianCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IndianCalendar(int arg0, int arg1, int arg2) {

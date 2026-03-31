@@ -23,12 +23,20 @@ public final class WifiP2pServiceRequest {
         return getReal();
     }
 
+    public WifiP2pServiceRequest(com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pUsdBasedServiceConfig arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.nsd.WifiP2pServiceRequest#android.net.wifi.p2p.nsd.WifiP2pServiceRequest(android.net.wifi.p2p.nsd.WifiP2pUsdBasedServiceConfig)");
+    }
+
     public int describeContents() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.nsd.WifiP2pServiceRequest#describeContents()");
     }
 
     public boolean equals(java.lang.Object arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.nsd.WifiP2pServiceRequest#equals(java.lang.Object)");
+    }
+
+    public com.micklab.dcg.wrapper.android.net.wifi.p2p.nsd.WifiP2pUsdBasedServiceConfig getWifiP2pUsdBasedServiceConfig() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.nsd.WifiP2pServiceRequest#getWifiP2pUsdBasedServiceConfig()");
     }
 
     public int hashCode() {

@@ -81,6 +81,10 @@ public final class SearchSuggestionSpec {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSuggestionSpec.Builder.wrap(((android.app.appsearch.SearchSuggestionSpec.Builder) real).addFilterSchemas(arg0));
         }
 
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchSuggestionSpec.Builder addSearchStringParameters(java.lang.String... arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchSuggestionSpec.Builder.wrap(((android.app.appsearch.SearchSuggestionSpec.Builder) real).addSearchStringParameters(arg0));
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchSuggestionSpec build() {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchSuggestionSpec.wrap(((android.app.appsearch.SearchSuggestionSpec.Builder) real).build());
         }

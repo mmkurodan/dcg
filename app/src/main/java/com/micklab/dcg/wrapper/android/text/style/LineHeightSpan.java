@@ -49,12 +49,12 @@ public final class LineHeightSpan {
             return getReal();
         }
 
-        public Standard(int arg0) {
-            this(new android.text.style.LineHeightSpan.Standard(arg0), (__DcgwBridgeToken) null);
-        }
-
         public Standard(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
             this(new android.text.style.LineHeightSpan.Standard(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
+        public Standard(int arg0) {
+            this(new android.text.style.LineHeightSpan.Standard(arg0), (__DcgwBridgeToken) null);
         }
 
         public void chooseHeight(java.lang.CharSequence arg0, int arg1, int arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.graphics.Paint.FontMetricsInt arg5) {

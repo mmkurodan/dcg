@@ -67,11 +67,11 @@ public final class Log {
         return android.util.Log.v(arg0, arg1, arg2);
     }
 
-    public static int w(java.lang.String arg0, java.lang.Throwable arg1) {
+    public static int w(java.lang.String arg0, java.lang.String arg1) {
         return android.util.Log.w(arg0, arg1);
     }
 
-    public static int w(java.lang.String arg0, java.lang.String arg1) {
+    public static int w(java.lang.String arg0, java.lang.Throwable arg1) {
         return android.util.Log.w(arg0, arg1);
     }
 

@@ -16,7 +16,7 @@
         manifests="src/main/AndroidManifest.xml"
         javaDirectories="src/main/java:src/debug/java:src/main/kotlin:src/debug/kotlin"
         resDirectories="src/main/res:src/debug/res"
-        assetsDirectories="src/main/assets:build/generated/wrapper-assets:src/debug/assets"/>
+        assetsDirectories="src/main/assets:src/debug/assets"/>
   </sourceProviders>
   <testSourceProviders>
   </testSourceProviders>
@@ -28,6 +28,6 @@
       applicationId="com.micklab.dcg"
       generatedSourceFolders="build/generated/ap_generated_sources/debug/out"
       generatedResourceFolders="build/generated/res/resValues/debug"
-      desugaredMethodsFiles="/root/.gradle/caches/8.12/transforms/26ac464fe312f93db639835a30d6dbeb/transformed/desugar_jdk_libs_configuration-2.1.5-desugar-lint.txt:/root/.gradle/caches/8.12/transforms/0f162286e1be7a6280633bc2e22502a1/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/root/.gradle/caches/8.12/transforms/296c2f35a28f3a2066ea54fceaa6b4f3/transformed/desugar_jdk_libs_configuration-2.1.5-desugar-lint.txt:/root/.gradle/caches/8.12/transforms/18c479bdc73a57ee06c84fd95aa67039/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

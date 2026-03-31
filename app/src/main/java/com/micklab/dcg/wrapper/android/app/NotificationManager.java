@@ -51,6 +51,10 @@ public final class NotificationManager {
         return ((android.app.NotificationManager) real).canNotifyAsPackage(arg0);
     }
 
+    public boolean canPostPromotedNotifications() {
+        return ((android.app.NotificationManager) real).canPostPromotedNotifications();
+    }
+
     public boolean canUseFullScreenIntent() {
         return ((android.app.NotificationManager) real).canUseFullScreenIntent();
     }

@@ -27,7 +27,15 @@ public final class BuddhistCalendar {
         this(new android.icu.util.BuddhistCalendar(), (__DcgwBridgeToken) null);
     }
 
+    public BuddhistCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
+        this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
     public BuddhistCalendar(java.util.Date arg0) {
+        this(new android.icu.util.BuddhistCalendar(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public BuddhistCalendar(java.util.Locale arg0) {
         this(new android.icu.util.BuddhistCalendar(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -35,20 +43,12 @@ public final class BuddhistCalendar {
         this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public BuddhistCalendar(java.util.Locale arg0) {
-        this(new android.icu.util.BuddhistCalendar(arg0), (__DcgwBridgeToken) null);
-    }
-
-    public BuddhistCalendar(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
-        this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public BuddhistCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public BuddhistCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, java.util.Locale arg1) {
         this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public BuddhistCalendar(com.micklab.dcg.wrapper.android.icu.util.TimeZone arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        this(new android.icu.util.BuddhistCalendar(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public BuddhistCalendar(int arg0, int arg1, int arg2) {

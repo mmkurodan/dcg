@@ -23,12 +23,12 @@ public final class RelativeSizeSpan {
         return getReal();
     }
 
-    public RelativeSizeSpan(float arg0) {
-        this(new android.text.style.RelativeSizeSpan(arg0), (__DcgwBridgeToken) null);
-    }
-
     public RelativeSizeSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.text.style.RelativeSizeSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public RelativeSizeSpan(float arg0) {
+        this(new android.text.style.RelativeSizeSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

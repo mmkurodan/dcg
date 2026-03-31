@@ -51,12 +51,12 @@ public final class PopupWindow {
         this(new android.widget.PopupWindow(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2), (__DcgwBridgeToken) null);
     }
 
-    public PopupWindow(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, int arg2, boolean arg3) {
-        this(new android.widget.PopupWindow(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3), (__DcgwBridgeToken) null);
-    }
-
     public PopupWindow(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3) {
         this(new android.widget.PopupWindow(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
+    }
+
+    public PopupWindow(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, int arg2, boolean arg3) {
+        this(new android.widget.PopupWindow(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
     public void dismiss() {
@@ -307,12 +307,12 @@ public final class PopupWindow {
         ((android.widget.PopupWindow) real).update(arg0, arg1, arg2, arg3);
     }
 
-    public void update(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, int arg2, int arg3, int arg4) {
-        ((android.widget.PopupWindow) real).update(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
-    }
-
     public void update(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
         ((android.widget.PopupWindow) real).update(arg0, arg1, arg2, arg3, arg4);
+    }
+
+    public void update(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, int arg2, int arg3, int arg4) {
+        ((android.widget.PopupWindow) real).update(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
     }
 
     public static final int INPUT_METHOD_FROM_FOCUSABLE = android.widget.PopupWindow.INPUT_METHOD_FROM_FOCUSABLE;

@@ -71,11 +71,11 @@ public final class SimpleAdapter {
         ((android.widget.SimpleAdapter) real).setViewBinder(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setViewImage(com.micklab.dcg.wrapper.android.widget.ImageView arg0, int arg1) {
+    public void setViewImage(com.micklab.dcg.wrapper.android.widget.ImageView arg0, java.lang.String arg1) {
         ((android.widget.SimpleAdapter) real).setViewImage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public void setViewImage(com.micklab.dcg.wrapper.android.widget.ImageView arg0, java.lang.String arg1) {
+    public void setViewImage(com.micklab.dcg.wrapper.android.widget.ImageView arg0, int arg1) {
         ((android.widget.SimpleAdapter) real).setViewImage(arg0 == null ? null : arg0.getReal(), arg1);
     }
 

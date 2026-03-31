@@ -27,8 +27,20 @@ public final class AppOpsManager {
         return ((android.app.AppOpsManager) real).checkOp(arg0, arg1, arg2);
     }
 
+    public int checkOp(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
+        return ((android.app.AppOpsManager) real).checkOp(arg0, arg1, arg2, arg3);
+    }
+
     public int checkOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2) {
         return ((android.app.AppOpsManager) real).checkOpNoThrow(arg0, arg1, arg2);
+    }
+
+    public int checkOpNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
+        return ((android.app.AppOpsManager) real).checkOpNoThrow(arg0, arg1, arg2, arg3);
+    }
+
+    public int checkOpRawNoThrow(java.lang.String arg0, int arg1, java.lang.String arg2, java.lang.String arg3) {
+        return ((android.app.AppOpsManager) real).checkOpRawNoThrow(arg0, arg1, arg2, arg3);
     }
 
     public void checkPackage(int arg0, java.lang.String arg1) {
@@ -93,6 +105,10 @@ public final class AppOpsManager {
 
     public void setOnOpNotedCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback arg1) {
         ((android.app.AppOpsManager) real).setOnOpNotedCallback(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void setOnOpNotedCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.app.AppOpsManager.OnOpNotedCallback arg1, int arg2) {
+        ((android.app.AppOpsManager) real).setOnOpNotedCallback(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
     public int startOp(java.lang.String arg0, int arg1, java.lang.String arg2) {
@@ -194,6 +210,7 @@ public final class AppOpsManager {
     public static final java.lang.String OPSTR_WRITE_CONTACTS = android.app.AppOpsManager.OPSTR_WRITE_CONTACTS;
     public static final java.lang.String OPSTR_WRITE_EXTERNAL_STORAGE = android.app.AppOpsManager.OPSTR_WRITE_EXTERNAL_STORAGE;
     public static final java.lang.String OPSTR_WRITE_SETTINGS = android.app.AppOpsManager.OPSTR_WRITE_SETTINGS;
+    public static final int OP_NOTED_CALLBACK_FLAG_IGNORE_ASYNC = android.app.AppOpsManager.OP_NOTED_CALLBACK_FLAG_IGNORE_ASYNC;
     public static final int WATCH_FOREGROUND_CHANGES = android.app.AppOpsManager.WATCH_FOREGROUND_CHANGES;
 
     public static final class OnOpActiveChangedListener {

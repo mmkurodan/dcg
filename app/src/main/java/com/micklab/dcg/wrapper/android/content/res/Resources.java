@@ -195,11 +195,11 @@ public final class Resources {
         return ((android.content.res.Resources) real).getTextArray(arg0);
     }
 
-    public void getValue(int arg0, com.micklab.dcg.wrapper.android.util.TypedValue arg1, boolean arg2) throws android.content.res.Resources.NotFoundException {
+    public void getValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.util.TypedValue arg1, boolean arg2) throws android.content.res.Resources.NotFoundException {
         ((android.content.res.Resources) real).getValue(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public void getValue(java.lang.String arg0, com.micklab.dcg.wrapper.android.util.TypedValue arg1, boolean arg2) throws android.content.res.Resources.NotFoundException {
+    public void getValue(int arg0, com.micklab.dcg.wrapper.android.util.TypedValue arg1, boolean arg2) throws android.content.res.Resources.NotFoundException {
         ((android.content.res.Resources) real).getValue(arg0, arg1 == null ? null : arg1.getReal(), arg2);
     }
 

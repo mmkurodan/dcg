@@ -39,6 +39,10 @@ public final class WifiP2pGroup {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pGroup#getFrequency()");
     }
 
+    public com.micklab.dcg.wrapper.android.net.MacAddress getGroupOwnerBssid() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pGroup#getGroupOwnerBssid()");
+    }
+
     public java.lang.String getInterface() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pGroup#getInterface()");
     }
@@ -57,6 +61,10 @@ public final class WifiP2pGroup {
 
     public java.lang.String getPassphrase() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pGroup#getPassphrase()");
+    }
+
+    public int getSecurityType() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pGroup#getSecurityType()");
     }
 
     public boolean isGroupOwner() {

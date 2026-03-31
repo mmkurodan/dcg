@@ -43,6 +43,10 @@ public final class WifiP2pConfig {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getGroupOwnerBand()");
     }
 
+    public int getGroupOwnerVersion() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getGroupOwnerVersion()");
+    }
+
     public int getNetworkId() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getNetworkId()");
     }
@@ -51,8 +55,24 @@ public final class WifiP2pConfig {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getNetworkName()");
     }
 
+    public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pPairingBootstrappingConfig getPairingBootstrappingConfig() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getPairingBootstrappingConfig()");
+    }
+
     public java.lang.String getPassphrase() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getPassphrase()");
+    }
+
+    public int getPccModeConnectionType() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#getPccModeConnectionType()");
+    }
+
+    public boolean isAuthorizeConnectionFromPeerEnabled() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#isAuthorizeConnectionFromPeerEnabled()");
+    }
+
+    public void setGroupOwnerVersion(int arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig#setGroupOwnerVersion(int)");
     }
 
     public java.lang.String toString() {
@@ -98,6 +118,10 @@ public final class WifiP2pConfig {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#enablePersistentMode(boolean)");
         }
 
+        public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder setAuthorizeConnectionFromPeerEnabled(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setAuthorizeConnectionFromPeerEnabled(boolean)");
+        }
+
         public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder setDeviceAddress(com.micklab.dcg.wrapper.android.net.MacAddress arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setDeviceAddress(android.net.MacAddress)");
         }
@@ -118,8 +142,16 @@ public final class WifiP2pConfig {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setNetworkName(java.lang.String)");
         }
 
+        public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder setPairingBootstrappingConfig(com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pPairingBootstrappingConfig arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setPairingBootstrappingConfig(android.net.wifi.p2p.WifiP2pPairingBootstrappingConfig)");
+        }
+
         public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder setPassphrase(java.lang.String arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setPassphrase(java.lang.String)");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.p2p.WifiP2pConfig.Builder setPccModeConnectionType(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.p2p.WifiP2pConfig$Builder#setPccModeConnectionType(int)");
         }
 
     }

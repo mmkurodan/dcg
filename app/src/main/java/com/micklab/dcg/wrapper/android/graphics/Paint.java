@@ -27,12 +27,12 @@ public final class Paint {
         this(new android.graphics.Paint(), (__DcgwBridgeToken) null);
     }
 
-    public Paint(com.micklab.dcg.wrapper.android.graphics.Paint arg0) {
-        this(new android.graphics.Paint(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public Paint(int arg0) {
         this(new android.graphics.Paint(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public Paint(com.micklab.dcg.wrapper.android.graphics.Paint arg0) {
+        this(new android.graphics.Paint(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public float ascent() {
@@ -243,11 +243,11 @@ public final class Paint {
         ((android.graphics.Paint) real).getTextBounds(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void getTextBounds(char[] arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
+    public void getTextBounds(java.lang.CharSequence arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
         ((android.graphics.Paint) real).getTextBounds(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void getTextBounds(java.lang.CharSequence arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
+    public void getTextBounds(char[] arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
         ((android.graphics.Paint) real).getTextBounds(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
@@ -259,11 +259,11 @@ public final class Paint {
         return com.micklab.dcg.wrapper.android.os.LocaleList.wrap(((android.graphics.Paint) real).getTextLocales());
     }
 
-    public void getTextPath(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Path arg5) {
+    public void getTextPath(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Path arg5) {
         ((android.graphics.Paint) real).getTextPath(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
-    public void getTextPath(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Path arg5) {
+    public void getTextPath(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Path arg5) {
         ((android.graphics.Paint) real).getTextPath(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
@@ -407,11 +407,11 @@ public final class Paint {
         ((android.graphics.Paint) real).setBlendMode(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setColor(long arg0) {
+    public void setColor(int arg0) {
         ((android.graphics.Paint) real).setColor(arg0);
     }
 
-    public void setColor(int arg0) {
+    public void setColor(long arg0) {
         ((android.graphics.Paint) real).setColor(arg0);
     }
 
@@ -584,6 +584,7 @@ public final class Paint {
     public static final int TEXT_RUN_FLAG_LEFT_EDGE = android.graphics.Paint.TEXT_RUN_FLAG_LEFT_EDGE;
     public static final int TEXT_RUN_FLAG_RIGHT_EDGE = android.graphics.Paint.TEXT_RUN_FLAG_RIGHT_EDGE;
     public static final int UNDERLINE_TEXT_FLAG = android.graphics.Paint.UNDERLINE_TEXT_FLAG;
+    public static final int VERTICAL_TEXT_FLAG = android.graphics.Paint.VERTICAL_TEXT_FLAG;
 
     public static final class Align {
         private static final class __DcgwBridgeToken {

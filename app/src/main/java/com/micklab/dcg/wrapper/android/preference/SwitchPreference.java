@@ -47,11 +47,11 @@ public final class SwitchPreference {
         return ((android.preference.SwitchPreference) real).getSwitchTextOn();
     }
 
-    public void setSwitchTextOff(int arg0) {
+    public void setSwitchTextOff(java.lang.CharSequence arg0) {
         ((android.preference.SwitchPreference) real).setSwitchTextOff(arg0);
     }
 
-    public void setSwitchTextOff(java.lang.CharSequence arg0) {
+    public void setSwitchTextOff(int arg0) {
         ((android.preference.SwitchPreference) real).setSwitchTextOff(arg0);
     }
 

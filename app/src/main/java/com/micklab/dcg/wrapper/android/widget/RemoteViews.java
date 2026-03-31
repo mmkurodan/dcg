@@ -23,19 +23,19 @@ public final class RemoteViews {
         return getReal();
     }
 
-    public RemoteViews(java.util.Map arg0) {
-        this(new android.widget.RemoteViews(arg0), (__DcgwBridgeToken) null);
+    public RemoteViews(com.micklab.dcg.wrapper.android.widget.RemoteViews.DrawInstructions arg0) {
+        this(new android.widget.RemoteViews(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public RemoteViews(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
-        this(new android.widget.RemoteViews(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    public RemoteViews(java.util.Map arg0) {
+        this(new android.widget.RemoteViews(arg0), (__DcgwBridgeToken) null);
     }
 
     public RemoteViews(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.widget.RemoteViews(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public RemoteViews(com.micklab.dcg.wrapper.android.widget.RemoteViews.DrawInstructions arg0) {
+    public RemoteViews(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
         this(new android.widget.RemoteViews(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
@@ -299,11 +299,11 @@ public final class RemoteViews {
         ((android.widget.RemoteViews) real).setRelativeScrollPosition(arg0, arg1);
     }
 
-    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews.RemoteCollectionItems arg1) {
+    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
         ((android.widget.RemoteViews) real).setRemoteAdapter(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
+    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews.RemoteCollectionItems arg1) {
         ((android.widget.RemoteViews) real).setRemoteAdapter(arg0, arg1 == null ? null : arg1.getReal());
     }
 

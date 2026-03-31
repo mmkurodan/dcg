@@ -35,6 +35,10 @@ public final class Gainmap {
         return ((android.graphics.Gainmap) real).describeContents();
     }
 
+    public com.micklab.dcg.wrapper.android.graphics.ColorSpace getAlternativeImagePrimaries() {
+        return com.micklab.dcg.wrapper.android.graphics.ColorSpace.wrap(((android.graphics.Gainmap) real).getAlternativeImagePrimaries());
+    }
+
     public float getDisplayRatioForFullHdr() {
         return ((android.graphics.Gainmap) real).getDisplayRatioForFullHdr();
     }
@@ -49,6 +53,10 @@ public final class Gainmap {
 
     public com.micklab.dcg.wrapper.android.graphics.Bitmap getGainmapContents() {
         return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(((android.graphics.Gainmap) real).getGainmapContents());
+    }
+
+    public int getGainmapDirection() {
+        return ((android.graphics.Gainmap) real).getGainmapDirection();
     }
 
     public float[] getGamma() {
@@ -67,6 +75,10 @@ public final class Gainmap {
         return ((android.graphics.Gainmap) real).getRatioMin();
     }
 
+    public void setAlternativeImagePrimaries(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0) {
+        ((android.graphics.Gainmap) real).setAlternativeImagePrimaries(arg0 == null ? null : arg0.getReal());
+    }
+
     public void setDisplayRatioForFullHdr(float arg0) {
         ((android.graphics.Gainmap) real).setDisplayRatioForFullHdr(arg0);
     }
@@ -81,6 +93,10 @@ public final class Gainmap {
 
     public void setGainmapContents(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
         ((android.graphics.Gainmap) real).setGainmapContents(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setGainmapDirection(int arg0) {
+        ((android.graphics.Gainmap) real).setGainmapDirection(arg0);
     }
 
     public void setGamma(float arg0, float arg1, float arg2) {
@@ -103,5 +119,7 @@ public final class Gainmap {
         ((android.graphics.Gainmap) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public static final int GAINMAP_DIRECTION_HDR_TO_SDR = android.graphics.Gainmap.GAINMAP_DIRECTION_HDR_TO_SDR;
+    public static final int GAINMAP_DIRECTION_SDR_TO_HDR = android.graphics.Gainmap.GAINMAP_DIRECTION_SDR_TO_HDR;
 
 }

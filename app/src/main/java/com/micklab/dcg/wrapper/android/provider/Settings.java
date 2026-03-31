@@ -42,6 +42,7 @@ public final class Settings {
     public static final java.lang.String ACTION_APPLICATION_SETTINGS = android.provider.Settings.ACTION_APPLICATION_SETTINGS;
     public static final java.lang.String ACTION_APP_LOCALE_SETTINGS = android.provider.Settings.ACTION_APP_LOCALE_SETTINGS;
     public static final java.lang.String ACTION_APP_NOTIFICATION_BUBBLE_SETTINGS = android.provider.Settings.ACTION_APP_NOTIFICATION_BUBBLE_SETTINGS;
+    public static final java.lang.String ACTION_APP_NOTIFICATION_PROMOTION_SETTINGS = android.provider.Settings.ACTION_APP_NOTIFICATION_PROMOTION_SETTINGS;
     public static final java.lang.String ACTION_APP_NOTIFICATION_SETTINGS = android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
     public static final java.lang.String ACTION_APP_OPEN_BY_DEFAULT_SETTINGS = android.provider.Settings.ACTION_APP_OPEN_BY_DEFAULT_SETTINGS;
     public static final java.lang.String ACTION_APP_SEARCH_SETTINGS = android.provider.Settings.ACTION_APP_SEARCH_SETTINGS;
@@ -63,6 +64,7 @@ public final class Settings {
     public static final java.lang.String ACTION_DISPLAY_SETTINGS = android.provider.Settings.ACTION_DISPLAY_SETTINGS;
     public static final java.lang.String ACTION_DREAM_SETTINGS = android.provider.Settings.ACTION_DREAM_SETTINGS;
     public static final java.lang.String ACTION_FINGERPRINT_ENROLL = android.provider.Settings.ACTION_FINGERPRINT_ENROLL;
+    public static final java.lang.String ACTION_FIRST_DAY_OF_WEEK_SETTINGS = android.provider.Settings.ACTION_FIRST_DAY_OF_WEEK_SETTINGS;
     public static final java.lang.String ACTION_HARD_KEYBOARD_SETTINGS = android.provider.Settings.ACTION_HARD_KEYBOARD_SETTINGS;
     public static final java.lang.String ACTION_HOME_SETTINGS = android.provider.Settings.ACTION_HOME_SETTINGS;
     public static final java.lang.String ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS = android.provider.Settings.ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS;
@@ -80,6 +82,7 @@ public final class Settings {
     public static final java.lang.String ACTION_MANAGE_SUPERVISOR_RESTRICTED_SETTING = android.provider.Settings.ACTION_MANAGE_SUPERVISOR_RESTRICTED_SETTING;
     public static final java.lang.String ACTION_MANAGE_UNKNOWN_APP_SOURCES = android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES;
     public static final java.lang.String ACTION_MANAGE_WRITE_SETTINGS = android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS;
+    public static final java.lang.String ACTION_MEASUREMENT_SYSTEM_SETTINGS = android.provider.Settings.ACTION_MEASUREMENT_SYSTEM_SETTINGS;
     public static final java.lang.String ACTION_MEMORY_CARD_SETTINGS = android.provider.Settings.ACTION_MEMORY_CARD_SETTINGS;
     public static final java.lang.String ACTION_NFCSHARING_SETTINGS = android.provider.Settings.ACTION_NFCSHARING_SETTINGS;
     public static final java.lang.String ACTION_NFC_PAYMENT_SETTINGS = android.provider.Settings.ACTION_NFC_PAYMENT_SETTINGS;
@@ -95,6 +98,7 @@ public final class Settings {
     public static final java.lang.String ACTION_QUICK_ACCESS_WALLET_SETTINGS = android.provider.Settings.ACTION_QUICK_ACCESS_WALLET_SETTINGS;
     public static final java.lang.String ACTION_QUICK_LAUNCH_SETTINGS = android.provider.Settings.ACTION_QUICK_LAUNCH_SETTINGS;
     public static final java.lang.String ACTION_REGIONAL_PREFERENCES_SETTINGS = android.provider.Settings.ACTION_REGIONAL_PREFERENCES_SETTINGS;
+    public static final java.lang.String ACTION_REGION_SETTINGS = android.provider.Settings.ACTION_REGION_SETTINGS;
     public static final java.lang.String ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS = android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS;
     public static final java.lang.String ACTION_REQUEST_MANAGE_MEDIA = android.provider.Settings.ACTION_REQUEST_MANAGE_MEDIA;
     public static final java.lang.String ACTION_REQUEST_MEDIA_ROUTING_CONTROL = android.provider.Settings.ACTION_REQUEST_MEDIA_ROUTING_CONTROL;
@@ -110,6 +114,7 @@ public final class Settings {
     public static final java.lang.String ACTION_SOUND_SETTINGS = android.provider.Settings.ACTION_SOUND_SETTINGS;
     public static final java.lang.String ACTION_STORAGE_VOLUME_ACCESS_SETTINGS = android.provider.Settings.ACTION_STORAGE_VOLUME_ACCESS_SETTINGS;
     public static final java.lang.String ACTION_SYNC_SETTINGS = android.provider.Settings.ACTION_SYNC_SETTINGS;
+    public static final java.lang.String ACTION_TEMPERATURE_UNIT_SETTINGS = android.provider.Settings.ACTION_TEMPERATURE_UNIT_SETTINGS;
     public static final java.lang.String ACTION_USAGE_ACCESS_SETTINGS = android.provider.Settings.ACTION_USAGE_ACCESS_SETTINGS;
     public static final java.lang.String ACTION_USER_DICTIONARY_SETTINGS = android.provider.Settings.ACTION_USER_DICTIONARY_SETTINGS;
     public static final java.lang.String ACTION_VOICE_CONTROL_AIRPLANE_MODE = android.provider.Settings.ACTION_VOICE_CONTROL_AIRPLANE_MODE;

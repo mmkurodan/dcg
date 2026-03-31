@@ -27,12 +27,12 @@ public final class AsyncPlayer {
         this(new android.media.AsyncPlayer(arg0), (__DcgwBridgeToken) null);
     }
 
-    public void play(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2, int arg3) {
-        ((android.media.AsyncPlayer) real).play(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
-    }
-
     public void play(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2, com.micklab.dcg.wrapper.android.media.AudioAttributes arg3) throws java.lang.IllegalArgumentException {
         ((android.media.AsyncPlayer) real).play(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
+    }
+
+    public void play(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.net.Uri arg1, boolean arg2, int arg3) {
+        ((android.media.AsyncPlayer) real).play(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
     public void stop() {

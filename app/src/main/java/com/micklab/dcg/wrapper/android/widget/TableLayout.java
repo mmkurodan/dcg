@@ -35,12 +35,12 @@ public final class TableLayout {
         ((android.widget.TableLayout) real).addView(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addView(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
-        ((android.widget.TableLayout) real).addView(arg0 == null ? null : arg0.getReal(), arg1);
-    }
-
     public void addView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
         ((android.widget.TableLayout) real).addView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+    }
+
+    public void addView(com.micklab.dcg.wrapper.android.view.View arg0, int arg1) {
+        ((android.widget.TableLayout) real).addView(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public void addView(com.micklab.dcg.wrapper.android.view.View arg0, int arg1, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg2) {
@@ -137,12 +137,12 @@ public final class TableLayout {
             this(new android.widget.TableLayout.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-            this(new android.widget.TableLayout.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
-        }
-
         public LayoutParams(int arg0, int arg1) {
             this(new android.widget.TableLayout.LayoutParams(arg0, arg1), (__DcgwBridgeToken) null);
+        }
+
+        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+            this(new android.widget.TableLayout.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, float arg2) {

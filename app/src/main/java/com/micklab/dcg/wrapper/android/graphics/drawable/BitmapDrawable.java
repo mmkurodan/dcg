@@ -27,11 +27,15 @@ public final class BitmapDrawable {
         this(new android.graphics.drawable.BitmapDrawable(), (__DcgwBridgeToken) null);
     }
 
-    public BitmapDrawable(java.lang.String arg0) {
-        this(new android.graphics.drawable.BitmapDrawable(arg0), (__DcgwBridgeToken) null);
+    public BitmapDrawable(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
+        this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public BitmapDrawable(java.io.InputStream arg0) {
+        this(new android.graphics.drawable.BitmapDrawable(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public BitmapDrawable(java.lang.String arg0) {
         this(new android.graphics.drawable.BitmapDrawable(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -39,20 +43,16 @@ public final class BitmapDrawable {
         this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public BitmapDrawable(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
-        this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public BitmapDrawable(com.micklab.dcg.wrapper.android.content.res.Resources arg0, java.lang.String arg1) {
-        this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
-    }
-
-    public BitmapDrawable(com.micklab.dcg.wrapper.android.content.res.Resources arg0, java.io.InputStream arg1) {
         this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public BitmapDrawable(com.micklab.dcg.wrapper.android.content.res.Resources arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) {
         this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public BitmapDrawable(com.micklab.dcg.wrapper.android.content.res.Resources arg0, java.io.InputStream arg1) {
+        this(new android.graphics.drawable.BitmapDrawable(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
     public void applyTheme(android.content.res.Resources.Theme arg0) {
@@ -195,11 +195,11 @@ public final class BitmapDrawable {
         ((android.graphics.drawable.BitmapDrawable) real).setTargetDensity(arg0);
     }
 
-    public void setTargetDensity(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
+    public void setTargetDensity(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
         ((android.graphics.drawable.BitmapDrawable) real).setTargetDensity(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTargetDensity(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
+    public void setTargetDensity(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
         ((android.graphics.drawable.BitmapDrawable) real).setTargetDensity(arg0 == null ? null : arg0.getReal());
     }
 

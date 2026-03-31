@@ -23,8 +23,16 @@ public final class TrainingExamplesInput {
         return getReal();
     }
 
+    public TrainingExamplesInput(java.lang.String arg0, java.lang.String arg1, byte[] arg2, java.lang.String arg3) {
+        this(new android.adservices.ondevicepersonalization.TrainingExamplesInput(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
+    }
+
     public boolean equals(java.lang.Object arg0) {
         return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).equals(arg0);
+    }
+
+    public java.lang.String getCollectionName() {
+        return ((android.adservices.ondevicepersonalization.TrainingExamplesInput) real).getCollectionName();
     }
 
     public java.lang.String getPopulationName() {

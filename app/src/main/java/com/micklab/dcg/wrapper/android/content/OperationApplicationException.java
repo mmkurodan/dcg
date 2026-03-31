@@ -27,11 +27,11 @@ public final class OperationApplicationException {
         this(new android.content.OperationApplicationException(), (__DcgwBridgeToken) null);
     }
 
-    public OperationApplicationException(int arg0) {
+    public OperationApplicationException(java.lang.Throwable arg0) {
         this(new android.content.OperationApplicationException(arg0), (__DcgwBridgeToken) null);
     }
 
-    public OperationApplicationException(java.lang.Throwable arg0) {
+    public OperationApplicationException(int arg0) {
         this(new android.content.OperationApplicationException(arg0), (__DcgwBridgeToken) null);
     }
 
@@ -39,11 +39,11 @@ public final class OperationApplicationException {
         this(new android.content.OperationApplicationException(arg0), (__DcgwBridgeToken) null);
     }
 
-    public OperationApplicationException(java.lang.String arg0, int arg1) {
+    public OperationApplicationException(java.lang.String arg0, java.lang.Throwable arg1) {
         this(new android.content.OperationApplicationException(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public OperationApplicationException(java.lang.String arg0, java.lang.Throwable arg1) {
+    public OperationApplicationException(java.lang.String arg0, int arg1) {
         this(new android.content.OperationApplicationException(arg0, arg1), (__DcgwBridgeToken) null);
     }
 

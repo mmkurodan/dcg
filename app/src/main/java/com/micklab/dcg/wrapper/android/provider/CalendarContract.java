@@ -285,11 +285,11 @@ public final class CalendarContract {
             return getReal();
         }
 
-        public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentResolver arg1) {
+        public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentProviderClient arg1) {
             return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
-        public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentProviderClient arg1) {
+        public static com.micklab.dcg.wrapper.android.content.EntityIterator newEntityIterator(com.micklab.dcg.wrapper.android.database.Cursor arg0, com.micklab.dcg.wrapper.android.content.ContentResolver arg1) {
             return com.micklab.dcg.wrapper.android.content.EntityIterator.wrap(android.provider.CalendarContract.EventsEntity.newEntityIterator(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 

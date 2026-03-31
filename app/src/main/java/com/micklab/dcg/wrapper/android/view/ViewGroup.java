@@ -399,6 +399,10 @@ public final class ViewGroup {
         ((android.view.ViewGroup) real).onViewRemoved(arg0 == null ? null : arg0.getReal());
     }
 
+    public void propagateRequestedFrameRate(float arg0, boolean arg1) {
+        ((android.view.ViewGroup) real).propagateRequestedFrameRate(arg0, arg1);
+    }
+
     public void recomputeViewAttributes(com.micklab.dcg.wrapper.android.view.View arg0) {
         ((android.view.ViewGroup) real).recomputeViewAttributes(arg0 == null ? null : arg0.getReal());
     }
@@ -513,6 +517,10 @@ public final class ViewGroup {
 
     public void setPersistentDrawingCache(int arg0) {
         ((android.view.ViewGroup) real).setPersistentDrawingCache(arg0);
+    }
+
+    public void setRequestedFrameRate(float arg0) {
+        ((android.view.ViewGroup) real).setRequestedFrameRate(arg0);
     }
 
     public void setTouchscreenBlocksFocus(boolean arg0) {
@@ -638,11 +646,11 @@ public final class ViewGroup {
             return getReal();
         }
 
-        public MarginLayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg0) {
+        public MarginLayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
             this(new android.view.ViewGroup.MarginLayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public MarginLayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
+        public MarginLayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg0) {
             this(new android.view.ViewGroup.MarginLayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 

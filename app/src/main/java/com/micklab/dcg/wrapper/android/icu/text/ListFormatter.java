@@ -35,12 +35,12 @@ public final class ListFormatter {
         return com.micklab.dcg.wrapper.android.icu.text.ListFormatter.wrap(android.icu.text.ListFormatter.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.ListFormatter getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.ListFormatter.wrap(android.icu.text.ListFormatter.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.ListFormatter getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.ListFormatter.wrap(android.icu.text.ListFormatter.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.ListFormatter getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.ListFormatter.wrap(android.icu.text.ListFormatter.getInstance(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.icu.text.ListFormatter getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.ListFormatter.Type arg1, com.micklab.dcg.wrapper.android.icu.text.ListFormatter.Width arg2) {

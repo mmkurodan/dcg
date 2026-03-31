@@ -23,12 +23,12 @@ public final class TextInfo {
         return getReal();
     }
 
-    public TextInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
-        this(new android.view.textservice.TextInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public TextInfo(java.lang.String arg0) {
         this(new android.view.textservice.TextInfo(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public TextInfo(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
+        this(new android.view.textservice.TextInfo(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public TextInfo(java.lang.String arg0, int arg1, int arg2) {

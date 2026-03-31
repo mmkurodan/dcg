@@ -27,6 +27,10 @@ public final class LauncherUserInfo {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherUserInfo#describeContents()");
     }
 
+    public com.micklab.dcg.wrapper.android.os.Bundle getUserConfig() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherUserInfo#getUserConfig()");
+    }
+
     public int getUserSerialNumber() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherUserInfo#getUserSerialNumber()");
     }

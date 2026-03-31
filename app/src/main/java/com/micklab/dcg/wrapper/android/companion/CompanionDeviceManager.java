@@ -71,12 +71,28 @@ public final class CompanionDeviceManager {
         return ((android.companion.CompanionDeviceManager) real).isPermissionTransferUserConsented(arg0);
     }
 
+    public boolean removeBond(int arg0) {
+        return ((android.companion.CompanionDeviceManager) real).removeBond(arg0);
+    }
+
     public void requestNotificationAccess(com.micklab.dcg.wrapper.android.content.ComponentName arg0) {
         ((android.companion.CompanionDeviceManager) real).requestNotificationAccess(arg0 == null ? null : arg0.getReal());
     }
 
+    public void setDeviceId(int arg0, com.micklab.dcg.wrapper.android.companion.DeviceId arg1) {
+        ((android.companion.CompanionDeviceManager) real).setDeviceId(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void startObservingDevicePresence(com.micklab.dcg.wrapper.android.companion.ObservingDevicePresenceRequest arg0) {
+        ((android.companion.CompanionDeviceManager) real).startObservingDevicePresence(arg0 == null ? null : arg0.getReal());
+    }
+
     public void startObservingDevicePresence(java.lang.String arg0) throws android.companion.DeviceNotAssociatedException {
         ((android.companion.CompanionDeviceManager) real).startObservingDevicePresence(arg0);
+    }
+
+    public void stopObservingDevicePresence(com.micklab.dcg.wrapper.android.companion.ObservingDevicePresenceRequest arg0) {
+        ((android.companion.CompanionDeviceManager) real).stopObservingDevicePresence(arg0 == null ? null : arg0.getReal());
     }
 
     public void stopObservingDevicePresence(java.lang.String arg0) throws android.companion.DeviceNotAssociatedException {
@@ -90,6 +106,7 @@ public final class CompanionDeviceManager {
     public static final int RESULT_DISCOVERY_TIMEOUT = android.companion.CompanionDeviceManager.RESULT_DISCOVERY_TIMEOUT;
     public static final int RESULT_INTERNAL_ERROR = android.companion.CompanionDeviceManager.RESULT_INTERNAL_ERROR;
     public static final int RESULT_OK = android.companion.CompanionDeviceManager.RESULT_OK;
+    public static final int RESULT_SECURITY_ERROR = android.companion.CompanionDeviceManager.RESULT_SECURITY_ERROR;
     public static final int RESULT_USER_REJECTED = android.companion.CompanionDeviceManager.RESULT_USER_REJECTED;
 
     public static final class Callback {
@@ -128,6 +145,10 @@ public final class CompanionDeviceManager {
 
         public void onFailure(java.lang.CharSequence arg0) {
             ((android.companion.CompanionDeviceManager.Callback) real).onFailure(arg0);
+        }
+
+        public void onFailure(int arg0, java.lang.CharSequence arg1) {
+            ((android.companion.CompanionDeviceManager.Callback) real).onFailure(arg0, arg1);
         }
 
     }

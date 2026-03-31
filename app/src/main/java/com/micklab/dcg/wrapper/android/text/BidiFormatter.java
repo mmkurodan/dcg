@@ -39,11 +39,11 @@ public final class BidiFormatter {
         return ((android.text.BidiFormatter) real).getStereoReset();
     }
 
-    public boolean isRtl(java.lang.CharSequence arg0) {
+    public boolean isRtl(java.lang.String arg0) {
         return ((android.text.BidiFormatter) real).isRtl(arg0);
     }
 
-    public boolean isRtl(java.lang.String arg0) {
+    public boolean isRtl(java.lang.CharSequence arg0) {
         return ((android.text.BidiFormatter) real).isRtl(arg0);
     }
 
@@ -59,20 +59,20 @@ public final class BidiFormatter {
         return ((android.text.BidiFormatter) real).unicodeWrap(arg0);
     }
 
-    public java.lang.CharSequence unicodeWrap(java.lang.CharSequence arg0, boolean arg1) {
-        return ((android.text.BidiFormatter) real).unicodeWrap(arg0, arg1);
-    }
-
     public java.lang.CharSequence unicodeWrap(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic arg1) {
         return ((android.text.BidiFormatter) real).unicodeWrap(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public java.lang.String unicodeWrap(java.lang.String arg0, boolean arg1) {
+    public java.lang.CharSequence unicodeWrap(java.lang.CharSequence arg0, boolean arg1) {
         return ((android.text.BidiFormatter) real).unicodeWrap(arg0, arg1);
     }
 
     public java.lang.String unicodeWrap(java.lang.String arg0, com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic arg1) {
         return ((android.text.BidiFormatter) real).unicodeWrap(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public java.lang.String unicodeWrap(java.lang.String arg0, boolean arg1) {
+        return ((android.text.BidiFormatter) real).unicodeWrap(arg0, arg1);
     }
 
     public java.lang.CharSequence unicodeWrap(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.text.TextDirectionHeuristic arg1, boolean arg2) {

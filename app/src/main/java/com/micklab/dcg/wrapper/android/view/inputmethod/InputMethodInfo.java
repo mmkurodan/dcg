@@ -31,6 +31,10 @@ public final class InputMethodInfo {
         this(new android.view.inputmethod.InputMethodInfo(arg0, arg1, arg2, arg3), (__DcgwBridgeToken) null);
     }
 
+    public com.micklab.dcg.wrapper.android.content.Intent createImeLanguageSettingsActivityIntent() {
+        return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.view.inputmethod.InputMethodInfo) real).createImeLanguageSettingsActivityIntent());
+    }
+
     public com.micklab.dcg.wrapper.android.content.Intent createStylusHandwritingSettingsActivityIntent() {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.view.inputmethod.InputMethodInfo) real).createStylusHandwritingSettingsActivityIntent());
     }
@@ -123,6 +127,7 @@ public final class InputMethodInfo {
         ((android.view.inputmethod.InputMethodInfo) real).writeToParcel(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public static final java.lang.String ACTION_IME_LANGUAGE_SETTINGS = android.view.inputmethod.InputMethodInfo.ACTION_IME_LANGUAGE_SETTINGS;
     public static final java.lang.String ACTION_STYLUS_HANDWRITING_SETTINGS = android.view.inputmethod.InputMethodInfo.ACTION_STYLUS_HANDWRITING_SETTINGS;
 
 }

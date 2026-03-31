@@ -74,6 +74,10 @@ public final class SearchResult {
             this(new android.app.appsearch.SearchResult.Builder(arg0, arg1), (__DcgwBridgeToken) null);
         }
 
+        public com.micklab.dcg.wrapper.android.app.appsearch.SearchResult.Builder addInformationalRankingSignal(double arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.SearchResult.Builder.wrap(((android.app.appsearch.SearchResult.Builder) real).addInformationalRankingSignal(arg0));
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.SearchResult.Builder addJoinedResult(com.micklab.dcg.wrapper.android.app.appsearch.SearchResult arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.SearchResult.Builder.wrap(((android.app.appsearch.SearchResult.Builder) real).addJoinedResult(arg0 == null ? null : arg0.getReal()));
         }

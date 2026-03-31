@@ -27,6 +27,10 @@ public final class ExecuteOutput {
         return ((android.adservices.ondevicepersonalization.ExecuteOutput) real).equals(arg0);
     }
 
+    public int getBestValue() {
+        return ((android.adservices.ondevicepersonalization.ExecuteOutput) real).getBestValue();
+    }
+
     public byte[] getOutputData() {
         return ((android.adservices.ondevicepersonalization.ExecuteOutput) real).getOutputData();
     }
@@ -75,6 +79,10 @@ public final class ExecuteOutput {
 
         public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.ExecuteOutput build() {
             return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.ExecuteOutput.wrap(((android.adservices.ondevicepersonalization.ExecuteOutput.Builder) real).build());
+        }
+
+        public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.ExecuteOutput.Builder setBestValue(int arg0) {
+            return com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.ExecuteOutput.Builder.wrap(((android.adservices.ondevicepersonalization.ExecuteOutput.Builder) real).setBestValue(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.adservices.ondevicepersonalization.ExecuteOutput.Builder setOutputData(byte... arg0) {

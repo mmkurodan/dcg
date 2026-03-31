@@ -27,24 +27,24 @@ public final class Icon {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithAdaptiveBitmap(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithAdaptiveBitmapContentUri(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithAdaptiveBitmapContentUri(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithAdaptiveBitmapContentUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithAdaptiveBitmapContentUri(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithAdaptiveBitmapContentUri(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithAdaptiveBitmapContentUri(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithBitmap(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithContentUri(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithContentUri(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithContentUri(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithContentUri(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithContentUri(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Icon.wrap(android.graphics.drawable.Icon.createWithContentUri(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.drawable.Icon createWithData(byte[] arg0, int arg1, int arg2) {

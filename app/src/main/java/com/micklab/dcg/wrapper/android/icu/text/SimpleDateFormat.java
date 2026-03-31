@@ -31,16 +31,16 @@ public final class SimpleDateFormat {
         this(new android.icu.text.SimpleDateFormat(arg0), (__DcgwBridgeToken) null);
     }
 
-    public SimpleDateFormat(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols arg1) {
-        this(new android.icu.text.SimpleDateFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+    public SimpleDateFormat(java.lang.String arg0, java.util.Locale arg1) {
+        this(new android.icu.text.SimpleDateFormat(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
     public SimpleDateFormat(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
         this(new android.icu.text.SimpleDateFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public SimpleDateFormat(java.lang.String arg0, java.util.Locale arg1) {
-        this(new android.icu.text.SimpleDateFormat(arg0, arg1), (__DcgwBridgeToken) null);
+    public SimpleDateFormat(java.lang.String arg0, com.micklab.dcg.wrapper.android.icu.text.DateFormatSymbols arg1) {
+        this(new android.icu.text.SimpleDateFormat(arg0, arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public SimpleDateFormat(java.lang.String arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.icu.util.ULocale arg2) {

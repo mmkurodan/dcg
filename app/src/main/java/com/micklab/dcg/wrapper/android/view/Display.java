@@ -59,6 +59,10 @@ public final class Display {
         return ((android.view.Display) real).getHeight();
     }
 
+    public float getHighestHdrSdrRatio() {
+        return ((android.view.Display) real).getHighestHdrSdrRatio();
+    }
+
     public void getMetrics(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
         ((android.view.Display) real).getMetrics(arg0 == null ? null : arg0.getReal());
     }
@@ -127,6 +131,10 @@ public final class Display {
         return ((android.view.Display) real).getState();
     }
 
+    public float getSuggestedFrameRate(int arg0) {
+        return ((android.view.Display) real).getSuggestedFrameRate(arg0);
+    }
+
     public android.view.Display.Mode[] getSupportedModes() {
         return ((android.view.Display) real).getSupportedModes();
     }
@@ -137,6 +145,10 @@ public final class Display {
 
     public int getWidth() {
         return ((android.view.Display) real).getWidth();
+    }
+
+    public boolean hasArrSupport() {
+        return ((android.view.Display) real).hasArrSupport();
     }
 
     public boolean isHdr() {
@@ -169,6 +181,8 @@ public final class Display {
     public static final int FLAG_ROUND = android.view.Display.FLAG_ROUND;
     public static final int FLAG_SECURE = android.view.Display.FLAG_SECURE;
     public static final int FLAG_SUPPORTS_PROTECTED_BUFFERS = android.view.Display.FLAG_SUPPORTS_PROTECTED_BUFFERS;
+    public static final int FRAME_RATE_CATEGORY_HIGH = android.view.Display.FRAME_RATE_CATEGORY_HIGH;
+    public static final int FRAME_RATE_CATEGORY_NORMAL = android.view.Display.FRAME_RATE_CATEGORY_NORMAL;
     public static final int INVALID_DISPLAY = android.view.Display.INVALID_DISPLAY;
     public static final int STATE_DOZE = android.view.Display.STATE_DOZE;
     public static final int STATE_DOZE_SUSPEND = android.view.Display.STATE_DOZE_SUSPEND;

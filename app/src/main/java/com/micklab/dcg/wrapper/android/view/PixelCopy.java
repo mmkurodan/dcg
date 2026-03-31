@@ -23,6 +23,10 @@ public final class PixelCopy {
         return getReal();
     }
 
+    public static void request(com.micklab.dcg.wrapper.android.view.SurfaceView arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
+        android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
+    }
+
     public static void request(com.micklab.dcg.wrapper.android.view.Window arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
         android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
@@ -31,11 +35,7 @@ public final class PixelCopy {
         android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
-    public static void request(com.micklab.dcg.wrapper.android.view.SurfaceView arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg2, com.micklab.dcg.wrapper.android.os.Handler arg3) {
-        android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
-    }
-
-    public static void request(com.micklab.dcg.wrapper.android.view.Surface arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Bitmap arg2, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
+    public static void request(com.micklab.dcg.wrapper.android.view.SurfaceView arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Bitmap arg2, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
         android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
@@ -43,7 +43,7 @@ public final class PixelCopy {
         android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
-    public static void request(com.micklab.dcg.wrapper.android.view.SurfaceView arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Bitmap arg2, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
+    public static void request(com.micklab.dcg.wrapper.android.view.Surface arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1, com.micklab.dcg.wrapper.android.graphics.Bitmap arg2, com.micklab.dcg.wrapper.android.view.PixelCopy.OnPixelCopyFinishedListener arg3, com.micklab.dcg.wrapper.android.os.Handler arg4) {
         android.view.PixelCopy.request(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
     }
 
@@ -145,11 +145,11 @@ public final class PixelCopy {
                 return com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder.wrap(android.view.PixelCopy.Request.Builder.ofSurface(arg0 == null ? null : arg0.getReal()));
             }
 
-            public static com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder ofWindow(com.micklab.dcg.wrapper.android.view.View arg0) {
+            public static com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder ofWindow(com.micklab.dcg.wrapper.android.view.Window arg0) {
                 return com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder.wrap(android.view.PixelCopy.Request.Builder.ofWindow(arg0 == null ? null : arg0.getReal()));
             }
 
-            public static com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder ofWindow(com.micklab.dcg.wrapper.android.view.Window arg0) {
+            public static com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder ofWindow(com.micklab.dcg.wrapper.android.view.View arg0) {
                 return com.micklab.dcg.wrapper.android.view.PixelCopy.Request.Builder.wrap(android.view.PixelCopy.Request.Builder.ofWindow(arg0 == null ? null : arg0.getReal()));
             }
 

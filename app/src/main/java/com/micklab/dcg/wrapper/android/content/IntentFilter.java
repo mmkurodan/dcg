@@ -27,12 +27,12 @@ public final class IntentFilter {
         this(new android.content.IntentFilter(), (__DcgwBridgeToken) null);
     }
 
-    public IntentFilter(com.micklab.dcg.wrapper.android.content.IntentFilter arg0) {
-        this(new android.content.IntentFilter(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public IntentFilter(java.lang.String arg0) {
         this(new android.content.IntentFilter(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public IntentFilter(com.micklab.dcg.wrapper.android.content.IntentFilter arg0) {
+        this(new android.content.IntentFilter(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public IntentFilter(java.lang.String arg0, java.lang.String arg1) throws android.content.IntentFilter.MalformedMimeTypeException {

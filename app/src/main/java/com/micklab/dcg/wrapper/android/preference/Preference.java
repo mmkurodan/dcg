@@ -267,11 +267,11 @@ public final class Preference {
         ((android.preference.Preference) real).setSummary(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.preference.Preference) real).setTitle(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.preference.Preference) real).setTitle(arg0);
     }
 

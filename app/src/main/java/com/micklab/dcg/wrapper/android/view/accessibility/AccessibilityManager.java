@@ -47,6 +47,10 @@ public final class AccessibilityManager {
         ((android.view.accessibility.AccessibilityManager) real).addAudioDescriptionRequestedChangeListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
+    public void addHighContrastTextStateChangeListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener arg1) {
+        ((android.view.accessibility.AccessibilityManager) real).addHighContrastTextStateChangeListener(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
     public boolean addTouchExplorationStateChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener arg0) {
         return ((android.view.accessibility.AccessibilityManager) real).addTouchExplorationStateChangeListener(arg0 == null ? null : arg0.getReal());
     }
@@ -83,6 +87,10 @@ public final class AccessibilityManager {
         return ((android.view.accessibility.AccessibilityManager) real).isEnabled();
     }
 
+    public boolean isHighContrastTextEnabled() {
+        return ((android.view.accessibility.AccessibilityManager) real).isHighContrastTextEnabled();
+    }
+
     public boolean isRequestFromAccessibilityTool() {
         return ((android.view.accessibility.AccessibilityManager) real).isRequestFromAccessibilityTool();
     }
@@ -105,6 +113,10 @@ public final class AccessibilityManager {
 
     public boolean removeAudioDescriptionRequestedChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.AudioDescriptionRequestedChangeListener arg0) {
         return ((android.view.accessibility.AccessibilityManager) real).removeAudioDescriptionRequestedChangeListener(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void removeHighContrastTextStateChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener arg0) {
+        ((android.view.accessibility.AccessibilityManager) real).removeHighContrastTextStateChangeListener(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean removeTouchExplorationStateChangeListener(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener arg0) {
@@ -197,6 +209,33 @@ public final class AccessibilityManager {
 
         public void onAudioDescriptionRequestedChanged(boolean arg0) {
             ((android.view.accessibility.AccessibilityManager.AudioDescriptionRequestedChangeListener) real).onAudioDescriptionRequestedChanged(arg0);
+        }
+
+    }
+    public static final class HighContrastTextStateChangeListener {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private HighContrastTextStateChangeListener(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener wrap(android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener getReal() {
+            return (android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener) real;
+        }
+
+        public android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener unwrap() {
+            return getReal();
+        }
+
+        public void onHighContrastTextStateChanged(boolean arg0) {
+            ((android.view.accessibility.AccessibilityManager.HighContrastTextStateChangeListener) real).onHighContrastTextStateChanged(arg0);
         }
 
     }

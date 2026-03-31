@@ -62,6 +62,10 @@ public final class GetSchemaResponse {
             this(new android.app.appsearch.GetSchemaResponse.Builder(), (__DcgwBridgeToken) null);
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse arg0) {
+            this(new android.app.appsearch.GetSchemaResponse.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
         public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder addSchema(com.micklab.dcg.wrapper.android.app.appsearch.AppSearchSchema arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).addSchema(arg0 == null ? null : arg0.getReal()));
         }
@@ -72,6 +76,30 @@ public final class GetSchemaResponse {
 
         public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse build() {
             return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).build());
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearPubliclyVisibleSchema(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearPubliclyVisibleSchema(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearRequiredPermissionsForSchemaTypeVisibility(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearRequiredPermissionsForSchemaTypeVisibility(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearSchemaTypeNotDisplayedBySystem(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearSchemaTypeNotDisplayedBySystem(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearSchemaTypeVisibleToConfigs(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearSchemaTypeVisibleToConfigs(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearSchemaTypeVisibleToPackages(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearSchemaTypeVisibleToPackages(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder clearSchemas() {
+            return com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder.wrap(((android.app.appsearch.GetSchemaResponse.Builder) real).clearSchemas());
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.GetSchemaResponse.Builder setPubliclyVisibleSchema(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.appsearch.PackageIdentifier arg1) {

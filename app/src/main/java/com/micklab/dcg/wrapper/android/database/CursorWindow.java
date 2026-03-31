@@ -23,12 +23,12 @@ public final class CursorWindow {
         return getReal();
     }
 
-    public CursorWindow(boolean arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CursorWindow#android.database.CursorWindow(boolean)");
-    }
-
     public CursorWindow(java.lang.String arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CursorWindow#android.database.CursorWindow(java.lang.String)");
+    }
+
+    public CursorWindow(boolean arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.CursorWindow#android.database.CursorWindow(boolean)");
     }
 
     public CursorWindow(java.lang.String arg0, long arg1) {

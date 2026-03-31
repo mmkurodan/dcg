@@ -27,12 +27,12 @@ public final class ArrayMap {
         this(new android.util.ArrayMap(), (__DcgwBridgeToken) null);
     }
 
-    public ArrayMap(com.micklab.dcg.wrapper.android.util.ArrayMap arg0) {
-        this(new android.util.ArrayMap(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
-    }
-
     public ArrayMap(int arg0) {
         this(new android.util.ArrayMap(arg0), (__DcgwBridgeToken) null);
+    }
+
+    public ArrayMap(com.micklab.dcg.wrapper.android.util.ArrayMap arg0) {
+        this(new android.util.ArrayMap(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void clear() {

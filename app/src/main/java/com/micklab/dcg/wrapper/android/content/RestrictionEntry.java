@@ -27,19 +27,19 @@ public final class RestrictionEntry {
         this(new android.content.RestrictionEntry(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public RestrictionEntry(java.lang.String arg0, int arg1) {
-        this(new android.content.RestrictionEntry(arg0, arg1), (__DcgwBridgeToken) null);
-    }
-
     public RestrictionEntry(java.lang.String arg0, java.lang.String[] arg1) {
         this(new android.content.RestrictionEntry(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public RestrictionEntry(int arg0, java.lang.String arg1) {
+    public RestrictionEntry(java.lang.String arg0, java.lang.String arg1) {
         this(new android.content.RestrictionEntry(arg0, arg1), (__DcgwBridgeToken) null);
     }
 
-    public RestrictionEntry(java.lang.String arg0, java.lang.String arg1) {
+    public RestrictionEntry(java.lang.String arg0, int arg1) {
+        this(new android.content.RestrictionEntry(arg0, arg1), (__DcgwBridgeToken) null);
+    }
+
+    public RestrictionEntry(int arg0, java.lang.String arg1) {
         this(new android.content.RestrictionEntry(arg0, arg1), (__DcgwBridgeToken) null);
     }
 

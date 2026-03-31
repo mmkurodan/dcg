@@ -153,6 +153,8 @@ public final class MediaFormat {
     public static final int COLOR_TRANSFER_LINEAR = android.media.MediaFormat.COLOR_TRANSFER_LINEAR;
     public static final int COLOR_TRANSFER_SDR_VIDEO = android.media.MediaFormat.COLOR_TRANSFER_SDR_VIDEO;
     public static final int COLOR_TRANSFER_ST2084 = android.media.MediaFormat.COLOR_TRANSFER_ST2084;
+    public static final int FLAG_SECURITY_MODEL_MEMORY_SAFE = android.media.MediaFormat.FLAG_SECURITY_MODEL_MEMORY_SAFE;
+    public static final int FLAG_SECURITY_MODEL_SANDBOXED = android.media.MediaFormat.FLAG_SECURITY_MODEL_SANDBOXED;
     public static final java.lang.String KEY_AAC_DRC_ALBUM_MODE = android.media.MediaFormat.KEY_AAC_DRC_ALBUM_MODE;
     public static final java.lang.String KEY_AAC_DRC_ATTENUATION_FACTOR = android.media.MediaFormat.KEY_AAC_DRC_ATTENUATION_FACTOR;
     public static final java.lang.String KEY_AAC_DRC_BOOST_FACTOR = android.media.MediaFormat.KEY_AAC_DRC_BOOST_FACTOR;
@@ -231,6 +233,7 @@ public final class MediaFormat {
     public static final java.lang.String KEY_REPEAT_PREVIOUS_FRAME_AFTER = android.media.MediaFormat.KEY_REPEAT_PREVIOUS_FRAME_AFTER;
     public static final java.lang.String KEY_ROTATION = android.media.MediaFormat.KEY_ROTATION;
     public static final java.lang.String KEY_SAMPLE_RATE = android.media.MediaFormat.KEY_SAMPLE_RATE;
+    public static final java.lang.String KEY_SECURITY_MODEL = android.media.MediaFormat.KEY_SECURITY_MODEL;
     public static final java.lang.String KEY_SLICE_HEIGHT = android.media.MediaFormat.KEY_SLICE_HEIGHT;
     public static final java.lang.String KEY_SLOW_MOTION_MARKERS = android.media.MediaFormat.KEY_SLOW_MOTION_MARKERS;
     public static final java.lang.String KEY_STRIDE = android.media.MediaFormat.KEY_STRIDE;
@@ -271,6 +274,7 @@ public final class MediaFormat {
     public static final java.lang.String MIMETYPE_AUDIO_FLAC = android.media.MediaFormat.MIMETYPE_AUDIO_FLAC;
     public static final java.lang.String MIMETYPE_AUDIO_G711_ALAW = android.media.MediaFormat.MIMETYPE_AUDIO_G711_ALAW;
     public static final java.lang.String MIMETYPE_AUDIO_G711_MLAW = android.media.MediaFormat.MIMETYPE_AUDIO_G711_MLAW;
+    public static final java.lang.String MIMETYPE_AUDIO_IAMF = android.media.MediaFormat.MIMETYPE_AUDIO_IAMF;
     public static final java.lang.String MIMETYPE_AUDIO_IEC61937 = android.media.MediaFormat.MIMETYPE_AUDIO_IEC61937;
     public static final java.lang.String MIMETYPE_AUDIO_MPEG = android.media.MediaFormat.MIMETYPE_AUDIO_MPEG;
     public static final java.lang.String MIMETYPE_AUDIO_MPEGH_BL_L3 = android.media.MediaFormat.MIMETYPE_AUDIO_MPEGH_BL_L3;
@@ -291,6 +295,7 @@ public final class MediaFormat {
     public static final java.lang.String MIMETYPE_TEXT_CEA_708 = android.media.MediaFormat.MIMETYPE_TEXT_CEA_708;
     public static final java.lang.String MIMETYPE_TEXT_SUBRIP = android.media.MediaFormat.MIMETYPE_TEXT_SUBRIP;
     public static final java.lang.String MIMETYPE_TEXT_VTT = android.media.MediaFormat.MIMETYPE_TEXT_VTT;
+    public static final java.lang.String MIMETYPE_VIDEO_APV = android.media.MediaFormat.MIMETYPE_VIDEO_APV;
     public static final java.lang.String MIMETYPE_VIDEO_AV1 = android.media.MediaFormat.MIMETYPE_VIDEO_AV1;
     public static final java.lang.String MIMETYPE_VIDEO_AVC = android.media.MediaFormat.MIMETYPE_VIDEO_AVC;
     public static final java.lang.String MIMETYPE_VIDEO_DOLBY_VISION = android.media.MediaFormat.MIMETYPE_VIDEO_DOLBY_VISION;

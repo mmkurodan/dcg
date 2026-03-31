@@ -23,12 +23,12 @@ public final class Location {
         return getReal();
     }
 
-    public Location(java.lang.String arg0) {
-        this(new android.location.Location(arg0), (__DcgwBridgeToken) null);
-    }
-
     public Location(com.micklab.dcg.wrapper.android.location.Location arg0) {
         this(new android.location.Location(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public Location(java.lang.String arg0) {
+        this(new android.location.Location(arg0), (__DcgwBridgeToken) null);
     }
 
     public float bearingTo(com.micklab.dcg.wrapper.android.location.Location arg0) {

@@ -35,12 +35,12 @@ public final class PropertyReader {
         ((android.view.inspector.PropertyReader) real).readChar(arg0, arg1);
     }
 
-    public void readColor(int arg0, com.micklab.dcg.wrapper.android.graphics.Color arg1) {
-        ((android.view.inspector.PropertyReader) real).readColor(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
     public void readColor(int arg0, long arg1) {
         ((android.view.inspector.PropertyReader) real).readColor(arg0, arg1);
+    }
+
+    public void readColor(int arg0, com.micklab.dcg.wrapper.android.graphics.Color arg1) {
+        ((android.view.inspector.PropertyReader) real).readColor(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void readColor(int arg0, int arg1) {

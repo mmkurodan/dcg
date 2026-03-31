@@ -35,6 +35,10 @@ public final class EditorInfo {
         ((android.view.inputmethod.EditorInfo) real).dump(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
+    public com.micklab.dcg.wrapper.android.view.autofill.AutofillId getAutofillId() {
+        return com.micklab.dcg.wrapper.android.view.autofill.AutofillId.wrap(((android.view.inputmethod.EditorInfo) real).getAutofillId());
+    }
+
     public java.lang.CharSequence getInitialSelectedText(int arg0) {
         return ((android.view.inputmethod.EditorInfo) real).getInitialSelectedText(arg0);
     }
@@ -59,8 +63,16 @@ public final class EditorInfo {
         return ((android.view.inputmethod.EditorInfo) real).isStylusHandwritingEnabled();
     }
 
+    public boolean isWritingToolsEnabled() {
+        return ((android.view.inputmethod.EditorInfo) real).isWritingToolsEnabled();
+    }
+
     public void makeCompatible(int arg0) {
         ((android.view.inputmethod.EditorInfo) real).makeCompatible(arg0);
+    }
+
+    public void setAutofillId(com.micklab.dcg.wrapper.android.view.autofill.AutofillId arg0) {
+        ((android.view.inputmethod.EditorInfo) real).setAutofillId(arg0 == null ? null : arg0.getReal());
     }
 
     public void setInitialSurroundingSubText(java.lang.CharSequence arg0, int arg1) {
@@ -77,6 +89,10 @@ public final class EditorInfo {
 
     public void setStylusHandwritingEnabled(boolean arg0) {
         ((android.view.inputmethod.EditorInfo) real).setStylusHandwritingEnabled(arg0);
+    }
+
+    public void setWritingToolsEnabled(boolean arg0) {
+        ((android.view.inputmethod.EditorInfo) real).setWritingToolsEnabled(arg0);
     }
 
     public void writeToParcel(com.micklab.dcg.wrapper.android.os.Parcel arg0, int arg1) {

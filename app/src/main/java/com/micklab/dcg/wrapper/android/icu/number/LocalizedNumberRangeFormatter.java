@@ -27,12 +27,16 @@ public final class LocalizedNumberRangeFormatter {
         return com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange.wrap(((android.icu.number.LocalizedNumberRangeFormatter) real).formatRange(arg0, arg1));
     }
 
+    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange formatRange(int arg0, int arg1) {
+        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange.wrap(((android.icu.number.LocalizedNumberRangeFormatter) real).formatRange(arg0, arg1));
+    }
+
     public com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange formatRange(double arg0, double arg1) {
         return com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange.wrap(((android.icu.number.LocalizedNumberRangeFormatter) real).formatRange(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange formatRange(int arg0, int arg1) {
-        return com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange.wrap(((android.icu.number.LocalizedNumberRangeFormatter) real).formatRange(arg0, arg1));
+    public com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberRangeFormatter withoutLocale() {
+        return com.micklab.dcg.wrapper.android.icu.number.UnlocalizedNumberRangeFormatter.wrap(((android.icu.number.LocalizedNumberRangeFormatter) real).withoutLocale());
     }
 
 }

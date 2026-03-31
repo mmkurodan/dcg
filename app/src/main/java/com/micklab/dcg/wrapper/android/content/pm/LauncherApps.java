@@ -39,6 +39,10 @@ public final class LauncherApps {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherApps#getPinItemRequest(android.content.Intent)");
     }
 
+    public com.micklab.dcg.wrapper.android.content.IntentSender getPrivateSpaceSettingsIntent() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherApps#getPrivateSpaceSettingsIntent()");
+    }
+
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getShortcutBadgedIconDrawable(com.micklab.dcg.wrapper.android.content.pm.ShortcutInfo arg0, int arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherApps#getShortcutBadgedIconDrawable(android.content.pm.ShortcutInfo,int)");
     }
@@ -215,6 +219,10 @@ public final class LauncherApps {
 
         public void onPackagesUnsuspended(java.lang.String[] arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherApps$Callback#onPackagesUnsuspended([Ljava.lang.String;,android.os.UserHandle)");
+        }
+
+        public void onUserConfigChanged(com.micklab.dcg.wrapper.android.content.pm.LauncherUserInfo arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.LauncherApps$Callback#onUserConfigChanged(android.content.pm.LauncherUserInfo)");
         }
 
     }

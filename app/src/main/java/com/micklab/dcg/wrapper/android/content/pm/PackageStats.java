@@ -23,16 +23,16 @@ public final class PackageStats {
         return getReal();
     }
 
-    public PackageStats(com.micklab.dcg.wrapper.android.content.pm.PackageStats arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageStats#android.content.pm.PackageStats(android.content.pm.PackageStats)");
+    public PackageStats(java.lang.String arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageStats#android.content.pm.PackageStats(java.lang.String)");
     }
 
     public PackageStats(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageStats#android.content.pm.PackageStats(android.os.Parcel)");
     }
 
-    public PackageStats(java.lang.String arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageStats#android.content.pm.PackageStats(java.lang.String)");
+    public PackageStats(com.micklab.dcg.wrapper.android.content.pm.PackageStats arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.content.pm.PackageStats#android.content.pm.PackageStats(android.content.pm.PackageStats)");
     }
 
     public int describeContents() {

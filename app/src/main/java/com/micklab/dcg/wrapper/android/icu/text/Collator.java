@@ -75,12 +75,12 @@ public final class Collator {
         return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.getReal());
     }
 
-    public static java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
-        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
-    }
-
     public static java.lang.String getDisplayName(java.util.Locale arg0, java.util.Locale arg1) {
         return android.icu.text.Collator.getDisplayName(arg0, arg1);
+    }
+
+    public static java.lang.String getDisplayName(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.util.ULocale arg1) {
+        return android.icu.text.Collator.getDisplayName(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
     public static int[] getEquivalentReorderCodes(int arg0) {
@@ -99,12 +99,12 @@ public final class Collator {
         return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance());
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.Collator getInstance(java.util.Locale arg0) {
-        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance(arg0));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.Collator getInstance(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0) {
         return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance(arg0 == null ? null : arg0.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.Collator getInstance(java.util.Locale arg0) {
+        return com.micklab.dcg.wrapper.android.icu.text.Collator.wrap(android.icu.text.Collator.getInstance(arg0));
     }
 
     public static java.lang.String[] getKeywordValues(java.lang.String arg0) {

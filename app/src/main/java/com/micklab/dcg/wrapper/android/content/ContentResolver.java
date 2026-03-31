@@ -23,12 +23,12 @@ public final class ContentResolver {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireUnstableContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
@@ -51,12 +51,12 @@ public final class ContentResolver {
         return ((android.content.ContentResolver) real).bulkInsert(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public com.micklab.dcg.wrapper.android.os.Bundle call(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3) {
-        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.ContentResolver) real).call(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.os.Bundle call(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3) {
         return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.ContentResolver) real).call(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal()));
+    }
+
+    public com.micklab.dcg.wrapper.android.os.Bundle call(com.micklab.dcg.wrapper.android.net.Uri arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.os.Bundle arg3) {
+        return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.ContentResolver) real).call(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
     }
 
     public void cancelSync(com.micklab.dcg.wrapper.android.net.Uri arg0) {
@@ -139,11 +139,11 @@ public final class ContentResolver {
         ((android.content.ContentResolver) real).notifyChange(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void notifyChange(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.database.ContentObserver arg1, int arg2) {
+    public void notifyChange(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.database.ContentObserver arg1, boolean arg2) {
         ((android.content.ContentResolver) real).notifyChange(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public void notifyChange(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.database.ContentObserver arg1, boolean arg2) {
+    public void notifyChange(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.database.ContentObserver arg1, int arg2) {
         ((android.content.ContentResolver) real).notifyChange(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 

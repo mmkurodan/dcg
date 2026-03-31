@@ -91,19 +91,19 @@ public final class GLES30 {
         return android.opengl.GLES30.glClientWaitSync(arg0, arg1, arg2);
     }
 
-    public static void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
-        android.opengl.GLES30.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-    }
-
     public static void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, java.nio.Buffer arg8) {
         android.opengl.GLES30.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
     }
 
-    public static void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, java.nio.Buffer arg10) {
-        android.opengl.GLES30.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+    public static void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+        android.opengl.GLES30.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
     }
 
     public static void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
+        android.opengl.GLES30.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+    }
+
+    public static void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, java.nio.Buffer arg10) {
         android.opengl.GLES30.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
     }
 
@@ -163,19 +163,19 @@ public final class GLES30 {
         android.opengl.GLES30.glDrawBuffers(arg0, arg1, arg2);
     }
 
-    public static void glDrawElementsInstanced(int arg0, int arg1, int arg2, java.nio.Buffer arg3, int arg4) {
-        android.opengl.GLES30.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
-    }
-
     public static void glDrawElementsInstanced(int arg0, int arg1, int arg2, int arg3, int arg4) {
         android.opengl.GLES30.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
     }
 
-    public static void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, java.nio.Buffer arg5) {
-        android.opengl.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
+    public static void glDrawElementsInstanced(int arg0, int arg1, int arg2, java.nio.Buffer arg3, int arg4) {
+        android.opengl.GLES30.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
     }
 
     public static void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+        android.opengl.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+
+    public static void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, java.nio.Buffer arg5) {
         android.opengl.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
@@ -523,11 +523,11 @@ public final class GLES30 {
         android.opengl.GLES30.glTexStorage3D(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 
-    public static void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, java.nio.Buffer arg10) {
+    public static void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
         android.opengl.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
     }
 
-    public static void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
+    public static void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, java.nio.Buffer arg10) {
         android.opengl.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
     }
 
@@ -667,11 +667,11 @@ public final class GLES30 {
         android.opengl.GLES30.glVertexAttribI4uiv(arg0, arg1, arg2);
     }
 
-    public static void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, int arg4) {
+    public static void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, java.nio.Buffer arg4) {
         android.opengl.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
     }
 
-    public static void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, java.nio.Buffer arg4) {
+    public static void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, int arg4) {
         android.opengl.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
     }
 

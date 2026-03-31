@@ -27,16 +27,16 @@ public final class RuntimeShader {
         this(new android.graphics.RuntimeShader(arg0), (__DcgwBridgeToken) null);
     }
 
-    public void setColorUniform(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Color arg1) {
-        ((android.graphics.RuntimeShader) real).setColorUniform(arg0, arg1 == null ? null : arg1.getReal());
-    }
-
     public void setColorUniform(java.lang.String arg0, long arg1) {
         ((android.graphics.RuntimeShader) real).setColorUniform(arg0, arg1);
     }
 
     public void setColorUniform(java.lang.String arg0, int arg1) {
         ((android.graphics.RuntimeShader) real).setColorUniform(arg0, arg1);
+    }
+
+    public void setColorUniform(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Color arg1) {
+        ((android.graphics.RuntimeShader) real).setColorUniform(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setFloatUniform(java.lang.String arg0, float[] arg1) {
@@ -63,15 +63,23 @@ public final class RuntimeShader {
         ((android.graphics.RuntimeShader) real).setInputBuffer(arg0, arg1 == null ? null : arg1.getReal());
     }
 
+    public void setInputColorFilter(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.ColorFilter arg1) {
+        ((android.graphics.RuntimeShader) real).setInputColorFilter(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
     public void setInputShader(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.Shader arg1) {
         ((android.graphics.RuntimeShader) real).setInputShader(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void setIntUniform(java.lang.String arg0, int[] arg1) {
-        ((android.graphics.RuntimeShader) real).setIntUniform(arg0, arg1);
+    public void setInputXfermode(java.lang.String arg0, com.micklab.dcg.wrapper.android.graphics.RuntimeXfermode arg1) {
+        ((android.graphics.RuntimeShader) real).setInputXfermode(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public void setIntUniform(java.lang.String arg0, int arg1) {
+        ((android.graphics.RuntimeShader) real).setIntUniform(arg0, arg1);
+    }
+
+    public void setIntUniform(java.lang.String arg0, int[] arg1) {
         ((android.graphics.RuntimeShader) real).setIntUniform(arg0, arg1);
     }
 

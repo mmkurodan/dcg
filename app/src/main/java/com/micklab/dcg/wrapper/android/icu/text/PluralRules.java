@@ -43,12 +43,12 @@ public final class PluralRules {
         return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(android.icu.text.PluralRules.forLocale(arg0));
     }
 
-    public static com.micklab.dcg.wrapper.android.icu.text.PluralRules forLocale(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
-        return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(android.icu.text.PluralRules.forLocale(arg0, arg1 == null ? null : arg1.getReal()));
-    }
-
     public static com.micklab.dcg.wrapper.android.icu.text.PluralRules forLocale(com.micklab.dcg.wrapper.android.icu.util.ULocale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
         return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(android.icu.text.PluralRules.forLocale(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
+    }
+
+    public static com.micklab.dcg.wrapper.android.icu.text.PluralRules forLocale(java.util.Locale arg0, com.micklab.dcg.wrapper.android.icu.text.PluralRules.PluralType arg1) {
+        return com.micklab.dcg.wrapper.android.icu.text.PluralRules.wrap(android.icu.text.PluralRules.forLocale(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public double getUniqueKeywordValue(java.lang.String arg0) {
@@ -67,12 +67,12 @@ public final class PluralRules {
         return ((android.icu.text.PluralRules) real).select(arg0 == null ? null : arg0.getReal());
     }
 
-    public java.lang.String select(com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange arg0) {
-        return ((android.icu.text.PluralRules) real).select(arg0 == null ? null : arg0.getReal());
-    }
-
     public java.lang.String select(double arg0) {
         return ((android.icu.text.PluralRules) real).select(arg0);
+    }
+
+    public java.lang.String select(com.micklab.dcg.wrapper.android.icu.number.FormattedNumberRange arg0) {
+        return ((android.icu.text.PluralRules) real).select(arg0 == null ? null : arg0.getReal());
     }
 
     public java.lang.String toString() {

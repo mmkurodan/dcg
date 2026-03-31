@@ -31,11 +31,11 @@ public final class EventLogTags {
         this(new android.util.EventLogTags(arg0), (__DcgwBridgeToken) null);
     }
 
-    public com.micklab.dcg.wrapper.android.util.EventLogTags.Description get(int arg0) {
+    public com.micklab.dcg.wrapper.android.util.EventLogTags.Description get(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.util.EventLogTags.Description.wrap(((android.util.EventLogTags) real).get(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.util.EventLogTags.Description get(java.lang.String arg0) {
+    public com.micklab.dcg.wrapper.android.util.EventLogTags.Description get(int arg0) {
         return com.micklab.dcg.wrapper.android.util.EventLogTags.Description.wrap(((android.util.EventLogTags) real).get(arg0));
     }
 

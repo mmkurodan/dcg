@@ -807,20 +807,20 @@ public final class TextView {
         ((android.widget.TextView) real).setCompoundDrawablesRelative(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
-    public void setCompoundDrawablesRelativeWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
-        ((android.widget.TextView) real).setCompoundDrawablesRelativeWithIntrinsicBounds(arg0, arg1, arg2, arg3);
-    }
-
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
         ((android.widget.TextView) real).setCompoundDrawablesRelativeWithIntrinsicBounds(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
-    public void setCompoundDrawablesWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
-        ((android.widget.TextView) real).setCompoundDrawablesWithIntrinsicBounds(arg0, arg1, arg2, arg3);
+    public void setCompoundDrawablesRelativeWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
+        ((android.widget.TextView) real).setCompoundDrawablesRelativeWithIntrinsicBounds(arg0, arg1, arg2, arg3);
     }
 
     public void setCompoundDrawablesWithIntrinsicBounds(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg2, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg3) {
         ((android.widget.TextView) real).setCompoundDrawablesWithIntrinsicBounds(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
+    }
+
+    public void setCompoundDrawablesWithIntrinsicBounds(int arg0, int arg1, int arg2, int arg3) {
+        ((android.widget.TextView) real).setCompoundDrawablesWithIntrinsicBounds(arg0, arg1, arg2, arg3);
     }
 
     public void setCursorVisible(boolean arg0) {
@@ -915,20 +915,20 @@ public final class TextView {
         ((android.widget.TextView) real).setHighlights(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setHint(int arg0) {
-        ((android.widget.TextView) real).setHint(arg0);
-    }
-
     public void setHint(java.lang.CharSequence arg0) {
         ((android.widget.TextView) real).setHint(arg0);
     }
 
-    public void setHintTextColor(int arg0) {
-        ((android.widget.TextView) real).setHintTextColor(arg0);
+    public void setHint(int arg0) {
+        ((android.widget.TextView) real).setHint(arg0);
     }
 
     public void setHintTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
         ((android.widget.TextView) real).setHintTextColor(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setHintTextColor(int arg0) {
+        ((android.widget.TextView) real).setHintTextColor(arg0);
     }
 
     public void setHorizontallyScrolling(boolean arg0) {
@@ -1131,19 +1131,19 @@ public final class TextView {
         ((android.widget.TextView) real).setSpannableFactory(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setText(java.lang.CharSequence arg0) {
-        ((android.widget.TextView) real).setText(arg0);
-    }
-
     public void setText(int arg0) {
         ((android.widget.TextView) real).setText(arg0);
     }
 
-    public void setText(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
-        ((android.widget.TextView) real).setText(arg0, arg1 == null ? null : arg1.getReal());
+    public void setText(java.lang.CharSequence arg0) {
+        ((android.widget.TextView) real).setText(arg0);
     }
 
     public void setText(int arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
+        ((android.widget.TextView) real).setText(arg0, arg1 == null ? null : arg1.getReal());
+    }
+
+    public void setText(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.widget.TextView.BufferType arg1) {
         ((android.widget.TextView) real).setText(arg0, arg1 == null ? null : arg1.getReal());
     }
 
@@ -1163,12 +1163,12 @@ public final class TextView {
         ((android.widget.TextView) real).setTextClassifier(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTextColor(int arg0) {
-        ((android.widget.TextView) real).setTextColor(arg0);
-    }
-
     public void setTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
         ((android.widget.TextView) real).setTextColor(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setTextColor(int arg0) {
+        ((android.widget.TextView) real).setTextColor(arg0);
     }
 
     public void setTextCursorDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {

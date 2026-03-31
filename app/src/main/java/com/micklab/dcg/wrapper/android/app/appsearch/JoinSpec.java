@@ -80,6 +80,10 @@ public final class JoinSpec {
             return getReal();
         }
 
+        public Builder(com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec arg0) {
+            this(new android.app.appsearch.JoinSpec.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        }
+
         public Builder(java.lang.String arg0) {
             this(new android.app.appsearch.JoinSpec.Builder(arg0), (__DcgwBridgeToken) null);
         }
@@ -90,6 +94,10 @@ public final class JoinSpec {
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setAggregationScoringStrategy(int arg0) {
             return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(((android.app.appsearch.JoinSpec.Builder) real).setAggregationScoringStrategy(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setChildPropertyExpression(java.lang.String arg0) {
+            return com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder.wrap(((android.app.appsearch.JoinSpec.Builder) real).setChildPropertyExpression(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.appsearch.JoinSpec.Builder setMaxJoinedResultCount(int arg0) {

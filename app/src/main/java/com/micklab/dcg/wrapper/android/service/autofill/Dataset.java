@@ -62,11 +62,11 @@ public final class Dataset {
             this(new android.service.autofill.Dataset.Builder(), (__DcgwBridgeToken) null);
         }
 
-        public Builder(com.micklab.dcg.wrapper.android.service.autofill.Presentations arg0) {
+        public Builder(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
             this(new android.service.autofill.Dataset.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public Builder(com.micklab.dcg.wrapper.android.widget.RemoteViews arg0) {
+        public Builder(com.micklab.dcg.wrapper.android.service.autofill.Presentations arg0) {
             this(new android.service.autofill.Dataset.Builder(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
@@ -106,12 +106,12 @@ public final class Dataset {
             return com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder.wrap(((android.service.autofill.Dataset.Builder) real).setValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder setValue(com.micklab.dcg.wrapper.android.view.autofill.AutofillId arg0, com.micklab.dcg.wrapper.android.view.autofill.AutofillValue arg1, java.util.regex.Pattern arg2) {
-            return com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder.wrap(((android.service.autofill.Dataset.Builder) real).setValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
-        }
-
         public com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder setValue(com.micklab.dcg.wrapper.android.view.autofill.AutofillId arg0, com.micklab.dcg.wrapper.android.view.autofill.AutofillValue arg1, com.micklab.dcg.wrapper.android.widget.RemoteViews arg2) {
             return com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder.wrap(((android.service.autofill.Dataset.Builder) real).setValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder setValue(com.micklab.dcg.wrapper.android.view.autofill.AutofillId arg0, com.micklab.dcg.wrapper.android.view.autofill.AutofillValue arg1, java.util.regex.Pattern arg2) {
+            return com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder.wrap(((android.service.autofill.Dataset.Builder) real).setValue(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
         }
 
         public com.micklab.dcg.wrapper.android.service.autofill.Dataset.Builder setValue(com.micklab.dcg.wrapper.android.view.autofill.AutofillId arg0, com.micklab.dcg.wrapper.android.view.autofill.AutofillValue arg1, com.micklab.dcg.wrapper.android.widget.RemoteViews arg2, com.micklab.dcg.wrapper.android.service.autofill.InlinePresentation arg3) {

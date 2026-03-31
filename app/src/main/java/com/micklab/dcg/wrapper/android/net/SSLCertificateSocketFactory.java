@@ -39,16 +39,16 @@ public final class SSLCertificateSocketFactory {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLCertificateSocketFactory#createSocket(java.net.InetAddress,int)");
     }
 
-    public java.net.Socket createSocket(java.lang.String arg0, int arg1, java.net.InetAddress arg2, int arg3) throws java.io.IOException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLCertificateSocketFactory#createSocket(java.lang.String,int,java.net.InetAddress,int)");
-    }
-
     public java.net.Socket createSocket(java.net.Socket arg0, java.lang.String arg1, int arg2, boolean arg3) throws java.io.IOException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLCertificateSocketFactory#createSocket(java.net.Socket,java.lang.String,int,boolean)");
     }
 
     public java.net.Socket createSocket(java.net.InetAddress arg0, int arg1, java.net.InetAddress arg2, int arg3) throws java.io.IOException {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLCertificateSocketFactory#createSocket(java.net.InetAddress,int,java.net.InetAddress,int)");
+    }
+
+    public java.net.Socket createSocket(java.lang.String arg0, int arg1, java.net.InetAddress arg2, int arg3) throws java.io.IOException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.SSLCertificateSocketFactory#createSocket(java.lang.String,int,java.net.InetAddress,int)");
     }
 
     public static javax.net.SocketFactory getDefault(int arg0) {

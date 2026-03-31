@@ -27,6 +27,14 @@ public final class Build {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#android.os.Build()");
     }
 
+    public static int getMajorSdkVersion(int arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getMajorSdkVersion(int)");
+    }
+
+    public static int getMinorSdkVersion(int arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getMinorSdkVersion(int)");
+    }
+
     public static java.lang.String getRadioVersion() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getRadioVersion()");
     }
@@ -132,6 +140,30 @@ public final class Build {
 
         public VERSION_CODES() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$VERSION_CODES#android.os.Build$VERSION_CODES()");
+        }
+
+
+    }
+    public static final class VERSION_CODES_FULL {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private VERSION_CODES_FULL(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES_FULL wrap(android.os.Build.VERSION_CODES_FULL real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES_FULL(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.Build.VERSION_CODES_FULL getReal() {
+            return (android.os.Build.VERSION_CODES_FULL) real;
+        }
+
+        public android.os.Build.VERSION_CODES_FULL unwrap() {
+            return getReal();
         }
 
 

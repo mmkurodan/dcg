@@ -23,12 +23,12 @@ public final class BadParcelableException {
         return getReal();
     }
 
-    public BadParcelableException(java.lang.String arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.BadParcelableException#android.os.BadParcelableException(java.lang.String)");
-    }
-
     public BadParcelableException(java.lang.Exception arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.BadParcelableException#android.os.BadParcelableException(java.lang.Exception)");
+    }
+
+    public BadParcelableException(java.lang.String arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.BadParcelableException#android.os.BadParcelableException(java.lang.String)");
     }
 
 }

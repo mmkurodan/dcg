@@ -112,6 +112,7 @@ public final class BluetoothLeAudioCodecConfig {
     public static final int SAMPLE_RATE_NONE = android.bluetooth.BluetoothLeAudioCodecConfig.SAMPLE_RATE_NONE;
     public static final int SOURCE_CODEC_TYPE_INVALID = android.bluetooth.BluetoothLeAudioCodecConfig.SOURCE_CODEC_TYPE_INVALID;
     public static final int SOURCE_CODEC_TYPE_LC3 = android.bluetooth.BluetoothLeAudioCodecConfig.SOURCE_CODEC_TYPE_LC3;
+    public static final int SOURCE_CODEC_TYPE_OPUS = android.bluetooth.BluetoothLeAudioCodecConfig.SOURCE_CODEC_TYPE_OPUS;
 
     public static final class Builder {
         private static final class __DcgwBridgeToken {

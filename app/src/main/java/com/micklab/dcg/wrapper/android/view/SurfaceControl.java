@@ -109,6 +109,108 @@ public final class SurfaceControl {
         }
 
     }
+    public static final class JankData {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private JankData(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.view.SurfaceControl.JankData wrap(android.view.SurfaceControl.JankData real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.SurfaceControl.JankData(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.SurfaceControl.JankData getReal() {
+            return (android.view.SurfaceControl.JankData) real;
+        }
+
+        public android.view.SurfaceControl.JankData unwrap() {
+            return getReal();
+        }
+
+        public long getActualAppFrameTimeNanos() {
+            return ((android.view.SurfaceControl.JankData) real).getActualAppFrameTimeNanos();
+        }
+
+        public int getJankType() {
+            return ((android.view.SurfaceControl.JankData) real).getJankType();
+        }
+
+        public long getScheduledAppFrameTimeNanos() {
+            return ((android.view.SurfaceControl.JankData) real).getScheduledAppFrameTimeNanos();
+        }
+
+        public long getVsyncId() {
+            return ((android.view.SurfaceControl.JankData) real).getVsyncId();
+        }
+
+        public java.lang.String toString() {
+            return ((android.view.SurfaceControl.JankData) real).toString();
+        }
+
+        public static final int JANK_APPLICATION = android.view.SurfaceControl.JankData.JANK_APPLICATION;
+        public static final int JANK_COMPOSER = android.view.SurfaceControl.JankData.JANK_COMPOSER;
+        public static final int JANK_NONE = android.view.SurfaceControl.JankData.JANK_NONE;
+        public static final int JANK_OTHER = android.view.SurfaceControl.JankData.JANK_OTHER;
+
+    }
+    public static final class OnJankDataListener {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private OnJankDataListener(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListener wrap(android.view.SurfaceControl.OnJankDataListener real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListener(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.SurfaceControl.OnJankDataListener getReal() {
+            return (android.view.SurfaceControl.OnJankDataListener) real;
+        }
+
+        public android.view.SurfaceControl.OnJankDataListener unwrap() {
+            return getReal();
+        }
+
+    }
+    public static final class OnJankDataListenerRegistration {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private OnJankDataListenerRegistration(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListenerRegistration wrap(android.view.SurfaceControl.OnJankDataListenerRegistration real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.SurfaceControl.OnJankDataListenerRegistration(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.SurfaceControl.OnJankDataListenerRegistration getReal() {
+            return (android.view.SurfaceControl.OnJankDataListenerRegistration) real;
+        }
+
+        public android.view.SurfaceControl.OnJankDataListenerRegistration unwrap() {
+            return getReal();
+        }
+
+        public void flush() {
+            ((android.view.SurfaceControl.OnJankDataListenerRegistration) real).flush();
+        }
+
+        public void removeAfter(long arg0) {
+            ((android.view.SurfaceControl.OnJankDataListenerRegistration) real).removeAfter(arg0);
+        }
+
+    }
     public static final class Transaction {
         private static final class __DcgwBridgeToken {
         }
@@ -187,6 +289,10 @@ public final class SurfaceControl {
             return com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction.wrap(((android.view.SurfaceControl.Transaction) real).setBufferTransform(arg0 == null ? null : arg0.getReal(), arg1));
         }
 
+        public com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction setContentPriority(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0, int arg1) {
+            return com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction.wrap(((android.view.SurfaceControl.Transaction) real).setContentPriority(arg0 == null ? null : arg0.getReal(), arg1));
+        }
+
         public com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction setCrop(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1) {
             return com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction.wrap(((android.view.SurfaceControl.Transaction) real).setCrop(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
@@ -229,6 +335,10 @@ public final class SurfaceControl {
 
         public com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction setLayer(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0, int arg1) {
             return com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction.wrap(((android.view.SurfaceControl.Transaction) real).setLayer(arg0 == null ? null : arg0.getReal(), arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction setLuts(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0, com.micklab.dcg.wrapper.android.hardware.DisplayLuts arg1) {
+            return com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction.wrap(((android.view.SurfaceControl.Transaction) real).setLuts(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.view.SurfaceControl.Transaction setOpaque(com.micklab.dcg.wrapper.android.view.SurfaceControl arg0, boolean arg1) {

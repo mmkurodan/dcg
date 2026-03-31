@@ -35,6 +35,10 @@ public final class SoftApConfiguration {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration#getBssid()");
     }
 
+    public com.micklab.dcg.wrapper.android.util.SparseIntArray getChannels() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration#getChannels()");
+    }
+
     public java.lang.String getPassphrase() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration#getPassphrase()");
     }
@@ -68,4 +72,39 @@ public final class SoftApConfiguration {
     }
 
 
+    public static final class Builder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration.Builder wrap(android.net.wifi.SoftApConfiguration.Builder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.wifi.SoftApConfiguration.Builder getReal() {
+            return (android.net.wifi.SoftApConfiguration.Builder) real;
+        }
+
+        public android.net.wifi.SoftApConfiguration.Builder unwrap() {
+            return getReal();
+        }
+
+        public Builder() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration$Builder#android.net.wifi.SoftApConfiguration$Builder()");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration build() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration$Builder#build()");
+        }
+
+        public com.micklab.dcg.wrapper.android.net.wifi.SoftApConfiguration.Builder setChannels(com.micklab.dcg.wrapper.android.util.SparseIntArray arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.wifi.SoftApConfiguration$Builder#setChannels(android.util.SparseIntArray)");
+        }
+
+    }
 }

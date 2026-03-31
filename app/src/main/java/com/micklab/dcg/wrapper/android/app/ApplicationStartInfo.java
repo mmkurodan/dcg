@@ -63,6 +63,10 @@ public final class ApplicationStartInfo {
         return ((android.app.ApplicationStartInfo) real).getReason();
     }
 
+    public int getStartComponent() {
+        return ((android.app.ApplicationStartInfo) real).getStartComponent();
+    }
+
     public int getStartType() {
         return ((android.app.ApplicationStartInfo) real).getStartType();
     }
@@ -91,6 +95,11 @@ public final class ApplicationStartInfo {
     public static final int STARTUP_STATE_ERROR = android.app.ApplicationStartInfo.STARTUP_STATE_ERROR;
     public static final int STARTUP_STATE_FIRST_FRAME_DRAWN = android.app.ApplicationStartInfo.STARTUP_STATE_FIRST_FRAME_DRAWN;
     public static final int STARTUP_STATE_STARTED = android.app.ApplicationStartInfo.STARTUP_STATE_STARTED;
+    public static final int START_COMPONENT_ACTIVITY = android.app.ApplicationStartInfo.START_COMPONENT_ACTIVITY;
+    public static final int START_COMPONENT_BROADCAST = android.app.ApplicationStartInfo.START_COMPONENT_BROADCAST;
+    public static final int START_COMPONENT_CONTENT_PROVIDER = android.app.ApplicationStartInfo.START_COMPONENT_CONTENT_PROVIDER;
+    public static final int START_COMPONENT_OTHER = android.app.ApplicationStartInfo.START_COMPONENT_OTHER;
+    public static final int START_COMPONENT_SERVICE = android.app.ApplicationStartInfo.START_COMPONENT_SERVICE;
     public static final int START_REASON_ALARM = android.app.ApplicationStartInfo.START_REASON_ALARM;
     public static final int START_REASON_BACKUP = android.app.ApplicationStartInfo.START_REASON_BACKUP;
     public static final int START_REASON_BOOT_COMPLETE = android.app.ApplicationStartInfo.START_REASON_BOOT_COMPLETE;

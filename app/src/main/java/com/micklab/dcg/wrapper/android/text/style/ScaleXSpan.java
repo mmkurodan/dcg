@@ -23,12 +23,12 @@ public final class ScaleXSpan {
         return getReal();
     }
 
-    public ScaleXSpan(float arg0) {
-        this(new android.text.style.ScaleXSpan(arg0), (__DcgwBridgeToken) null);
-    }
-
     public ScaleXSpan(com.micklab.dcg.wrapper.android.os.Parcel arg0) {
         this(new android.text.style.ScaleXSpan(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+    }
+
+    public ScaleXSpan(float arg0) {
+        this(new android.text.style.ScaleXSpan(arg0), (__DcgwBridgeToken) null);
     }
 
     public int describeContents() {

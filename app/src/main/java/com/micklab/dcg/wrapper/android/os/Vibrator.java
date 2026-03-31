@@ -35,12 +35,24 @@ public final class Vibrator {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#areEffectsSupported([I)");
     }
 
+    public boolean areEnvelopeEffectsSupported() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#areEnvelopeEffectsSupported()");
+    }
+
     public boolean[] arePrimitivesSupported(int... arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#arePrimitivesSupported([I)");
     }
 
     public void cancel() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#cancel()");
+    }
+
+    public com.micklab.dcg.wrapper.android.os.vibrator.VibratorEnvelopeEffectInfo getEnvelopeEffectInfo() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#getEnvelopeEffectInfo()");
+    }
+
+    public com.micklab.dcg.wrapper.android.os.vibrator.VibratorFrequencyProfile getFrequencyProfile() {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#getFrequencyProfile()");
     }
 
     public int getId() {
@@ -79,16 +91,16 @@ public final class Vibrator {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#vibrate(long,android.media.AudioAttributes)");
     }
 
+    public void vibrate(com.micklab.dcg.wrapper.android.os.VibrationEffect arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#vibrate(android.os.VibrationEffect,android.media.AudioAttributes)");
+    }
+
     public void vibrate(long[] arg0, int arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#vibrate([J,int)");
     }
 
     public void vibrate(com.micklab.dcg.wrapper.android.os.VibrationEffect arg0, com.micklab.dcg.wrapper.android.os.VibrationAttributes arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#vibrate(android.os.VibrationEffect,android.os.VibrationAttributes)");
-    }
-
-    public void vibrate(com.micklab.dcg.wrapper.android.os.VibrationEffect arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Vibrator#vibrate(android.os.VibrationEffect,android.media.AudioAttributes)");
     }
 
     public void vibrate(long[] arg0, int arg1, com.micklab.dcg.wrapper.android.media.AudioAttributes arg2) {

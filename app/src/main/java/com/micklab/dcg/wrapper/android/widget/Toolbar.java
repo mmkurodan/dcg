@@ -231,12 +231,12 @@ public final class Toolbar {
         ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
     }
 
-    public void setNavigationIcon(int arg0) {
-        ((android.widget.Toolbar) real).setNavigationIcon(arg0);
-    }
-
     public void setNavigationIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.widget.Toolbar) real).setNavigationIcon(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setNavigationIcon(int arg0) {
+        ((android.widget.Toolbar) real).setNavigationIcon(arg0);
     }
 
     public void setNavigationOnClickListener(com.micklab.dcg.wrapper.android.view.View.OnClickListener arg0) {
@@ -271,11 +271,11 @@ public final class Toolbar {
         ((android.widget.Toolbar) real).setSubtitleTextColor(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.widget.Toolbar) real).setTitle(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.widget.Toolbar) real).setTitle(arg0);
     }
 
@@ -337,11 +337,11 @@ public final class Toolbar {
             this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.app.ActionBar.LayoutParams arg0) {
-            this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
+        public LayoutParams(int arg0) {
+            this(new android.widget.Toolbar.LayoutParams(arg0), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
+        public LayoutParams(com.micklab.dcg.wrapper.android.app.ActionBar.LayoutParams arg0) {
             this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
@@ -349,16 +349,16 @@ public final class Toolbar {
             this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
-        public LayoutParams(int arg0) {
-            this(new android.widget.Toolbar.LayoutParams(arg0), (__DcgwBridgeToken) null);
-        }
-
-        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
-            this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
+        public LayoutParams(com.micklab.dcg.wrapper.android.view.ViewGroup.MarginLayoutParams arg0) {
+            this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1) {
             this(new android.widget.Toolbar.LayoutParams(arg0, arg1), (__DcgwBridgeToken) null);
+        }
+
+        public LayoutParams(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1) {
+            this(new android.widget.Toolbar.LayoutParams(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
         }
 
         public LayoutParams(int arg0, int arg1, int arg2) {
