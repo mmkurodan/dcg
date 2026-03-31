@@ -1,5 +1,10 @@
 <libraries>
   <library
+      name="__local_aars__:/root/dcg/app/build/generated/wrapper-classpath/jar/android-wrapper-classpath.jar:unspecified@jar"
+      jars="/root/dcg/app/build/generated/wrapper-classpath/jar/android-wrapper-classpath.jar"
+      resolved="__local_aars__:/root/dcg/app/build/generated/wrapper-classpath/jar/android-wrapper-classpath.jar:unspecified"
+      provided="true"/>
+  <library
       name="__local_aars__:/root/dcg/app/libs/ecj-4.6.jar:unspecified@jar"
       jars="/root/dcg/app/libs/ecj-4.6.jar"
       resolved="__local_aars__:/root/dcg/app/libs/ecj-4.6.jar:unspecified"

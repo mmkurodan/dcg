@@ -29,6 +29,7 @@ def generatedWrapperSourceDir = layout.projectDirectory.dir("src/main/java/com/m
 def generatedWrapperClasspathClassesDir = layout.buildDirectory.dir("generated/wrapper-classpath/classes")
 def generatedWrapperClasspathJarDir = layout.buildDirectory.dir("generated/wrapper-classpath/jar")
 def generatedWrapperClasspathJarName = "android-wrapper-classpath.jar"
+def generatedWrapperRuntimeJar = files(generatedWrapperClasspathJarDir.map { it.file(generatedWrapperClasspathJarName) })
 def forbiddenJdtSymbol = "java/lang/Runtime\$Version"
 
 def jarContainsText = { File jarFile, String marker ->
@@ -187,6 +188,8 @@ tasks.register("buildAndroidWrapperClasspathJar", Jar) {
     from(generatedWrapperClasspathClassesDir)
 }
 
+generatedWrapperRuntimeJar.builtBy(tasks.named("buildAndroidWrapperClasspathJar"))
+
 tasks.register("stageAndroidWrapperClasspathAsset", Copy) {
     dependsOn("buildAndroidWrapperClasspathJar")
     from(generatedWrapperClasspathJarDir.map { it.file(generatedWrapperClasspathJarName) })
@@ -195,6 +198,7 @@ tasks.register("stageAndroidWrapperClasspathAsset", Copy) {
 
 tasks.named("preBuild").configure {
     dependsOn(
+            "stageAndroidWrapperClasspathAsset",
             "buildSourceVersionStubJar",
             "verifyBundledCompilerJars")
 }
@@ -202,6 +206,8 @@ tasks.named("preBuild").configure {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.activity:activity:1.9.0'
+    // Dynamic snippets load wrapper classes through the parent app classloader at runtime.
+    implementation generatedWrapperRuntimeJar
     compilerBundle allBundledLibs
     // The full 4.6-era compiler bundle lives in app/libs for inspection and packaging checks.
     // ECJ 4.6 already contains the overlapping batch compiler classes, so only ECJ itself plus

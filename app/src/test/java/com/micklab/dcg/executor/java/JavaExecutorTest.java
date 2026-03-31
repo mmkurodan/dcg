@@ -6,9 +6,11 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.zip.ZipFile;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class JavaExecutorTest {
@@ -118,6 +120,18 @@ public class JavaExecutorTest {
 
         assertEquals("com/micklab/dcg/wrapper/android/graphics/Bitmap.class", bitmapEntry);
         assertEquals("com/micklab/dcg/wrapper/android/graphics/Bitmap$Config.class", bitmapConfigEntry);
+    }
+
+    @Test
+    public void stagedWrapperAssetContainsBitmapNestedClasses() throws Exception {
+        File wrapperJar = new File("src/main/assets/java-wrapper/android-wrapper-classpath.jar");
+        assertTrue(wrapperJar.isFile());
+
+        try (ZipFile zipFile = new ZipFile(wrapperJar)) {
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/android/graphics/Bitmap.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/android/graphics/Bitmap$Config.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/android/graphics/Bitmap$CompressFormat.class"));
+        }
     }
 
     @Test
