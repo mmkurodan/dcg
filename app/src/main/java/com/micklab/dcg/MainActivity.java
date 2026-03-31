@@ -218,12 +218,12 @@ public class MainActivity extends AppCompatActivity {
         codeInput.setText(template.getContent());
         languageSpinner.setSelection(SupportedLanguage.spinnerPositionOf(language));
         snippetAdapter.setSelectedId(null);
-        showToast(ExecutionResult.info(
-                "New " + language.getDisplayName() + " snippet",
-                "Edit the template, then save or run it.",
-                language == SupportedLanguage.JAVA
-                        ? "Java expects public static String run() or public static void main(String[] args)."
-                        : "This language already has a storage/UI slot, but its runtime executor is still a placeholder."));
+                showToast(ExecutionResult.info(
+                        "New " + language.getDisplayName() + " snippet",
+                        "Edit the template, then save or run it.",
+                        language == SupportedLanguage.JAVA
+                                ? "Java accepts public static run()/main() or MainActivity-style onCreate() code."
+                                : "This language already has a storage/UI slot, but its runtime executor is still a placeholder."));
     }
 
     private SourceSnippet persistEditor(boolean showSuccessMessage) {

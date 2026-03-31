@@ -145,4 +145,11 @@ public class JavaExecutorTest {
                 "/tmp/a.jar" + File.pathSeparator + "/tmp/b.jar" + File.pathSeparator + "/tmp/c.jar",
                 merged);
     }
+
+    @Test
+    public void buildOutputMethodCountsAsSupportedEntrypoint() {
+        String guidance = com.micklab.dcg.util.DiagnosticFormatter.formatEntrypointGuidance("demo.MainActivity");
+        assertTrue(guidance.contains("build"));
+        assertTrue(guidance.contains("MainActivity-style onCreate()"));
+    }
 }

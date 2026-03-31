@@ -14,9 +14,10 @@ public class ExecutionResult {
     private final String details;
     private final long durationMs;
     private final List<ExecutionOutputItem> outputItems;
+    private final String outputModelJson;
 
     public ExecutionResult(ExecutionStatus status, String headline, String summary, String stdout, String returnValue, String error, String details, long durationMs) {
-        this(status, headline, summary, stdout, returnValue, error, details, durationMs, Collections.emptyList());
+        this(status, headline, summary, stdout, returnValue, error, details, durationMs, Collections.emptyList(), "");
     }
 
     public ExecutionResult(
@@ -28,7 +29,8 @@ public class ExecutionResult {
             String error,
             String details,
             long durationMs,
-            List<ExecutionOutputItem> outputItems) {
+            List<ExecutionOutputItem> outputItems,
+            String outputModelJson) {
         this.status = status;
         this.headline = headline == null ? "" : headline;
         this.summary = summary == null ? "" : summary;
@@ -40,6 +42,7 @@ public class ExecutionResult {
         this.outputItems = outputItems == null
                 ? Collections.emptyList()
                 : Collections.unmodifiableList(new ArrayList<>(outputItems));
+        this.outputModelJson = outputModelJson == null ? "" : outputModelJson;
     }
 
     public static ExecutionResult idle(String headline, String summary) {
@@ -110,6 +113,10 @@ public class ExecutionResult {
         return outputItems;
     }
 
+    public String getOutputModelJson() {
+        return outputModelJson;
+    }
+
     public ExecutionResult withOutputItems(List<ExecutionOutputItem> outputItems) {
         return new ExecutionResult(
                 status,
@@ -120,6 +127,21 @@ public class ExecutionResult {
                 error,
                 details,
                 durationMs,
-                outputItems);
+                outputItems,
+                outputModelJson);
+    }
+
+    public ExecutionResult withOutputModelJson(String outputModelJson) {
+        return new ExecutionResult(
+                status,
+                headline,
+                summary,
+                stdout,
+                returnValue,
+                error,
+                details,
+                durationMs,
+                outputItems,
+                outputModelJson);
     }
 }

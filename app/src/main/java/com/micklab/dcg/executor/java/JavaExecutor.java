@@ -52,6 +52,7 @@ import dalvik.system.InMemoryDexClassLoader;
 
 public class JavaExecutor implements LanguageExecutor {
     private static final String TAG = "JavaExecutor";
+    private static final String BUILD_OUTPUT_METHOD = "buildOutput";
     private static final String WORKSPACE_DIRECTORY = "dynamic-java";
     private static final String LOCAL_BOOT_JAR_DIRECTORY = "java-rt";
     private static final String BOOT_JAR_ASSET_DIRECTORY = "java-rt";
@@ -191,13 +192,17 @@ public class JavaExecutor implements LanguageExecutor {
                     classesDir,
                     dexDir,
                     resolveLibraryFiles(bootClasspath, wrapperClasspath));
-            InvocationOutcome outcome = loadAndRun(context, dexFile, parsedSource.getQualifiedClassName());
+            InvocationOutcome outcome = loadAndRun(
+                    context,
+                    dexFile,
+                    parsedSource.getQualifiedClassName(),
+                    preparedSource != null && preparedSource.isPseudoMainActivity());
             try {
                 DynamicOutputRuntime.StructuredOutput structuredOutput =
                         DynamicOutputRuntime.extractStructuredOutput(outcome.dynamicClass, outcome.returnValueObject);
                 return ExecutionResult.success(
                                 "Java execution succeeded",
-                                parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".",
+                                buildExecutionSummary(parsedSource, outcome, preparedSource),
                                 mergeConsoleOutput(outcome.stdout, structuredOutput.getStdout()),
                                 structuredOutput.getReturnValueText(),
                                 mergeConsoleOutput(outcome.stderr, structuredOutput.getStderr()),
@@ -206,7 +211,8 @@ public class JavaExecutor implements LanguageExecutor {
                                         formatRewriteDetails(preparedSource),
                                         formatBootClasspathDetails(bootClasspathDiagnostics)),
                                 elapsedSince(startTime))
-                        .withOutputItems(structuredOutput.getOutputItems());
+                        .withOutputItems(structuredOutput.getOutputItems())
+                        .withOutputModelJson(structuredOutput.getOutputModelJson());
             } catch (DynamicOutputRuntime.InvocationFailureException exception) {
                 Throwable rootCause = unwrap(exception.getCause());
                 return ExecutionResult.runtimeError(
@@ -238,7 +244,7 @@ public class JavaExecutor implements LanguageExecutor {
                 return ExecutionResult.compilationError(
                         "Java source is incomplete",
                         rootCause.getMessage(),
-                        "Define a class, interface, or enum, then expose public static String run() or public static void main(String[] args).",
+                        "Define a class, interface, or enum, then expose public static String run(), public static void main(String[] args), public static Object buildOutput(), or MainActivity-style onCreate().",
                         "Compiler: ECJ",
                         elapsedSince(startTime));
             }
@@ -345,12 +351,26 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    private InvocationOutcome loadAndRun(Context context, File dexFile, String qualifiedClassName) throws Exception {
+    private InvocationOutcome loadAndRun(
+            Context context,
+            File dexFile,
+            String qualifiedClassName,
+            boolean preferBuildOutput) throws Exception {
         byte[] dexBytes = Files.readAllBytes(dexFile.toPath());
         ByteBuffer dexBuffer = ByteBuffer.wrap(dexBytes);
         ClassLoader parent = context.getClassLoader();
         InMemoryDexClassLoader classLoader = new InMemoryDexClassLoader(dexBuffer, parent);
         Class<?> dynamicClass = classLoader.loadClass(qualifiedClassName);
+
+        Method buildOutputMethod = findBuildOutputMethod(dynamicClass);
+        if (preferBuildOutput && buildOutputMethod != null) {
+            return new InvocationOutcome(
+                    "public static Object " + BUILD_OUTPUT_METHOD + "()",
+                    "",
+                    "",
+                    null,
+                    dynamicClass);
+        }
 
         Method runMethod = findRunMethod(dynamicClass);
         if (runMethod != null) {
@@ -360,6 +380,15 @@ public class JavaExecutor implements LanguageExecutor {
         Method mainMethod = findMainMethod(dynamicClass);
         if (mainMethod != null) {
             return invokeCapturingOutput(dynamicClass, mainMethod, new Object[]{new String[0]}, "public static void main(String[])");
+        }
+
+        if (buildOutputMethod != null) {
+            return new InvocationOutcome(
+                    "public static Object " + BUILD_OUTPUT_METHOD + "()",
+                    "",
+                    "",
+                    null,
+                    dynamicClass);
         }
 
         throw new IllegalStateException(DiagnosticFormatter.formatEntrypointGuidance(qualifiedClassName));
@@ -385,6 +414,19 @@ public class JavaExecutor implements LanguageExecutor {
             }
             mainMethod.setAccessible(true);
             return mainMethod;
+        } catch (NoSuchMethodException ignored) {
+            return null;
+        }
+    }
+
+    private Method findBuildOutputMethod(Class<?> dynamicClass) {
+        try {
+            Method method = dynamicClass.getDeclaredMethod(BUILD_OUTPUT_METHOD);
+            if (!Modifier.isStatic(method.getModifiers()) || method.getParameterTypes().length != 0) {
+                return null;
+            }
+            method.setAccessible(true);
+            return method;
         } catch (NoSuchMethodException ignored) {
             return null;
         }
@@ -864,7 +906,9 @@ public class JavaExecutor implements LanguageExecutor {
             details.add("Source: " + sourceFile.getName());
         }
         if (preparedSource != null && preparedSource.hadAndroidReferences()) {
-            details.add("Android wrapper rewrites: " + preparedSource.getRewriteCount());
+            details.add((preparedSource.isPseudoMainActivity()
+                    ? "Pseudo MainActivity rewrites: "
+                    : "Android wrapper rewrites: ") + preparedSource.getRewriteCount());
         }
         details.add(BUNDLED_COMPILER_LAYOUT);
         return TextUtils.join("\n", details);
@@ -874,7 +918,21 @@ public class JavaExecutor implements LanguageExecutor {
         if (preparedSource == null || !preparedSource.hadAndroidReferences()) {
             return "";
         }
+        if (preparedSource.isPseudoMainActivity()) {
+            return "Pseudo MainActivity rewrites: " + preparedSource.getRewriteCount();
+        }
         return "Android wrapper rewrites: " + preparedSource.getRewriteCount();
+    }
+
+    private String buildExecutionSummary(
+            JavaSourceParser.ParsedJavaSource parsedSource,
+            InvocationOutcome outcome,
+            JavaSourceParser.PreparedJavaSource preparedSource) {
+        if (preparedSource != null && preparedSource.isPseudoMainActivity()) {
+            return parsedSource.getQualifiedClassName()
+                    + " executed as a pseudo MainActivity and rendered through OutputActivity.";
+        }
+        return parsedSource.getQualifiedClassName() + " executed successfully via " + outcome.entrypoint + ".";
     }
 
     private long elapsedSince(long startTime) {

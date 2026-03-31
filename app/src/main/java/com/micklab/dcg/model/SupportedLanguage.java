@@ -52,8 +52,14 @@ public enum SupportedLanguage {
                     javaName = "Snippet" + javaName;
                 }
                 return "public class " + javaName + " {\n"
-                        + "    public static String run() {\n"
-                        + "        return \"Hello from dynamic Java!\";\n"
+                        + "    protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                        + "        println(\"Hello from pseudo MainActivity!\");\n"
+                        + "        addInput(\"name\", \"Your name\");\n"
+                        + "        addButton(\"Greet\", \"greet\");\n"
+                        + "    }\n\n"
+                        + "    public static Object greet(java.util.Map<String, String> values) {\n"
+                        + "        String name = values.get(\"name\");\n"
+                        + "        return \"Hello, \" + (name == null || name.isEmpty() ? \"world\" : name) + \"!\";\n"
                         + "    }\n"
                         + "}\n";
             case KOTLIN:

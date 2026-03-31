@@ -31,7 +31,7 @@
         errorLine2="                                                       ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java"
-            line="318"
+            line="339"
             column="56"/>
     </issue>
 
@@ -49,7 +49,7 @@
         errorLine2="                                                    ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="241"
+            line="248"
             column="53"/>
     </issue>
 
@@ -67,7 +67,7 @@
         errorLine2="                                                         ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="298"
+            line="307"
             column="58"/>
     </issue>
 
@@ -85,7 +85,7 @@
         errorLine2="                                                            ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="312"
+            line="321"
             column="61"/>
     </issue>
 

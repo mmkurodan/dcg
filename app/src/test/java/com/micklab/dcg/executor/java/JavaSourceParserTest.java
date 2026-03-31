@@ -3,6 +3,7 @@ package com.micklab.dcg.executor.java;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class JavaSourceParserTest {
@@ -85,5 +86,28 @@ public class JavaSourceParserTest {
         JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
         assertEquals(source, prepared.getRewrittenSource());
         assertEquals(0, prepared.getRewriteCount());
+    }
+
+    @Test
+    public void prepareForCompilationRewritesPseudoMainActivitySource() {
+        String source = "import androidx.appcompat.app.AppCompatActivity;\n"
+                + "import android.os.Bundle;\n"
+                + "import android.widget.ImageView;\n"
+                + "public class MainActivity extends AppCompatActivity {\n"
+                + "  protected void onCreate(Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "    ImageView imageView = new ImageView(this);\n"
+                + "    setContentView(imageView);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "MainActivity");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertFalse(rewritten.contains("androidx.appcompat.app.AppCompatActivity"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
+        assertTrue(rewritten.contains("public static Object buildOutput()"));
+        assertTrue(rewritten.contains("public static String __dcgGetOutputModelJson()"));
     }
 }

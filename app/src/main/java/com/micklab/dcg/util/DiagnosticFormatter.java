@@ -45,6 +45,6 @@ public final class DiagnosticFormatter {
 
     public static String formatEntrypointGuidance(String qualifiedClassName) {
         return "No supported entrypoint found in " + qualifiedClassName
-                + ". Add public static String run() or public static void main(String[] args).";
+                + ". Add public static String run(), public static void main(String[] args), public static Object buildOutput(), or MainActivity-style onCreate().";
     }
 }

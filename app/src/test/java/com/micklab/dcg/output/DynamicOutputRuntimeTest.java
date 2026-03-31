@@ -31,6 +31,15 @@ public class DynamicOutputRuntimeTest {
     }
 
     @Test
+    public void extractStructuredOutputIncludesOutputModelJson() throws Exception {
+        DynamicOutputRuntime.StructuredOutput output =
+                DynamicOutputRuntime.extractStructuredOutput(PseudoMainActivityProgram.class, null);
+
+        assertTrue(output.getOutputModelJson().contains("\"type\":\"column\""));
+        assertTrue(output.getOutputModelJson().contains("\"action\":\"submit\""));
+    }
+
+    @Test
     public void invokeActionPassesInputsAndCapturesStdout() throws Exception {
         DynamicUiRequest request = DynamicUiRequest.declarative(DeclarativeProgram.class, new ArrayList<>());
         Map<String, String> values = new LinkedHashMap<>();
@@ -94,6 +103,41 @@ public class DynamicOutputRuntimeTest {
     public static final class ViewFactoryProgram {
         public static View createOutputView(Context context) {
             return null;
+        }
+    }
+
+    public static final class PseudoMainActivityProgram {
+        public static Object buildOutput() {
+            List<Map<String, Object>> nodes = new ArrayList<>();
+
+            Map<String, Object> root = new LinkedHashMap<>();
+            root.put("type", "column");
+            List<Map<String, Object>> children = new ArrayList<>();
+
+            Map<String, Object> text = new LinkedHashMap<>();
+            text.put("type", "text");
+            text.put("text", "Pseudo");
+            children.add(text);
+
+            Map<String, Object> input = new LinkedHashMap<>();
+            input.put("type", "input");
+            input.put("id", "name");
+            input.put("hint", "Name");
+            children.add(input);
+
+            Map<String, Object> button = new LinkedHashMap<>();
+            button.put("type", "button");
+            button.put("text", "Submit");
+            button.put("action", "submit");
+            children.add(button);
+
+            root.put("children", children);
+            nodes.add(root);
+            return nodes;
+        }
+
+        public static String __dcgGetOutputModelJson() {
+            return "{\"version\":1,\"spec\":[{\"type\":\"column\",\"children\":[{\"type\":\"text\",\"text\":\"Pseudo\"},{\"type\":\"input\",\"id\":\"name\",\"hint\":\"Name\"},{\"type\":\"button\",\"text\":\"Submit\",\"action\":\"submit\"}]}]}";
         }
     }
 }

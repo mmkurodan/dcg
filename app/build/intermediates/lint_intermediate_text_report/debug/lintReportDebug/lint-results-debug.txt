@@ -6,16 +6,16 @@
    A scrolling widget such as a ScrollView should not contain any nested
    scrolling widgets since this has various usability issues
 
-/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:318: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:339: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String normalizedType = ((String) type).trim().toLowerCase();
                                                        ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:241: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:248: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String type = stringValue(spec.get("type")).toLowerCase();
                                                     ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:298: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:307: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String emphasis = stringValue(spec.get("style")).toLowerCase();
                                                          ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:312: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:321: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String keyboard = stringValue(spec.get("keyboard")).toLowerCase();
                                                             ~~~~~~~~~~~
 

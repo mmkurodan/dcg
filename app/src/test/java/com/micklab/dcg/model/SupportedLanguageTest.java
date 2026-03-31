@@ -22,9 +22,10 @@ public class SupportedLanguageTest {
     }
 
     @Test
-    public void javaTemplateContainsRunMethod() {
+    public void javaTemplateContainsPseudoMainActivityScaffold() {
         String template = SupportedLanguage.JAVA.defaultTemplate("HelloJava");
-        assertTrue(template.contains("public static String run()"));
+        assertTrue(template.contains("protected void onCreate"));
+        assertTrue(template.contains("addButton(\"Greet\", \"greet\")"));
         assertTrue(template.contains("class HelloJava"));
     }
 }

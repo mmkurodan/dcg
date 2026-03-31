@@ -24,6 +24,7 @@ import com.micklab.dcg.model.ExecutionOutputItem;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.ExecutionStatus;
 import com.micklab.dcg.output.DynamicOutputRuntime;
+import com.micklab.dcg.output.OutputModelJsonParser;
 import com.micklab.dcg.output.OutputStore;
 import com.micklab.dcg.util.DiagnosticFormatter;
 
@@ -85,7 +86,13 @@ public class OutputActivity extends AppCompatActivity {
         addView(contentLayout, buildHeader(safeResult));
 
         addTextSection(contentLayout, getString(R.string.result_stdout_label), safeResult.getStdout());
-        renderOutputItems(contentLayout, safeResult.getOutputItems());
+        boolean renderedOutputModel = renderOutputModelJson(
+                contentLayout,
+                safeResult.getOutputModelJson(),
+                findInteractiveRequest(safeResult.getOutputItems()));
+        if (!renderedOutputModel) {
+            renderOutputItems(contentLayout, safeResult.getOutputItems());
+        }
         addTextSection(contentLayout, getString(R.string.result_return_value_label), safeResult.getReturnValue());
         addTextSection(contentLayout, getString(R.string.result_error_label), safeResult.getError());
         addTextSection(contentLayout, getString(R.string.result_details_label), buildDetails(safeResult));
@@ -240,6 +247,8 @@ public class OutputActivity extends AppCompatActivity {
             LinearLayout actionOutputLayout) {
         String type = stringValue(spec.get("type")).toLowerCase();
         switch (type) {
+            case "image":
+                return buildImageNode(spec);
             case "row":
                 return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.HORIZONTAL, request, inputs, actionOutputLayout);
             case "column":
@@ -331,12 +340,27 @@ public class OutputActivity extends AppCompatActivity {
         String buttonText = stringValue(spec.get("text"));
         button.setText(buttonText.isEmpty() ? "Action" : buttonText);
         String action = stringValue(spec.get("action"));
-        if (action.isEmpty()) {
+        if (action.isEmpty() || request == null || request.getDynamicClass() == null) {
             button.setEnabled(false);
             return button;
         }
         button.setOnClickListener(view -> runInteractiveAction(request, action, inputs, actionOutputLayout));
         return button;
+    }
+
+    private View buildImageNode(Map<?, ?> spec) {
+        ImageView imageView = new ImageView(this);
+        imageView.setAdjustViewBounds(true);
+        String encoded = stringValue(spec.get("imageBase64"));
+        if (!encoded.isEmpty()) {
+            byte[] bytes = Base64.getDecoder().decode(encoded);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            if (bitmap == null) {
+                return createBodyText("Bitmap decode failed.");
+            }
+            imageView.setImageBitmap(bitmap);
+        }
+        return imageView;
     }
 
     private void runInteractiveAction(
@@ -488,6 +512,51 @@ public class OutputActivity extends AppCompatActivity {
 
     private String normalizeLabel(String label) {
         return TextUtils.isEmpty(label) ? getString(R.string.result_output_label) : label;
+    }
+
+    private DynamicUiRequest findInteractiveRequest(List<ExecutionOutputItem> items) {
+        if (items == null) {
+            return null;
+        }
+        for (ExecutionOutputItem item : items) {
+            if (item != null && item.getType() == ExecutionOutputItem.Type.INTERACTIVE) {
+                return item.getInteractiveRequest();
+            }
+        }
+        return null;
+    }
+
+    private boolean renderOutputModelJson(
+            LinearLayout parent,
+            String outputModelJson,
+            DynamicUiRequest request) {
+        if (TextUtils.isEmpty(outputModelJson)) {
+            return false;
+        }
+        try {
+            Object spec = OutputModelJsonParser.parseSpec(outputModelJson);
+            if (OutputModelJsonParser.isEmptySpec(spec)) {
+                return false;
+            }
+            LinearLayout panel = createPanel();
+            addSectionLabel(panel, getString(R.string.result_output_label));
+
+            LinearLayout actionOutputLayout = new LinearLayout(this);
+            actionOutputLayout.setOrientation(LinearLayout.VERTICAL);
+            actionOutputLayout.setVisibility(View.GONE);
+            LinkedHashMap<String, EditText> inputs = new LinkedHashMap<>();
+            View renderedSpec = buildInteractiveNode(spec, request, inputs, actionOutputLayout);
+            if (renderedSpec != null) {
+                setTopMargin(renderedSpec, 8);
+                addView(panel, renderedSpec);
+            }
+            addView(panel, actionOutputLayout);
+            addView(parent, panel);
+            return true;
+        } catch (Exception exception) {
+            addTextSection(parent, getString(R.string.result_error_label), DiagnosticFormatter.formatThrowable(exception));
+            return false;
+        }
     }
 
     private void addView(LinearLayout parent, View child) {

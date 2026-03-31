@@ -25,6 +25,7 @@ public final class DynamicOutputRuntime {
     private static final String BUILD_OUTPUT_METHOD = "buildOutput";
     private static final String VIEW_FACTORY_METHOD = "createOutputView";
     private static final String WRAPPER_CONTEXT_CLASS = "com.micklab.dcg.wrapper.android.content.Context";
+    private static final String OUTPUT_MODEL_JSON_METHOD = "__dcgGetOutputModelJson";
 
     private DynamicOutputRuntime() {
     }
@@ -55,7 +56,12 @@ public final class DynamicOutputRuntime {
             items.add(ExecutionOutputItem.interactive("Interactive UI", viewFactoryRequest));
         }
 
-        return new StructuredOutput(primaryOutcome.returnValueText, items, additionalStdout, additionalStderr);
+        return new StructuredOutput(
+                primaryOutcome.returnValueText,
+                items,
+                additionalStdout,
+                additionalStderr,
+                extractOutputModelJson(dynamicClass));
     }
 
     public static View createOutputView(Context context, DynamicUiRequest request) throws Exception {
@@ -140,6 +146,21 @@ public final class DynamicOutputRuntime {
                 dynamicClass,
                 method.getName(),
                 isWrapperContextType(method.getParameterTypes()[0]));
+    }
+
+    private static String extractOutputModelJson(Class<?> dynamicClass) throws Exception {
+        Method method = findZeroArgStaticMethod(dynamicClass, OUTPUT_MODEL_JSON_METHOD);
+        if (method == null) {
+            return "";
+        }
+        CapturedInvocation invocation = captureInvocation(
+                method,
+                new Object[0],
+                "public static String " + OUTPUT_MODEL_JSON_METHOD + "()");
+        if (invocation.returnValue == null) {
+            return "";
+        }
+        return String.valueOf(invocation.returnValue);
     }
 
     private static Method resolveActionMethod(Class<?> dynamicClass, String methodName) throws NoSuchMethodException {
@@ -317,6 +338,7 @@ public final class DynamicOutputRuntime {
         }
         String normalizedType = ((String) type).trim().toLowerCase();
         return "text".equals(normalizedType)
+                || "image".equals(normalizedType)
                 || "input".equals(normalizedType)
                 || "button".equals(normalizedType)
                 || "row".equals(normalizedType)
@@ -418,16 +440,19 @@ public final class DynamicOutputRuntime {
         private final List<ExecutionOutputItem> outputItems;
         private final String stdout;
         private final String stderr;
+        private final String outputModelJson;
 
         private StructuredOutput(
                 String returnValueText,
                 List<ExecutionOutputItem> outputItems,
                 String stdout,
-                String stderr) {
+                String stderr,
+                String outputModelJson) {
             this.returnValueText = returnValueText == null ? "" : returnValueText;
             this.outputItems = outputItems == null ? new ArrayList<>() : new ArrayList<>(outputItems);
             this.stdout = stdout == null ? "" : stdout;
             this.stderr = stderr == null ? "" : stderr;
+            this.outputModelJson = outputModelJson == null ? "" : outputModelJson;
         }
 
         public String getReturnValueText() {
@@ -444,6 +469,10 @@ public final class DynamicOutputRuntime {
 
         public String getStderr() {
             return stderr;
+        }
+
+        public String getOutputModelJson() {
+            return outputModelJson;
         }
     }
 
