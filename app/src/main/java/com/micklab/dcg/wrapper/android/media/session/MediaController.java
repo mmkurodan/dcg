@@ -83,8 +83,8 @@ public final class MediaController {
         return ((android.media.session.MediaController) real).getTag();
     }
 
-    public android.media.session.MediaController.TransportControls getTransportControls() {
-        return ((android.media.session.MediaController) real).getTransportControls();
+    public com.micklab.dcg.wrapper.android.media.session.MediaController.TransportControls getTransportControls() {
+        return com.micklab.dcg.wrapper.android.media.session.MediaController.TransportControls.wrap(((android.media.session.MediaController) real).getTransportControls());
     }
 
     public void registerCallback(com.micklab.dcg.wrapper.android.media.session.MediaController.Callback arg0) {
@@ -218,6 +218,110 @@ public final class MediaController {
 
         public static final int PLAYBACK_TYPE_LOCAL = android.media.session.MediaController.PlaybackInfo.PLAYBACK_TYPE_LOCAL;
         public static final int PLAYBACK_TYPE_REMOTE = android.media.session.MediaController.PlaybackInfo.PLAYBACK_TYPE_REMOTE;
+
+    }
+    public static final class TransportControls {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private TransportControls(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.session.MediaController.TransportControls wrap(android.media.session.MediaController.TransportControls real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.session.MediaController.TransportControls(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.session.MediaController.TransportControls getReal() {
+            return (android.media.session.MediaController.TransportControls) real;
+        }
+
+        public android.media.session.MediaController.TransportControls unwrap() {
+            return getReal();
+        }
+
+        public void fastForward() {
+            ((android.media.session.MediaController.TransportControls) real).fastForward();
+        }
+
+        public void pause() {
+            ((android.media.session.MediaController.TransportControls) real).pause();
+        }
+
+        public void play() {
+            ((android.media.session.MediaController.TransportControls) real).play();
+        }
+
+        public void playFromMediaId(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).playFromMediaId(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void playFromSearch(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).playFromSearch(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void playFromUri(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).playFromUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+        }
+
+        public void prepare() {
+            ((android.media.session.MediaController.TransportControls) real).prepare();
+        }
+
+        public void prepareFromMediaId(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).prepareFromMediaId(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void prepareFromSearch(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).prepareFromSearch(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void prepareFromUri(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).prepareFromUri(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+        }
+
+        public void rewind() {
+            ((android.media.session.MediaController.TransportControls) real).rewind();
+        }
+
+        public void seekTo(long arg0) {
+            ((android.media.session.MediaController.TransportControls) real).seekTo(arg0);
+        }
+
+        public void sendCustomAction(com.micklab.dcg.wrapper.android.media.session.PlaybackState.CustomAction arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).sendCustomAction(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+        }
+
+        public void sendCustomAction(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.media.session.MediaController.TransportControls) real).sendCustomAction(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void setPlaybackSpeed(float arg0) {
+            ((android.media.session.MediaController.TransportControls) real).setPlaybackSpeed(arg0);
+        }
+
+        public void setRating(com.micklab.dcg.wrapper.android.media.Rating arg0) {
+            ((android.media.session.MediaController.TransportControls) real).setRating(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void skipToNext() {
+            ((android.media.session.MediaController.TransportControls) real).skipToNext();
+        }
+
+        public void skipToPrevious() {
+            ((android.media.session.MediaController.TransportControls) real).skipToPrevious();
+        }
+
+        public void skipToQueueItem(long arg0) {
+            ((android.media.session.MediaController.TransportControls) real).skipToQueueItem(arg0);
+        }
+
+        public void stop() {
+            ((android.media.session.MediaController.TransportControls) real).stop();
+        }
+
 
     }
 }

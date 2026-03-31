@@ -31,8 +31,8 @@ public final class HardwareRenderer {
         ((android.graphics.HardwareRenderer) real).clearContent();
     }
 
-    public android.graphics.HardwareRenderer.FrameRenderRequest createRenderRequest() {
-        return ((android.graphics.HardwareRenderer) real).createRenderRequest();
+    public com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest createRenderRequest() {
+        return com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest.wrap(((android.graphics.HardwareRenderer) real).createRenderRequest());
     }
 
     public void destroy() {
@@ -93,4 +93,44 @@ public final class HardwareRenderer {
     public static final int SYNC_OK = android.graphics.HardwareRenderer.SYNC_OK;
     public static final int SYNC_REDRAW_REQUESTED = android.graphics.HardwareRenderer.SYNC_REDRAW_REQUESTED;
 
+    public static final class FrameRenderRequest {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private FrameRenderRequest(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest wrap(android.graphics.HardwareRenderer.FrameRenderRequest real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.HardwareRenderer.FrameRenderRequest getReal() {
+            return (android.graphics.HardwareRenderer.FrameRenderRequest) real;
+        }
+
+        public android.graphics.HardwareRenderer.FrameRenderRequest unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest setFrameCommitCallback(java.util.concurrent.Executor arg0, java.lang.Runnable arg1) {
+            return com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest.wrap(((android.graphics.HardwareRenderer.FrameRenderRequest) real).setFrameCommitCallback(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest setVsyncTime(long arg0) {
+            return com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest.wrap(((android.graphics.HardwareRenderer.FrameRenderRequest) real).setVsyncTime(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest setWaitForPresent(boolean arg0) {
+            return com.micklab.dcg.wrapper.android.graphics.HardwareRenderer.FrameRenderRequest.wrap(((android.graphics.HardwareRenderer.FrameRenderRequest) real).setWaitForPresent(arg0));
+        }
+
+        public int syncAndDraw() {
+            return ((android.graphics.HardwareRenderer.FrameRenderRequest) real).syncAndDraw();
+        }
+
+
+    }
 }

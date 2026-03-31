@@ -159,12 +159,12 @@ public final class InputMethodService {
         return com.micklab.dcg.wrapper.android.view.inputmethod.InlineSuggestionsRequest.wrap(((android.inputmethodservice.InputMethodService) real).onCreateInlineSuggestionsRequest(arg0 == null ? null : arg0.getReal()));
     }
 
-    public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl onCreateInputMethodInterface() {
-        return ((android.inputmethodservice.InputMethodService) real).onCreateInputMethodInterface();
+    public com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl onCreateInputMethodInterface() {
+        return com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl.wrap(((android.inputmethodservice.InputMethodService) real).onCreateInputMethodInterface());
     }
 
-    public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
-        return ((android.inputmethodservice.InputMethodService) real).onCreateInputMethodSessionInterface();
+    public com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
+        return com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl.wrap(((android.inputmethodservice.InputMethodService) real).onCreateInputMethodSessionInterface());
     }
 
     public com.micklab.dcg.wrapper.android.view.View onCreateInputView() {
@@ -436,6 +436,122 @@ public final class InputMethodService {
     public static final int BACK_DISPOSITION_WILL_DISMISS = android.inputmethodservice.InputMethodService.BACK_DISPOSITION_WILL_DISMISS;
     public static final int BACK_DISPOSITION_WILL_NOT_DISMISS = android.inputmethodservice.InputMethodService.BACK_DISPOSITION_WILL_NOT_DISMISS;
 
+    public static final class InputMethodImpl {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private InputMethodImpl(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.inputmethodservice.InputMethodService.InputMethodImpl wrap(android.inputmethodservice.InputMethodService.InputMethodImpl real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.InputMethodService.InputMethodImpl(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.inputmethodservice.InputMethodService.InputMethodImpl getReal() {
+            return (android.inputmethodservice.InputMethodService.InputMethodImpl) real;
+        }
+
+        public android.inputmethodservice.InputMethodService.InputMethodImpl unwrap() {
+            return getReal();
+        }
+
+        public void attachToken(com.micklab.dcg.wrapper.android.os.IBinder arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).attachToken(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void bindInput(com.micklab.dcg.wrapper.android.view.inputmethod.InputBinding arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).bindInput(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void changeInputMethodSubtype(com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSubtype arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).changeInputMethodSubtype(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void hideSoftInput(int arg0, com.micklab.dcg.wrapper.android.os.ResultReceiver arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).hideSoftInput(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void restartInput(com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection arg0, com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).restartInput(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+        }
+
+        public void showSoftInput(int arg0, com.micklab.dcg.wrapper.android.os.ResultReceiver arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).showSoftInput(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void startInput(com.micklab.dcg.wrapper.android.view.inputmethod.InputConnection arg0, com.micklab.dcg.wrapper.android.view.inputmethod.EditorInfo arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).startInput(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+        }
+
+        public void unbindInput() {
+            ((android.inputmethodservice.InputMethodService.InputMethodImpl) real).unbindInput();
+        }
+
+
+    }
+    public static final class InputMethodSessionImpl {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private InputMethodSessionImpl(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.inputmethodservice.InputMethodService.InputMethodSessionImpl wrap(android.inputmethodservice.InputMethodService.InputMethodSessionImpl real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.InputMethodService.InputMethodSessionImpl(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.inputmethodservice.InputMethodService.InputMethodSessionImpl getReal() {
+            return (android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real;
+        }
+
+        public android.inputmethodservice.InputMethodService.InputMethodSessionImpl unwrap() {
+            return getReal();
+        }
+
+        public void appPrivateCommand(java.lang.String arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).appPrivateCommand(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void displayCompletions(android.view.inputmethod.CompletionInfo[] arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).displayCompletions(arg0);
+        }
+
+        public void finishInput() {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).finishInput();
+        }
+
+        public void toggleSoftInput(int arg0, int arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).toggleSoftInput(arg0, arg1);
+        }
+
+        public void updateCursor(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).updateCursor(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void updateCursorAnchorInfo(com.micklab.dcg.wrapper.android.view.inputmethod.CursorAnchorInfo arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).updateCursorAnchorInfo(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void updateExtractedText(int arg0, com.micklab.dcg.wrapper.android.view.inputmethod.ExtractedText arg1) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).updateExtractedText(arg0, arg1 == null ? null : arg1.getReal());
+        }
+
+        public void updateSelection(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).updateSelection(arg0, arg1, arg2, arg3, arg4, arg5);
+        }
+
+        public void viewClicked(boolean arg0) {
+            ((android.inputmethodservice.InputMethodService.InputMethodSessionImpl) real).viewClicked(arg0);
+        }
+
+
+    }
     public static final class Insets {
         private static final class __DcgwBridgeToken {
         }

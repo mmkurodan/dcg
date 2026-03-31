@@ -35,8 +35,8 @@ public final class RemoteController {
         return ((android.media.RemoteController) real).clearArtworkConfiguration();
     }
 
-    public android.media.RemoteController.MetadataEditor editMetadata() {
-        return ((android.media.RemoteController) real).editMetadata();
+    public com.micklab.dcg.wrapper.android.media.RemoteController.MetadataEditor editMetadata() {
+        return com.micklab.dcg.wrapper.android.media.RemoteController.MetadataEditor.wrap(((android.media.RemoteController) real).editMetadata());
     }
 
     public long getEstimatedMediaPosition() {
@@ -62,6 +62,34 @@ public final class RemoteController {
     public static final int POSITION_SYNCHRONIZATION_CHECK = android.media.RemoteController.POSITION_SYNCHRONIZATION_CHECK;
     public static final int POSITION_SYNCHRONIZATION_NONE = android.media.RemoteController.POSITION_SYNCHRONIZATION_NONE;
 
+    public static final class MetadataEditor {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private MetadataEditor(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.RemoteController.MetadataEditor wrap(android.media.RemoteController.MetadataEditor real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteController.MetadataEditor(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.RemoteController.MetadataEditor getReal() {
+            return (android.media.RemoteController.MetadataEditor) real;
+        }
+
+        public android.media.RemoteController.MetadataEditor unwrap() {
+            return getReal();
+        }
+
+        public void apply() {
+            ((android.media.RemoteController.MetadataEditor) real).apply();
+        }
+
+
+    }
     public static final class OnClientUpdateListener {
         private static final class __DcgwBridgeToken {
         }
@@ -88,8 +116,8 @@ public final class RemoteController {
             ((android.media.RemoteController.OnClientUpdateListener) real).onClientChange(arg0);
         }
 
-        public void onClientMetadataUpdate(android.media.RemoteController.MetadataEditor arg0) {
-            ((android.media.RemoteController.OnClientUpdateListener) real).onClientMetadataUpdate(arg0);
+        public void onClientMetadataUpdate(com.micklab.dcg.wrapper.android.media.RemoteController.MetadataEditor arg0) {
+            ((android.media.RemoteController.OnClientUpdateListener) real).onClientMetadataUpdate(arg0 == null ? null : arg0.getReal());
         }
 
         public void onClientPlaybackStateUpdate(int arg0) {

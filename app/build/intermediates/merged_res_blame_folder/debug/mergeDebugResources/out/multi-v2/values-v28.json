@@ -4,7 +4,7 @@
             "outputFile": "com.micklab.dcg.app-mergeDebugResources-21:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/8.12/transforms/bb49216506d280d7393f6bca2daa3b4d/transformed/appcompat-1.7.0/res/values-v28/values-v28.xml",
+                    "source": "/root/.gradle/caches/8.12/transforms/368047bef971ba83e26fab905c33ff29/transformed/appcompat-1.7.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

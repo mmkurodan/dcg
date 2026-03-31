@@ -43,12 +43,12 @@ public final class JetPlayer {
         return android.media.JetPlayer.getMaxTracks();
     }
 
-    public boolean loadJetFile(java.lang.String arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.JetPlayer#loadJetFile(java.lang.String)");
-    }
-
     public boolean loadJetFile(com.micklab.dcg.wrapper.android.content.res.AssetFileDescriptor arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.JetPlayer#loadJetFile(android.content.res.AssetFileDescriptor)");
+    }
+
+    public boolean loadJetFile(java.lang.String arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.JetPlayer#loadJetFile(java.lang.String)");
     }
 
     public boolean pause() {

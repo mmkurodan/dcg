@@ -199,12 +199,12 @@ public final class Preference {
         ((android.preference.Preference) real).setFragment(arg0);
     }
 
-    public void setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.preference.Preference) real).setIcon(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setIcon(int arg0) {
         ((android.preference.Preference) real).setIcon(arg0);
+    }
+
+    public void setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.preference.Preference) real).setIcon(arg0 == null ? null : arg0.getReal());
     }
 
     public void setIconSpaceReserved(boolean arg0) {

@@ -155,12 +155,12 @@ public final class RemoteViews {
         ((android.widget.RemoteViews) real).setColorInt(arg0, arg1, arg2, arg3);
     }
 
-    public void setColorStateList(int arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.content.res.ColorStateList arg2) {
-        ((android.widget.RemoteViews) real).setColorStateList(arg0, arg1, arg2 == null ? null : arg2.getReal());
-    }
-
     public void setColorStateList(int arg0, java.lang.String arg1, int arg2) {
         ((android.widget.RemoteViews) real).setColorStateList(arg0, arg1, arg2);
+    }
+
+    public void setColorStateList(int arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.content.res.ColorStateList arg2) {
+        ((android.widget.RemoteViews) real).setColorStateList(arg0, arg1, arg2 == null ? null : arg2.getReal());
     }
 
     public void setColorStateList(int arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.content.res.ColorStateList arg2, com.micklab.dcg.wrapper.android.content.res.ColorStateList arg3) {
@@ -299,11 +299,11 @@ public final class RemoteViews {
         ((android.widget.RemoteViews) real).setRelativeScrollPosition(arg0, arg1);
     }
 
-    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
+    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews.RemoteCollectionItems arg1) {
         ((android.widget.RemoteViews) real).setRemoteAdapter(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.widget.RemoteViews.RemoteCollectionItems arg1) {
+    public void setRemoteAdapter(int arg0, com.micklab.dcg.wrapper.android.content.Intent arg1) {
         ((android.widget.RemoteViews) real).setRemoteAdapter(arg0, arg1 == null ? null : arg1.getReal());
     }
 

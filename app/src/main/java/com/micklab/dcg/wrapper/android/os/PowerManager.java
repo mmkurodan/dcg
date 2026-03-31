@@ -111,7 +111,7 @@ public final class PowerManager {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#isWakeLockLevelSupported(int)");
     }
 
-    public android.os.PowerManager.WakeLock newWakeLock(int arg0, java.lang.String arg1) {
+    public com.micklab.dcg.wrapper.android.os.PowerManager.WakeLock newWakeLock(int arg0, java.lang.String arg1) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager#newWakeLock(int,java.lang.String)");
     }
 
@@ -176,6 +176,66 @@ public final class PowerManager {
         public void onThermalStatusChanged(int arg0) {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$OnThermalStatusChangedListener#onThermalStatusChanged(int)");
         }
+
+    }
+    public static final class WakeLock {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private WakeLock(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.os.PowerManager.WakeLock wrap(android.os.PowerManager.WakeLock real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.os.PowerManager.WakeLock(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.os.PowerManager.WakeLock getReal() {
+            return (android.os.PowerManager.WakeLock) real;
+        }
+
+        public android.os.PowerManager.WakeLock unwrap() {
+            return getReal();
+        }
+
+        public void acquire() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#acquire()");
+        }
+
+        public void acquire(long arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#acquire(long)");
+        }
+
+        public boolean isHeld() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#isHeld()");
+        }
+
+        public void release() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#release()");
+        }
+
+        public void release(int arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#release(int)");
+        }
+
+        public void setReferenceCounted(boolean arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#setReferenceCounted(boolean)");
+        }
+
+        public void setStateListener(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.os.PowerManager.WakeLockStateListener arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#setStateListener(java.util.concurrent.Executor,android.os.PowerManager$WakeLockStateListener)");
+        }
+
+        public void setWorkSource(com.micklab.dcg.wrapper.android.os.WorkSource arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#setWorkSource(android.os.WorkSource)");
+        }
+
+        public java.lang.String toString() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.PowerManager$WakeLock#toString()");
+        }
+
 
     }
     public static final class WakeLockStateListener {

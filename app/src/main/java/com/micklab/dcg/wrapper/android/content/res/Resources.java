@@ -59,16 +59,16 @@ public final class Resources {
         return ((android.content.res.Resources) real).getColor(arg0);
     }
 
-    public int getColor(int arg0, android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
-        return ((android.content.res.Resources) real).getColor(arg0, arg1);
+    public int getColor(int arg0, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
+        return ((android.content.res.Resources) real).getColor(arg0, arg1 == null ? null : arg1.getReal());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.ColorStateList getColorStateList(int arg0) throws android.content.res.Resources.NotFoundException {
         return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.content.res.Resources) real).getColorStateList(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.content.res.ColorStateList getColorStateList(int arg0, android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.content.res.Resources) real).getColorStateList(arg0, arg1));
+    public com.micklab.dcg.wrapper.android.content.res.ColorStateList getColorStateList(int arg0, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(((android.content.res.Resources) real).getColorStateList(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.res.Configuration getConfiguration() {
@@ -95,16 +95,16 @@ public final class Resources {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawable(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawable(int arg0, android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawable(arg0, arg1));
+    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawable(int arg0, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg1) throws android.content.res.Resources.NotFoundException {
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawable(arg0, arg1 == null ? null : arg1.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawableForDensity(int arg0, int arg1) throws android.content.res.Resources.NotFoundException {
         return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawableForDensity(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawableForDensity(int arg0, int arg1, android.content.res.Resources.Theme arg2) {
-        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawableForDensity(arg0, arg1, arg2));
+    public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawableForDensity(int arg0, int arg1, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg2) {
+        return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources) real).getDrawableForDensity(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public float getFloat(int arg0) {
@@ -211,8 +211,8 @@ public final class Resources {
         return com.micklab.dcg.wrapper.android.content.res.XmlResourceParser.wrap(((android.content.res.Resources) real).getXml(arg0));
     }
 
-    public android.content.res.Resources.Theme newTheme() {
-        return ((android.content.res.Resources) real).newTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme newTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.content.res.Resources) real).newTheme());
     }
 
     public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1) {
@@ -290,6 +290,94 @@ public final class Resources {
         public NotFoundException(java.lang.String arg0, java.lang.Exception arg1) {
             this(new android.content.res.Resources.NotFoundException(arg0, arg1), (__DcgwBridgeToken) null);
         }
+
+    }
+    public static final class Theme {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Theme(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.content.res.Resources.Theme wrap(android.content.res.Resources.Theme real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.Resources.Theme(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.res.Resources.Theme getReal() {
+            return (android.content.res.Resources.Theme) real;
+        }
+
+        public android.content.res.Resources.Theme unwrap() {
+            return getReal();
+        }
+
+        public void applyStyle(int arg0, boolean arg1) {
+            ((android.content.res.Resources.Theme) real).applyStyle(arg0, arg1);
+        }
+
+        public void dump(int arg0, java.lang.String arg1, java.lang.String arg2) {
+            ((android.content.res.Resources.Theme) real).dump(arg0, arg1, arg2);
+        }
+
+        public boolean equals(java.lang.Object arg0) {
+            return ((android.content.res.Resources.Theme) real).equals(arg0);
+        }
+
+        public int[] getAttributeResolutionStack(int arg0, int arg1, int arg2) {
+            return ((android.content.res.Resources.Theme) real).getAttributeResolutionStack(arg0, arg1, arg2);
+        }
+
+        public int getChangingConfigurations() {
+            return ((android.content.res.Resources.Theme) real).getChangingConfigurations();
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getDrawable(int arg0) throws android.content.res.Resources.NotFoundException {
+            return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.content.res.Resources.Theme) real).getDrawable(arg0));
+        }
+
+        public int getExplicitStyle(com.micklab.dcg.wrapper.android.util.AttributeSet arg0) {
+            return ((android.content.res.Resources.Theme) real).getExplicitStyle(arg0 == null ? null : arg0.getReal());
+        }
+
+        public com.micklab.dcg.wrapper.android.content.res.Resources getResources() {
+            return com.micklab.dcg.wrapper.android.content.res.Resources.wrap(((android.content.res.Resources.Theme) real).getResources());
+        }
+
+        public int hashCode() {
+            return ((android.content.res.Resources.Theme) real).hashCode();
+        }
+
+        public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int[] arg0) {
+            return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.res.Resources.Theme) real).obtainStyledAttributes(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(int arg0, int[] arg1) throws android.content.res.Resources.NotFoundException {
+            return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.res.Resources.Theme) real).obtainStyledAttributes(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.content.res.TypedArray obtainStyledAttributes(com.micklab.dcg.wrapper.android.util.AttributeSet arg0, int[] arg1, int arg2, int arg3) {
+            return com.micklab.dcg.wrapper.android.content.res.TypedArray.wrap(((android.content.res.Resources.Theme) real).obtainStyledAttributes(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3));
+        }
+
+        public void rebase() {
+            ((android.content.res.Resources.Theme) real).rebase();
+        }
+
+        public boolean resolveAttribute(int arg0, com.micklab.dcg.wrapper.android.util.TypedValue arg1, boolean arg2) {
+            return ((android.content.res.Resources.Theme) real).resolveAttribute(arg0, arg1 == null ? null : arg1.getReal(), arg2);
+        }
+
+        public void setTo(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+            ((android.content.res.Resources.Theme) real).setTo(arg0 == null ? null : arg0.getReal());
+        }
+
+        public java.lang.String toString() {
+            return ((android.content.res.Resources.Theme) real).toString();
+        }
+
 
     }
 }

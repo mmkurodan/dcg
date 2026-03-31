@@ -107,6 +107,38 @@ public final class Loader {
         return ((android.content.Loader) real).toString();
     }
 
+    public static final class ForceLoadContentObserver {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private ForceLoadContentObserver(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.content.Loader.ForceLoadContentObserver wrap(android.content.Loader.ForceLoadContentObserver real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.Loader.ForceLoadContentObserver(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.Loader.ForceLoadContentObserver getReal() {
+            return (android.content.Loader.ForceLoadContentObserver) real;
+        }
+
+        public android.content.Loader.ForceLoadContentObserver unwrap() {
+            return getReal();
+        }
+
+        public boolean deliverSelfNotifications() {
+            return ((android.content.Loader.ForceLoadContentObserver) real).deliverSelfNotifications();
+        }
+
+        public void onChange(boolean arg0) {
+            ((android.content.Loader.ForceLoadContentObserver) real).onChange(arg0);
+        }
+
+
+    }
     public static final class OnLoadCanceledListener {
         private static final class __DcgwBridgeToken {
         }

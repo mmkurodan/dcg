@@ -159,6 +159,30 @@ public final class UrlQuerySanitizer {
 
 
     }
+    public static final class ParameterValuePair {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private ParameterValuePair(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.ParameterValuePair wrap(android.net.UrlQuerySanitizer.ParameterValuePair real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.UrlQuerySanitizer.ParameterValuePair(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.UrlQuerySanitizer.ParameterValuePair getReal() {
+            return (android.net.UrlQuerySanitizer.ParameterValuePair) real;
+        }
+
+        public android.net.UrlQuerySanitizer.ParameterValuePair unwrap() {
+            return getReal();
+        }
+
+
+    }
     public static final class ValueSanitizer {
         private static final class __DcgwBridgeToken {
         }

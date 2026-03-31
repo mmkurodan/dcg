@@ -51,12 +51,12 @@ public final class DevicePolicyManager {
         ((android.app.admin.DevicePolicyManager) real).addUserRestrictionGlobally(arg0);
     }
 
-    public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, int arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
-        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
-    }
-
     public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
         return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal());
+    }
+
+    public boolean bindDeviceAdminServiceAsUser(com.micklab.dcg.wrapper.android.content.ComponentName arg0, com.micklab.dcg.wrapper.android.content.Intent arg1, com.micklab.dcg.wrapper.android.content.ServiceConnection arg2, int arg3, com.micklab.dcg.wrapper.android.os.UserHandle arg4) {
+        return ((android.app.admin.DevicePolicyManager) real).bindDeviceAdminServiceAsUser(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal());
     }
 
     public boolean canAdminGrantSensorsPermissions() {

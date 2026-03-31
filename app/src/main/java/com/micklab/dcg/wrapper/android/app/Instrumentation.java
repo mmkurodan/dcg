@@ -35,12 +35,12 @@ public final class Instrumentation {
         ((android.app.Instrumentation) real).addMonitor(arg0 == null ? null : arg0.getReal());
     }
 
-    public com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor addMonitor(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityResult arg1, boolean arg2) {
-        return com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor.wrap(((android.app.Instrumentation) real).addMonitor(arg0, arg1 == null ? null : arg1.getReal(), arg2));
-    }
-
     public com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor addMonitor(com.micklab.dcg.wrapper.android.content.IntentFilter arg0, com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityResult arg1, boolean arg2) {
         return com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor.wrap(((android.app.Instrumentation) real).addMonitor(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2));
+    }
+
+    public com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor addMonitor(java.lang.String arg0, com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityResult arg1, boolean arg2) {
+        return com.micklab.dcg.wrapper.android.app.Instrumentation.ActivityMonitor.wrap(((android.app.Instrumentation) real).addMonitor(arg0, arg1 == null ? null : arg1.getReal(), arg2));
     }
 
     public void addResults(com.micklab.dcg.wrapper.android.os.Bundle arg0) {

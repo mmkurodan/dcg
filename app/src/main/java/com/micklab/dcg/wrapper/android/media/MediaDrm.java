@@ -55,8 +55,8 @@ public final class MediaDrm {
         return ((android.media.MediaDrm) real).getConnectedHdcpLevel();
     }
 
-    public android.media.MediaDrm.CryptoSession getCryptoSession(byte[] arg0, java.lang.String arg1, java.lang.String arg2) {
-        return ((android.media.MediaDrm) real).getCryptoSession(arg0, arg1, arg2);
+    public com.micklab.dcg.wrapper.android.media.MediaDrm.CryptoSession getCryptoSession(byte[] arg0, java.lang.String arg1, java.lang.String arg2) {
+        return com.micklab.dcg.wrapper.android.media.MediaDrm.CryptoSession.wrap(((android.media.MediaDrm) real).getCryptoSession(arg0, arg1, arg2));
     }
 
     public int getMaxHdcpLevel() {
@@ -83,8 +83,8 @@ public final class MediaDrm {
         return ((android.media.MediaDrm) real).getOpenSessionCount();
     }
 
-    public android.media.MediaDrm.PlaybackComponent getPlaybackComponent(byte[] arg0) {
-        return ((android.media.MediaDrm) real).getPlaybackComponent(arg0);
+    public com.micklab.dcg.wrapper.android.media.MediaDrm.PlaybackComponent getPlaybackComponent(byte[] arg0) {
+        return com.micklab.dcg.wrapper.android.media.MediaDrm.PlaybackComponent.wrap(((android.media.MediaDrm) real).getPlaybackComponent(arg0));
     }
 
     public byte[] getPropertyByteArray(java.lang.String arg0) {
@@ -250,6 +250,46 @@ public final class MediaDrm {
     public static final int SECURITY_LEVEL_SW_SECURE_DECODE = android.media.MediaDrm.SECURITY_LEVEL_SW_SECURE_DECODE;
     public static final int SECURITY_LEVEL_UNKNOWN = android.media.MediaDrm.SECURITY_LEVEL_UNKNOWN;
 
+    public static final class CryptoSession {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private CryptoSession(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaDrm.CryptoSession wrap(android.media.MediaDrm.CryptoSession real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.CryptoSession(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.CryptoSession getReal() {
+            return (android.media.MediaDrm.CryptoSession) real;
+        }
+
+        public android.media.MediaDrm.CryptoSession unwrap() {
+            return getReal();
+        }
+
+        public byte[] decrypt(byte[] arg0, byte[] arg1, byte[] arg2) {
+            return ((android.media.MediaDrm.CryptoSession) real).decrypt(arg0, arg1, arg2);
+        }
+
+        public byte[] encrypt(byte[] arg0, byte[] arg1, byte[] arg2) {
+            return ((android.media.MediaDrm.CryptoSession) real).encrypt(arg0, arg1, arg2);
+        }
+
+        public byte[] sign(byte[] arg0, byte[] arg1) {
+            return ((android.media.MediaDrm.CryptoSession) real).sign(arg0, arg1);
+        }
+
+        public boolean verify(byte[] arg0, byte[] arg1, byte[] arg2) {
+            return ((android.media.MediaDrm.CryptoSession) real).verify(arg0, arg1, arg2);
+        }
+
+
+    }
     public static final class ErrorCodes {
         private static final class __DcgwBridgeToken {
         }
@@ -634,6 +674,38 @@ public final class MediaDrm {
         public void onSessionLostState(com.micklab.dcg.wrapper.android.media.MediaDrm arg0, byte[] arg1) {
             ((android.media.MediaDrm.OnSessionLostStateListener) real).onSessionLostState(arg0 == null ? null : arg0.getReal(), arg1);
         }
+
+    }
+    public static final class PlaybackComponent {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private PlaybackComponent(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaDrm.PlaybackComponent wrap(android.media.MediaDrm.PlaybackComponent real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaDrm.PlaybackComponent(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaDrm.PlaybackComponent getReal() {
+            return (android.media.MediaDrm.PlaybackComponent) real;
+        }
+
+        public android.media.MediaDrm.PlaybackComponent unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.media.metrics.LogSessionId getLogSessionId() {
+            return com.micklab.dcg.wrapper.android.media.metrics.LogSessionId.wrap(((android.media.MediaDrm.PlaybackComponent) real).getLogSessionId());
+        }
+
+        public void setLogSessionId(com.micklab.dcg.wrapper.android.media.metrics.LogSessionId arg0) {
+            ((android.media.MediaDrm.PlaybackComponent) real).setLogSessionId(arg0 == null ? null : arg0.getReal());
+        }
+
 
     }
     public static final class ProvisionRequest {

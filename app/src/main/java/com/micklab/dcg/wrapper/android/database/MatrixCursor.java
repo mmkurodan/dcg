@@ -79,8 +79,40 @@ public final class MatrixCursor {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.MatrixCursor#isNull(int)");
     }
 
-    public android.database.MatrixCursor.RowBuilder newRow() {
+    public com.micklab.dcg.wrapper.android.database.MatrixCursor.RowBuilder newRow() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.MatrixCursor#newRow()");
     }
 
+    public static final class RowBuilder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private RowBuilder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.database.MatrixCursor.RowBuilder wrap(android.database.MatrixCursor.RowBuilder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.database.MatrixCursor.RowBuilder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.database.MatrixCursor.RowBuilder getReal() {
+            return (android.database.MatrixCursor.RowBuilder) real;
+        }
+
+        public android.database.MatrixCursor.RowBuilder unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.database.MatrixCursor.RowBuilder add(java.lang.Object arg0) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.MatrixCursor$RowBuilder#add(java.lang.Object)");
+        }
+
+        public com.micklab.dcg.wrapper.android.database.MatrixCursor.RowBuilder add(java.lang.String arg0, java.lang.Object arg1) {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.database.MatrixCursor$RowBuilder#add(java.lang.String,java.lang.Object)");
+        }
+
+
+    }
 }

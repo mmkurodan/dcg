@@ -75,12 +75,12 @@ public final class AlertDialog {
         ((android.app.AlertDialog) real).setCustomTitle(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setIcon(int arg0) {
-        ((android.app.AlertDialog) real).setIcon(arg0);
-    }
-
     public void setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.app.AlertDialog) real).setIcon(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setIcon(int arg0) {
+        ((android.app.AlertDialog) real).setIcon(arg0);
     }
 
     public void setIconAttribute(int arg0) {
@@ -199,11 +199,11 @@ public final class AlertDialog {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setMessage(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setMultiChoiceItems(java.lang.CharSequence[] arg0, boolean[] arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnMultiChoiceClickListener arg2) {
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setMultiChoiceItems(int arg0, boolean[] arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnMultiChoiceClickListener arg2) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setMultiChoiceItems(arg0, arg1, arg2 == null ? null : arg2.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setMultiChoiceItems(int arg0, boolean[] arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnMultiChoiceClickListener arg2) {
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setMultiChoiceItems(java.lang.CharSequence[] arg0, boolean[] arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnMultiChoiceClickListener arg2) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setMultiChoiceItems(arg0, arg1, arg2 == null ? null : arg2.getReal()));
         }
 
@@ -211,19 +211,19 @@ public final class AlertDialog {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setMultiChoiceItems(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNegativeButton(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNegativeButton(arg0, arg1 == null ? null : arg1.getReal()));
-        }
-
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNegativeButton(int arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNegativeButton(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNeutralButton(int arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNeutralButton(arg0, arg1 == null ? null : arg1.getReal()));
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNegativeButton(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNegativeButton(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNeutralButton(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNeutralButton(arg0, arg1 == null ? null : arg1.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setNeutralButton(int arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setNeutralButton(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
@@ -243,20 +243,20 @@ public final class AlertDialog {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setOnKeyListener(arg0 == null ? null : arg0.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setPositiveButton(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setPositiveButton(arg0, arg1 == null ? null : arg1.getReal()));
-        }
-
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setPositiveButton(int arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setPositiveButton(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setSingleChoiceItems(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0, int arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg2) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setSingleChoiceItems(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setPositiveButton(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg1) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setPositiveButton(arg0, arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setSingleChoiceItems(int arg0, int arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg2) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setSingleChoiceItems(arg0, arg1, arg2 == null ? null : arg2.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setSingleChoiceItems(com.micklab.dcg.wrapper.android.widget.ListAdapter arg0, int arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg2) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setSingleChoiceItems(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setSingleChoiceItems(java.lang.CharSequence[] arg0, int arg1, com.micklab.dcg.wrapper.android.content.DialogInterface.OnClickListener arg2) {
@@ -267,20 +267,20 @@ public final class AlertDialog {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setSingleChoiceItems(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setTitle(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setTitle(arg0));
-        }
-
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setTitle(java.lang.CharSequence arg0) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setTitle(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setView(int arg0) {
-            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setView(arg0));
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setTitle(int arg0) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setTitle(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setView(com.micklab.dcg.wrapper.android.view.View arg0) {
             return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setView(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.AlertDialog.Builder setView(int arg0) {
+            return com.micklab.dcg.wrapper.android.app.AlertDialog.Builder.wrap(((android.app.AlertDialog.Builder) real).setView(arg0));
         }
 
         public com.micklab.dcg.wrapper.android.app.AlertDialog show() {

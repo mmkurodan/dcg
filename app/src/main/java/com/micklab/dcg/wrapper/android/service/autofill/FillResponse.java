@@ -77,11 +77,11 @@ public final class FillResponse {
             return com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder.wrap(((android.service.autofill.FillResponse.Builder) real).disableAutofill(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder setAuthentication(android.view.autofill.AutofillId[] arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1, com.micklab.dcg.wrapper.android.service.autofill.Presentations arg2) {
+        public com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder setAuthentication(android.view.autofill.AutofillId[] arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1, com.micklab.dcg.wrapper.android.widget.RemoteViews arg2) {
             return com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder.wrap(((android.service.autofill.FillResponse.Builder) real).setAuthentication(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder setAuthentication(android.view.autofill.AutofillId[] arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1, com.micklab.dcg.wrapper.android.widget.RemoteViews arg2) {
+        public com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder setAuthentication(android.view.autofill.AutofillId[] arg0, com.micklab.dcg.wrapper.android.content.IntentSender arg1, com.micklab.dcg.wrapper.android.service.autofill.Presentations arg2) {
             return com.micklab.dcg.wrapper.android.service.autofill.FillResponse.Builder.wrap(((android.service.autofill.FillResponse.Builder) real).setAuthentication(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
         }
 

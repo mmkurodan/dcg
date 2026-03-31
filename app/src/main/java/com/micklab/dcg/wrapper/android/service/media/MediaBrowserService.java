@@ -104,4 +104,36 @@ public final class MediaBrowserService {
         public static final java.lang.String EXTRA_SUGGESTED = android.service.media.MediaBrowserService.BrowserRoot.EXTRA_SUGGESTED;
 
     }
+    public static final class Result {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Result(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.service.media.MediaBrowserService.Result wrap(android.service.media.MediaBrowserService.Result real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.service.media.MediaBrowserService.Result(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.service.media.MediaBrowserService.Result getReal() {
+            return (android.service.media.MediaBrowserService.Result) real;
+        }
+
+        public android.service.media.MediaBrowserService.Result unwrap() {
+            return getReal();
+        }
+
+        public void detach() {
+            ((android.service.media.MediaBrowserService.Result) real).detach();
+        }
+
+        public void sendResult(java.lang.Object arg0) {
+            ((android.service.media.MediaBrowserService.Result) real).sendResult(arg0);
+        }
+
+
+    }
 }

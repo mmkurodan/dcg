@@ -80,4 +80,36 @@ public final class DataRemovalRequest {
         }
 
     }
+    public static final class LocusIdRequest {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private LocusIdRequest(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.view.contentcapture.DataRemovalRequest.LocusIdRequest wrap(android.view.contentcapture.DataRemovalRequest.LocusIdRequest real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.view.contentcapture.DataRemovalRequest.LocusIdRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.view.contentcapture.DataRemovalRequest.LocusIdRequest getReal() {
+            return (android.view.contentcapture.DataRemovalRequest.LocusIdRequest) real;
+        }
+
+        public android.view.contentcapture.DataRemovalRequest.LocusIdRequest unwrap() {
+            return getReal();
+        }
+
+        public int getFlags() {
+            return ((android.view.contentcapture.DataRemovalRequest.LocusIdRequest) real).getFlags();
+        }
+
+        public com.micklab.dcg.wrapper.android.content.LocusId getLocusId() {
+            return com.micklab.dcg.wrapper.android.content.LocusId.wrap(((android.view.contentcapture.DataRemovalRequest.LocusIdRequest) real).getLocusId());
+        }
+
+
+    }
 }

@@ -127,8 +127,8 @@ public final class MediaCodec {
         return com.micklab.dcg.wrapper.android.media.MediaCodec.ParameterDescriptor.wrap(((android.media.MediaCodec) real).getParameterDescriptor(arg0));
     }
 
-    public android.media.MediaCodec.QueueRequest getQueueRequest(int arg0) {
-        return ((android.media.MediaCodec) real).getQueueRequest(arg0);
+    public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest getQueueRequest(int arg0) {
+        return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec) real).getQueueRequest(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.media.Image mapHardwareBuffer(com.micklab.dcg.wrapper.android.hardware.HardwareBuffer arg0) {
@@ -497,6 +497,54 @@ public final class MediaCodec {
 
         }
     }
+    public static final class IncompatibleWithBlockModelException {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private IncompatibleWithBlockModelException(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaCodec.IncompatibleWithBlockModelException wrap(android.media.MediaCodec.IncompatibleWithBlockModelException real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodec.IncompatibleWithBlockModelException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodec.IncompatibleWithBlockModelException getReal() {
+            return (android.media.MediaCodec.IncompatibleWithBlockModelException) real;
+        }
+
+        public android.media.MediaCodec.IncompatibleWithBlockModelException unwrap() {
+            return getReal();
+        }
+
+
+    }
+    public static final class InvalidBufferFlagsException {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private InvalidBufferFlagsException(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaCodec.InvalidBufferFlagsException wrap(android.media.MediaCodec.InvalidBufferFlagsException real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodec.InvalidBufferFlagsException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodec.InvalidBufferFlagsException getReal() {
+            return (android.media.MediaCodec.InvalidBufferFlagsException) real;
+        }
+
+        public android.media.MediaCodec.InvalidBufferFlagsException unwrap() {
+            return getReal();
+        }
+
+
+    }
     public static final class LinearBlock {
         private static final class __DcgwBridgeToken {
         }
@@ -708,6 +756,74 @@ public final class MediaCodec {
         public int hashCode() {
             return ((android.media.MediaCodec.ParameterDescriptor) real).hashCode();
         }
+
+    }
+    public static final class QueueRequest {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private QueueRequest(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest wrap(android.media.MediaCodec.QueueRequest real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCodec.QueueRequest getReal() {
+            return (android.media.MediaCodec.QueueRequest) real;
+        }
+
+        public android.media.MediaCodec.QueueRequest unwrap() {
+            return getReal();
+        }
+
+        public void queue() {
+            ((android.media.MediaCodec.QueueRequest) real).queue();
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setByteBufferParameter(java.lang.String arg0, java.nio.ByteBuffer arg1) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setByteBufferParameter(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setEncryptedLinearBlock(com.micklab.dcg.wrapper.android.media.MediaCodec.LinearBlock arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.media.MediaCodec.CryptoInfo arg3) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setEncryptedLinearBlock(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setFlags(int arg0) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setFlags(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setFloatParameter(java.lang.String arg0, float arg1) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setFloatParameter(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setHardwareBuffer(com.micklab.dcg.wrapper.android.hardware.HardwareBuffer arg0) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setHardwareBuffer(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setIntegerParameter(java.lang.String arg0, int arg1) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setIntegerParameter(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setLinearBlock(com.micklab.dcg.wrapper.android.media.MediaCodec.LinearBlock arg0, int arg1, int arg2) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setLinearBlock(arg0 == null ? null : arg0.getReal(), arg1, arg2));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setLongParameter(java.lang.String arg0, long arg1) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setLongParameter(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setPresentationTimeUs(long arg0) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setPresentationTimeUs(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest setStringParameter(java.lang.String arg0, java.lang.String arg1) {
+            return com.micklab.dcg.wrapper.android.media.MediaCodec.QueueRequest.wrap(((android.media.MediaCodec.QueueRequest) real).setStringParameter(arg0, arg1));
+        }
+
 
     }
 }

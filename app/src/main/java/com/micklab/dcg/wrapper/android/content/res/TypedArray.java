@@ -87,11 +87,11 @@ public final class TypedArray {
         return ((android.content.res.TypedArray) real).getInteger(arg0, arg1);
     }
 
-    public int getLayoutDimension(int arg0, int arg1) {
+    public int getLayoutDimension(int arg0, java.lang.String arg1) {
         return ((android.content.res.TypedArray) real).getLayoutDimension(arg0, arg1);
     }
 
-    public int getLayoutDimension(int arg0, java.lang.String arg1) {
+    public int getLayoutDimension(int arg0, int arg1) {
         return ((android.content.res.TypedArray) real).getLayoutDimension(arg0, arg1);
     }
 

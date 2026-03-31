@@ -39,8 +39,8 @@ public final class MediaDescrambler {
         return ((android.media.MediaDescrambler) real).requiresSecureDecoderComponent(arg0);
     }
 
-    public void setMediaCasSession(android.media.MediaCas.Session arg0) {
-        ((android.media.MediaDescrambler) real).setMediaCasSession(arg0);
+    public void setMediaCasSession(com.micklab.dcg.wrapper.android.media.MediaCas.Session arg0) {
+        ((android.media.MediaDescrambler) real).setMediaCasSession(arg0 == null ? null : arg0.getReal());
     }
 
     public static final byte SCRAMBLE_CONTROL_EVEN_KEY = android.media.MediaDescrambler.SCRAMBLE_CONTROL_EVEN_KEY;

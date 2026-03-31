@@ -31,8 +31,8 @@ public final class ShapeDrawable {
         this(new android.graphics.drawable.ShapeDrawable(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public void applyTheme(android.content.res.Resources.Theme arg0) {
-        ((android.graphics.drawable.ShapeDrawable) real).applyTheme(arg0);
+    public void applyTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.graphics.drawable.ShapeDrawable) real).applyTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
@@ -87,8 +87,8 @@ public final class ShapeDrawable {
         return ((android.graphics.drawable.ShapeDrawable) real).hasFocusStateSpecified();
     }
 
-    public void inflate(com.micklab.dcg.wrapper.android.content.res.Resources arg0, org.xmlpull.v1.XmlPullParser arg1, com.micklab.dcg.wrapper.android.util.AttributeSet arg2, android.content.res.Resources.Theme arg3) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
-        ((android.graphics.drawable.ShapeDrawable) real).inflate(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3);
+    public void inflate(com.micklab.dcg.wrapper.android.content.res.Resources arg0, org.xmlpull.v1.XmlPullParser arg1, com.micklab.dcg.wrapper.android.util.AttributeSet arg2, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg3) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
+        ((android.graphics.drawable.ShapeDrawable) real).inflate(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal());
     }
 
     public boolean isStateful() {

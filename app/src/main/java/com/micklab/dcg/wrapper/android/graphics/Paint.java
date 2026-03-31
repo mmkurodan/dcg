@@ -163,11 +163,11 @@ public final class Paint {
         return com.micklab.dcg.wrapper.android.graphics.PathEffect.wrap(((android.graphics.Paint) real).getPathEffect());
     }
 
-    public float getRunAdvance(char[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6) {
+    public float getRunAdvance(java.lang.CharSequence arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6) {
         return ((android.graphics.Paint) real).getRunAdvance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
-    public float getRunAdvance(java.lang.CharSequence arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6) {
+    public float getRunAdvance(char[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6) {
         return ((android.graphics.Paint) real).getRunAdvance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
 
@@ -239,11 +239,11 @@ public final class Paint {
         return com.micklab.dcg.wrapper.android.graphics.Paint.Align.wrap(((android.graphics.Paint) real).getTextAlign());
     }
 
-    public void getTextBounds(java.lang.String arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
+    public void getTextBounds(java.lang.CharSequence arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
         ((android.graphics.Paint) real).getTextBounds(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
-    public void getTextBounds(java.lang.CharSequence arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
+    public void getTextBounds(java.lang.String arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Rect arg3) {
         ((android.graphics.Paint) real).getTextBounds(arg0, arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
@@ -375,11 +375,11 @@ public final class Paint {
         return ((android.graphics.Paint) real).measureText(arg0, arg1, arg2);
     }
 
-    public float measureText(java.lang.CharSequence arg0, int arg1, int arg2) {
+    public float measureText(char[] arg0, int arg1, int arg2) {
         return ((android.graphics.Paint) real).measureText(arg0, arg1, arg2);
     }
 
-    public float measureText(char[] arg0, int arg1, int arg2) {
+    public float measureText(java.lang.CharSequence arg0, int arg1, int arg2) {
         return ((android.graphics.Paint) real).measureText(arg0, arg1, arg2);
     }
 

@@ -180,6 +180,55 @@ public final class TextToSpeech {
     public static final int STOPPED = android.speech.tts.TextToSpeech.STOPPED;
     public static final int SUCCESS = android.speech.tts.TextToSpeech.SUCCESS;
 
+    public static final class Engine {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Engine(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.Engine wrap(android.speech.tts.TextToSpeech.Engine real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.speech.tts.TextToSpeech.Engine(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.speech.tts.TextToSpeech.Engine getReal() {
+            return (android.speech.tts.TextToSpeech.Engine) real;
+        }
+
+        public android.speech.tts.TextToSpeech.Engine unwrap() {
+            return getReal();
+        }
+
+        public static final java.lang.String ACTION_CHECK_TTS_DATA = android.speech.tts.TextToSpeech.Engine.ACTION_CHECK_TTS_DATA;
+        public static final java.lang.String ACTION_GET_SAMPLE_TEXT = android.speech.tts.TextToSpeech.Engine.ACTION_GET_SAMPLE_TEXT;
+        public static final java.lang.String ACTION_INSTALL_TTS_DATA = android.speech.tts.TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA;
+        public static final java.lang.String ACTION_TTS_DATA_INSTALLED = android.speech.tts.TextToSpeech.Engine.ACTION_TTS_DATA_INSTALLED;
+        public static final int CHECK_VOICE_DATA_BAD_DATA = android.speech.tts.TextToSpeech.Engine.CHECK_VOICE_DATA_BAD_DATA;
+        public static final int CHECK_VOICE_DATA_FAIL = android.speech.tts.TextToSpeech.Engine.CHECK_VOICE_DATA_FAIL;
+        public static final int CHECK_VOICE_DATA_MISSING_DATA = android.speech.tts.TextToSpeech.Engine.CHECK_VOICE_DATA_MISSING_DATA;
+        public static final int CHECK_VOICE_DATA_MISSING_VOLUME = android.speech.tts.TextToSpeech.Engine.CHECK_VOICE_DATA_MISSING_VOLUME;
+        public static final int CHECK_VOICE_DATA_PASS = android.speech.tts.TextToSpeech.Engine.CHECK_VOICE_DATA_PASS;
+        public static final int DEFAULT_STREAM = android.speech.tts.TextToSpeech.Engine.DEFAULT_STREAM;
+        public static final java.lang.String EXTRA_AVAILABLE_VOICES = android.speech.tts.TextToSpeech.Engine.EXTRA_AVAILABLE_VOICES;
+        public static final java.lang.String EXTRA_CHECK_VOICE_DATA_FOR = android.speech.tts.TextToSpeech.Engine.EXTRA_CHECK_VOICE_DATA_FOR;
+        public static final java.lang.String EXTRA_SAMPLE_TEXT = android.speech.tts.TextToSpeech.Engine.EXTRA_SAMPLE_TEXT;
+        public static final java.lang.String EXTRA_TTS_DATA_INSTALLED = android.speech.tts.TextToSpeech.Engine.EXTRA_TTS_DATA_INSTALLED;
+        public static final java.lang.String EXTRA_UNAVAILABLE_VOICES = android.speech.tts.TextToSpeech.Engine.EXTRA_UNAVAILABLE_VOICES;
+        public static final java.lang.String EXTRA_VOICE_DATA_ROOT_DIRECTORY = android.speech.tts.TextToSpeech.Engine.EXTRA_VOICE_DATA_ROOT_DIRECTORY;
+        public static final java.lang.String INTENT_ACTION_TTS_SERVICE = android.speech.tts.TextToSpeech.Engine.INTENT_ACTION_TTS_SERVICE;
+        public static final java.lang.String KEY_FEATURE_EMBEDDED_SYNTHESIS = android.speech.tts.TextToSpeech.Engine.KEY_FEATURE_EMBEDDED_SYNTHESIS;
+        public static final java.lang.String KEY_FEATURE_NOT_INSTALLED = android.speech.tts.TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED;
+        public static final java.lang.String KEY_PARAM_PAN = android.speech.tts.TextToSpeech.Engine.KEY_PARAM_PAN;
+        public static final java.lang.String KEY_PARAM_SESSION_ID = android.speech.tts.TextToSpeech.Engine.KEY_PARAM_SESSION_ID;
+        public static final java.lang.String KEY_PARAM_STREAM = android.speech.tts.TextToSpeech.Engine.KEY_PARAM_STREAM;
+        public static final java.lang.String KEY_PARAM_UTTERANCE_ID = android.speech.tts.TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID;
+        public static final java.lang.String KEY_PARAM_VOLUME = android.speech.tts.TextToSpeech.Engine.KEY_PARAM_VOLUME;
+        public static final java.lang.String SERVICE_META_DATA = android.speech.tts.TextToSpeech.Engine.SERVICE_META_DATA;
+
+    }
     public static final class EngineInfo {
         private static final class __DcgwBridgeToken {
         }

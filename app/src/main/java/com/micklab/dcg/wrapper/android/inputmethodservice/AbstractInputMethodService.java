@@ -39,12 +39,12 @@ public final class AbstractInputMethodService {
         ((android.inputmethodservice.AbstractInputMethodService) real).onConfigurationChanged(arg0 == null ? null : arg0.getReal());
     }
 
-    public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl onCreateInputMethodInterface() {
-        return ((android.inputmethodservice.AbstractInputMethodService) real).onCreateInputMethodInterface();
+    public com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl onCreateInputMethodInterface() {
+        return com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl.wrap(((android.inputmethodservice.AbstractInputMethodService) real).onCreateInputMethodInterface());
     }
 
-    public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
-        return ((android.inputmethodservice.AbstractInputMethodService) real).onCreateInputMethodSessionInterface();
+    public com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
+        return com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl.wrap(((android.inputmethodservice.AbstractInputMethodService) real).onCreateInputMethodSessionInterface());
     }
 
     public void onDestroy() {
@@ -79,4 +79,96 @@ public final class AbstractInputMethodService {
         ((android.inputmethodservice.AbstractInputMethodService) real).unregisterComponentCallbacks(arg0 == null ? null : arg0.getReal());
     }
 
+    public static final class AbstractInputMethodImpl {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private AbstractInputMethodImpl(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl wrap(android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl getReal() {
+            return (android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl) real;
+        }
+
+        public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl unwrap() {
+            return getReal();
+        }
+
+        public void createSession(com.micklab.dcg.wrapper.android.view.inputmethod.InputMethod.SessionCallback arg0) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl) real).createSession(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void revokeSession(com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSession arg0) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl) real).revokeSession(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void setSessionEnabled(com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSession arg0, boolean arg1) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodImpl) real).setSessionEnabled(arg0 == null ? null : arg0.getReal(), arg1);
+        }
+
+
+    }
+    public static final class AbstractInputMethodSessionImpl {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private AbstractInputMethodSessionImpl(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl wrap(android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl getReal() {
+            return (android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real;
+        }
+
+        public android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl unwrap() {
+            return getReal();
+        }
+
+        public void dispatchGenericMotionEvent(int arg0, com.micklab.dcg.wrapper.android.view.MotionEvent arg1, com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSession.EventCallback arg2) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).dispatchGenericMotionEvent(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+        }
+
+        public void dispatchKeyEvent(int arg0, com.micklab.dcg.wrapper.android.view.KeyEvent arg1, com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSession.EventCallback arg2) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).dispatchKeyEvent(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+        }
+
+        public void dispatchTrackballEvent(int arg0, com.micklab.dcg.wrapper.android.view.MotionEvent arg1, com.micklab.dcg.wrapper.android.view.inputmethod.InputMethodSession.EventCallback arg2) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).dispatchTrackballEvent(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
+        }
+
+        public boolean isEnabled() {
+            return ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).isEnabled();
+        }
+
+        public boolean isRevoked() {
+            return ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).isRevoked();
+        }
+
+        public boolean onShouldVerifyKeyEvent(com.micklab.dcg.wrapper.android.view.KeyEvent arg0) {
+            return ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).onShouldVerifyKeyEvent(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void revokeSelf() {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).revokeSelf();
+        }
+
+        public void setEnabled(boolean arg0) {
+            ((android.inputmethodservice.AbstractInputMethodService.AbstractInputMethodSessionImpl) real).setEnabled(arg0);
+        }
+
+
+    }
 }

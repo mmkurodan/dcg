@@ -27,8 +27,8 @@ public final class MediaRouter2 {
         ((android.media.MediaRouter2) real).cancelScanRequest(arg0 == null ? null : arg0.getReal());
     }
 
-    public android.media.MediaRouter2.RoutingController getController(java.lang.String arg0) {
-        return ((android.media.MediaRouter2) real).getController(arg0);
+    public com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController getController(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController.wrap(((android.media.MediaRouter2) real).getController(arg0));
     }
 
     public static com.micklab.dcg.wrapper.android.media.MediaRouter2 getInstance(com.micklab.dcg.wrapper.android.content.Context arg0) {
@@ -43,8 +43,8 @@ public final class MediaRouter2 {
         return com.micklab.dcg.wrapper.android.media.RouteListingPreference.wrap(((android.media.MediaRouter2) real).getRouteListingPreference());
     }
 
-    public android.media.MediaRouter2.RoutingController getSystemController() {
-        return ((android.media.MediaRouter2) real).getSystemController();
+    public com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController getSystemController() {
+        return com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController.wrap(((android.media.MediaRouter2) real).getSystemController());
     }
 
     public void registerControllerCallback(java.util.concurrent.Executor arg0, com.micklab.dcg.wrapper.android.media.MediaRouter2.ControllerCallback arg1) {
@@ -121,8 +121,8 @@ public final class MediaRouter2 {
             return getReal();
         }
 
-        public void onControllerUpdated(android.media.MediaRouter2.RoutingController arg0) {
-            ((android.media.MediaRouter2.ControllerCallback) real).onControllerUpdated(arg0);
+        public void onControllerUpdated(com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController arg0) {
+            ((android.media.MediaRouter2.ControllerCallback) real).onControllerUpdated(arg0 == null ? null : arg0.getReal());
         }
 
     }
@@ -174,6 +174,82 @@ public final class MediaRouter2 {
         public android.media.MediaRouter2.RouteCallback unwrap() {
             return getReal();
         }
+
+    }
+    public static final class RoutingController {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private RoutingController(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController wrap(android.media.MediaRouter2.RoutingController real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRouter2.RoutingController getReal() {
+            return (android.media.MediaRouter2.RoutingController) real;
+        }
+
+        public android.media.MediaRouter2.RoutingController unwrap() {
+            return getReal();
+        }
+
+        public void deselectRoute(com.micklab.dcg.wrapper.android.media.MediaRoute2Info arg0) {
+            ((android.media.MediaRouter2.RoutingController) real).deselectRoute(arg0 == null ? null : arg0.getReal());
+        }
+
+        public com.micklab.dcg.wrapper.android.os.Bundle getControlHints() {
+            return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.media.MediaRouter2.RoutingController) real).getControlHints());
+        }
+
+        public java.lang.String getId() {
+            return ((android.media.MediaRouter2.RoutingController) real).getId();
+        }
+
+        public com.micklab.dcg.wrapper.android.media.RoutingSessionInfo getRoutingSessionInfo() {
+            return com.micklab.dcg.wrapper.android.media.RoutingSessionInfo.wrap(((android.media.MediaRouter2.RoutingController) real).getRoutingSessionInfo());
+        }
+
+        public int getVolume() {
+            return ((android.media.MediaRouter2.RoutingController) real).getVolume();
+        }
+
+        public int getVolumeHandling() {
+            return ((android.media.MediaRouter2.RoutingController) real).getVolumeHandling();
+        }
+
+        public int getVolumeMax() {
+            return ((android.media.MediaRouter2.RoutingController) real).getVolumeMax();
+        }
+
+        public boolean isReleased() {
+            return ((android.media.MediaRouter2.RoutingController) real).isReleased();
+        }
+
+        public void release() {
+            ((android.media.MediaRouter2.RoutingController) real).release();
+        }
+
+        public void selectRoute(com.micklab.dcg.wrapper.android.media.MediaRoute2Info arg0) {
+            ((android.media.MediaRouter2.RoutingController) real).selectRoute(arg0 == null ? null : arg0.getReal());
+        }
+
+        public void setVolume(int arg0) {
+            ((android.media.MediaRouter2.RoutingController) real).setVolume(arg0);
+        }
+
+        public java.lang.String toString() {
+            return ((android.media.MediaRouter2.RoutingController) real).toString();
+        }
+
+        public boolean wasTransferInitiatedBySelf() {
+            return ((android.media.MediaRouter2.RoutingController) real).wasTransferInitiatedBySelf();
+        }
+
 
     }
     public static final class ScanRequest {
@@ -283,12 +359,12 @@ public final class MediaRouter2 {
             return getReal();
         }
 
-        public void onStop(android.media.MediaRouter2.RoutingController arg0) {
-            ((android.media.MediaRouter2.TransferCallback) real).onStop(arg0);
+        public void onStop(com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController arg0) {
+            ((android.media.MediaRouter2.TransferCallback) real).onStop(arg0 == null ? null : arg0.getReal());
         }
 
-        public void onTransfer(android.media.MediaRouter2.RoutingController arg0, android.media.MediaRouter2.RoutingController arg1) {
-            ((android.media.MediaRouter2.TransferCallback) real).onTransfer(arg0, arg1);
+        public void onTransfer(com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController arg0, com.micklab.dcg.wrapper.android.media.MediaRouter2.RoutingController arg1) {
+            ((android.media.MediaRouter2.TransferCallback) real).onTransfer(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
         }
 
         public void onTransferFailure(com.micklab.dcg.wrapper.android.media.MediaRoute2Info arg0) {

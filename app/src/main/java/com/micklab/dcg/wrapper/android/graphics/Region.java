@@ -119,11 +119,11 @@ public final class Region {
         return ((android.graphics.Region) real).quickReject(arg0, arg1, arg2, arg3);
     }
 
-    public boolean set(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
+    public boolean set(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
         return ((android.graphics.Region) real).set(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean set(com.micklab.dcg.wrapper.android.graphics.Rect arg0) {
+    public boolean set(com.micklab.dcg.wrapper.android.graphics.Region arg0) {
         return ((android.graphics.Region) real).set(arg0 == null ? null : arg0.getReal());
     }
 

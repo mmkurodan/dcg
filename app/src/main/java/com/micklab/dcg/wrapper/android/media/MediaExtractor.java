@@ -164,8 +164,8 @@ public final class MediaExtractor {
             return ((android.media.MediaExtractor.CasInfo) real).getPrivateData();
         }
 
-        public android.media.MediaCas.Session getSession() {
-            return ((android.media.MediaExtractor.CasInfo) real).getSession();
+        public com.micklab.dcg.wrapper.android.media.MediaCas.Session getSession() {
+            return com.micklab.dcg.wrapper.android.media.MediaCas.Session.wrap(((android.media.MediaExtractor.CasInfo) real).getSession());
         }
 
         public int getSystemId() {

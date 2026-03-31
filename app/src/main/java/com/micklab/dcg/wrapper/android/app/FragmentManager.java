@@ -83,11 +83,11 @@ public final class FragmentManager {
         ((android.app.FragmentManager) real).popBackStack();
     }
 
-    public void popBackStack(int arg0, int arg1) {
+    public void popBackStack(java.lang.String arg0, int arg1) {
         ((android.app.FragmentManager) real).popBackStack(arg0, arg1);
     }
 
-    public void popBackStack(java.lang.String arg0, int arg1) {
+    public void popBackStack(int arg0, int arg1) {
         ((android.app.FragmentManager) real).popBackStack(arg0, arg1);
     }
 
@@ -95,11 +95,11 @@ public final class FragmentManager {
         return ((android.app.FragmentManager) real).popBackStackImmediate();
     }
 
-    public boolean popBackStackImmediate(java.lang.String arg0, int arg1) {
+    public boolean popBackStackImmediate(int arg0, int arg1) {
         return ((android.app.FragmentManager) real).popBackStackImmediate(arg0, arg1);
     }
 
-    public boolean popBackStackImmediate(int arg0, int arg1) {
+    public boolean popBackStackImmediate(java.lang.String arg0, int arg1) {
         return ((android.app.FragmentManager) real).popBackStackImmediate(arg0, arg1);
     }
 

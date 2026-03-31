@@ -39,8 +39,8 @@ public final class TabHost {
         this(new android.widget.TabHost(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
-    public void addTab(android.widget.TabHost.TabSpec arg0) {
-        ((android.widget.TabHost) real).addTab(arg0);
+    public void addTab(com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec arg0) {
+        ((android.widget.TabHost) real).addTab(arg0 == null ? null : arg0.getReal());
     }
 
     public void clearAllTabs() {
@@ -83,8 +83,8 @@ public final class TabHost {
         return com.micklab.dcg.wrapper.android.widget.TabWidget.wrap(((android.widget.TabHost) real).getTabWidget());
     }
 
-    public android.widget.TabHost.TabSpec newTabSpec(java.lang.String arg0) {
-        return ((android.widget.TabHost) real).newTabSpec(arg0);
+    public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec newTabSpec(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost) real).newTabSpec(arg0));
     }
 
     public void onTouchModeChanged(boolean arg0) {
@@ -163,6 +163,58 @@ public final class TabHost {
         public com.micklab.dcg.wrapper.android.view.View createTabContent(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.view.View.wrap(((android.widget.TabHost.TabContentFactory) real).createTabContent(arg0));
         }
+
+    }
+    public static final class TabSpec {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private TabSpec(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec wrap(android.widget.TabHost.TabSpec real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.TabHost.TabSpec getReal() {
+            return (android.widget.TabHost.TabSpec) real;
+        }
+
+        public android.widget.TabHost.TabSpec unwrap() {
+            return getReal();
+        }
+
+        public java.lang.String getTag() {
+            return ((android.widget.TabHost.TabSpec) real).getTag();
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setContent(com.micklab.dcg.wrapper.android.widget.TabHost.TabContentFactory arg0) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setContent(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setContent(int arg0) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setContent(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setContent(com.micklab.dcg.wrapper.android.content.Intent arg0) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setContent(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setIndicator(java.lang.CharSequence arg0) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setIndicator(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setIndicator(com.micklab.dcg.wrapper.android.view.View arg0) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setIndicator(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec setIndicator(java.lang.CharSequence arg0, com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg1) {
+            return com.micklab.dcg.wrapper.android.widget.TabHost.TabSpec.wrap(((android.widget.TabHost.TabSpec) real).setIndicator(arg0, arg1 == null ? null : arg1.getReal()));
+        }
+
 
     }
 }

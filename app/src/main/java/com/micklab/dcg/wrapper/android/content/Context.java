@@ -39,12 +39,12 @@ public final class Context {
         return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2);
     }
 
-    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
-        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
-    }
-
     public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
         return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3 == null ? null : arg3.getReal());
+    }
+
+    public boolean bindService(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.util.concurrent.Executor arg2, com.micklab.dcg.wrapper.android.content.ServiceConnection arg3) {
+        return ((android.content.Context) real).bindService(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal());
     }
 
     public boolean bindServiceAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.content.ServiceConnection arg1, com.micklab.dcg.wrapper.android.content.Context.BindServiceFlags arg2, com.micklab.dcg.wrapper.android.os.UserHandle arg3) {
@@ -347,8 +347,8 @@ public final class Context {
         return ((android.content.Context) real).getText(arg0);
     }
 
-    public android.content.res.Resources.Theme getTheme() {
-        return ((android.content.Context) real).getTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.content.Context) real).getTheme());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getWallpaper() {
@@ -503,12 +503,12 @@ public final class Context {
         ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
-    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
-    }
-
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
         ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
+    }
+
+    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
+        ((android.content.Context) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendOrderedBroadcastAsUser(com.micklab.dcg.wrapper.android.content.Intent arg0, com.micklab.dcg.wrapper.android.os.UserHandle arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
@@ -539,12 +539,12 @@ public final class Context {
         ((android.content.Context) real).setTheme(arg0);
     }
 
-    public void setWallpaper(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) throws java.io.IOException {
-        ((android.content.Context) real).setWallpaper(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setWallpaper(java.io.InputStream arg0) throws java.io.IOException {
         ((android.content.Context) real).setWallpaper(arg0);
+    }
+
+    public void setWallpaper(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) throws java.io.IOException {
+        ((android.content.Context) real).setWallpaper(arg0 == null ? null : arg0.getReal());
     }
 
     public void startActivities(android.content.Intent[] arg0) {

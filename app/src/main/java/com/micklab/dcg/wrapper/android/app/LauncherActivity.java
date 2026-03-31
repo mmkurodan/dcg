@@ -31,6 +31,34 @@ public final class LauncherActivity {
         ((android.app.LauncherActivity) real).setTitle(arg0);
     }
 
+    public static final class IconResizer {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private IconResizer(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.app.LauncherActivity.IconResizer wrap(android.app.LauncherActivity.IconResizer real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.LauncherActivity.IconResizer(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.LauncherActivity.IconResizer getReal() {
+            return (android.app.LauncherActivity.IconResizer) real;
+        }
+
+        public android.app.LauncherActivity.IconResizer unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable createIconThumbnail(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+            return com.micklab.dcg.wrapper.android.graphics.drawable.Drawable.wrap(((android.app.LauncherActivity.IconResizer) real).createIconThumbnail(arg0 == null ? null : arg0.getReal()));
+        }
+
+
+    }
     public static final class ListItem {
         private static final class __DcgwBridgeToken {
         }

@@ -35,11 +35,11 @@ public final class SslCertificate {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate#android.net.http.SslCertificate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)");
     }
 
-    public android.net.http.SslCertificate.DName getIssuedBy() {
+    public com.micklab.dcg.wrapper.android.net.http.SslCertificate.DName getIssuedBy() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate#getIssuedBy()");
     }
 
-    public android.net.http.SslCertificate.DName getIssuedTo() {
+    public com.micklab.dcg.wrapper.android.net.http.SslCertificate.DName getIssuedTo() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate#getIssuedTo()");
     }
 
@@ -75,4 +75,44 @@ public final class SslCertificate {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate#toString()");
     }
 
+    public static final class DName {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private DName(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.net.http.SslCertificate.DName wrap(android.net.http.SslCertificate.DName real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.net.http.SslCertificate.DName(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.net.http.SslCertificate.DName getReal() {
+            return (android.net.http.SslCertificate.DName) real;
+        }
+
+        public android.net.http.SslCertificate.DName unwrap() {
+            return getReal();
+        }
+
+        public java.lang.String getCName() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate$DName#getCName()");
+        }
+
+        public java.lang.String getDName() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate$DName#getDName()");
+        }
+
+        public java.lang.String getOName() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate$DName#getOName()");
+        }
+
+        public java.lang.String getUName() {
+            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.net.http.SslCertificate$DName#getUName()");
+        }
+
+
+    }
 }

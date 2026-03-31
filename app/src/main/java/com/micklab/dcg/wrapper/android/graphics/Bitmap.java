@@ -71,16 +71,16 @@ public final class Bitmap {
         return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.graphics.Bitmap.createBitmap(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
     }
 
+    public static com.micklab.dcg.wrapper.android.graphics.Bitmap createBitmap(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0, int[] arg1, int arg2, int arg3, com.micklab.dcg.wrapper.android.graphics.Bitmap.Config arg4) {
+        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.graphics.Bitmap.createBitmap(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
+    }
+
     public static com.micklab.dcg.wrapper.android.graphics.Bitmap createBitmap(int arg0, int arg1, com.micklab.dcg.wrapper.android.graphics.Bitmap.Config arg2, boolean arg3, com.micklab.dcg.wrapper.android.graphics.ColorSpace arg4) {
         return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.graphics.Bitmap.createBitmap(arg0, arg1, arg2 == null ? null : arg2.getReal(), arg3, arg4 == null ? null : arg4.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Bitmap createBitmap(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0, int arg1, int arg2, int arg3, int arg4) {
         return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.graphics.Bitmap.createBitmap(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4));
-    }
-
-    public static com.micklab.dcg.wrapper.android.graphics.Bitmap createBitmap(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0, int[] arg1, int arg2, int arg3, com.micklab.dcg.wrapper.android.graphics.Bitmap.Config arg4) {
-        return com.micklab.dcg.wrapper.android.graphics.Bitmap.wrap(android.graphics.Bitmap.createBitmap(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4 == null ? null : arg4.getReal()));
     }
 
     public static com.micklab.dcg.wrapper.android.graphics.Bitmap createBitmap(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0, int arg1, int arg2, com.micklab.dcg.wrapper.android.graphics.Bitmap.Config arg3, boolean arg4) {
@@ -111,11 +111,11 @@ public final class Bitmap {
         return ((android.graphics.Bitmap) real).describeContents();
     }
 
-    public void eraseColor(int arg0) {
+    public void eraseColor(long arg0) {
         ((android.graphics.Bitmap) real).eraseColor(arg0);
     }
 
-    public void eraseColor(long arg0) {
+    public void eraseColor(int arg0) {
         ((android.graphics.Bitmap) real).eraseColor(arg0);
     }
 
@@ -187,24 +187,24 @@ public final class Bitmap {
         return ((android.graphics.Bitmap) real).getScaledHeight(arg0 == null ? null : arg0.getReal());
     }
 
-    public int getScaledHeight(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
-        return ((android.graphics.Bitmap) real).getScaledHeight(arg0 == null ? null : arg0.getReal());
-    }
-
     public int getScaledHeight(int arg0) {
         return ((android.graphics.Bitmap) real).getScaledHeight(arg0);
     }
 
-    public int getScaledWidth(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
-        return ((android.graphics.Bitmap) real).getScaledWidth(arg0 == null ? null : arg0.getReal());
+    public int getScaledHeight(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
+        return ((android.graphics.Bitmap) real).getScaledHeight(arg0 == null ? null : arg0.getReal());
+    }
+
+    public int getScaledWidth(int arg0) {
+        return ((android.graphics.Bitmap) real).getScaledWidth(arg0);
     }
 
     public int getScaledWidth(com.micklab.dcg.wrapper.android.util.DisplayMetrics arg0) {
         return ((android.graphics.Bitmap) real).getScaledWidth(arg0 == null ? null : arg0.getReal());
     }
 
-    public int getScaledWidth(int arg0) {
-        return ((android.graphics.Bitmap) real).getScaledWidth(arg0);
+    public int getScaledWidth(com.micklab.dcg.wrapper.android.graphics.Canvas arg0) {
+        return ((android.graphics.Bitmap) real).getScaledWidth(arg0 == null ? null : arg0.getReal());
     }
 
     public int getWidth() {

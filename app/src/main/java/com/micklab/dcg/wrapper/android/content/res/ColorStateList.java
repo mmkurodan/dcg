@@ -31,8 +31,8 @@ public final class ColorStateList {
         return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(android.content.res.ColorStateList.createFromXml(arg0 == null ? null : arg0.getReal(), arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.content.res.ColorStateList createFromXml(com.micklab.dcg.wrapper.android.content.res.Resources arg0, org.xmlpull.v1.XmlPullParser arg1, android.content.res.Resources.Theme arg2) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
-        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(android.content.res.ColorStateList.createFromXml(arg0 == null ? null : arg0.getReal(), arg1, arg2));
+    public static com.micklab.dcg.wrapper.android.content.res.ColorStateList createFromXml(com.micklab.dcg.wrapper.android.content.res.Resources arg0, org.xmlpull.v1.XmlPullParser arg1, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg2) throws java.io.IOException, org.xmlpull.v1.XmlPullParserException {
+        return com.micklab.dcg.wrapper.android.content.res.ColorStateList.wrap(android.content.res.ColorStateList.createFromXml(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal()));
     }
 
     public int describeContents() {

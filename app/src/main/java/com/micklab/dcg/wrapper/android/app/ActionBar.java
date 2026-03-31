@@ -31,11 +31,11 @@ public final class ActionBar {
         ((android.app.ActionBar) real).addTab(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addTab(com.micklab.dcg.wrapper.android.app.ActionBar.Tab arg0, int arg1) {
+    public void addTab(com.micklab.dcg.wrapper.android.app.ActionBar.Tab arg0, boolean arg1) {
         ((android.app.ActionBar) real).addTab(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public void addTab(com.micklab.dcg.wrapper.android.app.ActionBar.Tab arg0, boolean arg1) {
+    public void addTab(com.micklab.dcg.wrapper.android.app.ActionBar.Tab arg0, int arg1) {
         ((android.app.ActionBar) real).addTab(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
@@ -191,20 +191,20 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setHideOnContentScrollEnabled(arg0);
     }
 
-    public void setHomeActionContentDescription(java.lang.CharSequence arg0) {
-        ((android.app.ActionBar) real).setHomeActionContentDescription(arg0);
-    }
-
     public void setHomeActionContentDescription(int arg0) {
         ((android.app.ActionBar) real).setHomeActionContentDescription(arg0);
     }
 
-    public void setHomeAsUpIndicator(int arg0) {
-        ((android.app.ActionBar) real).setHomeAsUpIndicator(arg0);
+    public void setHomeActionContentDescription(java.lang.CharSequence arg0) {
+        ((android.app.ActionBar) real).setHomeActionContentDescription(arg0);
     }
 
     public void setHomeAsUpIndicator(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.app.ActionBar) real).setHomeAsUpIndicator(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setHomeAsUpIndicator(int arg0) {
+        ((android.app.ActionBar) real).setHomeAsUpIndicator(arg0);
     }
 
     public void setHomeButtonEnabled(boolean arg0) {
@@ -223,12 +223,12 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setListNavigationCallbacks(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void setLogo(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.app.ActionBar) real).setLogo(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setLogo(int arg0) {
         ((android.app.ActionBar) real).setLogo(arg0);
+    }
+
+    public void setLogo(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.app.ActionBar) real).setLogo(arg0 == null ? null : arg0.getReal());
     }
 
     public void setNavigationMode(int arg0) {
@@ -255,11 +255,11 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setSubtitle(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.app.ActionBar) real).setTitle(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.app.ActionBar) real).setTitle(arg0);
     }
 

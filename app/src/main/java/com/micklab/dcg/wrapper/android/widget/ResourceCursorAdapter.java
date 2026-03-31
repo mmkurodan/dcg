@@ -35,8 +35,8 @@ public final class ResourceCursorAdapter {
         ((android.widget.ResourceCursorAdapter) real).setDropDownViewResource(arg0);
     }
 
-    public void setDropDownViewTheme(android.content.res.Resources.Theme arg0) {
-        ((android.widget.ResourceCursorAdapter) real).setDropDownViewTheme(arg0);
+    public void setDropDownViewTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.widget.ResourceCursorAdapter) real).setDropDownViewTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public void setViewResource(int arg0) {

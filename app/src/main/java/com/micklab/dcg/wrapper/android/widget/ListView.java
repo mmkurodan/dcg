@@ -199,4 +199,28 @@ public final class ListView {
         ((android.widget.ListView) real).smoothScrollToPosition(arg0);
     }
 
+    public static final class FixedViewInfo {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private FixedViewInfo(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.widget.ListView.FixedViewInfo wrap(android.widget.ListView.FixedViewInfo real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.widget.ListView.FixedViewInfo(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.widget.ListView.FixedViewInfo getReal() {
+            return (android.widget.ListView.FixedViewInfo) real;
+        }
+
+        public android.widget.ListView.FixedViewInfo unwrap() {
+            return getReal();
+        }
+
+
+    }
 }

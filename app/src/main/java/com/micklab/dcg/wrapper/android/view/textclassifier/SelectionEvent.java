@@ -35,11 +35,11 @@ public final class SelectionEvent {
         return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextClassification arg2) {
+    public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextSelection arg2) {
         return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextSelection arg2) {
+    public static com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent createSelectionModifiedEvent(int arg0, int arg1, com.micklab.dcg.wrapper.android.view.textclassifier.TextClassification arg2) {
         return com.micklab.dcg.wrapper.android.view.textclassifier.SelectionEvent.wrap(android.view.textclassifier.SelectionEvent.createSelectionModifiedEvent(arg0, arg1, arg2 == null ? null : arg2.getReal()));
     }
 

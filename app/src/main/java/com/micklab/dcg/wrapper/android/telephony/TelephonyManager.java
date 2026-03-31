@@ -608,6 +608,30 @@ public final class TelephonyManager {
 
 
     }
+    public static final class ModemErrorException {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private ModemErrorException(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.ModemErrorException wrap(android.telephony.TelephonyManager.ModemErrorException real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.ModemErrorException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.ModemErrorException getReal() {
+            return (android.telephony.TelephonyManager.ModemErrorException) real;
+        }
+
+        public android.telephony.TelephonyManager.ModemErrorException unwrap() {
+            return getReal();
+        }
+
+
+    }
     public static final class NetworkSlicingException {
         private static final class __DcgwBridgeToken {
         }
@@ -633,6 +657,30 @@ public final class TelephonyManager {
         public java.lang.String toString() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.telephony.TelephonyManager$NetworkSlicingException#toString()");
         }
+
+    }
+    public static final class TimeoutException {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private TimeoutException(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.telephony.TelephonyManager.TimeoutException wrap(android.telephony.TelephonyManager.TimeoutException real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.telephony.TelephonyManager.TimeoutException(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.telephony.TelephonyManager.TimeoutException getReal() {
+            return (android.telephony.TelephonyManager.TimeoutException) real;
+        }
+
+        public android.telephony.TelephonyManager.TimeoutException unwrap() {
+            return getReal();
+        }
+
 
     }
     public static final class UssdResponseCallback {

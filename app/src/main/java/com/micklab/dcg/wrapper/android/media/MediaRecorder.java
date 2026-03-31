@@ -171,16 +171,16 @@ public final class MediaRecorder {
         ((android.media.MediaRecorder) real).setOrientationHint(arg0);
     }
 
-    public void setOutputFile(java.lang.String arg0) throws java.lang.IllegalStateException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.lang.String)");
+    public void setOutputFile(java.io.FileDescriptor arg0) throws java.lang.IllegalStateException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.FileDescriptor)");
     }
 
     public void setOutputFile(java.io.File arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.File)");
     }
 
-    public void setOutputFile(java.io.FileDescriptor arg0) throws java.lang.IllegalStateException {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.io.FileDescriptor)");
+    public void setOutputFile(java.lang.String arg0) throws java.lang.IllegalStateException {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.media.MediaRecorder#setOutputFile(java.lang.String)");
     }
 
     public void setOutputFormat(int arg0) throws java.lang.IllegalStateException {
@@ -256,6 +256,73 @@ public final class MediaRecorder {
     public static final int MEDIA_RECORDER_INFO_MAX_DURATION_REACHED = android.media.MediaRecorder.MEDIA_RECORDER_INFO_MAX_DURATION_REACHED;
     public static final int MEDIA_RECORDER_INFO_UNKNOWN = android.media.MediaRecorder.MEDIA_RECORDER_INFO_UNKNOWN;
 
+    public static final class AudioEncoder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private AudioEncoder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRecorder.AudioEncoder wrap(android.media.MediaRecorder.AudioEncoder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRecorder.AudioEncoder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRecorder.AudioEncoder getReal() {
+            return (android.media.MediaRecorder.AudioEncoder) real;
+        }
+
+        public android.media.MediaRecorder.AudioEncoder unwrap() {
+            return getReal();
+        }
+
+        public static final int AAC = android.media.MediaRecorder.AudioEncoder.AAC;
+        public static final int AAC_ELD = android.media.MediaRecorder.AudioEncoder.AAC_ELD;
+        public static final int AMR_NB = android.media.MediaRecorder.AudioEncoder.AMR_NB;
+        public static final int AMR_WB = android.media.MediaRecorder.AudioEncoder.AMR_WB;
+        public static final int DEFAULT = android.media.MediaRecorder.AudioEncoder.DEFAULT;
+        public static final int HE_AAC = android.media.MediaRecorder.AudioEncoder.HE_AAC;
+        public static final int OPUS = android.media.MediaRecorder.AudioEncoder.OPUS;
+        public static final int VORBIS = android.media.MediaRecorder.AudioEncoder.VORBIS;
+
+    }
+    public static final class AudioSource {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private AudioSource(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRecorder.AudioSource wrap(android.media.MediaRecorder.AudioSource real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRecorder.AudioSource(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRecorder.AudioSource getReal() {
+            return (android.media.MediaRecorder.AudioSource) real;
+        }
+
+        public android.media.MediaRecorder.AudioSource unwrap() {
+            return getReal();
+        }
+
+        public static final int CAMCORDER = android.media.MediaRecorder.AudioSource.CAMCORDER;
+        public static final int DEFAULT = android.media.MediaRecorder.AudioSource.DEFAULT;
+        public static final int MIC = android.media.MediaRecorder.AudioSource.MIC;
+        public static final int REMOTE_SUBMIX = android.media.MediaRecorder.AudioSource.REMOTE_SUBMIX;
+        public static final int UNPROCESSED = android.media.MediaRecorder.AudioSource.UNPROCESSED;
+        public static final int VOICE_CALL = android.media.MediaRecorder.AudioSource.VOICE_CALL;
+        public static final int VOICE_COMMUNICATION = android.media.MediaRecorder.AudioSource.VOICE_COMMUNICATION;
+        public static final int VOICE_DOWNLINK = android.media.MediaRecorder.AudioSource.VOICE_DOWNLINK;
+        public static final int VOICE_PERFORMANCE = android.media.MediaRecorder.AudioSource.VOICE_PERFORMANCE;
+        public static final int VOICE_RECOGNITION = android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION;
+        public static final int VOICE_UPLINK = android.media.MediaRecorder.AudioSource.VOICE_UPLINK;
+
+    }
     public static final class MetricsConstants {
         private static final class __DcgwBridgeToken {
         }
@@ -347,6 +414,100 @@ public final class MediaRecorder {
         public void onInfo(com.micklab.dcg.wrapper.android.media.MediaRecorder arg0, int arg1, int arg2) {
             ((android.media.MediaRecorder.OnInfoListener) real).onInfo(arg0 == null ? null : arg0.getReal(), arg1, arg2);
         }
+
+    }
+    public static final class OutputFormat {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private OutputFormat(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRecorder.OutputFormat wrap(android.media.MediaRecorder.OutputFormat real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRecorder.OutputFormat(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRecorder.OutputFormat getReal() {
+            return (android.media.MediaRecorder.OutputFormat) real;
+        }
+
+        public android.media.MediaRecorder.OutputFormat unwrap() {
+            return getReal();
+        }
+
+        public static final int AAC_ADTS = android.media.MediaRecorder.OutputFormat.AAC_ADTS;
+        public static final int AMR_NB = android.media.MediaRecorder.OutputFormat.AMR_NB;
+        public static final int AMR_WB = android.media.MediaRecorder.OutputFormat.AMR_WB;
+        public static final int DEFAULT = android.media.MediaRecorder.OutputFormat.DEFAULT;
+        public static final int MPEG_2_TS = android.media.MediaRecorder.OutputFormat.MPEG_2_TS;
+        public static final int MPEG_4 = android.media.MediaRecorder.OutputFormat.MPEG_4;
+        public static final int OGG = android.media.MediaRecorder.OutputFormat.OGG;
+        public static final int RAW_AMR = android.media.MediaRecorder.OutputFormat.RAW_AMR;
+        public static final int THREE_GPP = android.media.MediaRecorder.OutputFormat.THREE_GPP;
+        public static final int WEBM = android.media.MediaRecorder.OutputFormat.WEBM;
+
+    }
+    public static final class VideoEncoder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private VideoEncoder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRecorder.VideoEncoder wrap(android.media.MediaRecorder.VideoEncoder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRecorder.VideoEncoder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRecorder.VideoEncoder getReal() {
+            return (android.media.MediaRecorder.VideoEncoder) real;
+        }
+
+        public android.media.MediaRecorder.VideoEncoder unwrap() {
+            return getReal();
+        }
+
+        public static final int AV1 = android.media.MediaRecorder.VideoEncoder.AV1;
+        public static final int DEFAULT = android.media.MediaRecorder.VideoEncoder.DEFAULT;
+        public static final int DOLBY_VISION = android.media.MediaRecorder.VideoEncoder.DOLBY_VISION;
+        public static final int H263 = android.media.MediaRecorder.VideoEncoder.H263;
+        public static final int H264 = android.media.MediaRecorder.VideoEncoder.H264;
+        public static final int HEVC = android.media.MediaRecorder.VideoEncoder.HEVC;
+        public static final int MPEG_4_SP = android.media.MediaRecorder.VideoEncoder.MPEG_4_SP;
+        public static final int VP8 = android.media.MediaRecorder.VideoEncoder.VP8;
+        public static final int VP9 = android.media.MediaRecorder.VideoEncoder.VP9;
+
+    }
+    public static final class VideoSource {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private VideoSource(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaRecorder.VideoSource wrap(android.media.MediaRecorder.VideoSource real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaRecorder.VideoSource(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaRecorder.VideoSource getReal() {
+            return (android.media.MediaRecorder.VideoSource) real;
+        }
+
+        public android.media.MediaRecorder.VideoSource unwrap() {
+            return getReal();
+        }
+
+        public static final int CAMERA = android.media.MediaRecorder.VideoSource.CAMERA;
+        public static final int DEFAULT = android.media.MediaRecorder.VideoSource.DEFAULT;
+        public static final int SURFACE = android.media.MediaRecorder.VideoSource.SURFACE;
 
     }
 }

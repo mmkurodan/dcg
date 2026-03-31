@@ -375,11 +375,11 @@ public final class Intent {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtra(arg0, arg1));
     }
 
-    public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
+    public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtras(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
+    public com.micklab.dcg.wrapper.android.content.Intent putExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).putExtras(arg0 == null ? null : arg0.getReal()));
     }
 
@@ -403,11 +403,11 @@ public final class Intent {
         ((android.content.Intent) real).removeLaunchSecurityProtection();
     }
 
-    public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
+    public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).replaceExtras(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.os.Bundle arg0) {
+    public com.micklab.dcg.wrapper.android.content.Intent replaceExtras(com.micklab.dcg.wrapper.android.content.Intent arg0) {
         return com.micklab.dcg.wrapper.android.content.Intent.wrap(((android.content.Intent) real).replaceExtras(arg0 == null ? null : arg0.getReal()));
     }
 

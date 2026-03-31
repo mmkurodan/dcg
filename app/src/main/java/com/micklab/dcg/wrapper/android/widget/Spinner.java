@@ -47,8 +47,8 @@ public final class Spinner {
         this(new android.widget.Spinner(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4), (__DcgwBridgeToken) null);
     }
 
-    public Spinner(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3, int arg4, android.content.res.Resources.Theme arg5) {
-        this(new android.widget.Spinner(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5), (__DcgwBridgeToken) null);
+    public Spinner(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3, int arg4, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg5) {
+        this(new android.widget.Spinner(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4, arg5 == null ? null : arg5.getReal()), (__DcgwBridgeToken) null);
     }
 
     public java.lang.CharSequence getAccessibilityClassName() {

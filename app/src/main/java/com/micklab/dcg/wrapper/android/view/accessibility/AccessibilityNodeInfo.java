@@ -375,11 +375,11 @@ public final class AccessibilityNodeInfo {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain());
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo arg0) {
+    public static com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo obtain(com.micklab.dcg.wrapper.android.view.View arg0) {
         return com.micklab.dcg.wrapper.android.view.accessibility.AccessibilityNodeInfo.wrap(android.view.accessibility.AccessibilityNodeInfo.obtain(arg0 == null ? null : arg0.getReal()));
     }
 

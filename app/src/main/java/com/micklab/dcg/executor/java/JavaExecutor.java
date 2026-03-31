@@ -57,6 +57,9 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String LOCAL_WRAPPER_JAR_DIRECTORY = "java-wrapper";
     private static final String WRAPPER_JAR_ASSET_DIRECTORY = "java-wrapper";
     private static final String WRAPPER_CLASSPATH_JAR = "android-wrapper-classpath.jar";
+    private static final String WRAPPER_CLASS_JAR_ENTRY_PREFIX = "com/micklab/dcg/wrapper/android/";
+    private static final String WRAPPER_BITMAP_CLASS_JAR_ENTRY = WRAPPER_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap.class";
+    private static final String WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY = WRAPPER_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap$Config.class";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
@@ -572,6 +575,8 @@ public class JavaExecutor implements LanguageExecutor {
             throw new IOException("Unreadable wrapper classpath jar: " + (wrapperJar == null ? "null" : wrapperJar.getAbsolutePath()));
         }
         boolean foundWrapperClass = false;
+        boolean foundBitmapWrapper = false;
+        boolean foundBitmapConfigWrapper = false;
         try (ZipFile zipFile = new ZipFile(wrapperJar)) {
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
@@ -580,15 +585,26 @@ public class JavaExecutor implements LanguageExecutor {
                 if (entry.isDirectory()) {
                     continue;
                 }
-                if (name.startsWith("com/micklab/dcg/wrapper/android/")
+                if (name.startsWith(WRAPPER_CLASS_JAR_ENTRY_PREFIX)
                         && name.endsWith(".class")) {
                     foundWrapperClass = true;
-                    break;
+                    if (WRAPPER_BITMAP_CLASS_JAR_ENTRY.equals(name)) {
+                        foundBitmapWrapper = true;
+                    } else if (WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY.equals(name)) {
+                        foundBitmapConfigWrapper = true;
+                    }
+                    if (foundBitmapWrapper && foundBitmapConfigWrapper) {
+                        break;
+                    }
                 }
             }
         }
         if (!foundWrapperClass) {
             throw new IOException("Wrapper classpath jar does not contain generated wrapper classes.");
+        }
+        if (!foundBitmapWrapper || !foundBitmapConfigWrapper) {
+            throw new IOException("Wrapper classpath jar is missing required nested wrapper classes: "
+                    + WRAPPER_BITMAP_CLASS_JAR_ENTRY + ", " + WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY + ".");
         }
     }
 

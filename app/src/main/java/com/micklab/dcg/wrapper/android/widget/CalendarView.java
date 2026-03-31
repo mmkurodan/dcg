@@ -131,12 +131,12 @@ public final class CalendarView {
         ((android.widget.CalendarView) real).setOnDateChangeListener(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setSelectedDateVerticalBar(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.widget.CalendarView) real).setSelectedDateVerticalBar(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setSelectedDateVerticalBar(int arg0) {
         ((android.widget.CalendarView) real).setSelectedDateVerticalBar(arg0);
+    }
+
+    public void setSelectedDateVerticalBar(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.widget.CalendarView) real).setSelectedDateVerticalBar(arg0 == null ? null : arg0.getReal());
     }
 
     public void setSelectedWeekBackgroundColor(int arg0) {

@@ -31,8 +31,8 @@ public final class ColorStateListDrawable {
         this(new android.graphics.drawable.ColorStateListDrawable(arg0 == null ? null : arg0.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public void applyTheme(android.content.res.Resources.Theme arg0) {
-        ((android.graphics.drawable.ColorStateListDrawable) real).applyTheme(arg0);
+    public void applyTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.graphics.drawable.ColorStateListDrawable) real).applyTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean canApplyTheme() {

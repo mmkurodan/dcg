@@ -43,8 +43,8 @@ public final class ContentProvider {
         return com.micklab.dcg.wrapper.android.net.Uri.wrap(((android.content.ContentProvider) real).canonicalize(arg0 == null ? null : arg0.getReal()));
     }
 
-    public android.content.ContentProvider.CallingIdentity clearCallingIdentity() {
-        return ((android.content.ContentProvider) real).clearCallingIdentity();
+    public com.micklab.dcg.wrapper.android.content.ContentProvider.CallingIdentity clearCallingIdentity() {
+        return com.micklab.dcg.wrapper.android.content.ContentProvider.CallingIdentity.wrap(((android.content.ContentProvider) real).clearCallingIdentity());
     }
 
     public int delete(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.os.Bundle arg1) {
@@ -175,8 +175,8 @@ public final class ContentProvider {
         return com.micklab.dcg.wrapper.android.content.Context.wrap(((android.content.ContentProvider) real).requireContext());
     }
 
-    public void restoreCallingIdentity(android.content.ContentProvider.CallingIdentity arg0) {
-        ((android.content.ContentProvider) real).restoreCallingIdentity(arg0);
+    public void restoreCallingIdentity(com.micklab.dcg.wrapper.android.content.ContentProvider.CallingIdentity arg0) {
+        ((android.content.ContentProvider) real).restoreCallingIdentity(arg0 == null ? null : arg0.getReal());
     }
 
     public void shutdown() {
@@ -195,6 +195,30 @@ public final class ContentProvider {
         return ((android.content.ContentProvider) real).update(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3);
     }
 
+    public static final class CallingIdentity {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private CallingIdentity(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.content.ContentProvider.CallingIdentity wrap(android.content.ContentProvider.CallingIdentity real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.ContentProvider.CallingIdentity(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.ContentProvider.CallingIdentity getReal() {
+            return (android.content.ContentProvider.CallingIdentity) real;
+        }
+
+        public android.content.ContentProvider.CallingIdentity unwrap() {
+            return getReal();
+        }
+
+
+    }
     public static final class PipeDataWriter {
         private static final class __DcgwBridgeToken {
         }

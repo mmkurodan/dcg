@@ -721,4 +721,36 @@ public final class WebView {
         }
 
     }
+    public static final class WebViewTransport {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private WebViewTransport(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.webkit.WebView.WebViewTransport wrap(android.webkit.WebView.WebViewTransport real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.webkit.WebView.WebViewTransport(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.webkit.WebView.WebViewTransport getReal() {
+            return (android.webkit.WebView.WebViewTransport) real;
+        }
+
+        public android.webkit.WebView.WebViewTransport unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.webkit.WebView getWebView() {
+            return com.micklab.dcg.wrapper.android.webkit.WebView.wrap(((android.webkit.WebView.WebViewTransport) real).getWebView());
+        }
+
+        public void setWebView(com.micklab.dcg.wrapper.android.webkit.WebView arg0) {
+            ((android.webkit.WebView.WebViewTransport) real).setWebView(arg0 == null ? null : arg0.getReal());
+        }
+
+
+    }
 }

@@ -111,12 +111,12 @@ public final class WebViewClient {
         return ((android.webkit.WebViewClient) real).shouldOverrideKeyEvent(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public boolean shouldOverrideUrlLoading(com.micklab.dcg.wrapper.android.webkit.WebView arg0, java.lang.String arg1) {
-        return ((android.webkit.WebViewClient) real).shouldOverrideUrlLoading(arg0 == null ? null : arg0.getReal(), arg1);
-    }
-
     public boolean shouldOverrideUrlLoading(com.micklab.dcg.wrapper.android.webkit.WebView arg0, com.micklab.dcg.wrapper.android.webkit.WebResourceRequest arg1) {
         return ((android.webkit.WebViewClient) real).shouldOverrideUrlLoading(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
+    }
+
+    public boolean shouldOverrideUrlLoading(com.micklab.dcg.wrapper.android.webkit.WebView arg0, java.lang.String arg1) {
+        return ((android.webkit.WebViewClient) real).shouldOverrideUrlLoading(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
     public static final int ERROR_AUTHENTICATION = android.webkit.WebViewClient.ERROR_AUTHENTICATION;

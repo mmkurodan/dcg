@@ -31,8 +31,8 @@ public final class RemoteControlClient {
         this(new android.media.RemoteControlClient(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
-    public android.media.RemoteControlClient.MetadataEditor editMetadata(boolean arg0) {
-        return ((android.media.RemoteControlClient) real).editMetadata(arg0);
+    public com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor editMetadata(boolean arg0) {
+        return com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor.wrap(((android.media.RemoteControlClient) real).editMetadata(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.media.session.MediaSession getMediaSession() {
@@ -83,6 +83,59 @@ public final class RemoteControlClient {
     public static final int PLAYSTATE_SKIPPING_FORWARDS = android.media.RemoteControlClient.PLAYSTATE_SKIPPING_FORWARDS;
     public static final int PLAYSTATE_STOPPED = android.media.RemoteControlClient.PLAYSTATE_STOPPED;
 
+    public static final class MetadataEditor {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private MetadataEditor(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor wrap(android.media.RemoteControlClient.MetadataEditor real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.RemoteControlClient.MetadataEditor getReal() {
+            return (android.media.RemoteControlClient.MetadataEditor) real;
+        }
+
+        public android.media.RemoteControlClient.MetadataEditor unwrap() {
+            return getReal();
+        }
+
+        public void apply() {
+            ((android.media.RemoteControlClient.MetadataEditor) real).apply();
+        }
+
+        public void clear() {
+            ((android.media.RemoteControlClient.MetadataEditor) real).clear();
+        }
+
+        public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+            return ((android.media.RemoteControlClient.MetadataEditor) real).clone();
+        }
+
+        public com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor putBitmap(int arg0, com.micklab.dcg.wrapper.android.graphics.Bitmap arg1) throws java.lang.IllegalArgumentException {
+            return com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor.wrap(((android.media.RemoteControlClient.MetadataEditor) real).putBitmap(arg0, arg1 == null ? null : arg1.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor putLong(int arg0, long arg1) throws java.lang.IllegalArgumentException {
+            return com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor.wrap(((android.media.RemoteControlClient.MetadataEditor) real).putLong(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor putObject(int arg0, java.lang.Object arg1) throws java.lang.IllegalArgumentException {
+            return com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor.wrap(((android.media.RemoteControlClient.MetadataEditor) real).putObject(arg0, arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor putString(int arg0, java.lang.String arg1) throws java.lang.IllegalArgumentException {
+            return com.micklab.dcg.wrapper.android.media.RemoteControlClient.MetadataEditor.wrap(((android.media.RemoteControlClient.MetadataEditor) real).putString(arg0, arg1));
+        }
+
+        public static final int BITMAP_KEY_ARTWORK = android.media.RemoteControlClient.MetadataEditor.BITMAP_KEY_ARTWORK;
+
+    }
     public static final class OnGetPlaybackPositionListener {
         private static final class __DcgwBridgeToken {
         }

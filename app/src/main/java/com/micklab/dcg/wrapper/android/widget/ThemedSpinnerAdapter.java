@@ -23,12 +23,12 @@ public final class ThemedSpinnerAdapter {
         return getReal();
     }
 
-    public android.content.res.Resources.Theme getDropDownViewTheme() {
-        return ((android.widget.ThemedSpinnerAdapter) real).getDropDownViewTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getDropDownViewTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.widget.ThemedSpinnerAdapter) real).getDropDownViewTheme());
     }
 
-    public void setDropDownViewTheme(android.content.res.Resources.Theme arg0) {
-        ((android.widget.ThemedSpinnerAdapter) real).setDropDownViewTheme(arg0);
+    public void setDropDownViewTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.widget.ThemedSpinnerAdapter) real).setDropDownViewTheme(arg0 == null ? null : arg0.getReal());
     }
 
 }

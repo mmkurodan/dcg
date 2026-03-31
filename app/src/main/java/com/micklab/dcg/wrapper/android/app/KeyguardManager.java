@@ -55,8 +55,8 @@ public final class KeyguardManager {
         return ((android.app.KeyguardManager) real).isKeyguardSecure();
     }
 
-    public android.app.KeyguardManager.KeyguardLock newKeyguardLock(java.lang.String arg0) {
-        return ((android.app.KeyguardManager) real).newKeyguardLock(arg0);
+    public com.micklab.dcg.wrapper.android.app.KeyguardManager.KeyguardLock newKeyguardLock(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.app.KeyguardManager.KeyguardLock.wrap(((android.app.KeyguardManager) real).newKeyguardLock(arg0));
     }
 
     public void removeKeyguardLockedStateListener(com.micklab.dcg.wrapper.android.app.KeyguardManager.KeyguardLockedStateListener arg0) {
@@ -100,6 +100,38 @@ public final class KeyguardManager {
         public void onDismissSucceeded() {
             ((android.app.KeyguardManager.KeyguardDismissCallback) real).onDismissSucceeded();
         }
+
+    }
+    public static final class KeyguardLock {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private KeyguardLock(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.app.KeyguardManager.KeyguardLock wrap(android.app.KeyguardManager.KeyguardLock real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.app.KeyguardManager.KeyguardLock(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.app.KeyguardManager.KeyguardLock getReal() {
+            return (android.app.KeyguardManager.KeyguardLock) real;
+        }
+
+        public android.app.KeyguardManager.KeyguardLock unwrap() {
+            return getReal();
+        }
+
+        public void disableKeyguard() {
+            ((android.app.KeyguardManager.KeyguardLock) real).disableKeyguard();
+        }
+
+        public void reenableKeyguard() {
+            ((android.app.KeyguardManager.KeyguardLock) real).reenableKeyguard();
+        }
+
 
     }
     public static final class KeyguardLockedStateListener {

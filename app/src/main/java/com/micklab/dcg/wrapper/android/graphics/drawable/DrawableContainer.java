@@ -27,8 +27,8 @@ public final class DrawableContainer {
         this(new android.graphics.drawable.DrawableContainer(), (__DcgwBridgeToken) null);
     }
 
-    public void applyTheme(android.content.res.Resources.Theme arg0) {
-        ((android.graphics.drawable.DrawableContainer) real).applyTheme(arg0);
+    public void applyTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.graphics.drawable.DrawableContainer) real).applyTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public boolean canApplyTheme() {

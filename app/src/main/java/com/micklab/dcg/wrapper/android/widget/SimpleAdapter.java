@@ -35,8 +35,8 @@ public final class SimpleAdapter {
         return com.micklab.dcg.wrapper.android.view.View.wrap(((android.widget.SimpleAdapter) real).getDropDownView(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
-    public android.content.res.Resources.Theme getDropDownViewTheme() {
-        return ((android.widget.SimpleAdapter) real).getDropDownViewTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getDropDownViewTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.widget.SimpleAdapter) real).getDropDownViewTheme());
     }
 
     public com.micklab.dcg.wrapper.android.widget.Filter getFilter() {
@@ -63,8 +63,8 @@ public final class SimpleAdapter {
         ((android.widget.SimpleAdapter) real).setDropDownViewResource(arg0);
     }
 
-    public void setDropDownViewTheme(android.content.res.Resources.Theme arg0) {
-        ((android.widget.SimpleAdapter) real).setDropDownViewTheme(arg0);
+    public void setDropDownViewTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.widget.SimpleAdapter) real).setDropDownViewTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public void setViewBinder(com.micklab.dcg.wrapper.android.widget.SimpleAdapter.ViewBinder arg0) {

@@ -327,8 +327,8 @@ public final class ContextWrapper {
         return ((android.content.ContextWrapper) real).getSystemService(arg0);
     }
 
-    public android.content.res.Resources.Theme getTheme() {
-        return ((android.content.ContextWrapper) real).getTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.content.ContextWrapper) real).getTheme());
     }
 
     public com.micklab.dcg.wrapper.android.graphics.drawable.Drawable getWallpaper() {
@@ -459,12 +459,12 @@ public final class ContextWrapper {
         ((android.content.ContextWrapper) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4, arg5, arg6 == null ? null : arg6.getReal());
     }
 
-    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
-        ((android.content.ContextWrapper) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
-    }
-
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, java.lang.String arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
         ((android.content.ContextWrapper) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
+    }
+
+    public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg3, com.micklab.dcg.wrapper.android.os.Handler arg4, int arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7) {
+        ((android.content.ContextWrapper) real).sendOrderedBroadcast(arg0 == null ? null : arg0.getReal(), arg1, arg2 == null ? null : arg2.getReal(), arg3 == null ? null : arg3.getReal(), arg4 == null ? null : arg4.getReal(), arg5, arg6, arg7 == null ? null : arg7.getReal());
     }
 
     public void sendOrderedBroadcast(com.micklab.dcg.wrapper.android.content.Intent arg0, int arg1, java.lang.String arg2, java.lang.String arg3, com.micklab.dcg.wrapper.android.content.BroadcastReceiver arg4, com.micklab.dcg.wrapper.android.os.Handler arg5, java.lang.String arg6, com.micklab.dcg.wrapper.android.os.Bundle arg7, com.micklab.dcg.wrapper.android.os.Bundle arg8) {

@@ -68,4 +68,64 @@ public final class AssetManager {
     public static final int ACCESS_STREAMING = android.content.res.AssetManager.ACCESS_STREAMING;
     public static final int ACCESS_UNKNOWN = android.content.res.AssetManager.ACCESS_UNKNOWN;
 
+    public static final class AssetInputStream {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private AssetInputStream(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.content.res.AssetManager.AssetInputStream wrap(android.content.res.AssetManager.AssetInputStream real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.content.res.AssetManager.AssetInputStream(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.content.res.AssetManager.AssetInputStream getReal() {
+            return (android.content.res.AssetManager.AssetInputStream) real;
+        }
+
+        public android.content.res.AssetManager.AssetInputStream unwrap() {
+            return getReal();
+        }
+
+        public int available() throws java.io.IOException {
+            return ((android.content.res.AssetManager.AssetInputStream) real).available();
+        }
+
+        public void close() throws java.io.IOException {
+            ((android.content.res.AssetManager.AssetInputStream) real).close();
+        }
+
+        public void mark(int arg0) {
+            ((android.content.res.AssetManager.AssetInputStream) real).mark(arg0);
+        }
+
+        public boolean markSupported() {
+            return ((android.content.res.AssetManager.AssetInputStream) real).markSupported();
+        }
+
+        public int read() throws java.io.IOException {
+            return ((android.content.res.AssetManager.AssetInputStream) real).read();
+        }
+
+        public int read(byte[] arg0) throws java.io.IOException {
+            return ((android.content.res.AssetManager.AssetInputStream) real).read(arg0);
+        }
+
+        public int read(byte[] arg0, int arg1, int arg2) throws java.io.IOException {
+            return ((android.content.res.AssetManager.AssetInputStream) real).read(arg0, arg1, arg2);
+        }
+
+        public void reset() throws java.io.IOException {
+            ((android.content.res.AssetManager.AssetInputStream) real).reset();
+        }
+
+        public long skip(long arg0) throws java.io.IOException {
+            return ((android.content.res.AssetManager.AssetInputStream) real).skip(arg0);
+        }
+
+
+    }
 }

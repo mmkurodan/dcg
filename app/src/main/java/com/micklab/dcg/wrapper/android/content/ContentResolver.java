@@ -23,20 +23,20 @@ public final class ContentResolver {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(java.lang.String arg0) {
-        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0));
-    }
-
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
         return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireUnstableContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireUnstableContentProviderClient(arg0 == null ? null : arg0.getReal()));
+    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(java.lang.String arg0) {
+        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0));
     }
 
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireUnstableContentProviderClient(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireUnstableContentProviderClient(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireUnstableContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireUnstableContentProviderClient(arg0 == null ? null : arg0.getReal()));
     }
 
     public static void addPeriodicSync(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2, long arg3) {

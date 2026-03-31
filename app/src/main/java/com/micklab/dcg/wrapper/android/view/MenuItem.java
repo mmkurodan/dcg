@@ -171,12 +171,12 @@ public final class MenuItem {
         return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.MenuItem) real).setEnabled(arg0));
     }
 
-    public com.micklab.dcg.wrapper.android.view.MenuItem setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.MenuItem) real).setIcon(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.view.MenuItem setIcon(int arg0) {
         return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.MenuItem) real).setIcon(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.view.MenuItem setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        return com.micklab.dcg.wrapper.android.view.MenuItem.wrap(((android.view.MenuItem) real).setIcon(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.view.MenuItem setIconTintBlendMode(com.micklab.dcg.wrapper.android.graphics.BlendMode arg0) {

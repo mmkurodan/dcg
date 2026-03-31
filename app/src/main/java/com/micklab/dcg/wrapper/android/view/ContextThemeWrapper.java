@@ -31,8 +31,8 @@ public final class ContextThemeWrapper {
         this(new android.view.ContextThemeWrapper(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
     }
 
-    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, android.content.res.Resources.Theme arg1) {
-        this(new android.view.ContextThemeWrapper(arg0 == null ? null : arg0.getReal(), arg1), (__DcgwBridgeToken) null);
+    public ContextThemeWrapper(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg1) {
+        this(new android.view.ContextThemeWrapper(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void applyOverrideConfiguration(com.micklab.dcg.wrapper.android.content.res.Configuration arg0) {
@@ -51,16 +51,16 @@ public final class ContextThemeWrapper {
         return ((android.view.ContextThemeWrapper) real).getSystemService(arg0);
     }
 
-    public android.content.res.Resources.Theme getTheme() {
-        return ((android.view.ContextThemeWrapper) real).getTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.view.ContextThemeWrapper) real).getTheme());
     }
 
     public void setTheme(int arg0) {
         ((android.view.ContextThemeWrapper) real).setTheme(arg0);
     }
 
-    public void setTheme(android.content.res.Resources.Theme arg0) {
-        ((android.view.ContextThemeWrapper) real).setTheme(arg0);
+    public void setTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.view.ContextThemeWrapper) real).setTheme(arg0 == null ? null : arg0.getReal());
     }
 
 }

@@ -39,8 +39,8 @@ public final class AutoCompleteTextView {
         this(new android.widget.AutoCompleteTextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3), (__DcgwBridgeToken) null);
     }
 
-    public AutoCompleteTextView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3, android.content.res.Resources.Theme arg4) {
-        this(new android.widget.AutoCompleteTextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4), (__DcgwBridgeToken) null);
+    public AutoCompleteTextView(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, int arg2, int arg3, com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg4) {
+        this(new android.widget.AutoCompleteTextView(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4 == null ? null : arg4.getReal()), (__DcgwBridgeToken) null);
     }
 
     public void clearListSelection() {

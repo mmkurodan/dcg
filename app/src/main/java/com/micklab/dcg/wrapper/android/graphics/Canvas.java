@@ -79,11 +79,11 @@ public final class Canvas {
         return ((android.graphics.Canvas) real).clipRect(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public boolean clipRect(float arg0, float arg1, float arg2, float arg3) {
+    public boolean clipRect(int arg0, int arg1, int arg2, int arg3) {
         return ((android.graphics.Canvas) real).clipRect(arg0, arg1, arg2, arg3);
     }
 
-    public boolean clipRect(int arg0, int arg1, int arg2, int arg3) {
+    public boolean clipRect(float arg0, float arg1, float arg2, float arg3) {
         return ((android.graphics.Canvas) real).clipRect(arg0, arg1, arg2, arg3);
     }
 
@@ -295,11 +295,11 @@ public final class Canvas {
         ((android.graphics.Canvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
-    public void drawText(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
+    public void drawText(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
         ((android.graphics.Canvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
-    public void drawText(java.lang.String arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
+    public void drawText(char[] arg0, int arg1, int arg2, float arg3, float arg4, com.micklab.dcg.wrapper.android.graphics.Paint arg5) {
         ((android.graphics.Canvas) real).drawText(arg0, arg1, arg2, arg3, arg4, arg5 == null ? null : arg5.getReal());
     }
 
@@ -315,11 +315,11 @@ public final class Canvas {
         ((android.graphics.Canvas) real).drawTextRun(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 == null ? null : arg8.getReal());
     }
 
-    public void drawTextRun(char[] arg0, int arg1, int arg2, int arg3, int arg4, float arg5, float arg6, boolean arg7, com.micklab.dcg.wrapper.android.graphics.Paint arg8) {
+    public void drawTextRun(java.lang.CharSequence arg0, int arg1, int arg2, int arg3, int arg4, float arg5, float arg6, boolean arg7, com.micklab.dcg.wrapper.android.graphics.Paint arg8) {
         ((android.graphics.Canvas) real).drawTextRun(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 == null ? null : arg8.getReal());
     }
 
-    public void drawTextRun(java.lang.CharSequence arg0, int arg1, int arg2, int arg3, int arg4, float arg5, float arg6, boolean arg7, com.micklab.dcg.wrapper.android.graphics.Paint arg8) {
+    public void drawTextRun(char[] arg0, int arg1, int arg2, int arg3, int arg4, float arg5, float arg6, boolean arg7, com.micklab.dcg.wrapper.android.graphics.Paint arg8) {
         ((android.graphics.Canvas) real).drawTextRun(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 == null ? null : arg8.getReal());
     }
 
@@ -391,11 +391,11 @@ public final class Canvas {
         return ((android.graphics.Canvas) real).quickReject(arg0 == null ? null : arg0.getReal());
     }
 
-    public boolean quickReject(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Canvas.EdgeType arg1) {
+    public boolean quickReject(com.micklab.dcg.wrapper.android.graphics.Path arg0, com.micklab.dcg.wrapper.android.graphics.Canvas.EdgeType arg1) {
         return ((android.graphics.Canvas) real).quickReject(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public boolean quickReject(com.micklab.dcg.wrapper.android.graphics.Path arg0, com.micklab.dcg.wrapper.android.graphics.Canvas.EdgeType arg1) {
+    public boolean quickReject(com.micklab.dcg.wrapper.android.graphics.RectF arg0, com.micklab.dcg.wrapper.android.graphics.Canvas.EdgeType arg1) {
         return ((android.graphics.Canvas) real).quickReject(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 

@@ -339,11 +339,11 @@ public final class MotionEvent {
         return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtain(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(long arg0, long arg1, int arg2, int arg3, int[] arg4, android.view.MotionEvent.PointerCoords[] arg5, int arg6, float arg7, float arg8, int arg9, int arg10, int arg11, int arg12) {
+    public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(long arg0, long arg1, int arg2, int arg3, float arg4, float arg5, float arg6, float arg7, int arg8, float arg9, float arg10, int arg11, int arg12) {
         return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtain(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12));
     }
 
-    public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(long arg0, long arg1, int arg2, int arg3, float arg4, float arg5, float arg6, float arg7, int arg8, float arg9, float arg10, int arg11, int arg12) {
+    public static com.micklab.dcg.wrapper.android.view.MotionEvent obtain(long arg0, long arg1, int arg2, int arg3, int[] arg4, android.view.MotionEvent.PointerCoords[] arg5, int arg6, float arg7, float arg8, int arg9, int arg10, int arg11, int arg12) {
         return com.micklab.dcg.wrapper.android.view.MotionEvent.wrap(android.view.MotionEvent.obtain(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12));
     }
 

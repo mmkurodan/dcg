@@ -35,8 +35,8 @@ public final class HardwareBufferRenderer {
         return ((android.graphics.HardwareBufferRenderer) real).isClosed();
     }
 
-    public android.graphics.HardwareBufferRenderer.RenderRequest obtainRenderRequest() {
-        return ((android.graphics.HardwareBufferRenderer) real).obtainRenderRequest();
+    public com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest obtainRenderRequest() {
+        return com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest.wrap(((android.graphics.HardwareBufferRenderer) real).obtainRenderRequest());
     }
 
     public void setContentRoot(com.micklab.dcg.wrapper.android.graphics.RenderNode arg0) {
@@ -51,6 +51,38 @@ public final class HardwareBufferRenderer {
         ((android.graphics.HardwareBufferRenderer) real).setLightSourceGeometry(arg0, arg1, arg2, arg3);
     }
 
+    public static final class RenderRequest {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private RenderRequest(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest wrap(android.graphics.HardwareBufferRenderer.RenderRequest real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.graphics.HardwareBufferRenderer.RenderRequest getReal() {
+            return (android.graphics.HardwareBufferRenderer.RenderRequest) real;
+        }
+
+        public android.graphics.HardwareBufferRenderer.RenderRequest unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest setBufferTransform(int arg0) {
+            return com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest.wrap(((android.graphics.HardwareBufferRenderer.RenderRequest) real).setBufferTransform(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest setColorSpace(com.micklab.dcg.wrapper.android.graphics.ColorSpace arg0) {
+            return com.micklab.dcg.wrapper.android.graphics.HardwareBufferRenderer.RenderRequest.wrap(((android.graphics.HardwareBufferRenderer.RenderRequest) real).setColorSpace(arg0 == null ? null : arg0.getReal()));
+        }
+
+
+    }
     public static final class RenderResult {
         private static final class __DcgwBridgeToken {
         }

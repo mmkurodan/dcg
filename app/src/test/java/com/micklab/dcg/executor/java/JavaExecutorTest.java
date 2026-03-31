@@ -107,6 +107,20 @@ public class JavaExecutorTest {
     }
 
     @Test
+    public void wrapperJarValidationRequiresBitmapAndNestedConfigClasses() throws Exception {
+        Field bitmapField = JavaExecutor.class.getDeclaredField("WRAPPER_BITMAP_CLASS_JAR_ENTRY");
+        bitmapField.setAccessible(true);
+        String bitmapEntry = (String) bitmapField.get(null);
+
+        Field bitmapConfigField = JavaExecutor.class.getDeclaredField("WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY");
+        bitmapConfigField.setAccessible(true);
+        String bitmapConfigEntry = (String) bitmapConfigField.get(null);
+
+        assertEquals("com/micklab/dcg/wrapper/android/graphics/Bitmap.class", bitmapEntry);
+        assertEquals("com/micklab/dcg/wrapper/android/graphics/Bitmap$Config.class", bitmapConfigEntry);
+    }
+
+    @Test
     public void joinClasspathsConcatenatesNonEmptySegmentsInOrder() {
         String merged = JavaExecutor.joinClasspaths(
                 "/tmp/a.jar",

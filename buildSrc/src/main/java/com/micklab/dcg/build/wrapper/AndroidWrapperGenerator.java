@@ -65,16 +65,17 @@ final class AndroidWrapperGenerator {
         }
         try {
             recreateDirectory(outputDirectory.toPath());
-            List<String> topLevelClassNames = discoverTopLevelSafeClasses();
+            List<String> safeClassNames = discoverSafeClasses();
+            List<String> topLevelClassNames = toTopLevelClassNames(safeClassNames);
             URL[] classpath = new URL[]{androidJar.toURI().toURL()};
             try (URLClassLoader classLoader = new URLClassLoader(classpath, getClass().getClassLoader())) {
                 List<Class<?>> topLevelClasses = loadTopLevelClasses(topLevelClassNames, classLoader);
                 buildWrapperTypeIndex(topLevelClasses);
-                for (String className : topLevelClassNames) {
+                for (String className : safeClassNames) {
                     wrapperTypeByAndroidType.putIfAbsent(className, toWrapperTypeName(className));
                 }
                 generateWrapperSources(topLevelClasses);
-                generateOpaqueWrapperSources(topLevelClassNames, topLevelClasses);
+                generateOpaqueWrapperSources(safeClassNames, topLevelClasses);
             }
             writeForbiddenPolicy();
             logger.lifecycle("Generated {} wrapper types into {}", wrapperTypeByAndroidType.size(), outputDirectory.getAbsolutePath());
@@ -83,7 +84,7 @@ final class AndroidWrapperGenerator {
         }
     }
 
-    private List<String> discoverTopLevelSafeClasses() throws IOException {
+    private List<String> discoverSafeClasses() throws IOException {
         List<String> classNames = new ArrayList<>();
         try (JarFile jarFile = new JarFile(androidJar)) {
             Enumeration<JarEntry> entries = jarFile.entries();
@@ -100,7 +101,7 @@ final class AndroidWrapperGenerator {
                 if (!isSafeClassPrefix(className)) {
                     continue;
                 }
-                if (className.contains("$")) {
+                if (!isSupportedBinaryTypeName(className)) {
                     continue;
                 }
                 classNames.add(className);
@@ -117,6 +118,49 @@ final class AndroidWrapperGenerator {
             }
         }
         return false;
+    }
+
+    private boolean isSupportedBinaryTypeName(String className) {
+        int lastDot = className.lastIndexOf('.');
+        String topAndNested = lastDot < 0 ? className : className.substring(lastDot + 1);
+        String[] segments = topAndNested.split("\\$");
+        if (segments.length == 0) {
+            return false;
+        }
+        for (String segment : segments) {
+            if (!isValidJavaSimpleName(segment)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isValidJavaSimpleName(String candidate) {
+        if (candidate == null || candidate.isEmpty()) {
+            return false;
+        }
+        if (!Character.isJavaIdentifierStart(candidate.charAt(0))) {
+            return false;
+        }
+        for (int i = 1; i < candidate.length(); i++) {
+            if (!Character.isJavaIdentifierPart(candidate.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private List<String> toTopLevelClassNames(List<String> classNames) {
+        Set<String> topLevelNames = new TreeSet<>();
+        for (String className : classNames) {
+            topLevelNames.add(topLevelTypeName(className));
+        }
+        return new ArrayList<>(topLevelNames);
+    }
+
+    private static String topLevelTypeName(String className) {
+        int dollar = className.indexOf('$');
+        return dollar < 0 ? className : className.substring(0, dollar);
     }
 
     private List<Class<?>> loadTopLevelClasses(List<String> classNames, ClassLoader classLoader) {
@@ -164,8 +208,7 @@ final class AndroidWrapperGenerator {
         if (nestedType == null || !Modifier.isPublic(nestedType.getModifiers())) {
             return false;
         }
-        int modifiers = nestedType.getModifiers();
-        return Modifier.isStatic(modifiers) || nestedType.isInterface() || nestedType.isEnum();
+        return isSupportedBinaryTypeName(nestedType.getName());
     }
 
     private void generateWrapperSources(List<Class<?>> topLevelClasses) throws IOException {
@@ -187,49 +230,152 @@ final class AndroidWrapperGenerator {
         }
     }
 
-    private void generateOpaqueWrapperSources(List<String> topLevelClassNames, List<Class<?>> generatedClasses) throws IOException {
-        Set<String> generatedNames = new LinkedHashSet<>();
+    private void generateOpaqueWrapperSources(List<String> safeClassNames, List<Class<?>> generatedClasses) throws IOException {
+        Set<String> generatedTopLevelNames = new LinkedHashSet<>();
         for (Class<?> generatedClass : generatedClasses) {
-            generatedNames.add(generatedClass.getName());
+            generatedTopLevelNames.add(generatedClass.getName());
         }
-        for (String className : topLevelClassNames) {
-            if (generatedNames.contains(className)) {
+        Map<String, List<String>> nestedClassNamesByTopLevel = groupNestedClassNames(safeClassNames);
+        for (String topLevelClassName : toTopLevelClassNames(safeClassNames)) {
+            if (generatedTopLevelNames.contains(topLevelClassName)) {
                 continue;
             }
-            String source = buildOpaqueWrapperSource(className);
-            String wrapperPackageName = wrapperPackageOf(className);
+            List<String> nestedClassNames = nestedClassNamesByTopLevel.getOrDefault(topLevelClassName, Collections.emptyList());
+            String source = buildOpaqueWrapperSource(topLevelClassName, nestedClassNames);
+            String wrapperPackageName = wrapperPackageOf(topLevelClassName);
             Path packagePath = packagePathWithinOutput(wrapperPackageName);
             Path sourceFile = outputDirectory.toPath()
                     .resolve(packagePath)
-                    .resolve(simpleTopLevelName(className) + JAVA_EXTENSION);
+                    .resolve(simpleTopLevelName(topLevelClassName) + JAVA_EXTENSION);
             ensureDirectory(sourceFile.getParent());
             Files.write(sourceFile, source.getBytes(StandardCharsets.UTF_8));
         }
     }
 
-    private String buildOpaqueWrapperSource(String androidTypeName) {
-        String wrapperPackageName = wrapperPackageOf(androidTypeName);
-        String wrapperSimpleName = simpleTopLevelName(androidTypeName);
-        String wrapperTypeName = toWrapperTypeName(androidTypeName);
-        return SOURCE_HEADER
-                + "package " + wrapperPackageName + ";\n\n"
-                + "public final class " + wrapperSimpleName + " {\n"
-                + "    private static final class __DcgwBridgeToken {\n"
-                + "    }\n\n"
-                + "    private final java.lang.Object real;\n\n"
-                + "    private " + wrapperSimpleName + "(java.lang.Object real, __DcgwBridgeToken token) {\n"
-                + "        this.real = real;\n"
-                + "    }\n\n"
-                + "    public static " + wrapperTypeName + " wrap(java.lang.Object real) {\n"
-                + "        return real == null ? null : new " + wrapperTypeName + "(real, (__DcgwBridgeToken) null);\n"
-                + "    }\n\n"
-                + "    public java.lang.Object getReal() {\n"
-                + "        return real;\n"
-                + "    }\n\n"
-                + "    public java.lang.Object unwrap() {\n"
-                + "        return getReal();\n"
-                + "    }\n"
-                + "}\n";
+    private Map<String, List<String>> groupNestedClassNames(List<String> safeClassNames) {
+        Map<String, List<String>> nestedClassNamesByTopLevel = new LinkedHashMap<>();
+        for (String className : safeClassNames) {
+            int dollar = className.indexOf('$');
+            if (dollar < 0) {
+                continue;
+            }
+            String topLevelName = className.substring(0, dollar);
+            nestedClassNamesByTopLevel
+                    .computeIfAbsent(topLevelName, ignored -> new ArrayList<>())
+                    .add(className);
+        }
+        for (List<String> nestedClassNames : nestedClassNamesByTopLevel.values()) {
+            Collections.sort(nestedClassNames);
+        }
+        return nestedClassNamesByTopLevel;
+    }
+
+    private String buildOpaqueWrapperSource(String topLevelTypeName, List<String> nestedTypeNames) {
+        OpaqueTypeNode root = buildOpaqueTypeTree(topLevelTypeName, nestedTypeNames);
+        StringBuilder source = new StringBuilder();
+        source.append(SOURCE_HEADER)
+                .append("package ")
+                .append(wrapperPackageOf(topLevelTypeName))
+                .append(";\n\n");
+        appendOpaqueTypeSource(source, root, 0, false);
+        return source.toString();
+    }
+
+    private OpaqueTypeNode buildOpaqueTypeTree(String topLevelTypeName, List<String> nestedTypeNames) {
+        OpaqueTypeNode root = new OpaqueTypeNode(topLevelTypeName, simpleTopLevelName(topLevelTypeName));
+        for (String nestedTypeName : nestedTypeNames) {
+            String topLevelName = topLevelTypeName(nestedTypeName);
+            if (!topLevelTypeName.equals(topLevelName)) {
+                continue;
+            }
+            String suffix = nestedTypeName.substring(topLevelTypeName.length() + 1);
+            if (suffix.isEmpty()) {
+                continue;
+            }
+            String[] segments = suffix.split("\\$");
+            OpaqueTypeNode current = root;
+            String binaryName = topLevelTypeName;
+            boolean validPath = true;
+            for (String segment : segments) {
+                if (!isValidJavaSimpleName(segment)) {
+                    validPath = false;
+                    break;
+                }
+                binaryName = binaryName + "$" + segment;
+                OpaqueTypeNode child = current.children.get(segment);
+                if (child == null) {
+                    child = new OpaqueTypeNode(binaryName, segment);
+                    current.children.put(segment, child);
+                }
+                current = child;
+            }
+            if (!validPath) {
+                continue;
+            }
+        }
+        return root;
+    }
+
+    private void appendOpaqueTypeSource(StringBuilder source, OpaqueTypeNode node, int indentLevel, boolean nested) {
+        String indent = indent(indentLevel);
+        String innerIndent = indent(indentLevel + 1);
+        String typeName = toWrapperTypeName(node.androidTypeName);
+
+        source.append(indent)
+                .append(nested ? "public static final class " : "public final class ")
+                .append(node.simpleName)
+                .append(" {\n");
+
+        source.append(innerIndent)
+                .append("private static final class __DcgwBridgeToken {\n")
+                .append(innerIndent)
+                .append("}\n\n");
+
+        source.append(innerIndent)
+                .append("private final java.lang.Object real;\n\n");
+
+        source.append(innerIndent)
+                .append("private ")
+                .append(node.simpleName)
+                .append("(java.lang.Object real, __DcgwBridgeToken token) {\n")
+                .append(indent(indentLevel + 2))
+                .append("this.real = real;\n")
+                .append(innerIndent)
+                .append("}\n\n");
+
+        source.append(innerIndent)
+                .append("public static ")
+                .append(typeName)
+                .append(" wrap(java.lang.Object real) {\n")
+                .append(indent(indentLevel + 2))
+                .append("return real == null ? null : new ")
+                .append(typeName)
+                .append("(real, (__DcgwBridgeToken) null);\n")
+                .append(innerIndent)
+                .append("}\n\n");
+
+        source.append(innerIndent)
+                .append("public java.lang.Object getReal() {\n")
+                .append(indent(indentLevel + 2))
+                .append("return real;\n")
+                .append(innerIndent)
+                .append("}\n\n");
+
+        source.append(innerIndent)
+                .append("public java.lang.Object unwrap() {\n")
+                .append(indent(indentLevel + 2))
+                .append("return getReal();\n")
+                .append(innerIndent)
+                .append("}\n");
+
+        if (!node.children.isEmpty()) {
+            source.append('\n');
+            for (OpaqueTypeNode child : node.children.values()) {
+                appendOpaqueTypeSource(source, child, indentLevel + 1, true);
+            }
+        }
+
+        source.append(indent).append("}\n");
     }
 
     private void writeForbiddenPolicy() throws IOException {
@@ -260,6 +406,14 @@ final class AndroidWrapperGenerator {
     private static String simpleTopLevelName(String androidTypeName) {
         int lastDot = androidTypeName.lastIndexOf('.');
         return lastDot < 0 ? androidTypeName : androidTypeName.substring(lastDot + 1);
+    }
+
+    private static String indent(int level) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            builder.append("    ");
+        }
+        return builder.toString();
     }
 
     private String wrapperPackageOf(String androidTypeName) {
@@ -310,6 +464,17 @@ final class AndroidWrapperGenerator {
             return;
         }
         Files.createDirectories(directory);
+    }
+
+    private static final class OpaqueTypeNode {
+        private final String androidTypeName;
+        private final String simpleName;
+        private final Map<String, OpaqueTypeNode> children = new LinkedHashMap<>();
+
+        private OpaqueTypeNode(String androidTypeName, String simpleName) {
+            this.androidTypeName = androidTypeName;
+            this.simpleName = simpleName;
+        }
     }
 
     private static final class WrapperSourceBuilder {
@@ -412,7 +577,10 @@ final class AndroidWrapperGenerator {
         }
 
         private void appendConstructors(Class<?> clazz, int indentLevel) {
-            if (clazz.isInterface() || clazz.isEnum() || Modifier.isAbstract(clazz.getModifiers())) {
+            if (clazz.isInterface()
+                    || clazz.isEnum()
+                    || Modifier.isAbstract(clazz.getModifiers())
+                    || isNonStaticInnerClass(clazz)) {
                 return;
             }
             Constructor<?>[] constructors = clazz.getConstructors();
@@ -627,12 +795,15 @@ final class AndroidWrapperGenerator {
                 if (!Modifier.isPublic(nestedClass.getModifiers())) {
                     continue;
                 }
-                int modifiers = nestedClass.getModifiers();
-                if (!(Modifier.isStatic(modifiers) || nestedClass.isInterface() || nestedClass.isEnum())) {
+                if (!isValidJavaSimpleName(simpleName(nestedClass))) {
                     continue;
                 }
                 appendClass(nestedClass, indentLevel + 1, true);
             }
+        }
+
+        private boolean isNonStaticInnerClass(Class<?> clazz) {
+            return clazz.getEnclosingClass() != null && !Modifier.isStatic(clazz.getModifiers());
         }
 
         private boolean isWrappableType(Class<?> type) {

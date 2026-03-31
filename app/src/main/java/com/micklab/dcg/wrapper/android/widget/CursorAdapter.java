@@ -47,8 +47,8 @@ public final class CursorAdapter {
         return com.micklab.dcg.wrapper.android.view.View.wrap(((android.widget.CursorAdapter) real).getDropDownView(arg0, arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal()));
     }
 
-    public android.content.res.Resources.Theme getDropDownViewTheme() {
-        return ((android.widget.CursorAdapter) real).getDropDownViewTheme();
+    public com.micklab.dcg.wrapper.android.content.res.Resources.Theme getDropDownViewTheme() {
+        return com.micklab.dcg.wrapper.android.content.res.Resources.Theme.wrap(((android.widget.CursorAdapter) real).getDropDownViewTheme());
     }
 
     public com.micklab.dcg.wrapper.android.widget.Filter getFilter() {
@@ -87,8 +87,8 @@ public final class CursorAdapter {
         return com.micklab.dcg.wrapper.android.database.Cursor.wrap(((android.widget.CursorAdapter) real).runQueryOnBackgroundThread(arg0));
     }
 
-    public void setDropDownViewTheme(android.content.res.Resources.Theme arg0) {
-        ((android.widget.CursorAdapter) real).setDropDownViewTheme(arg0);
+    public void setDropDownViewTheme(com.micklab.dcg.wrapper.android.content.res.Resources.Theme arg0) {
+        ((android.widget.CursorAdapter) real).setDropDownViewTheme(arg0 == null ? null : arg0.getReal());
     }
 
     public void setFilterQueryProvider(com.micklab.dcg.wrapper.android.widget.FilterQueryProvider arg0) {

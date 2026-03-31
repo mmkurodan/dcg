@@ -71,8 +71,8 @@ public final class AnimatorSet {
         ((android.animation.AnimatorSet) real).pause();
     }
 
-    public android.animation.AnimatorSet.Builder play(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
-        return ((android.animation.AnimatorSet) real).play(arg0 == null ? null : arg0.getReal());
+    public com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder play(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
+        return com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder.wrap(((android.animation.AnimatorSet) real).play(arg0 == null ? null : arg0.getReal()));
     }
 
     public void playSequentially(android.animation.Animator... arg0) {
@@ -127,4 +127,44 @@ public final class AnimatorSet {
         return ((android.animation.AnimatorSet) real).toString();
     }
 
+    public static final class Builder {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Builder(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder wrap(android.animation.AnimatorSet.Builder real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.animation.AnimatorSet.Builder getReal() {
+            return (android.animation.AnimatorSet.Builder) real;
+        }
+
+        public android.animation.AnimatorSet.Builder unwrap() {
+            return getReal();
+        }
+
+        public com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder after(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
+            return com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder.wrap(((android.animation.AnimatorSet.Builder) real).after(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder after(long arg0) {
+            return com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder.wrap(((android.animation.AnimatorSet.Builder) real).after(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder before(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
+            return com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder.wrap(((android.animation.AnimatorSet.Builder) real).before(arg0 == null ? null : arg0.getReal()));
+        }
+
+        public com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder with(com.micklab.dcg.wrapper.android.animation.Animator arg0) {
+            return com.micklab.dcg.wrapper.android.animation.AnimatorSet.Builder.wrap(((android.animation.AnimatorSet.Builder) real).with(arg0 == null ? null : arg0.getReal()));
+        }
+
+
+    }
 }

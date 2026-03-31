@@ -1639,12 +1639,12 @@ public final class View {
         return ((android.view.View) real).requestRectangleOnScreen(arg0 == null ? null : arg0.getReal(), arg1);
     }
 
-    public void requestUnbufferedDispatch(int arg0) {
-        ((android.view.View) real).requestUnbufferedDispatch(arg0);
-    }
-
     public void requestUnbufferedDispatch(com.micklab.dcg.wrapper.android.view.MotionEvent arg0) {
         ((android.view.View) real).requestUnbufferedDispatch(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void requestUnbufferedDispatch(int arg0) {
+        ((android.view.View) real).requestUnbufferedDispatch(arg0);
     }
 
     public void resetPivot() {

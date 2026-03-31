@@ -215,19 +215,19 @@ public final class Toolbar {
         ((android.widget.Toolbar) real).setLogo(arg0);
     }
 
-    public void setLogoDescription(java.lang.CharSequence arg0) {
-        ((android.widget.Toolbar) real).setLogoDescription(arg0);
-    }
-
     public void setLogoDescription(int arg0) {
         ((android.widget.Toolbar) real).setLogoDescription(arg0);
     }
 
-    public void setNavigationContentDescription(java.lang.CharSequence arg0) {
-        ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
+    public void setLogoDescription(java.lang.CharSequence arg0) {
+        ((android.widget.Toolbar) real).setLogoDescription(arg0);
     }
 
     public void setNavigationContentDescription(int arg0) {
+        ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
+    }
+
+    public void setNavigationContentDescription(java.lang.CharSequence arg0) {
         ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
     }
 
@@ -271,11 +271,11 @@ public final class Toolbar {
         ((android.widget.Toolbar) real).setSubtitleTextColor(arg0);
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.widget.Toolbar) real).setTitle(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.widget.Toolbar) real).setTitle(arg0);
     }
 

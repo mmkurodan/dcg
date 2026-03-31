@@ -59,12 +59,12 @@ public final class Message {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Message#obtain()");
     }
 
-    public static com.micklab.dcg.wrapper.android.os.Message obtain(com.micklab.dcg.wrapper.android.os.Handler arg0) {
-        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Message#obtain(android.os.Handler)");
-    }
-
     public static com.micklab.dcg.wrapper.android.os.Message obtain(com.micklab.dcg.wrapper.android.os.Message arg0) {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Message#obtain(android.os.Message)");
+    }
+
+    public static com.micklab.dcg.wrapper.android.os.Message obtain(com.micklab.dcg.wrapper.android.os.Handler arg0) {
+        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Message#obtain(android.os.Handler)");
     }
 
     public static com.micklab.dcg.wrapper.android.os.Message obtain(com.micklab.dcg.wrapper.android.os.Handler arg0, int arg1) {

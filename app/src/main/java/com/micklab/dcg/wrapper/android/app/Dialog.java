@@ -291,12 +291,12 @@ public final class Dialog {
         ((android.app.Dialog) real).setCanceledOnTouchOutside(arg0);
     }
 
-    public void setContentView(int arg0) {
-        ((android.app.Dialog) real).setContentView(arg0);
-    }
-
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
         ((android.app.Dialog) real).setContentView(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setContentView(int arg0) {
+        ((android.app.Dialog) real).setContentView(arg0);
     }
 
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {
@@ -343,11 +343,11 @@ public final class Dialog {
         ((android.app.Dialog) real).setOwnerActivity(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTitle(int arg0) {
+    public void setTitle(java.lang.CharSequence arg0) {
         ((android.app.Dialog) real).setTitle(arg0);
     }
 
-    public void setTitle(java.lang.CharSequence arg0) {
+    public void setTitle(int arg0) {
         ((android.app.Dialog) real).setTitle(arg0);
     }
 

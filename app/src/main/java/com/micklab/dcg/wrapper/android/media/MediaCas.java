@@ -47,12 +47,12 @@ public final class MediaCas {
         return android.media.MediaCas.isSystemIdSupported(arg0);
     }
 
-    public android.media.MediaCas.Session openSession() throws android.media.MediaCasException {
-        return ((android.media.MediaCas) real).openSession();
+    public com.micklab.dcg.wrapper.android.media.MediaCas.Session openSession() throws android.media.MediaCasException {
+        return com.micklab.dcg.wrapper.android.media.MediaCas.Session.wrap(((android.media.MediaCas) real).openSession());
     }
 
-    public android.media.MediaCas.Session openSession(int arg0, int arg1) throws android.media.MediaCasException {
-        return ((android.media.MediaCas) real).openSession(arg0, arg1);
+    public com.micklab.dcg.wrapper.android.media.MediaCas.Session openSession(int arg0, int arg1) throws android.media.MediaCasException {
+        return com.micklab.dcg.wrapper.android.media.MediaCas.Session.wrap(((android.media.MediaCas) real).openSession(arg0, arg1));
     }
 
     public void processEmm(byte[] arg0) throws android.media.MediaCasException {
@@ -139,8 +139,8 @@ public final class MediaCas {
             ((android.media.MediaCas.EventListener) real).onResourceLost(arg0 == null ? null : arg0.getReal());
         }
 
-        public void onSessionEvent(com.micklab.dcg.wrapper.android.media.MediaCas arg0, android.media.MediaCas.Session arg1, int arg2, int arg3, byte[] arg4) {
-            ((android.media.MediaCas.EventListener) real).onSessionEvent(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3, arg4);
+        public void onSessionEvent(com.micklab.dcg.wrapper.android.media.MediaCas arg0, com.micklab.dcg.wrapper.android.media.MediaCas.Session arg1, int arg2, int arg3, byte[] arg4) {
+            ((android.media.MediaCas.EventListener) real).onSessionEvent(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2, arg3, arg4);
         }
 
     }
@@ -177,6 +177,58 @@ public final class MediaCas {
         public java.lang.String toString() {
             return ((android.media.MediaCas.PluginDescriptor) real).toString();
         }
+
+    }
+    public static final class Session {
+        private static final class __DcgwBridgeToken {
+        }
+
+        private final java.lang.Object real;
+
+        private Session(java.lang.Object real, __DcgwBridgeToken token) {
+            this.real = real;
+        }
+
+        public static com.micklab.dcg.wrapper.android.media.MediaCas.Session wrap(android.media.MediaCas.Session real) {
+            return real == null ? null : new com.micklab.dcg.wrapper.android.media.MediaCas.Session(real, (__DcgwBridgeToken) null);
+        }
+
+        public android.media.MediaCas.Session getReal() {
+            return (android.media.MediaCas.Session) real;
+        }
+
+        public android.media.MediaCas.Session unwrap() {
+            return getReal();
+        }
+
+        public void close() {
+            ((android.media.MediaCas.Session) real).close();
+        }
+
+        public boolean equals(java.lang.Object arg0) {
+            return ((android.media.MediaCas.Session) real).equals(arg0);
+        }
+
+        public byte[] getSessionId() {
+            return ((android.media.MediaCas.Session) real).getSessionId();
+        }
+
+        public void processEcm(byte[] arg0) throws android.media.MediaCasException {
+            ((android.media.MediaCas.Session) real).processEcm(arg0);
+        }
+
+        public void processEcm(byte[] arg0, int arg1, int arg2) throws android.media.MediaCasException {
+            ((android.media.MediaCas.Session) real).processEcm(arg0, arg1, arg2);
+        }
+
+        public void sendSessionEvent(int arg0, int arg1, byte[] arg2) throws android.media.MediaCasException {
+            ((android.media.MediaCas.Session) real).sendSessionEvent(arg0, arg1, arg2);
+        }
+
+        public void setPrivateData(byte[] arg0) throws android.media.MediaCasException {
+            ((android.media.MediaCas.Session) real).setPrivateData(arg0);
+        }
+
 
     }
 }
