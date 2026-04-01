@@ -18,6 +18,8 @@ import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.ExecutionStatus;
 
 public class ResultView extends LinearLayout {
+    private ExecutionResult lastResult = ExecutionResult.idle("Ready", "Create, save, import, export, or run a snippet.");
+    private boolean showReturnValue = true;
     private TextView statusView;
     private TextView headlineView;
     private TextView summaryView;
@@ -65,19 +67,33 @@ public class ResultView extends LinearLayout {
         errorView = findViewById(R.id.resultErrorView);
         detailsLabelView = findViewById(R.id.resultDetailsLabelView);
         detailsView = findViewById(R.id.resultDetailsView);
-        render(ExecutionResult.idle("Ready", "Create, save, import, export, or run a snippet."));
+        render(lastResult);
+    }
+
+    public void setShowReturnValue(boolean showReturnValue) {
+        if (this.showReturnValue == showReturnValue) {
+            return;
+        }
+        this.showReturnValue = showReturnValue;
+        render(lastResult);
     }
 
     public void render(ExecutionResult result) {
         if (result == null) {
             return;
         }
+        lastResult = result;
         statusView.setText(result.getStatusLabel());
+        headlineView.setVisibility(TextUtils.isEmpty(result.getHeadline()) ? GONE : VISIBLE);
         headlineView.setText(result.getHeadline());
         summaryView.setVisibility(TextUtils.isEmpty(result.getSummary()) ? GONE : VISIBLE);
         summaryView.setText(result.getSummary());
         bindSection(stdoutLabelView, stdoutView, result.getStdout(), getResources().getString(R.string.result_stdout_label));
-        bindSection(returnValueLabelView, returnValueView, result.getReturnValue());
+        if (showReturnValue) {
+            bindSection(returnValueLabelView, returnValueView, result.getReturnValue());
+        } else {
+            bindSection(returnValueLabelView, returnValueView, null);
+        }
         bindSection(errorLabelView, errorView, result.getError(), getResources().getString(R.string.result_error_label));
         bindSection(detailsLabelView, detailsView, buildDetails(result));
         bindCopyLogsButton(result);

@@ -739,6 +739,7 @@ id disableHome
 id edit_query
 id edit_text_id
 id end
+id executionLogView
 id expand_activities_button
 id expanded_menu
 id exportButton
@@ -963,7 +964,10 @@ string call_notification_ongoing_text
 string call_notification_screening_text
 string editor_subtitle
 string editor_title
+string execution_log_label
 string language_label
+string output_empty_message
+string output_render_error_message
 string result_copied_message
 string result_details_label
 string result_error_label

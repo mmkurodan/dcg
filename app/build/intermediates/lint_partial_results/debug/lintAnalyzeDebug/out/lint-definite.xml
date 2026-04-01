@@ -370,12 +370,12 @@
         message="The vertically scrolling `ScrollView` should not contain another vertically scrolling widget (`ListView`)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="152"
+            line="166"
             column="10"
-            startOffset="5938"
-            endLine="152"
+            startOffset="6474"
+            endLine="166"
             endColumn="18"
-            endOffset="5946"/>
+            endOffset="6482"/>
     </incident>
 
     <incident
@@ -398,12 +398,12 @@
         </fix-alternatives>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="170"
+            line="184"
             column="10"
-            startOffset="6634"
-            endLine="170"
+            startOffset="7170"
+            endLine="184"
             endColumn="18"
-            endOffset="6642"/>
+            endOffset="7178"/>
     </incident>
 
     <incident
@@ -412,12 +412,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="248"
+            line="218"
             column="53"
-            startOffset="9764"
-            endLine="248"
+            startOffset="8486"
+            endLine="218"
             endColumn="64"
-            endOffset="9775"/>
+            endOffset="8497"/>
     </incident>
 
     <incident
@@ -426,12 +426,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="307"
+            line="277"
             column="58"
-            startOffset="12235"
-            endLine="307"
+            startOffset="10957"
+            endLine="277"
             endColumn="69"
-            endOffset="12246"/>
+            endOffset="10968"/>
     </incident>
 
     <incident
@@ -440,12 +440,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="321"
+            line="291"
             column="61"
-            startOffset="12852"
-            endLine="321"
+            startOffset="11574"
+            endLine="291"
             endColumn="72"
-            endOffset="12863"/>
+            endOffset="11585"/>
     </incident>
 
     <incident

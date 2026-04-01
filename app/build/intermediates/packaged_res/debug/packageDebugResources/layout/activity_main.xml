@@ -145,6 +145,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:text="@string/execution_log_label"
+            android:textColor="@color/textPrimary"
+            android:textStyle="bold" />
+
+        <com.micklab.dcg.ui.ResultView
+            android:id="@+id/executionLogView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/saved_snippets_label"
             android:textColor="@color/textPrimary"
             android:textStyle="bold" />

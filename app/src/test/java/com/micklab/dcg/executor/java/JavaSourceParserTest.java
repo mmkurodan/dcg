@@ -106,7 +106,8 @@ public class JavaSourceParserTest {
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
         assertFalse(rewritten.contains("androidx.appcompat.app.AppCompatActivity"));
-        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.ImageView;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
         assertTrue(rewritten.contains("public static Object buildOutput()"));
         assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
         assertFalse(rewritten.contains("__dcgActivity.onCreate((com.micklab.dcg.wrapper.android.os.Bundle) null);"));
@@ -161,10 +162,53 @@ public class JavaSourceParserTest {
 
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
-        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.PseudoMainActivity;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.ImageView;"));
         assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.graphics.*;"));
-        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
         assertTrue(rewritten.contains("protected void onCreate()"));
         assertTrue(rewritten.contains("Bitmap bmp = Bitmap.createBitmap(400, 300, Bitmap.Config.ARGB_8888);"));
+    }
+
+    @Test
+    public void prepareForCompilationRecognizesImportedAndroidActivitySubclass() {
+        String source = "import android.app.ListActivity;\n"
+                + "public class MainActivity extends ListActivity {\n"
+                + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "MainActivity");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
+    }
+
+    @Test
+    public void prepareForCompilationKeepsGenericWrapperWildcardImportsForPseudoSource() {
+        String source = "import android.app.Activity;\n"
+                + "import android.view.*;\n"
+                + "import android.widget.*;\n"
+                + "public class MainActivity extends Activity {\n"
+                + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                + "    TextView textView = new TextView(this);\n"
+                + "    LinearLayout layout = new LinearLayout(this);\n"
+                + "    layout.setOrientation(android.widget.LinearLayout.VERTICAL);\n"
+                + "    android.view.ViewGroup.LayoutParams params = null;\n"
+                + "    setContentView(layout);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "MainActivity");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.view.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.widget.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.TextView;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.LinearLayout;"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.widget.LinearLayout.VERTICAL"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams params"));
+        assertFalse(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
     }
 }

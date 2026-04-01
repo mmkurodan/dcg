@@ -24,7 +24,10 @@
     <string name="app_name">Dynamic Code Runner</string>
     <string name="editor_subtitle">Java is wired end-to-end today with an Android-compatible ECJ 4.6 bundle. Kotlin and JavaScript already have storage, UI, and executor extension points.</string>
     <string name="editor_title">Dynamic Code Runner</string>
+    <string name="execution_log_label">Execution status and logs</string>
     <string name="language_label">Language</string>
+    <string name="output_empty_message">No rendered result yet. Run a snippet, then open this screen to inspect returned values, images, or interactive UI.</string>
+    <string name="output_render_error_message">The output could not be rendered here. Check the main screen logs for details.</string>
     <string name="result_copied_message">%1$s copied to clipboard</string>
     <string name="result_details_label">Details</string>
     <string name="result_error_label">Error</string>

@@ -1,0 +1,40 @@
+Dynamic Code Runner runtime specification
+========================================
+
+1. Screen responsibilities
+
+- `MainActivity` is the status/log surface. It shows execution state, success/failure, stdout, errors, diagnostics, and action logs in the embedded execution log panel.
+- `OutputActivity` is the rendered result surface. It shows only returned values, text/image output items, and declarative or interactive UI produced by the snippet.
+- Pressing `Run` keeps the user on `MainActivity` so compile/execute progress stays visible there. `OutputActivity` is opened explicitly with `Open output`.
+- Interactive actions triggered inside `OutputActivity` keep rendering their result items on that screen, but their stdout/stderr and failures are published back to the `MainActivity` log panel.
+
+2. Execution stores
+
+- `ExecutionLogStore` owns the latest log/status-oriented `ExecutionResult` for `MainActivity`.
+- `OutputStore` owns the latest rendered-result-oriented `ExecutionResult` for `OutputActivity`.
+- Busy states and non-rendered execution metadata are published only to `ExecutionLogStore`.
+- Completed snippet executions publish the full `ExecutionResult` to both stores so logs and rendered results stay in sync.
+
+3. Java Android wrapper handoff
+
+- Android API references are rewritten through `JavaSourceParser` before compilation.
+- The default rule is: every `android.*` import or qualified reference is rewritten to `com.micklab.dcg.wrapper.android.*`.
+- This rewrite is AST-based for imports and qualified references, so nested Android wrapper types continue to flow through the generated wrapper surface.
+
+4. Pseudo activity exceptions
+
+- MainActivity-style snippets are still rewritten to extend `com.micklab.dcg.wrapper.pseudo.PseudoMainActivity`.
+- Pseudo snippets keep a small explicit override set for pseudo UI types:
+  - `android.widget.TextView`
+  - `android.widget.Button`
+  - `android.widget.EditText`
+  - `android.widget.ImageView`
+  - `android.widget.LinearLayout`
+  - `android.view.View`
+- These overrides are added as explicit pseudo imports so wildcard imports such as `android.view.*` and `android.widget.*` can still be rewritten generically to wrapper packages without losing pseudo widget construction.
+- Qualified name references that need static Android members stay on `com.micklab.dcg.wrapper.android.*`; the pseudo override set is applied to type references/imports, not to every qualified name blindly.
+
+5. Pseudo activity detection
+
+- A snippet is treated as a pseudo activity when its primary class extends `PseudoMainActivity`, an Android/AndroidX `*Activity` superclass, or when a `MainActivity`-style snippet exposes `onCreate(...)` with the pseudo helper patterns already supported by the runner.
+- Imported Android/AndroidX activity subclasses are recognized generically instead of relying on a short hard-coded superclass list.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-04-01T00:15:22" hostname="localhost" time="0.047">
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-04-01T03:13:58" hostname="localhost" time="0.007">
   <properties/>
-  <testcase name="pseudoMainActivityBundleCallbackDelegatesToNoArgOverride" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.026"/>
-  <testcase name="stagedWrapperAssetContainsBitmapNestedClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
-  <testcase name="wrapperJarValidationRequiresBitmapAndNestedConfigClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.004"/>
+  <testcase name="pseudoMainActivityBundleCallbackDelegatesToNoArgOverride" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.002"/>
+  <testcase name="stagedWrapperAssetContainsBitmapNestedClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="wrapperJarValidationRequiresBitmapAndNestedConfigClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
   <testcase name="compilerArgumentsIncludeWrapperClasspathWhenProvided" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
-  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
   <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>

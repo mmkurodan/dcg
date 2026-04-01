@@ -25,8 +25,10 @@ import com.micklab.dcg.executor.java.JavaSourceParser;
 import com.micklab.dcg.model.ExecutionResult;
 import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
+import com.micklab.dcg.output.ExecutionLogStore;
 import com.micklab.dcg.output.OutputStore;
 import com.micklab.dcg.storage.FileManager;
+import com.micklab.dcg.ui.ResultView;
 import com.micklab.dcg.ui.SnippetListAdapter;
 import com.micklab.dcg.util.DiagnosticFormatter;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText titleInput;
     private EditText codeInput;
     private ListView snippetListView;
+    private ResultView executionLogView;
     private Button newButton;
     private Button saveButton;
     private Button deleteButton;
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<Intent> importLauncher;
     private ActivityResultLauncher<String[]> legacyStoragePermissionLauncher;
+    private final ExecutionLogStore.Listener executionLogListener = result ->
+            runOnUiThread(() -> executionLogView.render(result));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         setupButtons();
         ensureSeedSnippet();
         refreshSnippets(null);
+        executionLogView.setShowReturnValue(false);
+        executionLogView.render(ExecutionLogStore.getLatestResult());
     }
 
     @Override
@@ -86,11 +93,25 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ExecutionLogStore.addListener(executionLogListener);
+        executionLogView.render(ExecutionLogStore.getLatestResult());
+    }
+
+    @Override
+    protected void onStop() {
+        ExecutionLogStore.removeListener(executionLogListener);
+        super.onStop();
+    }
+
     private void bindViews() {
         languageSpinner = findViewById(R.id.languageSpinner);
         titleInput = findViewById(R.id.titleInput);
         codeInput = findViewById(R.id.codeInput);
         snippetListView = findViewById(R.id.snippetListView);
+        executionLogView = findViewById(R.id.executionLogView);
         newButton = findViewById(R.id.newButton);
         saveButton = findViewById(R.id.saveButton);
         deleteButton = findViewById(R.id.deleteButton);
@@ -307,11 +328,11 @@ public class MainActivity extends AppCompatActivity {
         setBusy(true, "Running " + saved.getLanguage().getDisplayName() + "...", executor.isSupported()
                 ? "Compiling and executing the current snippet."
                 : "This runtime is still a placeholder executor.");
-        openOutputScreen();
         backgroundExecutor.execute(() -> {
             ExecutionResult result = executor.execute(getApplicationContext(), saved);
             runOnUiThread(() -> {
                 setBusy(false, null, null);
+                ExecutionLogStore.publish(result);
                 OutputStore.publish(result);
                 refreshSnippets(saved.getId());
             });
@@ -398,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
         importButton.setEnabled(!busy);
         exportButton.setEnabled(!busy);
         if (busy) {
-            OutputStore.publish(ExecutionResult.info(headline, details, ""));
+            ExecutionLogStore.publish(ExecutionResult.info(headline, details, ""));
         }
     }
 

@@ -13,7 +13,7 @@ public final class OutputStore {
 
     private static volatile ExecutionResult latestResult = ExecutionResult.idle(
             "Output ready",
-            "Run a snippet to render stdout, images, and interactive UI here.");
+            "Run a snippet to render return values, images, and interactive UI here.");
 
     private OutputStore() {
     }

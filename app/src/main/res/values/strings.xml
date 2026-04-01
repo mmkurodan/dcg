@@ -15,10 +15,13 @@
     <string name="action_import">Import</string>
     <string name="action_export">Export</string>
     <string name="action_copy_logs">Copy logs</string>
+    <string name="execution_log_label">Execution status and logs</string>
     <string name="result_output_label">Output</string>
     <string name="result_stdout_label">stdout</string>
     <string name="result_return_value_label">Return value</string>
     <string name="result_error_label">Error</string>
     <string name="result_details_label">Details</string>
     <string name="result_copied_message">%1$s copied to clipboard</string>
+    <string name="output_empty_message">No rendered result yet. Run a snippet, then open this screen to inspect returned values, images, or interactive UI.</string>
+    <string name="output_render_error_message">The output could not be rendered here. Check the main screen logs for details.</string>
 </resources>

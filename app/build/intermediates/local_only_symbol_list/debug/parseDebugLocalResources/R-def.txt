@@ -18,6 +18,7 @@ drawable panel_selected_background
 drawable result_background
 id codeInput
 id deleteButton
+id executionLogView
 id exportButton
 id importButton
 id languageSpinner
@@ -56,7 +57,10 @@ string action_save
 string app_name
 string editor_subtitle
 string editor_title
+string execution_log_label
 string language_label
+string output_empty_message
+string output_render_error_message
 string result_copied_message
 string result_details_label
 string result_error_label

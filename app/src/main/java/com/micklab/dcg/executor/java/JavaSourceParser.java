@@ -37,12 +37,9 @@ public final class JavaSourceParser {
     private static final String ANDROID_PREFIX = "android.";
     private static final String WRAPPER_PREFIX = "com.micklab.dcg.wrapper.";
     private static final String WRAPPER_ANDROID_PREFIX = WRAPPER_PREFIX + "android.";
-    private static final String GRAPHICS_IMPORT_PREFIX = "android.graphics.";
-    private static final String WRAPPER_GRAPHICS_IMPORT_PREFIX = "com.micklab.dcg.wrapper.android.graphics.";
-    private static final String WRAPPER_GRAPHICS_WILDCARD_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;";
-    private static final String PSEUDO_IMPORT = "import com.micklab.dcg.wrapper.pseudo.*;\n";
+    private static final String ANDROIDX_PREFIX = "androidx.";
+    private static final String PSEUDO_IMPORT_PREFIX = "com.micklab.dcg.wrapper.pseudo.";
     private static final String PSEUDO_GRAPHICS_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;\n";
-    private static final String PSEUDO_BUNDLE_IMPORT = "import com.micklab.dcg.wrapper.android.os.Bundle;\n";
     private static final String PSEUDO_MAIN_ACTIVITY = "com.micklab.dcg.wrapper.pseudo.PseudoMainActivity";
     private static final String PSEUDO_RESULT = "com.micklab.dcg.wrapper.pseudo.PseudoResult";
     private static final String BUILD_OUTPUT_METHOD = "buildOutput";
@@ -51,7 +48,8 @@ public final class JavaSourceParser {
     private static final String PSEUDO_CACHE_FIELD = "__dcgPseudoResultCache";
     private static final String PARSER_FILE_NAME = "Snippet.java";
     private static final String PARSER_ENCODING = "UTF-8";
-    private static final Map<String, String> PSEUDO_TYPE_REPLACEMENTS = buildPseudoTypeReplacements();
+    private static final Map<String, String> PSEUDO_ANDROID_TYPE_OVERRIDES = buildPseudoAndroidTypeOverrides();
+    private static final List<String> PSEUDO_REQUIRED_IMPORTS = buildPseudoRequiredImports();
 
     private JavaSourceParser() {
     }
@@ -69,9 +67,19 @@ public final class JavaSourceParser {
             pseudoRewriteCount = pseudoRewrite.rewriteCount;
         }
 
-        RewriteResult rewriteResult = rewriteAndroidReferences(pseudoRewritten);
+        RewriteResult rewriteResult = rewriteAndroidReferences(
+                pseudoRewritten,
+                pseudoMainActivity ? PSEUDO_ANDROID_TYPE_OVERRIDES : null);
         String rewrittenSource = rewriteResult.rewrittenSource;
         if (pseudoMainActivity) {
+            ImportInsertionResult pseudoImports = ensureImports(rewrittenSource, PSEUDO_REQUIRED_IMPORTS);
+            rewrittenSource = pseudoImports.rewrittenSource;
+            pseudoRewriteCount += pseudoImports.addedImportCount;
+            String withGraphicsImport = ensureImport(rewrittenSource, PSEUDO_GRAPHICS_IMPORT);
+            if (!withGraphicsImport.equals(rewrittenSource)) {
+                rewrittenSource = withGraphicsImport;
+                pseudoRewriteCount++;
+            }
             rewrittenSource = injectPseudoHelpers(rewrittenSource, initialParsed.getClassName());
         }
         ParsedJavaSource parsed = parse(rewrittenSource, fallbackTitle);
@@ -107,17 +115,12 @@ public final class JavaSourceParser {
         if (source == null || source.trim().isEmpty()) {
             return false;
         }
-        if (source.contains("extends PseudoMainActivity")
-                || source.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity")) {
+        String superclass = detectPrimaryTypeSuperclass(source, className);
+        if (isPseudoMainActivitySuperclass(superclass)
+                || isAndroidActivitySuperclass(source, superclass)) {
             return true;
         }
         boolean hasOnCreate = ON_CREATE_PATTERN.matcher(source).find();
-        if (source.contains("extends AppCompatActivity")
-                || source.contains("extends Activity")
-                || source.contains("extends ComponentActivity")
-                || source.contains("extends FragmentActivity")) {
-            return true;
-        }
         if (className != null && "MainActivity".equals(className) && hasOnCreate) {
             return true;
         }
@@ -235,65 +238,13 @@ public final class JavaSourceParser {
             rewriteCount += androidxCount;
         }
 
-        for (Map.Entry<String, String> entry : PSEUDO_TYPE_REPLACEMENTS.entrySet()) {
-            String originalType = entry.getKey();
-            String replacementType = entry.getValue();
-            int qualifiedCount = countLiteralOccurrences(rewritten, originalType);
-            if (qualifiedCount > 0) {
-                rewritten = rewritten.replace(originalType, replacementType);
-                rewriteCount += qualifiedCount;
-            }
-
-            String importStatement = "import " + originalType + ";";
-            String replacementImport = "import " + replacementType + ";";
-            int importCount = countLiteralOccurrences(rewritten, importStatement);
-            if (importCount > 0) {
-                rewritten = rewritten.replace(importStatement, replacementImport);
-                rewriteCount += importCount;
-            }
-        }
-
-        int widgetWildcardCount = countLiteralOccurrences(rewritten, "import android.widget.*;");
-        if (widgetWildcardCount > 0) {
-            rewritten = rewritten.replace("import android.widget.*;", PSEUDO_IMPORT.trim());
-            rewriteCount += widgetWildcardCount;
-        }
-
-        int viewWildcardCount = countLiteralOccurrences(rewritten, "import android.view.*;");
-        if (viewWildcardCount > 0) {
-            rewritten = rewritten.replace("import android.view.*;", PSEUDO_IMPORT.trim());
-            rewriteCount += viewWildcardCount;
-        }
-
         String declarationRewritten = rewritePrimaryTypeDeclaration(rewritten, className);
         if (!declarationRewritten.equals(rewritten)) {
             rewritten = declarationRewritten;
             rewriteCount++;
         }
 
-        String withPseudoImport = ensurePseudoImport(rewritten);
-        if (!withPseudoImport.equals(rewritten)) {
-            rewriteCount++;
-        }
-        rewritten = withPseudoImport;
-
-        String withGraphicsImport = ensureImport(rewritten, PSEUDO_GRAPHICS_IMPORT);
-        if (!withGraphicsImport.equals(rewritten)) {
-            rewriteCount++;
-        }
-        rewritten = withGraphicsImport;
-
-        String withBundleImport = ensureImport(rewritten, PSEUDO_BUNDLE_IMPORT);
-        if (!withBundleImport.equals(rewritten)) {
-            rewriteCount++;
-        }
-        rewritten = withBundleImport;
-
         return new PseudoRewriteResult(rewritten, rewriteCount);
-    }
-
-    private static String ensurePseudoImport(String source) {
-        return ensureImport(source, PSEUDO_IMPORT);
     }
 
     private static String ensureImport(String source, String importStatement) {
@@ -313,6 +264,22 @@ public final class JavaSourceParser {
             return source.substring(0, insertPosition) + "\n" + importStatement + source.substring(insertPosition);
         }
         return importStatement + source;
+    }
+
+    private static ImportInsertionResult ensureImports(String source, List<String> importStatements) {
+        String rewritten = source == null ? "" : source;
+        int addedImportCount = 0;
+        if (importStatements == null) {
+            return new ImportInsertionResult(rewritten, 0);
+        }
+        for (String importStatement : importStatements) {
+            String withImport = ensureImport(rewritten, importStatement);
+            if (!withImport.equals(rewritten)) {
+                rewritten = withImport;
+                addedImportCount++;
+            }
+        }
+        return new ImportInsertionResult(rewritten, addedImportCount);
     }
 
     private static String rewritePrimaryTypeDeclaration(String source, String className) {
@@ -340,7 +307,7 @@ public final class JavaSourceParser {
         return source.substring(0, matcher.start()) + replacement + source.substring(matcher.end());
     }
 
-    private static RewriteResult rewriteAndroidReferences(String source) {
+    private static RewriteResult rewriteAndroidReferences(String source, Map<String, String> typeOverrides) {
         if (source == null || source.isEmpty() || !source.contains(ANDROID_PREFIX)) {
             return new RewriteResult(source == null ? "" : source, 0, false);
         }
@@ -350,8 +317,8 @@ public final class JavaSourceParser {
         }
 
         List<Replacement> replacements = new ArrayList<>();
-        collectImportReplacements(source, compilationUnit, replacements);
-        collectQualifiedReferenceReplacements(source, compilationUnit, replacements);
+        collectImportReplacements(source, compilationUnit, replacements, typeOverrides);
+        collectQualifiedReferenceReplacements(source, compilationUnit, replacements, typeOverrides);
         if (replacements.isEmpty()) {
             return new RewriteResult(source, 0, true);
         }
@@ -377,7 +344,8 @@ public final class JavaSourceParser {
     private static void collectImportReplacements(
             String source,
             CompilationUnitDeclaration compilationUnit,
-            List<Replacement> replacements) {
+            List<Replacement> replacements,
+            Map<String, String> typeOverrides) {
         ImportReference[] imports = compilationUnit.imports;
         if (imports == null || imports.length == 0) {
             return;
@@ -389,19 +357,28 @@ public final class JavaSourceParser {
                 continue;
             }
             String original = source.substring(start, endExclusive);
-            String rewritten = rewriteImportStatement(original);
+            String rewritten = rewriteImportStatement(original, typeOverrides);
             if (!original.equals(rewritten)) {
                 addReplacement(replacements, start, endExclusive, rewritten);
             }
         }
     }
 
-    private static String rewriteImportStatement(String statement) {
-        if (isAndroidGraphicsWildcardImport(statement)) {
-            return WRAPPER_GRAPHICS_WILDCARD_IMPORT;
+    private static String rewriteImportStatement(String statement, Map<String, String> typeOverrides) {
+        if (statement == null) {
+            return "";
         }
-        if (statement != null && statement.contains(WRAPPER_ANDROID_PREFIX)) {
+        if (statement.contains(WRAPPER_ANDROID_PREFIX) || statement.contains(PSEUDO_IMPORT_PREFIX)) {
             return statement;
+        }
+        String importedReference = extractImportReference(statement);
+        if (importedReference != null
+                && !importedReference.endsWith(".*")
+                && !statement.trim().startsWith("import static ")) {
+            String override = overrideTypeName(importedReference, typeOverrides);
+            if (override != null) {
+                return statement.replace(importedReference, override);
+            }
         }
         int androidIndex = statement.indexOf(ANDROID_PREFIX);
         if (androidIndex < 0) {
@@ -412,37 +389,26 @@ public final class JavaSourceParser {
                 + statement.substring(androidIndex + ANDROID_PREFIX.length());
     }
 
-    private static boolean isAndroidGraphicsWildcardImport(String statement) {
-        if (statement == null) {
-            return false;
-        }
-        String trimmed = statement.trim();
-        if (!trimmed.startsWith("import")) {
-            return false;
-        }
-        if (trimmed.startsWith("import static")) {
-            return false;
-        }
-        if (trimmed.endsWith(WRAPPER_GRAPHICS_IMPORT_PREFIX + "*;")) {
-            return true;
-        }
-        return trimmed.endsWith(GRAPHICS_IMPORT_PREFIX + "*;");
-    }
-
     private static void collectQualifiedReferenceReplacements(
             String source,
             CompilationUnitDeclaration compilationUnit,
-            List<Replacement> replacements) {
-        compilationUnit.traverse(new AndroidReferenceCollector(source, replacements), null, true);
+            List<Replacement> replacements,
+            Map<String, String> typeOverrides) {
+        compilationUnit.traverse(new AndroidReferenceCollector(source, replacements, typeOverrides), null, true);
     }
 
     private static final class AndroidReferenceCollector extends ASTVisitor {
         private final String source;
         private final List<Replacement> replacements;
+        private final Map<String, String> typeOverrides;
 
-        private AndroidReferenceCollector(String source, List<Replacement> replacements) {
+        private AndroidReferenceCollector(
+                String source,
+                List<Replacement> replacements,
+                Map<String, String> typeOverrides) {
             this.source = source;
             this.replacements = replacements;
+            this.typeOverrides = typeOverrides;
         }
 
         @Override
@@ -452,53 +418,53 @@ public final class JavaSourceParser {
 
         @Override
         public boolean visit(QualifiedTypeReference typeReference, BlockScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(QualifiedTypeReference typeReference, ClassScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(ArrayQualifiedTypeReference typeReference, BlockScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(ArrayQualifiedTypeReference typeReference, ClassScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(ParameterizedQualifiedTypeReference typeReference, BlockScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(ParameterizedQualifiedTypeReference typeReference, ClassScope scope) {
-            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens);
+            replaceQualifiedTokens(typeReference.sourcePositions, typeReference.tokens, true);
             return true;
         }
 
         @Override
         public boolean visit(QualifiedNameReference nameReference, BlockScope scope) {
-            replaceQualifiedTokens(nameReference.sourcePositions, nameReference.tokens);
+            replaceQualifiedTokens(nameReference.sourcePositions, nameReference.tokens, false);
             return true;
         }
 
         @Override
         public boolean visit(QualifiedNameReference nameReference, ClassScope scope) {
-            replaceQualifiedTokens(nameReference.sourcePositions, nameReference.tokens);
+            replaceQualifiedTokens(nameReference.sourcePositions, nameReference.tokens, false);
             return true;
         }
 
-        private void replaceQualifiedTokens(long[] sourcePositions, char[][] tokens) {
+        private void replaceQualifiedTokens(long[] sourcePositions, char[][] tokens, boolean allowOverrides) {
             if (sourcePositions == null || tokens == null || sourcePositions.length == 0 || tokens.length == 0) {
                 return;
             }
@@ -510,7 +476,10 @@ public final class JavaSourceParser {
             if (!isValidRange(source, start, endExclusive)) {
                 return;
             }
-            String replacement = WRAPPER_PREFIX + joinTokens(tokens);
+            String qualifiedName = joinTokens(tokens);
+            String replacement = rewriteAndroidTypeName(
+                    qualifiedName,
+                    allowOverrides ? typeOverrides : null);
             addReplacement(replacements, start, endExclusive, replacement);
         }
     }
@@ -627,9 +596,107 @@ public final class JavaSourceParser {
         }
     }
 
-    private static Map<String, String> buildPseudoTypeReplacements() {
+    private static String detectPrimaryTypeSuperclass(String source, String className) {
+        if (source == null || className == null || className.trim().isEmpty()) {
+            return null;
+        }
+        Pattern declarationPattern = Pattern.compile(
+                "(?s)\\bclass\\s+" + Pattern.quote(className) + "\\b([^\\{]*)\\{");
+        Matcher declarationMatcher = declarationPattern.matcher(source);
+        if (!declarationMatcher.find()) {
+            return null;
+        }
+        Matcher extendsMatcher = Pattern.compile("\\bextends\\s+([A-Za-z_][A-Za-z0-9_\\.]*)")
+                .matcher(declarationMatcher.group(1));
+        if (!extendsMatcher.find()) {
+            return null;
+        }
+        return extendsMatcher.group(1);
+    }
+
+    private static boolean isPseudoMainActivitySuperclass(String superclass) {
+        if (superclass == null || superclass.trim().isEmpty()) {
+            return false;
+        }
+        return "PseudoMainActivity".equals(simpleNameOf(superclass))
+                || PSEUDO_MAIN_ACTIVITY.equals(superclass);
+    }
+
+    private static boolean isAndroidActivitySuperclass(String source, String superclass) {
+        if (superclass == null || superclass.trim().isEmpty()) {
+            return false;
+        }
+        String simpleName = simpleNameOf(superclass);
+        if (!simpleName.endsWith("Activity")) {
+            return false;
+        }
+        if (superclass.startsWith(ANDROID_PREFIX) || superclass.startsWith(ANDROIDX_PREFIX)) {
+            return true;
+        }
+        return "Activity".equals(simpleName)
+                || hasImportedType(source, simpleName, ANDROID_PREFIX)
+                || hasImportedType(source, simpleName, ANDROIDX_PREFIX);
+    }
+
+    private static boolean hasImportedType(String source, String simpleName, String packagePrefix) {
+        if (source == null || simpleName == null || simpleName.isEmpty() || packagePrefix == null) {
+            return false;
+        }
+        Pattern importPattern = Pattern.compile(
+                "(?m)^\\s*import\\s+"
+                        + Pattern.quote(packagePrefix)
+                        + "[A-Za-z0-9_\\.]*\\."
+                        + Pattern.quote(simpleName)
+                        + "\\s*;");
+        return importPattern.matcher(source).find();
+    }
+
+    private static String simpleNameOf(String typeName) {
+        if (typeName == null || typeName.isEmpty()) {
+            return "";
+        }
+        int lastDot = typeName.lastIndexOf('.');
+        return lastDot < 0 ? typeName : typeName.substring(lastDot + 1);
+    }
+
+    private static String extractImportReference(String statement) {
+        if (statement == null) {
+            return null;
+        }
+        String trimmed = statement.trim();
+        if (!trimmed.startsWith("import ")) {
+            return null;
+        }
+        String body = trimmed.substring("import ".length()).trim();
+        if (body.startsWith("static ")) {
+            body = body.substring("static ".length()).trim();
+        }
+        if (body.endsWith(";")) {
+            body = body.substring(0, body.length() - 1).trim();
+        }
+        return body.isEmpty() ? null : body;
+    }
+
+    private static String overrideTypeName(String androidTypeName, Map<String, String> typeOverrides) {
+        if (androidTypeName == null || typeOverrides == null || typeOverrides.isEmpty()) {
+            return null;
+        }
+        return typeOverrides.get(androidTypeName);
+    }
+
+    private static String rewriteAndroidTypeName(String androidTypeName, Map<String, String> typeOverrides) {
+        String override = overrideTypeName(androidTypeName, typeOverrides);
+        if (override != null) {
+            return override;
+        }
+        if (androidTypeName == null || !androidTypeName.startsWith(ANDROID_PREFIX)) {
+            return androidTypeName == null ? "" : androidTypeName;
+        }
+        return WRAPPER_PREFIX + androidTypeName;
+    }
+
+    private static Map<String, String> buildPseudoAndroidTypeOverrides() {
         LinkedHashMap<String, String> replacements = new LinkedHashMap<>();
-        replacements.put("android.os.Bundle", "com.micklab.dcg.wrapper.android.os.Bundle");
         replacements.put("android.widget.TextView", "com.micklab.dcg.wrapper.pseudo.TextView");
         replacements.put("android.widget.Button", "com.micklab.dcg.wrapper.pseudo.Button");
         replacements.put("android.widget.EditText", "com.micklab.dcg.wrapper.pseudo.EditText");
@@ -637,6 +704,15 @@ public final class JavaSourceParser {
         replacements.put("android.widget.LinearLayout", "com.micklab.dcg.wrapper.pseudo.LinearLayout");
         replacements.put("android.view.View", "com.micklab.dcg.wrapper.pseudo.View");
         return replacements;
+    }
+
+    private static List<String> buildPseudoRequiredImports() {
+        List<String> imports = new ArrayList<>();
+        imports.add("import " + PSEUDO_MAIN_ACTIVITY + ";\n");
+        for (String overrideType : PSEUDO_ANDROID_TYPE_OVERRIDES.values()) {
+            imports.add("import " + overrideType + ";\n");
+        }
+        return imports;
     }
 
     private static final class RewriteResult {
@@ -660,6 +736,16 @@ public final class JavaSourceParser {
             this.start = start;
             this.endExclusive = endExclusive;
             this.replacementText = replacementText;
+        }
+    }
+
+    private static final class ImportInsertionResult {
+        private final String rewrittenSource;
+        private final int addedImportCount;
+
+        private ImportInsertionResult(String rewrittenSource, int addedImportCount) {
+            this.rewrittenSource = rewrittenSource == null ? "" : rewrittenSource;
+            this.addedImportCount = Math.max(0, addedImportCount);
         }
     }
 

@@ -22,8 +22,8 @@ import androidx.core.content.ContextCompat;
 import com.micklab.dcg.model.DynamicUiRequest;
 import com.micklab.dcg.model.ExecutionOutputItem;
 import com.micklab.dcg.model.ExecutionResult;
-import com.micklab.dcg.model.ExecutionStatus;
 import com.micklab.dcg.output.DynamicOutputRuntime;
+import com.micklab.dcg.output.ExecutionLogStore;
 import com.micklab.dcg.output.OutputModelJsonParser;
 import com.micklab.dcg.output.OutputStore;
 import com.micklab.dcg.util.DiagnosticFormatter;
@@ -80,12 +80,9 @@ public class OutputActivity extends AppCompatActivity {
 
     private void renderResult(ExecutionResult result) {
         ExecutionResult safeResult = result == null
-                ? ExecutionResult.idle("Output ready", "Run a snippet to render stdout, images, and interactive UI here.")
+                ? ExecutionResult.idle("Output ready", "Run a snippet to render return values, images, and interactive UI here.")
                 : result;
         contentLayout.removeAllViews();
-        addView(contentLayout, buildHeader(safeResult));
-
-        addTextSection(contentLayout, getString(R.string.result_stdout_label), safeResult.getStdout());
         boolean renderedOutputModel = renderOutputModelJson(
                 contentLayout,
                 safeResult.getOutputModelJson(),
@@ -94,44 +91,10 @@ public class OutputActivity extends AppCompatActivity {
             renderOutputItems(contentLayout, safeResult.getOutputItems());
         }
         addTextSection(contentLayout, getString(R.string.result_return_value_label), safeResult.getReturnValue());
-        addTextSection(contentLayout, getString(R.string.result_error_label), safeResult.getError());
-        addTextSection(contentLayout, getString(R.string.result_details_label), buildDetails(safeResult));
 
-        if (contentLayout.getChildCount() == 1) {
-            addTextSection(contentLayout, getString(R.string.result_output_label), "No execution output yet.");
+        if (contentLayout.getChildCount() == 0) {
+            addTextSection(contentLayout, getString(R.string.result_output_label), getString(R.string.output_empty_message));
         }
-    }
-
-    private View buildHeader(ExecutionResult result) {
-        LinearLayout panel = createPanel();
-
-        TextView statusView = new TextView(this);
-        statusView.setText(result.getStatusLabel());
-        statusView.setTextColor(colorFor(result.getStatus()));
-        statusView.setTypeface(Typeface.DEFAULT_BOLD);
-        statusView.setTextSize(14);
-        addView(panel, statusView);
-
-        if (!TextUtils.isEmpty(result.getHeadline())) {
-            TextView headlineView = new TextView(this);
-            headlineView.setText(result.getHeadline());
-            headlineView.setTextColor(color(R.color.textPrimary));
-            headlineView.setTextSize(24);
-            headlineView.setTypeface(Typeface.DEFAULT_BOLD);
-            setTopMargin(headlineView, 8);
-            addView(panel, headlineView);
-        }
-
-        if (!TextUtils.isEmpty(result.getSummary())) {
-            TextView summaryView = new TextView(this);
-            summaryView.setText(result.getSummary());
-            summaryView.setTextColor(color(R.color.textSecondary));
-            summaryView.setTextSize(15);
-            setTopMargin(summaryView, 8);
-            addView(panel, summaryView);
-        }
-
-        return panel;
     }
 
     private void renderOutputItems(LinearLayout parent, List<ExecutionOutputItem> items) {
@@ -210,7 +173,14 @@ public class OutputActivity extends AppCompatActivity {
             addView(interactiveRoot, actionOutputLayout);
             addView(panel, interactiveRoot);
         } catch (Exception exception) {
-            addTextSection(panel, getString(R.string.result_error_label), DiagnosticFormatter.formatThrowable(exception));
+            ExecutionLogStore.publish(ExecutionResult.runtimeError(
+                    "Output rendering failed",
+                    "Interactive output could not be rendered.",
+                    "",
+                    DiagnosticFormatter.formatThrowable(exception),
+                    "",
+                    -1L));
+            addView(panel, createBodyText(getString(R.string.output_render_error_message)));
         }
         return panel;
     }
@@ -375,11 +345,18 @@ public class OutputActivity extends AppCompatActivity {
                 values.put(entry.getKey(), text == null ? "" : text.toString());
             }
             DynamicOutputRuntime.ActionOutput actionOutput = DynamicOutputRuntime.invokeAction(request, action, values, this);
+            publishActionLog(action, actionOutput);
             renderActionOutput(actionOutputLayout, actionOutput);
         } catch (Exception exception) {
             actionOutputLayout.removeAllViews();
-            actionOutputLayout.setVisibility(View.VISIBLE);
-            addTextSection(actionOutputLayout, getString(R.string.result_error_label), DiagnosticFormatter.formatThrowable(exception));
+            actionOutputLayout.setVisibility(View.GONE);
+            ExecutionLogStore.publish(ExecutionResult.runtimeError(
+                    "Interactive action failed",
+                    "Action \"" + action + "\" threw an exception.",
+                    "",
+                    DiagnosticFormatter.formatThrowable(exception),
+                    "",
+                    -1L));
         }
     }
 
@@ -390,11 +367,23 @@ public class OutputActivity extends AppCompatActivity {
             return;
         }
 
-        addTextSection(actionOutputLayout, getString(R.string.result_stdout_label), actionOutput.getStdout());
-        addTextSection(actionOutputLayout, getString(R.string.result_error_label), actionOutput.getStderr());
         renderOutputItems(actionOutputLayout, actionOutput.getOutputItems());
 
         actionOutputLayout.setVisibility(actionOutputLayout.getChildCount() == 0 ? View.GONE : View.VISIBLE);
+    }
+
+    private void publishActionLog(String action, DynamicOutputRuntime.ActionOutput actionOutput) {
+        if (actionOutput == null) {
+            return;
+        }
+        ExecutionLogStore.publish(ExecutionResult.success(
+                "Interactive action succeeded",
+                "Action \"" + action + "\" finished.",
+                actionOutput.getStdout(),
+                "",
+                actionOutput.getStderr(),
+                "",
+                -1L));
     }
 
     private void addTextSection(LinearLayout parent, String label, String text) {
@@ -450,35 +439,6 @@ public class OutputActivity extends AppCompatActivity {
         drawable.setColor(color(R.color.panel));
         drawable.setStroke(dp(1), color(R.color.stroke));
         return drawable;
-    }
-
-    private String buildDetails(ExecutionResult result) {
-        StringBuilder builder = new StringBuilder();
-        if (!TextUtils.isEmpty(result.getDetails())) {
-            builder.append(result.getDetails());
-        }
-        if (result.getDurationMs() >= 0L) {
-            if (builder.length() > 0) {
-                builder.append("\n\n");
-            }
-            builder.append("Duration: ").append(result.getDurationMs()).append(" ms");
-        }
-        return builder.toString();
-    }
-
-    private int colorFor(ExecutionStatus status) {
-        if (status == ExecutionStatus.SUCCESS) {
-            return color(R.color.success);
-        }
-        if (status == ExecutionStatus.COMPILATION_ERROR
-                || status == ExecutionStatus.RUNTIME_ERROR
-                || status == ExecutionStatus.IO_ERROR) {
-            return color(R.color.error);
-        }
-        if (status == ExecutionStatus.UNSUPPORTED) {
-            return color(R.color.warning);
-        }
-        return color(R.color.info);
     }
 
     private Collection<?> asCollection(Object value) {
@@ -554,7 +514,13 @@ public class OutputActivity extends AppCompatActivity {
             addView(parent, panel);
             return true;
         } catch (Exception exception) {
-            addTextSection(parent, getString(R.string.result_error_label), DiagnosticFormatter.formatThrowable(exception));
+            ExecutionLogStore.publish(ExecutionResult.runtimeError(
+                    "Output rendering failed",
+                    "The output model could not be rendered.",
+                    "",
+                    DiagnosticFormatter.formatThrowable(exception),
+                    "",
+                    -1L));
             return false;
         }
     }
