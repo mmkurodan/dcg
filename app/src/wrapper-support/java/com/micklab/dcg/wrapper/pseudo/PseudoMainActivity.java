@@ -6,7 +6,11 @@ import com.micklab.dcg.wrapper.android.os.Bundle;
 public class PseudoMainActivity {
     private final OutputModel outputModel = new OutputModel();
 
+    protected void onCreate() {
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
+        onCreate();
     }
 
     protected final void setContentView(Object contentView) {

@@ -126,4 +126,45 @@ public class JavaSourceParserTest {
         assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
         assertTrue(rewritten.contains("__dcgActivity.onCreate(null);"));
     }
+
+    @Test
+    public void prepareForCompilationDoesNotDoubleWrapBundleImports() {
+        String source = "import android.os.Bundle;\n"
+                + "public class HelloJava {\n"
+                + "  protected void onCreate(Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
+        assertTrue(rewritten.contains("protected void onCreate(Bundle savedInstanceState)"));
+        assertFalse(rewritten.contains("com.micklab.dcg.wrapper.com.micklab.dcg.wrapper.android.os.Bundle"));
+    }
+
+    @Test
+    public void prepareForCompilationSupportsDirectPseudoMainActivitySubclassWithoutBundleOnCreate() {
+        String source = "public class HelloJava extends PseudoMainActivity {\n"
+                + "  @Override\n"
+                + "  protected void onCreate() {\n"
+                + "    Bitmap bmp = Bitmap.createBitmap(400, 300, Bitmap.Config.ARGB_8888);\n"
+                + "    Canvas canvas = new Canvas(bmp);\n"
+                + "    canvas.drawColor(Color.WHITE);\n"
+                + "    Paint paint = new Paint();\n"
+                + "    drawBitmap(bmp);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.graphics.*;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
+        assertTrue(rewritten.contains("protected void onCreate()"));
+        assertTrue(rewritten.contains("Bitmap bmp = Bitmap.createBitmap(400, 300, Bitmap.Config.ARGB_8888);"));
+    }
 }

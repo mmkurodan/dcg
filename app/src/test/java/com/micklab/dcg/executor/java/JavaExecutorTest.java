@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipFile;
 
+import com.micklab.dcg.wrapper.android.os.Bundle;
+import com.micklab.dcg.wrapper.pseudo.PseudoMainActivity;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -151,5 +154,27 @@ public class JavaExecutorTest {
         String guidance = com.micklab.dcg.util.DiagnosticFormatter.formatEntrypointGuidance("demo.MainActivity");
         assertTrue(guidance.contains("build"));
         assertTrue(guidance.contains("MainActivity-style onCreate()"));
+    }
+
+    @Test
+    public void pseudoMainActivityBundleCallbackDelegatesToNoArgOverride() {
+        NoArgPseudoActivity activity = new NoArgPseudoActivity();
+
+        activity.trigger();
+
+        assertTrue(activity.invoked);
+    }
+
+    public static final class NoArgPseudoActivity extends PseudoMainActivity {
+        private boolean invoked;
+
+        @Override
+        protected void onCreate() {
+            invoked = true;
+        }
+
+        void trigger() {
+            onCreate((Bundle) null);
+        }
     }
 }

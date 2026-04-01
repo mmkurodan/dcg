@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.executor.java.JavaSourceParserTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-03-31T21:11:17" hostname="localhost" time="0.651">
+<testsuite name="com.micklab.dcg.executor.java.JavaSourceParserTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-04-01T00:15:22" hostname="localhost" time="0.503">
   <properties/>
-  <testcase name="prepareForCompilationRewritesAndroidImportsAndQualifiedTypes" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.61"/>
-  <testcase name="prepareForCompilationRewritesAndroidGraphicsWildcardImport" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.005"/>
+  <testcase name="prepareForCompilationRewritesAndroidImportsAndQualifiedTypes" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.445"/>
+  <testcase name="prepareForCompilationRewritesAndroidGraphicsWildcardImport" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.009"/>
   <testcase name="prepareForCompilationLeavesNonAndroidSourceUntouched" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
-  <testcase name="prepareForCompilationRewritesPseudoMainActivitySource" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.013"/>
+  <testcase name="prepareForCompilationRewritesPseudoMainActivitySource" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.009"/>
   <testcase name="parseRejectsMissingTypeDeclaration" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
-  <testcase name="prepareForCompilationRewritesQualifiedBundleForPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.003"/>
-  <testcase name="parseBuildsQualifiedClassName" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.007"/>
+  <testcase name="prepareForCompilationDoesNotDoubleWrapBundleImports" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.01"/>
+  <testcase name="prepareForCompilationRewritesQualifiedBundleForPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.005"/>
+  <testcase name="prepareForCompilationSupportsDirectPseudoMainActivitySubclassWithoutBundleOnCreate" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.008"/>
+  <testcase name="parseBuildsQualifiedClassName" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
   <testcase name="prepareForCompilationPreservesNestedWrapperReferences" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

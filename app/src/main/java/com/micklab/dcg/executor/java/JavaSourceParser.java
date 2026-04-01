@@ -34,7 +34,6 @@ public final class JavaSourceParser {
     private static final Pattern TYPE_PATTERN = Pattern.compile("(?m)^\\s*(?:public\\s+)?(?:final\\s+|abstract\\s+)?(?:class|interface|enum)\\s+([A-Za-z_][A-Za-z0-9_]*)");
     private static final Pattern ON_CREATE_PATTERN = Pattern.compile("\\bonCreate\\s*\\(");
     private static final Pattern ANDROIDX_IMPORT_PATTERN = Pattern.compile("(?m)^\\s*import\\s+androidx\\.[^;]+;\\s*\\n?");
-    private static final Pattern PSEUDO_IMPORT_PATTERN = Pattern.compile("(?m)^\\s*import\\s+com\\.micklab\\.dcg\\.wrapper\\.pseudo\\.\\*;\\s*$");
     private static final String ANDROID_PREFIX = "android.";
     private static final String WRAPPER_PREFIX = "com.micklab.dcg.wrapper.";
     private static final String WRAPPER_ANDROID_PREFIX = WRAPPER_PREFIX + "android.";
@@ -42,6 +41,8 @@ public final class JavaSourceParser {
     private static final String WRAPPER_GRAPHICS_IMPORT_PREFIX = "com.micklab.dcg.wrapper.android.graphics.";
     private static final String WRAPPER_GRAPHICS_WILDCARD_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;";
     private static final String PSEUDO_IMPORT = "import com.micklab.dcg.wrapper.pseudo.*;\n";
+    private static final String PSEUDO_GRAPHICS_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;\n";
+    private static final String PSEUDO_BUNDLE_IMPORT = "import com.micklab.dcg.wrapper.android.os.Bundle;\n";
     private static final String PSEUDO_MAIN_ACTIVITY = "com.micklab.dcg.wrapper.pseudo.PseudoMainActivity";
     private static final String PSEUDO_RESULT = "com.micklab.dcg.wrapper.pseudo.PseudoResult";
     private static final String BUILD_OUTPUT_METHOD = "buildOutput";
@@ -105,6 +106,10 @@ public final class JavaSourceParser {
     public static boolean isPseudoMainActivitySource(String source, String className) {
         if (source == null || source.trim().isEmpty()) {
             return false;
+        }
+        if (source.contains("extends PseudoMainActivity")
+                || source.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity")) {
+            return true;
         }
         boolean hasOnCreate = ON_CREATE_PATTERN.matcher(source).find();
         if (source.contains("extends AppCompatActivity")
@@ -230,8 +235,6 @@ public final class JavaSourceParser {
             rewriteCount += androidxCount;
         }
 
-        rewritten = ensurePseudoImport(rewritten);
-
         for (Map.Entry<String, String> entry : PSEUDO_TYPE_REPLACEMENTS.entrySet()) {
             String originalType = entry.getKey();
             String replacementType = entry.getValue();
@@ -268,19 +271,48 @@ public final class JavaSourceParser {
             rewriteCount++;
         }
 
+        String withPseudoImport = ensurePseudoImport(rewritten);
+        if (!withPseudoImport.equals(rewritten)) {
+            rewriteCount++;
+        }
+        rewritten = withPseudoImport;
+
+        String withGraphicsImport = ensureImport(rewritten, PSEUDO_GRAPHICS_IMPORT);
+        if (!withGraphicsImport.equals(rewritten)) {
+            rewriteCount++;
+        }
+        rewritten = withGraphicsImport;
+
+        String withBundleImport = ensureImport(rewritten, PSEUDO_BUNDLE_IMPORT);
+        if (!withBundleImport.equals(rewritten)) {
+            rewriteCount++;
+        }
+        rewritten = withBundleImport;
+
         return new PseudoRewriteResult(rewritten, rewriteCount);
     }
 
     private static String ensurePseudoImport(String source) {
-        if (source == null || PSEUDO_IMPORT_PATTERN.matcher(source).find()) {
-            return source == null ? "" : source;
+        return ensureImport(source, PSEUDO_IMPORT);
+    }
+
+    private static String ensureImport(String source, String importStatement) {
+        if (source == null) {
+            return "";
+        }
+        if (importStatement == null || importStatement.isEmpty()) {
+            return source;
+        }
+        String trimmedImport = importStatement.trim();
+        if (source.contains(trimmedImport)) {
+            return source;
         }
         Matcher packageMatcher = PACKAGE_PATTERN.matcher(source);
         if (packageMatcher.find()) {
             int insertPosition = packageMatcher.end();
-            return source.substring(0, insertPosition) + "\n" + PSEUDO_IMPORT + source.substring(insertPosition);
+            return source.substring(0, insertPosition) + "\n" + importStatement + source.substring(insertPosition);
         }
-        return PSEUDO_IMPORT + source;
+        return importStatement + source;
     }
 
     private static String rewritePrimaryTypeDeclaration(String source, String className) {
@@ -367,6 +399,9 @@ public final class JavaSourceParser {
     private static String rewriteImportStatement(String statement) {
         if (isAndroidGraphicsWildcardImport(statement)) {
             return WRAPPER_GRAPHICS_WILDCARD_IMPORT;
+        }
+        if (statement != null && statement.contains(WRAPPER_ANDROID_PREFIX)) {
+            return statement;
         }
         int androidIndex = statement.indexOf(ANDROID_PREFIX);
         if (androidIndex < 0) {
