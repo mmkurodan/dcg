@@ -127,12 +127,12 @@ public final class Transition {
         return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.Transition) real).removeListener(arg0 == null ? null : arg0.getReal()));
     }
 
-    public com.micklab.dcg.wrapper.android.transition.Transition removeTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
-        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.Transition) real).removeTarget(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.transition.Transition removeTarget(int arg0) {
         return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.Transition) real).removeTarget(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.transition.Transition removeTarget(com.micklab.dcg.wrapper.android.view.View arg0) {
+        return com.micklab.dcg.wrapper.android.transition.Transition.wrap(((android.transition.Transition) real).removeTarget(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.transition.Transition removeTarget(java.lang.String arg0) {

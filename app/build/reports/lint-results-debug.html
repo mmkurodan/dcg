@@ -179,7 +179,7 @@ document.getElementById(id).style.display = 'none';
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Lint Report: 18 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Apr 01 09:52:38 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Apr 01 11:36:57 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -259,14 +259,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:343</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 340 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
-<span class="lineno"> 341 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
-<span class="lineno"> 342 </span>        }
-<span class="caretline"><span class="lineno"> 343 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 344 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
-<span class="lineno"> 345 </span>                || <span class="string">"image"</span>.equals(normalizedType)
-<span class="lineno"> 346 </span>                || <span class="string">"input"</span>.equals(normalizedType)
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:344</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 341 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
+<span class="lineno"> 342 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 343 </span>        }
+<span class="caretline"><span class="lineno"> 344 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 345 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
+<span class="lineno"> 346 </span>                || <span class="string">"image"</span>.equals(normalizedType)
+<span class="lineno"> 347 </span>                || <span class="string">"input"</span>.equals(normalizedType)
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:218</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
@@ -279,24 +279,24 @@ Dismiss</button>            </div>
 <span class="lineno"> 221 </span>                <span class="keyword">return</span> buildImageNode(spec);
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:277</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 274 </span>
-<span class="lineno"> 275 </span>    <span class="keyword">private</span> View buildTextNode(Map&lt;?, ?> spec) {
-<span class="lineno"> 276 </span>        TextView textView = createBodyText(stringValue(spec.get(<span class="string">"text"</span>)));
-<span class="caretline"><span class="lineno"> 277 </span>        String emphasis = stringValue(spec.get(<span class="string">"style"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 278 </span>        <span class="keyword">if</span> (<span class="string">"title"</span>.equals(emphasis)) {
-<span class="lineno"> 279 </span>            textView.setTextSize(<span class="number">20</span>);
-<span class="lineno"> 280 </span>            textView.setTypeface(Typeface.DEFAULT_BOLD);
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:280</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 277 </span>
+<span class="lineno"> 278 </span>    <span class="keyword">private</span> View buildTextNode(Map&lt;?, ?> spec) {
+<span class="lineno"> 279 </span>        TextView textView = createBodyText(stringValue(spec.get(<span class="string">"text"</span>)));
+<span class="caretline"><span class="lineno"> 280 </span>        String emphasis = stringValue(spec.get(<span class="string">"style"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 281 </span>        <span class="keyword">if</span> (<span class="string">"title"</span>.equals(emphasis)) {
+<span class="lineno"> 282 </span>            textView.setTextSize(<span class="number">20</span>);
+<span class="lineno"> 283 </span>            textView.setTypeface(Typeface.DEFAULT_BOLD);
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:291</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 288 </span>        editText.setHint(stringValue(spec.get(<span class="string">"hint"</span>)));
-<span class="lineno"> 289 </span>        editText.setText(stringValue(spec.get(<span class="string">"value"</span>)));
-<span class="lineno"> 290 </span>        editText.setTextColor(color(R.color.textPrimary));
-<span class="caretline"><span class="lineno"> 291 </span>        String keyboard = stringValue(spec.get(<span class="string">"keyboard"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 292 </span>        <span class="keyword">if</span> (<span class="string">"number"</span>.equals(keyboard) || booleanValue(spec.get(<span class="string">"numeric"</span>))) {
-<span class="lineno"> 293 </span>            editText.setInputType(InputType.TYPE_CLASS_NUMBER
-<span class="lineno"> 294 </span>                    | InputType.TYPE_NUMBER_FLAG_DECIMAL
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:294</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 291 </span>        editText.setHint(stringValue(spec.get(<span class="string">"hint"</span>)));
+<span class="lineno"> 292 </span>        editText.setText(stringValue(spec.get(<span class="string">"value"</span>)));
+<span class="lineno"> 293 </span>        editText.setTextColor(color(R.color.textPrimary));
+<span class="caretline"><span class="lineno"> 294 </span>        String keyboard = stringValue(spec.get(<span class="string">"keyboard"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 295 </span>        <span class="keyword">if</span> (<span class="string">"number"</span>.equals(keyboard) || booleanValue(spec.get(<span class="string">"numeric"</span>))) {
+<span class="lineno"> 296 </span>            editText.setInputType(InputType.TYPE_CLASS_NUMBER
+<span class="lineno"> 297 </span>                    | InputType.TYPE_NUMBER_FLAG_DECIMAL
 </pre>
 
 </div>

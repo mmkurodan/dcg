@@ -138,6 +138,17 @@ public class JavaExecutorTest {
     }
 
     @Test
+    public void stagedWrapperAssetContainsBuildWrapperClasses() throws Exception {
+        File wrapperJar = new File("src/main/assets/java-wrapper/android-wrapper-classpath.jar");
+        assertTrue(wrapperJar.isFile());
+
+        try (ZipFile zipFile = new ZipFile(wrapperJar)) {
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/android/os/Build.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/android/os/Build$VERSION.class"));
+        }
+    }
+
+    @Test
     public void joinClasspathsConcatenatesNonEmptySegmentsInOrder() {
         String merged = JavaExecutor.joinClasspaths(
                 "/tmp/a.jar",

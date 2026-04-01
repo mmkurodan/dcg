@@ -132,7 +132,10 @@ public final class JavaSourceParser {
         }
         return source.contains("setContentView(")
                 || source.contains("println(")
+                || source.contains("addLabel(")
                 || source.contains("drawBitmap(")
+                || source.contains("beginRow(")
+                || source.contains("endRow(")
                 || source.contains("addButton(")
                 || source.contains("addInput(")
                 || source.contains("new ImageView(this)")

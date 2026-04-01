@@ -34,6 +34,7 @@ final class AndroidWrapperGenerator {
     private static final String JAVA_EXTENSION = ".java";
     private static final String POLICY_FILE = "forbidden-members.txt";
     private static final String SOURCE_HEADER = "// AUTO-GENERATED. DO NOT EDIT.\n";
+    private static final String CUSTOM_BUILD_CLASS = "android.os.Build";
     private static final List<String> SAFE_PACKAGE_PREFIXES = Arrays.asList(
             "android.");
 
@@ -213,13 +214,18 @@ final class AndroidWrapperGenerator {
 
     private void generateWrapperSources(List<Class<?>> topLevelClasses) throws IOException {
         for (Class<?> clazz : topLevelClasses) {
-            WrapperSourceBuilder sourceBuilder = new WrapperSourceBuilder(
-                    clazz,
-                    wrapperRootPackage,
-                    wrapperTypeByAndroidType,
-                    forbiddenMembers,
-                    securityPolicyPrefix);
-            String source = sourceBuilder.build();
+            String source;
+            if (CUSTOM_BUILD_CLASS.equals(clazz.getName())) {
+                source = buildCustomBuildSource(clazz.getName());
+            } else {
+                WrapperSourceBuilder sourceBuilder = new WrapperSourceBuilder(
+                        clazz,
+                        wrapperRootPackage,
+                        wrapperTypeByAndroidType,
+                        forbiddenMembers,
+                        securityPolicyPrefix);
+                source = sourceBuilder.build();
+            }
             String wrapperPackageName = wrapperPackageOf(clazz.getName());
             Path packagePath = packagePathWithinOutput(wrapperPackageName);
             Path sourceFile = outputDirectory.toPath()
@@ -228,6 +234,126 @@ final class AndroidWrapperGenerator {
             ensureDirectory(sourceFile.getParent());
             Files.write(sourceFile, source.getBytes(StandardCharsets.UTF_8));
         }
+    }
+
+    private String buildCustomBuildSource(String androidTypeName) {
+        String wrapperPackageName = wrapperPackageOf(androidTypeName);
+        return SOURCE_HEADER + """
+                package %s;
+
+                public final class Build {
+                    public static final String UNKNOWN = "unknown";
+
+                    public static final String MODEL;
+                    public static final String MANUFACTURER;
+                    public static final String BRAND;
+                    public static final String DEVICE;
+                    public static final String PRODUCT;
+                    public static final String HARDWARE;
+                    public static final String BOARD;
+                    public static final String BOOTLOADER;
+                    public static final String DISPLAY;
+                    public static final String FINGERPRINT;
+                    public static final String HOST;
+                    public static final String ID;
+                    public static final String TAGS;
+                    public static final String TYPE;
+                    public static final String USER;
+
+                    static {
+                        MODEL = get("ro.product.model", "os.name", "java.runtime.name");
+                        MANUFACTURER = get("ro.product.manufacturer", "java.vendor");
+                        BRAND = get("ro.product.brand", "java.vendor");
+                        DEVICE = get("ro.product.device", "os.arch");
+                        PRODUCT = get("ro.product.name", "java.runtime.name", "os.name");
+                        HARDWARE = get("ro.hardware", "os.arch");
+                        BOARD = get("ro.product.board", "os.arch");
+                        BOOTLOADER = get("ro.bootloader", "os.version");
+                        DISPLAY = get("ro.build.display.id", "os.version", "java.vm.version");
+                        FINGERPRINT = get("ro.build.fingerprint", "java.vm.name", "os.name", "os.arch");
+                        HOST = get("ro.build.host", "user.name", "os.name");
+                        ID = get("ro.build.id", "java.vm.version", "os.version");
+                        TAGS = get("ro.build.tags", "java.vendor");
+                        TYPE = get("ro.build.type", "java.vm.name", "os.name");
+                        USER = get("ro.build.user", "user.name");
+                    }
+
+                    private Build() {
+                        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#android.os.Build()");
+                    }
+
+                    public static int getMajorSdkVersion(int arg0) {
+                        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getMajorSdkVersion(int)");
+                    }
+
+                    public static int getMinorSdkVersion(int arg0) {
+                        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getMinorSdkVersion(int)");
+                    }
+
+                    public static java.lang.String getRadioVersion() {
+                        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getRadioVersion()");
+                    }
+
+                    public static java.lang.String getSerial() {
+                        throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getSerial()");
+                    }
+
+                    private static String get(String androidPropertyKey, String... fallbackPropertyKeys) {
+                        String value = normalize(System.getProperty(androidPropertyKey));
+                        if (value != null) {
+                            return value;
+                        }
+                        if (fallbackPropertyKeys != null) {
+                            for (String fallbackPropertyKey : fallbackPropertyKeys) {
+                                value = normalize(System.getProperty(fallbackPropertyKey));
+                                if (value != null) {
+                                    return value;
+                                }
+                            }
+                        }
+                        return UNKNOWN;
+                    }
+
+                    private static String getSdkInt() {
+                        String propertyValue = normalize(System.getProperty("ro.build.version.sdk"));
+                        if (propertyValue != null) {
+                            return propertyValue;
+                        }
+                        try {
+                            int sdkInt = android.os.Build.VERSION.SDK_INT;
+                            if (sdkInt > 0) {
+                                return String.valueOf(sdkInt);
+                            }
+                        } catch (Throwable ignored) {
+                        }
+                        return UNKNOWN;
+                    }
+
+                    private static String normalize(String value) {
+                        if (value == null) {
+                            return null;
+                        }
+                        String trimmed = value.trim();
+                        return trimmed.isEmpty() ? null : trimmed;
+                    }
+
+                    public static final class VERSION {
+                        public static final String RELEASE;
+                        public static final String SDK_INT;
+                        public static final String CODENAME;
+
+                        static {
+                            RELEASE = get("ro.build.version.release", "os.version", "java.vm.version");
+                            SDK_INT = getSdkInt();
+                            CODENAME = get("ro.build.version.codename", "java.vm.name");
+                        }
+
+                        private VERSION() {
+                            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$VERSION#android.os.Build$VERSION()");
+                        }
+                    }
+                }
+                """.formatted(wrapperPackageName);
     }
 
     private void generateOpaqueWrapperSources(List<String> safeClassNames, List<Class<?>> generatedClasses) throws IOException {

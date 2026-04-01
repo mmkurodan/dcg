@@ -223,20 +223,20 @@ public final class Toolbar {
         ((android.widget.Toolbar) real).setLogoDescription(arg0);
     }
 
-    public void setNavigationContentDescription(int arg0) {
-        ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
-    }
-
     public void setNavigationContentDescription(java.lang.CharSequence arg0) {
         ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
     }
 
-    public void setNavigationIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.widget.Toolbar) real).setNavigationIcon(arg0 == null ? null : arg0.getReal());
+    public void setNavigationContentDescription(int arg0) {
+        ((android.widget.Toolbar) real).setNavigationContentDescription(arg0);
     }
 
     public void setNavigationIcon(int arg0) {
         ((android.widget.Toolbar) real).setNavigationIcon(arg0);
+    }
+
+    public void setNavigationIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.widget.Toolbar) real).setNavigationIcon(arg0 == null ? null : arg0.getReal());
     }
 
     public void setNavigationOnClickListener(com.micklab.dcg.wrapper.android.view.View.OnClickListener arg0) {

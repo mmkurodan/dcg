@@ -183,11 +183,11 @@ public final class Connection {
         ((android.telecom.Connection) real).onReject();
     }
 
-    public void onReject(int arg0) {
+    public void onReject(java.lang.String arg0) {
         ((android.telecom.Connection) real).onReject(arg0);
     }
 
-    public void onReject(java.lang.String arg0) {
+    public void onReject(int arg0) {
         ((android.telecom.Connection) real).onReject(arg0);
     }
 

@@ -77,6 +77,23 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationRewritesBuildImportToWrapperBuild() {
+        String source = "import android.os.Build;\n"
+                + "public class HelloJava {\n"
+                + "  public static String run() {\n"
+                + "    return Build.MODEL + \":\" + Build.VERSION.SDK_INT;\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Build;"));
+        assertFalse(rewritten.contains("import android.os.Build;"));
+        assertTrue(prepared.hadAndroidReferences());
+        assertTrue(prepared.getRewriteCount() > 0);
+    }
+
+    @Test
     public void prepareForCompilationLeavesNonAndroidSourceUntouched() {
         String source = "public class HelloJava {\n"
                 + "  public static String run() {\n"
@@ -200,6 +217,25 @@ public class JavaSourceParserTest {
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
         assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
+    }
+
+    @Test
+    public void prepareForCompilationRecognizesRowDslHelpersAsPseudoMainActivity() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate() {\n"
+                + "    beginRow();\n"
+                + "    addLabel(\"7\");\n"
+                + "    addButton(\"8\", \"press8\");\n"
+                + "    endRow();\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.TextView;"));
+        assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
     }
 
     @Test

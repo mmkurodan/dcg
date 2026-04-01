@@ -31,11 +31,11 @@ public final class NinePatch {
         this(new android.graphics.NinePatch(arg0 == null ? null : arg0.getReal(), arg1, arg2), (__DcgwBridgeToken) null);
     }
 
-    public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1) {
+    public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, com.micklab.dcg.wrapper.android.graphics.RectF arg1) {
         ((android.graphics.NinePatch) real).draw(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, com.micklab.dcg.wrapper.android.graphics.RectF arg1) {
+    public void draw(com.micklab.dcg.wrapper.android.graphics.Canvas arg0, com.micklab.dcg.wrapper.android.graphics.Rect arg1) {
         ((android.graphics.NinePatch) real).draw(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 

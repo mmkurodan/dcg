@@ -28,6 +28,6 @@
       applicationId="com.micklab.dcg"
       generatedSourceFolders="build/generated/ap_generated_sources/debug/out"
       generatedResourceFolders="build/generated/res/resValues/debug"
-      desugaredMethodsFiles="/root/.gradle/caches/8.12/transforms/fb3a90da7d08ce6d06ef4824bde5d2bf/transformed/desugar_jdk_libs_configuration-2.1.5-desugar-lint.txt:/root/.gradle/caches/8.12/transforms/249f6e19ff8d8a9eadd68f9eea7266b7/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/root/.gradle/caches/8.12/transforms/3c294cf592bbb615f9cccecbb7c0a466/transformed/desugar_jdk_libs_configuration-2.1.5-desugar-lint.txt:/root/.gradle/caches/8.12/transforms/965d19e555936aa68b1dfad861b231d1/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

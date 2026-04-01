@@ -5,6 +5,7 @@ import com.micklab.dcg.wrapper.android.os.Bundle;
 
 public class PseudoMainActivity {
     private final OutputModel outputModel = new OutputModel();
+    private LinearLayout currentRow;
 
     protected void onCreate() {
     }
@@ -18,9 +19,13 @@ public class PseudoMainActivity {
     }
 
     protected final TextView println(Object value) {
+        return addLabel(value);
+    }
+
+    protected final TextView addLabel(Object value) {
         TextView textView = new TextView(this);
         textView.setText(value == null ? "" : String.valueOf(value));
-        outputModel.appendInlineNode(textView);
+        appendInlineView(textView);
         return textView;
     }
 
@@ -35,7 +40,7 @@ public class PseudoMainActivity {
         Button button = new Button(this);
         button.setText(text);
         button.setAction(action);
-        outputModel.appendInlineNode(button);
+        appendInlineView(button);
         return button;
     }
 
@@ -48,8 +53,24 @@ public class PseudoMainActivity {
         editText.setId(id);
         editText.setHint(hint);
         editText.setText(value);
-        outputModel.appendInlineNode(editText);
+        appendInlineView(editText);
         return editText;
+    }
+
+    protected final void beginRow() {
+        if (currentRow != null) {
+            throw new IllegalStateException("beginRow() called before closing the current row.");
+        }
+        currentRow = new LinearLayout(this);
+        currentRow.setOrientation(LinearLayout.HORIZONTAL);
+    }
+
+    protected final void endRow() {
+        if (currentRow == null) {
+            throw new IllegalStateException("endRow() called without a matching beginRow().");
+        }
+        outputModel.appendInlineNode(currentRow);
+        currentRow = null;
     }
 
     void __dcgRegisterConstructedView(View view) {
@@ -61,10 +82,26 @@ public class PseudoMainActivity {
     }
 
     public final Object __dcgBuildOutputSpec() {
+        ensureBalancedRows();
         return outputModel.buildSpec();
     }
 
     public final String __dcgGetOutputModelJson() {
+        ensureBalancedRows();
         return outputModel.toJson();
+    }
+
+    private void appendInlineView(View view) {
+        if (currentRow != null) {
+            currentRow.addView(view);
+            return;
+        }
+        outputModel.appendInlineNode(view);
+    }
+
+    private void ensureBalancedRows() {
+        if (currentRow != null) {
+            throw new IllegalStateException("beginRow() must be paired with endRow() before rendering output.");
+        }
     }
 }

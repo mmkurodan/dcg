@@ -784,12 +784,12 @@ public final class Notification {
             return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addExtras(arg0 == null ? null : arg0.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.Notification.Builder addPerson(com.micklab.dcg.wrapper.android.app.Person arg0) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addPerson(arg0 == null ? null : arg0.getReal()));
-        }
-
         public com.micklab.dcg.wrapper.android.app.Notification.Builder addPerson(java.lang.String arg0) {
             return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addPerson(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.Notification.Builder addPerson(com.micklab.dcg.wrapper.android.app.Person arg0) {
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).addPerson(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification build() {
@@ -1020,12 +1020,12 @@ public final class Notification {
             return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal()));
         }
 
-        public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
-            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
-        }
-
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0, int arg1) {
             return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal(), arg1));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.Notification.Builder setSound(com.micklab.dcg.wrapper.android.net.Uri arg0, com.micklab.dcg.wrapper.android.media.AudioAttributes arg1) {
+            return com.micklab.dcg.wrapper.android.app.Notification.Builder.wrap(((android.app.Notification.Builder) real).setSound(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.Notification.Builder setStyle(com.micklab.dcg.wrapper.android.app.Notification.Style arg0) {

@@ -39,11 +39,11 @@ public final class AudioTrack {
         ((android.media.AudioTrack) real).addOnCodecFormatChangedListener(arg0, arg1 == null ? null : arg1.getReal());
     }
 
-    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioTrack.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         ((android.media.AudioTrack) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioTrack.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
+    public void addOnRoutingChangedListener(com.micklab.dcg.wrapper.android.media.AudioRouting.OnRoutingChangedListener arg0, com.micklab.dcg.wrapper.android.os.Handler arg1) {
         ((android.media.AudioTrack) real).addOnRoutingChangedListener(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 

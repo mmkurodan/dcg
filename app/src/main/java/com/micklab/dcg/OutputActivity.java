@@ -251,8 +251,7 @@ public class OutputActivity extends AppCompatActivity {
                 continue;
             }
             LinearLayout.LayoutParams params;
-            if (orientation == LinearLayout.HORIZONTAL
-                    && (childView instanceof Button || childView instanceof EditText)) {
+            if (orientation == LinearLayout.HORIZONTAL && shouldUseWeightedRowLayout(childView)) {
                 params = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
             } else {
                 params = new LinearLayout.LayoutParams(
@@ -270,6 +269,10 @@ public class OutputActivity extends AppCompatActivity {
             index++;
         }
         return layout;
+    }
+
+    private boolean shouldUseWeightedRowLayout(View childView) {
+        return childView instanceof TextView;
     }
 
     private View buildTextNode(Map<?, ?> spec) {

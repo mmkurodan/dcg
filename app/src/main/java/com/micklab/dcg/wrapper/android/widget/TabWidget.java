@@ -107,12 +107,12 @@ public final class TabWidget {
         ((android.widget.TabWidget) real).setEnabled(arg0);
     }
 
-    public void setLeftStripDrawable(int arg0) {
-        ((android.widget.TabWidget) real).setLeftStripDrawable(arg0);
-    }
-
     public void setLeftStripDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.widget.TabWidget) real).setLeftStripDrawable(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setLeftStripDrawable(int arg0) {
+        ((android.widget.TabWidget) real).setLeftStripDrawable(arg0);
     }
 
     public void setRightStripDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {

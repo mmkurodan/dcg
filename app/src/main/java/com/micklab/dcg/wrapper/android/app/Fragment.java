@@ -267,11 +267,11 @@ public final class Fragment {
         ((android.app.Fragment) real).onInflate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal());
     }
 
-    public void onInflate(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
+    public void onInflate(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
         ((android.app.Fragment) real).onInflate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 
-    public void onInflate(com.micklab.dcg.wrapper.android.app.Activity arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
+    public void onInflate(com.micklab.dcg.wrapper.android.content.Context arg0, com.micklab.dcg.wrapper.android.util.AttributeSet arg1, com.micklab.dcg.wrapper.android.os.Bundle arg2) {
         ((android.app.Fragment) real).onInflate(arg0 == null ? null : arg0.getReal(), arg1 == null ? null : arg1.getReal(), arg2 == null ? null : arg2.getReal());
     }
 

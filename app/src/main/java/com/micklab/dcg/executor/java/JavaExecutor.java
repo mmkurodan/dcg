@@ -102,6 +102,7 @@ public class JavaExecutor implements LanguageExecutor {
         Context appContext = context.getApplicationContext();
         Context targetContext = appContext == null ? context : appContext;
         try {
+            AndroidBuildPropertyBridge.install();
             JavaExecutor executor = new JavaExecutor();
             executor.refreshBootJarsFromAssets(targetContext);
             executor.resolveBootClasspath(targetContext);
@@ -126,6 +127,7 @@ public class JavaExecutor implements LanguageExecutor {
                     "",
                     -1L);
         }
+        AndroidBuildPropertyBridge.install();
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             return ExecutionResult.unsupported(
                     "Java executor requires Android 8.0+",
@@ -442,6 +444,7 @@ public class JavaExecutor implements LanguageExecutor {
 
         try (PrintStream stdoutInterceptor = new PrintStream(stdoutCapture, true, StandardCharsets.UTF_8.name());
              PrintStream stderrInterceptor = new PrintStream(stderrCapture, true, StandardCharsets.UTF_8.name())) {
+            AndroidBuildPropertyBridge.install();
             System.setOut(stdoutInterceptor);
             System.setErr(stderrInterceptor);
             try {

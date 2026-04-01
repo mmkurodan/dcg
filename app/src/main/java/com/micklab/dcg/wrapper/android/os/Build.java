@@ -2,28 +2,43 @@
 package com.micklab.dcg.wrapper.android.os;
 
 public final class Build {
-    private static final class __DcgwBridgeToken {
+    public static final String UNKNOWN = "unknown";
+
+    public static final String MODEL;
+    public static final String MANUFACTURER;
+    public static final String BRAND;
+    public static final String DEVICE;
+    public static final String PRODUCT;
+    public static final String HARDWARE;
+    public static final String BOARD;
+    public static final String BOOTLOADER;
+    public static final String DISPLAY;
+    public static final String FINGERPRINT;
+    public static final String HOST;
+    public static final String ID;
+    public static final String TAGS;
+    public static final String TYPE;
+    public static final String USER;
+
+    static {
+        MODEL = get("ro.product.model", "os.name", "java.runtime.name");
+        MANUFACTURER = get("ro.product.manufacturer", "java.vendor");
+        BRAND = get("ro.product.brand", "java.vendor");
+        DEVICE = get("ro.product.device", "os.arch");
+        PRODUCT = get("ro.product.name", "java.runtime.name", "os.name");
+        HARDWARE = get("ro.hardware", "os.arch");
+        BOARD = get("ro.product.board", "os.arch");
+        BOOTLOADER = get("ro.bootloader", "os.version");
+        DISPLAY = get("ro.build.display.id", "os.version", "java.vm.version");
+        FINGERPRINT = get("ro.build.fingerprint", "java.vm.name", "os.name", "os.arch");
+        HOST = get("ro.build.host", "user.name", "os.name");
+        ID = get("ro.build.id", "java.vm.version", "os.version");
+        TAGS = get("ro.build.tags", "java.vendor");
+        TYPE = get("ro.build.type", "java.vm.name", "os.name");
+        USER = get("ro.build.user", "user.name");
     }
 
-    private final java.lang.Object real;
-
-    private Build(java.lang.Object real, __DcgwBridgeToken token) {
-        this.real = real;
-    }
-
-    public static com.micklab.dcg.wrapper.android.os.Build wrap(android.os.Build real) {
-        return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build(real, (__DcgwBridgeToken) null);
-    }
-
-    public android.os.Build getReal() {
-        return (android.os.Build) real;
-    }
-
-    public android.os.Build unwrap() {
-        return getReal();
-    }
-
-    public Build() {
+    private Build() {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#android.os.Build()");
     }
 
@@ -43,129 +58,58 @@ public final class Build {
         throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build#getSerial()");
     }
 
-
-    public static final class Partition {
-        private static final class __DcgwBridgeToken {
+    private static String get(String androidPropertyKey, String... fallbackPropertyKeys) {
+        String value = normalize(System.getProperty(androidPropertyKey));
+        if (value != null) {
+            return value;
         }
-
-        private final java.lang.Object real;
-
-        private Partition(java.lang.Object real, __DcgwBridgeToken token) {
-            this.real = real;
+        if (fallbackPropertyKeys != null) {
+            for (String fallbackPropertyKey : fallbackPropertyKeys) {
+                value = normalize(System.getProperty(fallbackPropertyKey));
+                if (value != null) {
+                    return value;
+                }
+            }
         }
-
-        public static com.micklab.dcg.wrapper.android.os.Build.Partition wrap(android.os.Build.Partition real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.Partition(real, (__DcgwBridgeToken) null);
-        }
-
-        public android.os.Build.Partition getReal() {
-            return (android.os.Build.Partition) real;
-        }
-
-        public android.os.Build.Partition unwrap() {
-            return getReal();
-        }
-
-        public boolean equals(java.lang.Object arg0) {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$Partition#equals(java.lang.Object)");
-        }
-
-        public long getBuildTimeMillis() {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$Partition#getBuildTimeMillis()");
-        }
-
-        public java.lang.String getFingerprint() {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$Partition#getFingerprint()");
-        }
-
-        public java.lang.String getName() {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$Partition#getName()");
-        }
-
-        public int hashCode() {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$Partition#hashCode()");
-        }
-
-
+        return UNKNOWN;
     }
+
+    private static String getSdkInt() {
+        String propertyValue = normalize(System.getProperty("ro.build.version.sdk"));
+        if (propertyValue != null) {
+            return propertyValue;
+        }
+        try {
+            int sdkInt = android.os.Build.VERSION.SDK_INT;
+            if (sdkInt > 0) {
+                return String.valueOf(sdkInt);
+            }
+        } catch (Throwable ignored) {
+        }
+        return UNKNOWN;
+    }
+
+    private static String normalize(String value) {
+        if (value == null) {
+            return null;
+        }
+        String trimmed = value.trim();
+        return trimmed.isEmpty() ? null : trimmed;
+    }
+
     public static final class VERSION {
-        private static final class __DcgwBridgeToken {
+        public static final String RELEASE;
+        public static final String SDK_INT;
+        public static final String CODENAME;
+
+        static {
+            RELEASE = get("ro.build.version.release", "os.version", "java.vm.version");
+            SDK_INT = getSdkInt();
+            CODENAME = get("ro.build.version.codename", "java.vm.name");
         }
 
-        private final java.lang.Object real;
-
-        private VERSION(java.lang.Object real, __DcgwBridgeToken token) {
-            this.real = real;
-        }
-
-        public static com.micklab.dcg.wrapper.android.os.Build.VERSION wrap(android.os.Build.VERSION real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION(real, (__DcgwBridgeToken) null);
-        }
-
-        public android.os.Build.VERSION getReal() {
-            return (android.os.Build.VERSION) real;
-        }
-
-        public android.os.Build.VERSION unwrap() {
-            return getReal();
-        }
-
-        public VERSION() {
+        private VERSION() {
             throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$VERSION#android.os.Build$VERSION()");
         }
-
-
-    }
-    public static final class VERSION_CODES {
-        private static final class __DcgwBridgeToken {
-        }
-
-        private final java.lang.Object real;
-
-        private VERSION_CODES(java.lang.Object real, __DcgwBridgeToken token) {
-            this.real = real;
-        }
-
-        public static com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES wrap(android.os.Build.VERSION_CODES real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES(real, (__DcgwBridgeToken) null);
-        }
-
-        public android.os.Build.VERSION_CODES getReal() {
-            return (android.os.Build.VERSION_CODES) real;
-        }
-
-        public android.os.Build.VERSION_CODES unwrap() {
-            return getReal();
-        }
-
-        public VERSION_CODES() {
-            throw new UnsupportedOperationException("Blocked by wrapper security policy: android.os.Build$VERSION_CODES#android.os.Build$VERSION_CODES()");
-        }
-
-
-    }
-    public static final class VERSION_CODES_FULL {
-        private static final class __DcgwBridgeToken {
-        }
-
-        private final java.lang.Object real;
-
-        private VERSION_CODES_FULL(java.lang.Object real, __DcgwBridgeToken token) {
-            this.real = real;
-        }
-
-        public static com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES_FULL wrap(android.os.Build.VERSION_CODES_FULL real) {
-            return real == null ? null : new com.micklab.dcg.wrapper.android.os.Build.VERSION_CODES_FULL(real, (__DcgwBridgeToken) null);
-        }
-
-        public android.os.Build.VERSION_CODES_FULL getReal() {
-            return (android.os.Build.VERSION_CODES_FULL) real;
-        }
-
-        public android.os.Build.VERSION_CODES_FULL unwrap() {
-            return getReal();
-        }
-
-
     }
 }

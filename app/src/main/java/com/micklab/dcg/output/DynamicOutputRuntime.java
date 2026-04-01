@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.View;
 
+import com.micklab.dcg.executor.java.AndroidBuildPropertyBridge;
 import com.micklab.dcg.model.DynamicUiRequest;
 import com.micklab.dcg.model.ExecutionOutputItem;
 
@@ -413,6 +414,7 @@ public final class DynamicOutputRuntime {
 
         try (PrintStream stdoutInterceptor = new PrintStream(stdoutCapture, true, StandardCharsets.UTF_8.name());
              PrintStream stderrInterceptor = new PrintStream(stderrCapture, true, StandardCharsets.UTF_8.name())) {
+            AndroidBuildPropertyBridge.install();
             System.setOut(stdoutInterceptor);
             System.setErr(stderrInterceptor);
             try {

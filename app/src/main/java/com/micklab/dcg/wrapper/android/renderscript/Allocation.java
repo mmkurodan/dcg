@@ -227,12 +227,12 @@ public final class Allocation {
         ((android.renderscript.Allocation) real).copyTo(arg0);
     }
 
-    public void copyTo(byte[] arg0) {
-        ((android.renderscript.Allocation) real).copyTo(arg0);
-    }
-
     public void copyTo(com.micklab.dcg.wrapper.android.graphics.Bitmap arg0) {
         ((android.renderscript.Allocation) real).copyTo(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void copyTo(byte[] arg0) {
+        ((android.renderscript.Allocation) real).copyTo(arg0);
     }
 
     public void copyTo(float[] arg0) {

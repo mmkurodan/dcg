@@ -23,12 +23,12 @@ public final class ContentResolver {
         return getReal();
     }
 
-    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0 == null ? null : arg0.getReal()));
-    }
-
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(java.lang.String arg0) {
         return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0));
+    }
+
+    public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireContentProviderClient(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        return com.micklab.dcg.wrapper.android.content.ContentProviderClient.wrap(((android.content.ContentResolver) real).acquireContentProviderClient(arg0 == null ? null : arg0.getReal()));
     }
 
     public com.micklab.dcg.wrapper.android.content.ContentProviderClient acquireUnstableContentProviderClient(java.lang.String arg0) {
@@ -59,12 +59,12 @@ public final class ContentResolver {
         return com.micklab.dcg.wrapper.android.os.Bundle.wrap(((android.content.ContentResolver) real).call(arg0 == null ? null : arg0.getReal(), arg1, arg2, arg3 == null ? null : arg3.getReal()));
     }
 
-    public void cancelSync(com.micklab.dcg.wrapper.android.net.Uri arg0) {
-        ((android.content.ContentResolver) real).cancelSync(arg0 == null ? null : arg0.getReal());
-    }
-
     public static void cancelSync(com.micklab.dcg.wrapper.android.content.SyncRequest arg0) {
         android.content.ContentResolver.cancelSync(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void cancelSync(com.micklab.dcg.wrapper.android.net.Uri arg0) {
+        ((android.content.ContentResolver) real).cancelSync(arg0 == null ? null : arg0.getReal());
     }
 
     public static void cancelSync(com.micklab.dcg.wrapper.android.accounts.Account arg0, java.lang.String arg1) {

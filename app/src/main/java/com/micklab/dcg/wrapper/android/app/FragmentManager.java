@@ -95,11 +95,11 @@ public final class FragmentManager {
         return ((android.app.FragmentManager) real).popBackStackImmediate();
     }
 
-    public boolean popBackStackImmediate(int arg0, int arg1) {
+    public boolean popBackStackImmediate(java.lang.String arg0, int arg1) {
         return ((android.app.FragmentManager) real).popBackStackImmediate(arg0, arg1);
     }
 
-    public boolean popBackStackImmediate(java.lang.String arg0, int arg1) {
+    public boolean popBackStackImmediate(int arg0, int arg1) {
         return ((android.app.FragmentManager) real).popBackStackImmediate(arg0, arg1);
     }
 

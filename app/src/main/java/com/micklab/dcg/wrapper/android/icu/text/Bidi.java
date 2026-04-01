@@ -235,11 +235,11 @@ public final class Bidi {
         ((android.icu.text.Bidi) real).setPara(arg0);
     }
 
-    public void setPara(java.lang.String arg0, byte arg1, byte[] arg2) {
+    public void setPara(char[] arg0, byte arg1, byte[] arg2) {
         ((android.icu.text.Bidi) real).setPara(arg0, arg1, arg2);
     }
 
-    public void setPara(char[] arg0, byte arg1, byte[] arg2) {
+    public void setPara(java.lang.String arg0, byte arg1, byte[] arg2) {
         ((android.icu.text.Bidi) real).setPara(arg0, arg1, arg2);
     }
 

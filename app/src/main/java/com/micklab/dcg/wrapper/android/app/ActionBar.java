@@ -191,11 +191,11 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setHideOnContentScrollEnabled(arg0);
     }
 
-    public void setHomeActionContentDescription(int arg0) {
+    public void setHomeActionContentDescription(java.lang.CharSequence arg0) {
         ((android.app.ActionBar) real).setHomeActionContentDescription(arg0);
     }
 
-    public void setHomeActionContentDescription(java.lang.CharSequence arg0) {
+    public void setHomeActionContentDescription(int arg0) {
         ((android.app.ActionBar) real).setHomeActionContentDescription(arg0);
     }
 
@@ -211,12 +211,12 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setHomeButtonEnabled(arg0);
     }
 
-    public void setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.app.ActionBar) real).setIcon(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setIcon(int arg0) {
         ((android.app.ActionBar) real).setIcon(arg0);
+    }
+
+    public void setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.app.ActionBar) real).setIcon(arg0 == null ? null : arg0.getReal());
     }
 
     public void setListNavigationCallbacks(com.micklab.dcg.wrapper.android.widget.SpinnerAdapter arg0, com.micklab.dcg.wrapper.android.app.ActionBar.OnNavigationListener arg1) {
@@ -247,11 +247,11 @@ public final class ActionBar {
         ((android.app.ActionBar) real).setStackedBackgroundDrawable(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setSubtitle(int arg0) {
+    public void setSubtitle(java.lang.CharSequence arg0) {
         ((android.app.ActionBar) real).setSubtitle(arg0);
     }
 
-    public void setSubtitle(java.lang.CharSequence arg0) {
+    public void setSubtitle(int arg0) {
         ((android.app.ActionBar) real).setSubtitle(arg0);
     }
 
@@ -444,12 +444,12 @@ public final class ActionBar {
             return com.micklab.dcg.wrapper.android.app.ActionBar.Tab.wrap(((android.app.ActionBar.Tab) real).setCustomView(arg0));
         }
 
-        public com.micklab.dcg.wrapper.android.app.ActionBar.Tab setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-            return com.micklab.dcg.wrapper.android.app.ActionBar.Tab.wrap(((android.app.ActionBar.Tab) real).setIcon(arg0 == null ? null : arg0.getReal()));
-        }
-
         public com.micklab.dcg.wrapper.android.app.ActionBar.Tab setIcon(int arg0) {
             return com.micklab.dcg.wrapper.android.app.ActionBar.Tab.wrap(((android.app.ActionBar.Tab) real).setIcon(arg0));
+        }
+
+        public com.micklab.dcg.wrapper.android.app.ActionBar.Tab setIcon(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+            return com.micklab.dcg.wrapper.android.app.ActionBar.Tab.wrap(((android.app.ActionBar.Tab) real).setIcon(arg0 == null ? null : arg0.getReal()));
         }
 
         public com.micklab.dcg.wrapper.android.app.ActionBar.Tab setTabListener(com.micklab.dcg.wrapper.android.app.ActionBar.TabListener arg0) {

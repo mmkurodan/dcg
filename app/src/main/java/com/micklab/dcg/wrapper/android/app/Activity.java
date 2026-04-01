@@ -739,12 +739,12 @@ public final class Activity {
         ((android.app.Activity) real).setContentTransitionManager(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
-        ((android.app.Activity) real).setContentView(arg0 == null ? null : arg0.getReal());
-    }
-
     public void setContentView(int arg0) {
         ((android.app.Activity) real).setContentView(arg0);
+    }
+
+    public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0) {
+        ((android.app.Activity) real).setContentView(arg0 == null ? null : arg0.getReal());
     }
 
     public void setContentView(com.micklab.dcg.wrapper.android.view.View arg0, com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams arg1) {

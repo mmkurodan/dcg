@@ -4,7 +4,7 @@
             "outputFile": "com.micklab.dcg.app-mergeDebugResources-21:/values-pa/values-pa.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/8.12/transforms/33f973aec2c3c16a6d568b98a0c92d80/transformed/core-1.13.0/res/values-pa/values-pa.xml",
+                    "source": "/root/.gradle/caches/8.12/transforms/1f218befba607dda933fcc5676c1eb42/transformed/core-1.13.0/res/values-pa/values-pa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/root/.gradle/caches/8.12/transforms/368047bef971ba83e26fab905c33ff29/transformed/appcompat-1.7.0/res/values-pa/values-pa.xml",
+                    "source": "/root/.gradle/caches/8.12/transforms/365791cc96a4eea0b792d23a075e0497/transformed/appcompat-1.7.0/res/values-pa/values-pa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

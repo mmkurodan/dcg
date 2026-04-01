@@ -915,20 +915,20 @@ public final class TextView {
         ((android.widget.TextView) real).setHighlights(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setHint(java.lang.CharSequence arg0) {
-        ((android.widget.TextView) real).setHint(arg0);
-    }
-
     public void setHint(int arg0) {
         ((android.widget.TextView) real).setHint(arg0);
     }
 
-    public void setHintTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
-        ((android.widget.TextView) real).setHintTextColor(arg0 == null ? null : arg0.getReal());
+    public void setHint(java.lang.CharSequence arg0) {
+        ((android.widget.TextView) real).setHint(arg0);
     }
 
     public void setHintTextColor(int arg0) {
         ((android.widget.TextView) real).setHintTextColor(arg0);
+    }
+
+    public void setHintTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
+        ((android.widget.TextView) real).setHintTextColor(arg0 == null ? null : arg0.getReal());
     }
 
     public void setHorizontallyScrolling(boolean arg0) {
@@ -1163,20 +1163,20 @@ public final class TextView {
         ((android.widget.TextView) real).setTextClassifier(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTextColor(int arg0) {
-        ((android.widget.TextView) real).setTextColor(arg0);
-    }
-
     public void setTextColor(com.micklab.dcg.wrapper.android.content.res.ColorStateList arg0) {
         ((android.widget.TextView) real).setTextColor(arg0 == null ? null : arg0.getReal());
     }
 
-    public void setTextCursorDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
-        ((android.widget.TextView) real).setTextCursorDrawable(arg0 == null ? null : arg0.getReal());
+    public void setTextColor(int arg0) {
+        ((android.widget.TextView) real).setTextColor(arg0);
     }
 
     public void setTextCursorDrawable(int arg0) {
         ((android.widget.TextView) real).setTextCursorDrawable(arg0);
+    }
+
+    public void setTextCursorDrawable(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
+        ((android.widget.TextView) real).setTextCursorDrawable(arg0 == null ? null : arg0.getReal());
     }
 
     public void setTextIsSelectable(boolean arg0) {
@@ -1223,12 +1223,12 @@ public final class TextView {
         ((android.widget.TextView) real).setTextSelectHandleLeft(arg0);
     }
 
-    public void setTextSelectHandleRight(int arg0) {
-        ((android.widget.TextView) real).setTextSelectHandleRight(arg0);
-    }
-
     public void setTextSelectHandleRight(com.micklab.dcg.wrapper.android.graphics.drawable.Drawable arg0) {
         ((android.widget.TextView) real).setTextSelectHandleRight(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void setTextSelectHandleRight(int arg0) {
+        ((android.widget.TextView) real).setTextSelectHandleRight(arg0);
     }
 
     public void setTextSize(float arg0) {

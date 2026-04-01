@@ -35,31 +35,23 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addBoolean(arg0);
     }
 
-    public void addF32(float arg0) {
-        ((android.renderscript.FieldPacker) real).addF32(arg0);
+    public void addF32(com.micklab.dcg.wrapper.android.renderscript.Float4 arg0) {
+        ((android.renderscript.FieldPacker) real).addF32(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addF32(com.micklab.dcg.wrapper.android.renderscript.Float2 arg0) {
-        ((android.renderscript.FieldPacker) real).addF32(arg0 == null ? null : arg0.getReal());
+    public void addF32(float arg0) {
+        ((android.renderscript.FieldPacker) real).addF32(arg0);
     }
 
     public void addF32(com.micklab.dcg.wrapper.android.renderscript.Float3 arg0) {
         ((android.renderscript.FieldPacker) real).addF32(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addF32(com.micklab.dcg.wrapper.android.renderscript.Float4 arg0) {
+    public void addF32(com.micklab.dcg.wrapper.android.renderscript.Float2 arg0) {
         ((android.renderscript.FieldPacker) real).addF32(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addF64(double arg0) {
-        ((android.renderscript.FieldPacker) real).addF64(arg0);
-    }
-
     public void addF64(com.micklab.dcg.wrapper.android.renderscript.Double2 arg0) {
-        ((android.renderscript.FieldPacker) real).addF64(arg0 == null ? null : arg0.getReal());
-    }
-
-    public void addF64(com.micklab.dcg.wrapper.android.renderscript.Double3 arg0) {
         ((android.renderscript.FieldPacker) real).addF64(arg0 == null ? null : arg0.getReal());
     }
 
@@ -67,19 +59,27 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addF64(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addI16(short arg0) {
-        ((android.renderscript.FieldPacker) real).addI16(arg0);
+    public void addF64(com.micklab.dcg.wrapper.android.renderscript.Double3 arg0) {
+        ((android.renderscript.FieldPacker) real).addF64(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void addF64(double arg0) {
+        ((android.renderscript.FieldPacker) real).addF64(arg0);
+    }
+
+    public void addI16(com.micklab.dcg.wrapper.android.renderscript.Short4 arg0) {
+        ((android.renderscript.FieldPacker) real).addI16(arg0 == null ? null : arg0.getReal());
     }
 
     public void addI16(com.micklab.dcg.wrapper.android.renderscript.Short3 arg0) {
         ((android.renderscript.FieldPacker) real).addI16(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addI16(com.micklab.dcg.wrapper.android.renderscript.Short2 arg0) {
-        ((android.renderscript.FieldPacker) real).addI16(arg0 == null ? null : arg0.getReal());
+    public void addI16(short arg0) {
+        ((android.renderscript.FieldPacker) real).addI16(arg0);
     }
 
-    public void addI16(com.micklab.dcg.wrapper.android.renderscript.Short4 arg0) {
+    public void addI16(com.micklab.dcg.wrapper.android.renderscript.Short2 arg0) {
         ((android.renderscript.FieldPacker) real).addI16(arg0 == null ? null : arg0.getReal());
     }
 
@@ -99,12 +99,12 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addI32(arg0);
     }
 
-    public void addI64(long arg0) {
-        ((android.renderscript.FieldPacker) real).addI64(arg0);
-    }
-
     public void addI64(com.micklab.dcg.wrapper.android.renderscript.Long4 arg0) {
         ((android.renderscript.FieldPacker) real).addI64(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void addI64(long arg0) {
+        ((android.renderscript.FieldPacker) real).addI64(arg0);
     }
 
     public void addI64(com.micklab.dcg.wrapper.android.renderscript.Long3 arg0) {
@@ -115,14 +115,6 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addI64(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addI8(com.micklab.dcg.wrapper.android.renderscript.Byte2 arg0) {
-        ((android.renderscript.FieldPacker) real).addI8(arg0 == null ? null : arg0.getReal());
-    }
-
-    public void addI8(byte arg0) {
-        ((android.renderscript.FieldPacker) real).addI8(arg0);
-    }
-
     public void addI8(com.micklab.dcg.wrapper.android.renderscript.Byte4 arg0) {
         ((android.renderscript.FieldPacker) real).addI8(arg0 == null ? null : arg0.getReal());
     }
@@ -131,11 +123,15 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addI8(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addMatrix(com.micklab.dcg.wrapper.android.renderscript.Matrix3f arg0) {
-        ((android.renderscript.FieldPacker) real).addMatrix(arg0 == null ? null : arg0.getReal());
+    public void addI8(byte arg0) {
+        ((android.renderscript.FieldPacker) real).addI8(arg0);
     }
 
-    public void addMatrix(com.micklab.dcg.wrapper.android.renderscript.Matrix4f arg0) {
+    public void addI8(com.micklab.dcg.wrapper.android.renderscript.Byte2 arg0) {
+        ((android.renderscript.FieldPacker) real).addI8(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void addMatrix(com.micklab.dcg.wrapper.android.renderscript.Matrix3f arg0) {
         ((android.renderscript.FieldPacker) real).addMatrix(arg0 == null ? null : arg0.getReal());
     }
 
@@ -143,12 +139,16 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addMatrix(arg0 == null ? null : arg0.getReal());
     }
 
+    public void addMatrix(com.micklab.dcg.wrapper.android.renderscript.Matrix4f arg0) {
+        ((android.renderscript.FieldPacker) real).addMatrix(arg0 == null ? null : arg0.getReal());
+    }
+
     public void addObj(com.micklab.dcg.wrapper.android.renderscript.BaseObj arg0) {
         ((android.renderscript.FieldPacker) real).addObj(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addU16(int arg0) {
-        ((android.renderscript.FieldPacker) real).addU16(arg0);
+    public void addU16(com.micklab.dcg.wrapper.android.renderscript.Int4 arg0) {
+        ((android.renderscript.FieldPacker) real).addU16(arg0 == null ? null : arg0.getReal());
     }
 
     public void addU16(com.micklab.dcg.wrapper.android.renderscript.Int3 arg0) {
@@ -159,8 +159,8 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addU16(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addU16(com.micklab.dcg.wrapper.android.renderscript.Int4 arg0) {
-        ((android.renderscript.FieldPacker) real).addU16(arg0 == null ? null : arg0.getReal());
+    public void addU16(int arg0) {
+        ((android.renderscript.FieldPacker) real).addU16(arg0);
     }
 
     public void addU32(com.micklab.dcg.wrapper.android.renderscript.Long2 arg0) {
@@ -171,16 +171,12 @@ public final class FieldPacker {
         ((android.renderscript.FieldPacker) real).addU32(arg0 == null ? null : arg0.getReal());
     }
 
-    public void addU32(com.micklab.dcg.wrapper.android.renderscript.Long4 arg0) {
-        ((android.renderscript.FieldPacker) real).addU32(arg0 == null ? null : arg0.getReal());
-    }
-
     public void addU32(long arg0) {
         ((android.renderscript.FieldPacker) real).addU32(arg0);
     }
 
-    public void addU64(long arg0) {
-        ((android.renderscript.FieldPacker) real).addU64(arg0);
+    public void addU32(com.micklab.dcg.wrapper.android.renderscript.Long4 arg0) {
+        ((android.renderscript.FieldPacker) real).addU32(arg0 == null ? null : arg0.getReal());
     }
 
     public void addU64(com.micklab.dcg.wrapper.android.renderscript.Long4 arg0) {
@@ -193,6 +189,10 @@ public final class FieldPacker {
 
     public void addU64(com.micklab.dcg.wrapper.android.renderscript.Long2 arg0) {
         ((android.renderscript.FieldPacker) real).addU64(arg0 == null ? null : arg0.getReal());
+    }
+
+    public void addU64(long arg0) {
+        ((android.renderscript.FieldPacker) real).addU64(arg0);
     }
 
     public void addU8(com.micklab.dcg.wrapper.android.renderscript.Short2 arg0) {
