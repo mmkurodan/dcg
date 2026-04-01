@@ -52,7 +52,7 @@ public enum SupportedLanguage {
                     javaName = "Snippet" + javaName;
                 }
                 return "public class " + javaName + " {\n"
-                        + "    protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                        + "    protected void onCreate() {\n"
                         + "        println(\"Hello from pseudo MainActivity!\");\n"
                         + "        addInput(\"name\", \"Your name\");\n"
                         + "        addButton(\"Greet\", \"greet\");\n"

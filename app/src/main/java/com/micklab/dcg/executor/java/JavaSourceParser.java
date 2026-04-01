@@ -72,6 +72,9 @@ public final class JavaSourceParser {
                 pseudoMainActivity ? PSEUDO_ANDROID_TYPE_OVERRIDES : null);
         String rewrittenSource = rewriteResult.rewrittenSource;
         if (pseudoMainActivity) {
+            RewriteResult pseudoBundleFallback = rewriteRemainingPseudoBundleReferences(rewrittenSource);
+            rewrittenSource = pseudoBundleFallback.rewrittenSource;
+            pseudoRewriteCount += pseudoBundleFallback.replacementCount;
             ImportInsertionResult pseudoImports = ensureImports(rewrittenSource, PSEUDO_REQUIRED_IMPORTS);
             rewrittenSource = pseudoImports.rewrittenSource;
             pseudoRewriteCount += pseudoImports.addedImportCount;
@@ -493,6 +496,13 @@ public final class JavaSourceParser {
         return source.substring(0, lastBrace) + helper + "\n}\n";
     }
 
+    private static RewriteResult rewriteRemainingPseudoBundleReferences(String source) {
+        return rewriteQualifiedTypeOutsideCommentsAndStrings(
+                source,
+                "android.os.Bundle",
+                WRAPPER_ANDROID_PREFIX + "os.Bundle");
+    }
+
     private static String buildPseudoHelperMethods(String className) {
         return "\n\n"
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_CACHE_FIELD + ";\n\n"
@@ -695,6 +705,134 @@ public final class JavaSourceParser {
         return WRAPPER_PREFIX + androidTypeName;
     }
 
+    private static RewriteResult rewriteQualifiedTypeOutsideCommentsAndStrings(
+            String source,
+            String target,
+            String replacement) {
+        if (source == null || source.isEmpty()
+                || target == null || target.isEmpty()
+                || replacement == null || replacement.isEmpty()
+                || !source.contains(target)) {
+            return new RewriteResult(source == null ? "" : source, 0, false);
+        }
+
+        StringBuilder builder = new StringBuilder(source.length() + 32);
+        int replacementCount = 0;
+        boolean inLineComment = false;
+        boolean inBlockComment = false;
+        boolean inDoubleQuote = false;
+        boolean inSingleQuote = false;
+        boolean escaped = false;
+        int index = 0;
+        while (index < source.length()) {
+            char current = source.charAt(index);
+            if (inLineComment) {
+                builder.append(current);
+                index++;
+                if (current == '\n') {
+                    inLineComment = false;
+                }
+                continue;
+            }
+            if (inBlockComment) {
+                builder.append(current);
+                index++;
+                if (current == '*' && index < source.length() && source.charAt(index) == '/') {
+                    builder.append(source.charAt(index));
+                    index++;
+                    inBlockComment = false;
+                }
+                continue;
+            }
+            if (inDoubleQuote) {
+                builder.append(current);
+                index++;
+                if (escaped) {
+                    escaped = false;
+                } else if (current == '\\') {
+                    escaped = true;
+                } else if (current == '"') {
+                    inDoubleQuote = false;
+                }
+                continue;
+            }
+            if (inSingleQuote) {
+                builder.append(current);
+                index++;
+                if (escaped) {
+                    escaped = false;
+                } else if (current == '\\') {
+                    escaped = true;
+                } else if (current == '\'') {
+                    inSingleQuote = false;
+                }
+                continue;
+            }
+            if (current == '/' && index + 1 < source.length()) {
+                char next = source.charAt(index + 1);
+                if (next == '/') {
+                    builder.append(current).append(next);
+                    index += 2;
+                    inLineComment = true;
+                    continue;
+                }
+                if (next == '*') {
+                    builder.append(current).append(next);
+                    index += 2;
+                    inBlockComment = true;
+                    continue;
+                }
+            }
+            if (current == '"') {
+                builder.append(current);
+                index++;
+                inDoubleQuote = true;
+                escaped = false;
+                continue;
+            }
+            if (current == '\'') {
+                builder.append(current);
+                index++;
+                inSingleQuote = true;
+                escaped = false;
+                continue;
+            }
+            if (matchesExactQualifiedType(source, index, target)) {
+                builder.append(replacement);
+                index += target.length();
+                replacementCount++;
+                continue;
+            }
+            builder.append(current);
+            index++;
+        }
+        if (replacementCount == 0) {
+            return new RewriteResult(source, 0, false);
+        }
+        return new RewriteResult(builder.toString(), replacementCount, true);
+    }
+
+    private static boolean matchesExactQualifiedType(String source, int index, String target) {
+        if (source == null || target == null || index < 0 || index + target.length() > source.length()) {
+            return false;
+        }
+        if (!source.regionMatches(index, target, 0, target.length())) {
+            return false;
+        }
+        if (index > 0) {
+            char previous = source.charAt(index - 1);
+            if (previous == '.' || Character.isJavaIdentifierPart(previous)) {
+                return false;
+            }
+            if (index >= WRAPPER_PREFIX.length()
+                    && source.regionMatches(index - WRAPPER_PREFIX.length(), WRAPPER_PREFIX, 0, WRAPPER_PREFIX.length())) {
+                return false;
+            }
+        }
+        int end = index + target.length();
+        return end >= source.length() || !Character.isJavaIdentifierPart(source.charAt(end));
+    }
+
     private static Map<String, String> buildPseudoAndroidTypeOverrides() {
         LinkedHashMap<String, String> replacements = new LinkedHashMap<>();
         replacements.put("android.widget.TextView", "com.micklab.dcg.wrapper.pseudo.TextView");
@@ -709,6 +847,7 @@ public final class JavaSourceParser {
     private static List<String> buildPseudoRequiredImports() {
         List<String> imports = new ArrayList<>();
         imports.add("import " + PSEUDO_MAIN_ACTIVITY + ";\n");
+        imports.add("import " + WRAPPER_ANDROID_PREFIX + "os.Bundle;\n");
         for (String overrideType : PSEUDO_ANDROID_TYPE_OVERRIDES.values()) {
             imports.add("import " + overrideType + ";\n");
         }

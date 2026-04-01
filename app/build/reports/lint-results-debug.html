@@ -177,21 +177,21 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 17 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 18 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Apr 01 03:16:06 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Apr 01 09:52:38 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#NestedScrolling"><i class="material-icons warning-icon">warning</i>Nested scrolling widgets (1)</a>
       <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (4)</a>
       <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (1)</a>
       <a class="mdl-navigation__link" href="#MissingApplicationIcon"><i class="material-icons warning-icon">warning</i>Missing application icon (1)</a>
       <a class="mdl-navigation__link" href="#ButtonStyle"><i class="material-icons warning-icon">warning</i>Button should be borderless (7)</a>
       <a class="mdl-navigation__link" href="#Autofill"><i class="material-icons warning-icon">warning</i>Use Autofill (2)</a>
+      <a class="mdl-navigation__link" href="#ClickableViewAccessibility"><i class="material-icons warning-icon">warning</i>Accessibility in Custom Views (2)</a>
       <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (1)</a>
     </nav>
   </div>
@@ -207,9 +207,6 @@ document.getElementById(id).style.display = 'none';
 <table class="overview">
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#NestedScrolling">NestedScrolling</a>: Nested scrolling widgets</td></tr>
 <tr>
 <td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
@@ -231,6 +228,11 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#Autofill">Autofill</a>: Use Autofill</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Accessibility">Accessibility</a>
+</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ClickableViewAccessibility">ClickableViewAccessibility</a>: Accessibility in Custom Views</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
 </td></tr>
 <tr>
@@ -248,51 +250,7 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="NestedScrolling"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="NestedScrollingCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Nested scrolling widgets</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:166</span>: <span class="message">The vertically scrolling <code>ScrollView</code> should not contain another vertically scrolling widget (<code>ListView</code>)</span><br /><pre class="errorlines">
-<span class="lineno"> 163 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
-<span class="lineno"> 164 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
-<span class="lineno"> 165 </span>
-<span class="caretline"><span class="lineno"> 166 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">ListView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 167 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/snippetListView"</span>
-<span class="lineno"> 168 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
-<span class="lineno"> 169 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"220dp"</span></pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationNestedScrolling" style="display: none;">
-A scrolling widget such as a <code>ScrollView</code> should not contain any nested scrolling widgets since this has various usability issues<br/>To suppress this error, use the issue id "NestedScrolling" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">NestedScrolling</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 7/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationNestedScrollingLink" onclick="reveal('explanationNestedScrolling');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="NestedScrollingCardLink" onclick="hideid('NestedScrollingCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="DefaultLocale"></a>
+<a name="DefaultLocale"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -383,7 +341,7 @@ Dismiss</button>            </div>
 <div class="issue">
 <div class="warningslist">
 <span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:5</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/surface</code> with a theme that also paints a background (inferred theme is <code>@style/Theme.Dcg</code>)</span><br /><pre class="errorlines">
-<span class="lineno">   2 </span><span class="tag">&lt;ScrollView</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="lineno">   2 </span><span class="tag">&lt;androidx.core.widget.NestedScrollView</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
 <span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
 <span class="caretline"><span class="lineno">   5 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/surface"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -594,14 +552,14 @@ Dismiss</button>            </div>
 <span class="lineno">  60 </span>                <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
 <span class="lineno">  61 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:184</span>: <span class="message">Missing <code>autofillHints</code> attribute</span><br /><pre class="errorlines">
-<span class="lineno"> 181 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
-<span class="lineno"> 182 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
-<span class="lineno"> 183 </span>
-<span class="caretline"><span class="lineno"> 184 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 185 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/codeInput"</span>
-<span class="lineno"> 186 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
-<span class="lineno"> 187 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"360dp"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:170</span>: <span class="message">Missing <code>autofillHints</code> attribute</span><br /><pre class="errorlines">
+<span class="lineno"> 167 </span>            <span class="prefix">android:</span><span class="attribute">textColor</span>=<span class="value">"@color/textPrimary"</span>
+<span class="lineno"> 168 </span>            <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span> />
+<span class="lineno"> 169 </span>
+<span class="caretline"><span class="lineno"> 170 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 171 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/codeInput"</span>
+<span class="lineno"> 172 </span>            <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno"> 173 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"360dp"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationAutofill" style="display: none;">
@@ -633,6 +591,63 @@ To suppress this error, use the issue id "Autofill" as explained in the <a href=
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAutofillLink" onclick="reveal('explanationAutofill');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AutofillCardLink" onclick="hideid('AutofillCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Accessibility"></a>
+<a name="ClickableViewAccessibility"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ClickableViewAccessibilityCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Accessibility in Custom Views</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/MainActivity.java">../../src/main/java/com/micklab/dcg/MainActivity.java</a>:140</span>: <span class="message">Custom view `<code>EditText</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
+<span class="lineno"> 137 </span>    <span class="keyword">private</span> <span class="keyword">void</span> setupCodeInputScrolling() {
+<span class="lineno"> 138 </span>        codeInput.setVerticalScrollBarEnabled(<span class="keyword">true</span>);
+<span class="lineno"> 139 </span>        codeInput.setNestedScrollingEnabled(<span class="keyword">true</span>);
+<span class="caretline"><span class="lineno"> 140 </span>        <span class="warning">codeInput.setOnTouchListener((view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 141 </span>            <span class="keyword">if</span> (!view.canScrollVertically(-<span class="number">1</span>) &amp;&amp; !view.canScrollVertically(<span class="number">1</span>)) {
+<span class="lineno"> 142 </span>                <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 143 </span>            }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/MainActivity.java">../../src/main/java/com/micklab/dcg/MainActivity.java</a>:140</span>: <span class="message"><code>onTouch</code> lambda should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
+<span class="lineno"> 137 </span>    <span class="keyword">private</span> <span class="keyword">void</span> setupCodeInputScrolling() {
+<span class="lineno"> 138 </span>        codeInput.setVerticalScrollBarEnabled(<span class="keyword">true</span>);
+<span class="lineno"> 139 </span>        codeInput.setNestedScrollingEnabled(<span class="keyword">true</span>);
+<span class="caretline"><span class="lineno"> 140 </span>        codeInput.setOnTouchListener(<span class="warning">(view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 141 </span>            <span class="keyword">if</span> (!view.canScrollVertically(-<span class="number">1</span>) &amp;&amp; !view.canScrollVertically(<span class="number">1</span>)) {
+<span class="lineno"> 142 </span>                <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 143 </span>            }
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationClickableViewAccessibility" style="display: none;">
+If a <code>View</code> that overrides <code>onTouchEvent</code> or uses an <code>OnTouchListener</code> does not also implement <code>performClick</code> and call it when clicks are detected, the <code>View</code> may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in <code>View#performClick</code> as some accessibility services invoke <code>performClick</code> when a click action should occur.<br/>To suppress this error, use the issue id "ClickableViewAccessibility" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ClickableViewAccessibility</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Accessibility</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationClickableViewAccessibilityLink" onclick="reveal('explanationClickableViewAccessibility');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ClickableViewAccessibilityCardLink" onclick="hideid('ClickableViewAccessibilityCard');">
 Dismiss</button>            </div>
             </div>
           </section>

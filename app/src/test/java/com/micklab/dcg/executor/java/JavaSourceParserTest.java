@@ -126,6 +126,23 @@ public class JavaSourceParserTest {
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
         assertTrue(rewritten.contains("__dcgActivity.onCreate(null);"));
+        assertFalse(rewritten.contains("protected void onCreate(android.os.Bundle"));
+        assertFalse(rewritten.contains("import android.os.Bundle;"));
+    }
+
+    @Test
+    public void prepareForCompilationAddsBundleImportForPseudoMainActivityWithoutAndroidImport() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate(Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
+        assertTrue(rewritten.contains("protected void onCreate(Bundle savedInstanceState)"));
     }
 
     @Test

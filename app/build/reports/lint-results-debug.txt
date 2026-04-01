@@ -1,11 +1,3 @@
-/root/dcg/app/src/main/res/layout/activity_main.xml:166: Warning: The vertically scrolling ScrollView should not contain another vertically scrolling widget (ListView) [NestedScrolling]
-        <ListView
-         ~~~~~~~~
-
-   Explanation for issues of type "NestedScrolling":
-   A scrolling widget such as a ScrollView should not contain any nested
-   scrolling widgets since this has various usability issues
-
 /root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:343: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String normalizedType = ((String) type).trim().toLowerCase();
                                                        ~~~~~~~~~~~
@@ -102,7 +94,7 @@
 /root/dcg/app/src/main/res/layout/activity_main.xml:58: Warning: Missing autofillHints attribute [Autofill]
             <EditText
              ~~~~~~~~
-/root/dcg/app/src/main/res/layout/activity_main.xml:184: Warning: Missing autofillHints attribute [Autofill]
+/root/dcg/app/src/main/res/layout/activity_main.xml:170: Warning: Missing autofillHints attribute [Autofill]
         <EditText
          ~~~~~~~~
 
@@ -126,6 +118,20 @@
 
    https://developer.android.com/guide/topics/text/autofill.html
 
+/root/dcg/app/src/main/java/com/micklab/dcg/MainActivity.java:140: Warning: Custom view `EditText` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+        codeInput.setOnTouchListener((view, event) -> {
+        ^
+/root/dcg/app/src/main/java/com/micklab/dcg/MainActivity.java:140: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+        codeInput.setOnTouchListener((view, event) -> {
+                                     ^
+
+   Explanation for issues of type "ClickableViewAccessibility":
+   If a View that overrides onTouchEvent or uses an OnTouchListener does not
+   also implement performClick and call it when clicks are detected, the View
+   may not handle accessibility actions properly. Logic handling the click
+   actions should ideally be placed in View#performClick as some accessibility
+   services invoke performClick when a click action should occur.
+
 /root/dcg/app/src/main/java/com/micklab/dcg/ui/SnippetListAdapter.java:73: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         holder.metaView.setText(snippet.getLanguage().getDisplayName() + " • " + snippet.getFileName() + " • " + updatedText);
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,4 +149,4 @@
 
    https://developer.android.com/guide/topics/resources/localization.html
 
-0 errors, 17 warnings
+0 errors, 18 warnings

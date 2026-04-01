@@ -23,10 +23,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="58"
             column="14"
-            startOffset="2151"
+            startOffset="2178"
             endLine="58"
             endColumn="22"
-            endOffset="2159"/>
+            endOffset="2186"/>
     </incident>
 
     <incident
@@ -41,8 +41,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2631"
-                    endOffset="3829"/>
+                    startOffset="2658"
+                    endOffset="3856"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -50,8 +50,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2865"
-                    endOffset="3127"/>
+                    startOffset="2892"
+                    endOffset="3154"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -59,8 +59,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3145"
-                    endOffset="3462"/>
+                    startOffset="3172"
+                    endOffset="3489"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -68,18 +68,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3480"
-                    endOffset="3801"/>
+                    startOffset="3507"
+                    endOffset="3828"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="75"
             column="18"
-            startOffset="2866"
+            startOffset="2893"
             endLine="75"
             endColumn="24"
-            endOffset="2872"/>
+            endOffset="2899"/>
     </incident>
 
     <incident
@@ -94,8 +94,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2631"
-                    endOffset="3829"/>
+                    startOffset="2658"
+                    endOffset="3856"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -103,8 +103,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2865"
-                    endOffset="3127"/>
+                    startOffset="2892"
+                    endOffset="3154"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -112,8 +112,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3145"
-                    endOffset="3462"/>
+                    startOffset="3172"
+                    endOffset="3489"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -121,18 +121,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3480"
-                    endOffset="3801"/>
+                    startOffset="3507"
+                    endOffset="3828"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="82"
             column="18"
-            startOffset="3146"
+            startOffset="3173"
             endLine="82"
             endColumn="24"
-            endOffset="3152"/>
+            endOffset="3179"/>
     </incident>
 
     <incident
@@ -147,8 +147,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2631"
-                    endOffset="3829"/>
+                    startOffset="2658"
+                    endOffset="3856"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -156,8 +156,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="2865"
-                    endOffset="3127"/>
+                    startOffset="2892"
+                    endOffset="3154"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -165,8 +165,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3145"
-                    endOffset="3462"/>
+                    startOffset="3172"
+                    endOffset="3489"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -174,18 +174,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3480"
-                    endOffset="3801"/>
+                    startOffset="3507"
+                    endOffset="3828"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="90"
             column="18"
-            startOffset="3481"
+            startOffset="3508"
             endLine="90"
             endColumn="24"
-            endOffset="3487"/>
+            endOffset="3514"/>
     </incident>
 
     <incident
@@ -200,8 +200,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3843"
-                    endOffset="4714"/>
+                    startOffset="3870"
+                    endOffset="4741"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -209,8 +209,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4076"
-                    endOffset="4338"/>
+                    startOffset="4103"
+                    endOffset="4365"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -218,18 +218,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4356"
-                    endOffset="4686"/>
+                    startOffset="4383"
+                    endOffset="4713"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="105"
             column="18"
-            startOffset="4077"
+            startOffset="4104"
             endLine="105"
             endColumn="24"
-            endOffset="4083"/>
+            endOffset="4110"/>
     </incident>
 
     <incident
@@ -244,8 +244,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="3843"
-                    endOffset="4714"/>
+                    startOffset="3870"
+                    endOffset="4741"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -253,8 +253,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4076"
-                    endOffset="4338"/>
+                    startOffset="4103"
+                    endOffset="4365"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -262,18 +262,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4356"
-                    endOffset="4686"/>
+                    startOffset="4383"
+                    endOffset="4713"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="112"
             column="18"
-            startOffset="4357"
+            startOffset="4384"
             endLine="112"
             endColumn="24"
-            endOffset="4363"/>
+            endOffset="4390"/>
     </incident>
 
     <incident
@@ -288,8 +288,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4728"
-                    endOffset="5596"/>
+                    startOffset="4755"
+                    endOffset="5623"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -297,8 +297,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4961"
-                    endOffset="5229"/>
+                    startOffset="4988"
+                    endOffset="5256"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -306,18 +306,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="5247"
-                    endOffset="5568"/>
+                    startOffset="5274"
+                    endOffset="5595"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="127"
             column="18"
-            startOffset="4962"
+            startOffset="4989"
             endLine="127"
             endColumn="24"
-            endOffset="4968"/>
+            endOffset="4995"/>
     </incident>
 
     <incident
@@ -332,8 +332,8 @@
                 value="?android:attr/buttonBarStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4728"
-                    endOffset="5596"/>
+                    startOffset="4755"
+                    endOffset="5623"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -341,8 +341,8 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="4961"
-                    endOffset="5229"/>
+                    startOffset="4988"
+                    endOffset="5256"/>
             </fix-attribute>
             <fix-attribute
                 description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
@@ -350,32 +350,18 @@
                 value="?android:attr/buttonBarButtonStyle">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-                    startOffset="5247"
-                    endOffset="5568"/>
+                    startOffset="5274"
+                    endOffset="5595"/>
             </fix-attribute>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="134"
             column="18"
-            startOffset="5248"
+            startOffset="5275"
             endLine="134"
             endColumn="24"
-            endOffset="5254"/>
-    </incident>
-
-    <incident
-        id="NestedScrolling"
-        severity="warning"
-        message="The vertically scrolling `ScrollView` should not contain another vertically scrolling widget (`ListView`)">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="166"
-            column="10"
-            startOffset="6474"
-            endLine="166"
-            endColumn="18"
-            endOffset="6482"/>
+            endOffset="5281"/>
     </incident>
 
     <incident
@@ -398,12 +384,40 @@
         </fix-alternatives>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="184"
+            line="170"
             column="10"
-            startOffset="7170"
-            endLine="184"
+            startOffset="6661"
+            endLine="170"
             endColumn="18"
-            endOffset="7178"/>
+            endOffset="6669"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="`onTouch` lambda should call `View#performClick` when a click is detected">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
+            line="140"
+            column="38"
+            startOffset="5266"
+            endLine="151"
+            endColumn="10"
+            endOffset="5810"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view ``EditText`` has `setOnTouchListener` called on it but does not override `performClick`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
+            line="140"
+            column="9"
+            startOffset="5237"
+            endLine="151"
+            endColumn="11"
+            endOffset="5811"/>
     </incident>
 
     <incident
@@ -484,10 +498,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="5"
             column="5"
-            startOffset="195"
+            startOffset="222"
             endLine="5"
             endColumn="40"
-            endOffset="230"/>
+            endOffset="257"/>
     </incident>
 
 </incidents>

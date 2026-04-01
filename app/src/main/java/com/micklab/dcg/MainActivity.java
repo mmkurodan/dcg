@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupLanguageSpinner();
         setupSnippetList();
+        setupCodeInputScrolling();
         registerLaunchers();
         setupButtons();
         ensureSeedSnippet();
@@ -130,6 +132,23 @@ public class MainActivity extends AppCompatActivity {
     private void setupSnippetList() {
         snippetListView.setAdapter(snippetAdapter);
         snippetListView.setOnItemClickListener((parent, view, position, id) -> renderSnippet(snippetAdapter.getItem(position)));
+    }
+
+    private void setupCodeInputScrolling() {
+        codeInput.setVerticalScrollBarEnabled(true);
+        codeInput.setNestedScrollingEnabled(true);
+        codeInput.setOnTouchListener((view, event) -> {
+            if (!view.canScrollVertically(-1) && !view.canScrollVertically(1)) {
+                return false;
+            }
+            int action = event.getActionMasked();
+            if (action == MotionEvent.ACTION_DOWN) {
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+                view.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
     }
 
     private void registerLaunchers() {

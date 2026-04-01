@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/surface"
@@ -145,20 +145,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/execution_log_label"
-            android:textColor="@color/textPrimary"
-            android:textStyle="bold" />
-
-        <com.micklab.dcg.ui.ResultView
-            android:id="@+id/executionLogView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/saved_snippets_label"
             android:textColor="@color/textPrimary"
             android:textStyle="bold" />
@@ -190,10 +176,26 @@
             android:fontFamily="monospace"
             android:gravity="top|start"
             android:inputType="textMultiLine|textNoSuggestions|textVisiblePassword"
+            android:nestedScrollingEnabled="true"
             android:overScrollMode="always"
             android:padding="12dp"
             android:scrollbars="vertical"
+            android:scrollbarStyle="insideInset"
             android:textColor="@color/textPrimary"
             android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/execution_log_label"
+            android:textColor="@color/textPrimary"
+            android:textStyle="bold" />
+
+        <com.micklab.dcg.ui.ResultView
+            android:id="@+id/executionLogView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

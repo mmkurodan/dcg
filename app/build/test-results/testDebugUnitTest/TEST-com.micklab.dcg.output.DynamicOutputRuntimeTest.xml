@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.output.DynamicOutputRuntimeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-04-01T03:13:58" hostname="localhost" time="0.007">
+<testsuite name="com.micklab.dcg.output.DynamicOutputRuntimeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-04-01T09:52:17" hostname="localhost" time="0.019">
   <properties/>
-  <testcase name="invokeActionPassesInputsAndCapturesStdout" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.004"/>
-  <testcase name="extractStructuredOutputIncludesOutputModelJson" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.001"/>
-  <testcase name="extractStructuredOutputKeepsMainReturnValueAndAddsDeclarativeUi" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.0"/>
-  <testcase name="extractStructuredOutputDetectsViewFactoryMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.002"/>
+  <testcase name="invokeActionPassesInputsAndCapturesStdout" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.008"/>
+  <testcase name="extractStructuredOutputIncludesOutputModelJson" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.004"/>
+  <testcase name="extractStructuredOutputKeepsMainReturnValueAndAddsDeclarativeUi" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.001"/>
+  <testcase name="extractStructuredOutputDetectsViewFactoryMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

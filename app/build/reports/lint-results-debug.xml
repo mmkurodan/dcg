@@ -2,22 +2,6 @@
 <issues format="6" by="lint 8.5.1">
 
     <issue
-        id="NestedScrolling"
-        severity="Warning"
-        message="The vertically scrolling `ScrollView` should not contain another vertically scrolling widget (`ListView`)"
-        category="Correctness"
-        priority="7"
-        summary="Nested scrolling widgets"
-        explanation="A scrolling widget such as a `ScrollView` should not contain any nested scrolling widgets since this has various usability issues"
-        errorLine1="        &lt;ListView"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="/root/dcg/app/src/main/res/layout/activity_main.xml"
-            line="166"
-            column="10"/>
-    </issue>
-
-    <issue
         id="DefaultLocale"
         severity="Warning"
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
@@ -281,8 +265,40 @@
         errorLine2="         ~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/res/layout/activity_main.xml"
-            line="184"
+            line="170"
             column="10"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        severity="Warning"
+        message="Custom view ``EditText`` has `setOnTouchListener` called on it but does not override `performClick`"
+        category="Accessibility"
+        priority="6"
+        summary="Accessibility in Custom Views"
+        explanation="If a `View` that overrides `onTouchEvent` or uses an `OnTouchListener` does not also implement `performClick` and call it when clicks are detected, the `View` may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in `View#performClick` as some accessibility services invoke `performClick` when a click action should occur."
+        errorLine1="        codeInput.setOnTouchListener((view, event) -> {"
+        errorLine2="        ^">
+        <location
+            file="/root/dcg/app/src/main/java/com/micklab/dcg/MainActivity.java"
+            line="140"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        severity="Warning"
+        message="`onTouch` lambda should call `View#performClick` when a click is detected"
+        category="Accessibility"
+        priority="6"
+        summary="Accessibility in Custom Views"
+        explanation="If a `View` that overrides `onTouchEvent` or uses an `OnTouchListener` does not also implement `performClick` and call it when clicks are detected, the `View` may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in `View#performClick` as some accessibility services invoke `performClick` when a click action should occur."
+        errorLine1="        codeInput.setOnTouchListener((view, event) -> {"
+        errorLine2="                                     ^">
+        <location
+            file="/root/dcg/app/src/main/java/com/micklab/dcg/MainActivity.java"
+            line="140"
+            column="38"/>
     </issue>
 
     <issue
