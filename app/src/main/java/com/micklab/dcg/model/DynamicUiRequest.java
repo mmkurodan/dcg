@@ -6,6 +6,8 @@ public final class DynamicUiRequest {
         VIEW_FACTORY
     }
 
+    private static final String PSEUDO_OUTPUT_MODEL_JSON_METHOD = "__dcgGetPseudoOutputModelJson";
+
     private final Mode mode;
     private final Class<?> dynamicClass;
     private final Object spec;
@@ -51,5 +53,17 @@ public final class DynamicUiRequest {
 
     public boolean requiresWrapperContext() {
         return requiresWrapperContext;
+    }
+
+    public boolean isPseudoMainActivityRequest() {
+        if (dynamicClass == null) {
+            return false;
+        }
+        try {
+            dynamicClass.getDeclaredMethod(PSEUDO_OUTPUT_MODEL_JSON_METHOD);
+            return true;
+        } catch (NoSuchMethodException ignored) {
+            return false;
+        }
     }
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.output.DynamicOutputRuntimeTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-04-02T05:26:22" hostname="localhost" time="0.032">
+<testsuite name="com.micklab.dcg.output.DynamicOutputRuntimeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-04-02T06:39:16" hostname="localhost" time="0.029">
   <properties/>
-  <testcase name="extractStructuredOutputTreatsExtendedDeclarativeNodesAsInteractiveUi" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.009"/>
-  <testcase name="invokeImageClickHandlerPassesCoordinatesToStaticMapMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.007"/>
-  <testcase name="invokeActionPassesInputsAndCapturesStdout" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.008"/>
-  <testcase name="extractStructuredOutputIncludesOutputModelJson" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.001"/>
-  <testcase name="invokeImageClickHandlerReturnsNullWhenHandlerDoesNotReturnText" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.0"/>
+  <testcase name="extractStructuredOutputTreatsExtendedDeclarativeNodesAsInteractiveUi" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.006"/>
+  <testcase name="invokeImageClickHandlerPassesCoordinatesToStaticMapMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.004"/>
+  <testcase name="invokeActionPassesInputsAndCapturesStdout" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.004"/>
+  <testcase name="extractStructuredOutputIncludesOutputModelJson" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.003"/>
+  <testcase name="rebuildPseudoMainActivityOutputUsesUpdatedStateWithoutClassReload" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.003"/>
+  <testcase name="invokeImageClickHandlerReturnsNullWhenHandlerDoesNotReturnText" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.001"/>
   <testcase name="extractStructuredOutputKeepsMainReturnValueAndAddsDeclarativeUi" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.001"/>
-  <testcase name="extractStructuredOutputDetectsViewFactoryMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.005"/>
+  <testcase name="extractStructuredOutputDetectsViewFactoryMethod" classname="com.micklab.dcg.output.DynamicOutputRuntimeTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

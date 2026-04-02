@@ -45,6 +45,7 @@ public class OutputActivity extends AppCompatActivity {
     private static final String SPACER_TAG = "dcg-spacer";
     private static final String IMAGE_OUTPUT_DIRECTORY = "pseudo-output-images";
     private static final int FIXED_IMAGE_SIZE_PX = 80 * 8;
+    private static final String RELOAD_RESULT = "reload";
 
     private LinearLayout contentLayout;
 
@@ -478,6 +479,9 @@ public class OutputActivity extends AppCompatActivity {
             LinearLayout actionOutputLayout) {
         try {
             Object result = DynamicOutputRuntime.invokeImageClickHandler(request, handlerName, values);
+            if (handleReloadResult(request, result)) {
+                return;
+            }
             renderJavaHandlerOutput(actionOutputLayout, result);
         } catch (Exception exception) {
             actionOutputLayout.removeAllViews();
@@ -527,6 +531,9 @@ public class OutputActivity extends AppCompatActivity {
             LinearLayout actionOutputLayout) {
         try {
             DynamicOutputRuntime.ActionOutput actionOutput = DynamicOutputRuntime.invokeAction(request, action, values, this);
+            if (handleReloadResult(request, actionOutput == null ? null : actionOutput.getReturnValue())) {
+                return;
+            }
             publishActionLog(action, actionOutput);
             renderActionOutput(actionOutputLayout, actionOutput);
         } catch (Exception exception) {
@@ -578,6 +585,29 @@ public class OutputActivity extends AppCompatActivity {
                 actionOutput.getStderr(),
                 "",
                 -1L));
+    }
+
+    private boolean handleReloadResult(DynamicUiRequest request, Object result) throws Exception {
+        String resultString = result instanceof String ? (String) result : null;
+        if (!RELOAD_RESULT.equals(resultString)) {
+            return false;
+        }
+        if (!isPseudoMainActivityRequest(request)) {
+            return false;
+        }
+
+        contentLayout.removeAllViews();
+        DynamicOutputRuntime.StructuredOutput rebuiltOutput =
+                DynamicOutputRuntime.rebuildPseudoMainActivityOutput(request);
+        ExecutionResult updatedResult = OutputStore.getLatestResult()
+                .withOutputItems(rebuiltOutput.getOutputItems())
+                .withOutputModelJson(rebuiltOutput.getOutputModelJson());
+        OutputStore.publish(updatedResult);
+        return true;
+    }
+
+    private boolean isPseudoMainActivityRequest(DynamicUiRequest request) {
+        return request != null && request.isPseudoMainActivityRequest();
     }
 
     private void addTextSection(LinearLayout parent, String label, String text) {

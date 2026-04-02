@@ -1,22 +1,22 @@
-/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:383: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java:390: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String normalizedType = ((String) type).trim().toLowerCase();
                                                        ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:228: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:229: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String type = stringValue(spec.get("type")).toLowerCase();
                                                     ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:329: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:330: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String emphasis = stringValue(spec.get("style")).toLowerCase();
                                                          ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:368: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:369: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
         String keyboard = stringValue(spec.get("keyboard")).toLowerCase();
                                                             ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:734: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:764: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
             String type = stringValue(command.get("type")).toLowerCase();
                                                            ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:748: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:778: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
                 if (!"imageclick".equals(stringValue(command.get("type")).toLowerCase())) {
                                                                           ~~~~~~~~~~~
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:770: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:800: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
             String type = stringValue(rewritten.get("type")).toLowerCase();
                                                              ~~~~~~~~~~~
 
@@ -139,10 +139,10 @@
 /root/dcg/app/src/main/java/com/micklab/dcg/MainActivity.java:155: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
         codeInput.setOnTouchListener((view, event) -> {
                                      ^
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:458: Warning: Custom view `ImageView` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:459: Warning: Custom view `ImageView` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
         imageView.setOnTouchListener((view, event) -> {
         ^
-/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:458: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java:459: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
         imageView.setOnTouchListener((view, event) -> {
                                      ^
 

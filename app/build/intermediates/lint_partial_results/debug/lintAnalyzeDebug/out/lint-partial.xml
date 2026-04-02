@@ -65,11 +65,6 @@
             name="foundClearCommunicationDevice"
             boolean="true"/>
     </map>
-    <map id="UnusedResources">
-        <entry
-            name="model"
-            string="color[panel(U),stroke(U),panelSelected(U),accent(U),surface(U),textPrimary(U),textSecondary(U),error(U),primary(U),primaryDark(U),success(U),warning(U),info(U)],drawable[panel_background(U),panel_selected_background(U),result_background(U)],id[languageSpinner(U),titleInput(U),newButton(U),saveButton(U),deleteButton(U),runButton(U),openOutputButton(U),importButton(U),exportButton(U),snippetListView(U),codeInput(U),executionLogView(U),snippetItemRoot(U),snippetTitleView(U),snippetMetaView(U),resultStatusView(U),resultHeadlineView(U),resultSummaryView(U),resultCopyLogsButton(U),resultStdoutLabelView(U),resultStdoutView(U),resultReturnValueLabelView(U),resultReturnValueView(U),resultErrorLabelView(U),resultErrorView(U),resultDetailsLabelView(U),resultDetailsView(U)],layout[activity_main(U),item_snippet(U),view_result(U)],string[app_name(U),editor_title(U),editor_subtitle(U),language_label(U),title_label(U),title_hint(U),action_new(U),action_save(U),action_delete(U),action_run(U),action_open_output(U),action_import(U),action_export(U),saved_snippets_label(U),source_code_label(U),execution_log_label(U),action_copy_logs(U),result_stdout_label(U),result_return_value_label(U),result_error_label(U),result_details_label(U),result_output_label(U),result_copied_message(U),output_empty_message(U),output_render_error_message(U)],style[Theme_Dcg(U),Theme_AppCompat_Light_NoActionBar(R)];d^0^1,e^2^3,f^0^1,2b^4^2f^5^30^6^d^31^32^33^34^35^36^37^38^39^3a^3b^3c^3d,2c^d^5^6,2d^5^3e^3f^6^40^41^7^42,47^48^8^9^3^4;;;"/>
-    </map>
     <map id="AppBundleLocaleChanges">
         <location id="localeChangeLocation"
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/wrapper/android/content/res/Configuration.java"
@@ -79,6 +74,11 @@
             endLine="107"
             endColumn="67"
             endOffset="4227"/>
+    </map>
+    <map id="UnusedResources">
+        <entry
+            name="model"
+            string="color[panel(U),stroke(U),panelSelected(U),accent(U),surface(U),textPrimary(U),textSecondary(U),error(U),primary(U),primaryDark(U),success(U),warning(U),info(U)],drawable[panel_background(U),panel_selected_background(U),result_background(U)],id[languageSpinner(U),titleInput(U),newButton(U),saveButton(U),deleteButton(U),runButton(U),openOutputButton(U),importButton(U),exportButton(U),snippetListView(U),codeInput(U),executionLogView(U),snippetItemRoot(U),snippetTitleView(U),snippetMetaView(U),resultStatusView(U),resultHeadlineView(U),resultSummaryView(U),resultCopyLogsButton(U),resultStdoutLabelView(U),resultStdoutView(U),resultReturnValueLabelView(U),resultReturnValueView(U),resultErrorLabelView(U),resultErrorView(U),resultDetailsLabelView(U),resultDetailsView(U)],layout[activity_main(U),item_snippet(U),view_result(U)],string[app_name(U),editor_title(U),editor_subtitle(U),language_label(U),title_label(U),title_hint(U),action_new(U),action_save(U),action_delete(U),action_run(U),action_open_output(U),action_import(U),action_export(U),saved_snippets_label(U),source_code_label(U),execution_log_label(U),action_copy_logs(U),result_stdout_label(U),result_return_value_label(U),result_error_label(U),result_details_label(U),result_output_label(U),result_copied_message(U),output_empty_message(U),output_render_error_message(U)],style[Theme_Dcg(U),Theme_AppCompat_Light_NoActionBar(R)];d^0^1,e^2^3,f^0^1,2b^4^2f^5^30^6^d^31^32^33^34^35^36^37^38^39^3a^3b^3c^3d,2c^d^5^6,2d^5^3e^3f^6^40^41^7^42,47^48^8^9^3^4;;;"/>
     </map>
 
 </incidents>

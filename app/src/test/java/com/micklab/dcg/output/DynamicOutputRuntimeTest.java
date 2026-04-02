@@ -9,6 +9,7 @@ import com.micklab.dcg.model.ExecutionOutputItem;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,27 @@ public class DynamicOutputRuntimeTest {
         assertEquals("summing", output.getStdout());
         assertEquals(1, output.getOutputItems().size());
         assertEquals("12", output.getOutputItems().get(0).getText());
+    }
+
+    @Test
+    public void rebuildPseudoMainActivityOutputUsesUpdatedStateWithoutClassReload() throws Exception {
+        ReloadingPseudoProgram.resetState();
+        DynamicUiRequest request = DynamicUiRequest.declarative(ReloadingPseudoProgram.class, new ArrayList<>());
+
+        DynamicOutputRuntime.StructuredOutput initial =
+                DynamicOutputRuntime.rebuildPseudoMainActivityOutput(request);
+        assertTrue(request.isPseudoMainActivityRequest());
+        assertTrue(initial.getOutputModelJson().contains("\"text\":\"turn:0\""));
+        assertEquals(1, ReloadingPseudoProgram.getInitializationCount());
+
+        DynamicOutputRuntime.ActionOutput actionOutput =
+                DynamicOutputRuntime.invokeAction(request, "play", Collections.singletonMap("delta", "1"), null);
+        assertEquals("reload", actionOutput.getReturnValue());
+
+        DynamicOutputRuntime.StructuredOutput reloaded =
+                DynamicOutputRuntime.rebuildPseudoMainActivityOutput(request);
+        assertTrue(reloaded.getOutputModelJson().contains("\"text\":\"turn:1\""));
+        assertEquals(1, ReloadingPseudoProgram.getInitializationCount());
     }
 
     @Test
@@ -212,6 +234,42 @@ public class DynamicOutputRuntimeTest {
 
         public static String __dcgGetOutputModelJson() {
             return "{\"version\":1,\"spec\":[{\"type\":\"column\",\"children\":[{\"type\":\"text\",\"text\":\"Pseudo\"},{\"type\":\"input\",\"id\":\"name\",\"hint\":\"Name\"},{\"type\":\"button\",\"text\":\"Submit\",\"action\":\"submit\"}]}]}";
+        }
+    }
+
+    public static final class ReloadingPseudoProgram {
+        private static int initializationCount;
+        private static int turn;
+
+        static {
+            initializationCount++;
+            turn = 0;
+        }
+
+        public static void resetState() {
+            turn = 0;
+        }
+
+        public static int getInitializationCount() {
+            return initializationCount;
+        }
+
+        public static Object buildOutput() {
+            List<Map<String, Object>> nodes = new ArrayList<>();
+            Map<String, Object> label = new LinkedHashMap<>();
+            label.put("type", "text");
+            label.put("text", "turn:" + turn);
+            nodes.add(label);
+            return nodes;
+        }
+
+        public static Object play(Map<String, String> values) {
+            turn += Integer.parseInt(values.get("delta"));
+            return "reload";
+        }
+
+        public static String __dcgGetPseudoOutputModelJson() {
+            return "{\"version\":1,\"spec\":[{\"type\":\"text\",\"text\":\"turn:" + turn + "\"}]}";
         }
     }
 }

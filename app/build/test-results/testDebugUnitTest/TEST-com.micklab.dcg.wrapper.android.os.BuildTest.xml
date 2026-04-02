@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.wrapper.android.os.BuildTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-02T05:26:22" hostname="localhost" time="0.005">
+<testsuite name="com.micklab.dcg.wrapper.android.os.BuildTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-02T06:39:16" hostname="localhost" time="0.003">
   <properties/>
-  <testcase name="buildFieldsPreferAndroidPropertiesAndFallbackToJavaProperties" classname="com.micklab.dcg.wrapper.android.os.BuildTest" time="0.005"/>
+  <testcase name="buildFieldsPreferAndroidPropertiesAndFallbackToJavaProperties" classname="com.micklab.dcg.wrapper.android.os.BuildTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

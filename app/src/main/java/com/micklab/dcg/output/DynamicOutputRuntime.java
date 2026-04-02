@@ -102,7 +102,14 @@ public final class DynamicOutputRuntime {
         if (!parsedOutcome.returnValueText.isEmpty()) {
             items.add(ExecutionOutputItem.text("Output", parsedOutcome.returnValueText));
         }
-        return new ActionOutput(items, invocation.stdout, invocation.stderr);
+        return new ActionOutput(items, invocation.stdout, invocation.stderr, invocation.returnValue);
+    }
+
+    public static StructuredOutput rebuildPseudoMainActivityOutput(DynamicUiRequest request) throws Exception {
+        if (request == null || request.getDynamicClass() == null) {
+            throw new IllegalArgumentException("Interactive output is missing its dynamic class handle.");
+        }
+        return extractStructuredOutput(request.getDynamicClass(), null);
     }
 
     public static Object invokeImageClickHandler(
@@ -528,11 +535,13 @@ public final class DynamicOutputRuntime {
         private final List<ExecutionOutputItem> outputItems;
         private final String stdout;
         private final String stderr;
+        private final Object returnValue;
 
-        private ActionOutput(List<ExecutionOutputItem> outputItems, String stdout, String stderr) {
+        private ActionOutput(List<ExecutionOutputItem> outputItems, String stdout, String stderr, Object returnValue) {
             this.outputItems = outputItems == null ? new ArrayList<>() : new ArrayList<>(outputItems);
             this.stdout = stdout == null ? "" : stdout;
             this.stderr = stderr == null ? "" : stderr;
+            this.returnValue = returnValue;
         }
 
         public List<ExecutionOutputItem> getOutputItems() {
@@ -545,6 +554,10 @@ public final class DynamicOutputRuntime {
 
         public String getStderr() {
             return stderr;
+        }
+
+        public Object getReturnValue() {
+            return returnValue;
         }
     }
 
