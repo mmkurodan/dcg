@@ -40,6 +40,18 @@ public class DynamicOutputRuntimeTest {
     }
 
     @Test
+    public void extractStructuredOutputTreatsExtendedDeclarativeNodesAsInteractiveUi() throws Exception {
+        DynamicOutputRuntime.StructuredOutput output =
+                DynamicOutputRuntime.extractStructuredOutput(ExtendedDeclarativeProgram.class, null);
+
+        assertEquals(1, output.getOutputItems().size());
+        assertEquals(ExecutionOutputItem.Type.INTERACTIVE, output.getOutputItems().get(0).getType());
+        assertEquals(
+                DynamicUiRequest.Mode.DECLARATIVE_SPEC,
+                output.getOutputItems().get(0).getInteractiveRequest().getMode());
+    }
+
+    @Test
     public void invokeActionPassesInputsAndCapturesStdout() throws Exception {
         DynamicUiRequest request = DynamicUiRequest.declarative(DeclarativeProgram.class, new ArrayList<>());
         Map<String, String> values = new LinkedHashMap<>();
@@ -103,6 +115,29 @@ public class DynamicOutputRuntimeTest {
     public static final class ViewFactoryProgram {
         public static View createOutputView(Context context) {
             return null;
+        }
+    }
+
+    public static final class ExtendedDeclarativeProgram {
+        public static Object buildOutput() {
+            List<Map<String, Object>> nodes = new ArrayList<>();
+
+            Map<String, Object> title = new LinkedHashMap<>();
+            title.put("type", "title");
+            title.put("text", "Canvas");
+            nodes.add(title);
+
+            Map<String, Object> image = new LinkedHashMap<>();
+            image.put("type", "image");
+            image.put("key", "chart");
+            image.put("filename", "charts/chart.png");
+            nodes.add(image);
+
+            Map<String, Object> spacer = new LinkedHashMap<>();
+            spacer.put("type", "spacer");
+            nodes.add(spacer);
+
+            return nodes;
         }
     }
 

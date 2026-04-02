@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,6 +29,9 @@ import com.micklab.dcg.output.OutputModelJsonParser;
 import com.micklab.dcg.output.OutputStore;
 import com.micklab.dcg.util.DiagnosticFormatter;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collection;
@@ -36,6 +40,9 @@ import java.util.List;
 import java.util.Map;
 
 public class OutputActivity extends AppCompatActivity {
+    private static final String SPACER_TAG = "dcg-spacer";
+    private static final String IMAGE_OUTPUT_DIRECTORY = "pseudo-output-images";
+
     private LinearLayout contentLayout;
 
     private final OutputStore.Listener outputListener = result -> runOnUiThread(() -> renderResult(result));
@@ -162,11 +169,12 @@ public class OutputActivity extends AppCompatActivity {
             interactiveRoot.setOrientation(LinearLayout.VERTICAL);
             setTopMargin(interactiveRoot, 8);
             LinkedHashMap<String, EditText> inputs = new LinkedHashMap<>();
+            LinkedHashMap<String, ImageView> images = new LinkedHashMap<>();
             LinearLayout actionOutputLayout = new LinearLayout(this);
             actionOutputLayout.setOrientation(LinearLayout.VERTICAL);
             actionOutputLayout.setVisibility(View.GONE);
 
-            View renderedSpec = buildInteractiveNode(request.getSpec(), request, inputs, actionOutputLayout);
+            View renderedSpec = buildInteractiveNode(request.getSpec(), request, inputs, images, actionOutputLayout);
             if (renderedSpec != null) {
                 addView(interactiveRoot, renderedSpec);
             }
@@ -189,15 +197,16 @@ public class OutputActivity extends AppCompatActivity {
             Object node,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
+            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         if (node == null) {
             return null;
         }
         if (node instanceof Map<?, ?>) {
-            return buildInteractiveMap((Map<?, ?>) node, request, inputs, actionOutputLayout);
+            return buildInteractiveMap((Map<?, ?>) node, request, inputs, images, actionOutputLayout);
         }
         if (node instanceof Collection<?>) {
-            return buildInteractiveCollection((Collection<?>) node, LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
+            return buildInteractiveCollection((Collection<?>) node, LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
         }
         if (node.getClass().isArray()) {
             int length = java.lang.reflect.Array.getLength(node);
@@ -205,7 +214,7 @@ public class OutputActivity extends AppCompatActivity {
             for (int index = 0; index < length; index++) {
                 values.add(java.lang.reflect.Array.get(node, index));
             }
-            return buildInteractiveCollection(values, LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
+            return buildInteractiveCollection(values, LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
         }
         return createBodyText(String.valueOf(node));
     }
@@ -214,19 +223,26 @@ public class OutputActivity extends AppCompatActivity {
             Map<?, ?> spec,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
+            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         String type = stringValue(spec.get("type")).toLowerCase();
         switch (type) {
             case "image":
-                return buildImageNode(spec);
+                return buildImageNode(spec, request, inputs, images, actionOutputLayout);
             case "row":
-                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.HORIZONTAL, request, inputs, actionOutputLayout);
+                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.HORIZONTAL, request, inputs, images, actionOutputLayout);
             case "column":
-                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
+                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
             case "input":
                 return buildInputNode(spec, inputs);
             case "button":
                 return buildButtonNode(spec, request, inputs, actionOutputLayout);
+            case "label":
+                return buildLabelNode(spec);
+            case "title":
+                return buildTitleNode(spec);
+            case "spacer":
+                return buildSpacerNode();
             case "text":
             default:
                 return buildTextNode(spec);
@@ -238,6 +254,7 @@ public class OutputActivity extends AppCompatActivity {
             int orientation,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
+            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(orientation);
@@ -245,34 +262,56 @@ public class OutputActivity extends AppCompatActivity {
             return layout;
         }
         int index = 0;
+        boolean previousWasSpacer = false;
         for (Object child : nodes) {
-            View childView = buildInteractiveNode(child, request, inputs, actionOutputLayout);
+            View childView = buildInteractiveNode(child, request, inputs, images, actionOutputLayout);
             if (childView == null) {
                 continue;
             }
-            LinearLayout.LayoutParams params;
-            if (orientation == LinearLayout.HORIZONTAL && shouldUseWeightedRowLayout(childView)) {
-                params = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
-            } else {
-                params = new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
-            }
-            if (orientation == LinearLayout.HORIZONTAL && index > 0) {
+            boolean childIsSpacer = isSpacerView(childView);
+            LinearLayout.LayoutParams params = createInteractiveChildLayoutParams(childView, orientation);
+            if (orientation == LinearLayout.HORIZONTAL && index > 0 && !childIsSpacer && !previousWasSpacer) {
                 params.setMarginStart(dp(8));
             }
-            if (orientation == LinearLayout.VERTICAL && index > 0) {
+            if (orientation == LinearLayout.VERTICAL && index > 0 && !childIsSpacer && !previousWasSpacer) {
                 params.topMargin = dp(8);
             }
             childView.setLayoutParams(params);
             layout.addView(childView);
             index++;
+            previousWasSpacer = childIsSpacer;
         }
         return layout;
     }
 
     private boolean shouldUseWeightedRowLayout(View childView) {
         return childView instanceof TextView;
+    }
+
+    private LinearLayout.LayoutParams createInteractiveChildLayoutParams(View childView, int orientation) {
+        if (isSpacerView(childView)) {
+            if (orientation == LinearLayout.HORIZONTAL) {
+                return new LinearLayout.LayoutParams(0, 0, 1f);
+            }
+            return new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    dp(8));
+        }
+        if (orientation == LinearLayout.HORIZONTAL && shouldUseWeightedRowLayout(childView)) {
+            return new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
+        }
+        if (orientation == LinearLayout.HORIZONTAL) {
+            return new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
+        return new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+    }
+
+    private boolean isSpacerView(View childView) {
+        return childView != null && SPACER_TAG.equals(childView.getTag());
     }
 
     private View buildTextNode(Map<?, ?> spec) {
@@ -286,6 +325,31 @@ public class OutputActivity extends AppCompatActivity {
         return textView;
     }
 
+    private View buildLabelNode(Map<?, ?> spec) {
+        TextView textView = createBodyText(stringValue(spec.get("text")));
+        int horizontalPadding = dp(12);
+        int verticalPadding = dp(10);
+        textView.setPadding(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding);
+        textView.setEnabled(false);
+        textView.setFocusable(false);
+        textView.setClickable(false);
+        return textView;
+    }
+
+    private View buildTitleNode(Map<?, ?> spec) {
+        TextView titleView = createBodyText(stringValue(spec.get("text")));
+        titleView.setTextSize(24);
+        titleView.setTypeface(Typeface.DEFAULT_BOLD);
+        titleView.setTextColor(color(R.color.textPrimary));
+        return titleView;
+    }
+
+    private View buildSpacerNode() {
+        View spacerView = new View(this);
+        spacerView.setTag(SPACER_TAG);
+        return spacerView;
+    }
+
     private View buildInputNode(Map<?, ?> spec, Map<String, EditText> inputs) {
         EditText editText = new EditText(this);
         editText.setHint(stringValue(spec.get("hint")));
@@ -296,6 +360,13 @@ public class OutputActivity extends AppCompatActivity {
             editText.setInputType(InputType.TYPE_CLASS_NUMBER
                     | InputType.TYPE_NUMBER_FLAG_DECIMAL
                     | InputType.TYPE_NUMBER_FLAG_SIGNED);
+        }
+        boolean editable = !spec.containsKey("editable") || booleanValue(spec.get("editable"));
+        if (!editable) {
+            editText.setEnabled(false);
+            editText.setFocusable(false);
+            editText.setFocusableInTouchMode(false);
+            editText.setClickable(false);
         }
         String id = stringValue(spec.get("id"));
         if (!id.isEmpty()) {
@@ -321,11 +392,29 @@ public class OutputActivity extends AppCompatActivity {
         return button;
     }
 
-    private View buildImageNode(Map<?, ?> spec) {
+    private View buildImageNode(
+            Map<?, ?> spec,
+            DynamicUiRequest request,
+            Map<String, EditText> inputs,
+            Map<String, ImageView> images,
+            LinearLayout actionOutputLayout) {
         ImageView imageView = new ImageView(this);
         imageView.setAdjustViewBounds(true);
+        String key = stringValue(spec.get("key"));
         String encoded = stringValue(spec.get("imageBase64"));
-        if (!encoded.isEmpty()) {
+        String filename = stringValue(spec.get("filename"));
+        if (!filename.isEmpty()) {
+            Bitmap bitmap;
+            try {
+                bitmap = BitmapFactory.decodeFile(resolveImageOutputFile(filename).getAbsolutePath());
+            } catch (IOException exception) {
+                return createBodyText(exception.getMessage());
+            }
+            if (bitmap == null) {
+                return createBodyText("Image file decode failed.");
+            }
+            imageView.setImageBitmap(bitmap);
+        } else if (!encoded.isEmpty()) {
             byte[] bytes = Base64.getDecoder().decode(encoded);
             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             if (bitmap == null) {
@@ -333,7 +422,39 @@ public class OutputActivity extends AppCompatActivity {
             }
             imageView.setImageBitmap(bitmap);
         }
+        if (!key.isEmpty()) {
+            images.put(key, imageView);
+            String handlerName = stringValue(spec.get("handlerName"));
+            if (!handlerName.isEmpty()) {
+                bindImageTouchHandler(imageView, request, handlerName, inputs, actionOutputLayout);
+            }
+        }
         return imageView;
+    }
+
+    private void bindImageTouchHandler(
+            ImageView imageView,
+            DynamicUiRequest request,
+            String handlerName,
+            Map<String, EditText> inputs,
+            LinearLayout actionOutputLayout) {
+        if (imageView == null
+                || request == null
+                || request.getDynamicClass() == null
+                || TextUtils.isEmpty(handlerName)) {
+            return;
+        }
+        imageView.setClickable(true);
+        imageView.setOnTouchListener((view, event) -> {
+            if (event == null || event.getAction() != MotionEvent.ACTION_UP) {
+                return false;
+            }
+            Map<String, String> values = collectInputValues(inputs);
+            values.put("x", String.valueOf(Math.round(event.getX())));
+            values.put("y", String.valueOf(Math.round(event.getY())));
+            runInteractiveActionWithValues(request, handlerName, values, actionOutputLayout);
+            return true;
+        });
     }
 
     private void runInteractiveAction(
@@ -341,12 +462,15 @@ public class OutputActivity extends AppCompatActivity {
             String action,
             Map<String, EditText> inputs,
             LinearLayout actionOutputLayout) {
+        runInteractiveActionWithValues(request, action, collectInputValues(inputs), actionOutputLayout);
+    }
+
+    private void runInteractiveActionWithValues(
+            DynamicUiRequest request,
+            String action,
+            Map<String, String> values,
+            LinearLayout actionOutputLayout) {
         try {
-            Map<String, String> values = new LinkedHashMap<>();
-            for (Map.Entry<String, EditText> entry : inputs.entrySet()) {
-                CharSequence text = entry.getValue().getText();
-                values.put(entry.getKey(), text == null ? "" : text.toString());
-            }
             DynamicOutputRuntime.ActionOutput actionOutput = DynamicOutputRuntime.invokeAction(request, action, values, this);
             publishActionLog(action, actionOutput);
             renderActionOutput(actionOutputLayout, actionOutput);
@@ -361,6 +485,18 @@ public class OutputActivity extends AppCompatActivity {
                     "",
                     -1L));
         }
+    }
+
+    private Map<String, String> collectInputValues(Map<String, EditText> inputs) {
+        Map<String, String> values = new LinkedHashMap<>();
+        if (inputs == null) {
+            return values;
+        }
+        for (Map.Entry<String, EditText> entry : inputs.entrySet()) {
+            CharSequence text = entry.getValue().getText();
+            values.put(entry.getKey(), text == null ? "" : text.toString());
+        }
+        return values;
     }
 
     private void renderActionOutput(LinearLayout actionOutputLayout, DynamicOutputRuntime.ActionOutput actionOutput) {
@@ -497,10 +633,14 @@ public class OutputActivity extends AppCompatActivity {
             return false;
         }
         try {
-            Object spec = OutputModelJsonParser.parseSpec(outputModelJson);
+            OutputModelJsonParser.OutputDocument document = OutputModelJsonParser.parseDocument(outputModelJson);
+            Object spec = document.getSpec();
+            List<Map<String, Object>> commands = document.getCommands();
+            applyOutputModelCommands(commands);
             if (OutputModelJsonParser.isEmptySpec(spec)) {
                 return false;
             }
+            Object enrichedSpec = applyImageClickHandlers(spec, commands);
             LinearLayout panel = createPanel();
             addSectionLabel(panel, getString(R.string.result_output_label));
 
@@ -508,7 +648,8 @@ public class OutputActivity extends AppCompatActivity {
             actionOutputLayout.setOrientation(LinearLayout.VERTICAL);
             actionOutputLayout.setVisibility(View.GONE);
             LinkedHashMap<String, EditText> inputs = new LinkedHashMap<>();
-            View renderedSpec = buildInteractiveNode(spec, request, inputs, actionOutputLayout);
+            LinkedHashMap<String, ImageView> images = new LinkedHashMap<>();
+            View renderedSpec = buildInteractiveNode(enrichedSpec, request, inputs, images, actionOutputLayout);
             if (renderedSpec != null) {
                 setTopMargin(renderedSpec, 8);
                 addView(panel, renderedSpec);
@@ -526,6 +667,125 @@ public class OutputActivity extends AppCompatActivity {
                     -1L));
             return false;
         }
+    }
+
+    private void applyOutputModelCommands(List<Map<String, Object>> commands) throws IOException {
+        if (commands == null) {
+            return;
+        }
+        for (Map<String, Object> command : commands) {
+            if (command == null) {
+                continue;
+            }
+            String type = stringValue(command.get("type")).toLowerCase();
+            if ("savebitmap".equals(type)) {
+                persistBitmapCommand(command);
+            }
+        }
+    }
+
+    private Object applyImageClickHandlers(Object spec, List<Map<String, Object>> commands) {
+        Map<String, String> handlersByKey = new LinkedHashMap<>();
+        if (commands != null) {
+            for (Map<String, Object> command : commands) {
+                if (command == null) {
+                    continue;
+                }
+                if (!"imageclick".equals(stringValue(command.get("type")).toLowerCase())) {
+                    continue;
+                }
+                String key = stringValue(command.get("key"));
+                String handlerName = stringValue(command.get("handlerName"));
+                if (!key.isEmpty() && !handlerName.isEmpty()) {
+                    handlersByKey.put(key, handlerName);
+                }
+            }
+        }
+        if (handlersByKey.isEmpty()) {
+            return spec;
+        }
+        return injectImageHandlers(spec, handlersByKey);
+    }
+
+    private Object injectImageHandlers(Object node, Map<String, String> handlersByKey) {
+        if (node instanceof Map<?, ?>) {
+            LinkedHashMap<String, Object> rewritten = new LinkedHashMap<>();
+            for (Map.Entry<?, ?> entry : ((Map<?, ?>) node).entrySet()) {
+                rewritten.put(String.valueOf(entry.getKey()), injectImageHandlers(entry.getValue(), handlersByKey));
+            }
+            String type = stringValue(rewritten.get("type")).toLowerCase();
+            if ("image".equals(type)) {
+                String key = stringValue(rewritten.get("key"));
+                String handlerName = handlersByKey.get(key);
+                if (!TextUtils.isEmpty(handlerName)) {
+                    rewritten.put("handlerName", handlerName);
+                }
+            }
+            return rewritten;
+        }
+        if (node instanceof Collection<?>) {
+            List<Object> rewritten = new ArrayList<>();
+            for (Object child : (Collection<?>) node) {
+                rewritten.add(injectImageHandlers(child, handlersByKey));
+            }
+            return rewritten;
+        }
+        if (node != null && node.getClass().isArray()) {
+            int length = java.lang.reflect.Array.getLength(node);
+            List<Object> rewritten = new ArrayList<>(length);
+            for (int index = 0; index < length; index++) {
+                rewritten.add(injectImageHandlers(java.lang.reflect.Array.get(node, index), handlersByKey));
+            }
+            return rewritten;
+        }
+        return node;
+    }
+
+    private void persistBitmapCommand(Map<String, Object> command) throws IOException {
+        String filename = stringValue(command.get("filename"));
+        String encoded = stringValue(command.get("imageBase64"));
+        if (filename.isEmpty()) {
+            throw new IOException("Bitmap save command is missing a filename.");
+        }
+        if (encoded.isEmpty()) {
+            throw new IOException("Bitmap save command is missing image data.");
+        }
+        byte[] bytes = Base64.getDecoder().decode(encoded);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        if (bitmap == null) {
+            throw new IOException("Bitmap save command image decode failed.");
+        }
+        saveBitmapToInternalStorage(filename, bitmap);
+    }
+
+    private void saveBitmapToInternalStorage(String filename, Bitmap bitmap) throws IOException {
+        File targetFile = resolveImageOutputFile(filename);
+        File parentDirectory = targetFile.getParentFile();
+        if (parentDirectory != null && !parentDirectory.exists() && !parentDirectory.mkdirs() && !parentDirectory.isDirectory()) {
+            throw new IOException("Could not create image output directory.");
+        }
+        try (FileOutputStream outputStream = new FileOutputStream(targetFile)) {
+            if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)) {
+                throw new IOException("Bitmap compression failed.");
+            }
+        }
+    }
+
+    private File resolveImageOutputFile(String filename) throws IOException {
+        String trimmed = filename == null ? "" : filename.trim();
+        if (trimmed.isEmpty()) {
+            throw new IOException("Image filename must not be empty.");
+        }
+        File imageDirectory = new File(getFilesDir(), IMAGE_OUTPUT_DIRECTORY);
+        File candidate = new File(imageDirectory, trimmed);
+        File canonicalDirectory = imageDirectory.getCanonicalFile();
+        File canonicalCandidate = candidate.getCanonicalFile();
+        String directoryPath = canonicalDirectory.getPath();
+        String candidatePath = canonicalCandidate.getPath();
+        if (!candidatePath.equals(directoryPath) && !candidatePath.startsWith(directoryPath + File.separator)) {
+            throw new IOException("Image filename resolves outside the app storage directory.");
+        }
+        return canonicalCandidate;
     }
 
     private void addView(LinearLayout parent, View child) {

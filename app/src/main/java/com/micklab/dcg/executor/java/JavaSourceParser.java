@@ -71,6 +71,10 @@ public final class JavaSourceParser {
                 pseudoRewritten,
                 pseudoMainActivity ? PSEUDO_ANDROID_TYPE_OVERRIDES : null);
         String rewrittenSource = rewriteResult.rewrittenSource;
+        int fallbackRewriteCount = 0;
+        RewriteResult buildFallback = rewriteRemainingBuildReferences(rewrittenSource);
+        rewrittenSource = buildFallback.rewrittenSource;
+        fallbackRewriteCount += buildFallback.replacementCount;
         if (pseudoMainActivity) {
             RewriteResult pseudoBundleFallback = rewriteRemainingPseudoBundleReferences(rewrittenSource);
             rewrittenSource = pseudoBundleFallback.rewrittenSource;
@@ -89,8 +93,8 @@ public final class JavaSourceParser {
         return new PreparedJavaSource(
                 parsed,
                 rewrittenSource,
-                rewriteResult.replacementCount + pseudoRewriteCount,
-                rewriteResult.hadAndroidReferences || pseudoRewriteCount > 0,
+                rewriteResult.replacementCount + fallbackRewriteCount + pseudoRewriteCount,
+                rewriteResult.hadAndroidReferences || fallbackRewriteCount > 0 || pseudoRewriteCount > 0,
                 pseudoMainActivity);
     }
 
@@ -133,11 +137,17 @@ public final class JavaSourceParser {
         return source.contains("setContentView(")
                 || source.contains("println(")
                 || source.contains("addLabel(")
+                || source.contains("addImage(")
+                || source.contains("saveBitmap(")
+                || source.contains("onImageClick(")
+                || source.contains("addTitle(")
                 || source.contains("drawBitmap(")
                 || source.contains("beginRow(")
                 || source.contains("endRow(")
                 || source.contains("addButton(")
                 || source.contains("addInput(")
+                || source.contains("setInputEditable(")
+                || source.contains("addSpacer(")
                 || source.contains("new ImageView(this)")
                 || source.contains("new TextView(this)")
                 || source.contains("new Button(this)")
@@ -504,6 +514,13 @@ public final class JavaSourceParser {
                 source,
                 "android.os.Bundle",
                 WRAPPER_ANDROID_PREFIX + "os.Bundle");
+    }
+
+    private static RewriteResult rewriteRemainingBuildReferences(String source) {
+        return rewriteQualifiedTypeOutsideCommentsAndStrings(
+                source,
+                "android.os.Build",
+                WRAPPER_ANDROID_PREFIX + "os.Build");
     }
 
     private static String buildPseudoHelperMethods(String className) {

@@ -5,7 +5,6 @@ import com.micklab.dcg.wrapper.android.os.Bundle;
 
 public class PseudoMainActivity {
     private final OutputModel outputModel = new OutputModel();
-    private LinearLayout currentRow;
 
     protected void onCreate() {
     }
@@ -25,22 +24,38 @@ public class PseudoMainActivity {
     protected final TextView addLabel(Object value) {
         TextView textView = new TextView(this);
         textView.setText(value == null ? "" : String.valueOf(value));
-        appendInlineView(textView);
+        appendDslNode(textView);
         return textView;
+    }
+
+    protected final void addLabel(String key, String text) {
+        outputModel.addLabel(key, text);
     }
 
     protected final ImageView drawBitmap(Bitmap bitmap) {
         ImageView imageView = new ImageView(this);
         imageView.setImageBitmap(bitmap);
-        outputModel.appendInlineNode(imageView);
+        appendDslNode(imageView);
         return imageView;
+    }
+
+    protected final void addImage(String key, String filename) {
+        outputModel.addImage(key, filename);
+    }
+
+    protected final void saveBitmap(String filename, Bitmap bmp) {
+        outputModel.saveBitmap(filename, bmp);
+    }
+
+    protected final void onImageClick(String key, String handlerName) {
+        outputModel.addImageClickHandler(key, handlerName);
     }
 
     protected final Button addButton(String text, String action) {
         Button button = new Button(this);
         button.setText(text);
         button.setAction(action);
-        appendInlineView(button);
+        appendDslNode(button);
         return button;
     }
 
@@ -53,24 +68,28 @@ public class PseudoMainActivity {
         editText.setId(id);
         editText.setHint(hint);
         editText.setText(value);
-        appendInlineView(editText);
+        appendDslNode(editText);
         return editText;
     }
 
+    protected final void setInputEditable(String key, boolean editable) {
+        outputModel.setInputEditable(key, editable);
+    }
+
+    protected final void addSpacer() {
+        outputModel.addSpacer();
+    }
+
+    protected final void addTitle(String text) {
+        outputModel.addTitle(text);
+    }
+
     protected final void beginRow() {
-        if (currentRow != null) {
-            throw new IllegalStateException("beginRow() called before closing the current row.");
-        }
-        currentRow = new LinearLayout(this);
-        currentRow.setOrientation(LinearLayout.HORIZONTAL);
+        outputModel.beginRow();
     }
 
     protected final void endRow() {
-        if (currentRow == null) {
-            throw new IllegalStateException("endRow() called without a matching beginRow().");
-        }
-        outputModel.appendInlineNode(currentRow);
-        currentRow = null;
+        outputModel.endRow();
     }
 
     void __dcgRegisterConstructedView(View view) {
@@ -91,16 +110,12 @@ public class PseudoMainActivity {
         return outputModel.toJson();
     }
 
-    private void appendInlineView(View view) {
-        if (currentRow != null) {
-            currentRow.addView(view);
-            return;
-        }
-        outputModel.appendInlineNode(view);
+    private void appendDslNode(Object node) {
+        outputModel.addDslNode(node);
     }
 
     private void ensureBalancedRows() {
-        if (currentRow != null) {
+        if (outputModel.hasOpenRow()) {
             throw new IllegalStateException("beginRow() must be paired with endRow() before rendering output.");
         }
     }

@@ -344,6 +344,9 @@ public final class DynamicOutputRuntime {
         String normalizedType = ((String) type).trim().toLowerCase();
         return "text".equals(normalizedType)
                 || "image".equals(normalizedType)
+                || "label".equals(normalizedType)
+                || "title".equals(normalizedType)
+                || "spacer".equals(normalizedType)
                 || "input".equals(normalizedType)
                 || "button".equals(normalizedType)
                 || "row".equals(normalizedType)

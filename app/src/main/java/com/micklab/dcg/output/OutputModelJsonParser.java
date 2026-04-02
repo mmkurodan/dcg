@@ -11,7 +11,21 @@ public final class OutputModelJsonParser {
     private OutputModelJsonParser() {
     }
 
+    public static OutputDocument parseDocument(String outputModelJson) {
+        Object root = parseRoot(outputModelJson);
+        if (root instanceof Map<?, ?>) {
+            Map<?, ?> rootMap = (Map<?, ?>) root;
+            Object spec = rootMap.containsKey("spec") ? rootMap.get("spec") : root;
+            return new OutputDocument(spec, toCommandList(rootMap.get("commands")));
+        }
+        return new OutputDocument(root, new ArrayList<>());
+    }
+
     public static Object parseSpec(String outputModelJson) {
+        return parseDocument(outputModelJson).getSpec();
+    }
+
+    private static Object parseRoot(String outputModelJson) {
         String trimmed = outputModelJson == null ? "" : outputModelJson.trim();
         if (trimmed.isEmpty()) {
             return null;
@@ -22,13 +36,37 @@ public final class OutputModelJsonParser {
         if (!parser.isAtEnd()) {
             throw new IllegalArgumentException("Invalid OutputModel JSON.");
         }
-        if (root instanceof Map<?, ?>) {
-            Object spec = ((Map<?, ?>) root).get("spec");
-            if (spec != null) {
-                return spec;
+        return root;
+    }
+
+    private static List<Map<String, Object>> toCommandList(Object value) {
+        ArrayList<Map<String, Object>> commands = new ArrayList<>();
+        if (value instanceof Collection<?>) {
+            for (Object entry : (Collection<?>) value) {
+                if (entry instanceof Map<?, ?>) {
+                    commands.add(toStringKeyedMap((Map<?, ?>) entry));
+                }
+            }
+            return commands;
+        }
+        if (value != null && value.getClass().isArray()) {
+            int length = Array.getLength(value);
+            for (int index = 0; index < length; index++) {
+                Object entry = Array.get(value, index);
+                if (entry instanceof Map<?, ?>) {
+                    commands.add(toStringKeyedMap((Map<?, ?>) entry));
+                }
             }
         }
-        return root;
+        return commands;
+    }
+
+    private static Map<String, Object> toStringKeyedMap(Map<?, ?> value) {
+        LinkedHashMap<String, Object> normalized = new LinkedHashMap<>();
+        for (Map.Entry<?, ?> entry : value.entrySet()) {
+            normalized.put(String.valueOf(entry.getKey()), entry.getValue());
+        }
+        return normalized;
     }
 
     public static boolean isEmptySpec(Object spec) {
@@ -45,6 +83,24 @@ public final class OutputModelJsonParser {
             return Array.getLength(spec) == 0;
         }
         return false;
+    }
+
+    public static final class OutputDocument {
+        private final Object spec;
+        private final List<Map<String, Object>> commands;
+
+        private OutputDocument(Object spec, List<Map<String, Object>> commands) {
+            this.spec = spec;
+            this.commands = commands == null ? new ArrayList<>() : new ArrayList<>(commands);
+        }
+
+        public Object getSpec() {
+            return spec;
+        }
+
+        public List<Map<String, Object>> getCommands() {
+            return new ArrayList<>(commands);
+        }
     }
 
     private static final class Parser {

@@ -7,6 +7,7 @@ public class EditText extends TextView {
     private String id = "";
     private String hint = "";
     private boolean numeric;
+    private boolean editable = true;
 
     public EditText(Object owner) {
         super(owner);
@@ -28,6 +29,14 @@ public class EditText extends TextView {
         this.numeric = inputType != 0;
     }
 
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
+    String __dcgGetId() {
+        return id;
+    }
+
     @Override
     Map<String, Object> __dcgToSpec() {
         LinkedHashMap<String, Object> node = new LinkedHashMap<>();
@@ -39,6 +48,7 @@ public class EditText extends TextView {
             node.put("hint", hint);
         }
         node.put("value", getText() == null ? "" : getText().toString());
+        node.put("editable", editable);
         if (numeric) {
             node.put("numeric", true);
         }

@@ -384,12 +384,12 @@
         </fix-alternatives>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="170"
+            line="172"
             column="10"
-            startOffset="6661"
-            endLine="170"
+            startOffset="6753"
+            endLine="172"
             endColumn="18"
-            endOffset="6669"/>
+            endOffset="6761"/>
     </incident>
 
     <incident
@@ -398,12 +398,40 @@
         message="`onTouch` lambda should call `View#performClick` when a click is detected">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
-            line="140"
-            column="38"
-            startOffset="5266"
-            endLine="151"
+            line="141"
+            column="44"
+            startOffset="5323"
+            endLine="149"
             endColumn="10"
-            endOffset="5810"/>
+            endOffset="5742"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="`onTouch` lambda should call `View#performClick` when a click is detected">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
+            line="155"
+            column="38"
+            startOffset="5938"
+            endLine="166"
+            endColumn="10"
+            endOffset="6482"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view ``ListView`` has `setOnTouchListener` called on it but does not override `performClick`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
+            line="141"
+            column="9"
+            startOffset="5288"
+            endLine="149"
+            endColumn="11"
+            endOffset="5743"/>
     </incident>
 
     <incident
@@ -412,12 +440,26 @@
         message="Custom view ``EditText`` has `setOnTouchListener` called on it but does not override `performClick`">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/MainActivity.java"
-            line="140"
+            line="155"
             column="9"
-            startOffset="5237"
-            endLine="151"
+            startOffset="5909"
+            endLine="166"
             endColumn="11"
-            endOffset="5811"/>
+            endOffset="6483"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="`onTouch` lambda should call `View#performClick` when a click is detected">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="448"
+            column="38"
+            startOffset="17997"
+            endLine="457"
+            endColumn="10"
+            endOffset="18478"/>
     </incident>
 
     <incident
@@ -426,12 +468,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="218"
+            line="228"
             column="53"
-            startOffset="8486"
-            endLine="218"
+            startOffset="8937"
+            endLine="228"
             endColumn="64"
-            endOffset="8497"/>
+            endOffset="8948"/>
     </incident>
 
     <incident
@@ -440,12 +482,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="280"
+            line="319"
             column="58"
-            startOffset="11030"
-            endLine="280"
+            startOffset="12832"
+            endLine="319"
             endColumn="69"
-            endOffset="11041"/>
+            endOffset="12843"/>
     </incident>
 
     <incident
@@ -454,12 +496,68 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="294"
+            line="358"
             column="61"
-            startOffset="11647"
-            endLine="294"
+            startOffset="14357"
+            endLine="358"
             endColumn="72"
-            endOffset="11658"/>
+            endOffset="14368"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view ``ImageView`` has `setOnTouchListener` called on it but does not override `performClick`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="448"
+            column="9"
+            startOffset="17968"
+            endLine="457"
+            endColumn="11"
+            endOffset="18479"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="680"
+            column="60"
+            startOffset="26991"
+            endLine="680"
+            endColumn="71"
+            endOffset="27002"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="694"
+            column="75"
+            startOffset="27542"
+            endLine="694"
+            endColumn="86"
+            endOffset="27553"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
+            line="716"
+            column="62"
+            startOffset="28522"
+            endLine="716"
+            endColumn="73"
+            endOffset="28533"/>
     </incident>
 
     <incident

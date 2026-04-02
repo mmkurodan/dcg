@@ -37,4 +37,40 @@ public class OutputModelJsonParserTest {
         assertEquals("8", ((Map<?, ?>) children.get(1)).get("text"));
         assertEquals("value", ((Map<?, ?>) children.get(2)).get("id"));
     }
+
+    @Test
+    public void parseSpecPreservesExtendedDslNodes() {
+        Object parsed = OutputModelJsonParser.parseSpec(
+                "{\"version\":1,\"spec\":[{\"type\":\"title\",\"text\":\"Calculator\"},{\"type\":\"label\",\"key\":\"display\",\"text\":\"0\"},{\"type\":\"row\",\"children\":[{\"type\":\"button\",\"text\":\"7\",\"action\":\"press7\"},{\"type\":\"spacer\"},{\"type\":\"input\",\"id\":\"value\",\"hint\":\"Value\",\"editable\":false}]}]}");
+
+        assertTrue(parsed instanceof List<?>);
+        List<?> values = (List<?>) parsed;
+        assertEquals(3, values.size());
+
+        assertEquals("title", ((Map<?, ?>) values.get(0)).get("type"));
+        assertEquals("display", ((Map<?, ?>) values.get(1)).get("key"));
+
+        Map<?, ?> row = (Map<?, ?>) values.get(2);
+        assertEquals("row", row.get("type"));
+        List<?> children = (List<?>) row.get("children");
+        assertEquals("spacer", ((Map<?, ?>) children.get(1)).get("type"));
+        assertEquals(Boolean.FALSE, ((Map<?, ?>) children.get(2)).get("editable"));
+    }
+
+    @Test
+    public void parseDocumentPreservesCommandsAlongsideSpec() {
+        OutputModelJsonParser.OutputDocument document = OutputModelJsonParser.parseDocument(
+                "{\"version\":1,\"spec\":[{\"type\":\"image\",\"key\":\"chart\",\"filename\":\"chart.png\"}],"
+                        + "\"commands\":[{\"type\":\"saveBitmap\",\"filename\":\"chart.png\",\"imageBase64\":\"AA==\"},"
+                        + "{\"type\":\"imageClick\",\"key\":\"chart\",\"handlerName\":\"tap\"}]}");
+
+        assertTrue(document.getSpec() instanceof List<?>);
+        List<?> spec = (List<?>) document.getSpec();
+        assertEquals("image", ((Map<?, ?>) spec.get(0)).get("type"));
+
+        List<Map<String, Object>> commands = document.getCommands();
+        assertEquals(2, commands.size());
+        assertEquals("saveBitmap", commands.get(0).get("type"));
+        assertEquals("tap", commands.get(1).get("handlerName"));
+    }
 }

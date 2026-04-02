@@ -94,6 +94,30 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationRewritesQualifiedBuildReferencesForPseudoMainActivity() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                + "    StringBuilder sb = new StringBuilder();\n"
+                + "    sb.append(android.os.Build.MODEL);\n"
+                + "    sb.append(android.os.Build.VERSION.RELEASE);\n"
+                + "    sb.append(android.os.Build.VERSION.SDK_INT);\n"
+                + "    println(sb.toString());\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.os.Build.MODEL"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.os.Build.VERSION.RELEASE"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.os.Build.VERSION.SDK_INT"));
+        assertFalse(rewritten.contains("sb.append(android.os.Build.MODEL);"));
+        assertFalse(rewritten.contains("sb.append(android.os.Build.VERSION.RELEASE);"));
+        assertFalse(rewritten.contains("sb.append(android.os.Build.VERSION.SDK_INT);"));
+    }
+
+    @Test
     public void prepareForCompilationLeavesNonAndroidSourceUntouched() {
         String source = "public class HelloJava {\n"
                 + "  public static String run() {\n"
@@ -235,6 +259,56 @@ public class JavaSourceParserTest {
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
         assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.TextView;"));
+        assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
+    }
+
+    @Test
+    public void prepareForCompilationRecognizesTitleDslAndRewritesAndroidOsWildcardImport() {
+        String source = "import android.os.*;\n"
+                + "public class HelloJava {\n"
+                + "  protected void onCreate(Bundle savedInstanceState) {\n"
+                + "    addTitle(\"Calculator\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.*;"));
+        assertTrue(rewritten.contains("protected void onCreate(Bundle savedInstanceState)"));
+    }
+
+    @Test
+    public void prepareForCompilationRecognizesEditableAndSpacerDslHelpersAsPseudoMainActivity() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate() {\n"
+                + "    setInputEditable(\"value\", false);\n"
+                + "    addSpacer();\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
+        assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
+    }
+
+    @Test
+    public void prepareForCompilationRecognizesImageDslHelpersAsPseudoMainActivity() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate() {\n"
+                + "    saveBitmap(\"chart.png\", null);\n"
+                + "    addImage(\"chart\", \"chart.png\");\n"
+                + "    onImageClick(\"chart\", \"handleTap\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(prepared.isPseudoMainActivity());
+        assertTrue(rewritten.contains("extends com.micklab.dcg.wrapper.pseudo.PseudoMainActivity"));
         assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
     }
 

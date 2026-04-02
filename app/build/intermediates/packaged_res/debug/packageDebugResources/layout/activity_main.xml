@@ -157,6 +157,8 @@
             android:background="@drawable/panel_background"
             android:divider="@android:color/transparent"
             android:dividerHeight="8dp"
+            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical"
             android:padding="8dp" />
 
         <TextView

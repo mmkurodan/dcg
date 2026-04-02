@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupLanguageSpinner();
         setupSnippetList();
+        setupSnippetListScrolling();
         setupCodeInputScrolling();
         registerLaunchers();
         setupButtons();
@@ -132,6 +133,20 @@ public class MainActivity extends AppCompatActivity {
     private void setupSnippetList() {
         snippetListView.setAdapter(snippetAdapter);
         snippetListView.setOnItemClickListener((parent, view, position, id) -> renderSnippet(snippetAdapter.getItem(position)));
+    }
+
+    private void setupSnippetListScrolling() {
+        snippetListView.setVerticalScrollBarEnabled(true);
+        snippetListView.setNestedScrollingEnabled(true);
+        snippetListView.setOnTouchListener((view, event) -> {
+            int action = event.getActionMasked();
+            if (action == MotionEvent.ACTION_DOWN) {
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+            } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+                view.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
     }
 
     private void setupCodeInputScrolling() {
