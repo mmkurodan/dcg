@@ -44,6 +44,7 @@ import java.util.Map;
 public class OutputActivity extends AppCompatActivity {
     private static final String SPACER_TAG = "dcg-spacer";
     private static final String IMAGE_OUTPUT_DIRECTORY = "pseudo-output-images";
+    private static final int FIXED_IMAGE_SIZE_PX = 80 * 8;
 
     private LinearLayout contentLayout;
 
@@ -295,6 +296,9 @@ public class OutputActivity extends AppCompatActivity {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dp(8));
         }
+        if (isFixedSizeOutputImage(childView)) {
+            return new LinearLayout.LayoutParams(FIXED_IMAGE_SIZE_PX, FIXED_IMAGE_SIZE_PX);
+        }
         if (orientation == LinearLayout.HORIZONTAL && shouldUseWeightedRowLayout(childView)) {
             return new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
         }
@@ -310,6 +314,14 @@ public class OutputActivity extends AppCompatActivity {
 
     private boolean isSpacerView(View childView) {
         return childView != null && SPACER_TAG.equals(childView.getTag());
+    }
+
+    private boolean isFixedSizeOutputImage(View childView) {
+        ViewGroup.LayoutParams params = childView == null ? null : childView.getLayoutParams();
+        return childView instanceof ImageView
+                && params != null
+                && params.width == FIXED_IMAGE_SIZE_PX
+                && params.height == FIXED_IMAGE_SIZE_PX;
     }
 
     private View buildTextNode(Map<?, ?> spec) {
@@ -400,6 +412,11 @@ public class OutputActivity extends AppCompatActivity {
         String key = stringValue(spec.get("key"));
         String encoded = stringValue(spec.get("imageBase64"));
         String filename = stringValue(spec.get("filename"));
+        if (!filename.isEmpty()) {
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(
+                    FIXED_IMAGE_SIZE_PX,
+                    FIXED_IMAGE_SIZE_PX));
+        }
         if (!filename.isEmpty()) {
             Bitmap bitmap;
             try {

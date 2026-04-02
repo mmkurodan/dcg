@@ -33,7 +33,7 @@
         errorLine2="                                                    ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="227"
+            line="228"
             column="53"/>
     </issue>
 
@@ -51,7 +51,7 @@
         errorLine2="                                                         ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="317"
+            line="329"
             column="58"/>
     </issue>
 
@@ -69,7 +69,7 @@
         errorLine2="                                                            ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="356"
+            line="368"
             column="61"/>
     </issue>
 
@@ -87,7 +87,7 @@
         errorLine2="                                                           ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="717"
+            line="734"
             column="60"/>
     </issue>
 
@@ -105,7 +105,7 @@
         errorLine2="                                                                          ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="731"
+            line="748"
             column="75"/>
     </issue>
 
@@ -123,7 +123,7 @@
         errorLine2="                                                             ~~~~~~~~~~~">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="753"
+            line="770"
             column="62"/>
     </issue>
 
@@ -399,7 +399,7 @@
         errorLine2="        ^">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="441"
+            line="458"
             column="9"/>
     </issue>
 
@@ -415,7 +415,7 @@
         errorLine2="                                     ^">
         <location
             file="/root/dcg/app/src/main/java/com/micklab/dcg/OutputActivity.java"
-            line="441"
+            line="458"
             column="38"/>
     </issue>
 
