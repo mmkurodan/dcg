@@ -528,7 +528,7 @@ public final class JavaSourceParser {
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_CACHE_FIELD + ";\n\n"
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_HELPER_METHOD + "() {\n"
                 + "        " + className + " __dcgActivity = new " + className + "();\n"
-                + "        __dcgActivity.onCreate(null);\n"
+                + "        __dcgActivity.__dcgRunOnCreateLifecycle();\n"
                 + "        return new " + PSEUDO_RESULT + "(\n"
                 + "                __dcgActivity.__dcgBuildOutputSpec(),\n"
                 + "                __dcgActivity.__dcgGetOutputModelJson());\n"

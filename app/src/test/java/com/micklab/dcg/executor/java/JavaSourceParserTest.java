@@ -2,9 +2,18 @@ package com.micklab.dcg.executor.java;
 
 import org.junit.Test;
 
+import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class JavaSourceParserTest {
     @Test
@@ -151,6 +160,7 @@ public class JavaSourceParserTest {
         assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.android.os.Bundle;"));
         assertTrue(rewritten.contains("public static Object buildOutput()"));
         assertTrue(rewritten.contains("public static String __dcgGetPseudoOutputModelJson()"));
+        assertTrue(rewritten.contains("__dcgActivity.__dcgRunOnCreateLifecycle();"));
         assertFalse(rewritten.contains("__dcgActivity.onCreate((com.micklab.dcg.wrapper.android.os.Bundle) null);"));
     }
 
@@ -166,7 +176,7 @@ public class JavaSourceParserTest {
 
         assertTrue(prepared.isPseudoMainActivity());
         assertTrue(rewritten.contains("protected void onCreate(com.micklab.dcg.wrapper.android.os.Bundle savedInstanceState)"));
-        assertTrue(rewritten.contains("__dcgActivity.onCreate(null);"));
+        assertTrue(rewritten.contains("__dcgActivity.__dcgRunOnCreateLifecycle();"));
         assertFalse(rewritten.contains("protected void onCreate(android.os.Bundle"));
         assertFalse(rewritten.contains("import android.os.Bundle;"));
     }
@@ -313,6 +323,82 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationUsesLifecycleWrapperForPseudoHelpers() {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"
+                + "    println(\"Hi\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("__dcgActivity.__dcgRunOnCreateLifecycle();"));
+        assertFalse(rewritten.contains("__dcgActivity.onCreate(null);"));
+    }
+
+    @Test
+    public void prepareForCompilationCompilesStaticSaveBitmapHelperAgainstPseudoLifecycleWrapper() throws Exception {
+        String source = "public class HelloJava {\n"
+                + "  protected void onCreate() {\n"
+                + "    Bitmap bmp = Bitmap.createBitmap(2, 2, Bitmap.Config.ARGB_8888);\n"
+                + "    recordBoard(bmp);\n"
+                + "  }\n"
+                + "\n"
+                + "  private static void recordBoard(Bitmap bmp) {\n"
+                + "    saveBitmap(\"board.png\", bmp);\n"
+                + "    addImage(\"chart\", \"board.png\");\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+
+        File tempDir = Files.createTempDirectory("java-source-parser-static-pseudo").toFile();
+        try {
+            File sourceFile = new File(tempDir, "HelloJava.java");
+            File classesDir = new File(tempDir, "classes");
+            assertTrue(classesDir.mkdirs());
+            Files.write(sourceFile.toPath(), prepared.getRewrittenSource().getBytes(StandardCharsets.UTF_8));
+
+            String androidJar = resolveExistingFile(
+                    "../Android.jar",
+                    "../android.jar",
+                    "Android.jar",
+                    "android.jar").getAbsolutePath();
+            String classpath = resolveExistingFile(
+                    "src/main/assets/java-wrapper/android-wrapper-classpath.jar",
+                    "../app/src/main/assets/java-wrapper/android-wrapper-classpath.jar")
+                    .getAbsolutePath();
+            String[] args = new String[]{
+                    "-source", "1.8",
+                    "-target", "1.8",
+                    "-proc:none",
+                    "-encoding", "UTF-8",
+                    "-g",
+                    "-d", classesDir.getAbsolutePath(),
+                    "-classpath", classpath,
+                    "-bootclasspath", androidJar,
+                    sourceFile.getAbsolutePath()
+            };
+            StringWriter stdout = new StringWriter();
+            StringWriter stderr = new StringWriter();
+            boolean success = BatchCompiler.compile(
+                    args,
+                    new PrintWriter(stdout),
+                    new PrintWriter(stderr),
+                    null);
+            if (!success) {
+                fail("Expected rewritten pseudo source to compile, but ECJ failed:\nSTDOUT:\n"
+                        + stdout
+                        + "\nSTDERR:\n"
+                        + stderr
+                        + "\nSOURCE:\n"
+                        + prepared.getRewrittenSource());
+            }
+        } finally {
+            deleteRecursively(tempDir);
+        }
+    }
+
+    @Test
     public void prepareForCompilationKeepsGenericWrapperWildcardImportsForPseudoSource() {
         String source = "import android.app.Activity;\n"
                 + "import android.view.*;\n"
@@ -337,5 +423,30 @@ public class JavaSourceParserTest {
         assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.widget.LinearLayout.VERTICAL"));
         assertTrue(rewritten.contains("com.micklab.dcg.wrapper.android.view.ViewGroup.LayoutParams params"));
         assertFalse(rewritten.contains("import com.micklab.dcg.wrapper.pseudo.*;"));
+    }
+
+    private static File resolveExistingFile(String... candidates) {
+        for (String candidate : candidates) {
+            File file = new File(candidate);
+            if (file.isFile()) {
+                return file;
+            }
+        }
+        throw new AssertionError("Expected one of these files to exist: " + java.util.Arrays.toString(candidates));
+    }
+
+    private static void deleteRecursively(File file) throws java.io.IOException {
+        if (file == null || !file.exists()) {
+            return;
+        }
+        if (file.isDirectory()) {
+            File[] children = file.listFiles();
+            if (children != null) {
+                for (File child : children) {
+                    deleteRecursively(child);
+                }
+            }
+        }
+        Files.deleteIfExists(file.toPath());
     }
 }

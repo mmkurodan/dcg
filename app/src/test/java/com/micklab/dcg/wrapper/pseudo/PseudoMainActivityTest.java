@@ -10,6 +10,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class PseudoMainActivityTest {
     @Test
@@ -105,9 +106,46 @@ public class PseudoMainActivityTest {
         assertEquals("handleChartTap", commands.get(0).get("handlerName"));
     }
 
+    @Test
+    public void outputModelJsonAllowsStaticDslHelpersDuringRenderLifecycle() {
+        String json = new StaticImageDslActivity().renderJson();
+
+        OutputModelJsonParser.OutputDocument document =
+                OutputModelJsonParser.parseDocument(json);
+
+        List<Map<String, Object>> commands = document.getCommands();
+        assertEquals(1, commands.size());
+        assertEquals("imageClick", commands.get(0).get("type"));
+        assertEquals("chart", commands.get(0).get("key"));
+
+        assertTrue(document.getSpec() instanceof List<?>);
+        List<?> nodes = (List<?>) document.getSpec();
+        assertEquals(2, nodes.size());
+        Map<?, ?> image = (Map<?, ?>) nodes.get(0);
+        assertEquals("image", image.get("type"));
+        assertEquals("chart", image.get("key"));
+        assertEquals("board.png", image.get("filename"));
+        Map<?, ?> label = (Map<?, ?>) nodes.get(1);
+        assertEquals("label", label.get("type"));
+        assertEquals("status", label.get("key"));
+        assertEquals("ready", label.get("text"));
+    }
+
+    @Test
+    public void staticDslHelpersRejectCallsOutsideRenderLifecycle() {
+        try {
+            StaticImageDslActivity.recordImage();
+            fail("Expected static pseudo helper calls outside render lifecycle to fail.");
+        } catch (IllegalStateException exception) {
+            assertEquals(
+                    "PseudoMainActivity helpers can only be used while rendering onCreate().",
+                    exception.getMessage());
+        }
+    }
+
     private static final class RowDslActivity extends PseudoMainActivity {
         private Object renderSpec() {
-            onCreate();
+            __dcgRunOnCreateLifecycle();
             return __dcgBuildOutputSpec();
         }
         @Override
@@ -124,7 +162,7 @@ public class PseudoMainActivityTest {
 
     private static final class UnclosedRowActivity extends PseudoMainActivity {
         private Object renderSpec() {
-            onCreate();
+            __dcgRunOnCreateLifecycle();
             return __dcgBuildOutputSpec();
         }
 
@@ -137,7 +175,7 @@ public class PseudoMainActivityTest {
 
     private static final class ExtendedDslActivity extends PseudoMainActivity {
         private Object renderSpec() {
-            onCreate();
+            __dcgRunOnCreateLifecycle();
             return __dcgBuildOutputSpec();
         }
 
@@ -157,7 +195,7 @@ public class PseudoMainActivityTest {
 
     private static final class MissingInputActivity extends PseudoMainActivity {
         private Object renderSpec() {
-            onCreate();
+            __dcgRunOnCreateLifecycle();
             return __dcgBuildOutputSpec();
         }
 
@@ -169,7 +207,7 @@ public class PseudoMainActivityTest {
 
     private static final class ImageDslActivity extends PseudoMainActivity {
         private String renderJson() {
-            onCreate();
+            __dcgRunOnCreateLifecycle();
             return __dcgGetOutputModelJson();
         }
 
@@ -180,6 +218,24 @@ public class PseudoMainActivityTest {
             endRow();
             onImageClick("chart", "handleChartTap");
             addLabel("done");
+        }
+    }
+
+    private static final class StaticImageDslActivity extends PseudoMainActivity {
+        private String renderJson() {
+            __dcgRunOnCreateLifecycle();
+            return __dcgGetOutputModelJson();
+        }
+
+        @Override
+        protected void onCreate() {
+            recordImage();
+        }
+
+        private static void recordImage() {
+            addImage("chart", "board.png");
+            onImageClick("chart", "handleChartTap");
+            addLabel("status", "ready");
         }
     }
 }
