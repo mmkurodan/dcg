@@ -454,12 +454,12 @@
         message="`onTouch` lambda should call `View#performClick` when a click is detected">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="448"
+            line="441"
             column="38"
-            startOffset="17997"
-            endLine="457"
+            startOffset="17644"
+            endLine="454"
             endColumn="10"
-            endOffset="18478"/>
+            endOffset="18186"/>
     </incident>
 
     <incident
@@ -468,12 +468,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="228"
+            line="227"
             column="53"
-            startOffset="8937"
-            endLine="228"
+            startOffset="8820"
+            endLine="227"
             endColumn="64"
-            endOffset="8948"/>
+            endOffset="8831"/>
     </incident>
 
     <incident
@@ -482,12 +482,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="319"
+            line="317"
             column="58"
-            startOffset="12832"
-            endLine="319"
+            startOffset="12632"
+            endLine="317"
             endColumn="69"
-            endOffset="12843"/>
+            endOffset="12643"/>
     </incident>
 
     <incident
@@ -496,12 +496,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="358"
+            line="356"
             column="61"
-            startOffset="14357"
-            endLine="358"
+            startOffset="14157"
+            endLine="356"
             endColumn="72"
-            endOffset="14368"/>
+            endOffset="14168"/>
     </incident>
 
     <incident
@@ -510,12 +510,12 @@
         message="Custom view ``ImageView`` has `setOnTouchListener` called on it but does not override `performClick`">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="448"
+            line="441"
             column="9"
-            startOffset="17968"
-            endLine="457"
+            startOffset="17615"
+            endLine="454"
             endColumn="11"
-            endOffset="18479"/>
+            endOffset="18187"/>
     </incident>
 
     <incident
@@ -524,12 +524,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="680"
+            line="717"
             column="60"
-            startOffset="26991"
-            endLine="680"
+            startOffset="28359"
+            endLine="717"
             endColumn="71"
-            endOffset="27002"/>
+            endOffset="28370"/>
     </incident>
 
     <incident
@@ -538,12 +538,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="694"
+            line="731"
             column="75"
-            startOffset="27542"
-            endLine="694"
+            startOffset="28910"
+            endLine="731"
             endColumn="86"
-            endOffset="27553"/>
+            endOffset="28921"/>
     </incident>
 
     <incident
@@ -552,12 +552,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/OutputActivity.java"
-            line="716"
+            line="753"
             column="62"
-            startOffset="28522"
-            endLine="716"
+            startOffset="29890"
+            endLine="753"
             endColumn="73"
-            endOffset="28533"/>
+            endOffset="29901"/>
     </incident>
 
     <incident
@@ -566,12 +566,12 @@
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/micklab/dcg/output/DynamicOutputRuntime.java"
-            line="344"
+            line="383"
             column="56"
-            startOffset="14179"
-            endLine="344"
+            startOffset="16165"
+            endLine="383"
             endColumn="67"
-            endOffset="14190"/>
+            endOffset="16176"/>
     </incident>
 
     <incident

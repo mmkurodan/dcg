@@ -105,6 +105,22 @@ public final class DynamicOutputRuntime {
         return new ActionOutput(items, invocation.stdout, invocation.stderr);
     }
 
+    public static Object invokeImageClickHandler(
+            DynamicUiRequest request,
+            String methodName,
+            Map<String, String> inputs) throws Exception {
+        if (request == null || request.getDynamicClass() == null) {
+            throw new IllegalArgumentException("Interactive output is missing its dynamic class handle.");
+        }
+        Method handlerMethod = resolveImageClickHandlerMethod(request.getDynamicClass(), methodName);
+        Map<String, String> safeInputs = inputs == null ? new LinkedHashMap<>() : new LinkedHashMap<>(inputs);
+        CapturedInvocation invocation = captureInvocation(
+                handlerMethod,
+                new Object[]{safeInputs},
+                "public static Object " + methodName + "(java.util.Map<java.lang.String, java.lang.String>)");
+        return invocation.returnValue;
+    }
+
     private static Method findZeroArgStaticMethod(Class<?> dynamicClass, String methodName) {
         if (dynamicClass == null || methodName == null || methodName.isEmpty()) {
             return null;
@@ -184,6 +200,23 @@ public final class DynamicOutputRuntime {
         throw new NoSuchMethodException("No supported static action method named " + methodName + " was found on " + dynamicClass.getName());
     }
 
+    private static Method resolveImageClickHandlerMethod(Class<?> dynamicClass, String methodName) throws NoSuchMethodException {
+        if (dynamicClass == null || methodName == null || methodName.trim().isEmpty()) {
+            throw new NoSuchMethodException("Image click handler name is missing.");
+        }
+        for (Method method : dynamicClass.getDeclaredMethods()) {
+            if (!methodName.equals(method.getName()) || !Modifier.isStatic(method.getModifiers())) {
+                continue;
+            }
+            if (supportsImageClickHandlerSignature(method.getParameterTypes())) {
+                method.setAccessible(true);
+                return method;
+            }
+        }
+        throw new NoSuchMethodException("No supported static image click handler named " + methodName
+                + " was found on " + dynamicClass.getName());
+    }
+
     private static boolean supportsActionSignature(Class<?>[] parameterTypes) {
         if (parameterTypes == null || parameterTypes.length > 2) {
             return false;
@@ -198,6 +231,12 @@ public final class DynamicOutputRuntime {
             return false;
         }
         return true;
+    }
+
+    private static boolean supportsImageClickHandlerSignature(Class<?>[] parameterTypes) {
+        return parameterTypes != null
+                && parameterTypes.length == 1
+                && Map.class.isAssignableFrom(parameterTypes[0]);
     }
 
     private static Object[] buildActionArguments(

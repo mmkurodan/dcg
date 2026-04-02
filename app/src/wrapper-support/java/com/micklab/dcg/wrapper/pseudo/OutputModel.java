@@ -81,7 +81,7 @@ final class OutputModel {
     }
 
     void addImageClickHandler(String key, String handlerName) {
-        commands.add(new ImageClickHandlerElement(
+        commands.add(new ImageClickHandler(
                 normalizeKey(key, "Image key must not be empty."),
                 normalizeNonEmpty(handlerName, "Image click handler name must not be empty.")));
     }
@@ -502,11 +502,11 @@ final class OutputModel {
         }
     }
 
-    private static final class ImageClickHandlerElement implements SpecNode {
+    private static final class ImageClickHandler implements SpecNode {
         private final String key;
         private final String handlerName;
 
-        private ImageClickHandlerElement(String key, String handlerName) {
+        private ImageClickHandler(String key, String handlerName) {
             this.key = key;
             this.handlerName = handlerName;
         }

@@ -32,9 +32,11 @@ import com.micklab.dcg.util.DiagnosticFormatter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -169,12 +171,11 @@ public class OutputActivity extends AppCompatActivity {
             interactiveRoot.setOrientation(LinearLayout.VERTICAL);
             setTopMargin(interactiveRoot, 8);
             LinkedHashMap<String, EditText> inputs = new LinkedHashMap<>();
-            LinkedHashMap<String, ImageView> images = new LinkedHashMap<>();
             LinearLayout actionOutputLayout = new LinearLayout(this);
             actionOutputLayout.setOrientation(LinearLayout.VERTICAL);
             actionOutputLayout.setVisibility(View.GONE);
 
-            View renderedSpec = buildInteractiveNode(request.getSpec(), request, inputs, images, actionOutputLayout);
+            View renderedSpec = buildInteractiveNode(request.getSpec(), request, inputs, actionOutputLayout);
             if (renderedSpec != null) {
                 addView(interactiveRoot, renderedSpec);
             }
@@ -197,16 +198,15 @@ public class OutputActivity extends AppCompatActivity {
             Object node,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
-            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         if (node == null) {
             return null;
         }
         if (node instanceof Map<?, ?>) {
-            return buildInteractiveMap((Map<?, ?>) node, request, inputs, images, actionOutputLayout);
+            return buildInteractiveMap((Map<?, ?>) node, request, inputs, actionOutputLayout);
         }
         if (node instanceof Collection<?>) {
-            return buildInteractiveCollection((Collection<?>) node, LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
+            return buildInteractiveCollection((Collection<?>) node, LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
         }
         if (node.getClass().isArray()) {
             int length = java.lang.reflect.Array.getLength(node);
@@ -214,7 +214,7 @@ public class OutputActivity extends AppCompatActivity {
             for (int index = 0; index < length; index++) {
                 values.add(java.lang.reflect.Array.get(node, index));
             }
-            return buildInteractiveCollection(values, LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
+            return buildInteractiveCollection(values, LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
         }
         return createBodyText(String.valueOf(node));
     }
@@ -223,16 +223,15 @@ public class OutputActivity extends AppCompatActivity {
             Map<?, ?> spec,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
-            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         String type = stringValue(spec.get("type")).toLowerCase();
         switch (type) {
             case "image":
-                return buildImageNode(spec, request, inputs, images, actionOutputLayout);
+                return buildImageNode(spec, request, actionOutputLayout);
             case "row":
-                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.HORIZONTAL, request, inputs, images, actionOutputLayout);
+                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.HORIZONTAL, request, inputs, actionOutputLayout);
             case "column":
-                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.VERTICAL, request, inputs, images, actionOutputLayout);
+                return buildInteractiveCollection(asCollection(spec.get("children")), LinearLayout.VERTICAL, request, inputs, actionOutputLayout);
             case "input":
                 return buildInputNode(spec, inputs);
             case "button":
@@ -254,7 +253,6 @@ public class OutputActivity extends AppCompatActivity {
             int orientation,
             DynamicUiRequest request,
             Map<String, EditText> inputs,
-            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(orientation);
@@ -264,7 +262,7 @@ public class OutputActivity extends AppCompatActivity {
         int index = 0;
         boolean previousWasSpacer = false;
         for (Object child : nodes) {
-            View childView = buildInteractiveNode(child, request, inputs, images, actionOutputLayout);
+            View childView = buildInteractiveNode(child, request, inputs, actionOutputLayout);
             if (childView == null) {
                 continue;
             }
@@ -395,11 +393,10 @@ public class OutputActivity extends AppCompatActivity {
     private View buildImageNode(
             Map<?, ?> spec,
             DynamicUiRequest request,
-            Map<String, EditText> inputs,
-            Map<String, ImageView> images,
             LinearLayout actionOutputLayout) {
         ImageView imageView = new ImageView(this);
         imageView.setAdjustViewBounds(true);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         String key = stringValue(spec.get("key"));
         String encoded = stringValue(spec.get("imageBase64"));
         String filename = stringValue(spec.get("filename"));
@@ -422,12 +419,9 @@ public class OutputActivity extends AppCompatActivity {
             }
             imageView.setImageBitmap(bitmap);
         }
-        if (!key.isEmpty()) {
-            images.put(key, imageView);
-            String handlerName = stringValue(spec.get("handlerName"));
-            if (!handlerName.isEmpty()) {
-                bindImageTouchHandler(imageView, request, handlerName, inputs, actionOutputLayout);
-            }
+        String handlerName = stringValue(spec.get("handlerName"));
+        if (!key.isEmpty() && !handlerName.isEmpty()) {
+            bindImageTouchHandler(imageView, request, handlerName, actionOutputLayout);
         }
         return imageView;
     }
@@ -436,7 +430,6 @@ public class OutputActivity extends AppCompatActivity {
             ImageView imageView,
             DynamicUiRequest request,
             String handlerName,
-            Map<String, EditText> inputs,
             LinearLayout actionOutputLayout) {
         if (imageView == null
                 || request == null
@@ -446,15 +439,60 @@ public class OutputActivity extends AppCompatActivity {
         }
         imageView.setClickable(true);
         imageView.setOnTouchListener((view, event) -> {
-            if (event == null || event.getAction() != MotionEvent.ACTION_UP) {
-                return false;
+            if (event == null) {
+                return true;
             }
-            Map<String, String> values = collectInputValues(inputs);
-            values.put("x", String.valueOf(Math.round(event.getX())));
-            values.put("y", String.valueOf(Math.round(event.getY())));
-            runInteractiveActionWithValues(request, handlerName, values, actionOutputLayout);
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                int x = (int) event.getX();
+                int y = (int) event.getY();
+                Map<String, String> values = new HashMap<>();
+                values.put("x", String.valueOf(x));
+                values.put("y", String.valueOf(y));
+                callJavaHandler(request, handlerName, values, actionOutputLayout);
+            }
             return true;
         });
+    }
+
+    private void callJavaHandler(
+            DynamicUiRequest request,
+            String handlerName,
+            Map<String, String> values,
+            LinearLayout actionOutputLayout) {
+        try {
+            Object result = DynamicOutputRuntime.invokeImageClickHandler(request, handlerName, values);
+            renderJavaHandlerOutput(actionOutputLayout, result);
+        } catch (Exception exception) {
+            actionOutputLayout.removeAllViews();
+            actionOutputLayout.setVisibility(View.GONE);
+            ExecutionLogStore.publish(ExecutionResult.runtimeError(
+                    "Interactive action failed",
+                    "Action \"" + handlerName + "\" threw an exception.",
+                    "",
+                    DiagnosticFormatter.formatThrowable(unwrapInvocationException(exception)),
+                    "",
+                    -1L));
+        }
+    }
+
+    private void renderJavaHandlerOutput(LinearLayout actionOutputLayout, Object result) {
+        actionOutputLayout.removeAllViews();
+        if (!(result instanceof String)) {
+            actionOutputLayout.setVisibility(View.GONE);
+            return;
+        }
+        addTextSection(actionOutputLayout, getString(R.string.result_output_label), (String) result);
+        actionOutputLayout.setVisibility(View.VISIBLE);
+    }
+
+    private Throwable unwrapInvocationException(Exception exception) {
+        if (exception instanceof DynamicOutputRuntime.InvocationFailureException && exception.getCause() != null) {
+            return exception.getCause();
+        }
+        if (exception instanceof InvocationTargetException && exception.getCause() != null) {
+            return exception.getCause();
+        }
+        return exception;
     }
 
     private void runInteractiveAction(
@@ -648,8 +686,7 @@ public class OutputActivity extends AppCompatActivity {
             actionOutputLayout.setOrientation(LinearLayout.VERTICAL);
             actionOutputLayout.setVisibility(View.GONE);
             LinkedHashMap<String, EditText> inputs = new LinkedHashMap<>();
-            LinkedHashMap<String, ImageView> images = new LinkedHashMap<>();
-            View renderedSpec = buildInteractiveNode(enrichedSpec, request, inputs, images, actionOutputLayout);
+            View renderedSpec = buildInteractiveNode(enrichedSpec, request, inputs, actionOutputLayout);
             if (renderedSpec != null) {
                 setTopMargin(renderedSpec, 8);
                 addView(panel, renderedSpec);

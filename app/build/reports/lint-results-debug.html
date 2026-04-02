@@ -179,7 +179,7 @@ document.getElementById(id).style.display = 'none';
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Lint Report: 25 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Apr 02 02:11:20 UTC 2026 by AGP (8.5.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Apr 02 03:41:19 UTC 2026 by AGP (8.5.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -259,74 +259,74 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:344</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 341 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
-<span class="lineno"> 342 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
-<span class="lineno"> 343 </span>        }
-<span class="caretline"><span class="lineno"> 344 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 345 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
-<span class="lineno"> 346 </span>                || <span class="string">"image"</span>.equals(normalizedType)
-<span class="lineno"> 347 </span>                || <span class="string">"label"</span>.equals(normalizedType)
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java">../../src/main/java/com/micklab/dcg/output/DynamicOutputRuntime.java</a>:383</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 380 </span>        <span class="keyword">if</span> (!(type <span class="keyword">instanceof</span> String)) {
+<span class="lineno"> 381 </span>            <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 382 </span>        }
+<span class="caretline"><span class="lineno"> 383 </span>        String normalizedType = ((String) type).trim().<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 384 </span>        <span class="keyword">return</span> <span class="string">"text"</span>.equals(normalizedType)
+<span class="lineno"> 385 </span>                || <span class="string">"image"</span>.equals(normalizedType)
+<span class="lineno"> 386 </span>                || <span class="string">"label"</span>.equals(normalizedType)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:228</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:227</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 224 </span>            DynamicUiRequest request,
 <span class="lineno"> 225 </span>            Map&lt;String, EditText> inputs,
-<span class="lineno"> 226 </span>            Map&lt;String, ImageView> images,
-<span class="lineno"> 227 </span>            LinearLayout actionOutputLayout) {
-<span class="caretline"><span class="lineno"> 228 </span>        String type = stringValue(spec.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 229 </span>        <span class="keyword">switch</span> (type) {
-<span class="lineno"> 230 </span>            <span class="keyword">case</span> <span class="string">"image"</span>:
-<span class="lineno"> 231 </span>                <span class="keyword">return</span> buildImageNode(spec, request, inputs, images, actionOutputLayout);
+<span class="lineno"> 226 </span>            LinearLayout actionOutputLayout) {
+<span class="caretline"><span class="lineno"> 227 </span>        String type = stringValue(spec.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 228 </span>        <span class="keyword">switch</span> (type) {
+<span class="lineno"> 229 </span>            <span class="keyword">case</span> <span class="string">"image"</span>:
+<span class="lineno"> 230 </span>                <span class="keyword">return</span> buildImageNode(spec, request, actionOutputLayout);
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:319</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 316 </span>
-<span class="lineno"> 317 </span>    <span class="keyword">private</span> View buildTextNode(Map&lt;?, ?> spec) {
-<span class="lineno"> 318 </span>        TextView textView = createBodyText(stringValue(spec.get(<span class="string">"text"</span>)));
-<span class="caretline"><span class="lineno"> 319 </span>        String emphasis = stringValue(spec.get(<span class="string">"style"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 320 </span>        <span class="keyword">if</span> (<span class="string">"title"</span>.equals(emphasis)) {
-<span class="lineno"> 321 </span>            textView.setTextSize(<span class="number">20</span>);
-<span class="lineno"> 322 </span>            textView.setTypeface(Typeface.DEFAULT_BOLD);
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:317</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 314 </span>
+<span class="lineno"> 315 </span>    <span class="keyword">private</span> View buildTextNode(Map&lt;?, ?> spec) {
+<span class="lineno"> 316 </span>        TextView textView = createBodyText(stringValue(spec.get(<span class="string">"text"</span>)));
+<span class="caretline"><span class="lineno"> 317 </span>        String emphasis = stringValue(spec.get(<span class="string">"style"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 318 </span>        <span class="keyword">if</span> (<span class="string">"title"</span>.equals(emphasis)) {
+<span class="lineno"> 319 </span>            textView.setTextSize(<span class="number">20</span>);
+<span class="lineno"> 320 </span>            textView.setTypeface(Typeface.DEFAULT_BOLD);
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:358</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 355 </span>        editText.setHint(stringValue(spec.get(<span class="string">"hint"</span>)));
-<span class="lineno"> 356 </span>        editText.setText(stringValue(spec.get(<span class="string">"value"</span>)));
-<span class="lineno"> 357 </span>        editText.setTextColor(color(R.color.textPrimary));
-<span class="caretline"><span class="lineno"> 358 </span>        String keyboard = stringValue(spec.get(<span class="string">"keyboard"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 359 </span>        <span class="keyword">if</span> (<span class="string">"number"</span>.equals(keyboard) || booleanValue(spec.get(<span class="string">"numeric"</span>))) {
-<span class="lineno"> 360 </span>            editText.setInputType(InputType.TYPE_CLASS_NUMBER
-<span class="lineno"> 361 </span>                    | InputType.TYPE_NUMBER_FLAG_DECIMAL
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:356</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 353 </span>        editText.setHint(stringValue(spec.get(<span class="string">"hint"</span>)));
+<span class="lineno"> 354 </span>        editText.setText(stringValue(spec.get(<span class="string">"value"</span>)));
+<span class="lineno"> 355 </span>        editText.setTextColor(color(R.color.textPrimary));
+<span class="caretline"><span class="lineno"> 356 </span>        String keyboard = stringValue(spec.get(<span class="string">"keyboard"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 357 </span>        <span class="keyword">if</span> (<span class="string">"number"</span>.equals(keyboard) || booleanValue(spec.get(<span class="string">"numeric"</span>))) {
+<span class="lineno"> 358 </span>            editText.setInputType(InputType.TYPE_CLASS_NUMBER
+<span class="lineno"> 359 </span>                    | InputType.TYPE_NUMBER_FLAG_DECIMAL
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:680</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 677 </span>            <span class="keyword">if</span> (command == <span class="keyword">null</span>) {
-<span class="lineno"> 678 </span>                <span class="keyword">continue</span>;
-<span class="lineno"> 679 </span>            }
-<span class="caretline"><span class="lineno"> 680 </span>            String type = stringValue(command.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 681 </span>            <span class="keyword">if</span> (<span class="string">"savebitmap"</span>.equals(type)) {
-<span class="lineno"> 682 </span>                persistBitmapCommand(command);
-<span class="lineno"> 683 </span>            }
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:717</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 714 </span>            <span class="keyword">if</span> (command == <span class="keyword">null</span>) {
+<span class="lineno"> 715 </span>                <span class="keyword">continue</span>;
+<span class="lineno"> 716 </span>            }
+<span class="caretline"><span class="lineno"> 717 </span>            String type = stringValue(command.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 718 </span>            <span class="keyword">if</span> (<span class="string">"savebitmap"</span>.equals(type)) {
+<span class="lineno"> 719 </span>                persistBitmapCommand(command);
+<span class="lineno"> 720 </span>            }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:694</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 691 </span>       <span class="keyword">if</span> (command == <span class="keyword">null</span>) {
-<span class="lineno"> 692 </span>           <span class="keyword">continue</span>;
-<span class="lineno"> 693 </span>       }
-<span class="caretline"><span class="lineno"> 694 </span>       <span class="keyword">if</span> (!<span class="string">"imageclick"</span>.equals(stringValue(command.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>())) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 695 </span>           <span class="keyword">continue</span>;
-<span class="lineno"> 696 </span>       }
-<span class="lineno"> 697 </span>       String key = stringValue(command.get(<span class="string">"key"</span>));
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:731</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 728 </span>       <span class="keyword">if</span> (command == <span class="keyword">null</span>) {
+<span class="lineno"> 729 </span>           <span class="keyword">continue</span>;
+<span class="lineno"> 730 </span>       }
+<span class="caretline"><span class="lineno"> 731 </span>       <span class="keyword">if</span> (!<span class="string">"imageclick"</span>.equals(stringValue(command.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>())) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 732 </span>           <span class="keyword">continue</span>;
+<span class="lineno"> 733 </span>       }
+<span class="lineno"> 734 </span>       String key = stringValue(command.get(<span class="string">"key"</span>));
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:716</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 713 </span>  <span class="keyword">for</span> (Map.Entry&lt;?, ?> entry : ((Map&lt;?, ?>) node).entrySet()) {
-<span class="lineno"> 714 </span>      rewritten.put(String.valueOf(entry.getKey()), injectImageHandlers(entry.getValue(), handlersByKey));
-<span class="lineno"> 715 </span>  }
-<span class="caretline"><span class="lineno"> 716 </span>  String type = stringValue(rewritten.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 717 </span>  <span class="keyword">if</span> (<span class="string">"image"</span>.equals(type)) {
-<span class="lineno"> 718 </span>      String key = stringValue(rewritten.get(<span class="string">"key"</span>));
-<span class="lineno"> 719 </span>      String handlerName = handlersByKey.get(key);
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:753</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 750 </span>  <span class="keyword">for</span> (Map.Entry&lt;?, ?> entry : ((Map&lt;?, ?>) node).entrySet()) {
+<span class="lineno"> 751 </span>      rewritten.put(String.valueOf(entry.getKey()), injectImageHandlers(entry.getValue(), handlersByKey));
+<span class="lineno"> 752 </span>  }
+<span class="caretline"><span class="lineno"> 753 </span>  String type = stringValue(rewritten.get(<span class="string">"type"</span>)).<span class="warning">toLowerCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 754 </span>  <span class="keyword">if</span> (<span class="string">"image"</span>.equals(type)) {
+<span class="lineno"> 755 </span>      String key = stringValue(rewritten.get(<span class="string">"key"</span>));
+<span class="lineno"> 756 </span>      String handlerName = handlersByKey.get(key);
 </pre>
 
 </div>
@@ -674,24 +674,24 @@ Dismiss</button>            </div>
 <span class="lineno"> 158 </span>            }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:448</span>: <span class="message">Custom view `<code>ImageView</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
-<span class="lineno"> 445 </span>            <span class="keyword">return</span>;
-<span class="lineno"> 446 </span>        }
-<span class="lineno"> 447 </span>        imageView.setClickable(<span class="keyword">true</span>);
-<span class="caretline"><span class="lineno"> 448 </span>        <span class="warning">imageView.setOnTouchListener((view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 449 </span>            <span class="keyword">if</span> (event == <span class="keyword">null</span> || event.getAction() != MotionEvent.ACTION_UP) {
-<span class="lineno"> 450 </span>                <span class="keyword">return</span> <span class="keyword">false</span>;
-<span class="lineno"> 451 </span>            }
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:441</span>: <span class="message">Custom view `<code>ImageView</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
+<span class="lineno"> 438 </span>            <span class="keyword">return</span>;
+<span class="lineno"> 439 </span>        }
+<span class="lineno"> 440 </span>        imageView.setClickable(<span class="keyword">true</span>);
+<span class="caretline"><span class="lineno"> 441 </span>        <span class="warning">imageView.setOnTouchListener((view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 442 </span>            <span class="keyword">if</span> (event == <span class="keyword">null</span>) {
+<span class="lineno"> 443 </span>                <span class="keyword">return</span> <span class="keyword">true</span>;
+<span class="lineno"> 444 </span>            }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:448</span>: <span class="message"><code>onTouch</code> lambda should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
-<span class="lineno"> 445 </span>            <span class="keyword">return</span>;
-<span class="lineno"> 446 </span>        }
-<span class="lineno"> 447 </span>        imageView.setClickable(<span class="keyword">true</span>);
-<span class="caretline"><span class="lineno"> 448 </span>        imageView.setOnTouchListener(<span class="warning">(view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 449 </span>            <span class="keyword">if</span> (event == <span class="keyword">null</span> || event.getAction() != MotionEvent.ACTION_UP) {
-<span class="lineno"> 450 </span>                <span class="keyword">return</span> <span class="keyword">false</span>;
-<span class="lineno"> 451 </span>            }
+<span class="location"><a href="../../src/main/java/com/micklab/dcg/OutputActivity.java">../../src/main/java/com/micklab/dcg/OutputActivity.java</a>:441</span>: <span class="message"><code>onTouch</code> lambda should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
+<span class="lineno"> 438 </span>            <span class="keyword">return</span>;
+<span class="lineno"> 439 </span>        }
+<span class="lineno"> 440 </span>        imageView.setClickable(<span class="keyword">true</span>);
+<span class="caretline"><span class="lineno"> 441 </span>        imageView.setOnTouchListener(<span class="warning">(view, event) -> {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 442 </span>            <span class="keyword">if</span> (event == <span class="keyword">null</span>) {
+<span class="lineno"> 443 </span>                <span class="keyword">return</span> <span class="keyword">true</span>;
+<span class="lineno"> 444 </span>            }
 </pre>
 
 </div>

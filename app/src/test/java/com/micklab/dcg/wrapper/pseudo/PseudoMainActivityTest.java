@@ -95,15 +95,15 @@ public class PseudoMainActivityTest {
 
         Map<?, ?> image = (Map<?, ?>) children.get(0);
         assertEquals("image", image.get("type"));
-        assertEquals("chart", image.get("key"));
-        assertEquals("charts/chart.png", image.get("filename"));
+        assertEquals("board", image.get("key"));
+        assertEquals("board.png", image.get("filename"));
         assertFalse(image.containsKey("imageBase64"));
 
         List<Map<String, Object>> commands = document.getCommands();
         assertEquals(1, commands.size());
         assertEquals("imageClick", commands.get(0).get("type"));
-        assertEquals("chart", commands.get(0).get("key"));
-        assertEquals("handleChartTap", commands.get(0).get("handlerName"));
+        assertEquals("board", commands.get(0).get("key"));
+        assertEquals("onBoardClick", commands.get(0).get("handlerName"));
     }
 
     @Test
@@ -116,14 +116,14 @@ public class PseudoMainActivityTest {
         List<Map<String, Object>> commands = document.getCommands();
         assertEquals(1, commands.size());
         assertEquals("imageClick", commands.get(0).get("type"));
-        assertEquals("chart", commands.get(0).get("key"));
+        assertEquals("board", commands.get(0).get("key"));
 
         assertTrue(document.getSpec() instanceof List<?>);
         List<?> nodes = (List<?>) document.getSpec();
         assertEquals(2, nodes.size());
         Map<?, ?> image = (Map<?, ?>) nodes.get(0);
         assertEquals("image", image.get("type"));
-        assertEquals("chart", image.get("key"));
+        assertEquals("board", image.get("key"));
         assertEquals("board.png", image.get("filename"));
         Map<?, ?> label = (Map<?, ?>) nodes.get(1);
         assertEquals("label", label.get("type"));
@@ -214,9 +214,9 @@ public class PseudoMainActivityTest {
         @Override
         protected void onCreate() {
             beginRow();
-            addImage("chart", "charts/chart.png");
+            addImage("board", "board.png");
             endRow();
-            onImageClick("chart", "handleChartTap");
+            onImageClick("board", "onBoardClick");
             addLabel("done");
         }
     }
@@ -233,8 +233,8 @@ public class PseudoMainActivityTest {
         }
 
         private static void recordImage() {
-            addImage("chart", "board.png");
-            onImageClick("chart", "handleChartTap");
+            addImage("board", "board.png");
+            onImageClick("board", "onBoardClick");
             addLabel("status", "ready");
         }
     }

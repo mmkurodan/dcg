@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class DynamicOutputRuntimeTest {
@@ -64,6 +65,30 @@ public class DynamicOutputRuntimeTest {
         assertEquals("summing", output.getStdout());
         assertEquals(1, output.getOutputItems().size());
         assertEquals("12", output.getOutputItems().get(0).getText());
+    }
+
+    @Test
+    public void invokeImageClickHandlerPassesCoordinatesToStaticMapMethod() throws Exception {
+        DynamicUiRequest request = DynamicUiRequest.declarative(ImageClickProgram.class, new ArrayList<>());
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("x", "12");
+        values.put("y", "34");
+
+        Object output = DynamicOutputRuntime.invokeImageClickHandler(request, "onBoardClick", values);
+
+        assertEquals("clicked: 12, 34", output);
+    }
+
+    @Test
+    public void invokeImageClickHandlerReturnsNullWhenHandlerDoesNotReturnText() throws Exception {
+        DynamicUiRequest request = DynamicUiRequest.declarative(ImageClickProgram.class, new ArrayList<>());
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("x", "8");
+        values.put("y", "9");
+
+        Object output = DynamicOutputRuntime.invokeImageClickHandler(request, "onBoardClickNoOutput", values);
+
+        assertNull(output);
     }
 
     @Test
@@ -138,6 +163,16 @@ public class DynamicOutputRuntimeTest {
             nodes.add(spacer);
 
             return nodes;
+        }
+    }
+
+    public static final class ImageClickProgram {
+        public static Object onBoardClick(Map<String, String> values) {
+            return "clicked: " + values.get("x") + ", " + values.get("y");
+        }
+
+        public static Object onBoardClickNoOutput(Map<String, String> values) {
+            return null;
         }
     }
 
