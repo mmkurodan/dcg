@@ -149,6 +149,19 @@ public class JavaExecutorTest {
     }
 
     @Test
+    public void stagedWrapperAssetContainsVirtualNetworkClasses() throws Exception {
+        File wrapperJar = new File("src/main/assets/java-wrapper/android-wrapper-classpath.jar");
+        assertTrue(wrapperJar.isFile());
+
+        try (ZipFile zipFile = new ZipFile(wrapperJar)) {
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/Socket.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/ServerSocket.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualNetwork.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualChannel.class"));
+        }
+    }
+
+    @Test
     public void joinClasspathsConcatenatesNonEmptySegmentsInOrder() {
         String merged = JavaExecutor.joinClasspaths(
                 "/tmp/a.jar",

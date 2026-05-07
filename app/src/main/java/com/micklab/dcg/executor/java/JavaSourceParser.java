@@ -37,6 +37,7 @@ public final class JavaSourceParser {
     private static final String ANDROID_PREFIX = "android.";
     private static final String WRAPPER_PREFIX = "com.micklab.dcg.wrapper.";
     private static final String WRAPPER_ANDROID_PREFIX = WRAPPER_PREFIX + "android.";
+    private static final String WRAPPER_NET_PREFIX = WRAPPER_PREFIX + "net.";
     private static final String ANDROIDX_PREFIX = "androidx.";
     private static final String PSEUDO_IMPORT_PREFIX = "com.micklab.dcg.wrapper.pseudo.";
     private static final String PSEUDO_GRAPHICS_IMPORT = "import com.micklab.dcg.wrapper.android.graphics.*;\n";
@@ -48,6 +49,7 @@ public final class JavaSourceParser {
     private static final String PSEUDO_CACHE_FIELD = "__dcgPseudoResultCache";
     private static final String PARSER_FILE_NAME = "Snippet.java";
     private static final String PARSER_ENCODING = "UTF-8";
+    private static final Map<String, String> DIRECT_TYPE_REWRITES = buildDirectTypeRewrites();
     private static final Map<String, String> PSEUDO_ANDROID_TYPE_OVERRIDES = buildPseudoAndroidTypeOverrides();
     private static final List<String> PSEUDO_REQUIRED_IMPORTS = buildPseudoRequiredImports();
 
@@ -71,6 +73,8 @@ public final class JavaSourceParser {
                 pseudoRewritten,
                 pseudoMainActivity ? PSEUDO_ANDROID_TYPE_OVERRIDES : null);
         String rewrittenSource = rewriteResult.rewrittenSource;
+        RewriteResult directTypeRewrite = rewriteDirectTypeReferences(rewrittenSource);
+        rewrittenSource = directTypeRewrite.rewrittenSource;
         int fallbackRewriteCount = 0;
         RewriteResult buildFallback = rewriteRemainingBuildReferences(rewrittenSource);
         rewrittenSource = buildFallback.rewrittenSource;
@@ -93,8 +97,14 @@ public final class JavaSourceParser {
         return new PreparedJavaSource(
                 parsed,
                 rewrittenSource,
-                rewriteResult.replacementCount + fallbackRewriteCount + pseudoRewriteCount,
-                rewriteResult.hadAndroidReferences || fallbackRewriteCount > 0 || pseudoRewriteCount > 0,
+                rewriteResult.replacementCount
+                        + directTypeRewrite.replacementCount
+                        + fallbackRewriteCount
+                        + pseudoRewriteCount,
+                rewriteResult.hadRewrittenReferences
+                        || directTypeRewrite.hadRewrittenReferences
+                        || fallbackRewriteCount > 0
+                        || pseudoRewriteCount > 0,
                 pseudoMainActivity);
     }
 
@@ -206,19 +216,19 @@ public final class JavaSourceParser {
         private final ParsedJavaSource parsedSource;
         private final String rewrittenSource;
         private final int rewriteCount;
-        private final boolean hadAndroidReferences;
+        private final boolean hadWrapperRewrites;
         private final boolean pseudoMainActivity;
 
         PreparedJavaSource(
                 ParsedJavaSource parsedSource,
                 String rewrittenSource,
                 int rewriteCount,
-                boolean hadAndroidReferences,
+                boolean hadWrapperRewrites,
                 boolean pseudoMainActivity) {
             this.parsedSource = parsedSource;
             this.rewrittenSource = rewrittenSource == null ? "" : rewrittenSource;
             this.rewriteCount = Math.max(0, rewriteCount);
-            this.hadAndroidReferences = hadAndroidReferences;
+            this.hadWrapperRewrites = hadWrapperRewrites;
             this.pseudoMainActivity = pseudoMainActivity;
         }
 
@@ -234,8 +244,12 @@ public final class JavaSourceParser {
             return rewriteCount;
         }
 
+        public boolean hadWrapperRewrites() {
+            return hadWrapperRewrites;
+        }
+
         public boolean hadAndroidReferences() {
-            return hadAndroidReferences;
+            return hadWrapperRewrites;
         }
 
         public boolean isPseudoMainActivity() {
@@ -384,16 +398,22 @@ public final class JavaSourceParser {
         if (statement == null) {
             return "";
         }
-        if (statement.contains(WRAPPER_ANDROID_PREFIX) || statement.contains(PSEUDO_IMPORT_PREFIX)) {
+        if (statement.contains(WRAPPER_ANDROID_PREFIX)
+                || statement.contains(WRAPPER_NET_PREFIX)
+                || statement.contains(PSEUDO_IMPORT_PREFIX)) {
             return statement;
         }
         String importedReference = extractImportReference(statement);
-        if (importedReference != null
-                && !importedReference.endsWith(".*")
-                && !statement.trim().startsWith("import static ")) {
-            String override = overrideTypeName(importedReference, typeOverrides);
-            if (override != null) {
-                return statement.replace(importedReference, override);
+        if (importedReference != null && !statement.trim().startsWith("import static ")) {
+            String explicitRewrite = rewriteDirectTypeName(importedReference);
+            if (explicitRewrite != null) {
+                return statement.replace(importedReference, explicitRewrite);
+            }
+            if (!importedReference.endsWith(".*")) {
+                String override = overrideTypeName(importedReference, typeOverrides);
+                if (override != null) {
+                    return statement.replace(importedReference, override);
+                }
             }
         }
         int androidIndex = statement.indexOf(ANDROID_PREFIX);
@@ -507,6 +527,22 @@ public final class JavaSourceParser {
         }
         String helper = buildPseudoHelperMethods(className);
         return source.substring(0, lastBrace) + helper + "\n}\n";
+    }
+
+    private static RewriteResult rewriteDirectTypeReferences(String source) {
+        String rewritten = source == null ? "" : source;
+        int replacementCount = 0;
+        boolean hadRewrittenReferences = false;
+        for (Map.Entry<String, String> entry : DIRECT_TYPE_REWRITES.entrySet()) {
+            RewriteResult rewrite = rewriteQualifiedTypeOutsideCommentsAndStrings(
+                    rewritten,
+                    entry.getKey(),
+                    entry.getValue());
+            rewritten = rewrite.rewrittenSource;
+            replacementCount += rewrite.replacementCount;
+            hadRewrittenReferences |= rewrite.hadRewrittenReferences;
+        }
+        return new RewriteResult(rewritten, replacementCount, hadRewrittenReferences);
     }
 
     private static RewriteResult rewriteRemainingPseudoBundleReferences(String source) {
@@ -714,6 +750,13 @@ public final class JavaSourceParser {
         return typeOverrides.get(androidTypeName);
     }
 
+    private static String rewriteDirectTypeName(String typeName) {
+        if (typeName == null || typeName.isEmpty()) {
+            return null;
+        }
+        return DIRECT_TYPE_REWRITES.get(typeName);
+    }
+
     private static String rewriteAndroidTypeName(String androidTypeName, Map<String, String> typeOverrides) {
         String override = overrideTypeName(androidTypeName, typeOverrides);
         if (override != null) {
@@ -874,15 +917,22 @@ public final class JavaSourceParser {
         return imports;
     }
 
+    private static Map<String, String> buildDirectTypeRewrites() {
+        LinkedHashMap<String, String> replacements = new LinkedHashMap<>();
+        replacements.put("java.net.ServerSocket", "com.micklab.dcg.wrapper.net.ServerSocket");
+        replacements.put("java.net.Socket", "com.micklab.dcg.wrapper.net.Socket");
+        return replacements;
+    }
+
     private static final class RewriteResult {
         private final String rewrittenSource;
         private final int replacementCount;
-        private final boolean hadAndroidReferences;
+        private final boolean hadRewrittenReferences;
 
-        private RewriteResult(String rewrittenSource, int replacementCount, boolean hadAndroidReferences) {
+        private RewriteResult(String rewrittenSource, int replacementCount, boolean hadRewrittenReferences) {
             this.rewrittenSource = rewrittenSource == null ? "" : rewrittenSource;
             this.replacementCount = replacementCount;
-            this.hadAndroidReferences = hadAndroidReferences;
+            this.hadRewrittenReferences = hadRewrittenReferences;
         }
     }
 

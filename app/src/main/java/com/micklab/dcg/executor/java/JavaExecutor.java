@@ -59,9 +59,14 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String LOCAL_WRAPPER_JAR_DIRECTORY = "java-wrapper";
     private static final String WRAPPER_JAR_ASSET_DIRECTORY = "java-wrapper";
     private static final String WRAPPER_CLASSPATH_JAR = "android-wrapper-classpath.jar";
-    private static final String WRAPPER_CLASS_JAR_ENTRY_PREFIX = "com/micklab/dcg/wrapper/android/";
-    private static final String WRAPPER_BITMAP_CLASS_JAR_ENTRY = WRAPPER_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap.class";
-    private static final String WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY = WRAPPER_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap$Config.class";
+    private static final String WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX = "com/micklab/dcg/wrapper/android/";
+    private static final String WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX = "com/micklab/dcg/wrapper/net/";
+    private static final String WRAPPER_BITMAP_CLASS_JAR_ENTRY = WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap.class";
+    private static final String WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY = WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap$Config.class";
+    private static final String WRAPPER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "Socket.class";
+    private static final String WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "ServerSocket.class";
+    private static final String WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualNetwork.class";
+    private static final String WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualChannel.class";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
@@ -642,6 +647,10 @@ public class JavaExecutor implements LanguageExecutor {
         boolean foundWrapperClass = false;
         boolean foundBitmapWrapper = false;
         boolean foundBitmapConfigWrapper = false;
+        boolean foundSocketWrapper = false;
+        boolean foundServerSocketWrapper = false;
+        boolean foundVirtualNetworkWrapper = false;
+        boolean foundVirtualChannelWrapper = false;
         try (ZipFile zipFile = new ZipFile(wrapperJar)) {
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
@@ -650,15 +659,29 @@ public class JavaExecutor implements LanguageExecutor {
                 if (entry.isDirectory()) {
                     continue;
                 }
-                if (name.startsWith(WRAPPER_CLASS_JAR_ENTRY_PREFIX)
+                if ((name.startsWith(WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX)
+                        || name.startsWith(WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX))
                         && name.endsWith(".class")) {
                     foundWrapperClass = true;
                     if (WRAPPER_BITMAP_CLASS_JAR_ENTRY.equals(name)) {
                         foundBitmapWrapper = true;
                     } else if (WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY.equals(name)) {
                         foundBitmapConfigWrapper = true;
+                    } else if (WRAPPER_SOCKET_CLASS_JAR_ENTRY.equals(name)) {
+                        foundSocketWrapper = true;
+                    } else if (WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY.equals(name)) {
+                        foundServerSocketWrapper = true;
+                    } else if (WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY.equals(name)) {
+                        foundVirtualNetworkWrapper = true;
+                    } else if (WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY.equals(name)) {
+                        foundVirtualChannelWrapper = true;
                     }
-                    if (foundBitmapWrapper && foundBitmapConfigWrapper) {
+                    if (foundBitmapWrapper
+                            && foundBitmapConfigWrapper
+                            && foundSocketWrapper
+                            && foundServerSocketWrapper
+                            && foundVirtualNetworkWrapper
+                            && foundVirtualChannelWrapper) {
                         break;
                     }
                 }
@@ -670,6 +693,16 @@ public class JavaExecutor implements LanguageExecutor {
         if (!foundBitmapWrapper || !foundBitmapConfigWrapper) {
             throw new IOException("Wrapper classpath jar is missing required nested wrapper classes: "
                     + WRAPPER_BITMAP_CLASS_JAR_ENTRY + ", " + WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY + ".");
+        }
+        if (!foundSocketWrapper
+                || !foundServerSocketWrapper
+                || !foundVirtualNetworkWrapper
+                || !foundVirtualChannelWrapper) {
+            throw new IOException("Wrapper classpath jar is missing required virtual network classes: "
+                    + WRAPPER_SOCKET_CLASS_JAR_ENTRY + ", "
+                    + WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY + ", "
+                    + WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY + ", "
+                    + WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY + ".");
         }
     }
 
@@ -908,23 +941,23 @@ public class JavaExecutor implements LanguageExecutor {
         if (sourceFile != null) {
             details.add("Source: " + sourceFile.getName());
         }
-        if (preparedSource != null && preparedSource.hadAndroidReferences()) {
+        if (preparedSource != null && preparedSource.hadWrapperRewrites()) {
             details.add((preparedSource.isPseudoMainActivity()
                     ? "Pseudo MainActivity rewrites: "
-                    : "Android wrapper rewrites: ") + preparedSource.getRewriteCount());
+                    : "Wrapper rewrites: ") + preparedSource.getRewriteCount());
         }
         details.add(BUNDLED_COMPILER_LAYOUT);
         return TextUtils.join("\n", details);
     }
 
     private String formatRewriteDetails(JavaSourceParser.PreparedJavaSource preparedSource) {
-        if (preparedSource == null || !preparedSource.hadAndroidReferences()) {
+        if (preparedSource == null || !preparedSource.hadWrapperRewrites()) {
             return "";
         }
         if (preparedSource.isPseudoMainActivity()) {
             return "Pseudo MainActivity rewrites: " + preparedSource.getRewriteCount();
         }
-        return "Android wrapper rewrites: " + preparedSource.getRewriteCount();
+        return "Wrapper rewrites: " + preparedSource.getRewriteCount();
     }
 
     private String buildExecutionSummary(

@@ -103,6 +103,51 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationRewritesJavaNetImportsToVirtualWrappers() {
+        String source = "import java.net.Socket;\n"
+                + "import java.net.ServerSocket;\n"
+                + "public class HelloJava {\n"
+                + "  public static String run() throws Exception {\n"
+                + "    ServerSocket server = null;\n"
+                + "    Socket client = null;\n"
+                + "    return String.valueOf(server == null && client == null);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.Socket;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.ServerSocket;"));
+        assertFalse(rewritten.contains("import java.net.Socket;"));
+        assertFalse(rewritten.contains("import java.net.ServerSocket;"));
+        assertTrue(prepared.hadWrapperRewrites());
+        assertTrue(prepared.getRewriteCount() > 0);
+    }
+
+    @Test
+    public void prepareForCompilationRewritesQualifiedJavaNetReferencesWithoutTouchingStrings() {
+        String source = "public class HelloJava {\n"
+                + "  public static String run() throws Exception {\n"
+                + "    String literal = \"java.net.Socket\";\n"
+                + "    // java.net.ServerSocket stays in comments\n"
+                + "    java.net.ServerSocket server = null;\n"
+                + "    java.net.Socket client = null;\n"
+                + "    return literal + \":\" + (server == null) + \":\" + (client == null);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.net.ServerSocket server"));
+        assertTrue(rewritten.contains("com.micklab.dcg.wrapper.net.Socket client"));
+        assertTrue(rewritten.contains("\"java.net.Socket\""));
+        assertTrue(rewritten.contains("// java.net.ServerSocket stays in comments"));
+        assertFalse(rewritten.contains("java.net.ServerSocket server"));
+        assertFalse(rewritten.contains("java.net.Socket client"));
+        assertTrue(prepared.hadWrapperRewrites());
+    }
+
+    @Test
     public void prepareForCompilationRewritesQualifiedBuildReferencesForPseudoMainActivity() {
         String source = "public class HelloJava {\n"
                 + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"

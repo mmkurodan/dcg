@@ -26,6 +26,7 @@ def allBundledLibs = fileTree(dir: "${projectDir}/libs", include: ['*.jar'])
 def sourceVersionStubSourcesDir = layout.projectDirectory.dir("stubs")
 def sourceVersionStubClassesDir = layout.buildDirectory.dir("generated/sourceversion-stub/classes")
 def generatedWrapperSourceDir = layout.projectDirectory.dir("src/main/java/com/micklab/dcg/wrapper/android")
+def handwrittenNetWrapperDir = layout.projectDirectory.dir("src/main/java/com/micklab/dcg/wrapper/net")
 def handwrittenWrapperSupportDir = layout.projectDirectory.dir("src/wrapper-support/java")
 def generatedWrapperClasspathClassesDir = layout.buildDirectory.dir("generated/wrapper-classpath/classes")
 def generatedWrapperClasspathJarDir = layout.buildDirectory.dir("generated/wrapper-classpath/jar")
@@ -102,6 +103,7 @@ android {
             assets.srcDirs += ['src/main/assets']
             java {
                 exclude 'com/micklab/dcg/wrapper/android/**'
+                exclude 'com/micklab/dcg/wrapper/net/**'
             }
         }
     }
@@ -174,6 +176,9 @@ tasks.register("compileAndroidWrapperClasspath", JavaCompile) {
     dependsOn("generateAndroidApiWrappers")
     source = files(
             fileTree(generatedWrapperSourceDir) {
+                include "**/*.java"
+            },
+            fileTree(handwrittenNetWrapperDir) {
                 include "**/*.java"
             },
             fileTree(handwrittenWrapperSupportDir) {
