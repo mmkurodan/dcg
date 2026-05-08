@@ -18,7 +18,6 @@ import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
 import com.micklab.dcg.output.DynamicOutputRuntime;
 import com.micklab.dcg.util.DiagnosticFormatter;
-import com.micklab.dcg.wrapper.net.Socket;
 
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
 
@@ -32,6 +31,8 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -65,6 +66,7 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX = "com/micklab/dcg/wrapper/net/";
     private static final String WRAPPER_BITMAP_CLASS_JAR_ENTRY = WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap.class";
     private static final String WRAPPER_BITMAP_CONFIG_CLASS_JAR_ENTRY = WRAPPER_ANDROID_CLASS_JAR_ENTRY_PREFIX + "graphics/Bitmap$Config.class";
+    private static final String WRAPPER_SOCKET_CLASS_NAME = "com.micklab.dcg.wrapper.net.Socket";
     private static final String WRAPPER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "Socket.class";
     private static final String WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "ServerSocket.class";
     private static final String WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualNetwork.class";
@@ -73,6 +75,8 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
+    private static volatile WeakReference<ClassLoader> lastExecutionClassLoader =
+            new WeakReference<>(null);
     // Android does not ship javax.tools, so only verify the ECJ batch path we actually use.
     private static final String[] REQUIRED_BATCH_RUNTIME_CLASSES = new String[]{
             "com.android.tools.r8.D8",
@@ -128,7 +132,7 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     public VirtualSocketBridge openVirtualSocketBridge(String host, int virtualPort) throws IOException {
-        return new VirtualSocketBridge(new Socket(host, virtualPort));
+        return VirtualSocketBridge.connect(resolveVirtualSocketClassLoader(), host, virtualPort);
     }
 
     @Override
@@ -378,6 +382,7 @@ public class JavaExecutor implements LanguageExecutor {
         ByteBuffer dexBuffer = ByteBuffer.wrap(dexBytes);
         ClassLoader parent = context.getClassLoader();
         InMemoryDexClassLoader classLoader = new InMemoryDexClassLoader(dexBuffer, parent);
+        lastExecutionClassLoader = new WeakReference<>(classLoader);
         Class<?> dynamicClass = classLoader.loadClass(qualifiedClassName);
 
         Method buildOutputMethod = findBuildOutputMethod(dynamicClass);
@@ -992,6 +997,12 @@ public class JavaExecutor implements LanguageExecutor {
         return SystemClock.elapsedRealtime() - startTime;
     }
 
+    private ClassLoader resolveVirtualSocketClassLoader() {
+        WeakReference<ClassLoader> reference = lastExecutionClassLoader;
+        ClassLoader classLoader = reference == null ? null : reference.get();
+        return classLoader != null ? classLoader : getClass().getClassLoader();
+    }
+
     private String safeSnippetKey(SourceSnippet snippet) {
         String base = snippet.getId();
         if (base == null || base.trim().isEmpty()) {
@@ -1095,30 +1106,136 @@ public class JavaExecutor implements LanguageExecutor {
     }
 
     public static final class VirtualSocketBridge implements Closeable {
-        private final Socket socket;
+        private final Object socket;
+        private final Method closeMethod;
         private final InputStream inputStream;
         private final OutputStream outputStream;
 
-        private VirtualSocketBridge(Socket socket) throws IOException {
+        private VirtualSocketBridge(
+                Object socket,
+                Method closeMethod,
+                InputStream inputStream,
+                OutputStream outputStream) {
             if (socket == null) {
                 throw new IllegalArgumentException("socket == null");
             }
-            this.socket = socket;
-            InputStream resolvedInputStream = null;
-            OutputStream resolvedOutputStream = null;
-            try {
-                resolvedInputStream = socket.getInputStream();
-                resolvedOutputStream = socket.getOutputStream();
-            } catch (IOException exception) {
-                try {
-                    socket.close();
-                } catch (IOException closeFailure) {
-                    exception.addSuppressed(closeFailure);
-                }
-                throw exception;
+            if (closeMethod == null) {
+                throw new IllegalArgumentException("closeMethod == null");
             }
-            this.inputStream = resolvedInputStream;
-            this.outputStream = resolvedOutputStream;
+            if (inputStream == null) {
+                throw new IllegalArgumentException("inputStream == null");
+            }
+            if (outputStream == null) {
+                throw new IllegalArgumentException("outputStream == null");
+            }
+            this.socket = socket;
+            this.closeMethod = closeMethod;
+            this.inputStream = inputStream;
+            this.outputStream = outputStream;
+        }
+
+        private static VirtualSocketBridge connect(
+                ClassLoader classLoader,
+                String host,
+                int virtualPort) throws IOException {
+            Class<?> socketClass = loadSocketClass(classLoader);
+            Object socket = openSocket(socketClass, host, virtualPort);
+            try {
+                Method getInputStreamMethod = socketClass.getMethod("getInputStream");
+                Method getOutputStreamMethod = socketClass.getMethod("getOutputStream");
+                Method closeMethod = socketClass.getMethod("close");
+                InputStream inputStream =
+                        (InputStream) invokeBridgeMethod(getInputStreamMethod, socket);
+                OutputStream outputStream =
+                        (OutputStream) invokeBridgeMethod(getOutputStreamMethod, socket);
+                return new VirtualSocketBridge(socket, closeMethod, inputStream, outputStream);
+            } catch (IOException exception) {
+                closeSocketQuietly(socketClass, socket, exception);
+                throw exception;
+            } catch (ReflectiveOperationException exception) {
+                IOException failure = new IOException(
+                        "Failed to access JavaExecutor virtual socket bridge methods.",
+                        exception);
+                closeSocketQuietly(socketClass, socket, failure);
+                throw failure;
+            }
+        }
+
+        private static Class<?> loadSocketClass(ClassLoader classLoader) throws IOException {
+            try {
+                return Class.forName(WRAPPER_SOCKET_CLASS_NAME, true, classLoader);
+            } catch (ClassNotFoundException exception) {
+                throw new IOException(
+                        "JavaExecutor could not resolve the virtual socket wrapper class.",
+                        exception);
+            }
+        }
+
+        private static Object openSocket(Class<?> socketClass, String host, int virtualPort)
+                throws IOException {
+            try {
+                Constructor<?> constructor = socketClass.getConstructor(String.class, int.class);
+                return constructor.newInstance(host, virtualPort);
+            } catch (InvocationTargetException exception) {
+                throw bridgeInvocationFailure(
+                        "JavaExecutor failed to open a virtual socket bridge to "
+                                + host
+                                + ":"
+                                + virtualPort
+                                + ".",
+                        exception.getTargetException());
+            } catch (ReflectiveOperationException exception) {
+                throw new IOException(
+                        "JavaExecutor could not construct the virtual socket bridge.",
+                        exception);
+            }
+        }
+
+        private static Object invokeBridgeMethod(Method method, Object target) throws IOException {
+            try {
+                return method.invoke(target);
+            } catch (InvocationTargetException exception) {
+                throw bridgeInvocationFailure(
+                        "JavaExecutor virtual socket bridge method failed: "
+                                + method.getName()
+                                + ".",
+                        exception.getTargetException());
+            } catch (IllegalAccessException exception) {
+                throw new IOException(
+                        "JavaExecutor could not access virtual socket bridge method: "
+                                + method.getName()
+                                + ".",
+                        exception);
+            }
+        }
+
+        private static IOException bridgeInvocationFailure(String message, Throwable cause)
+                throws IOException {
+            if (cause instanceof IOException) {
+                return (IOException) cause;
+            }
+            if (cause instanceof RuntimeException) {
+                throw (RuntimeException) cause;
+            }
+            if (cause instanceof Error) {
+                throw (Error) cause;
+            }
+            return new IOException(message, cause);
+        }
+
+        private static void closeSocketQuietly(
+                Class<?> socketClass,
+                Object socket,
+                IOException failure) {
+            if (socket == null) {
+                return;
+            }
+            try {
+                Method closeMethod = socketClass.getMethod("close");
+                closeMethod.invoke(socket);
+            } catch (ReflectiveOperationException closeException) {
+                failure.addSuppressed(closeException);
+            }
         }
 
         public InputStream getInputStream() {
@@ -1135,7 +1252,7 @@ public class JavaExecutor implements LanguageExecutor {
 
         @Override
         public void close() throws IOException {
-            socket.close();
+            invokeBridgeMethod(closeMethod, socket);
         }
     }
 }

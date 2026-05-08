@@ -1,11 +1,15 @@
 package com.micklab.dcg.executor.java;
 
+import android.util.Log;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 public final class ExecutorBridge {
+    private static final String TAG = "ExecutorBridge";
+
     private final JavaExecutor javaExecutor;
 
     public ExecutorBridge() {
@@ -24,7 +28,10 @@ public final class ExecutorBridge {
     }
 
     public VirtualSocketConnection connect(String host, int virtualPort) throws IOException {
-        return new VirtualSocketConnection(javaExecutor.openVirtualSocketBridge(host, virtualPort));
+        VirtualSocketConnection connection =
+                new VirtualSocketConnection(javaExecutor.openVirtualSocketBridge(host, virtualPort));
+        Log.i(TAG, "Connected virtual TCP bridge to " + host + ":" + virtualPort + ".");
+        return connection;
     }
 
     public static final class VirtualSocketConnection implements Closeable, StreamPump.OutputTarget {

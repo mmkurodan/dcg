@@ -1,5 +1,7 @@
 package com.micklab.dcg.executor.java;
 
+import android.util.Log;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +19,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public final class ProxyThread extends Thread implements Closeable {
+    private static final String TAG = "ProxyThread";
     private static final String BIND_HOST = "0.0.0.0";
     private static final int LISTEN_BACKLOG = 50;
 
@@ -63,6 +66,15 @@ public final class ProxyThread extends Thread implements Closeable {
                     InetAddress.getByName(BIND_HOST));
             listeningSocket.setReuseAddress(true);
             serverSocket = listeningSocket;
+            Log.i(
+                    TAG,
+                    "Opened real TCP proxy listener on "
+                            + listeningSocket.getInetAddress().getHostAddress()
+                            + ":"
+                            + listeningSocket.getLocalPort()
+                            + " for virtual port "
+                            + virtualPort
+                            + ".");
         } catch (IOException exception) {
             startupFailure = exception;
             started.countDown();
@@ -72,20 +84,27 @@ public final class ProxyThread extends Thread implements Closeable {
         started.countDown();
         try {
             while (!closed.get()) {
-                Socket realSocket;
+                Socket realSocket = null;
                 try {
                     realSocket = listeningSocket.accept();
+                    Log.i(TAG, "Accepted real TCP connection from " + realSocket.getRemoteSocketAddress() + ".");
+                    handleAcceptedSocket(realSocket);
                 } catch (SocketException exception) {
-                    if (closed.get()) {
+                    if (closed.get() || listeningSocket.isClosed()) {
                         break;
                     }
-                    throw exception;
+                    recordRuntimeFailure(exception);
+                    closeQuietly(realSocket);
+                    Log.w(TAG, "Proxy accept failed; continuing to listen.", exception);
+                } catch (IOException exception) {
+                    recordRuntimeFailure(exception);
+                    closeQuietly(realSocket);
+                    Log.w(TAG, "Proxy bridge setup failed for an accepted socket; continuing.", exception);
+                } catch (RuntimeException exception) {
+                    recordRuntimeFailure(new IOException("Proxy bridge hit an unexpected runtime failure.", exception));
+                    closeQuietly(realSocket);
+                    Log.e(TAG, "Proxy bridge hit an unexpected runtime failure; continuing.", exception);
                 }
-                handleAcceptedSocket(realSocket);
-            }
-        } catch (IOException exception) {
-            if (!closed.get()) {
-                runtimeFailure = exception;
             }
         } finally {
             closeQuietly(listeningSocket);
@@ -135,8 +154,9 @@ public final class ProxyThread extends Thread implements Closeable {
             activeSessions.add(session);
             session.start();
         } catch (IOException exception) {
-            runtimeFailure = exception;
+            recordRuntimeFailure(exception);
             closeQuietly(realSocket);
+            Log.w(TAG, "Failed to connect accepted real TCP socket to virtual port " + virtualPort + ".", exception);
         }
     }
 
@@ -172,6 +192,17 @@ public final class ProxyThread extends Thread implements Closeable {
         }
     }
 
+    private synchronized void recordRuntimeFailure(IOException exception) {
+        if (exception == null || closed.get()) {
+            return;
+        }
+        if (runtimeFailure == null) {
+            runtimeFailure = exception;
+            return;
+        }
+        runtimeFailure.addSuppressed(exception);
+    }
+
     private final class BridgeSession implements Closeable, StreamPump.Listener {
         private final Endpoint realEndpoint;
         private final Endpoint virtualEndpoint;
@@ -199,6 +230,7 @@ public final class ProxyThread extends Thread implements Closeable {
         }
 
         private void start() {
+            Log.i(TAG, "Starting bidirectional stream relay for real TCP to virtual port " + virtualPort + ".");
             realToVirtualPump.start();
             virtualToRealPump.start();
         }
