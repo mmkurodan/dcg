@@ -50,6 +50,7 @@ public final class JavaSourceParser {
     private static final String PARSER_FILE_NAME = "Snippet.java";
     private static final String PARSER_ENCODING = "UTF-8";
     private static final Map<String, String> DIRECT_TYPE_REWRITES = buildDirectTypeRewrites();
+    private static final Map<String, String> AUTO_IMPORTED_TYPE_IMPORTS = buildAutoImportedTypeImports();
     private static final Map<String, String> PSEUDO_ANDROID_TYPE_OVERRIDES = buildPseudoAndroidTypeOverrides();
     private static final List<String> PSEUDO_REQUIRED_IMPORTS = buildPseudoRequiredImports();
 
@@ -95,6 +96,8 @@ public final class JavaSourceParser {
             }
             rewrittenSource = injectPseudoHelpers(rewrittenSource, initialParsed.getClassName());
         }
+        ImportInsertionResult missingImports = ensureAutoImports(rewrittenSource);
+        rewrittenSource = missingImports.rewrittenSource;
         ParsedJavaSource parsed = parse(rewrittenSource, fallbackTitle);
         return new PreparedJavaSource(
                 parsed,
@@ -103,11 +106,13 @@ public final class JavaSourceParser {
                         + directTypeRewrite.replacementCount
                         + wildcardImportRewrite.replacementCount
                         + fallbackRewriteCount
+                        + missingImports.addedImportCount
                         + pseudoRewriteCount,
                 rewriteResult.hadRewrittenReferences
                         || directTypeRewrite.hadRewrittenReferences
                         || wildcardImportRewrite.hadRewrittenReferences
                         || fallbackRewriteCount > 0
+                        || missingImports.addedImportCount > 0
                         || pseudoRewriteCount > 0,
                 pseudoMainActivity);
     }
@@ -590,6 +595,22 @@ public final class JavaSourceParser {
                 WRAPPER_ANDROID_PREFIX + "os.Build");
     }
 
+    private static ImportInsertionResult ensureAutoImports(String source) {
+        String rewritten = source == null ? "" : source;
+        List<String> imports = new ArrayList<>();
+        for (Map.Entry<String, String> entry : AUTO_IMPORTED_TYPE_IMPORTS.entrySet()) {
+            String simpleName = entry.getKey();
+            if (declaresTypeNamed(rewritten, simpleName)) {
+                continue;
+            }
+            if (!containsSimpleTypeReferenceOutsideCommentsAndStrings(rewritten, simpleName)) {
+                continue;
+            }
+            imports.add("import " + entry.getValue() + ";\n");
+        }
+        return ensureImports(rewritten, imports);
+    }
+
     private static String buildPseudoHelperMethods(String className) {
         return "\n\n"
                 + "    private static " + PSEUDO_RESULT + " " + PSEUDO_CACHE_FIELD + ";\n\n"
@@ -691,6 +712,15 @@ public final class JavaSourceParser {
             count++;
             index += target.length();
         }
+    }
+
+    private static boolean declaresTypeNamed(String source, String simpleName) {
+        if (source == null || source.isEmpty() || simpleName == null || simpleName.isEmpty()) {
+            return false;
+        }
+        Pattern declarationPattern = Pattern.compile(
+                "\\b(?:class|interface|enum)\\s+" + Pattern.quote(simpleName) + "\\b");
+        return declarationPattern.matcher(source).find();
     }
 
     private static String detectPrimaryTypeSuperclass(String source, String className) {
@@ -906,6 +936,106 @@ public final class JavaSourceParser {
         return new RewriteResult(builder.toString(), replacementCount, true);
     }
 
+    private static boolean containsSimpleTypeReferenceOutsideCommentsAndStrings(String source, String simpleName) {
+        if (source == null || source.isEmpty() || simpleName == null || simpleName.isEmpty()) {
+            return false;
+        }
+
+        boolean inLineComment = false;
+        boolean inBlockComment = false;
+        boolean inDoubleQuote = false;
+        boolean inSingleQuote = false;
+        boolean escaped = false;
+        int index = 0;
+        while (index < source.length()) {
+            char current = source.charAt(index);
+            if (inLineComment) {
+                index++;
+                if (current == '\n') {
+                    inLineComment = false;
+                }
+                continue;
+            }
+            if (inBlockComment) {
+                index++;
+                if (current == '*' && index < source.length() && source.charAt(index) == '/') {
+                    index++;
+                    inBlockComment = false;
+                }
+                continue;
+            }
+            if (inDoubleQuote) {
+                index++;
+                if (escaped) {
+                    escaped = false;
+                } else if (current == '\\') {
+                    escaped = true;
+                } else if (current == '"') {
+                    inDoubleQuote = false;
+                }
+                continue;
+            }
+            if (inSingleQuote) {
+                index++;
+                if (escaped) {
+                    escaped = false;
+                } else if (current == '\\') {
+                    escaped = true;
+                } else if (current == '\'') {
+                    inSingleQuote = false;
+                }
+                continue;
+            }
+            if (current == '/' && index + 1 < source.length()) {
+                char next = source.charAt(index + 1);
+                if (next == '/') {
+                    index += 2;
+                    inLineComment = true;
+                    continue;
+                }
+                if (next == '*') {
+                    index += 2;
+                    inBlockComment = true;
+                    continue;
+                }
+            }
+            if (current == '"') {
+                index++;
+                inDoubleQuote = true;
+                escaped = false;
+                continue;
+            }
+            if (current == '\'') {
+                index++;
+                inSingleQuote = true;
+                escaped = false;
+                continue;
+            }
+            if (matchesSimpleTypeReference(source, index, simpleName)) {
+                return true;
+            }
+            index++;
+        }
+        return false;
+    }
+
+    private static boolean matchesSimpleTypeReference(String source, int index, String target) {
+        if (source == null || target == null || index < 0 || index + target.length() > source.length()) {
+            return false;
+        }
+        if (!source.regionMatches(index, target, 0, target.length())) {
+            return false;
+        }
+        if (index > 0) {
+            char previous = source.charAt(index - 1);
+            if (previous == '.' || Character.isJavaIdentifierPart(previous)) {
+                return false;
+            }
+        }
+        int end = index + target.length();
+        return end >= source.length() || !Character.isJavaIdentifierPart(source.charAt(end));
+    }
+
     private static boolean matchesExactQualifiedType(String source, int index, String target) {
         if (source == null || target == null || index < 0 || index + target.length() > source.length()) {
             return false;
@@ -953,6 +1083,17 @@ public final class JavaSourceParser {
         replacements.put("java.net.ServerSocket", "com.micklab.dcg.wrapper.net.ServerSocket");
         replacements.put("java.net.Socket", "com.micklab.dcg.wrapper.net.Socket");
         return replacements;
+    }
+
+    private static Map<String, String> buildAutoImportedTypeImports() {
+        LinkedHashMap<String, String> imports = new LinkedHashMap<>();
+        imports.put("ServerSocket", "com.micklab.dcg.wrapper.net.ServerSocket");
+        imports.put("Socket", "com.micklab.dcg.wrapper.net.Socket");
+        imports.put("InputStream", "java.io.InputStream");
+        imports.put("OutputStream", "java.io.OutputStream");
+        imports.put("BufferedReader", "java.io.BufferedReader");
+        imports.put("InputStreamReader", "java.io.InputStreamReader");
+        return imports;
     }
 
     private static final class RewriteResult {

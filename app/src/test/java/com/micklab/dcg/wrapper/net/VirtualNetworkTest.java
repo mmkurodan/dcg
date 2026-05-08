@@ -2,9 +2,11 @@ package com.micklab.dcg.wrapper.net;
 
 import org.junit.Test;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
@@ -57,6 +59,58 @@ public class VirtualNetworkTest {
 
             assertEquals("ping!", serverFuture.get(5, TimeUnit.SECONDS));
             assertEquals("pong", clientFuture.get(5, TimeUnit.SECONDS));
+        } finally {
+            executor.shutdownNow();
+        }
+    }
+
+    @Test
+    public void simpleWebServerStyleHttpGetReturnsHttpOkOverVirtualTcp() throws Exception {
+        int port = nextPort();
+        ServerSocket serverSocket = new ServerSocket(port);
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        try {
+            Future<String> serverFuture = executor.submit(() -> {
+                Socket accepted = serverSocket.accept();
+                try {
+                    BufferedReader requestReader = new BufferedReader(
+                            new InputStreamReader(accepted.getInputStream(), StandardCharsets.UTF_8));
+                    String requestLine = requestReader.readLine();
+
+                    String body = "<h1>Hello Virtual TCP</h1>";
+                    String response =
+                            "HTTP/1.1 200 OK\r\n"
+                                    + "Content-Type: text/html; charset=UTF-8\r\n"
+                                    + "Content-Length: " + body.getBytes(StandardCharsets.UTF_8).length + "\r\n"
+                                    + "\r\n"
+                                    + body;
+
+                    accepted.getOutputStream().write(response.getBytes(StandardCharsets.UTF_8));
+                    accepted.getOutputStream().flush();
+                    return requestLine;
+                } finally {
+                    accepted.close();
+                    serverSocket.close();
+                }
+            });
+
+            Future<String> clientFuture = executor.submit(() -> {
+                Socket client = new Socket("localhost", port);
+                try {
+                    String request = "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n";
+                    client.getOutputStream().write(request.getBytes(StandardCharsets.UTF_8));
+                    client.getOutputStream().flush();
+                    return readAll(client.getInputStream());
+                } finally {
+                    client.close();
+                }
+            });
+
+            assertEquals("GET / HTTP/1.1", serverFuture.get(5, TimeUnit.SECONDS));
+            String response = clientFuture.get(5, TimeUnit.SECONDS);
+            assertTrue(response.startsWith("HTTP/1.1 200 OK\r\n"));
+            assertTrue(response.contains("Content-Type: text/html; charset=UTF-8\r\n"));
+            assertTrue(response.endsWith("<h1>Hello Virtual TCP</h1>"));
         } finally {
             executor.shutdownNow();
         }
@@ -180,6 +234,16 @@ public class VirtualNetworkTest {
                 break;
             }
             output.write(next);
+        }
+        return output.toString(StandardCharsets.UTF_8.name());
+    }
+
+    private String readAll(InputStream inputStream) throws Exception {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        byte[] buffer = new byte[256];
+        int read;
+        while ((read = inputStream.read(buffer)) >= 0) {
+            output.write(buffer, 0, read);
         }
         return output.toString(StandardCharsets.UTF_8.name());
     }

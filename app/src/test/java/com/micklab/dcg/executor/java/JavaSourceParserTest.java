@@ -125,6 +125,44 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationAddsMissingImportsForSimpleWebServerStyleSource() {
+        String source = "public class SimpleWebServer {\n"
+                + "    public static String run() {\n"
+                + "        try {\n"
+                + "            ServerSocket server = new ServerSocket(8080);\n"
+                + "            new Thread(() -> {\n"
+                + "                try {\n"
+                + "                    Socket client = server.accept();\n"
+                + "                    InputStream in = client.getInputStream();\n"
+                + "                    OutputStream out = client.getOutputStream();\n"
+                + "                    BufferedReader br = new BufferedReader(new InputStreamReader(in));\n"
+                + "                    String line = br.readLine();\n"
+                + "                    out.write(line.getBytes());\n"
+                + "                } catch (Exception e) {\n"
+                + "                }\n"
+                + "            }).start();\n"
+                + "            return \"ok\";\n"
+                + "        } catch (Exception e) {\n"
+                + "            return e.toString();\n"
+                + "        }\n"
+                + "    }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "SimpleWebServer");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.ServerSocket;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.Socket;"));
+        assertTrue(rewritten.contains("import java.io.InputStream;"));
+        assertTrue(rewritten.contains("import java.io.OutputStream;"));
+        assertTrue(rewritten.contains("import java.io.BufferedReader;"));
+        assertTrue(rewritten.contains("import java.io.InputStreamReader;"));
+        assertFalse(rewritten.contains("import java.net.ServerSocket;"));
+        assertFalse(rewritten.contains("import java.net.Socket;"));
+        assertTrue(prepared.hadWrapperRewrites());
+        assertTrue(prepared.getRewriteCount() > 0);
+    }
+
+    @Test
     public void prepareForCompilationRewritesQualifiedJavaNetReferencesWithoutTouchingStrings() {
         String source = "public class HelloJava {\n"
                 + "  public static String run() throws Exception {\n"
