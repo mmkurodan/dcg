@@ -75,6 +75,8 @@ public final class JavaSourceParser {
         String rewrittenSource = rewriteResult.rewrittenSource;
         RewriteResult directTypeRewrite = rewriteDirectTypeReferences(rewrittenSource);
         rewrittenSource = directTypeRewrite.rewrittenSource;
+        RewriteResult wildcardImportRewrite = rewriteJavaNetWildcardImports(rewrittenSource);
+        rewrittenSource = wildcardImportRewrite.rewrittenSource;
         int fallbackRewriteCount = 0;
         RewriteResult buildFallback = rewriteRemainingBuildReferences(rewrittenSource);
         rewrittenSource = buildFallback.rewrittenSource;
@@ -99,10 +101,12 @@ public final class JavaSourceParser {
                 rewrittenSource,
                 rewriteResult.replacementCount
                         + directTypeRewrite.replacementCount
+                        + wildcardImportRewrite.replacementCount
                         + fallbackRewriteCount
                         + pseudoRewriteCount,
                 rewriteResult.hadRewrittenReferences
                         || directTypeRewrite.hadRewrittenReferences
+                        || wildcardImportRewrite.hadRewrittenReferences
                         || fallbackRewriteCount > 0
                         || pseudoRewriteCount > 0,
                 pseudoMainActivity);
@@ -405,6 +409,9 @@ public final class JavaSourceParser {
         }
         String importedReference = extractImportReference(statement);
         if (importedReference != null && !statement.trim().startsWith("import static ")) {
+            if ("java.net.*".equals(importedReference)) {
+                return buildDirectTypeWildcardImports();
+            }
             String explicitRewrite = rewriteDirectTypeName(importedReference);
             if (explicitRewrite != null) {
                 return statement.replace(importedReference, explicitRewrite);
@@ -423,6 +430,19 @@ public final class JavaSourceParser {
         return statement.substring(0, androidIndex)
                 + WRAPPER_ANDROID_PREFIX
                 + statement.substring(androidIndex + ANDROID_PREFIX.length());
+    }
+
+    private static String buildDirectTypeWildcardImports() {
+        StringBuilder builder = new StringBuilder();
+        boolean first = true;
+        for (String replacement : DIRECT_TYPE_REWRITES.values()) {
+            if (!first) {
+                builder.append('\n');
+            }
+            builder.append("import ").append(replacement).append(';');
+            first = false;
+        }
+        return builder.toString();
     }
 
     private static void collectQualifiedReferenceReplacements(
@@ -543,6 +563,17 @@ public final class JavaSourceParser {
             hadRewrittenReferences |= rewrite.hadRewrittenReferences;
         }
         return new RewriteResult(rewritten, replacementCount, hadRewrittenReferences);
+    }
+
+    private static RewriteResult rewriteJavaNetWildcardImports(String source) {
+        if (source == null || source.isEmpty() || !source.contains("import java.net.*;")) {
+            return new RewriteResult(source == null ? "" : source, 0, false);
+        }
+        Pattern pattern = Pattern.compile("(?m)^\\s*import\\s+java\\.net\\.\\*\\s*;");
+        Matcher matcher = pattern.matcher(source);
+        String rewritten = matcher.replaceAll(buildDirectTypeWildcardImports());
+        int replacementCount = countMatches(pattern.matcher(source));
+        return new RewriteResult(rewritten, replacementCount, replacementCount > 0);
     }
 
     private static RewriteResult rewriteRemainingPseudoBundleReferences(String source) {

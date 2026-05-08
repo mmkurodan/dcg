@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.micklab.dcg.executor.java.JavaSourceParserTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2026-05-08T01:36:10" hostname="localhost" time="0.37">
+  <properties/>
+  <testcase name="prepareForCompilationRewritesAndroidImportsAndQualifiedTypes" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.166"/>
+  <testcase name="prepareForCompilationRewritesAndroidGraphicsWildcardImport" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.003"/>
+  <testcase name="prepareForCompilationLeavesNonAndroidSourceUntouched" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.0"/>
+  <testcase name="prepareForCompilationRewritesPseudoMainActivitySource" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.007"/>
+  <testcase name="prepareForCompilationRecognizesImageDslHelpersAsPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationAddsBundleImportForPseudoMainActivityWithoutAndroidImport" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="parseRejectsMissingTypeDeclaration" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.0"/>
+  <testcase name="prepareForCompilationDoesNotDoubleWrapBundleImports" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
+  <testcase name="prepareForCompilationRewritesQualifiedBundleForPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationSupportsDirectPseudoMainActivitySubclassWithoutBundleOnCreate" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationCompilesStaticSaveBitmapHelperAgainstPseudoLifecycleWrapper" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.17"/>
+  <testcase name="prepareForCompilationKeepsGenericWrapperWildcardImportsForPseudoSource" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.004"/>
+  <testcase name="prepareForCompilationRewritesQualifiedJavaNetReferencesWithoutTouchingStrings" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationExpandsJavaNetWildcardImportsToVirtualWrappers" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.0"/>
+  <testcase name="parseBuildsQualifiedClassName" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationRecognizesImportedAndroidActivitySubclass" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
+  <testcase name="prepareForCompilationRecognizesRowDslHelpersAsPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationRecognizesTitleDslAndRewritesAndroidOsWildcardImport" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationRewritesBuildImportToWrapperBuild" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <testcase name="prepareForCompilationUsesLifecycleWrapperForPseudoHelpers" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
+  <testcase name="prepareForCompilationRewritesJavaNetImportsToVirtualWrappers" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.0"/>
+  <testcase name="prepareForCompilationRewritesQualifiedBuildReferencesForPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.002"/>
+  <testcase name="prepareForCompilationRecognizesEditableAndSpacerDslHelpersAsPseudoMainActivity" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.0"/>
+  <testcase name="prepareForCompilationPreservesNestedWrapperReferences" classname="com.micklab.dcg.executor.java.JavaSourceParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

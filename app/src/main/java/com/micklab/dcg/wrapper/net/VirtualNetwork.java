@@ -3,7 +3,6 @@ package com.micklab.dcg.wrapper.net;
 import java.io.IOException;
 import java.net.BindException;
 import java.net.ConnectException;
-import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Map;
@@ -18,10 +17,10 @@ public final class VirtualNetwork {
     private VirtualNetwork() {
     }
 
-    public static synchronized void registerServer(int port, ServerSocket serverSocket) throws IOException {
+    public static synchronized void registerServer(int port, VirtualServerSocket server) throws IOException {
         validatePort(port);
-        if (serverSocket == null) {
-            throw new IllegalArgumentException("serverSocket == null");
+        if (server == null) {
+            throw new IllegalArgumentException("server == null");
         }
 
         ServerRegistration existing = SERVERS.get(port);
@@ -29,7 +28,14 @@ public final class VirtualNetwork {
             throw new BindException("Virtual port already in use: " + port);
         }
 
-        SERVERS.put(port, new ServerRegistration(serverSocket));
+        SERVERS.put(port, new ServerRegistration(server));
+    }
+
+    public static synchronized void unregisterServer(int port) {
+        ServerRegistration registration = SERVERS.remove(port);
+        if (registration != null) {
+            registration.close();
+        }
     }
 
     public static VirtualChannel connect(String host, int port) throws IOException {
@@ -37,45 +43,24 @@ public final class VirtualNetwork {
         validatePort(port);
 
         ServerRegistration registration = SERVERS.get(port);
-        if (registration != null && !registration.isClosed()) {
-            VirtualChannel.ChannelPair pair = VirtualChannel.openPair();
-            if (!registration.offer(pair.serverSide)) {
-                closeQuietly(pair.clientSide);
-                closeQuietly(pair.serverSide);
-                throw new ConnectException("Virtual connection refused: " + host + ":" + port);
-            }
-            return pair.clientSide;
+        if (registration == null || registration.isClosed()) {
+            throw connectionRefused(host, port, null);
         }
 
-        // No virtual server registered — attempt real network connection
+        VirtualChannel.ChannelPair pair;
         try {
-            java.net.Socket real = new java.net.Socket(host, port);
-            return VirtualChannel.fromSocket(real);
-        } catch (UnknownHostException exception) {
-            throw exception;
+            pair = VirtualChannel.openPair(host, port);
         } catch (IOException exception) {
-            ConnectException refused = new ConnectException("Connection refused: " + host + ":" + port);
-            refused.initCause(exception);
-            throw refused;
+            throw connectionRefused(host, port, exception);
         }
-    }
 
-    public static java.net.ServerSocket openServer(int port) throws IOException {
-        validatePort(port);
-
-        java.net.ServerSocket serverSocket = new java.net.ServerSocket();
-        serverSocket.setReuseAddress(true);
-        try {
-            serverSocket.bind(new InetSocketAddress(port));
-            return serverSocket;
-        } catch (IOException exception) {
-            try {
-                serverSocket.close();
-            } catch (IOException closeException) {
-                exception.addSuppressed(closeException);
-            }
-            throw exception;
+        if (!registration.offer(pair.serverSide)) {
+            closeQuietly(pair.clientSide);
+            closeQuietly(pair.serverSide);
+            throw connectionRefused(host, port, null);
         }
+
+        return pair.clientSide;
     }
 
     public static VirtualChannel waitForConnection(int port) throws IOException {
@@ -87,13 +72,12 @@ public final class VirtualNetwork {
         return registration.take();
     }
 
-    static synchronized void unregisterServer(int port, ServerSocket serverSocket) {
-        ServerRegistration registration = SERVERS.get(port);
-        if (registration == null || !registration.isOwnedBy(serverSocket)) {
-            return;
+    private static ConnectException connectionRefused(String host, int port, IOException cause) {
+        ConnectException exception = new ConnectException("Virtual connection refused: " + host + ":" + port);
+        if (cause != null) {
+            exception.initCause(cause);
         }
-        SERVERS.remove(port);
-        registration.close();
+        return exception;
     }
 
     private static void validateHost(String host) throws UnknownHostException {
@@ -119,16 +103,12 @@ public final class VirtualNetwork {
     }
 
     private static final class ServerRegistration {
-        private final ServerSocket owner;
+        private final VirtualServerSocket owner;
         private final BlockingQueue<ConnectionEvent> pendingConnections = new LinkedBlockingQueue<>();
         private final AtomicBoolean closed = new AtomicBoolean(false);
 
-        private ServerRegistration(ServerSocket owner) {
+        private ServerRegistration(VirtualServerSocket owner) {
             this.owner = owner;
-        }
-
-        private boolean isOwnedBy(ServerSocket serverSocket) {
-            return owner == serverSocket;
         }
 
         private boolean isClosed() {
@@ -136,7 +116,7 @@ public final class VirtualNetwork {
         }
 
         private boolean offer(VirtualChannel channel) {
-            if (channel == null || closed.get()) {
+            if (channel == null || closed.get() || owner.isClosed()) {
                 return false;
             }
             return pendingConnections.offer(ConnectionEvent.connection(channel));

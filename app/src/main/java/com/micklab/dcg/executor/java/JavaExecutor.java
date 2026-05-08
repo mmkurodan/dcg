@@ -67,6 +67,7 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "ServerSocket.class";
     private static final String WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualNetwork.class";
     private static final String WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualChannel.class";
+    private static final String WRAPPER_VIRTUAL_SERVER_SOCKET_CLASS_JAR_ENTRY = WRAPPER_NET_CLASS_JAR_ENTRY_PREFIX + "VirtualServerSocket.class";
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
@@ -651,6 +652,7 @@ public class JavaExecutor implements LanguageExecutor {
         boolean foundServerSocketWrapper = false;
         boolean foundVirtualNetworkWrapper = false;
         boolean foundVirtualChannelWrapper = false;
+        boolean foundVirtualServerSocketWrapper = false;
         try (ZipFile zipFile = new ZipFile(wrapperJar)) {
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
@@ -675,13 +677,16 @@ public class JavaExecutor implements LanguageExecutor {
                         foundVirtualNetworkWrapper = true;
                     } else if (WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY.equals(name)) {
                         foundVirtualChannelWrapper = true;
+                    } else if (WRAPPER_VIRTUAL_SERVER_SOCKET_CLASS_JAR_ENTRY.equals(name)) {
+                        foundVirtualServerSocketWrapper = true;
                     }
                     if (foundBitmapWrapper
                             && foundBitmapConfigWrapper
                             && foundSocketWrapper
                             && foundServerSocketWrapper
                             && foundVirtualNetworkWrapper
-                            && foundVirtualChannelWrapper) {
+                            && foundVirtualChannelWrapper
+                            && foundVirtualServerSocketWrapper) {
                         break;
                     }
                 }
@@ -697,12 +702,14 @@ public class JavaExecutor implements LanguageExecutor {
         if (!foundSocketWrapper
                 || !foundServerSocketWrapper
                 || !foundVirtualNetworkWrapper
-                || !foundVirtualChannelWrapper) {
+                || !foundVirtualChannelWrapper
+                || !foundVirtualServerSocketWrapper) {
             throw new IOException("Wrapper classpath jar is missing required virtual network classes: "
                     + WRAPPER_SOCKET_CLASS_JAR_ENTRY + ", "
                     + WRAPPER_SERVER_SOCKET_CLASS_JAR_ENTRY + ", "
                     + WRAPPER_VIRTUAL_NETWORK_CLASS_JAR_ENTRY + ", "
-                    + WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY + ".");
+                    + WRAPPER_VIRTUAL_CHANNEL_CLASS_JAR_ENTRY + ", "
+                    + WRAPPER_VIRTUAL_SERVER_SOCKET_CLASS_JAR_ENTRY + ".");
         }
     }
 

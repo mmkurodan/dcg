@@ -158,6 +158,7 @@ public class JavaExecutorTest {
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/ServerSocket.class"));
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualNetwork.class"));
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualChannel.class"));
+            assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualServerSocket.class"));
         }
     }
 

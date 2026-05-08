@@ -16,13 +16,16 @@ public class Socket {
         this(host, port, VirtualNetwork.connect(host, port));
     }
 
-    Socket(java.net.Socket socket) throws IOException {
-        this(resolveHost(socket), resolvePort(socket), VirtualChannel.fromSocket(socket));
+    Socket(VirtualChannel channel) {
+        this(channel.getPeerHost(), channel.getPeerPort(), channel);
     }
 
     Socket(String host, int port, VirtualChannel channel) {
         if (host == null || host.trim().isEmpty()) {
             throw new IllegalArgumentException("host == null");
+        }
+        if (port < 1 || port > 65535) {
+            throw new IllegalArgumentException("port out of range: " + port);
         }
         if (channel == null) {
             throw new IllegalArgumentException("channel == null");
@@ -61,25 +64,5 @@ public class Socket {
         if (closed.get()) {
             throw new SocketException("Socket is closed.");
         }
-    }
-
-    private static String resolveHost(java.net.Socket socket) {
-        if (socket == null) {
-            throw new IllegalArgumentException("socket == null");
-        }
-        if (socket.getInetAddress() != null) {
-            String address = socket.getInetAddress().getHostAddress();
-            if (address != null && !address.trim().isEmpty()) {
-                return address;
-            }
-        }
-        return "localhost";
-    }
-
-    private static int resolvePort(java.net.Socket socket) {
-        if (socket == null) {
-            throw new IllegalArgumentException("socket == null");
-        }
-        return socket.getPort();
     }
 }

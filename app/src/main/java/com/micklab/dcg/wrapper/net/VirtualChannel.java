@@ -12,42 +12,51 @@ public final class VirtualChannel {
 
     private final InputStream inputStream;
     private final OutputStream outputStream;
-    private final java.net.Socket underlyingSocket;
-    private final AtomicBoolean closed = new AtomicBoolean(false);
+    private final String peerHost;
+    private final int peerPort;
+    private final CloseController closeController;
 
-    private VirtualChannel(InputStream inputStream, OutputStream outputStream) {
-        this(inputStream, outputStream, null);
-    }
-
-    private VirtualChannel(InputStream inputStream, OutputStream outputStream, java.net.Socket underlyingSocket) {
+    private VirtualChannel(
+            InputStream inputStream,
+            OutputStream outputStream,
+            String peerHost,
+            int peerPort,
+            CloseController closeController) {
         if (inputStream == null) {
             throw new IllegalArgumentException("inputStream == null");
         }
         if (outputStream == null) {
             throw new IllegalArgumentException("outputStream == null");
         }
+        if (peerHost == null || peerHost.trim().isEmpty()) {
+            throw new IllegalArgumentException("peerHost == null");
+        }
+        if (peerPort < 1 || peerPort > 65535) {
+            throw new IllegalArgumentException("peerPort out of range: " + peerPort);
+        }
+        if (closeController == null) {
+            throw new IllegalArgumentException("closeController == null");
+        }
         this.inputStream = inputStream;
         this.outputStream = outputStream;
-        this.underlyingSocket = underlyingSocket;
+        this.peerHost = peerHost;
+        this.peerPort = peerPort;
+        this.closeController = closeController;
     }
 
-    public static VirtualChannel fromSocket(java.net.Socket socket) throws IOException {
-        if (socket == null) {
-            throw new IllegalArgumentException("socket == null");
-        }
-        return new VirtualChannel(socket.getInputStream(), socket.getOutputStream(), socket);
-    }
-
-    static ChannelPair openPair() throws IOException {
+    static ChannelPair openPair(String host, int port) throws IOException {
         PipedInputStream clientInput = new PipedInputStream(PIPE_BUFFER_SIZE);
         PipedOutputStream serverOutput = new PipedOutputStream(clientInput);
 
         PipedInputStream serverInput = new PipedInputStream(PIPE_BUFFER_SIZE);
         PipedOutputStream clientOutput = new PipedOutputStream(serverInput);
 
+        CloseController closeController = new CloseController(
+                clientOutput,
+                serverOutput);
         return new ChannelPair(
-                new VirtualChannel(clientInput, clientOutput),
-                new VirtualChannel(serverInput, serverOutput));
+                new VirtualChannel(clientInput, clientOutput, host, port, closeController),
+                new VirtualChannel(serverInput, serverOutput, host, port, closeController));
     }
 
     public InputStream getInputStream() {
@@ -59,39 +68,15 @@ public final class VirtualChannel {
     }
 
     public void close() throws IOException {
-        if (!closed.compareAndSet(false, true)) {
-            return;
-        }
+        closeController.close();
+    }
 
-        IOException failure = null;
+    String getPeerHost() {
+        return peerHost;
+    }
 
-        if (underlyingSocket != null) {
-            try {
-                underlyingSocket.close();
-            } catch (IOException exception) {
-                failure = exception;
-            }
-        } else {
-            try {
-                outputStream.close();
-            } catch (IOException exception) {
-                failure = exception;
-            }
-
-            try {
-                inputStream.close();
-            } catch (IOException exception) {
-                if (failure == null) {
-                    failure = exception;
-                } else {
-                    failure.addSuppressed(exception);
-                }
-            }
-        }
-
-        if (failure != null) {
-            throw failure;
-        }
+    int getPeerPort() {
+        return peerPort;
     }
 
     static final class ChannelPair {
@@ -101,6 +86,38 @@ public final class VirtualChannel {
         private ChannelPair(VirtualChannel clientSide, VirtualChannel serverSide) {
             this.clientSide = clientSide;
             this.serverSide = serverSide;
+        }
+    }
+
+    private static final class CloseController {
+        private final OutputStream[] closeables;
+        private final AtomicBoolean closed = new AtomicBoolean(false);
+
+        private CloseController(OutputStream... closeables) {
+            this.closeables = closeables;
+        }
+
+        private void close() throws IOException {
+            if (!closed.compareAndSet(false, true)) {
+                return;
+            }
+
+            IOException failure = null;
+            for (OutputStream closeable : closeables) {
+                try {
+                    closeable.close();
+                } catch (IOException exception) {
+                    if (failure == null) {
+                        failure = exception;
+                    } else {
+                        failure.addSuppressed(exception);
+                    }
+                }
+            }
+
+            if (failure != null) {
+                throw failure;
+            }
         }
     }
 }

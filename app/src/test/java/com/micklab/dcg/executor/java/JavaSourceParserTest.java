@@ -148,6 +148,25 @@ public class JavaSourceParserTest {
     }
 
     @Test
+    public void prepareForCompilationExpandsJavaNetWildcardImportsToVirtualWrappers() {
+        String source = "import java.net.*;\n"
+                + "public class HelloJava {\n"
+                + "  public static String run() throws Exception {\n"
+                + "    ServerSocket server = null;\n"
+                + "    Socket client = null;\n"
+                + "    return String.valueOf(server == null && client == null);\n"
+                + "  }\n"
+                + "}\n";
+        JavaSourceParser.PreparedJavaSource prepared = JavaSourceParser.prepareForCompilation(source, "HelloJava");
+        String rewritten = prepared.getRewrittenSource();
+
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.ServerSocket;"));
+        assertTrue(rewritten.contains("import com.micklab.dcg.wrapper.net.Socket;"));
+        assertFalse(rewritten.contains("import java.net.*;"));
+        assertTrue(prepared.hadWrapperRewrites());
+    }
+
+    @Test
     public void prepareForCompilationRewritesQualifiedBuildReferencesForPseudoMainActivity() {
         String source = "public class HelloJava {\n"
                 + "  protected void onCreate(android.os.Bundle savedInstanceState) {\n"

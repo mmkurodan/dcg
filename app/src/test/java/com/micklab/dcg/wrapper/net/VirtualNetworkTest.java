@@ -3,23 +3,32 @@ package com.micklab.dcg.wrapper.net;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
+import java.net.ConnectException;
+import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThrows;
 
 public class VirtualNetworkTest {
+    private static final AtomicInteger NEXT_PORT = new AtomicInteger(18080);
+
     @Test
     public void socketAndServerSocketExchangeData() throws Exception {
-        ServerSocket serverSocket = new ServerSocket(18081);
+        int port = nextPort();
+        ServerSocket serverSocket = new ServerSocket(port);
         ExecutorService executor = Executors.newFixedThreadPool(2);
         try {
             Future<String> serverFuture = executor.submit(() -> {
@@ -36,7 +45,7 @@ public class VirtualNetworkTest {
             });
 
             Future<String> clientFuture = executor.submit(() -> {
-                Socket client = new Socket("localhost", 18081);
+                Socket client = new Socket("localhost", port);
                 try {
                     client.getOutputStream().write("ping!".getBytes(StandardCharsets.UTF_8));
                     client.getOutputStream().flush();
@@ -55,7 +64,8 @@ public class VirtualNetworkTest {
 
     @Test
     public void acceptBlocksUntilClientConnects() throws Exception {
-        ServerSocket serverSocket = new ServerSocket(18082);
+        int port = nextPort();
+        ServerSocket serverSocket = new ServerSocket(port);
         ExecutorService executor = Executors.newSingleThreadExecutor();
         CountDownLatch acceptStarted = new CountDownLatch(1);
         try {
@@ -68,7 +78,7 @@ public class VirtualNetworkTest {
             Thread.sleep(200L);
             assertFalse(acceptedFuture.isDone());
 
-            Socket client = new Socket("localhost", 18082);
+            Socket client = new Socket("localhost", port);
             Socket accepted = acceptedFuture.get(5, TimeUnit.SECONDS);
             try {
                 client.close();
@@ -83,7 +93,8 @@ public class VirtualNetworkTest {
 
     @Test
     public void supportsMultipleConnectionsAndBlockingReads() throws Exception {
-        ServerSocket serverSocket = new ServerSocket(18083);
+        int port = nextPort();
+        ServerSocket serverSocket = new ServerSocket(port);
         ExecutorService executor = Executors.newSingleThreadExecutor();
         try {
             Future<String[]> serverFuture = executor.submit(() -> {
@@ -100,8 +111,8 @@ public class VirtualNetworkTest {
                 return payloads;
             });
 
-            sendPayload("A1");
-            sendPayload("B2");
+            sendPayload(port, "A1");
+            sendPayload(port, "B2");
 
             assertArrayEquals(new String[]{"A1", "B2"}, serverFuture.get(5, TimeUnit.SECONDS));
         } finally {
@@ -110,97 +121,49 @@ public class VirtualNetworkTest {
     }
 
     @Test
-    public void wrapperServerSocketServesHttpToRealLocalhostClient() throws Exception {
-        int port = allocatePort();
+    public void connectFailsWhenNoVirtualServerIsRegistered() {
+        ConnectException exception = assertThrows(
+                ConnectException.class,
+                () -> new Socket("localhost", nextPort()));
+        assertTrue(exception.getMessage().contains("Virtual connection refused"));
+    }
+
+    @Test
+    public void closingAcceptedSocketClosesPeerStreams() throws Exception {
+        int port = nextPort();
         ServerSocket serverSocket = new ServerSocket(port);
-        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Socket client = new Socket("localhost", port);
+        Socket accepted = serverSocket.accept();
         try {
-            Future<String> serverFuture = executor.submit(() -> {
-                Socket accepted = serverSocket.accept();
-                try {
-                    String request = readUntil(accepted.getInputStream(), "\r\n\r\n");
-                    String body = "<html><body><h1>Hello</h1></body></html>";
-                    String response = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: text/html; charset=UTF-8\r\n"
-                            + "Content-Length: " + body.getBytes(StandardCharsets.UTF_8).length + "\r\n"
-                            + "Connection: close\r\n\r\n"
-                            + body;
-                    accepted.getOutputStream().write(response.getBytes(StandardCharsets.UTF_8));
-                    accepted.getOutputStream().flush();
-                    return request;
-                } finally {
-                    accepted.close();
-                    serverSocket.close();
-                }
-            });
-
-            java.net.Socket browser = new java.net.Socket("127.0.0.1", port);
-            try {
-                OutputStream outputStream = browser.getOutputStream();
-                outputStream.write(("GET / HTTP/1.1\r\nHost: localhost:" + port + "\r\n\r\n")
-                        .getBytes(StandardCharsets.UTF_8));
-                outputStream.flush();
-
-                String response = readFully(browser.getInputStream());
-                assertEquals(true, response.contains("HTTP/1.1 200 OK"));
-                assertEquals(true, response.contains("<h1>Hello</h1>"));
-            } finally {
-                browser.close();
-            }
-
-            assertEquals(true, serverFuture.get(5, TimeUnit.SECONDS).startsWith("GET / HTTP/1.1"));
+            accepted.close();
+            assertThrows(IOException.class, () -> client.getOutputStream().write(1));
         } finally {
-            executor.shutdownNow();
+            client.close();
+            serverSocket.close();
         }
     }
 
     @Test
-    public void wrapperServerSocketCanStreamSseStyleResponseToRealClient() throws Exception {
-        int port = allocatePort();
-        ServerSocket serverSocket = new ServerSocket(port);
+    public void virtualServerSocketCloseUnblocksPendingAccept() throws Exception {
+        int port = nextPort();
+        VirtualServerSocket serverSocket = new VirtualServerSocket(port);
         ExecutorService executor = Executors.newSingleThreadExecutor();
         try {
-            Future<String> serverFuture = executor.submit(() -> {
-                Socket accepted = serverSocket.accept();
-                try {
-                    String request = readUntil(accepted.getInputStream(), "\r\n\r\n");
-                    String response = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: text/event-stream\r\n"
-                            + "Cache-Control: no-cache\r\n"
-                            + "Connection: close\r\n\r\n"
-                            + "event: ping\n"
-                            + "data: hello\n\n";
-                    accepted.getOutputStream().write(response.getBytes(StandardCharsets.UTF_8));
-                    accepted.getOutputStream().flush();
-                    return request;
-                } finally {
-                    accepted.close();
-                    serverSocket.close();
-                }
-            });
+            Future<VirtualChannel> acceptedFuture = executor.submit(serverSocket::accept);
+            Thread.sleep(200L);
+            serverSocket.close();
 
-            java.net.Socket client = new java.net.Socket("127.0.0.1", port);
-            try {
-                client.getOutputStream().write(("GET /events HTTP/1.1\r\nHost: localhost:" + port + "\r\n\r\n")
-                        .getBytes(StandardCharsets.UTF_8));
-                client.getOutputStream().flush();
-
-                String response = readFully(client.getInputStream());
-                assertEquals(true, response.contains("Content-Type: text/event-stream"));
-                assertEquals(true, response.contains("event: ping\n"));
-                assertEquals(true, response.contains("data: hello\n\n"));
-            } finally {
-                client.close();
-            }
-
-            assertEquals(true, serverFuture.get(5, TimeUnit.SECONDS).startsWith("GET /events HTTP/1.1"));
+            ExecutionException failure = assertThrows(
+                    ExecutionException.class,
+                    () -> acceptedFuture.get(5, TimeUnit.SECONDS));
+            assertTrue(failure.getCause() instanceof SocketException);
         } finally {
             executor.shutdownNow();
         }
     }
 
-    private void sendPayload(String payload) throws Exception {
-        Socket client = new Socket("localhost", 18083);
+    private void sendPayload(int port, String payload) throws Exception {
+        Socket client = new Socket("localhost", port);
         try {
             client.getOutputStream().write(payload.getBytes(StandardCharsets.UTF_8));
             client.getOutputStream().flush();
@@ -221,52 +184,7 @@ public class VirtualNetworkTest {
         return output.toString(StandardCharsets.UTF_8.name());
     }
 
-    private String readFully(InputStream inputStream) throws Exception {
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int readCount;
-        while ((readCount = inputStream.read(buffer)) != -1) {
-            output.write(buffer, 0, readCount);
-        }
-        return output.toString(StandardCharsets.UTF_8.name());
-    }
-
-    private String readUntil(InputStream inputStream, String marker) throws Exception {
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        byte[] markerBytes = marker.getBytes(StandardCharsets.UTF_8);
-        while (true) {
-            int next = inputStream.read();
-            if (next < 0) {
-                break;
-            }
-            output.write(next);
-            byte[] current = output.toByteArray();
-            if (endsWith(current, markerBytes)) {
-                break;
-            }
-        }
-        return output.toString(StandardCharsets.UTF_8.name());
-    }
-
-    private boolean endsWith(byte[] value, byte[] suffix) {
-        if (value.length < suffix.length) {
-            return false;
-        }
-        int offset = value.length - suffix.length;
-        for (int index = 0; index < suffix.length; index++) {
-            if (value[offset + index] != suffix[index]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private int allocatePort() throws Exception {
-        java.net.ServerSocket probe = new java.net.ServerSocket(0);
-        try {
-            return probe.getLocalPort();
-        } finally {
-            probe.close();
-        }
+    private int nextPort() {
+        return NEXT_PORT.incrementAndGet();
     }
 }

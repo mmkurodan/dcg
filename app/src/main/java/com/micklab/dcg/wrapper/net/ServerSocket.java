@@ -5,13 +5,11 @@ import java.net.SocketException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ServerSocket {
-    private final int port;
-    private final java.net.ServerSocket delegate;
+    private final VirtualServerSocket delegate;
     private final AtomicBoolean closed = new AtomicBoolean(false);
 
     public ServerSocket(int port) throws IOException {
-        this.port = port;
-        this.delegate = VirtualNetwork.openServer(port);
+        this.delegate = new VirtualServerSocket(port);
     }
 
     public Socket accept() throws IOException {

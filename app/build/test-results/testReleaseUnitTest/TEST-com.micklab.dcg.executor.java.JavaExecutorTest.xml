@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.micklab.dcg.executor.java.JavaExecutorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-05-08T01:36:10" hostname="localhost" time="0.02">
+  <properties/>
+  <testcase name="pseudoMainActivityBundleCallbackDelegatesToNoArgOverride" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
+  <testcase name="stagedWrapperAssetContainsBitmapNestedClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
+  <testcase name="wrapperJarValidationRequiresBitmapAndNestedConfigClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
+  <testcase name="stagedWrapperAssetContainsVirtualNetworkClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.003"/>
+  <testcase name="compilerArgumentsIncludeWrapperClasspathWhenProvided" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="joinClasspathsConcatenatesNonEmptySegmentsInOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="stagedWrapperAssetContainsBuildWrapperClasses" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.002"/>
+  <testcase name="runtimeVerificationChecksBatchCompilerPathOnly" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="compilerArgumentsIncludeRequiredEcjOptionsOrder" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="bundledCompilerLayoutMentionsAndroidCompatibleBundle" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <testcase name="buildOutputMethodCountsAsSupportedEntrypoint" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.001"/>
+  <testcase name="compilerArgumentsUseResolvedBootClasspath" classname="com.micklab.dcg.executor.java.JavaExecutorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
