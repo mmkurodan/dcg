@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-33:12
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:1:1-35:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /root/.gradle/caches/8.12/transforms/a09e3fe9447911533870a38893431f73/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] /root/.gradle/caches/8.12/transforms/365791cc96a4eea0b792d23a075e0497/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.5.4] /root/.gradle/caches/8.12/transforms/6edea9fc548bb728f3fa7cd1fcd45239/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
@@ -41,21 +41,25 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] /root/.gradle/ca
 		INJECTED from /root/dcg/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:3:5-4:54
+	android:name
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:4:9-51
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:3:5-5:38
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:5:5-7:38
 	android:maxSdkVersion
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:5:9-35
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:7:9-35
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:4:9-64
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:6:9-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:6:5-8:38
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:8:5-10:38
 	android:maxSdkVersion
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:10:9-35
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:9:9-65
 application
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-31:19
-INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:10:5-31:19
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:12:5-33:19
+INJECTED from /root/dcg/app/src/main/AndroidManifest.xml:12:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.12/transforms/ced291a44ae5c121f51e5620dbdae33c/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.12/transforms/ced291a44ae5c121f51e5620dbdae33c/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /root/.gradle/caches/8.12/transforms/ddca49c0fa3d36027a4c61152fc76b7a/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
@@ -73,35 +77,35 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /root/.grad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /root/.gradle/caches/8.12/transforms/1f218befba607dda933fcc5676c1eb42/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:12:9-41
-	android:allowBackup
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:11:9-35
-	android:theme
 		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:14:9-41
+	android:allowBackup
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:16:9-41
 activity#com.micklab.dcg.MainActivity
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:16:9-25:20
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:18:9-27:20
 	android:exported
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:18:13-36
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:17:13-41
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:20:13-23:29
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:22:13-25:29
 action#android.intent.action.MAIN
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:24:27-74
 activity#com.micklab.dcg.OutputActivity
-ADDED from /root/dcg/app/src/main/AndroidManifest.xml:27:9-29:40
+ADDED from /root/dcg/app/src/main/AndroidManifest.xml:29:9-31:40
 	android:exported
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:29:13-37
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:28:13-43
+		ADDED from /root/dcg/app/src/main/AndroidManifest.xml:30:13-43
 uses-sdk
 INJECTED from /root/dcg/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /root/dcg/app/src/main/AndroidManifest.xml

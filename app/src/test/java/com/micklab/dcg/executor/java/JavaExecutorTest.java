@@ -4,10 +4,18 @@ import org.junit.Test;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.zip.ZipFile;
 
+import com.micklab.dcg.wrapper.net.ServerSocket;
 import com.micklab.dcg.wrapper.android.os.Bundle;
 import com.micklab.dcg.wrapper.pseudo.PseudoMainActivity;
 
@@ -17,6 +25,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class JavaExecutorTest {
+    private static final AtomicInteger NEXT_VIRTUAL_PORT = new AtomicInteger(18180);
+
     @Test
     public void runtimeVerificationChecksBatchCompilerPathOnly() throws Exception {
         Field field = JavaExecutor.class.getDeclaredField("REQUIRED_BATCH_RUNTIME_CLASSES");
@@ -159,6 +169,48 @@ public class JavaExecutorTest {
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualNetwork.class"));
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualChannel.class"));
             assertNotNull(zipFile.getEntry("com/micklab/dcg/wrapper/net/VirtualServerSocket.class"));
+        }
+    }
+
+    @Test
+    public void virtualSocketBridgeConnectsToVirtualServerSocket() throws Exception {
+        int port = NEXT_VIRTUAL_PORT.incrementAndGet();
+        ServerSocket serverSocket = new ServerSocket(port);
+        JavaExecutor executor = new JavaExecutor();
+        ExecutorService threadPool = Executors.newFixedThreadPool(2);
+        CountDownLatch serverAccepted = new CountDownLatch(1);
+        try {
+            Future<String> serverFuture = threadPool.submit(() -> {
+                com.micklab.dcg.wrapper.net.Socket accepted = serverSocket.accept();
+                serverAccepted.countDown();
+                try {
+                    byte[] buffer = new byte[4];
+                    int read = accepted.getInputStream().read(buffer);
+                    accepted.getOutputStream().write("pong".getBytes(StandardCharsets.UTF_8));
+                    accepted.getOutputStream().flush();
+                    return new String(buffer, 0, read, StandardCharsets.UTF_8);
+                } finally {
+                    accepted.close();
+                    serverSocket.close();
+                }
+            });
+
+            Future<String> clientFuture = threadPool.submit(() -> {
+                try (JavaExecutor.VirtualSocketBridge bridge = executor.openVirtualSocketBridge(port)) {
+                    bridge.getOutputStream().write("ping".getBytes(StandardCharsets.UTF_8));
+                    bridge.getOutputStream().flush();
+
+                    byte[] response = new byte[4];
+                    int read = bridge.getInputStream().read(response);
+                    return new String(response, 0, read, StandardCharsets.UTF_8);
+                }
+            });
+
+            assertTrue(serverAccepted.await(5, TimeUnit.SECONDS));
+            assertEquals("ping", serverFuture.get(5, TimeUnit.SECONDS));
+            assertEquals("pong", clientFuture.get(5, TimeUnit.SECONDS));
+        } finally {
+            threadPool.shutdownNow();
         }
     }
 

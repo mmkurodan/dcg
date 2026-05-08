@@ -18,10 +18,12 @@ import com.micklab.dcg.model.SourceSnippet;
 import com.micklab.dcg.model.SupportedLanguage;
 import com.micklab.dcg.output.DynamicOutputRuntime;
 import com.micklab.dcg.util.DiagnosticFormatter;
+import com.micklab.dcg.wrapper.net.Socket;
 
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -119,6 +121,14 @@ public class JavaExecutor implements LanguageExecutor {
         } catch (LinkageError error) {
             Log.w(TAG, "Startup staging of core runtime jars hit a linkage failure.", error);
         }
+    }
+
+    public VirtualSocketBridge openVirtualSocketBridge(int virtualPort) throws IOException {
+        return openVirtualSocketBridge("localhost", virtualPort);
+    }
+
+    public VirtualSocketBridge openVirtualSocketBridge(String host, int virtualPort) throws IOException {
+        return new VirtualSocketBridge(new Socket(host, virtualPort));
     }
 
     @Override
@@ -1081,6 +1091,51 @@ public class JavaExecutor implements LanguageExecutor {
                 return stdout;
             }
             return stdout + "\n" + stderr;
+        }
+    }
+
+    public static final class VirtualSocketBridge implements Closeable {
+        private final Socket socket;
+        private final InputStream inputStream;
+        private final OutputStream outputStream;
+
+        private VirtualSocketBridge(Socket socket) throws IOException {
+            if (socket == null) {
+                throw new IllegalArgumentException("socket == null");
+            }
+            this.socket = socket;
+            InputStream resolvedInputStream = null;
+            OutputStream resolvedOutputStream = null;
+            try {
+                resolvedInputStream = socket.getInputStream();
+                resolvedOutputStream = socket.getOutputStream();
+            } catch (IOException exception) {
+                try {
+                    socket.close();
+                } catch (IOException closeFailure) {
+                    exception.addSuppressed(closeFailure);
+                }
+                throw exception;
+            }
+            this.inputStream = resolvedInputStream;
+            this.outputStream = resolvedOutputStream;
+        }
+
+        public InputStream getInputStream() {
+            return inputStream;
+        }
+
+        public OutputStream getOutputStream() {
+            return outputStream;
+        }
+
+        public void shutdownOutput() throws IOException {
+            outputStream.close();
+        }
+
+        @Override
+        public void close() throws IOException {
+            socket.close();
         }
     }
 }
