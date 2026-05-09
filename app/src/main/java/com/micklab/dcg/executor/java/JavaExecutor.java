@@ -21,6 +21,7 @@ import com.micklab.dcg.util.DiagnosticFormatter;
 
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.File;
@@ -28,6 +29,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -47,6 +50,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
@@ -75,6 +81,7 @@ public class JavaExecutor implements LanguageExecutor {
     private static final String CORE_OJ_JAR = "core-oj.jar";
     private static final String CORE_LIBART_JAR = "core-libart.jar";
     private static final int COPY_BUFFER_SIZE = 8192;
+    private static final int PROCESS_PIPE_BUFFER_SIZE = 8192;
     private static volatile WeakReference<ClassLoader> lastExecutionClassLoader =
             new WeakReference<>(null);
     // Android does not ship javax.tools, so only verify the ECJ batch path we actually use.
@@ -129,6 +136,20 @@ public class JavaExecutor implements LanguageExecutor {
 
     public VirtualSocketBridge openVirtualSocketBridge(int virtualPort) throws IOException {
         return openVirtualSocketBridge("localhost", virtualPort);
+    }
+
+    public JavaProcess startProcess(String className) throws IOException {
+        String normalizedClassName = normalizeClassName(className);
+        AndroidBuildPropertyBridge.install();
+        ScopedStandardStreams.install();
+        ClassLoader classLoader = resolveExecutionClassLoader();
+        Class<?> dynamicClass;
+        try {
+            dynamicClass = classLoader.loadClass(normalizedClassName);
+        } catch (ClassNotFoundException exception) {
+            throw new IOException("JavaExecutor could not resolve process class " + normalizedClassName + ".", exception);
+        }
+        return JavaProcess.start(dynamicClass, resolveProcessEntrypoint(dynamicClass));
     }
 
     public VirtualSocketBridge openVirtualSocketBridge(String host, int virtualPort) throws IOException {
@@ -455,19 +476,38 @@ public class JavaExecutor implements LanguageExecutor {
         }
     }
 
+    private ProcessEntrypoint resolveProcessEntrypoint(Class<?> dynamicClass) throws IOException {
+        Method mainMethod = findMainMethod(dynamicClass);
+        if (mainMethod != null) {
+            return new ProcessEntrypoint(
+                    mainMethod,
+                    new Object[]{new String[0]},
+                    "public static void main(String[])");
+        }
+
+        Method runMethod = findRunMethod(dynamicClass);
+        if (runMethod != null) {
+            return new ProcessEntrypoint(runMethod, new Object[0], "public static run()");
+        }
+
+        throw new IOException(
+                "JavaExecutor process entrypoint missing for "
+                        + dynamicClass.getName()
+                        + ". Define public static void main(String[]) or public static Object run().");
+    }
+
     private InvocationOutcome invokeCapturingOutput(Class<?> dynamicClass, Method method, Object[] arguments, String entrypoint) throws Exception {
-        PrintStream originalOut = System.out;
-        PrintStream originalErr = System.err;
         ByteArrayOutputStream stdoutCapture = new ByteArrayOutputStream();
         ByteArrayOutputStream stderrCapture = new ByteArrayOutputStream();
         Throwable failure = null;
         Object returnValue = null;
 
-        try (PrintStream stdoutInterceptor = new PrintStream(stdoutCapture, true, StandardCharsets.UTF_8.name());
-             PrintStream stderrInterceptor = new PrintStream(stderrCapture, true, StandardCharsets.UTF_8.name())) {
+        ScopedStandardStreams.install();
+        try (ScopedStandardStreams.Binding ignored = ScopedStandardStreams.bind(
+                new ByteArrayInputStream(new byte[0]),
+                stdoutCapture,
+                stderrCapture)) {
             AndroidBuildPropertyBridge.install();
-            System.setOut(stdoutInterceptor);
-            System.setErr(stderrInterceptor);
             try {
                 returnValue = method.invoke(null, arguments);
             } catch (InvocationTargetException exception) {
@@ -475,9 +515,6 @@ public class JavaExecutor implements LanguageExecutor {
             } catch (Throwable throwable) {
                 failure = unwrap(throwable);
             }
-        } finally {
-            System.setOut(originalOut);
-            System.setErr(originalErr);
         }
 
         String stdout = normalizeCapture(stdoutCapture);
@@ -997,10 +1034,14 @@ public class JavaExecutor implements LanguageExecutor {
         return SystemClock.elapsedRealtime() - startTime;
     }
 
-    private ClassLoader resolveVirtualSocketClassLoader() {
+    private ClassLoader resolveExecutionClassLoader() {
         WeakReference<ClassLoader> reference = lastExecutionClassLoader;
         ClassLoader classLoader = reference == null ? null : reference.get();
         return classLoader != null ? classLoader : getClass().getClassLoader();
+    }
+
+    private ClassLoader resolveVirtualSocketClassLoader() {
+        return resolveExecutionClassLoader();
     }
 
     private String safeSnippetKey(SourceSnippet snippet) {
@@ -1032,6 +1073,17 @@ public class JavaExecutor implements LanguageExecutor {
 
     private static boolean isNullOrEmpty(String value) {
         return value == null || value.length() == 0;
+    }
+
+    private static String normalizeClassName(String className) {
+        if (className == null) {
+            throw new IllegalArgumentException("className == null");
+        }
+        String normalized = className.trim();
+        if (normalized.isEmpty()) {
+            throw new IllegalArgumentException("className is empty");
+        }
+        return normalized;
     }
 
     private static final class CompilerRuntimeStatus {
@@ -1102,6 +1154,380 @@ public class JavaExecutor implements LanguageExecutor {
                 return stdout;
             }
             return stdout + "\n" + stderr;
+        }
+    }
+
+    private static final class ProcessEntrypoint {
+        private final Method method;
+        private final Object[] arguments;
+        private final String description;
+
+        private ProcessEntrypoint(Method method, Object[] arguments, String description) {
+            if (method == null) {
+                throw new IllegalArgumentException("method == null");
+            }
+            this.method = method;
+            this.arguments = arguments == null ? new Object[0] : arguments;
+            this.description = description == null ? "" : description;
+        }
+    }
+
+    public static final class JavaProcess implements Closeable, StreamPump.OutputTarget {
+        private final String className;
+        private final ProcessEntrypoint entrypoint;
+        private final PipedInputStream processInput;
+        private final PipedOutputStream inputWriter;
+        private final PipedInputStream outputReader;
+        private final PipedOutputStream outputWriter;
+        private final ByteArrayOutputStream stderrCapture;
+        private final Thread worker;
+        private final CountDownLatch finished = new CountDownLatch(1);
+        private final AtomicBoolean closed = new AtomicBoolean(false);
+
+        private volatile Throwable failure;
+        private volatile int exitCode = Integer.MIN_VALUE;
+
+        private JavaProcess(
+                Class<?> dynamicClass,
+                ProcessEntrypoint entrypoint,
+                PipedInputStream processInput,
+                PipedOutputStream inputWriter,
+                PipedInputStream outputReader,
+                PipedOutputStream outputWriter,
+                ByteArrayOutputStream stderrCapture) {
+            this.className = dynamicClass.getName();
+            this.entrypoint = entrypoint;
+            this.processInput = processInput;
+            this.inputWriter = inputWriter;
+            this.outputReader = outputReader;
+            this.outputWriter = outputWriter;
+            this.stderrCapture = stderrCapture;
+            this.worker = new Thread(
+                    () -> runProcess(dynamicClass),
+                    "JavaProcess-" + dynamicClass.getSimpleName());
+            this.worker.setDaemon(true);
+        }
+
+        private static JavaProcess start(Class<?> dynamicClass, ProcessEntrypoint entrypoint) throws IOException {
+            PipedInputStream processInput = new PipedInputStream(PROCESS_PIPE_BUFFER_SIZE);
+            PipedOutputStream inputWriter = new PipedOutputStream(processInput);
+            PipedInputStream outputReader = new PipedInputStream(PROCESS_PIPE_BUFFER_SIZE);
+            PipedOutputStream outputWriter = new PipedOutputStream(outputReader);
+            ByteArrayOutputStream stderrCapture = new ByteArrayOutputStream();
+            JavaProcess process = new JavaProcess(
+                    dynamicClass,
+                    entrypoint,
+                    processInput,
+                    inputWriter,
+                    outputReader,
+                    outputWriter,
+                    stderrCapture);
+            process.worker.start();
+            return process;
+        }
+
+        public InputStream getInputStream() {
+            return outputReader;
+        }
+
+        public OutputStream getOutputStream() {
+            return inputWriter;
+        }
+
+        public String getClassName() {
+            return className;
+        }
+
+        public Throwable getFailure() {
+            return failure;
+        }
+
+        public String getCapturedStderr() {
+            synchronized (stderrCapture) {
+                return stderrCapture.toString(StandardCharsets.UTF_8);
+            }
+        }
+
+        public boolean isAlive() {
+            return worker.isAlive();
+        }
+
+        public int waitFor() throws InterruptedException {
+            finished.await();
+            return exitCode;
+        }
+
+        public boolean waitFor(long timeout, TimeUnit unit) throws InterruptedException {
+            return finished.await(timeout, unit);
+        }
+
+        @Override
+        public void shutdownOutput() throws IOException {
+            inputWriter.close();
+        }
+
+        @Override
+        public void close() throws IOException {
+            if (!closed.compareAndSet(false, true)) {
+                return;
+            }
+            IOException failure = null;
+            failure = closeAndCollect(inputWriter, failure);
+            failure = closeAndCollect(outputReader, failure);
+            worker.interrupt();
+            if (failure != null) {
+                throw failure;
+            }
+        }
+
+        private void runProcess(Class<?> dynamicClass) {
+            try {
+                ScopedStandardStreams.install();
+                try (ScopedStandardStreams.Binding ignored = ScopedStandardStreams.bind(
+                        processInput,
+                        outputWriter,
+                        new SynchronizedOutputStream(stderrCapture))) {
+                    AndroidBuildPropertyBridge.install();
+                    entrypoint.method.invoke(null, entrypoint.arguments);
+                    exitCode = 0;
+                }
+            } catch (InvocationTargetException exception) {
+                failure = unwrapThrowable(exception.getTargetException());
+                exitCode = 1;
+                appendFailureToStderr(failure);
+            } catch (Throwable throwable) {
+                failure = unwrapThrowable(throwable);
+                exitCode = 1;
+                appendFailureToStderr(failure);
+            } finally {
+                closeQuietly(outputWriter);
+                closeQuietly(processInput);
+                finished.countDown();
+            }
+        }
+
+        private void appendFailureToStderr(Throwable throwable) {
+            if (throwable == null) {
+                return;
+            }
+            synchronized (stderrCapture) {
+                try (PrintWriter writer = new PrintWriter(stderrCapture)) {
+                    writer.println("JavaExecutor process failed in " + entrypoint.description + ":");
+                    throwable.printStackTrace(writer);
+                    writer.flush();
+                }
+            }
+        }
+
+        private static Throwable unwrapThrowable(Throwable throwable) {
+            Throwable current = throwable;
+            while (current instanceof InvocationTargetException
+                    && ((InvocationTargetException) current).getTargetException() != null) {
+                current = ((InvocationTargetException) current).getTargetException();
+            }
+            return current;
+        }
+
+        private static IOException closeAndCollect(Closeable closeable, IOException failure) {
+            if (closeable == null) {
+                return failure;
+            }
+            try {
+                closeable.close();
+            } catch (IOException exception) {
+                if (failure == null) {
+                    return exception;
+                }
+                failure.addSuppressed(exception);
+            }
+            return failure;
+        }
+
+        private static void closeQuietly(Closeable closeable) {
+            if (closeable == null) {
+                return;
+            }
+            try {
+                closeable.close();
+            } catch (IOException ignored) {
+            }
+        }
+    }
+
+    private static final class ScopedStandardStreams {
+        private static final Object INSTALL_LOCK = new Object();
+        private static final InheritableThreadLocal<BindingState> STATE = new InheritableThreadLocal<>();
+
+        private static volatile boolean installed;
+        private static InputStream originalIn;
+        private static PrintStream originalOut;
+        private static PrintStream originalErr;
+
+        private ScopedStandardStreams() {
+        }
+
+        private static void install() throws IOException {
+            if (installed) {
+                return;
+            }
+            synchronized (INSTALL_LOCK) {
+                if (installed) {
+                    return;
+                }
+                originalIn = System.in;
+                originalOut = System.out;
+                originalErr = System.err;
+                System.setIn(new DelegatingInputStream());
+                System.setOut(new PrintStream(new DelegatingOutputStream(false), true, StandardCharsets.UTF_8.name()));
+                System.setErr(new PrintStream(new DelegatingOutputStream(true), true, StandardCharsets.UTF_8.name()));
+                installed = true;
+            }
+        }
+
+        private static Binding bind(InputStream inputStream, OutputStream outputStream, OutputStream errorStream) {
+            if (inputStream == null) {
+                throw new IllegalArgumentException("inputStream == null");
+            }
+            if (outputStream == null) {
+                throw new IllegalArgumentException("outputStream == null");
+            }
+            if (errorStream == null) {
+                throw new IllegalArgumentException("errorStream == null");
+            }
+            BindingState previous = STATE.get();
+            STATE.set(new BindingState(inputStream, outputStream, errorStream));
+            return new Binding(previous);
+        }
+
+        private static final class Binding implements Closeable {
+            private final BindingState previous;
+            private boolean closed;
+
+            private Binding(BindingState previous) {
+                this.previous = previous;
+            }
+
+            @Override
+            public void close() {
+                if (closed) {
+                    return;
+                }
+                closed = true;
+                if (previous == null) {
+                    STATE.remove();
+                } else {
+                    STATE.set(previous);
+                }
+            }
+        }
+
+        private static final class BindingState {
+            private final InputStream inputStream;
+            private final OutputStream outputStream;
+            private final OutputStream errorStream;
+
+            private BindingState(InputStream inputStream, OutputStream outputStream, OutputStream errorStream) {
+                this.inputStream = inputStream;
+                this.outputStream = outputStream;
+                this.errorStream = errorStream;
+            }
+        }
+
+        private static final class DelegatingInputStream extends InputStream {
+            @Override
+            public int read() throws IOException {
+                return currentInputStream().read();
+            }
+
+            @Override
+            public int read(byte[] buffer, int offset, int count) throws IOException {
+                return currentInputStream().read(buffer, offset, count);
+            }
+
+            @Override
+            public int available() throws IOException {
+                return currentInputStream().available();
+            }
+
+            @Override
+            public void close() throws IOException {
+                BindingState state = STATE.get();
+                if (state != null) {
+                    state.inputStream.close();
+                }
+            }
+
+            private InputStream currentInputStream() {
+                BindingState state = STATE.get();
+                return state == null ? originalIn : state.inputStream;
+            }
+        }
+
+        private static final class DelegatingOutputStream extends OutputStream {
+            private final boolean error;
+
+            private DelegatingOutputStream(boolean error) {
+                this.error = error;
+            }
+
+            @Override
+            public void write(int value) throws IOException {
+                currentOutputStream().write(value);
+            }
+
+            @Override
+            public void write(byte[] buffer, int offset, int count) throws IOException {
+                currentOutputStream().write(buffer, offset, count);
+            }
+
+            @Override
+            public void flush() throws IOException {
+                currentOutputStream().flush();
+            }
+
+            @Override
+            public void close() throws IOException {
+                BindingState state = STATE.get();
+                if (state != null) {
+                    currentOutputStream().close();
+                } else {
+                    currentOutputStream().flush();
+                }
+            }
+
+            private OutputStream currentOutputStream() {
+                BindingState state = STATE.get();
+                if (state == null) {
+                    return error ? originalErr : originalOut;
+                }
+                return error ? state.errorStream : state.outputStream;
+            }
+        }
+    }
+
+    private static final class SynchronizedOutputStream extends OutputStream {
+        private final OutputStream delegate;
+
+        private SynchronizedOutputStream(OutputStream delegate) {
+            if (delegate == null) {
+                throw new IllegalArgumentException("delegate == null");
+            }
+            this.delegate = delegate;
+        }
+
+        @Override
+        public synchronized void write(int value) throws IOException {
+            delegate.write(value);
+        }
+
+        @Override
+        public synchronized void write(byte[] buffer, int offset, int count) throws IOException {
+            delegate.write(buffer, offset, count);
+        }
+
+        @Override
+        public synchronized void flush() throws IOException {
+            delegate.flush();
         }
     }
 

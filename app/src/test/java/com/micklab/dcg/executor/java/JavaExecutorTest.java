@@ -2,7 +2,11 @@ package com.micklab.dcg.executor.java;
 
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -215,6 +219,40 @@ public class JavaExecutorTest {
     }
 
     @Test
+    public void startProcessExposesStdIoForNamedClass() throws Exception {
+        JavaExecutor executor = new JavaExecutor();
+
+        try (JavaExecutor.JavaProcess process = executor.startProcess(UppercaseProcess.class.getName())) {
+            process.getOutputStream().write("hello proxy\n".getBytes(StandardCharsets.UTF_8));
+            process.shutdownOutput();
+
+            assertEquals("HELLO PROXY\n", readAll(process.getInputStream()));
+            assertTrue(process.waitFor(5, TimeUnit.SECONDS));
+            assertEquals(0, process.waitFor());
+        }
+    }
+
+    @Test
+    public void startProcessKeepsConcurrentStdIoIsolated() throws Exception {
+        JavaExecutor executor = new JavaExecutor();
+        ExecutorService threadPool = Executors.newFixedThreadPool(2);
+        try (JavaExecutor.JavaProcess first = executor.startProcess(SlowUppercaseProcess.class.getName());
+             JavaExecutor.JavaProcess second = executor.startProcess(SlowUppercaseProcess.class.getName())) {
+            Future<String> firstFuture = threadPool.submit(() -> interact(first, "alpha\n"));
+            Future<String> secondFuture = threadPool.submit(() -> interact(second, "beta\n"));
+
+            assertEquals("ALPHA\n", firstFuture.get(5, TimeUnit.SECONDS));
+            assertEquals("BETA\n", secondFuture.get(5, TimeUnit.SECONDS));
+            assertTrue(first.waitFor(5, TimeUnit.SECONDS));
+            assertTrue(second.waitFor(5, TimeUnit.SECONDS));
+            assertEquals(0, first.waitFor());
+            assertEquals(0, second.waitFor());
+        } finally {
+            threadPool.shutdownNow();
+        }
+    }
+
+    @Test
     public void joinClasspathsConcatenatesNonEmptySegmentsInOrder() {
         String merged = JavaExecutor.joinClasspaths(
                 "/tmp/a.jar",
@@ -253,5 +291,46 @@ public class JavaExecutorTest {
         void trigger() {
             onCreate((Bundle) null);
         }
+    }
+
+    public static final class UppercaseProcess {
+        public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(System.in, StandardCharsets.UTF_8));
+            String line = reader.readLine();
+            if (line == null) {
+                return;
+            }
+            System.out.println(line.toUpperCase());
+        }
+    }
+
+    public static final class SlowUppercaseProcess {
+        public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(System.in, StandardCharsets.UTF_8));
+            String line = reader.readLine();
+            if (line == null) {
+                return;
+            }
+            Thread.sleep(150L);
+            System.out.println(line.toUpperCase());
+        }
+    }
+
+    private static String interact(JavaExecutor.JavaProcess process, String input) throws Exception {
+        process.getOutputStream().write(input.getBytes(StandardCharsets.UTF_8));
+        process.shutdownOutput();
+        return readAll(process.getInputStream());
+    }
+
+    private static String readAll(InputStream inputStream) throws Exception {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[256];
+        int read;
+        while ((read = inputStream.read(buffer)) >= 0) {
+            outputStream.write(buffer, 0, read);
+        }
+        return outputStream.toString(StandardCharsets.UTF_8.name());
     }
 }

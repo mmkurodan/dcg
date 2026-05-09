@@ -18,14 +18,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public final class ProxyThread extends Thread implements Closeable {
-    private static final String TAG = "ProxyThread";
+public class ProxyServer extends Thread implements Closeable {
+    private static final String TAG = "ProxyServer";
     private static final String BIND_HOST = "0.0.0.0";
     private static final int LISTEN_BACKLOG = 50;
 
-    private final ExecutorBridge executorBridge;
+    private final JavaExecutor javaExecutor;
     private final int listenPort;
-    private final int virtualPort;
+    private final String className;
     private final AtomicBoolean closed = new AtomicBoolean(false);
     private final Set<BridgeSession> activeSessions =
             Collections.newSetFromMap(new ConcurrentHashMap<>());
@@ -35,24 +35,24 @@ public final class ProxyThread extends Thread implements Closeable {
     private volatile IOException startupFailure;
     private volatile IOException runtimeFailure;
 
-    public ProxyThread(int listenPort, int virtualPort) {
-        this(new ExecutorBridge(), listenPort, virtualPort);
+    public ProxyServer(int listenPort, String className) {
+        this(new JavaExecutor(), listenPort, className);
     }
 
-    public ProxyThread(ExecutorBridge executorBridge, int listenPort, int virtualPort) {
-        super("ProxyThread-" + listenPort + "-" + virtualPort);
-        if (executorBridge == null) {
-            throw new IllegalArgumentException("executorBridge == null");
+    public ProxyServer(JavaExecutor javaExecutor, int listenPort, String className) {
+        super("ProxyServer-" + listenPort + "-" + className);
+        if (javaExecutor == null) {
+            throw new IllegalArgumentException("javaExecutor == null");
         }
         if (listenPort < 0 || listenPort > 65535) {
             throw new IllegalArgumentException("listenPort out of range: " + listenPort);
         }
-        if (virtualPort < 1 || virtualPort > 65535) {
-            throw new IllegalArgumentException("virtualPort out of range: " + virtualPort);
+        if (className == null || className.trim().isEmpty()) {
+            throw new IllegalArgumentException("className is empty");
         }
-        this.executorBridge = executorBridge;
+        this.javaExecutor = javaExecutor;
         this.listenPort = listenPort;
-        this.virtualPort = virtualPort;
+        this.className = className.trim();
         setDaemon(true);
     }
 
@@ -72,8 +72,8 @@ public final class ProxyThread extends Thread implements Closeable {
                             + listeningSocket.getInetAddress().getHostAddress()
                             + ":"
                             + listeningSocket.getLocalPort()
-                            + " for virtual port "
-                            + virtualPort
+                            + " for "
+                            + className
                             + ".");
         } catch (IOException exception) {
             startupFailure = exception;
@@ -84,26 +84,26 @@ public final class ProxyThread extends Thread implements Closeable {
         started.countDown();
         try {
             while (!closed.get()) {
-                Socket realSocket = null;
+                Socket clientSocket = null;
                 try {
-                    realSocket = listeningSocket.accept();
-                    Log.i(TAG, "Accepted real TCP connection from " + realSocket.getRemoteSocketAddress() + ".");
-                    handleAcceptedSocket(realSocket);
+                    clientSocket = listeningSocket.accept();
+                    Log.i(TAG, "Accepted real TCP connection from " + clientSocket.getRemoteSocketAddress() + ".");
+                    handleAcceptedSocket(clientSocket);
                 } catch (SocketException exception) {
                     if (closed.get() || listeningSocket.isClosed()) {
                         break;
                     }
                     recordRuntimeFailure(exception);
-                    closeQuietly(realSocket);
+                    closeQuietly(clientSocket);
                     Log.w(TAG, "Proxy accept failed; continuing to listen.", exception);
                 } catch (IOException exception) {
                     recordRuntimeFailure(exception);
-                    closeQuietly(realSocket);
-                    Log.w(TAG, "Proxy bridge setup failed for an accepted socket; continuing.", exception);
+                    closeQuietly(clientSocket);
+                    Log.w(TAG, "Proxy process setup failed for an accepted socket; continuing.", exception);
                 } catch (RuntimeException exception) {
-                    recordRuntimeFailure(new IOException("Proxy bridge hit an unexpected runtime failure.", exception));
-                    closeQuietly(realSocket);
-                    Log.e(TAG, "Proxy bridge hit an unexpected runtime failure; continuing.", exception);
+                    recordRuntimeFailure(new IOException("Proxy server hit an unexpected runtime failure.", exception));
+                    closeQuietly(clientSocket);
+                    Log.e(TAG, "Proxy server hit an unexpected runtime failure; continuing.", exception);
                 }
             }
         } finally {
@@ -144,19 +144,19 @@ public final class ProxyThread extends Thread implements Closeable {
         }
     }
 
-    private void handleAcceptedSocket(Socket realSocket) {
-        if (realSocket == null) {
+    private void handleAcceptedSocket(Socket clientSocket) {
+        if (clientSocket == null) {
             return;
         }
 
         try {
-            BridgeSession session = new BridgeSession(realSocket, executorBridge.connect(virtualPort));
+            BridgeSession session = new BridgeSession(clientSocket, javaExecutor.startProcess(className));
             activeSessions.add(session);
             session.start();
         } catch (IOException exception) {
             recordRuntimeFailure(exception);
-            closeQuietly(realSocket);
-            Log.w(TAG, "Failed to connect accepted real TCP socket to virtual port " + virtualPort + ".", exception);
+            closeQuietly(clientSocket);
+            Log.w(TAG, "Failed to launch JavaExecutor process " + className + " for accepted socket.", exception);
         }
     }
 
@@ -204,35 +204,35 @@ public final class ProxyThread extends Thread implements Closeable {
     }
 
     private final class BridgeSession implements Closeable, StreamPump.Listener {
-        private final Endpoint realEndpoint;
-        private final Endpoint virtualEndpoint;
-        private final StreamPump realToVirtualPump;
-        private final StreamPump virtualToRealPump;
+        private final Endpoint clientEndpoint;
+        private final ProcessEndpoint processEndpoint;
+        private final StreamPump clientToProcessPump;
+        private final StreamPump processToClientPump;
         private final AtomicBoolean sessionClosed = new AtomicBoolean(false);
         private final AtomicInteger remainingPumps = new AtomicInteger(2);
 
-        private BridgeSession(Socket realSocket, ExecutorBridge.VirtualSocketConnection virtualConnection)
+        private BridgeSession(Socket clientSocket, JavaExecutor.JavaProcess javaProcess)
                 throws IOException {
-            this.realEndpoint = new RealSocketEndpoint(realSocket);
-            this.virtualEndpoint = new VirtualSocketEndpoint(virtualConnection);
-            this.realToVirtualPump = new StreamPump(
-                    "StreamPump-real-to-virtual-" + realSocket.getPort() + "-" + virtualPort,
-                    realEndpoint.getInputStream(),
-                    virtualEndpoint.getOutputStream(),
-                    virtualEndpoint,
+            this.clientEndpoint = new RealSocketEndpoint(clientSocket);
+            this.processEndpoint = new ProcessEndpoint(javaProcess);
+            this.clientToProcessPump = new StreamPump(
+                    "StreamPump-client-to-process-" + clientSocket.getPort(),
+                    clientEndpoint.getInputStream(),
+                    processEndpoint.getOutputStream(),
+                    processEndpoint,
                     this);
-            this.virtualToRealPump = new StreamPump(
-                    "StreamPump-virtual-to-real-" + virtualPort + "-" + realSocket.getPort(),
-                    virtualEndpoint.getInputStream(),
-                    realEndpoint.getOutputStream(),
-                    realEndpoint,
+            this.processToClientPump = new StreamPump(
+                    "StreamPump-process-to-client-" + clientSocket.getPort(),
+                    processEndpoint.getInputStream(),
+                    clientEndpoint.getOutputStream(),
+                    clientEndpoint,
                     this);
         }
 
         private void start() {
-            Log.i(TAG, "Starting bidirectional stream relay for real TCP to virtual port " + virtualPort + ".");
-            realToVirtualPump.start();
-            virtualToRealPump.start();
+            Log.i(TAG, "Starting bidirectional stream relay for " + className + ".");
+            clientToProcessPump.start();
+            processToClientPump.start();
         }
 
         @Override
@@ -249,8 +249,14 @@ public final class ProxyThread extends Thread implements Closeable {
             }
             activeSessions.remove(this);
             IOException failure = null;
-            failure = closeAndCollect(realEndpoint, failure);
-            failure = closeAndCollect(virtualEndpoint, failure);
+            failure = closeAndCollect(clientEndpoint, failure);
+            failure = closeAndCollect(processEndpoint, failure);
+            Throwable processFailure = processEndpoint.getFailure();
+            if (processFailure != null) {
+                recordRuntimeFailure(new IOException(
+                        "JavaExecutor process " + className + " terminated with a failure.",
+                        processFailure));
+            }
             if (failure != null) {
                 throw failure;
             }
@@ -300,34 +306,38 @@ public final class ProxyThread extends Thread implements Closeable {
         }
     }
 
-    private static final class VirtualSocketEndpoint implements Endpoint {
-        private final ExecutorBridge.VirtualSocketConnection connection;
+    private static final class ProcessEndpoint implements Endpoint {
+        private final JavaExecutor.JavaProcess javaProcess;
 
-        private VirtualSocketEndpoint(ExecutorBridge.VirtualSocketConnection connection) {
-            if (connection == null) {
-                throw new IllegalArgumentException("connection == null");
+        private ProcessEndpoint(JavaExecutor.JavaProcess javaProcess) {
+            if (javaProcess == null) {
+                throw new IllegalArgumentException("javaProcess == null");
             }
-            this.connection = connection;
+            this.javaProcess = javaProcess;
         }
 
         @Override
         public InputStream getInputStream() {
-            return connection.getInputStream();
+            return javaProcess.getInputStream();
         }
 
         @Override
         public OutputStream getOutputStream() {
-            return connection.getOutputStream();
+            return javaProcess.getOutputStream();
+        }
+
+        private Throwable getFailure() {
+            return javaProcess.getFailure();
         }
 
         @Override
         public void shutdownOutput() throws IOException {
-            connection.shutdownOutput();
+            javaProcess.shutdownOutput();
         }
 
         @Override
         public void close() throws IOException {
-            connection.close();
+            javaProcess.close();
         }
     }
 }

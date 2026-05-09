@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.micklab.dcg.output.OutputModelJsonParserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-05-08T22:24:48" hostname="localhost" time="0.003">
+<testsuite name="com.micklab.dcg.output.OutputModelJsonParserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-05-09T13:29:17" hostname="localhost" time="0.005">
   <properties/>
   <testcase name="parseSpecReadsWrappedOutputModelJson" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.002"/>
-  <testcase name="parseSpecPreservesExtendedDslNodes" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.0"/>
-  <testcase name="parseDocumentPreservesCommandsAlongsideSpec" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.001"/>
-  <testcase name="parseSpecPreservesRowChildren" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.0"/>
+  <testcase name="parseSpecPreservesExtendedDslNodes" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.001"/>
+  <testcase name="parseDocumentPreservesCommandsAlongsideSpec" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.0"/>
+  <testcase name="parseSpecPreservesRowChildren" classname="com.micklab.dcg.output.OutputModelJsonParserTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
